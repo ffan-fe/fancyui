@@ -1,0 +1,45 @@
+{
+  "name": "anaheim",
+  "version": "0.0.1",
+  "description": "angular ui components",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ffan-fe/Anaheim.git"
+  },
+  "keywords": [
+    "angular"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ffan-fe/Anaheim/issues"
+  },
+  "homepage": "https://github.com/ffan-fe/Anaheim#readme",
+  "devDependencies": {
+    "babel-cli": "^6.9.0",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.9.0",
+    "browser-sync": "^2.12.12",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-rename": "^1.2.2",
+    "gulp-watch": "^4.3.6",
+    "html-webpack-plugin": "^2.19.0",
+    "less-loader": "^2.2.3",
+    "raw-loader": "^0.5.1",
+    "style-loader": "^0.13.1",
+    "supports-color": "^3.1.2",
+    "webpack": "^1.13.1",
+    "webpack-dev-middleware": "^1.6.1"
+  },
+  "dependencies": {
+    "angular": "^1.5.6",
+    "classnames": "^2.2.5"
+  }
+}
