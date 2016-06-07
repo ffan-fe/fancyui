@@ -10,8 +10,8 @@ import CommonState from './common-state';
 export default angular.extend({
   /**
    * 加载中状态
-   * @type {symbol}
+   * @type {string}
    */
-  LOADING: Symbol('loading')
+  LOADING: 'loading'
   
 }, CommonState);

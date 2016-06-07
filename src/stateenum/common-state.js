@@ -7,12 +7,16 @@
 export default {
   /**
    * 可用
-   * @type {symbol}
+   * 
+   * @type {string}
    */
-  ENABLE: Symbol('enableState'),
+  ENABLE: 'enable',
   /**
    * 禁用
-   * @type {symbol}
+   * 
+   * @type {string}
    */
-  DISABLE: Symbol('disableState')
+  DISABLE: 'disable'
 };
+
+

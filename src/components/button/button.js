@@ -14,23 +14,32 @@ import classNames from 'classnames';
  * @class Button
  * @extends {Component}
  */
-export default class Button extends Component{
+export default class Button extends Component {
   /**
-   * @constructor
+   * @override 
    */
-  constructor() {
-    super();
-  }
-  $onInit() {
-    // ====== bindings values =======
+  _initDefaultValue() {
     this.type = this.type || 'primary';
     this.prefixCls = this.prefixCls || 'bp-btn';
     this.htmlType = this.htmlType || 'button';
-    // ====== bindings values =======
+  }
+  /**
+   * @override 
+   */
+  _createClassName() {
     this.className = classNames({
       'btn': true,
-      [`${this.prefixCls}-${this.type}`]: this.prefixCls
+      [`${this.prefixCls}-${this.type}`]: true
     });
-    console.log(this.click);
+  }
+  /**
+   * @override 
+   */
+  _build() {
+    this.loading = !!this.loading;
+  }
+
+  $onChanges(changeObj) {
+    console.log('onChanges', changeObj);
   }
 }

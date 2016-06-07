@@ -1,5 +1,8 @@
 <button 
   type="{{controller.htmlType}}" 
   class="{{controller.className}}"
-  ng-click="controller.click()" 
-  ng-transclude></button>
+  ng-click="controller.click()"
+  ng-disabled="controller.disabled"
+  >
+    <i ng-if="controller.loading" class="glyphicon glyphicon-refresh"></i><span ng-transclude></span>
+  </button>
