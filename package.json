@@ -31,12 +31,14 @@
     "gulp-rename": "^1.2.2",
     "gulp-watch": "^4.3.6",
     "html-webpack-plugin": "^2.19.0",
+    "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",
     "supports-color": "^3.1.2",
     "webpack": "^1.13.1",
-    "webpack-dev-middleware": "^1.6.1"
+    "webpack-dev-middleware": "^1.6.1",
+    "yargs": "^4.7.1"
   },
   "dependencies": {
     "angular": "^1.5.6",

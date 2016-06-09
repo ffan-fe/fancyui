@@ -12,5 +12,5 @@ export default angular.module('buttonTest', [Button.name])
   .component('buttonTest', {
     template,
     controller,
-    controllerAs: 'vm'
+    controllerAs: 'vm1'
   });

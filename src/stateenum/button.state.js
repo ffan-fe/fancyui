@@ -3,7 +3,7 @@
  */
 
 import angular from 'angular';
-import CommonState from './common-state';
+import CommonState from './common.state';
 
 'use strict';
 

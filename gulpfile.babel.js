@@ -33,7 +33,7 @@ gulp.task('dev', callback => {
         baseDir: 'tests',
         index: 'index.html'
       },
-      files: ['tests/**/*.js', 'tests/**/*.html', 'src/**/*.js', 'src/**/*.html'],
+      files: ['tests/**/*.js', 'tests/**/*.html', 'src/**/*.js', 'src/**/*.less', 'src/**/*.html'],
       middleware: [
         webpackDevMiddelware(compiler, {
           stats: {
@@ -54,4 +54,8 @@ gulp.task('build', callback => {
     if (err) throw new gutil.PluginError('webpack', err);
     callback();
   });
+});
+
+gulp.task('component', callback => {
+  
 });

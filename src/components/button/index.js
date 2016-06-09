@@ -3,7 +3,7 @@
  */
 
 import angular from 'angular';
-import component from './button-component'
+import component from './button.component'
 
 'use strict';
 

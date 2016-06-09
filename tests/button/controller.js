@@ -4,8 +4,9 @@ export default class ButtonTestController {
     this.disabled = false;
     this.ooxx = false;
   }
-  sayHello() {
-    console.log('sayHello');
+  sayHello(btn, o) {
+    console.log('sayHello', btn, o);
     this.disabled = true;
+    btn.state = 'loading';
   }
 }

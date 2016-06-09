@@ -2,7 +2,7 @@
  * abstract component
  */
 
-import CommonState from '../../stateenum/common-state';
+import CommonState from '../../stateenum/common.state';
 
 'use strict';
 
@@ -91,7 +91,8 @@ export default class Component {
   /**
    * 针对不同的状态, 做UI变化, 期望子类都来override这个方法
    * 
-   * @protected 
+   * @protected
+   * @param {string} state 状态名, 一般来自枚举 
    */
   _render(state) {
     switch(state) {

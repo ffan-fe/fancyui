@@ -4,6 +4,7 @@
 
 import Component from '../common/component';
 import classNames from 'classnames';
+import ButtonState from '../../stateenum/button.state';
 
 'use strict';
 
@@ -29,6 +30,7 @@ export default class Button extends Component {
   _createClassName() {
     this.className = classNames({
       'btn': true,
+      'bp-btn': true,
       [`${this.prefixCls}-${this.type}`]: true
     });
   }
@@ -37,9 +39,35 @@ export default class Button extends Component {
    */
   _build() {
     this.loading = !!this.loading;
+    // console.log(this.click({button:this}));
   }
-
-  $onChanges(changeObj) {
-    console.log('onChanges', changeObj);
+  /**
+   * 比超类多了loading状态
+   * @override 
+   */
+  _render(state) {
+    super._render(state);
+    switch(state) {
+      case ButtonState.LOADING :
+        this._renderLoading();
+        return;
+    }
+  }
+  /**
+   * 为此按钮提供loading渲染.
+   * 如没有激活loading参数, 此操作将不予支持, 以免在内部做转换导致使用疑惑
+   * 
+   * @private 
+   */
+  _renderLoading() {
+    this._renderDisable();
+  }
+  /**
+   * 包装一个click处理器
+   * 
+   * @public 
+   */
+  innerClick() {
+    this.click && typeof this.click === 'function' && this.click({button: this});
   }
 }
