@@ -5,7 +5,7 @@
 ### 上手须知
 
 1. 基于angular
-2. 基于bootstarp
+2. 基于Bootstrap
 3. 使用ES6 + Babel
 
 ### 开发须知
