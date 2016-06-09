@@ -29,6 +29,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-rename": "^1.2.2",
+    "gulp-template": "^4.0.0",
     "gulp-watch": "^4.3.6",
     "html-webpack-plugin": "^2.19.0",
     "less": "^2.7.1",

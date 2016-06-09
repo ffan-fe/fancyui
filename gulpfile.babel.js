@@ -2,9 +2,12 @@
  * 我们来玩一下组件
  */
 
+import path from 'path';
+
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import rename from 'gulp-rename';
+import template from 'gulp-template';
 
 import webpack from 'webpack';
 import webpackDistConfig from './webpack.dist.config';
@@ -13,6 +16,8 @@ import webpackDevMiddelware from 'webpack-dev-middleware';
 
 import browserSync from 'browser-sync';
 import colorsSupported from 'supports-color';
+
+import yargs from 'yargs';
 
 'use strict';
 
@@ -56,6 +61,22 @@ gulp.task('build', callback => {
   });
 });
 
-gulp.task('component', callback => {
-  
+gulp.task('component', () => {
+  // 组件名
+  const name = yargs.argv.name;
+  // code name 主要是Classname
+  const codeName = name.charAt(0).toUpperCase() + name.slice(1);
+  // 发布路径
+  const distPath = path.join('src/components', name);
+
+  return gulp.src('./generator/**/*')
+    .pipe(template({
+      name,
+      codeName
+    }))
+    .pipe(rename(path => {
+      path.basename = path.basename.replace('name', name);
+    }))
+    .pipe(gulp.dest(distPath));
+
 });
