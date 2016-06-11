@@ -26,5 +26,5 @@ export default class <%= codeName %> extends Component {
   /**
    * @override 
    */
-  _build() {}
+  _launch() {}
 }

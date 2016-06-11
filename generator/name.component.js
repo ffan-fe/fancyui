@@ -3,7 +3,7 @@
  */
 
 import controller from './<%= name %>';
-import template from 'template.html';
+import template from './template.html';
 
 'use strict';
 

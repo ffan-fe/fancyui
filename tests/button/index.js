@@ -1,12 +1,9 @@
-/**
- * 
- */
-
 import angular from 'angular';
+import uiRouter from 'angular-ui-router';
+
 import Button from '../../src/components/button';
 import template from './template.html';
 import controller from './controller';
-import uiRouter from 'angular-ui-router';
 
 
 
