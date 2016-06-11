@@ -1,4 +1,16 @@
-<section style="padding:10px;">
-  <bp-button click="vm1.sayHello(button)" type="default" disabled="vm1.disabled" loading="true">我们确定一下呢</bp-button>
-  <Button click="vm1.sayHello(button)" type="default" disabled="vm1.disabled" loading="true">我们确定一下呢</Button>
+<section>
+  <p>
+    <bp-button type="primary">primary</bp-button>
+    <bp-button type="primary" icon="ok">OK</bp-button>
+  </p>
+  <p>
+    <bp-button type="primary" size="xs">size xs button</bp-button>
+    <bp-button type="primary" size="sm">size sm button</bp-button>
+    <bp-button type="primary">size default button</bp-button>
+    <bp-button type="primary" size="lg">size lg button</bp-button>
+  </p>
+  <p>
+    <bp-button click="vm.sayHello(button)" type="primary" loading="true">loading</bp-button>
+    <bp-button click="vm.sayHello(button)" type="primary" icon="ok" loading="true">loading</bp-button>
+  </p>
 </section>

@@ -38,7 +38,12 @@ gulp.task('dev', callback => {
         baseDir: 'tests',
         index: 'index.html'
       },
-      files: ['tests/**/*.js', 'tests/**/*.html', 'src/**/*.js', 'src/**/*.less', 'src/**/*.html'],
+      files: ['tests/**/*.js', 
+              'tests/**/*.less', 
+              'tests/**/*.html', 
+              'src/**/*.js', 
+              'src/**/*.less', 
+              'src/**/*.html'],
       middleware: [
         webpackDevMiddelware(compiler, {
           stats: {

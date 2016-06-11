@@ -5,7 +5,18 @@
   <title>Anaheim Test</title>
 </head>
 <body ng-app="app">
-  <button-test></button-test>
-  <!--<bp-button>我们确定一下呢</bp-button>-->
+  <div class="wrap">
+    <!--<button-test></button-test>-->
+    <div class="main-container clearfix">
+      <aside class="aside-menu">
+        <ul class="list-unstyled">
+          <li class="menu-item"><a href="/#/button">Button</a></li>
+        </ul>
+      </aside>
+      <div class="content-container">
+        <div ui-view></div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

@@ -20,7 +20,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel-loader',
+        loader: 'ng-annotate!babel',
       },
       {
         test: /\.html$/,
@@ -37,7 +37,11 @@ module.exports = {
       {
         test   : /\.(ttf|eot|svg|woff(2)?)(\?\S*)?$/,
         loader : require.resolve('file-loader')
-      }
+      },
+      {
+        test: /.(gif|jpg|png)$/,
+        loader: 'file?name=img-[hash].[ext]'
+      },
     ]
   },
   plugins: [

@@ -1,12 +1,13 @@
 .bp-btn {
-  transition: all .3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  transition: all .2s cubic-bezier(0.645, 0.045, 0.355, 1);
   &.loading-btn{
     padding-left: 20px;
+    .bp-icon{
+      animation: loadingCircle 1s linear infinite;
+    }
   }
-  .icon-loading{
-    margin-left: -5px;
+  .bp-icon{
     margin-right: 2px;
-    animation: loadingCircle 1s linear infinite;
   }
 }
 

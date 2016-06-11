@@ -49,6 +49,12 @@ let componentDefine = {
      */
     disabled: '<',
     /**
+     * 实际上是icon类型, 也就是bootstrap icon里面那堆类型
+     * 
+     * @type {string}
+     */
+    icon: '@',
+    /**
      * 是否支持loading
      * 
      * @type {boolean}

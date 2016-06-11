@@ -1,5 +1,5 @@
 /**
- * 
+ * Button component controller
  */
 
 import Component from '../common/component';
@@ -23,6 +23,8 @@ export default class Button extends Component {
     this.type = this.type || 'primary';
     this.prefixCls = this.prefixCls || 'bp-btn';
     this.htmlType = this.htmlType || 'button';
+    this.iconType = this.icon || '';
+    this._disabled = this.disabled;
   }
   /**
    * @override 
@@ -31,16 +33,15 @@ export default class Button extends Component {
     this.className = classNames({
       'btn': true,
       'bp-btn': true,
+      [`btn-${this.size}`]: !!this.size,
+      'loading-btn': this._state === ButtonState.LOADING,
       [`${this.prefixCls}-${this.type}`]: true
     });
   }
   /**
    * @override 
    */
-  _build() {
-    this.loading = !!this.loading;
-    // console.log(this.click({button:this}));
-  }
+  _launch() {}
   /**
    * 比超类多了loading状态
    * @override 
@@ -51,16 +52,18 @@ export default class Button extends Component {
       case ButtonState.LOADING :
         this._renderLoading();
         return;
+      default :
+        this.iconType = this.icon;
     }
   }
   /**
    * 为此按钮提供loading渲染.
-   * 如没有激活loading参数, 此操作将不予支持, 以免在内部做转换导致使用疑惑
    * 
    * @private 
    */
   _renderLoading() {
     this._renderDisable();
+    this.iconType = 'loading';
   }
   /**
    * 包装一个click处理器

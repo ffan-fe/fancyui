@@ -9,4 +9,4 @@ import component from './<%= name %>.component';
 'use strict';
 
 export default angular.module('<%= codeName %>', [])
-  .component('bp<%= codeName %>');
+  .component('bp<%= codeName %>', component);

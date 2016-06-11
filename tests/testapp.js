@@ -3,9 +3,11 @@
  */
 
 import angular from 'angular';
+import './testapp.less';
 import 'bp-admin-skin';
-// import Button from '../src/components/button/'
 import ButtonTest from './button'
 
   
-angular.module('app', [ButtonTest.name]);
+angular.module('app', [
+  ButtonTest.name, 
+  ]);

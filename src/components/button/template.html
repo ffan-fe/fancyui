@@ -1,11 +1,8 @@
 <button 
   type="{{controller.htmlType}}" 
-  class="{{controller.className}}"
+  ng-class="controller.className"
   ng-click="controller.innerClick()"
-  ng-disabled="controller.disabled"
-  ng-class="{'loading-btn': controller.state === 'loading'}"
-  >
-    <i class="glyphicon glyphicon-repeat icon-loading"
-       ng-if="controller.loading"
-       ng-show="controller.state === 'loading'"></i><span ng-transclude></span>
+  ng-disabled="controller._disabled">
+    <bp-icon ng-if="controller.iconType" type="controller.iconType"></bp-icon>
+    <span ng-transclude></span>
   </button>

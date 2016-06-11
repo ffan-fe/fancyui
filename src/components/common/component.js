@@ -24,7 +24,7 @@ export default class Component {
      * 
      * @protected 
      */
-    this._state;
+    this._state = CommonState.ENABLE;
     /**
      * 这个值通常是经`this._state`变化而得来的, 在UI方面实际上使用的是ng-disabled在实现, 所以绑定此值来切换状态
      * 
@@ -52,6 +52,7 @@ export default class Component {
    */
   set state(state) {
     this._state = state;
+    this._render(this._state);
   }
   /**
    * template pattern
@@ -61,8 +62,8 @@ export default class Component {
    */
   $onInit() {
     this._initDefaultValue();
-    this._createClassName();
-    this._build();
+    this._launch();
+    this._render(this._state);
   }
   /**
    * 初始化默认值, 因为angular组件变量传递是在component定义决定的, 有些值可能没有传进来, 所以在这里确定一次
@@ -74,8 +75,10 @@ export default class Component {
   }
   /**
    * 确定className, 处理过之后赋值到`this.className`属性, 并经由此属性填充到UI(html)的class属性里
+   * 每次render都会重新计算一次样式
    * 
    * @protected 
+   * @see this._render method
    */
   _createClassName() {
     throw new Error('IllegalOperationError for _createClassName method, you need override the method');
@@ -85,23 +88,24 @@ export default class Component {
    * 
    * @protected 
    */
-  _build() {
-    throw new Error('IllegalOperationError for _build method, you need override the method');
+  _launch() {
+    throw new Error('IllegalOperationError for _launch method, you need override the method');
   }
   /**
-   * 针对不同的状态, 做UI变化, 期望子类都来override这个方法
+   * 针对不同的状态, 做UI变化, 如果子类有新状态那么override, 并super调用此方法
    * 
    * @protected
    * @param {string} state 状态名, 一般来自枚举 
    */
   _render(state) {
+    this._createClassName();
     switch(state) {
       case CommonState.ENABLE :
         this._renderEnable();
-        break;
+        return;
       case CommonState.DISABLE :
         this._renderDisable();
-        break;
+        return;
     }
   }
   /**

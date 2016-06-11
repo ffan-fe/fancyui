@@ -2,7 +2,7 @@
  * <%= codeName %> component define
  */
 
-import controller from './<%= name %>.js';
+import controller from './<%= name %>';
 import template from 'template.html';
 
 'use strict';
