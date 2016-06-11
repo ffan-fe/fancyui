@@ -2,15 +2,26 @@
   <p>
     <bp-button type="primary">primary</bp-button>
     <bp-button type="primary" icon="ok">OK</bp-button>
+    <div>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.part1Html"></code>
+      </pre>
+    </div>
   </p>
   <p>
     <bp-button type="primary" size="xs">size xs button</bp-button>
     <bp-button type="primary" size="sm">size sm button</bp-button>
     <bp-button type="primary">size default button</bp-button>
     <bp-button type="primary" size="lg">size lg button</bp-button>
+    <pre>
+        <code class="language-html" ng-bind-html="vm.part2Html"></code>
+    </pre>
   </p>
   <p>
     <bp-button click="vm.sayHello(button)" type="primary" loading="true">loading</bp-button>
     <bp-button click="vm.sayHello(button)" type="primary" icon="ok" loading="true">loading</bp-button>
+    <pre>
+        <code class="language-html" ng-bind-html="vm.part3Html"></code>
+    </pre>
   </p>
 </section>
