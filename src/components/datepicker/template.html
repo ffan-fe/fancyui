@@ -1,0 +1,37 @@
+<span uib-dropdown
+      auto-close="disabled" is-open="vm.isOpen">
+      <a href id="{{vm.id}}" uib-dropdown-toggle>
+          <div class="input-group">
+              <input type="text"
+                     class="form-control"
+                     date-view-format="vm.viewFormat"
+                     date-model-format="vm.modelFormat"
+                     data-ng-model="vm.ngModel">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </span>
+          </div>
+      </a>
+      <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="{{vm.id}}">
+          <div style="margin:0 10px">
+              <uib-datepicker ng-model="vm.ngModel"
+                              datepicker-options="vm.dateOptions"
+                              date-view-format="vm.viewFormat"
+                              date-model-format="vm.modelFormat"
+                              custom-class="getDayClass(date, mode)"></uib-datepicker>
+              <div style="margin: 10px 0">
+                  <uib-timepicker show-meridian="false"
+                                  show-seconds="vm.timeOptions.showSeconds"
+                                  show-spinners="false"
+                                  min="vm.timeOptions.min"
+                                  max="vm.timeOptions.max"
+                                  date-view-format="vm.viewFormat"
+                                  date-model-format="vm.modelFormat"
+                                  minute-step="vm.timeOptions.minuteStep"
+                                  second-step="vm.timeOptions.secondStep"
+                                  ng-model="vm.ngModel"></uib-timepicker>
+              </div>
+          </div>
+      </ul>
+    </span>
+
