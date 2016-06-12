@@ -4,7 +4,6 @@
 
 import controller from './button';
 import template from './template.html';
-import './button.less';
 
 'use strict';
 
