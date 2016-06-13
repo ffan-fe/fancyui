@@ -1,7 +1,11 @@
-<span class="checkbox-container">
-  <label for="{{controller.htmlID}}" class="checkbox-label">
-    <span>12</span>
-    <input type="checkbox" id="{{controller.htmlID}}" ng-checked="controller.checked" />
-    <span>{{controller.label}}</span>
-  </label>
-<span>
+<label for="{{controller.htmlID}}" class="checkbox-container" 
+  ng-class="controller.className">
+  <span class="checkbox-inner">
+    <span class="checkbox-inner-box"></span>
+    <input type="checkbox" id="{{controller.htmlID}}" 
+      ng-disabled="controller.disabled"
+      ng-model="controller.checked" 
+      ng-change="controller.changeHandler()" />
+    <span class="checkbox-label">{{controller.label}}</span>
+  </span>
+</label>

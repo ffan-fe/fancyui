@@ -28,12 +28,22 @@ export default class Component {
     /**
      * 这个值通常是经`this._state`变化而得来的, 在UI方面实际上使用的是ng-disabled在实现, 所以绑定此值来切换状态
      * 
-     * @type {boolean}
+     * @protected
+     * @type {Boolean}
      * @default false
      * @see `this._renderEnable` method
      * @see `this._renderDisable` method
      */
     this._disabled = false;
+    /**
+     * 是否初始化完毕, 标识是是否执行完$onInit
+     * 
+     * @protected
+     * @type {Boolean}
+     * @default false
+     * @see $onInit
+     */
+    this._init = false;
   }
   /**
    * get component state
@@ -64,6 +74,7 @@ export default class Component {
     this._initDefaultValue();
     this._launch();
     this._render(this._state);
+    this._init = true;
   }
   /**
    * 初始化默认值, 因为angular组件变量传递是在component定义决定的, 有些值可能没有传进来, 所以在这里确定一次
