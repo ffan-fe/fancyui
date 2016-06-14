@@ -8,6 +8,7 @@ import 'bp-admin-skin';
 
 import ButtonTest from './button';
 import CheckboxTest from './checkbox';
+import RangepickerTest from './rangepicker';
 import Datepicker from './datepicker/app.js'
 console.log('eeeee', Datepicker);
 
@@ -15,5 +16,6 @@ console.log('eeeee', Datepicker);
 angular.module('app', [
   ButtonTest.name,
   CheckboxTest.name,
-  Datepicker.name
+  Datepicker.name,
+  RangepickerTest.name
 ]);
