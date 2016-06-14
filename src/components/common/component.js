@@ -1,7 +1,7 @@
 /**
  * abstract component
  */
-
+import angular from 'angular';
 import CommonState from '../../stateenum/common.state';
 
 'use strict';
@@ -20,21 +20,12 @@ export default class Component {
    */
   constructor() {
     /**
-     * 状态, 每个组件都会拥有一个状态, 用这个标识来确定UI的形态
+     * every component has a state object, according to the state properties to determine how to display UI
      * 
+     * @type {Object}
      * @protected 
      */
-    this._state = CommonState.ENABLE;
-    /**
-     * 这个值通常是经`this._state`变化而得来的, 在UI方面实际上使用的是ng-disabled在实现, 所以绑定此值来切换状态
-     * 
-     * @protected
-     * @type {Boolean}
-     * @default false
-     * @see `this._renderEnable` method
-     * @see `this._renderDisable` method
-     */
-    this._disabled = false;
+    this._state = {};
     /**
      * 是否初始化完毕, 标识是是否执行完$onInit
      * 
@@ -57,12 +48,15 @@ export default class Component {
   /**
    * set component state
    * 
-   * @public 
+   * @public
+   * @param state {Object} 
    * @implements {IComponentState}
    */
   set state(state) {
-    this._state = state;
-    this._render(this._state);
+    if (Object.prototype.toString.call(state) === '[object Object]') {
+      this._state = angular.merge(this._state, state);
+      this._render();
+    }
   }
   /**
    * template pattern
@@ -71,9 +65,10 @@ export default class Component {
    * @final
    */
   $onInit() {
+    this._initDefaultState();
     this._initDefaultValue();
     this._launch();
-    this._render(this._state);
+    this._render();
     this._init = true;
   }
   /**
@@ -83,6 +78,14 @@ export default class Component {
    */
   _initDefaultValue() {
     throw new Error('IllegalOperationError for _initDefaultValue method, you need override the method');
+  }
+  /**
+   * initialize state object
+   */
+  _initDefaultState() {
+    this._state = {
+      [`${CommonState.DISABLED}`]: false
+    };
   }
   /**
    * 确定className, 处理过之后赋值到`this.className`属性, 并经由此属性填充到UI(html)的class属性里
@@ -106,31 +109,8 @@ export default class Component {
    * 针对不同的状态, 做UI变化, 如果子类有新状态那么override, 并super调用此方法
    * 
    * @protected
-   * @param {string} state 状态名, 一般来自枚举 
    */
-  _render(state) {
+  _render() {
     this._createClassName();
-    switch(state) {
-      case CommonState.ENABLE :
-        this._renderEnable();
-        return;
-      case CommonState.DISABLE :
-        this._renderDisable();
-        return;
-    }
-  }
-  /**
-   * 切换到可用状态, 如果需要特别操作, 请override
-   * 
-   * @protected
-   */
-  _renderEnable() {
-    this._disabled = false;
-  }
-  /**
-   * 切换到禁用状态, override同上
-   */
-  _renderDisable() {
-    this._disabled = true;
   }
 }

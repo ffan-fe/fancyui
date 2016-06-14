@@ -6,17 +6,11 @@
 
 export default {
   /**
-   * 可用
+   * 是否禁用
    * 
    * @type {string}
    */
-  ENABLE: 'enable',
-  /**
-   * 禁用
-   * 
-   * @type {string}
-   */
-  DISABLE: 'disable'
+  DISABLED: 'disabled'
 };
 
 

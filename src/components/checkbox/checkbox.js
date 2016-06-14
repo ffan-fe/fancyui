@@ -17,6 +17,10 @@ import CheckboxStates from '../../stateenum/checkbox.state';
  */
 export default class Checkbox extends Component {
   /**
+   * @override
+   */
+  _initDefaultState() {}
+  /**
    * @override 
    */
   _initDefaultValue() {

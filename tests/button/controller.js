@@ -7,6 +7,11 @@ export default class ButtonTestController {
     this.disabled = false;
     this.ooxx = false;
     this.$timeout = $timeout;
+    this.tiggleDisabled = true;
+
+    // this.$timeout(() => {
+    //   this.tiggleDisabled = false;
+    // }, 3000);
 
     const codePart1 = `
       <bp-button type="primary">primary</bp-button>
@@ -30,10 +35,11 @@ export default class ButtonTestController {
 
   }
   sayHello(btn, o) {
-    // console.log('sayHello', btn, o);
-    btn.state = 'loading';
+    console.log('sayHello', btn, o);
+    btn.state = {loading: true};
+    this.tiggleDisabled = false;
     this.$timeout(() => {
-      btn.state = 'enable';
+      btn.state = {disabled: false, loading: false};
     }, 3000);
   }
 }
