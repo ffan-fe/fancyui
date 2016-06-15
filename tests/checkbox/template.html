@@ -1,1 +1,22 @@
-<bp-checkbox label="暴风雪" half-checked="true" disabled="true"></bp-checkbox>
+<section>
+  <bp-checkbox>暴风雪</bp-checkbox>
+  <bp-checkbox checked="true">暴风雪</bp-checkbox>
+  <bp-checkbox disabled="true">暴风雪</bp-checkbox>
+  <bp-checkbox checked="true" disabled="true">暴风雪</bp-checkbox>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part1Html"></code>
+    </pre>
+  </div>
+</section>
+<section>
+  <bp-checkbox checked="vm.checked1">绑定到controller的</bp-checkbox>
+  <p>binding to controller value: {{vm.checked1}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part2Html"></code>
+    </pre>
+  </div>
+</section>
+<!--<bp-checkbox half-checked="true" disabled="true">暴风雪</bp-checkbox>
+<bp-checkbox half-checked="true" disabled="true">暴风雪</bp-checkbox>-->

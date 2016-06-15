@@ -12,6 +12,7 @@ let componentDefine = {
   template,
   controller,
   controllerAs: 'controller',
+  transclude: true,
   bindings: {
     /**
      * 是否被禁用
@@ -24,7 +25,7 @@ let componentDefine = {
      * 
      * @type {Boolean}
      */
-    checked: '<',
+    checked: '=',
     /**
      * 半选状态, 主要是列表里面, 选择且不全选的情况
      * 值得

@@ -19,78 +19,37 @@ export default class Checkbox extends Component {
   /**
    * @override
    */
-  _initDefaultState() {}
+  _initDefaultState() {
+    if (this.checked) {
+      this.halfChecked = false;
+    }
+    this._state = {
+      [`${CheckboxStates.DISABLED}`]: this.disabled,
+      [`${CheckboxStates.CHECKED}`]: this.checked,
+      [`${CheckboxStates.HALF_CHECKED}`]: this.halfChecked
+    };
+  }
   /**
    * @override 
    */
   _initDefaultValue() {
     this.label = this.label || '';
     this.htmlID = this.htmlID || 'checkbox' + Math.floor(Math.random() * 1000000);
-    this._disabled = this.disabled;
-    
-    if (this.checked) {
-      this._state = CheckboxStates.CHECKED;
-    } else {
-      this._state = CheckboxStates.UNCHECKED;
-    }
-    // 半选和选择是冲突的, 有全选就全选
-    if (this.halfChecked && !this.checked) {
-      this._state = CheckboxStates.halfChecked;
-    }
   }
   /**
    * @override 
    */
   _createClassName() {
     this.className = classNames({
-      'checked': this.checked,
-      'half-checked': !this.checked && this.halfChecked,
-      'disabled': this._disabled
+      'disabled': this._state[CheckboxStates.DISABLED],
+      'checked': this._state[CheckboxStates.CHECKED],
+      'half-checked': this._state[CheckboxStates.HALF_CHECKED]
     });
-  }
-  
-  /**
-   * @override 
-   * @param state {String}
-   */
-  _render(state) {
-    switch(state) {
-      case CheckboxStates.CHECKED :
-        this._renderChecked();
-        break;
-      case CheckboxStates.UNCHECKED :
-        this._renderUnChecked();
-        break;
-      case CheckboxStates.HALF_CHECKED :
-        this._renderHalfChecked();
-        break;
-    }
-    super._render(state);
   }
   /**
    * @override 
    */
   _launch() {}
-  /**
-   * @private 
-   */
-  _renderChecked() {
-    this.checked = true;
-    this.halfChecked = false;
-  }
-  /**
-   * @private 
-   */
-  _renderUnChecked() {
-    this.checked = false;
-    this.halfChecked = false;
-  }
-  /**
-   * @private 
-   */
-  _renderHalfChecked() {
-    this.halfChecked = true;
-  }
   /**
    * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
    * 所以需要监听一下, 然后调用一次
@@ -99,29 +58,42 @@ export default class Checkbox extends Component {
    */
   $onChanges(changeObj) {
     if (!this._init) return;
-    if (changeObj.hasOwnProperty('checked')) {
-      if (this.checked) {
-        this.state = CheckboxStates.CHECKED;
-      } else {
-        this.state = CheckboxStates.UNCHECKED;
+    // checked 状态
+    if (changeObj.hasOwnProperty(CheckboxStates.CHECKED)) {
+      this.changeHandler();
+    }
+    // 半选
+    if (changeObj.hasOwnProperty(CheckboxStates.HALF_CHECKED)) {
+      const halfChecked = changeObj[CheckboxStates.HALF_CHECKED]['currentValue'];
+      this.state = {
+        [`${CheckboxStates.HALF_CHECKED}`]: halfChecked
+      };
+      if (halfChecked) {
+        this.state = {
+          [`${CheckboxStates.CHECKED}`]: false
+        };
       }
     }
-    if (changeObj.hasOwnProperty('halfChecked')) {
-      if (this.halfChecked) {
-        this.state = CheckboxStates.HALF_CHECKED;
-      } else {
-        this.state = CheckboxStates.UNCHECKED;
-      }
+    // 禁用
+    if (changeObj.hasOwnProperty(CheckboxStates.DISABLED)) {
+      this.state = {
+        [`${CheckboxStates.DISABLED}`]: changeObj[CheckboxStates.DISABLED]['currentValue']
+      };
     }
+    this._render();
   }
   /**
    * 这是用户点击改变的行为
    */
   changeHandler() {
     if (this.checked) {
-      this.state = CheckboxStates.CHECKED;
+      this.state = {
+        [`${CheckboxStates.CHECKED}`]: true
+      };
     } else {
-      this.state = CheckboxStates.UNCHECKED;
+      this.state = {
+        [`${CheckboxStates.CHECKED}`]: false
+      };
     }
   }
 }

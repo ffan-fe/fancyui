@@ -11,6 +11,7 @@ let componentDefine = {
   template,
   controller,
   controllerAs: 'controller',
+  transclude: true,
   bindings: {
     /**
      * 是primary还是别的定义, 会直接导致class的变化, 比如你选了primary class会出现 `bp-btn-primary`
@@ -63,8 +64,7 @@ let componentDefine = {
      * @type {Function}
      */
     click: '&'
-  },
-  transclude: true
+  }
 };
 
 export default componentDefine;
