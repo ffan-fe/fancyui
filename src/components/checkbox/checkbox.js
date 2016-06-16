@@ -87,10 +87,10 @@ export default class Checkbox extends Component {
    * 这是用户点击改变的行为
    */
   changeHandler() {
-    console.log(this.checked, this.trueValue);
-    if (this.checked || this.checked === `${this.trueValue}`) {
+    if (this.checked == this.trueValue) {
       this.state = {
-        [`${CheckboxStates.CHECKED}`]: true
+        [`${CheckboxStates.CHECKED}`]: true,
+        [`${CheckboxStates.HALF_CHECKED}`]: false
       };
     } else {
       this.state = {

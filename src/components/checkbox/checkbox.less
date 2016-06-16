@@ -22,6 +22,12 @@
     &:hover{
       border-color: #58b4e9;
     }
+    &:after{
+      display: block;
+      content: "";
+      transition: transform .2s cubic-bezier(.12,.4,.29,1.46) .1s;
+      transform: rotate(45deg) scale(0);
+    }
   }
 
   &.checked, &.half-checked{
@@ -37,7 +43,7 @@
         border: 2px solid white;
         border-left: none;
         border-top: none;
-        transform: rotate(45deg);
+        transform: rotate(45deg) scale(1);
       }
     }
   }
@@ -45,6 +51,7 @@
     .checkbox-inner-box{
       &:after{
         .checkbox-inner-icon(8px, 0px, 3px, 10px);
+        transform: scale(1);
       }
     }
   }

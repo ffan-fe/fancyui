@@ -25,7 +25,7 @@ let componentDefine = {
      * 
      * @type {Boolean}
      */
-    checked: '=',
+    checked: '=?checked',
     /**
      * 半选状态, 主要是列表里面, 选择且不全选的情况
      * 值得
