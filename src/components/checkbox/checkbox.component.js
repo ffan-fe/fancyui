@@ -34,11 +34,17 @@ let componentDefine = {
      */
     halfChecked: '<',
     /**
-     * label 显示
+     * like ng-true-value
      * 
-     * @type {String}
+     * @type {anyObject}
      */
-    label: '@'
+    trueValue: '@',
+    /**
+     * like ng-false-value
+     * 
+     * @type {anyObject}
+     */
+    falseValue: '@'
   }
 }
 

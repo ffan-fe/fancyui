@@ -33,8 +33,9 @@ export default class Checkbox extends Component {
    * @override 
    */
   _initDefaultValue() {
-    this.label = this.label || '';
     this.htmlID = this.htmlID || 'checkbox' + Math.floor(Math.random() * 1000000);
+    this.trueValue = this.trueValue ? this.trueValue : true;
+    this.falseValue = this.falseValue? this.falseValue : false;
   }
   /**
    * @override 
@@ -86,7 +87,8 @@ export default class Checkbox extends Component {
    * 这是用户点击改变的行为
    */
   changeHandler() {
-    if (this.checked) {
+    console.log(this.checked, this.trueValue);
+    if (this.checked || this.checked === `${this.trueValue}`) {
       this.state = {
         [`${CheckboxStates.CHECKED}`]: true
       };
