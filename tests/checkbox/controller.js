@@ -25,7 +25,7 @@ export default class CheckboxTextController {
     this.part2Html = $sce.trustAsHtml(Prism.highlight(codePart2, Prism.languages.html));
 
     const codePart3 = `
-      <bp-checkbox checked="vm.checked2" true-value="1", false-value="2">绑定到controller的</bp-checkbox>
+      <bp-checkbox checked="vm.checked2" true-value="1" false-value="2">绑定到controller的</bp-checkbox>
       <p>true-value and false-value: {{vm.checked2}}</p>
     `;
     this.part3Html = $sce.trustAsHtml(Prism.highlight(codePart3, Prism.languages.html));

@@ -29,5 +29,58 @@
     </pre>
   </div>
 </section>
-<!--<bp-checkbox half-checked="true" disabled="true">暴风雪</bp-checkbox>
-<bp-checkbox half-checked="true" disabled="true">暴风雪</bp-checkbox>-->
+<section>
+  <h2>属性</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>属性名</th>
+        <th>类型</th>
+        <th>说明</th>
+        <th>可选值</th>
+        <th>默认值</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>disabled</td>
+        <td>Boolean</td>
+        <td>是否禁用状态, 单向绑定</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>checked</td>
+        <td>Boolean</td>
+        <td>是否选中状态, 双向绑定</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>halfChecked</td>
+        <td>Boolean</td>
+        <td>是否半选状态, 双向绑定</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>trueValue</td>
+        <td>Object</td>
+        <td>ng-true-value的实现</td>
+        <td>代替ture的某个值</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>falseValue</td>
+        <td>Object</td>
+        <td>ng-false-value的实现</td>
+        <td>代替false的某个值</td>
+        <td>false</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>半选说明</h2>
+  <div class="doc-container">
+    半选主要用在列表全选的情况, 全选的时候是checked状态, 选择了某几个但没有全选是半选状态
+  </div>
+</section>

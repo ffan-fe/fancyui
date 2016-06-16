@@ -32,7 +32,7 @@ let componentDefine = {
      * 
      * @type {Boolean}
      */
-    halfChecked: '<',
+    halfChecked: '=?halfChecked',
     /**
      * like ng-true-value
      * 
