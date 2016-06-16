@@ -13,6 +13,8 @@ export default class CheckboxTextController {
       <bp-checkbox checked="true">暴风雪</bp-checkbox>
       <bp-checkbox disabled="true">暴风雪</bp-checkbox>
       <bp-checkbox checked="true" disabled="true">暴风雪</bp-checkbox>
+      <bp-checkbox half-checked="true">暴风雪</bp-checkbox>
+      <bp-checkbox half-checked="true" disabled="true">暴风雪</bp-checkbox>
     `;
     this.part1Html = $sce.trustAsHtml(Prism.highlight(codePart1, Prism.languages.html));
 
