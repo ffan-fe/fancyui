@@ -6,7 +6,15 @@ export default class CheckboxTextController {
     'ngInject';
     this.checked1 = false;
     this.checked2 = false;
-    console.log('bindgsa');
+
+    this.groupDataList = [
+      {label: '邢老师不要脸', checked: true},
+      {label: '老师不要脸'},
+      {label: '师不要脸'},
+      {label: '不要脸'},
+      {label: '要脸', disabled: true},
+      {label: '脸'}
+    ];
 
     const codePart1 = `
       <bp-checkbox>暴风雪</bp-checkbox>
@@ -30,5 +38,32 @@ export default class CheckboxTextController {
     `;
     this.part3Html = $sce.trustAsHtml(Prism.highlight(codePart3, Prism.languages.html));
 
+    const codePart4 = `
+      <bp-checkbox-group model="vm.groupDataList"></bp-checkbox-group>
+      <p>{{vm.groupDataList}}</p>
+    `;
+    this.part4Html = $sce.trustAsHtml(Prism.highlight(codePart4, Prism.languages.html));
+
+    const codePart5 = `
+      this.groupDataList = [
+        {label: '邢老师不要脸', checked: true},
+        {label: '老师不要脸'},
+        {label: '师不要脸'},
+        {label: '不要脸'},
+        {label: '要脸', disabled: true},
+        {label: '脸'}
+      ];
+    `;
+    this.part5Html = $sce.trustAsHtml(Prism.highlight(codePart5, Prism.languages.javascript));
+
+    const codePart6 = `
+      <bp-checkbox-group model="vm.groupDataList" disabled="true"></bp-checkbox-group>
+    `;
+    this.part6Html = $sce.trustAsHtml(Prism.highlight(codePart6, Prism.languages.html));
+
+    const codePart7 = `
+      <bp-checkbox-group model="vm.groupDataList" inline="true"></bp-checkbox-group>
+    `;
+    this.part7Html = $sce.trustAsHtml(Prism.highlight(codePart7, Prism.languages.html));
   }
 }
