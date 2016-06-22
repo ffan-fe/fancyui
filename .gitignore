@@ -1,5 +1,5 @@
 .DS_Store
-
-
+.idea/
+Anaheim.iml
 .vscode/
 node_modules/

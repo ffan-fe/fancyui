@@ -17,8 +17,6 @@ import RadioStates from '../../stateenum/radio.state';
  */
 export default class Radio extends Component {
 
-
-
   /**
    * 默认状态
    */
@@ -50,19 +48,5 @@ export default class Radio extends Component {
    * @override
    */
   _launch() {}
-  /**
-   * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
-   * 所以需要监听一下, 然后调用一次
-   *
-   * @param changeObj {Object}
-   */
-  $onChanges(changeObj) {
-  }
-
-  /**
-   * 这是用户点击改变的行为
-   */
-  changeHandler() {
-  }
 
 }
