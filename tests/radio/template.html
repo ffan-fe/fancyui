@@ -1,0 +1,73 @@
+<section class="exmaple-container">
+  <h3>单一的数据类型支持如Number,String<span style="font-size: 11px;">注:vm.player默认值为 "仙道" </span></h3>
+  <bp-radio model="vm.player" value="樱木花道">樱木花道</bp-radio>
+  <bp-radio model="vm.player" value="流川枫">流川枫</bp-radio>
+  <bp-radio model="vm.player" value="仙道" disabled="true">仙道</bp-radio>
+  <bp-radio model="vm.player" value="宫城良田" >宫城良田</bp-radio>
+  <p>binding to controller value:{{vm.player}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part1Html"></code>
+    </pre>
+  </div>
+</section>
+
+
+<section class="exmaple-container">
+  <h3>复杂数据结构支持如Objec,Array,Boolean<span style="font-size: 11px;">注:vm.player默认值为 "仙道" </span></h3>
+  <bp-radio model="vm.player" value="樱木花道">樱木花道</bp-radio>
+  <bp-radio model="vm.player" value="流川枫">流川枫</bp-radio>
+  <bp-radio model="vm.player" value="仙道">仙道</bp-radio>
+  <bp-radio model="vm.player" complex="vm.specialInfo" value="宫城良田">宫城良田</bp-radio>
+  <p>binding to controller value:{{vm.player}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part2Html"></code>
+    </pre>
+  </div>
+</section>
+
+<section>
+  <h2>说明</h2>
+  <div class="doc-container">
+    当 value 和 complex 指令同时拥有时,complex指令值会覆盖掉value值
+  </div>
+</section>
+
+<section>
+  <h2>Radio Component说明文档</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>指令名</th>
+      <th>类型</th>
+      <th>说明</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>disabled</td>
+      <td>Boolean</td>
+      <td>是否禁用状态, 单向绑定</td>
+      <td>true | false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>String,Number</td>
+      <td>当选定后value的值会绑定到ngModel上,只支持String,Number类型值,如果需要自持Array,Object值,请使用complex</td>
+      <td>String,Number类型值</td>
+      <td>Undefined</td>
+    </tr>
+    <tr>
+      <td>complex</td>
+      <td>Array,Object,Boolean</td>
+      <td>当选中后complex值会绑定到ngModel上,如果value指令和complex指令同时被设置值后,complex值会覆盖value值</td>
+      <td>Array,Object,Boolean类型值</td>
+      <td>Undefined</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
