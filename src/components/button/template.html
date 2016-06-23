@@ -1,0 +1,8 @@
+<button 
+  type="{{controller.htmlType}}" 
+  ng-class="controller.className"
+  ng-click="controller.innerClick()"
+  ng-disabled="controller.state.disabled">
+    <bp-icon ng-if="controller.iconType" type="controller.iconType"></bp-icon>
+    <span ng-transclude></span>
+  </button>
