@@ -10,10 +10,9 @@ import ButtonTest from './button';
 import CheckboxTest from './checkbox';
 import RadioTest from './radio';
 
-  
+
 angular.module('app', [
   ButtonTest.name, 
   CheckboxTest.name,
   RadioTest.name
-  
 ]);
