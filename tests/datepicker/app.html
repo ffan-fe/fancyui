@@ -4,20 +4,46 @@
     angular <br>
     bp-utils
   </pre>
+  <h2>示例：</h2>
+  <p>1.最小时间为当前时间，配置对象datepicker-options：</p>
   <section>
-    <bp-datepicker ng-model="vm.time"
-                   datepicker-options="vm.datepickerOption"></bp-datepicker>
-  </section>
-  <h5>disable状态</h5>
-  <section>
-    <bp-datepicker ng-model="vm.time"
-                   disabled="true"
-                   datepicker-options="vm.datepickerOption"></bp-datepicker>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.codeConfigHtml"></code>
+      </pre>
   </section>
   <section>
       <pre>
         <code class="language-html" ng-bind-html="vm.part1Html"></code>
       </pre>
+  </section>
+  <section>
+    <bp-datepicker model="vm.time"
+                   datepicker-options="vm.datepickerOption"></bp-datepicker>
+  </section>
+  vm.time：{{vm.time}}
+  <hr/>
+  <p>2.显示格式和保存格式都为YYYY-MM-DD HH:mm:ss，配置对象datepicker-options：</p>
+  <section>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.codeConfigHtmlSame"></code>
+      </pre>
+  </section>
+  <section>
+    <bp-datepicker model="vm.timeSame"
+                   datepicker-options="vm.datepickerOptionSame"></bp-datepicker>
+  </section>
+  vm.time：{{vm.timeSame}}
+  <hr/>
+  <p>3.disable状态</p>
+  <section>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.part2Html"></code>
+      </pre>
+  </section>
+  <section>
+    <bp-datepicker model="vm.time"
+                   disabled="true"
+                   datepicker-options="vm.datepickerOption"></bp-datepicker>
   </section>
   <section>
     <h2>说明文档:</h2>
@@ -36,7 +62,7 @@
         <td>是否禁用状态, 单向绑定，默认false</td>
       </tr>
       <tr>
-        <td>ng-model</td>
+        <td>model</td>
         <td>expression</td>
         <td>双向绑定的model</td>
       </tr>
@@ -117,11 +143,7 @@
       </tr>
       <tr>
         <td>showSeconds</td>
-        <td>(Default: false) - Show seconds input.</td>
-      </tr>
-      <tr>
-        <td>showSeconds</td>
-        <td>(Default: false) - Show seconds input.</td>
+        <td>(Default: true) - Show seconds input.</td>
       </tr>
       <tr>
         <td>viewFormat</td>

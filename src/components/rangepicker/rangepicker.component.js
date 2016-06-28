@@ -4,7 +4,6 @@
 
 import controller from './rangepicker';
 import template from './template.html';
-import './rangepicker.less'
 
 'use strict';
 

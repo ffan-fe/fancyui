@@ -9,7 +9,7 @@ import './datepicker.less';
 let datepickerComponent = {
   restrict: 'E',
   bindings: {
-    ngModel: '=',
+    ngModel: '=model',
     datepickerOptions: '<',
     disabled: '<'
   },
