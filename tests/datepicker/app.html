@@ -1,0 +1,159 @@
+<div class="content-container">
+  <h2>requirements</h2>
+  <pre>
+    angular <br>
+    bp-utils
+  </pre>
+  <h2>示例：</h2>
+  <p>1.最小时间为当前时间，配置对象datepicker-options：</p>
+  <section>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.codeConfigHtml"></code>
+      </pre>
+  </section>
+  <section>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.part1Html"></code>
+      </pre>
+  </section>
+  <section>
+    <bp-datepicker model="vm.time"
+                   datepicker-options="vm.datepickerOption"></bp-datepicker>
+  </section>
+  vm.time：{{vm.time}}
+  <hr/>
+  <p>2.显示格式和保存格式都为YYYY-MM-DD HH:mm:ss，配置对象datepicker-options：</p>
+  <section>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.codeConfigHtmlSame"></code>
+      </pre>
+  </section>
+  <section>
+    <bp-datepicker model="vm.timeSame"
+                   datepicker-options="vm.datepickerOptionSame"></bp-datepicker>
+  </section>
+  vm.time：{{vm.timeSame}}
+  <hr/>
+  <p>3.disable状态</p>
+  <section>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.part2Html"></code>
+      </pre>
+  </section>
+  <section>
+    <bp-datepicker model="vm.time"
+                   disabled="true"
+                   datepicker-options="vm.datepickerOption"></bp-datepicker>
+  </section>
+  <section>
+    <h2>说明文档:</h2>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>指令名</th>
+        <th>类型</th>
+        <th>说明</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>disabled</td>
+        <td>Boolean</td>
+        <td>是否禁用状态, 单向绑定，默认false</td>
+      </tr>
+      <tr>
+        <td>model</td>
+        <td>expression</td>
+        <td>双向绑定的model</td>
+      </tr>
+      <tr>
+        <td>datepicker-options</td>
+        <td>object</td>
+        <td>单项绑定的配置对象</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+  <section>
+    <h2>配置对象支持:</h2>
+    <div class="text-muted">datepicker-options 传入datepicker配置对象</div>
+    <table class="table table-bordered">
+      <thead>
+      <tr>
+        <th>键名</th>
+        <th>说明</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>customClass</td>
+        <td>({date: date, mode: mode}) - An optional expression to add classes based on passing an object with date and current mode properties.</td>
+      </tr>
+      <tr>
+        <td>dateDisabled</td>
+        <td>({date: date, mode: mode}) - An optional expression to disable visible options based on passing an object with date and current mode properties.</td>
+      </tr>
+      <tr>
+        <td>datepickerMode</td>
+        <td>(Default: day) - Current mode of the datepicker (day|month|year). Can be used to initialize the datepicker in a specific mode.</td>
+      </tr>
+      <tr>
+        <td>formatDay</td>
+        <td>(Default: dd) - Format of day in month.</td>
+      </tr>
+      <tr>
+        <td>formatMonth</td>
+        <td>(Default: MMMM) - Format of month in year.</td>
+      </tr>
+      <tr>
+        <td>formatYear</td>
+        <td>(Default: yyyy) - Format of year in year range.</td>
+      </tr>
+      <tr>
+        <td>initDate</td>
+        <td>(Default: now) - The initial date view when no model value is specified.</td>
+      </tr>
+      <tr>
+        <td>maxDate</td>
+        <td>(Default: null) - Defines the maximum available date. Requires a Javascript Date object.</td>
+      </tr>
+      <tr>
+        <td>maxMode</td>
+        <td>(Default: year) - Sets an upper limit for mode.</td>
+      </tr>
+      <tr>
+        <td>minDate</td>
+        <td>(Default: null) - Defines the minimum available date. Requires a Javascript Date object.</td>
+      </tr>
+      <tr>
+        <td>minMode</td>
+        <td>(Default: day) - Sets a lower limit for mode.</td>
+      </tr>
+      <tr>
+        <td>shortcutPropagation</td>
+        <td>(Default: false) - An option to disable the propagation of the keydown event.</td>
+      </tr>
+      <tr>
+        <td>minuteStep</td>
+        <td>(Default: 1) - Number of minutes to increase or decrease when using a button.</td>
+      </tr>
+      <tr>
+        <td>secondStep</td>
+        <td>(Default: 1) - Number of seconds to increase or decrease when using a button.</td>
+      </tr>
+      <tr>
+        <td>showSeconds</td>
+        <td>(Default: true) - Show seconds input.</td>
+      </tr>
+      <tr>
+        <td>viewFormat</td>
+        <td>日期的显示格式 默认: 'YYYY-MM-DD HH:mm:ss'；</td>
+      </tr>
+      <tr>
+        <td>modelFormat</td>
+        <td>日期的保存格式 默认: 'x'</td>
+      </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

@@ -1,4 +1,5 @@
-import angular from 'angular';
+import Datepicker from './src/components/datepicker'
+import Rangepicker from './src/components/rangepicker'
 
 import Button from './src/components/button/';
 import Icon from './src/components/icon/';
