@@ -7,9 +7,12 @@ import Checkbox from './src/components/checkbox';
 
 'use strict';
 
-export default angular.module('Components', [
-  Button,
-  Icon,
-  Checkbox
-]);
+// export default angular.module('Components', [
+//   Button,
+//   Icon,
+//   Checkbox
+// ]);
 
+export let bpButton = Button;
+export let bpIcon = Icon;
+export let bpCheckbox = Checkbox;

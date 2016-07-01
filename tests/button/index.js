@@ -1,15 +1,20 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-import Button from '../../src/components/button';
+// import Button from '../../src/components/button';
 import template from './template.html';
 import controller from './controller';
+
+import {bpButton} from '../../dist/anaheim';
+
+
+// console.log('222', bpButton.name);
 
 
 
 export default angular.module('buttonTest', [
   uiRouter,
-  Button.name
+  bpButton.name
 ])
   .config(($stateProvider) => {
     'ngInject';

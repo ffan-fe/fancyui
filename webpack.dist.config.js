@@ -4,9 +4,14 @@ var webpack = require('webpack');
 module.exports = {
   entry: path.resolve(__dirname, 'index.js'),
   output: {
-    filename: '[name].bundle.js',
+    filename: 'anaheim.js',
     publicPath: '',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    libraryTarget: 'umd'
+  },
+  externals: {
+    'jquery': true,
+    'angular': true
   },
   module: {
     loaders: [
