@@ -49,4 +49,18 @@ export default class Radio extends Component {
    */
   _launch() {}
 
+  /**
+   * radio状态 是否被选中
+   *因为初始值 model value complex都为undefined
+   * 加了判断是为了规避初始不设置任何值情况为选中的状态
+   */
+  isChecked() {
+    if(this.model && (this.value || this.complex)) {
+      if (this.model === this.value || this.model === this.complex) {
+        return true;
+      }
+    }
+    return false;
+  }
+
 }

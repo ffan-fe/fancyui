@@ -18,4 +18,3 @@ angular.module('app', [
   Datepicker.name,
   RangepickerTest.name
 ]);
-

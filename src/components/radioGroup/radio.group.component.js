@@ -2,9 +2,9 @@
  * Radio component define
  */
 
-import controller from './radio';
+import controller from './radio.group';
 import template from './template.html';
-import './radio.less';
+import './radio.group.less';
 
 'use strict';
 
@@ -16,17 +16,9 @@ let componentDefine = {
   bindings: {
     /**
      * 是否被禁用
-     *
      * @type {Boolean}
      */
     disabled: '<',
-
-    /**
-     * 选中后的值
-     *
-     * @type {String}
-     */
-    value: '@',
 
     /**
      * model
@@ -35,10 +27,18 @@ let componentDefine = {
     model: '=?model',
 
     /**
-     *因为value只能提供String  复杂结构数据类型使用 complex指令
-     * @type {anyObject}
+     * list
+     * @type {String}
      */
-    complex: '=?complex'
+    list: '=?list',
+
+    /**
+     * Is display li to inline
+     *
+     * @type {Boolean}
+     */
+    inline: '=?inline'
+
   }
 };
 
