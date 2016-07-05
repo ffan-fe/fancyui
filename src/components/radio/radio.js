@@ -31,7 +31,7 @@ export default class Radio extends Component {
    * @override 
    */
   _initDefaultValue() {
-    this.htmlID = this.htmlID || 'radio' + Math.floor(Math.random() * 1000000);
+    this.htmlID = this.htmlID || 'radio_' + Math.random().toString(36).substr(2, 9);
   }
 
   /**

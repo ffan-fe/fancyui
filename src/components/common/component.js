@@ -67,8 +67,8 @@ export default class Component {
   $onInit() {
     this._initDefaultState();
     this._initDefaultValue();
-    this._launch();
     this._render();
+    this._launch();
     this._init = true;
   }
   /**

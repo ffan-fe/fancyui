@@ -33,7 +33,7 @@ export default class Checkbox extends Component {
    * @override 
    */
   _initDefaultValue() {
-    this.htmlID = this.htmlID || 'checkbox' + Math.floor(Math.random() * 1000000);
+    this.htmlID = this.htmlID || 'checkbox_' + Math.random().toString(36).substr(2, 9);
     this.trueValue = this.trueValue ? this.trueValue : true;
     this.falseValue = this.falseValue? this.falseValue : false;
   }
