@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.bpCheckbox = exports.bpIcon = exports.bpButton = undefined;
+	exports.RadioboxGroup = exports.Radiobox = exports.Checkbox = exports.Icon = exports.Button = undefined;
 
 	var _datepicker = __webpack_require__(1);
 
@@ -81,19 +81,25 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 
+	var _radio = __webpack_require__(37);
+
+	var _radio2 = _interopRequireDefault(_radio);
+
+	var _radioGroup = __webpack_require__(44);
+
+	var _radioGroup2 = _interopRequireDefault(_radioGroup);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict';
 
-	// export default angular.module('Components', [
-	//   Button,
-	//   Icon,
-	//   Checkbox
-	// ]);
-
-	var bpButton = exports.bpButton = _button2.default;
-	var bpIcon = exports.bpIcon = _icon2.default;
-	var bpCheckbox = exports.bpCheckbox = _checkbox2.default;
+	var Button = exports.Button = _button2.default;
+	var Icon = exports.Icon = _icon2.default;
+	var Checkbox = exports.Checkbox = _checkbox2.default;
+	var Radiobox = exports.Radiobox = _radio2.default;
+	var RadioboxGroup = exports.RadioboxGroup = _radioGroup2.default;
+	// export let Datepicker = Datepicker;
+	// export let DatepRangepickericker = Rangepicker;
 
 /***/ },
 /* 1 */
@@ -377,8 +383,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function $onInit() {
 	      this._initDefaultState();
 	      this._initDefaultValue();
-	      this._launch();
 	      this._render();
+	      this._launch();
 	      this._init = true;
 	    }
 	    /**
@@ -1708,7 +1714,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: '_initDefaultValue',
 	    value: function _initDefaultValue() {
-	      this.htmlID = this.htmlID || 'checkbox' + Math.floor(Math.random() * 1000000);
+	      this.htmlID = this.htmlID || 'checkbox_' + Math.random().toString(36).substr(2, 9);
 	      this.trueValue = this.trueValue ? this.trueValue : true;
 	      this.falseValue = this.falseValue ? this.falseValue : false;
 	    }
@@ -1998,6 +2004,501 @@ return /******/ (function(modules) { // webpackBootstrap
 /***/ function(module, exports) {
 
 	module.exports = "<ul class=\"list-unstyled\" \n  ng-disabled=\"controller.disabled\"\n  ng-class=\"controller.ulClassName\">\n  <li ng-repeat=\"item in controller.model track by $index\">\n    <bp-checkbox\n      disabled=\"item.disabled || controller.disabled\"\n      checked=\"item.checked\"\n      half-checked=\"item.halfChecked\"\n    >{{item.label}}</bp-checkbox>\n  </li>\n</ul>"
+
+/***/ },
+/* 37 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(7);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _radio = __webpack_require__(38);
+
+	var _radio2 = _interopRequireDefault(_radio);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Radio component entry
+	 * @author name
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.module('Radio', []).component('bpRadio', _radio2.default);
+
+/***/ },
+/* 38 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _radio = __webpack_require__(39);
+
+	var _radio2 = _interopRequireDefault(_radio);
+
+	var _template = __webpack_require__(41);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	__webpack_require__(42);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	'use strict'; /**
+	               * Radio component define
+	               */
+
+	var componentDefine = {
+	  template: _template2.default,
+	  controller: _radio2.default,
+	  controllerAs: 'controller',
+	  transclude: true,
+	  bindings: {
+	    /**
+	     * 是否被禁用
+	     *
+	     * @type {Boolean}
+	     */
+	    disabled: '<',
+
+	    /**
+	     * 选中后的值
+	     *
+	     * @type {String}
+	     */
+	    value: '@',
+
+	    /**
+	     * model
+	     * @type {String}
+	     */
+	    model: '=?model',
+
+	    /**
+	     *因为value只能提供String  复杂结构数据类型使用 complex指令
+	     * @type {anyObject}
+	     */
+	    complex: '=?complex'
+	  }
+	};
+
+	exports.default = componentDefine;
+
+/***/ },
+/* 39 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _component = __webpack_require__(6);
+
+	var _component2 = _interopRequireDefault(_component);
+
+	var _classnames = __webpack_require__(20);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _radio = __webpack_require__(40);
+
+	var _radio2 = _interopRequireDefault(_radio);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Radio
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	'use strict';
+
+	/**
+	 * Radio component
+	 * 
+	 * @export
+	 * @class Radio
+	 * @extends {Component}
+	 */
+
+	var Radio = function (_Component) {
+	  _inherits(Radio, _Component);
+
+	  function Radio() {
+	    _classCallCheck(this, Radio);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Radio).apply(this, arguments));
+	  }
+
+	  _createClass(Radio, [{
+	    key: '_initDefaultState',
+
+
+	    /**
+	     * 默认状态
+	     */
+	    value: function _initDefaultState() {
+	      this._state = _defineProperty({}, '' + _radio2.default.DISABLED, this.disabled);
+	    }
+
+	    /**
+	     * 默认值
+	     * @override 
+	     */
+
+	  }, {
+	    key: '_initDefaultValue',
+	    value: function _initDefaultValue() {
+	      this.htmlID = this.htmlID || 'radio_' + Math.random().toString(36).substr(2, 9);
+	    }
+
+	    /**
+	     * 样式集合
+	     * @override
+	     */
+
+	  }, {
+	    key: '_createClassName',
+	    value: function _createClassName() {
+	      this.className = (0, _classnames2.default)({
+	        'disabled': this._state[_radio2.default.DISABLED]
+	      });
+	    }
+
+	    /**
+	     * @override
+	     */
+
+	  }, {
+	    key: '_launch',
+	    value: function _launch() {}
+
+	    /**
+	     * radio状态 是否被选中
+	     *因为初始值 model value complex都为undefined
+	     * 加了判断是为了规避初始不设置任何值情况为选中的状态
+	     */
+
+	  }, {
+	    key: 'isChecked',
+	    value: function isChecked() {
+	      if (this.model && (this.value || this.complex)) {
+	        if (this.model === this.value || this.model === this.complex) {
+	          return true;
+	        }
+	      }
+	      return false;
+	    }
+	  }]);
+
+	  return Radio;
+	}(_component2.default);
+
+	exports.default = Radio;
+
+/***/ },
+/* 40 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(7);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _common = __webpack_require__(8);
+
+	var _common2 = _interopRequireDefault(_common);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Checkbox states enumeration
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.extend({}, _common2.default);
+
+/***/ },
+/* 41 */
+/***/ function(module, exports) {
+
+	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"radio-container\"\n       ng-class=\"[controller.className, {checked: controller.isChecked()}]\">\n      <span class=\"radio-inner\"></span>\n      <input type=\"radio\" id=\"{{controller.htmlID}}\"\n              ng-value=\"controller.complex || controller.value\"\n              ng-disabled=\"controller.disabled\"\n              ng-model=\"controller.model\"\n      />\n      <span ng-transclude></span>\n</label>\n"
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(43);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radio.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radio.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(11)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".radio-container {\n  font-size: 12px;\n  white-space: nowrap;\n  outline: none;\n  display: inline-block;\n  position: relative;\n  line-height: 1;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.radio-container input[type=radio] {\n  position: absolute;\n  left: 0;\n  z-index: 1;\n  cursor: pointer;\n  opacity: 0;\n  top: 0;\n  bottom: 0;\n  right: 0;\n}\n.radio-container .radio-inner {\n  position: relative;\n  top: 3px;\n  left: 0;\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border-radius: 14px;\n  border: 1px solid #d9d9d9;\n  background-color: #fff;\n}\n.radio-container .radio-inner .radio-inner,\n.radio-container .radio-inner .radio-inner:after {\n  -webkit-transition: all 0.2s cubic-bezier(0.78, 0.14, 0.15, 0.86);\n  transition: all 0.2s cubic-bezier(0.78, 0.14, 0.15, 0.86);\n}\n.radio-container .radio-inner:after {\n  position: absolute;\n  width: 6px;\n  height: 6px;\n  left: 3px;\n  top: 3px;\n  border-radius: 6px;\n  display: table;\n  border-top: 0;\n  border-left: 0;\n  content: ' ';\n  background-color: #58b4e9;\n  opacity: 0;\n  -webkit-transform: scale(0);\n  transform: scale(0);\n}\n.radio-container.checked .radio-inner {\n  border-color: #d9d9d9;\n}\n.radio-container.checked .radio-inner:after {\n  -webkit-transform: scale(1);\n  transform: scale(1);\n  opacity: 1;\n  -webkit-transition: all 0.2s cubic-bezier(0.78, 0.14, 0.15, 0.86);\n  transition: all 0.2s cubic-bezier(0.78, 0.14, 0.15, 0.86);\n}\n.radio-container.disabled .radio-inner {\n  border-color: #d9d9d9;\n  background-color: #f3f3f3;\n}\n.radio-container.disabled .radio-inner:hover {\n  border-color: #d9d9d9;\n}\n.radio-container.disabled .radio-inner:after {\n  background-color: #ccc;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(7);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _radioGroup = __webpack_require__(45);
+
+	var _radioGroup2 = _interopRequireDefault(_radioGroup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Radio component entry
+	 * @author name
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.module('RadioGroup', []).component('bpRadioGroup', _radioGroup2.default);
+
+/***/ },
+/* 45 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _radio = __webpack_require__(46);
+
+	var _radio2 = _interopRequireDefault(_radio);
+
+	var _template = __webpack_require__(47);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	__webpack_require__(48);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	'use strict'; /**
+	               * Radio component define
+	               */
+
+	var componentDefine = {
+	  template: _template2.default,
+	  controller: _radio2.default,
+	  controllerAs: 'controller',
+	  transclude: true,
+	  bindings: {
+	    /**
+	     * 是否被禁用
+	     * @type {Boolean}
+	     */
+	    disabled: '<',
+
+	    /**
+	     * model
+	     * @type {String}
+	     */
+	    model: '=?model',
+
+	    /**
+	     * list
+	     * @type {String}
+	     */
+	    list: '=?list',
+
+	    /**
+	     * Is display li to inline
+	     *
+	     * @type {Boolean}
+	     */
+	    inline: '=?inline'
+
+	  }
+	};
+
+	exports.default = componentDefine;
+
+/***/ },
+/* 46 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _component = __webpack_require__(6);
+
+	var _component2 = _interopRequireDefault(_component);
+
+	var _classnames = __webpack_require__(20);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * RadioGroup
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	'use strict';
+
+	/**
+	 * RadioGroup component
+	 * 
+	 * @export
+	 * @class RadioGroup
+	 * @extends {Component}
+	 */
+
+	var RadioGroup = function (_Component) {
+	  _inherits(RadioGroup, _Component);
+
+	  function RadioGroup() {
+	    _classCallCheck(this, RadioGroup);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(RadioGroup).apply(this, arguments));
+	  }
+
+	  _createClass(RadioGroup, [{
+	    key: '_initDefaultValue',
+
+
+	    /**
+	     * @override
+	     */
+	    value: function _initDefaultValue() {
+	      this.list = this.list && angular.isArray(this.list) ? this.list : [];
+	    }
+	  }, {
+	    key: '_createClassName',
+	    value: function _createClassName() {}
+	  }, {
+	    key: '_launch',
+	    value: function _launch() {}
+	  }]);
+
+	  return RadioGroup;
+	}(_component2.default);
+
+	exports.default = RadioGroup;
+
+/***/ },
+/* 47 */
+/***/ function(module, exports) {
+
+	module.exports = "<ul class=\"list-unstyled\"\n    ng-disabled=\"controller.disabled\"\n    ng-class=\"{'list-inline': controller.inline}\">\n      <li ng-repeat=\"item in controller.list track by $index\">\n            <bp-radio\n                disabled=\"item.disabled || controller.disabled\"\n                model=\"controller.model\"\n                value=\"{{item.value}}\"\n                complex=\"item.complex\"\n            >{{item.label}}</bp-radio>\n      </li>\n</ul>"
+
+/***/ },
+/* 48 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(49);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(12)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radio.group.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radio.group.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 49 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(11)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ])

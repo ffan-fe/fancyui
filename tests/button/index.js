@@ -5,7 +5,7 @@ import uiRouter from 'angular-ui-router';
 import template from './template.html';
 import controller from './controller';
 
-import {bpButton} from '../../dist/anaheim';
+import {Button} from '../../dist/anaheim';
 
 
 // console.log('222', bpButton.name);
@@ -14,7 +14,7 @@ import {bpButton} from '../../dist/anaheim';
 
 export default angular.module('buttonTest', [
   uiRouter,
-  bpButton.name
+  Button.name
 ])
   .config(($stateProvider) => {
     'ngInject';

@@ -14,7 +14,7 @@ export let Icon = ffanIcon;
 export let Checkbox = ffanCheckbox;
 export let Radiobox = ffanRadiobox;
 export let RadioboxGroup = ffanRadioGroup;
-export let Datepicker = Datepicker;
-export let DatepRangepickericker = Rangepicker;
+// export let Datepicker = Datepicker;
+// export let DatepRangepickericker = Rangepicker;
 
 
