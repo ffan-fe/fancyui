@@ -1,0 +1,52 @@
+<div class="commercial">
+  <div class="commercial-left">
+    <div class="commercial-left-stores">
+      <span>{{controller}}</span>
+      <input type="text" class="form-control" placeholder="{{controller}}"
+             ng-change="vm.searchStore()" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
+             ng-model="vm.filterStore.storeName"  ng-disabled="vm.storeinfo.type == 'output-detail'">
+    </div>
+    <div class="commercial-left-select">
+      <select  name="multipleSelect" class="form-control"  multiple
+               ng-options="option.storeViewName for option in vm.stores track by option.storeId"
+               ng-disabled="vm.storeinfo.type == 'output-detail'"
+               ng-model="vm.curSelectedStores"></select>
+    </div>
+  </div>
+  <div class="commercial-center">
+    <div class="commercial-center-btn">
+      <div class="commercial-center-btn-add">
+        <button type="button" class="btn bp-btn-primary" data-ng-click="vm.addStores()" ng-disabled="(vm.curSelectedStores).length==0 || vm.storeinfo.type == 'output-detail'">
+          添加
+        </button>
+        <button type="button" class="btn bp-btn-primary" data-ng-click="vm.addAllStores()" ng-disabled="(vm.stores).length==0 || vm.storeinfo.type == 'output-detail'">
+          添加全部
+        </button>
+      </div>
+      <div class="commercial-center-btn-del">
+        <button type="button" class="btn bp-btn-default" data-ng-click="vm.delStores()" ng-disabled="(vm.selectedStores).length==0 || vm.storeinfo.type == 'output-detail'">
+          删除
+        </button>
+        <button type="button" class="btn bp-btn-default" data-ng-click="vm.delAllStores()" ng-disabled="(vm.allSelectedStores).length==0 || vm.storeinfo.type == 'output-detail'">
+          删除全部
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="commercial-right">
+    <div class="commercial-right-wordcount">
+      <p><span>{{controller}}</span></p>
+      <span>已选择{{(vm.allSelectedStores).length || 0}}个</span>
+      <input type="text" class="form-control" placeholder="请输入门店名称"
+             ng-change="vm.searchStore()" ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
+             ng-model="vm.filterStore.storeName"  ng-disabled="vm.storeinfo.type == 'output-detail'">
+    </div>
+    <div class="commercial-right-stores">
+      <select  name="multipleSelect" class="form-control"  multiple ng-disabled="vm.storeinfo.type == 'output-detail'"
+               ng-options="option.storeViewName for option in vm.allSelectedStores track by option.storeId"
+               ng-model="vm.selectedStores"></select>
+    </div>
+  </div>
+
+</div>
