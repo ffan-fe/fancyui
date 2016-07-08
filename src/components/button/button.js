@@ -1,5 +1,7 @@
 /**
  * Button component controller
+ * @module src/components/button/
+ * @author fengpeng
  */
 
 import Component from '../common/component';
@@ -17,7 +19,8 @@ import ButtonState from '../../stateenum/button.state';
  */
 export default class Button extends Component {
   /**
-   * @override 
+   * @override
+   * @protected
    */
   _initDefaultState() {
     this._state = {
@@ -26,33 +29,61 @@ export default class Button extends Component {
     };
   }
   /**
-   * @override 
+   * @override
+   * @protected
    */
   _initDefaultValue() {
+    /**
+     * 确定模板的class属性值
+     * 
+     * @type {String}
+     * @protected 
+     */
+    this.className = '';
+    /**
+     * Component binding value, 用来确定模板中class的属性值 `bp-btn-{type}`, 默认值是 `primary`
+     * 
+     * @type {String}
+     * @protected
+     */
     this.type = this.type || 'primary';
-    this.prefixCls = this.prefixCls || 'bp-btn';
+    /**
+     * Component binding value, html中的type属性.真
+     * 
+     * @type {String}
+     * @protected 
+     */
     this.htmlType = this.htmlType || 'button';
+    /**
+     * Component binding value, 在按钮文字的前方添加icon
+     * 
+     * @type {String}
+     * @protected 
+     */
     this.iconType = this.icon || '';
   }
   /**
-   * @override 
+   * @override
+   * @protected
    */
   _createClassName() {
     this.className = classNames({
       'btn': true,
       'bp-btn': true,
       [`btn-${this.size}`]: !!this.size,
-      [`${this.prefixCls}-${this.type}`]: true,
+      [`bp-btn-${this.type}`]: true,
       'loading-btn': this._state[ButtonState.LOADING]
     });
   }
   /**
    * @override 
+   * @protected
    */
   _launch() {}
   /**
    * 比超类多了loading状态
    * @override 
+   * @protected
    */
   _render() {
     console.log('_render', this._state);
@@ -67,14 +98,17 @@ export default class Button extends Component {
     super._render();
   }
   /**
-   * 包装一个click处理器
+   * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
    * 
-   * @public 
+   * @private 
    */
   innerClick() {
     this.click && typeof this.click === 'function' && this.click({button: this});
   }
   /**
+   * 这里主要是会有Disable值的外部变化
+   * 
+   * @protected
    * @param {Object} changeObj
    */
   $onChanges(changeObj) {

@@ -22,3 +22,9 @@
 
 `gulp build` 生成文件到dist目录
 
+##### 文档
+
+文档生成器是[esdoc](https://esdoc.org/)
+
+执行 ` esdoc -c esdoc.json`
+

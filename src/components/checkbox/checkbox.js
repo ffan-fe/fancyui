@@ -1,5 +1,6 @@
 /**
  * Checkbox component controller
+ * @author fengpeng
  */
 
 import Component from '../common/component';
@@ -10,14 +11,18 @@ import CheckboxStates from '../../stateenum/checkbox.state';
 
 /**
  * Checkbox component
+ * 这里是对<input checkbox>的封装, 唯一需要说明的是半选状态, 是表现一个列表, 选中了某几项, 却又没有全选的状态
  * 
  * @export
  * @class Checkbox
  * @extends {Component}
+ * @example 
+ *  <bp-checkbox checked="true">暴风雪</bp-checkbox>
  */
 export default class Checkbox extends Component {
   /**
-   * @override
+   * @override 
+   * @protected 
    */
   _initDefaultState() {
     if (this.checked) {
@@ -30,7 +35,8 @@ export default class Checkbox extends Component {
     };
   }
   /**
-   * @override 
+   * @override
+   * @protected 
    */
   _initDefaultValue() {
     this.htmlID = this.htmlID || 'checkbox_' + Math.random().toString(36).substr(2, 9);
@@ -39,6 +45,7 @@ export default class Checkbox extends Component {
   }
   /**
    * @override 
+   * @protected 
    */
   _createClassName() {
     this.className = classNames({
@@ -49,12 +56,14 @@ export default class Checkbox extends Component {
   }
   /**
    * @override 
+   * @protected 
    */
   _launch() {}
   /**
    * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
    * 所以需要监听一下, 然后调用一次
    * 
+   * @protected 
    * @param changeObj {Object}
    */
   $onChanges(changeObj) {
@@ -84,7 +93,9 @@ export default class Checkbox extends Component {
     this._render();
   }
   /**
-   * 这是用户点击改变的行为
+   * 用户点击而改变状态的处理器, 是在模板里面的
+   * 
+   * @private 
    */
   changeHandler() {
     if (this.checked == this.trueValue) {

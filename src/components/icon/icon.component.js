@@ -7,18 +7,17 @@ import template from './template.html';
 
 'use strict';
 
-let componentDefine = {
+/**
+ * @type {Object}
+ * @property {String} type  - binding symbol <, 类型, 也直接决定了渲染成哪个图标
+ */
+let IconComponentDefine = {
   template,
   controller,
   controllerAs: 'controller',
   bindings: {
-    /**
-     * 类型, 也直接决定了渲染成哪个图标
-     * 
-     * @type {string}
-     */
     type: '<'
   }
 }
 
-export default componentDefine;
+export default IconComponentDefine;

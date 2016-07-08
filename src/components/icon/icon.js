@@ -1,10 +1,10 @@
 /**
  * Icon
+ * @author fengpeng
  */
 
 import Component from '../common/component';
 import classNames from 'classnames';
-
 
 'use strict';
 
@@ -18,10 +18,12 @@ import classNames from 'classnames';
 export default class Icon extends Component {
   /**
    * @override 
+   * @protected 
    */
   _initDefaultValue() {}
   /**
    * @override 
+   * @protected 
    */
   _createClassName() {
     // todo: 暂时还没有loading的图标, 有了这个逻辑就可以干掉了
@@ -35,6 +37,7 @@ export default class Icon extends Component {
   }
   /**
    * @override 
+   * @protected 
    */
   _launch() {}
   /**

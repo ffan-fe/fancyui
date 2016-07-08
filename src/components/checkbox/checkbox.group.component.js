@@ -1,32 +1,26 @@
 /**
  * checkbox group component define
+ * @author fengpeng
  */
 
 import controller from './checkbox.group';
 import template from './checkbox.group.template.html';
 
-export default {
+/**
+ * @type {Object}
+ * @property {Boolean}          disabled        - binding symbol is <, 禁用状态, 在组上禁用则全部禁用, 实际上是对ng-disabled的包装
+ * @property {Array.<Object>}   model           - binding symbol is =?, 数据源, 由于是双向绑定的逻辑会去修改数据源上的checked属性
+ * @property {Boolean}          inline          - binding symbol is @, 是否横着排
+ */
+let CheckboxGroupComponentDefine =  {
   template,
   controller,
   controllerAs: 'controller',
   bindings: {
-    /**
-     * 是否禁用, 在组上禁用就全部禁用了
-     * 
-     * @type {Boolean}
-     */
     disabled: '<',
-    /**
-     * 数据源, 逻辑上会去直接修改数据源上的checked属性
-     * 
-     * @type {Array.<Object>}
-     */
-    model: '=model',
-    /**
-     * Is display li to inline
-     * 
-     * @type {Boolean}
-     */
+    model: '=?model',
     inline: '@'
   }
 }
+
+export default CheckboxGroupComponentDefine;
