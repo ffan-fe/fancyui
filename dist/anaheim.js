@@ -2108,7 +2108,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 37 */
 /***/ function(module, exports) {
 
-	module.exports = "<ul class=\"list-unstyled\"\n    ng-disabled=\"controller.disabled\"\n    ng-class=\"{'list-inline': controller.inline}\">\n      <li ng-repeat=\"item in controller.list track by $index\">\n            <bp-radio\n                disabled=\"item.disabled || controller.disabled\"\n                model=\"controller.model\"\n                value=\"{{item.value}}\"\n                complex=\"item.complex\"\n            >{{item.label}}</bp-radio>\n      </li>\n</ul>"
+	module.exports = "<ul class=\"list-unstyled\"\n    ng-disabled=\"controller.disabled\"\n    ng-class=\"{'list-inline': controller.inline}\">\n      <li ng-repeat=\"item in controller.list track by $index\">\n            <bp-radiobox\n                disabled=\"item.disabled || controller.disabled\"\n                model=\"controller.model\"\n                value=\"{{item.value}}\"\n                complex=\"item.complex\"\n            >{{item.label}}</bp-radiobox>\n      </li>\n</ul>"
 
 /***/ },
 /* 38 */
