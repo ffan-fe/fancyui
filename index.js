@@ -10,6 +10,7 @@ import ffanRadioboxGroup from './src/components/radiobox.group';
 export let Button = ffanButton;
 export let Icon = ffanIcon;
 export let Checkbox = ffanCheckbox;
+export let CheckboxGroup = ffanCheckboxGroup;
 export let Radiobox = ffanRadiobox;
 export let RadioboxGroup = ffanRadioboxGroup;
 

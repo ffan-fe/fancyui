@@ -1,6 +1,6 @@
 {
   "name": "anaheim",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "angular ui components",
   "main": "dist/anaheim.js",
   "scripts": {
