@@ -2,9 +2,9 @@
  * Radio component define
  */
 
-import controller from './radio';
+import controller from './radiobox';
 import template from './template.html';
-import './radio.less';
+import './radiobox.less';
 
 'use strict';
 

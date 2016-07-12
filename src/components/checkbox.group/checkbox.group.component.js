@@ -4,7 +4,7 @@
  */
 
 import controller from './checkbox.group';
-import template from './checkbox.group.template.html';
+import template from './template.html';
 
 /**
  * @type {Object}

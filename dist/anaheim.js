@@ -1,13 +1,13 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("jquery"), require("angular"));
+		module.exports = factory(require("angular"));
 	else if(typeof define === 'function' && define.amd)
-		define(["jquery", "angular"], factory);
+		define(["angular"], factory);
 	else {
-		var a = typeof exports === 'object' ? factory(require("jquery"), require("angular")) : factory(root["jquery"], root["angular"]);
+		var a = typeof exports === 'object' ? factory(require("angular")) : factory(root["angular"]);
 		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
 	}
-})(this, function(__WEBPACK_EXTERNAL_MODULE_5__, __WEBPACK_EXTERNAL_MODULE_7__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_2__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -61,33 +61,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 	exports.RadioboxGroup = exports.Radiobox = exports.Checkbox = exports.Icon = exports.Button = undefined;
 
-	var _datepicker = __webpack_require__(1);
-
-	var _datepicker2 = _interopRequireDefault(_datepicker);
-
-	var _rangepicker = __webpack_require__(13);
-
-	var _rangepicker2 = _interopRequireDefault(_rangepicker);
-
-	var _button = __webpack_require__(17);
+	var _button = __webpack_require__(1);
 
 	var _button2 = _interopRequireDefault(_button);
 
-	var _icon = __webpack_require__(23);
+	var _icon = __webpack_require__(10);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _checkbox = __webpack_require__(27);
+	var _checkbox = __webpack_require__(14);
 
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 
-	var _radio = __webpack_require__(37);
+	var _checkbox3 = __webpack_require__(23);
 
-	var _radio2 = _interopRequireDefault(_radio);
+	var _checkbox4 = _interopRequireDefault(_checkbox3);
 
-	var _radioGroup = __webpack_require__(44);
+	var _radiobox = __webpack_require__(27);
 
-	var _radioGroup2 = _interopRequireDefault(_radioGroup);
+	var _radiobox2 = _interopRequireDefault(_radiobox);
+
+	var _radiobox3 = __webpack_require__(34);
+
+	var _radiobox4 = _interopRequireDefault(_radiobox3);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -96,10 +92,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Button = exports.Button = _button2.default;
 	var Icon = exports.Icon = _icon2.default;
 	var Checkbox = exports.Checkbox = _checkbox2.default;
-	var Radiobox = exports.Radiobox = _radio2.default;
-	var RadioboxGroup = exports.RadioboxGroup = _radioGroup2.default;
-	// export let Datepicker = Datepicker;
-	// export let DatepRangepickericker = Rangepicker;
+	var Radiobox = exports.Radiobox = _radiobox2.default;
+	var RadioboxGroup = exports.RadioboxGroup = _radiobox4.default;
 
 /***/ },
 /* 1 */
@@ -111,21 +105,34 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _datepicker = __webpack_require__(2);
+	var _angular = __webpack_require__(2);
 
-	var _datepicker2 = _interopRequireDefault(_datepicker);
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _button = __webpack_require__(3);
+
+	var _button2 = _interopRequireDefault(_button);
+
+	var _icon = __webpack_require__(10);
+
+	var _icon2 = _interopRequireDefault(_icon);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-	               * Datepicker component entry
-	               * @author name
+	               * Button component entry
 	               */
 
-	exports.default = angular.module('Datepicker', []).component('bpDatepicker', _datepicker2.default);
+	exports.default = _angular2.default.module('Button', [_icon2.default.name]).component('bpButton', _button2.default);
 
 /***/ },
 /* 2 */
+/***/ function(module, exports) {
+
+	module.exports = __WEBPACK_EXTERNAL_MODULE_2__;
+
+/***/ },
+/* 3 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -134,39 +141,47 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _template = __webpack_require__(3);
+	var _button = __webpack_require__(4);
+
+	var _button2 = _interopRequireDefault(_button);
+
+	var _template = __webpack_require__(9);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	var _datepicker = __webpack_require__(4);
-
-	var _datepicker2 = _interopRequireDefault(_datepicker);
-
-	__webpack_require__(9);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var datepickerComponent = {
-	  restrict: 'E',
-	  bindings: {
-	    ngModel: '=model',
-	    datepickerOptions: '<',
-	    disabled: '<'
-	  },
+	/**
+	 * Button component define
+	 */
+
+	'use strict';
+
+	/**
+	 * @type {Object}
+	 * @property {String}   type        - binding symbol is @, 此类型针对的是样式, 比如选了primary class会出现 `bp-btn-primary`, 默认值是primary, 可选值[default, primary, danger]
+	 * @property {String}   size        - binding symbol is @, 按钮大小, 和bootstrap一样, 不填则是默认大小
+	 * @property {String}   htmlType    - binding symbol is @, 顾名思义, 代表的是原生html里的type值
+	 * @property {Boolean}  disabled    - binding symbol is <, 禁用状态
+	 * @property {String}   icon        - binding symbol is @, 按钮文字前方的icon名称, 详细见bootstrap
+	 * @property {Boolean}  click       - binding symbol is &, click 处理器
+	 */
+	var ButtonComponentDefine = {
 	  template: _template2.default,
-	  controller: _datepicker2.default,
-	  controllerAs: 'vm'
-	}; /**
-	    * Datepicker component define
-	    */
+	  controller: _button2.default,
+	  controllerAs: 'controller',
+	  transclude: true,
+	  bindings: {
+	    type: '@',
+	    size: '@',
+	    htmlType: '@',
+	    disabled: '<',
+	    icon: '@',
+	    click: '&'
+	  }
+	};
 
-	exports.default = datepickerComponent;
-
-/***/ },
-/* 3 */
-/***/ function(module, exports) {
-
-	module.exports = "<span uib-dropdown\n      auto-close=\"disabled\" is-open=\"vm.isOpen\">\n      <a href id=\"{{vm.id}}\" uib-dropdown-toggle>\n          <div class=\"input-group\">\n              <input type=\"text\"\n                     class=\"form-control\"\n                     ng-disabled=\"vm.disabled\"\n                     date-view-format=\"vm.viewFormat\"\n                     date-model-format=\"vm.modelFormat\"\n                     data-ng-model=\"vm.ngModel\">\n                      <span class=\"input-group-addon\">\n                        <i class=\"glyphicon glyphicon-calendar\"></i>\n                      </span>\n          </div>\n      </a>\n      <ul ng-if=\"!vm.disabled\" class=\"dropdown-menu\" uib-dropdown-menu aria-labelledby=\"{{vm.id}}\">\n          <div style=\"margin:0 10px\">\n              <uib-datepicker ng-model=\"vm.ngModel\"\n                              datepicker-options=\"vm.dateOptions\"\n                              date-view-format=\"vm.viewFormat\"\n                              date-model-format=\"vm.modelFormat\"\n                              custom-class=\"getDayClass(date, mode)\"></uib-datepicker>\n              <div style=\"margin: 10px 0\">\n                  <uib-timepicker show-meridian=\"false\"\n                                  show-seconds=\"vm.timeOptions.showSeconds\"\n                                  show-spinners=\"false\"\n                                  min=\"vm.timeOptions.min\"\n                                  max=\"vm.timeOptions.max\"\n                                  date-view-format=\"vm.viewFormat\"\n                                  date-model-format=\"vm.modelFormat\"\n                                  minute-step=\"vm.timeOptions.minuteStep\"\n                                  second-step=\"vm.timeOptions.secondStep\"\n                                  ng-model=\"vm.ngModel\"></uib-timepicker>\n              </div>\n          </div>\n      </ul>\n    </span>\n\n"
+	exports.default = ButtonComponentDefine;
 
 /***/ },
 /* 4 */
@@ -180,127 +195,179 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _jquery = __webpack_require__(5);
+	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
 
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	var _component = __webpack_require__(6);
+	var _component = __webpack_require__(5);
 
 	var _component2 = _interopRequireDefault(_component);
 
+	var _classnames = __webpack_require__(7);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _button = __webpack_require__(8);
+
+	var _button2 = _interopRequireDefault(_button);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Datepicker
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Button component controller
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @module src/components/button/
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
 
 	'use strict';
 
 	/**
-	 * Datepicker component
-	 *
+	 * Button component
+	 * 
 	 * @export
-	 * @class Datepicker
+	 * @class Button
 	 * @extends {Component}
 	 */
 
-	var Datepicker = function (_Component) {
-	  Datepicker.$inject = ["$element", "$scope"];
-	  _inherits(Datepicker, _Component);
+	var Button = function (_Component) {
+	  _inherits(Button, _Component);
 
-	  function Datepicker($element, $scope) {
-	    'ngInject';
+	  function Button() {
+	    _classCallCheck(this, Button);
 
-	    _classCallCheck(this, Datepicker);
-
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Datepicker).call(this));
-
-	    _this.$element = $element;
-	    _this.$scope = $scope;
-	    return _this;
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
 	  }
 
-	  /**
-	   * @override
-	   */
-
-
-	  _createClass(Datepicker, [{
-	    key: '_initDefaultValue',
-	    value: function _initDefaultValue() {
-	      var ID = function ID() {
-	        // Math.random should be unique because of its seeding algorithm.
-	        // Convert it to base 36 (numbers + letters), and grab the first 9 characters
-	        // after the decimal.
-	        return '_' + Math.random().toString(36).substr(2, 9);
-	      };
-	      this.id = ID();
-	      var DEFAULTS = {
-	        showWeeks: false,
-	        formatDayTitle: 'yyyy MMMM',
-	        initDate: new Date()
-	      };
-	      var dateOptions = Object.assign({}, DEFAULTS, this.datepickerOptions);
-	      var timeOptions = {};
-	      timeOptions.max = dateOptions.maxDate;
-	      timeOptions.min = dateOptions.minDate;
-	      timeOptions.minuteStep = dateOptions.minuteStep ? dateOptions.minuteStep : 1;
-	      delete dateOptions.minuteStep;
-	      timeOptions.secondStep = dateOptions.secondStep ? dateOptions.secondStep : 1;
-	      timeOptions.showSeconds = dateOptions.hasOwnProperty('showSeconds') ? dateOptions.showSeconds : true;
-	      this.viewFormat = dateOptions.viewFormat;
-	      delete dateOptions.viewFormat;
-	      this.modelFormat = dateOptions.modelFormat;
-	      delete dateOptions.modelFormat;
-
-	      this.dateOptions = dateOptions;
-	      this.timeOptions = timeOptions;
-	    }
+	  _createClass(Button, [{
+	    key: '_initDefaultState',
 
 	    /**
 	     * @override
+	     * @protected
+	     */
+	    value: function _initDefaultState() {
+	      this._state = _defineProperty({}, '' + _button2.default.DISABLED, this.disabled);
+	    }
+	    /**
+	     * @override
+	     * @protected
+	     */
+
+	  }, {
+	    key: '_initDefaultValue',
+	    value: function _initDefaultValue() {
+	      /**
+	       * 确定模板的class属性值
+	       * 
+	       * @type {String}
+	       * @protected 
+	       */
+	      this.className = '';
+	      /**
+	       * Component binding value, 用来确定模板中class的属性值 `bp-btn-{type}`, 默认值是 `primary`
+	       * 
+	       * @type {String}
+	       * @protected
+	       */
+	      this.type = this.type || 'primary';
+	      /**
+	       * Component binding value, html中的type属性.真
+	       * 
+	       * @type {String}
+	       * @protected 
+	       */
+	      this.htmlType = this.htmlType || 'button';
+	      /**
+	       * Component binding value, 在按钮文字的前方添加icon
+	       * 
+	       * @type {String}
+	       * @protected 
+	       */
+	      this.iconType = this.icon || '';
+	    }
+	    /**
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
 	    key: '_createClassName',
-	    value: function _createClassName() {}
+	    value: function _createClassName() {
+	      var _classNames;
 
+	      this.className = (0, _classnames2.default)((_classNames = {
+	        'btn': true,
+	        'bp-btn': true
+	      }, _defineProperty(_classNames, 'btn-' + this.size, !!this.size), _defineProperty(_classNames, 'bp-btn-' + this.type, true), _defineProperty(_classNames, 'loading-btn', this._state[_button2.default.LOADING]), _classNames));
+	    }
 	    /**
-	     * @override
+	     * @override 
+	     * @protected
 	     */
 
 	  }, {
 	    key: '_launch',
-	    value: function _launch() {
-	      var _this2 = this;
+	    value: function _launch() {}
+	    /**
+	     * 比超类多了loading状态
+	     * @override 
+	     * @protected
+	     */
 
-	      (0, _jquery2.default)('body').click(function (e) {
-	        if ((0, _jquery2.default)(e.target).has('.dropdown-toggle').length) {
-	          (0, _jquery2.default)(e.target).has(_this2.$element).length ? _this2.isOpen = false : _this2.isOpen = true;
-	          _this2.$scope.$digest();
-	        }
-	      });
+	  }, {
+	    key: '_render',
+	    value: function _render() {
+	      console.log('_render', this._state);
+	      if (this._state[_button2.default.LOADING]) {
+	        this.iconType = 'loading';
+	        this._state[_button2.default.DISABLED] = true;
+	      } else {
+	        // not loading state, icon hide or rollback
+	        this.iconType = this.icon;
+	      }
+	      // call super to update className
+	      _get(Object.getPrototypeOf(Button.prototype), '_render', this).call(this);
+	    }
+	    /**
+	     * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
+	     * 
+	     * @private 
+	     */
+
+	  }, {
+	    key: 'innerClick',
+	    value: function innerClick() {
+	      this.click && typeof this.click === 'function' && this.click({ button: this });
+	    }
+	    /**
+	     * 这里主要是会有Disable值的外部变化
+	     * 
+	     * @protected
+	     * @param {Object} changeObj
+	     */
+
+	  }, {
+	    key: '$onChanges',
+	    value: function $onChanges(changeObj) {
+	      if (!this._init) return;
+	      if (changeObj.hasOwnProperty(_button2.default.DISABLED)) {
+	        this._state[_button2.default.DISABLED] = changeObj[_button2.default.DISABLED]['currentValue'];
+	        this._render();
+	      }
 	    }
 	  }]);
 
-	  return Datepicker;
+	  return Button;
 	}(_component2.default);
 
-	exports.default = Datepicker;
+	exports.default = Button;
 
 /***/ },
 /* 5 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_5__;
-
-/***/ },
-/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -311,14 +378,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * abstract component
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author fengpeng
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
-
-	var _angular = __webpack_require__(7);
+	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _common = __webpack_require__(8);
+	var _common = __webpack_require__(6);
 
 	var _common2 = _interopRequireDefault(_common);
 
@@ -331,11 +398,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	/**
-	 * (description)
+	 * 基类, 定义了模板和一系列基础操作
 	 * 
 	 * @export
 	 * @abstract 
 	 * @class Component
+	 * @implements {IComponentState}
 	 */
 
 	var Component = function () {
@@ -354,12 +422,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	     */
 	    this._state = {};
 	    /**
-	     * 是否初始化完毕, 标识是是否执行完$onInit
+	     * 是否初始化完毕, 标识着是否执行完$onInit
 	     * 
 	     * @protected
 	     * @type {Boolean}
 	     * @default false
-	     * @see $onInit
+	     * @see {@link $onInit}
 	     */
 	    this._init = false;
 	  }
@@ -367,7 +435,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * get component state
 	   * 
 	   * @public 
-	   * @implements {IComponentState}
 	   */
 
 
@@ -375,10 +442,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: '$onInit',
 
 	    /**
-	     * template pattern
+	     * 构建模板, 在最后会将 _init设置为true
 	     * 
 	     * @protected 
 	     * @final
+	     * @see {@link _init}
 	     */
 	    value: function $onInit() {
 	      this._initDefaultState();
@@ -412,7 +480,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * 每次render都会重新计算一次样式
 	     * 
 	     * @protected 
-	     * @see this._render method
+	     * @see {@link _render}
 	     */
 
 	  }, {
@@ -452,7 +520,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * 
 	     * @public
 	     * @param state {Object} 
-	     * @implements {IComponentState}
 	     */
 	    ,
 	    set: function set(state) {
@@ -469,13 +536,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Component;
 
 /***/ },
-/* 7 */
-/***/ function(module, exports) {
-
-	module.exports = __WEBPACK_EXTERNAL_MODULE_7__;
-
-/***/ },
-/* 8 */
+/* 6 */
 /***/ function(module, exports) {
 
 	/**
@@ -497,23 +558,592 @@ return /******/ (function(modules) { // webpackBootstrap
 	};
 
 /***/ },
+/* 7 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+	  Copyright (c) 2016 Jed Watson.
+	  Licensed under the MIT License (MIT), see
+	  http://jedwatson.github.io/classnames
+	*/
+	/* global define */
+
+	(function () {
+		'use strict';
+
+		var hasOwn = {}.hasOwnProperty;
+
+		function classNames () {
+			var classes = [];
+
+			for (var i = 0; i < arguments.length; i++) {
+				var arg = arguments[i];
+				if (!arg) continue;
+
+				var argType = typeof arg;
+
+				if (argType === 'string' || argType === 'number') {
+					classes.push(arg);
+				} else if (Array.isArray(arg)) {
+					classes.push(classNames.apply(null, arg));
+				} else if (argType === 'object') {
+					for (var key in arg) {
+						if (hasOwn.call(arg, key) && arg[key]) {
+							classes.push(key);
+						}
+					}
+				}
+			}
+
+			return classes.join(' ');
+		}
+
+		if (typeof module !== 'undefined' && module.exports) {
+			module.exports = classNames;
+		} else if (true) {
+			// register as 'classnames', consistent with npm package name
+			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
+				return classNames;
+			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+		} else {
+			window.classNames = classNames;
+		}
+	}());
+
+
+/***/ },
+/* 8 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _common = __webpack_require__(6);
+
+	var _common2 = _interopRequireDefault(_common);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Button states enumeration
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.extend({
+	  /**
+	   * 加载中状态
+	   * @type {String}
+	   */
+	  LOADING: 'loading'
+
+	}, _common2.default);
+
+/***/ },
 /* 9 */
+/***/ function(module, exports) {
+
+	module.exports = "<button \n  type=\"{{controller.htmlType}}\" \n  ng-class=\"controller.className\"\n  ng-click=\"controller.innerClick()\"\n  ng-disabled=\"controller.state.disabled\">\n    <bp-icon ng-if=\"controller.iconType\" type=\"controller.iconType\"></bp-icon>\n    <span ng-transclude></span>\n  </button>"
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _icon = __webpack_require__(11);
+
+	var _icon2 = _interopRequireDefault(_icon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Icon component entry
+	 * @author name
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.module('Icon', []).component('bpIcon', _icon2.default);
+
+/***/ },
+/* 11 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _icon = __webpack_require__(12);
+
+	var _icon2 = _interopRequireDefault(_icon);
+
+	var _template = __webpack_require__(13);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Icon component define
+	 */
+
+	'use strict';
+
+	/**
+	 * @type {Object}
+	 * @property {String} type  - binding symbol <, 类型, 也直接决定了渲染成哪个图标
+	 */
+	var IconComponentDefine = {
+	  template: _template2.default,
+	  controller: _icon2.default,
+	  controllerAs: 'controller',
+	  bindings: {
+	    type: '<'
+	  }
+	};
+
+	exports.default = IconComponentDefine;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _component = __webpack_require__(5);
+
+	var _component2 = _interopRequireDefault(_component);
+
+	var _classnames = __webpack_require__(7);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Icon
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	'use strict';
+
+	/**
+	 * Icon component
+	 * 
+	 * @export
+	 * @class Icon
+	 * @extends {Component}
+	 */
+
+	var Icon = function (_Component) {
+	  _inherits(Icon, _Component);
+
+	  function Icon() {
+	    _classCallCheck(this, Icon);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+	  }
+
+	  _createClass(Icon, [{
+	    key: '_initDefaultValue',
+
+	    /**
+	     * @override 
+	     * @protected 
+	     */
+	    value: function _initDefaultValue() {}
+	    /**
+	     * @override 
+	     * @protected 
+	     */
+
+	  }, {
+	    key: '_createClassName',
+	    value: function _createClassName() {
+	      // todo: 暂时还没有loading的图标, 有了这个逻辑就可以干掉了
+	      var iconType = this.type === 'loading' ? 'repeat' : this.type;
+
+	      this.className = (0, _classnames2.default)(_defineProperty({
+	        'bp-icon': true,
+	        'glyphicon': true
+	      }, 'glyphicon-' + iconType, !!this.type));
+	    }
+	    /**
+	     * @override 
+	     * @protected 
+	     */
+
+	  }, {
+	    key: '_launch',
+	    value: function _launch() {}
+	    /**
+	     * 主要是因为type变了之后要重新生成class
+	     * 
+	     * @param {Object} changeObj bindings object
+	     */
+
+	  }, {
+	    key: '$onChanges',
+	    value: function $onChanges(changeObj) {
+	      console.log(changeObj);
+	      if (changeObj.hasOwnProperty('type')) {
+	        this._createClassName();
+	      }
+	    }
+	  }]);
+
+	  return Icon;
+	}(_component2.default);
+
+	exports.default = Icon;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports) {
+
+	module.exports = "<i class=\"{{controller.className}}\"></i>"
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _checkbox = __webpack_require__(15);
+
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Checkbox component entry
+	 * @author name
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.module('Checkbox', []).component('bpCheckbox', _checkbox2.default);
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _checkbox = __webpack_require__(16);
+
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+
+	var _template = __webpack_require__(18);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	__webpack_require__(19);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	'use strict';
+
+	/**
+	 * @type {Object}
+	 * @property {Boolean}    disabled       - binding symbol is <, 禁用状态
+	 * @property {Boolean}    checked        - binding symbol is =?, 是否被选中状态
+	 * @property {Boolean}    halfChecked    - binding symbol is =?, 是否是半选状态
+	 * @property {ANY}        trueValue      - binding symbol is @, like ng-true-value, 是对ng-true-value的封装
+	 * @property {ANY}        falseValue     - binding symbol is @, like ng-false-value, 是对ng-false-value的封装
+	 */
+	/**
+	 * Checkbox component define
+	 * @author fengpeng
+	 */
+
+	var CheckboxComponentDefine = {
+	  template: _template2.default,
+	  controller: _checkbox2.default,
+	  controllerAs: 'controller',
+	  transclude: true,
+	  bindings: {
+	    disabled: '<',
+	    checked: '=?checked',
+	    halfChecked: '=?halfChecked',
+	    trueValue: '@',
+	    falseValue: '@'
+	  }
+	};
+
+	exports.default = CheckboxComponentDefine;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _component = __webpack_require__(5);
+
+	var _component2 = _interopRequireDefault(_component);
+
+	var _classnames = __webpack_require__(7);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _checkbox = __webpack_require__(17);
+
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Checkbox component controller
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	'use strict';
+
+	/**
+	 * Checkbox component
+	 * 这里是对<input checkbox>的封装, 唯一需要说明的是半选状态, 是表现一个列表, 选中了某几项, 却又没有全选的状态
+	 * 
+	 * @export
+	 * @class Checkbox
+	 * @extends {Component}
+	 * @example 
+	 *  <bp-checkbox checked="true">暴风雪</bp-checkbox>
+	 */
+
+	var Checkbox = function (_Component) {
+	  _inherits(Checkbox, _Component);
+
+	  function Checkbox() {
+	    _classCallCheck(this, Checkbox);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).apply(this, arguments));
+	  }
+
+	  _createClass(Checkbox, [{
+	    key: '_initDefaultState',
+
+	    /**
+	     * @override 
+	     * @protected 
+	     */
+	    value: function _initDefaultState() {
+	      var _state;
+
+	      if (this.checked) {
+	        this.halfChecked = false;
+	      }
+	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
+	    }
+	    /**
+	     * @override
+	     * @protected 
+	     */
+
+	  }, {
+	    key: '_initDefaultValue',
+	    value: function _initDefaultValue() {
+	      this.htmlID = this.htmlID || 'checkbox_' + Math.random().toString(36).substr(2, 9);
+	      this.trueValue = this.trueValue ? this.trueValue : true;
+	      this.falseValue = this.falseValue ? this.falseValue : false;
+	    }
+	    /**
+	     * @override 
+	     * @protected 
+	     */
+
+	  }, {
+	    key: '_createClassName',
+	    value: function _createClassName() {
+	      this.className = (0, _classnames2.default)({
+	        'disabled': this._state[_checkbox2.default.DISABLED],
+	        'checked': this._state[_checkbox2.default.CHECKED],
+	        'half-checked': this._state[_checkbox2.default.HALF_CHECKED]
+	      });
+	    }
+	    /**
+	     * @override 
+	     * @protected 
+	     */
+
+	  }, {
+	    key: '_launch',
+	    value: function _launch() {}
+	    /**
+	     * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
+	     * 所以需要监听一下, 然后调用一次
+	     * 
+	     * @protected 
+	     * @param changeObj {Object}
+	     */
+
+	  }, {
+	    key: '$onChanges',
+	    value: function $onChanges(changeObj) {
+	      if (!this._init) return;
+	      // checked 状态
+	      if (changeObj.hasOwnProperty(_checkbox2.default.CHECKED)) {
+	        this.changeHandler();
+	      }
+	      // 半选
+	      if (changeObj.hasOwnProperty(_checkbox2.default.HALF_CHECKED)) {
+	        var halfChecked = changeObj[_checkbox2.default.HALF_CHECKED]['currentValue'];
+	        this.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
+	        if (halfChecked) {
+	          this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
+	        }
+	      }
+	      // 禁用
+	      if (changeObj.hasOwnProperty(_checkbox2.default.DISABLED)) {
+	        this.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, changeObj[_checkbox2.default.DISABLED]['currentValue']);
+	      }
+	      this._render();
+	    }
+	    /**
+	     * 用户点击而改变状态的处理器, 是在模板里面的
+	     * 
+	     * @private 
+	     */
+
+	  }, {
+	    key: 'changeHandler',
+	    value: function changeHandler() {
+	      if (this.checked == this.trueValue) {
+	        var _state5;
+
+	        this.state = (_state5 = {}, _defineProperty(_state5, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state5, '' + _checkbox2.default.HALF_CHECKED, false), _state5);
+	      } else {
+	        this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
+	      }
+	    }
+	  }]);
+
+	  return Checkbox;
+	}(_component2.default);
+
+	exports.default = Checkbox;
+
+/***/ },
+/* 17 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _common = __webpack_require__(6);
+
+	var _common2 = _interopRequireDefault(_common);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Checkbox states enumeration
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.extend({
+	  /**
+	   * 选中
+	   * 
+	   * @type {String}
+	   */
+	  CHECKED: 'checked',
+	  /**
+	   * 半选状态, 这个集中在做列表全选的时候会出现
+	   * 表现是, 选择了但又没有全选这个尴尬的状态
+	   * 
+	   * @type {String}
+	   */
+	  HALF_CHECKED: 'halfChecked'
+
+	}, _common2.default);
+
+/***/ },
+/* 18 */
+/***/ function(module, exports) {
+
+	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
+
+/***/ },
+/* 19 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(10);
+	var content = __webpack_require__(20);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
+	var update = __webpack_require__(22)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./datepicker.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./datepicker.less");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./checkbox.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./checkbox.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -523,21 +1153,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 10 */
+/* 20 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(11)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".uib-datepicker:focus,\n.uib-datepicker:active {\n  outline: none;\n}\n.uib-datepicker .uib-daypicker:focus,\n.uib-datepicker .uib-daypicker:active {\n  outline: none;\n}\n.btn-info:active,\n.btn-info.active,\n.open > .dropdown-toggle.btn-info {\n  background-color: #58b4e9!important;\n  border-color: #58b4e9!important;\n}\n.uib-day button .text-info {\n  color: #58b4e9;\n}\n", ""]);
+	exports.push([module.id, ".checkbox-container {\n  position: relative;\n}\n.checkbox-container input[type=\"checkbox\"] {\n  position: absolute;\n  left: 0;\n  top: 4px;\n  width: 14px;\n  height: 14px;\n  margin: 0px;\n  visibility: hidden;\n}\n.checkbox-container .checkbox-inner-box {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 1px solid #CCCCCC;\n  border-radius: 2px;\n  background-color: white;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.checkbox-container .checkbox-inner-box:hover {\n  border-color: #58b4e9;\n}\n.checkbox-container .checkbox-inner-box:after {\n  display: block;\n  content: \"\";\n  transition: transform 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;\n  transform: rotate(45deg) scale(0);\n}\n.checkbox-container.checked .checkbox-inner-box,\n.checkbox-container.half-checked .checkbox-inner-box {\n  background-color: #58b4e9;\n  border-color: #58b4e9;\n}\n.checkbox-container.checked .checkbox-inner-box:after {\n  display: block;\n  width: 6px;\n  height: 9px;\n  position: absolute;\n  left: 4px;\n  top: 5px;\n  border-top: 2px solid white;\n  content: \" \";\n  border: 2px solid white;\n  border-left: none;\n  border-top: none;\n  transform: rotate(45deg) scale(1);\n}\n.checkbox-container.half-checked .checkbox-inner-box:after {\n  display: block;\n  width: 8px;\n  height: 0px;\n  position: absolute;\n  left: 3px;\n  top: 10px;\n  border-top: 2px solid white;\n  content: \" \";\n  transform: scale(1);\n}\n.checkbox-container.disabled .checkbox-inner-box {\n  background-color: #f3f3f3;\n  border-color: #d9d9d9;\n  cursor: not-allowed;\n}\n.checkbox-container.disabled .checkbox-inner-box:after {\n  border-color: #CCC;\n}\n.checkbox-container .checkbox-label {\n  font-size: 12px;\n  font-weight: normal;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 11 */
+/* 21 */
 /***/ function(module, exports) {
 
 	/*
@@ -593,7 +1223,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 12 */
+/* 22 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -845,523 +1475,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 13 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(7);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _rangepicker = __webpack_require__(14);
-
-	var _rangepicker2 = _interopRequireDefault(_rangepicker);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Rangepicker component entry
-	 * @author name
-	 */
-
-	'use strict';
-
-	exports.default = _angular2.default.module('Rangepicker', []).component('bpRangepicker', _rangepicker2.default);
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _rangepicker = __webpack_require__(15);
-
-	var _rangepicker2 = _interopRequireDefault(_rangepicker);
-
-	var _template = __webpack_require__(16);
-
-	var _template2 = _interopRequireDefault(_template);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Rangepicker component define
-	 */
-
-	'use strict';
-
-	var componentDefine = {
-	  template: _template2.default,
-	  controller: _rangepicker2.default,
-	  controllerAs: 'vm',
-	  bindings: {
-	    ngStartModel: '=',
-	    ngEndModel: '=',
-	    rangepickerOptions: '<',
-	    disabled: '<'
-	  }
-	};
-
-	exports.default = componentDefine;
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _component = __webpack_require__(6);
-
-	var _component2 = _interopRequireDefault(_component);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Rangepicker
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-	'use strict';
-
-	/**
-	 * Rangepicker component
-	 *
-	 * @export
-	 * @class Rangepicker
-	 * @extends {Component}
-	 */
-
-	var Rangepicker = function (_Component) {
-	  _inherits(Rangepicker, _Component);
-
-	  function Rangepicker() {
-	    _classCallCheck(this, Rangepicker);
-
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Rangepicker).call(this));
-
-	    var endTimeOptions = angular.copy(_this.rangepickerOptions);
-	    _this.endTimeOptions = endTimeOptions;
-	    return _this;
-	  }
-
-	  /**
-	   * @override
-	   */
-
-
-	  _createClass(Rangepicker, [{
-	    key: '_initDefaultValue',
-	    value: function _initDefaultValue() {}
-
-	    /**
-	     * @override
-	     */
-
-	  }, {
-	    key: '_createClassName',
-	    value: function _createClassName() {}
-
-	    /**
-	     * @override
-	     */
-
-	  }, {
-	    key: '_launch',
-	    value: function _launch() {}
-	  }]);
-
-	  return Rangepicker;
-	}(_component2.default);
-
-	exports.default = Rangepicker;
-
-/***/ },
-/* 16 */
-/***/ function(module, exports) {
-
-	module.exports = "<div class=\"row\">\n  <div class=\"col-xs-5 start-datepicker\" style=\"padding-right: 0\">\n    <bp-datepicker model=\"vm.ngStartModel\"\n                   disabled=\"vm.disabled\"\n                   datepicker-options=\"vm.rangepickerOptions\"></bp-datepicker>\n  </div>\n  <div class=\"col-xs-1 input-padding-left\" style=\"text-align: center;padding-right: 0;max-width: 35px;line-height: 31px;\">\n    -\n  </div>\n  <div class=\"col-xs-5 input-padding-left\">\n    <bp-datepicker model=\"vm.ngEndModel\"\n                   disabled=\"vm.disabled\"\n                   datepicker-options=\"vm.endTimeOptions\"></bp-datepicker>\n  </div>\n</div>\n"
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(7);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _button = __webpack_require__(18);
-
-	var _button2 = _interopRequireDefault(_button);
-
-	var _icon = __webpack_require__(23);
-
-	var _icon2 = _interopRequireDefault(_icon);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	'use strict'; /**
-	               * Button component entry
-	               */
-
-	exports.default = _angular2.default.module('Button', [_icon2.default.name]).component('bpButton', _button2.default);
-
-/***/ },
-/* 18 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _button = __webpack_require__(19);
-
-	var _button2 = _interopRequireDefault(_button);
-
-	var _template = __webpack_require__(22);
-
-	var _template2 = _interopRequireDefault(_template);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Button component define
-	 */
-
-	'use strict';
-
-	var componentDefine = {
-	  template: _template2.default,
-	  controller: _button2.default,
-	  controllerAs: 'controller',
-	  transclude: true,
-	  bindings: {
-	    /**
-	     * 是primary还是别的定义, 会直接导致class的变化, 比如你选了primary class会出现 `bp-btn-primary`
-	     * 注意这里还和`prefixCls`有关系
-	     * 
-	     * @type {String} 按钮的类型 
-	     * @values [default, primary, danger]
-	     * @default primary
-	     */
-	    type: '@',
-	    /**
-	     * 顾名思义了
-	     * 
-	     * @type {String} 会转换bootstrap里面一样的值 [lg, sm, xs] 不填是默认大小 
-	     */
-	    size: '@',
-	    /**
-	     * 详细看type参数吧, 息息相关 一般都不会改这个
-	     * 
-	     * @type {String}
-	     * @default bp-btn 
-	     */
-	    prefixCls: '@',
-	    /**
-	     * 顾名思义, 就是正常html里面的参数
-	     * 
-	     * @type {String}
-	     * @default button 
-	     */
-	    htmlType: '@',
-	    /**
-	     * 组件的禁用状态
-	     * 
-	     * @type {Boolean}
-	     */
-	    disabled: '<',
-	    /**
-	     * 实际上是icon类型, 也就是bootstrap icon里面那堆类型
-	     * 
-	     * @type {String}
-	     */
-	    icon: '@',
-	    /**
-	     * 是否支持loading
-	     * 
-	     * @type {Boolean}
-	     */
-	    loading: '@',
-	    /**
-	     * @type {Function}
-	     */
-	    click: '&'
-	  }
-	};
-
-	exports.default = componentDefine;
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _get = function get(object, property, receiver) { if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { return get(parent, property, receiver); } } else if ("value" in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } };
-
-	var _component = __webpack_require__(6);
-
-	var _component2 = _interopRequireDefault(_component);
-
-	var _classnames = __webpack_require__(20);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _button = __webpack_require__(21);
-
-	var _button2 = _interopRequireDefault(_button);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Button component controller
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-	'use strict';
-
-	/**
-	 * Button component
-	 * 
-	 * @export
-	 * @class Button
-	 * @extends {Component}
-	 */
-
-	var Button = function (_Component) {
-	  _inherits(Button, _Component);
-
-	  function Button() {
-	    _classCallCheck(this, Button);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
-	  }
-
-	  _createClass(Button, [{
-	    key: '_initDefaultState',
-
-	    /**
-	     * @override 
-	     */
-	    value: function _initDefaultState() {
-	      this._state = _defineProperty({}, '' + _button2.default.DISABLED, this.disabled);
-	    }
-	    /**
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_initDefaultValue',
-	    value: function _initDefaultValue() {
-	      this.type = this.type || 'primary';
-	      this.prefixCls = this.prefixCls || 'bp-btn';
-	      this.htmlType = this.htmlType || 'button';
-	      this.iconType = this.icon || '';
-	    }
-	    /**
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_createClassName',
-	    value: function _createClassName() {
-	      var _classNames;
-
-	      this.className = (0, _classnames2.default)((_classNames = {
-	        'btn': true,
-	        'bp-btn': true
-	      }, _defineProperty(_classNames, 'btn-' + this.size, !!this.size), _defineProperty(_classNames, this.prefixCls + '-' + this.type, true), _defineProperty(_classNames, 'loading-btn', this._state[_button2.default.LOADING]), _classNames));
-	    }
-	    /**
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_launch',
-	    value: function _launch() {}
-	    /**
-	     * 比超类多了loading状态
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_render',
-	    value: function _render() {
-	      console.log('_render', this._state);
-	      if (this._state[_button2.default.LOADING]) {
-	        this.iconType = 'loading';
-	        this._state[_button2.default.DISABLED] = true;
-	      } else {
-	        // not loading state, icon hide or rollback
-	        this.iconType = this.icon;
-	      }
-	      // call super to update className
-	      _get(Object.getPrototypeOf(Button.prototype), '_render', this).call(this);
-	    }
-	    /**
-	     * 包装一个click处理器
-	     * 
-	     * @public 
-	     */
-
-	  }, {
-	    key: 'innerClick',
-	    value: function innerClick() {
-	      this.click && typeof this.click === 'function' && this.click({ button: this });
-	    }
-	    /**
-	     * @param {Object} changeObj
-	     */
-
-	  }, {
-	    key: '$onChanges',
-	    value: function $onChanges(changeObj) {
-	      if (!this._init) return;
-	      if (changeObj.hasOwnProperty(_button2.default.DISABLED)) {
-	        this._state[_button2.default.DISABLED] = changeObj[_button2.default.DISABLED]['currentValue'];
-	        this._render();
-	      }
-	    }
-	  }]);
-
-	  return Button;
-	}(_component2.default);
-
-	exports.default = Button;
-
-/***/ },
-/* 20 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
-	  Copyright (c) 2016 Jed Watson.
-	  Licensed under the MIT License (MIT), see
-	  http://jedwatson.github.io/classnames
-	*/
-	/* global define */
-
-	(function () {
-		'use strict';
-
-		var hasOwn = {}.hasOwnProperty;
-
-		function classNames () {
-			var classes = [];
-
-			for (var i = 0; i < arguments.length; i++) {
-				var arg = arguments[i];
-				if (!arg) continue;
-
-				var argType = typeof arg;
-
-				if (argType === 'string' || argType === 'number') {
-					classes.push(arg);
-				} else if (Array.isArray(arg)) {
-					classes.push(classNames.apply(null, arg));
-				} else if (argType === 'object') {
-					for (var key in arg) {
-						if (hasOwn.call(arg, key) && arg[key]) {
-							classes.push(key);
-						}
-					}
-				}
-			}
-
-			return classes.join(' ');
-		}
-
-		if (typeof module !== 'undefined' && module.exports) {
-			module.exports = classNames;
-		} else if (true) {
-			// register as 'classnames', consistent with npm package name
-			!(__WEBPACK_AMD_DEFINE_ARRAY__ = [], __WEBPACK_AMD_DEFINE_RESULT__ = function () {
-				return classNames;
-			}.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__), __WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
-		} else {
-			window.classNames = classNames;
-		}
-	}());
-
-
-/***/ },
-/* 21 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(7);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _common = __webpack_require__(8);
-
-	var _common2 = _interopRequireDefault(_common);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Button states enumeration
-	 */
-
-	'use strict';
-
-	exports.default = _angular2.default.extend({
-	  /**
-	   * 加载中状态
-	   * @type {String}
-	   */
-	  LOADING: 'loading'
-
-	}, _common2.default);
-
-/***/ },
-/* 22 */
-/***/ function(module, exports) {
-
-	module.exports = "<button \n  type=\"{{controller.htmlType}}\" \n  ng-class=\"controller.className\"\n  ng-click=\"controller.innerClick()\"\n  ng-disabled=\"controller.state.disabled\">\n    <bp-icon ng-if=\"controller.iconType\" type=\"controller.iconType\"></bp-icon>\n    <span ng-transclude></span>\n  </button>"
-
-/***/ },
 /* 23 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -1371,24 +1484,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _angular = __webpack_require__(7);
+	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _icon = __webpack_require__(24);
+	var _checkboxGroup = __webpack_require__(24);
 
-	var _icon2 = _interopRequireDefault(_icon);
+	var _checkboxGroup2 = _interopRequireDefault(_checkboxGroup);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
-	 * Icon component entry
+	 * Checkbox group component entry
 	 * @author name
 	 */
 
 	'use strict';
 
-	exports.default = _angular2.default.module('Icon', []).component('bpIcon', _icon2.default);
+	exports.default = _angular2.default.module('Checkbox', []).component('bpCheckboxGroup', _checkboxGroup2.default);
 
 /***/ },
 /* 24 */
@@ -1400,9 +1513,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _icon = __webpack_require__(25);
+	var _checkbox = __webpack_require__(25);
 
-	var _icon2 = _interopRequireDefault(_icon);
+	var _checkbox2 = _interopRequireDefault(_checkbox);
 
 	var _template = __webpack_require__(26);
 
@@ -1411,26 +1524,28 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
-	 * Icon component define
+	 * @type {Object}
+	 * @property {Boolean}          disabled        - binding symbol is <, 禁用状态, 在组上禁用则全部禁用, 实际上是对ng-disabled的包装
+	 * @property {Array.<Object>}   model           - binding symbol is =?, 数据源, 由于是双向绑定的逻辑会去修改数据源上的checked属性
+	 * @property {Boolean}          inline          - binding symbol is @, 是否横着排
+	 */
+	/**
+	 * checkbox group component define
+	 * @author fengpeng
 	 */
 
-	'use strict';
-
-	var componentDefine = {
+	var CheckboxGroupComponentDefine = {
 	  template: _template2.default,
-	  controller: _icon2.default,
+	  controller: _checkbox2.default,
 	  controllerAs: 'controller',
 	  bindings: {
-	    /**
-	     * 类型, 也直接决定了渲染成哪个图标
-	     * 
-	     * @type {string}
-	     */
-	    type: '<'
+	    disabled: '<',
+	    model: '=?model',
+	    inline: '@'
 	  }
 	};
 
-	exports.default = componentDefine;
+	exports.default = CheckboxGroupComponentDefine;
 
 /***/ },
 /* 25 */
@@ -1444,511 +1559,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _component = __webpack_require__(6);
-
-	var _component2 = _interopRequireDefault(_component);
-
-	var _classnames = __webpack_require__(20);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Icon
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-	'use strict';
-
-	/**
-	 * Icon component
-	 * 
-	 * @export
-	 * @class Icon
-	 * @extends {Component}
-	 */
-
-	var Icon = function (_Component) {
-	  _inherits(Icon, _Component);
-
-	  function Icon() {
-	    _classCallCheck(this, Icon);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-	  }
-
-	  _createClass(Icon, [{
-	    key: '_initDefaultValue',
-
-	    /**
-	     * @override 
-	     */
-	    value: function _initDefaultValue() {}
-	    /**
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_createClassName',
-	    value: function _createClassName() {
-	      // todo: 暂时还没有loading的图标, 有了这个逻辑就可以干掉了
-	      var iconType = this.type === 'loading' ? 'repeat' : this.type;
-
-	      this.className = (0, _classnames2.default)(_defineProperty({
-	        'bp-icon': true,
-	        'glyphicon': true
-	      }, 'glyphicon-' + iconType, !!this.type));
-	    }
-	    /**
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_launch',
-	    value: function _launch() {}
-	    /**
-	     * 主要是因为type变了之后要重新生成class
-	     * 
-	     * @param {Object} changeObj bindings object
-	     */
-
-	  }, {
-	    key: '$onChanges',
-	    value: function $onChanges(changeObj) {
-	      console.log(changeObj);
-	      if (changeObj.hasOwnProperty('type')) {
-	        this._createClassName();
-	      }
-	    }
-	  }]);
-
-	  return Icon;
-	}(_component2.default);
-
-	exports.default = Icon;
-
-/***/ },
-/* 26 */
-/***/ function(module, exports) {
-
-	module.exports = "<i class=\"{{controller.className}}\"></i>"
-
-/***/ },
-/* 27 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(7);
+	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _checkbox = __webpack_require__(28);
-
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-
-	var _checkboxGroup = __webpack_require__(34);
-
-	var _checkboxGroup2 = _interopRequireDefault(_checkboxGroup);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	'use strict'; /**
-	               * Checkbox component entry
-	               * @author name
-	               */
-
-	exports.default = _angular2.default.module('Checkbox', []).component('bpCheckbox', _checkbox2.default).component('bpCheckboxGroup', _checkboxGroup2.default);
-
-/***/ },
-/* 28 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _checkbox = __webpack_require__(29);
-
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-
-	var _template = __webpack_require__(31);
-
-	var _template2 = _interopRequireDefault(_template);
-
-	__webpack_require__(32);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	'use strict'; /**
-	               * Checkbox component define
-	               */
-
-	var componentDefine = {
-	  template: _template2.default,
-	  controller: _checkbox2.default,
-	  controllerAs: 'controller',
-	  transclude: true,
-	  bindings: {
-	    /**
-	     * 是否被禁用
-	     * 
-	     * @type {Boolean}
-	     */
-	    disabled: '<',
-	    /**
-	     * 是否被选中
-	     * 
-	     * @type {Boolean}
-	     */
-	    checked: '=?checked',
-	    /**
-	     * 半选状态, 主要是列表里面, 选择且不全选的情况
-	     * 值得
-	     * 
-	     * @type {Boolean}
-	     */
-	    halfChecked: '=?halfChecked',
-	    /**
-	     * like ng-true-value
-	     * 
-	     * @type {anyObject}
-	     */
-	    trueValue: '@',
-	    /**
-	     * like ng-false-value
-	     * 
-	     * @type {anyObject}
-	     */
-	    falseValue: '@'
-	  }
-	};
-
-	exports.default = componentDefine;
-
-/***/ },
-/* 29 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _component = __webpack_require__(6);
-
-	var _component2 = _interopRequireDefault(_component);
-
-	var _classnames = __webpack_require__(20);
+	var _classnames = __webpack_require__(7);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _checkbox = __webpack_require__(30);
-
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Checkbox component controller
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-	'use strict';
-
-	/**
-	 * Checkbox component
-	 * 
-	 * @export
-	 * @class Checkbox
-	 * @extends {Component}
-	 */
-
-	var Checkbox = function (_Component) {
-	  _inherits(Checkbox, _Component);
-
-	  function Checkbox() {
-	    _classCallCheck(this, Checkbox);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).apply(this, arguments));
-	  }
-
-	  _createClass(Checkbox, [{
-	    key: '_initDefaultState',
-
-	    /**
-	     * @override
-	     */
-	    value: function _initDefaultState() {
-	      var _state;
-
-	      if (this.checked) {
-	        this.halfChecked = false;
-	      }
-	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
-	    }
-	    /**
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_initDefaultValue',
-	    value: function _initDefaultValue() {
-	      this.htmlID = this.htmlID || 'checkbox_' + Math.random().toString(36).substr(2, 9);
-	      this.trueValue = this.trueValue ? this.trueValue : true;
-	      this.falseValue = this.falseValue ? this.falseValue : false;
-	    }
-	    /**
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_createClassName',
-	    value: function _createClassName() {
-	      this.className = (0, _classnames2.default)({
-	        'disabled': this._state[_checkbox2.default.DISABLED],
-	        'checked': this._state[_checkbox2.default.CHECKED],
-	        'half-checked': this._state[_checkbox2.default.HALF_CHECKED]
-	      });
-	    }
-	    /**
-	     * @override 
-	     */
-
-	  }, {
-	    key: '_launch',
-	    value: function _launch() {}
-	    /**
-	     * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
-	     * 所以需要监听一下, 然后调用一次
-	     * 
-	     * @param changeObj {Object}
-	     */
-
-	  }, {
-	    key: '$onChanges',
-	    value: function $onChanges(changeObj) {
-	      if (!this._init) return;
-	      // checked 状态
-	      if (changeObj.hasOwnProperty(_checkbox2.default.CHECKED)) {
-	        this.changeHandler();
-	      }
-	      // 半选
-	      if (changeObj.hasOwnProperty(_checkbox2.default.HALF_CHECKED)) {
-	        var halfChecked = changeObj[_checkbox2.default.HALF_CHECKED]['currentValue'];
-	        this.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
-	        if (halfChecked) {
-	          this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
-	        }
-	      }
-	      // 禁用
-	      if (changeObj.hasOwnProperty(_checkbox2.default.DISABLED)) {
-	        this.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, changeObj[_checkbox2.default.DISABLED]['currentValue']);
-	      }
-	      this._render();
-	    }
-	    /**
-	     * 这是用户点击改变的行为
-	     */
-
-	  }, {
-	    key: 'changeHandler',
-	    value: function changeHandler() {
-	      if (this.checked == this.trueValue) {
-	        var _state5;
-
-	        this.state = (_state5 = {}, _defineProperty(_state5, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state5, '' + _checkbox2.default.HALF_CHECKED, false), _state5);
-	      } else {
-	        this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
-	      }
-	    }
-	  }]);
-
-	  return Checkbox;
-	}(_component2.default);
-
-	exports.default = Checkbox;
-
-/***/ },
-/* 30 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(7);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _common = __webpack_require__(8);
-
-	var _common2 = _interopRequireDefault(_common);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Checkbox states enumeration
-	 */
-
-	'use strict';
-
-	exports.default = _angular2.default.extend({
-	  /**
-	   * 选中
-	   * 
-	   * @type {String}
-	   */
-	  CHECKED: 'checked',
-	  /**
-	   * 半选状态, 这个集中在做列表全选的时候会出现
-	   * 表现是, 选择了但又没有全选这个尴尬的状态
-	   * 
-	   * @type {String}
-	   */
-	  HALF_CHECKED: 'halfChecked'
-
-	}, _common2.default);
-
-/***/ },
-/* 31 */
-/***/ function(module, exports) {
-
-	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
-
-/***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(33);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./checkbox.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./checkbox.less");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 33 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(11)();
-	// imports
-
-
-	// module
-	exports.push([module.id, ".checkbox-container {\n  position: relative;\n}\n.checkbox-container input[type=\"checkbox\"] {\n  position: absolute;\n  left: 0;\n  top: 4px;\n  width: 14px;\n  height: 14px;\n  margin: 0px;\n  visibility: hidden;\n}\n.checkbox-container .checkbox-inner-box {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 1px solid #CCCCCC;\n  border-radius: 2px;\n  background-color: white;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.checkbox-container .checkbox-inner-box:hover {\n  border-color: #58b4e9;\n}\n.checkbox-container .checkbox-inner-box:after {\n  display: block;\n  content: \"\";\n  transition: transform 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;\n  transform: rotate(45deg) scale(0);\n}\n.checkbox-container.checked .checkbox-inner-box,\n.checkbox-container.half-checked .checkbox-inner-box {\n  background-color: #58b4e9;\n  border-color: #58b4e9;\n}\n.checkbox-container.checked .checkbox-inner-box:after {\n  display: block;\n  width: 6px;\n  height: 9px;\n  position: absolute;\n  left: 4px;\n  top: 5px;\n  border-top: 2px solid white;\n  content: \" \";\n  border: 2px solid white;\n  border-left: none;\n  border-top: none;\n  transform: rotate(45deg) scale(1);\n}\n.checkbox-container.half-checked .checkbox-inner-box:after {\n  display: block;\n  width: 8px;\n  height: 0px;\n  position: absolute;\n  left: 3px;\n  top: 10px;\n  border-top: 2px solid white;\n  content: \" \";\n  transform: scale(1);\n}\n.checkbox-container.disabled .checkbox-inner-box {\n  background-color: #f3f3f3;\n  border-color: #d9d9d9;\n  cursor: not-allowed;\n}\n.checkbox-container.disabled .checkbox-inner-box:after {\n  border-color: #CCC;\n}\n.checkbox-container .checkbox-label {\n  font-size: 12px;\n  font-weight: normal;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 34 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _checkbox = __webpack_require__(35);
-
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-
-	var _checkboxGroupTemplate = __webpack_require__(36);
-
-	var _checkboxGroupTemplate2 = _interopRequireDefault(_checkboxGroupTemplate);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * checkbox group component define
-	 */
-
-	exports.default = {
-	  template: _checkboxGroupTemplate2.default,
-	  controller: _checkbox2.default,
-	  controllerAs: 'controller',
-	  bindings: {
-	    /**
-	     * 是否禁用, 在组上禁用就全部禁用了
-	     * 
-	     * @type {Boolean}
-	     */
-	    disabled: '<',
-	    /**
-	     * 数据源, 逻辑上会去直接修改数据源上的checked属性
-	     * 
-	     * @type {Array.<Object>}
-	     */
-	    model: '=model',
-	    /**
-	     * Is display li to inline
-	     * 
-	     * @type {Boolean}
-	     */
-	    inline: '@'
-	  }
-	};
-
-/***/ },
-/* 35 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _angular = __webpack_require__(7);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _classnames = __webpack_require__(20);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _component = __webpack_require__(6);
+	var _component = __webpack_require__(5);
 
 	var _component2 = _interopRequireDefault(_component);
 
@@ -1964,24 +1583,49 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	var CheckboxGroupController = function (_Component) {
-	  _inherits(CheckboxGroupController, _Component);
+	/**
+	 * checkbox group
+	 * 
+	 * @export
+	 * @class CheckboxGroup
+	 * @extends {Component}
+	 * @example 
+	    <bp-checkbox-group model="vm.groupDataList"></bp-checkbox-group>
+	    groupDataList = [
+	      {label: '邢老师不要脸', checked: true},
+	      {label: '老师不要脸'},
+	      {label: '师不要脸'},
+	      {label: '不要脸'},
+	      {label: '要脸', disabled: true},
+	      {label: '脸'}
+	    ];
+	 * 
+	 */
 
-	  function CheckboxGroupController() {
-	    _classCallCheck(this, CheckboxGroupController);
+	var CheckboxGroup = function (_Component) {
+	  _inherits(CheckboxGroup, _Component);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CheckboxGroupController).apply(this, arguments));
+	  function CheckboxGroup() {
+	    _classCallCheck(this, CheckboxGroup);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CheckboxGroup).apply(this, arguments));
 	  }
 
-	  _createClass(CheckboxGroupController, [{
+	  _createClass(CheckboxGroup, [{
 	    key: '_initDefaultValue',
 
 	    /**
 	     * @override 
+	     * @protected 
 	     */
 	    value: function _initDefaultValue() {
 	      this.model = this.model && _angular2.default.isArray(this.model) ? this.model : [];
 	    }
+	    /**
+	     * @override 
+	     * @protected 
+	     */
+
 	  }, {
 	    key: '_createClassName',
 	    value: function _createClassName() {
@@ -1989,24 +1633,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'list-inline': this.inline
 	      });
 	    }
+	    /**
+	     * @override 
+	     * @protected 
+	     */
+
 	  }, {
 	    key: '_launch',
 	    value: function _launch() {}
 	  }]);
 
-	  return CheckboxGroupController;
+	  return CheckboxGroup;
 	}(_component2.default);
 
-	exports.default = CheckboxGroupController;
+	exports.default = CheckboxGroup;
 
 /***/ },
-/* 36 */
+/* 26 */
 /***/ function(module, exports) {
 
 	module.exports = "<ul class=\"list-unstyled\" \n  ng-disabled=\"controller.disabled\"\n  ng-class=\"controller.ulClassName\">\n  <li ng-repeat=\"item in controller.model track by $index\">\n    <bp-checkbox\n      disabled=\"item.disabled || controller.disabled\"\n      checked=\"item.checked\"\n      half-checked=\"item.halfChecked\"\n    >{{item.label}}</bp-checkbox>\n  </li>\n</ul>"
 
 /***/ },
-/* 37 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2015,13 +1664,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _angular = __webpack_require__(7);
+	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _radio = __webpack_require__(38);
+	var _radiobox = __webpack_require__(28);
 
-	var _radio2 = _interopRequireDefault(_radio);
+	var _radiobox2 = _interopRequireDefault(_radiobox);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2032,10 +1681,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	exports.default = _angular2.default.module('Radio', []).component('bpRadio', _radio2.default);
+	exports.default = _angular2.default.module('Radiobox', []).component('bpRadiobox', _radiobox2.default);
 
 /***/ },
-/* 38 */
+/* 28 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2044,15 +1693,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _radio = __webpack_require__(39);
+	var _radiobox = __webpack_require__(29);
 
-	var _radio2 = _interopRequireDefault(_radio);
+	var _radiobox2 = _interopRequireDefault(_radiobox);
 
-	var _template = __webpack_require__(41);
+	var _template = __webpack_require__(31);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	__webpack_require__(42);
+	__webpack_require__(32);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2062,7 +1711,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var componentDefine = {
 	  template: _template2.default,
-	  controller: _radio2.default,
+	  controller: _radiobox2.default,
 	  controllerAs: 'controller',
 	  transclude: true,
 	  bindings: {
@@ -2097,7 +1746,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = componentDefine;
 
 /***/ },
-/* 39 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2108,17 +1757,17 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _component = __webpack_require__(6);
+	var _component = __webpack_require__(5);
 
 	var _component2 = _interopRequireDefault(_component);
 
-	var _classnames = __webpack_require__(20);
+	var _classnames = __webpack_require__(7);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _radio = __webpack_require__(40);
+	var _radiobox = __webpack_require__(30);
 
-	var _radio2 = _interopRequireDefault(_radio);
+	var _radiobox2 = _interopRequireDefault(_radiobox);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2142,16 +1791,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {Component}
 	 */
 
-	var Radio = function (_Component) {
-	  _inherits(Radio, _Component);
+	var Radiobox = function (_Component) {
+	  _inherits(Radiobox, _Component);
 
-	  function Radio() {
-	    _classCallCheck(this, Radio);
+	  function Radiobox() {
+	    _classCallCheck(this, Radiobox);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Radio).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Radiobox).apply(this, arguments));
 	  }
 
-	  _createClass(Radio, [{
+	  _createClass(Radiobox, [{
 	    key: '_initDefaultState',
 
 
@@ -2159,7 +1808,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * 默认状态
 	     */
 	    value: function _initDefaultState() {
-	      this._state = _defineProperty({}, '' + _radio2.default.DISABLED, this.disabled);
+	      this._state = _defineProperty({}, '' + _radiobox2.default.DISABLED, this.disabled);
 	    }
 
 	    /**
@@ -2182,7 +1831,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: '_createClassName',
 	    value: function _createClassName() {
 	      this.className = (0, _classnames2.default)({
-	        'disabled': this._state[_radio2.default.DISABLED]
+	        'disabled': this._state[_radiobox2.default.DISABLED]
 	      });
 	    }
 
@@ -2212,13 +1861,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	  }]);
 
-	  return Radio;
+	  return Radiobox;
 	}(_component2.default);
 
-	exports.default = Radio;
+	exports.default = Radiobox;
 
 /***/ },
-/* 40 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2227,11 +1876,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _angular = __webpack_require__(7);
+	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _common = __webpack_require__(8);
+	var _common = __webpack_require__(6);
 
 	var _common2 = _interopRequireDefault(_common);
 
@@ -2246,29 +1895,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _angular2.default.extend({}, _common2.default);
 
 /***/ },
-/* 41 */
+/* 31 */
 /***/ function(module, exports) {
 
 	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"radio-container\"\n       ng-class=\"[controller.className, {checked: controller.isChecked()}]\">\n      <span class=\"radio-inner\"></span>\n      <input type=\"radio\" id=\"{{controller.htmlID}}\"\n              ng-value=\"controller.complex || controller.value\"\n              ng-disabled=\"controller.disabled\"\n              ng-model=\"controller.model\"\n      />\n      <span ng-transclude></span>\n</label>\n"
 
 /***/ },
-/* 42 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(43);
+	var content = __webpack_require__(33);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
+	var update = __webpack_require__(22)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radio.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radio.less");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radiobox.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radiobox.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2278,10 +1927,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 43 */
+/* 33 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(11)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 
 
@@ -2292,7 +1941,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 44 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2301,13 +1950,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _angular = __webpack_require__(7);
+	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _radioGroup = __webpack_require__(45);
+	var _radioboxGroup = __webpack_require__(35);
 
-	var _radioGroup2 = _interopRequireDefault(_radioGroup);
+	var _radioboxGroup2 = _interopRequireDefault(_radioboxGroup);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2318,10 +1967,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	exports.default = _angular2.default.module('RadioGroup', []).component('bpRadioGroup', _radioGroup2.default);
+	exports.default = _angular2.default.module('RadioboxGroup', []).component('bpRadioboxGroup', _radioboxGroup2.default);
 
 /***/ },
-/* 45 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2330,15 +1979,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _radio = __webpack_require__(46);
+	var _radiobox = __webpack_require__(36);
 
-	var _radio2 = _interopRequireDefault(_radio);
+	var _radiobox2 = _interopRequireDefault(_radiobox);
 
-	var _template = __webpack_require__(47);
+	var _template = __webpack_require__(37);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	__webpack_require__(48);
+	__webpack_require__(38);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2348,7 +1997,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var componentDefine = {
 	  template: _template2.default,
-	  controller: _radio2.default,
+	  controller: _radiobox2.default,
 	  controllerAs: 'controller',
 	  transclude: true,
 	  bindings: {
@@ -2383,7 +2032,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = componentDefine;
 
 /***/ },
-/* 46 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2394,11 +2043,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-	var _component = __webpack_require__(6);
+	var _component = __webpack_require__(5);
 
 	var _component2 = _interopRequireDefault(_component);
 
-	var _classnames = __webpack_require__(20);
+	var _classnames = __webpack_require__(7);
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -2422,16 +2071,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @extends {Component}
 	 */
 
-	var RadioGroup = function (_Component) {
-	  _inherits(RadioGroup, _Component);
+	var RadioboxGroup = function (_Component) {
+	  _inherits(RadioboxGroup, _Component);
 
-	  function RadioGroup() {
-	    _classCallCheck(this, RadioGroup);
+	  function RadioboxGroup() {
+	    _classCallCheck(this, RadioboxGroup);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(RadioGroup).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(RadioboxGroup).apply(this, arguments));
 	  }
 
-	  _createClass(RadioGroup, [{
+	  _createClass(RadioboxGroup, [{
 	    key: '_initDefaultValue',
 
 
@@ -2449,35 +2098,35 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _launch() {}
 	  }]);
 
-	  return RadioGroup;
+	  return RadioboxGroup;
 	}(_component2.default);
 
-	exports.default = RadioGroup;
+	exports.default = RadioboxGroup;
 
 /***/ },
-/* 47 */
+/* 37 */
 /***/ function(module, exports) {
 
 	module.exports = "<ul class=\"list-unstyled\"\n    ng-disabled=\"controller.disabled\"\n    ng-class=\"{'list-inline': controller.inline}\">\n      <li ng-repeat=\"item in controller.list track by $index\">\n            <bp-radio\n                disabled=\"item.disabled || controller.disabled\"\n                model=\"controller.model\"\n                value=\"{{item.value}}\"\n                complex=\"item.complex\"\n            >{{item.label}}</bp-radio>\n      </li>\n</ul>"
 
 /***/ },
-/* 48 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(49);
+	var content = __webpack_require__(39);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(12)(content, {});
+	var update = __webpack_require__(22)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radio.group.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radio.group.less");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radiobox.group.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./radiobox.group.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -2487,10 +2136,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 49 */
+/* 39 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(11)();
+	exports = module.exports = __webpack_require__(21)();
 	// imports
 
 

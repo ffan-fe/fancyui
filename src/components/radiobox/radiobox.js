@@ -4,7 +4,7 @@
 
 import Component from '../common/component';
 import classNames from 'classnames';
-import RadioStates from '../../stateenum/radio.state';
+import RadioStates from '../../stateenum/radiobox.state';
 
 'use strict';
 
@@ -15,7 +15,7 @@ import RadioStates from '../../stateenum/radio.state';
  * @class Radio
  * @extends {Component}
  */
-export default class Radio extends Component {
+export default class Radiobox extends Component {
 
   /**
    * 默认状态
