@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.RadioboxGroup = exports.Radiobox = exports.Checkbox = exports.Icon = exports.Button = undefined;
+	exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
 
 	var _button = __webpack_require__(1);
 
@@ -92,6 +92,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Button = exports.Button = _button2.default;
 	var Icon = exports.Icon = _icon2.default;
 	var Checkbox = exports.Checkbox = _checkbox2.default;
+	var CheckboxGroup = exports.CheckboxGroup = _checkbox4.default;
 	var Radiobox = exports.Radiobox = _radiobox2.default;
 	var RadioboxGroup = exports.RadioboxGroup = _radiobox4.default;
 
