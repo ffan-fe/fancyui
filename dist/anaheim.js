@@ -1501,7 +1501,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
-	exports.default = _angular2.default.module('Checkbox', []).component('bpCheckboxGroup', _checkboxGroup2.default);
+	exports.default = _angular2.default.module('CheckboxGroup', []).component('bpCheckboxGroup', _checkboxGroup2.default);
 
 /***/ },
 /* 24 */
