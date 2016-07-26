@@ -66,6 +66,8 @@ export default class Checkbox extends Component {
       'checked': this._state[CheckboxStates.CHECKED],
       'half-checked': this._state[CheckboxStates.HALF_CHECKED]
     });
+    console.log(this._state);
+    console.log(this.className);
   }
   /**
    * @override 
@@ -118,7 +120,8 @@ export default class Checkbox extends Component {
       };
     } else {
       this.state = {
-        [`${CheckboxStates.CHECKED}`]: false
+        [`${CheckboxStates.CHECKED}`]: false,
+        [`${CheckboxStates.HALF_CHECKED}`]: false
       };
     }
   }
