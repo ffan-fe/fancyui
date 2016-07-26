@@ -1,7 +1,7 @@
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 
-export default class CheckboxTextController {
+export default class CheckboxTestController {
   constructor($timeout, $sce) {
     'ngInject';
     this.checked1 = false;

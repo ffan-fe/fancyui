@@ -17,7 +17,7 @@ let componentDefine = {
     /**
      *数据源
      */
-    dataSource: "=?dataSource",
+    sourceData: "=?sourceData",
 
     /**
      * 目标数据集合
@@ -32,7 +32,7 @@ let componentDefine = {
 
     /**
      * 从左至右 placeholder
-     * @type letf placeholder
+     * @type placeholder
      */
     placeholders: "<",
 
@@ -55,15 +55,10 @@ let componentDefine = {
     showRightSearch: "<",
 
     /**
-     * placeholder
-     * @type letf placeholder
-     */
-
-    /**
      * 从服务端检索
      * @type {function}
      */
-    serverSearch: "&",
+    change: "&?",
 
     /**
      *是否需要单个增加按钮

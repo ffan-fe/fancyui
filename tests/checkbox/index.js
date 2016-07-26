@@ -2,6 +2,7 @@ import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
 import Checkbox from '../../src/components/checkbox';
+import CheckboxGroup from '../../src/components/checkbox.group';
 import template from './template.html';
 import controller from './controller';
 
@@ -9,7 +10,8 @@ import controller from './controller';
 
 export default angular.module('checkboxTest', [
   uiRouter,
-  Checkbox.name
+  Checkbox.name,
+  CheckboxGroup.name
 ])
   .config($stateProvider => {
     'ngInject';

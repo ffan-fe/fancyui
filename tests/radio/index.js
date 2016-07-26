@@ -1,8 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-
-import Radio from '../../src/components/radio';
-import RadioGroup from '../../src/components/radioGroup';
+import Radio from '../../src/components/radiobox';
+import RadioGroup from '../../src/components/radiobox.group';
 import template from './template.html';
 import controller from './controller';
 

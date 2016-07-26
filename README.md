@@ -12,7 +12,7 @@
 
 ##### 测试
 
-运行`gulp`会运行测试, 在**tests**目录建立自己的测试用例
+运行`gulp`会运行测试, 在**examples**目录建立自己的示例
 
 ##### 新建组件
 
@@ -21,4 +21,10 @@
 ##### 打包
 
 `gulp build` 生成文件到dist目录
+
+##### 文档
+
+文档生成器是[esdoc](https://esdoc.org/)
+
+执行 ` esdoc -c esdoc.json`
 

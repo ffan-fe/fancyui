@@ -1,18 +1,20 @@
 /**
  * abstract component
+ * @author fengpeng
  */
+
 import angular from 'angular';
 import CommonState from '../../stateenum/common.state';
 
 'use strict';
 
-
 /**
- * (description)
+ * 基类, 定义了模板和一系列基础操作
  * 
  * @export
  * @abstract 
  * @class Component
+ * @implements {IComponentState}
  */
 export default class Component {
   /**
@@ -27,12 +29,12 @@ export default class Component {
      */
     this._state = {};
     /**
-     * 是否初始化完毕, 标识是是否执行完$onInit
+     * 是否初始化完毕, 标识着是否执行完$onInit
      * 
      * @protected
      * @type {Boolean}
      * @default false
-     * @see $onInit
+     * @see {@link $onInit}
      */
     this._init = false;
   }
@@ -40,7 +42,6 @@ export default class Component {
    * get component state
    * 
    * @public 
-   * @implements {IComponentState}
    */ 
   get state() {
     return this._state;
@@ -50,7 +51,6 @@ export default class Component {
    * 
    * @public
    * @param state {Object} 
-   * @implements {IComponentState}
    */
   set state(state) {
     if (Object.prototype.toString.call(state) === '[object Object]') {
@@ -59,16 +59,17 @@ export default class Component {
     }
   }
   /**
-   * template pattern
+   * 构建模板, 在最后会将 _init设置为true
    * 
    * @protected 
    * @final
+   * @see {@link _init}
    */
   $onInit() {
     this._initDefaultState();
     this._initDefaultValue();
-    this._launch();
     this._render();
+    this._launch();
     this._init = true;
   }
   /**
@@ -92,7 +93,7 @@ export default class Component {
    * 每次render都会重新计算一次样式
    * 
    * @protected 
-   * @see this._render method
+   * @see {@link _render}
    */
   _createClassName() {
     throw new Error('IllegalOperationError for _createClassName method, you need override the method');

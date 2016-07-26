@@ -1,11 +1,11 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 
-import Button from '../../src/components/button';
+// import Button from '../../src/components/button';
 import template from './template.html';
 import controller from './controller';
 
-
+import {Button} from '../../dist/anaheim';
 
 export default angular.module('buttonTest', [
   uiRouter,

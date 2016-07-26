@@ -1,9 +1,9 @@
 <section class="exmaple-container">
   <h3>只支持String类型值<span style="font-size: 11px;">注:vm.player默认值为 "仙道" </span></h3>
-  <bp-radio model="vm.player" value="樱木花道">樱木花道</bp-radio>
-  <bp-radio model="vm.player" value="流川枫">流川枫</bp-radio>
-  <bp-radio model="vm.player" value="仙道" disabled="true">仙道</bp-radio>
-  <bp-radio model="vm.player" value="宫城良田" >宫城良田</bp-radio>
+  <bp-radiobox model="vm.player" value="樱木花道">樱木花道</bp-radiobox>
+  <bp-radiobox model="vm.player" value="流川枫">流川枫</bp-radiobox>
+  <bp-radiobox model="vm.player" value="仙道" disabled="true">仙道</bp-radiobox>
+  <bp-radiobox model="vm.player" value="宫城良田" >宫城良田</bp-radiobox>
   <p>binding to controller value: {{vm.player}}</p>
   <div>
     <pre>
@@ -14,10 +14,10 @@
 
 <section class="exmaple-container">
   <h3>复杂数据结构支持如Objec,Array,Boolean<span style="font-size: 11px;">注:vm.player默认值为 "仙道" </span></h3>
-  <bp-radio model="vm.player" value="樱木花道">樱木花道</bp-radio>
-  <bp-radio model="vm.player" value="流川枫">流川枫</bp-radio>
-  <bp-radio model="vm.player" value="仙道">仙道</bp-radio>
-  <bp-radio model="vm.player" complex="vm.specialInfo" value="宫城良田">宫城良田</bp-radio>
+  <bp-radiobox model="vm.player" value="樱木花道">樱木花道</bp-radiobox>
+  <bp-radiobox model="vm.player" value="流川枫">流川枫</bp-radiobox>
+  <bp-radiobox model="vm.player" value="仙道">仙道</bp-radiobox>
+  <bp-radiobox model="vm.player" complex="vm.specialInfo" value="宫城良田">宫城良田</bp-radiobox>
   <p>binding to controller value:{{vm.player}}</p>
   <div>
     <pre>
@@ -29,7 +29,7 @@
 <section class="example-container">
   <h3>Radio组</h3>
   <h6>横向展示</h6>
-  <bp-radio-group list="vm.groupDataList" model="vm.model" inline=true></bp-radio-group>
+  <bp-radiobox-group list="vm.groupDataList" model="vm.model" inline=true></bp-radiobox-group>
   <p>binding to controller value:{{vm.model}}</p>
   <div>
     <pre>
@@ -46,7 +46,7 @@
 
 <section class="example-container">
   <h6>竖向展示</h6>
-  <bp-radio-group list="vm.groupDataList" model="vm.model" ></bp-radio-group>
+  <bp-radiobox-group list="vm.groupDataList" model="vm.model" ></bp-radiobox-group>
   <p>binding to controller value:{{vm.model}}</p>
   <div>
     <pre>

@@ -4,7 +4,7 @@
 
 import Component from '../common/component';
 import classNames from 'classnames';
-import RadioStates from '../../stateenum/radio.state';
+import RadioStates from '../../stateenum/radiobox.state';
 
 'use strict';
 
@@ -15,7 +15,7 @@ import RadioStates from '../../stateenum/radio.state';
  * @class Radio
  * @extends {Component}
  */
-export default class Radio extends Component {
+export default class Radiobox extends Component {
 
   /**
    * 默认状态
@@ -31,7 +31,7 @@ export default class Radio extends Component {
    * @override 
    */
   _initDefaultValue() {
-    this.htmlID = this.htmlID || 'radio' + Math.floor(Math.random() * 1000000);
+    this.htmlID = this.htmlID || 'radio_' + Math.random().toString(36).substr(2, 9);
   }
 
   /**

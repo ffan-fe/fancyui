@@ -14,7 +14,7 @@ import classNames from 'classnames';
  * @class RadioGroup
  * @extends {Component}
  */
-export default class RadioGroup extends Component {
+export default class RadioboxGroup extends Component {
 
   /**
    * @override
