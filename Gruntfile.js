@@ -8,8 +8,11 @@ module.exports = function (grunt) {
     ngdocs: {
       options: {
         scripts: ['angular.js'],
-        html5Mode: true,
+        html5Mode: false,
         title: "Anaheim Documentation",
+        styles: ['doccss/custom.css'],
+        sourceLink: true,
+        editLink: false
       },
       all: ['src/**/*.js']
     },
@@ -23,5 +26,4 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', ['clean', 'ngdocs', 'connect']);
-
 };
