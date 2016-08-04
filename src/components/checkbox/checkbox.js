@@ -1,6 +1,21 @@
 /**
- * Checkbox component controller
+ * @ngdoc directive
+ * @name checkbox.directive:bpCheckbox
  * @author fengpeng
+ * @restrict E
+ * @description
+ * 包装了HTML Input[type="checkbox"]
+ * 包含的状态有
+ * - enable
+ * - disabled
+ * - halfChecked
+ * - checked
+ * 
+ * @param {Boolean}    disabled       - binding symbol is `<`, 禁用状态
+ * @param {Boolean}    checked        - binding symbol is `=?`, 是否被选中状态
+ * @param {Boolean}    halfChecked    - binding symbol is `=?`, 是否是半选状态
+ * @param {ANY}        trueValue      - binding symbol is `@`, like ng-true-value, 是对ng-true-value的封装
+ * @param {ANY}        falseValue     - binding symbol is `@`, like ng-false-value, 是对ng-false-value的封装
  */
 
 import Component from '../common/component';
@@ -16,8 +31,6 @@ import CheckboxStates from '../../stateenum/checkbox.state';
  * @export
  * @class Checkbox
  * @extends {Component}
- * @example 
- *  <bp-checkbox checked="true">暴风雪</bp-checkbox>
  */
 export default class Checkbox extends Component {
   /**
@@ -53,6 +66,8 @@ export default class Checkbox extends Component {
       'checked': this._state[CheckboxStates.CHECKED],
       'half-checked': this._state[CheckboxStates.HALF_CHECKED]
     });
+    console.log(this._state);
+    console.log(this.className);
   }
   /**
    * @override 
@@ -105,7 +120,8 @@ export default class Checkbox extends Component {
       };
     } else {
       this.state = {
-        [`${CheckboxStates.CHECKED}`]: false
+        [`${CheckboxStates.CHECKED}`]: false,
+        [`${CheckboxStates.HALF_CHECKED}`]: false
       };
     }
   }

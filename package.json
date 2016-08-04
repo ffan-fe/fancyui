@@ -30,6 +30,7 @@
     "browser-sync": "^2.12.12",
     "css-loader": "^0.23.1",
     "file-loader": "^0.8.5",
+    "grunt-ngdocs": "^0.2.10",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-rename": "^1.2.2",

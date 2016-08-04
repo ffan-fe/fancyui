@@ -1,5 +1,16 @@
 /**
- * Button component entry
+ * @ngdoc overview
+ * @name button
+ * @description
+ * 
+ * # Button component module
+ * 
+ * module name is **Button**
+ * 
+ * <pre>
+ * import {Button} from 'anaheim';
+ * angular.module('myApp', [Button.name]);
+ * </pre>
  */
 
 import angular from 'angular';
