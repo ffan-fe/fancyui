@@ -228,7 +228,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Button component
-	 * 
+	 *
 	 * @export
 	 * @class Button
 	 * @extends {Component}
@@ -263,30 +263,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _initDefaultValue() {
 	      /**
 	       * 确定模板的class属性值
-	       * 
+	       *
 	       * @type {String}
-	       * @protected 
+	       * @protected
 	       */
 	      this.className = '';
 	      /**
 	       * Component binding value, 用来确定模板中class的属性值 `bp-btn-{type}`, 默认值是 `primary`
-	       * 
+	       *
 	       * @type {String}
 	       * @protected
 	       */
 	      this.type = this.type || 'primary';
 	      /**
 	       * Component binding value, html中的type属性.真
-	       * 
+	       *
 	       * @type {String}
-	       * @protected 
+	       * @protected
 	       */
 	      this.htmlType = this.htmlType || 'button';
 	      /**
 	       * Component binding value, 在按钮文字的前方添加icon
-	       * 
+	       *
 	       * @type {String}
-	       * @protected 
+	       * @protected
 	       */
 	      this.iconType = this.icon || '';
 	    }
@@ -306,7 +306,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }, _defineProperty(_classNames, 'btn-' + this.size, !!this.size), _defineProperty(_classNames, 'bp-btn-' + this.type, true), _defineProperty(_classNames, 'loading-btn', this._state[_button2.default.LOADING]), _classNames));
 	    }
 	    /**
-	     * @override 
+	     * @override
 	     * @protected
 	     */
 
@@ -315,14 +315,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _launch() {}
 	    /**
 	     * 比超类多了loading状态
-	     * @override 
+	     * @override
 	     * @protected
 	     */
 
 	  }, {
 	    key: '_render',
 	    value: function _render() {
-	      console.log('_render', this._state);
 	      if (this._state[_button2.default.LOADING]) {
 	        this.iconType = 'loading';
 	        this._state[_button2.default.DISABLED] = true;
@@ -335,8 +334,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
-	     * 
-	     * @private 
+	     *
+	     * @private
 	     */
 
 	  }, {
@@ -346,7 +345,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 这里主要是会有Disable值的外部变化
-	     * 
+	     *
 	     * @protected
 	     * @param {Object} changeObj
 	     */
@@ -400,9 +399,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * 基类, 定义了模板和一系列基础操作
-	 * 
+	 *
 	 * @export
-	 * @abstract 
+	 * @abstract
 	 * @class Component
 	 * @implements {IComponentState}
 	 */
@@ -417,14 +416,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * every component has a state object, according to the state properties to determine how to display UI
-	     * 
+	     *
 	     * @type {Object}
-	     * @protected 
+	     * @protected
 	     */
 	    this._state = {};
 	    /**
 	     * 是否初始化完毕, 标识着是否执行完$onInit
-	     * 
+	     *
 	     * @protected
 	     * @type {Boolean}
 	     * @default false
@@ -434,8 +433,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  /**
 	   * get component state
-	   * 
-	   * @public 
+	   *
+	   * @public
 	   */
 
 
@@ -444,8 +443,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 构建模板, 在最后会将 _init设置为true
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     * @final
 	     * @see {@link _init}
 	     */
@@ -458,8 +457,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 初始化默认值, 因为angular组件变量传递是在component定义决定的, 有些值可能没有传进来, 所以在这里确定一次
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     */
 
 	  }, {
@@ -479,8 +478,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * 确定className, 处理过之后赋值到`this.className`属性, 并经由此属性填充到UI(html)的class属性里
 	     * 每次render都会重新计算一次样式
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     * @see {@link _render}
 	     */
 
@@ -491,8 +490,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 实现组件功能的细节部分
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     */
 
 	  }, {
@@ -502,7 +501,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 针对不同的状态, 做UI变化, 如果子类有新状态那么override, 并super调用此方法
-	     * 
+	     *
 	     * @protected
 	     */
 
@@ -518,9 +517,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * set component state
-	     * 
+	     *
 	     * @public
-	     * @param state {Object} 
+	     * @param state {Object}
 	     */
 	    ,
 	    set: function set(state) {
@@ -552,7 +551,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = {
 	  /**
 	   * 是否禁用
-	   * 
+	   *
 	   * @type {string}
 	   */
 	  DISABLED: 'disabled'
@@ -760,7 +759,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Icon component
-	 * 
+	 *
 	 * @export
 	 * @class Icon
 	 * @extends {Component}
@@ -779,13 +778,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: '_initDefaultValue',
 
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 	    value: function _initDefaultValue() {}
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -800,8 +799,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }, 'glyphicon-' + iconType, !!this.type));
 	    }
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -809,14 +808,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _launch() {}
 	    /**
 	     * 主要是因为type变了之后要重新生成class
-	     * 
+	     *
 	     * @param {Object} changeObj bindings object
 	     */
 
 	  }, {
 	    key: '$onChanges',
 	    value: function $onChanges(changeObj) {
-	      console.log(changeObj);
 	      if (changeObj.hasOwnProperty('type')) {
 	        this._createClassName();
 	      }
@@ -958,11 +956,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Checkbox component
 	 * 这里是对<input checkbox>的封装, 唯一需要说明的是半选状态, 是表现一个列表, 选中了某几项, 却又没有全选的状态
-	 * 
+	 *
 	 * @export
 	 * @class Checkbox
 	 * @extends {Component}
-	 * @example 
+	 * @example
 	 *  <bp-checkbox checked="true">暴风雪</bp-checkbox>
 	 */
 
@@ -979,8 +977,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: '_initDefaultState',
 
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 	    value: function _initDefaultState() {
 	      var _state;
@@ -992,7 +990,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * @override
-	     * @protected 
+	     * @protected
 	     */
 
 	  }, {
@@ -1003,8 +1001,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.falseValue = this.falseValue ? this.falseValue : false;
 	    }
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -1017,8 +1015,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    }
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -1027,8 +1025,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
 	     * 所以需要监听一下, 然后调用一次
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     * @param changeObj {Object}
 	     */
 
@@ -1056,8 +1054,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 用户点击而改变状态的处理器, 是在模板里面的
-	     * 
-	     * @private 
+	     *
+	     * @private
 	     */
 
 	  }, {
@@ -1107,14 +1105,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _angular2.default.extend({
 	  /**
 	   * 选中
-	   * 
+	   *
 	   * @type {String}
 	   */
 	  CHECKED: 'checked',
 	  /**
 	   * 半选状态, 这个集中在做列表全选的时候会出现
 	   * 表现是, 选择了但又没有全选这个尴尬的状态
-	   * 
+	   *
 	   * @type {String}
 	   */
 	  HALF_CHECKED: 'halfChecked'
@@ -1586,11 +1584,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * checkbox group
-	 * 
+	 *
 	 * @export
 	 * @class CheckboxGroup
 	 * @extends {Component}
-	 * @example 
+	 * @example
 	    <bp-checkbox-group model="vm.groupDataList"></bp-checkbox-group>
 	    groupDataList = [
 	      {label: '邢老师不要脸', checked: true},
@@ -1600,7 +1598,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      {label: '要脸', disabled: true},
 	      {label: '脸'}
 	    ];
-	 * 
+	 *
 	 */
 
 	var CheckboxGroup = function (_Component) {
@@ -1616,15 +1614,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: '_initDefaultValue',
 
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 	    value: function _initDefaultValue() {
 	      this.model = this.model && _angular2.default.isArray(this.model) ? this.model : [];
 	    }
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -1635,8 +1633,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    }
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -1786,7 +1784,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Radio component
-	 * 
+	 *
 	 * @export
 	 * @class Radio
 	 * @extends {Component}
@@ -1814,7 +1812,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 默认值
-	     * @override 
+	     * @override
 	     */
 
 	  }, {
@@ -2066,7 +2064,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * RadioGroup component
-	 * 
+	 *
 	 * @export
 	 * @class RadioGroup
 	 * @extends {Component}

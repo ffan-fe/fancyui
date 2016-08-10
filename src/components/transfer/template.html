@@ -1,83 +1,90 @@
-<div class="commercial">
-  <div class="commercial-left">
-    <div class="commercial-left-stores">
-      <span>{{controller.leftTitle}}</span>
-      <input type="text"
+<div class="transfer">
+  <!-- 左侧栏 -->
+  <div class="transfer-left">
+    <div class="transfer-left-stores">
+      <span>{{controller.docInfo.leftTitle}}</span>
+      <!-- 前端检索 -->
+      <input
+             type="text"
              class="form-control"
-             placeholder="{{controller.leftPlaceholder}}"
-             data-ng-change="controller.innerChange()"
+             placeholder="{{controller.docInfo.leftPlaceholder}}"
              data-ng-model="controller.leftSearchValue"
-             data-ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 500, 'blur': 0 } }"
       />
     </div>
-    <div class="commercial-left-select">
+    <div class="transfer-left-select">
       <select  name="multipleSelect"
                class="form-control"
                multiple
                data-ng-model="controller.leftValue">
-        <option data-ng-repeat="option in controller.sourceData"
+        <option data-ng-repeat="option in controller.sourceData | filter:controller.leftSearchValue"
                 value="{{option.key}}"
-                title="{{option.value}}">{{option.value}}
+                title="{{option.value}}">
+          {{option.value}}
         </option>
       </select>
     </div>
   </div>
-  <div class="commercial-center">
-    <div class="commercial-center-btn">
-      <div class="commercial-center-btn-add">
-        <button type="button"
-                class="btn bp-btn-primary"
-                data-ng-click="controller.add()"
-                data-ng-show="controller.addOperation"
-                data-ng-disabled="(controller.curSelectedStores).length==0" >
-          {{controller.addOperation}}
-        </button>
-        <button type="button"
-                class="btn bp-btn-primary"
-                data-ng-click="controller.addAll()"
-                data-ng-show="controller.addAllOperation"
-                data-ng-disabled="(controller.stores).length==0">
-          {{controller.addAllOperation}}
-        </button>
+  <!-- /左侧栏 -->
+
+  <!-- 中间 -->
+  <div class="transfer-center">
+    <div class="transfer-center-btn">
+      <div class="transfer-center-btn-add">
+        <bp-button
+                size="sm"
+                click="controller.add()"
+                disabled="(controller.leftValue).length === 0">
+          {{controller.docInfo.addOperation}}
+        </bp-button>
+        <bp-button
+                size="sm"
+                click="controller.addAll()"
+                disabled="(controller.sourceData).length === 0">
+          {{controller.docInfo.addAllOperation}}
+        </bp-button>
       </div>
-      <div class="commercial-center-btn-del">
-        <button type="button"
-                class="btn bp-btn-default"
-                data-ng-click="controller.del()"
-                data-ng-show="controller.delOperation"
-                data-ng-disabled="(controller.selectedStores).length==0">
-          {{controller.delOperation}}
-        </button>
-        <button type="button"
-                class="btn bp-btn-default"
-                data-ng-click="controller.delAll()"
-                data-ng-show="controller.delAllOperation"
-                data-ng-disabled="(controller.allSelectedStores).length==0">
-          {{controller.delAllOperation}}
-        </button>
+      <div class="transfer-center-btn-del">
+        <bp-button
+                type="default"
+                size="sm"
+                click="controller.del()"
+                disabled="(controller.rightValue).length === 0">
+          {{controller.docInfo.delOperation}}
+        </bp-button>
+        <bp-button
+                type="default"
+                size="sm"
+                click="controller.delAll()"
+                disabled="(controller.targetData).length === 0">
+          {{controller.docInfo.delAllOperation}}
+        </bp-button>
       </div>
     </div>
   </div>
+  <!--中间-->
 
-  <div class="commercial-right">
-    <div class="commercial-right-wordcount">
-      <p><span>{{controller.rightTitle}}</span></p>
-      <span>已选择{{(controller.allSelectedStores).length || 0}}个</span>
+  <!-- 右侧 -->
+  <div class="transfer-right">
+    <div class="transfer-right-stores">
+      <span>{{controller.docInfo.rightTitle}}</span>
       <input type="text"
              class="form-control"
-             placeholder="{{controller.rightPlaceholder}}"
-             data-ng-change="controller.searchStore()"
-             data-ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
-             data-ng-model="controller.filterStore.storeName">
+             placeholder="{{controller.docInfo.rightPlaceholder}}"
+             data-ng-model="controller.rightSearchValue"
+      />
     </div>
-    <div class="commercial-right-stores">
+    <div class="transfer-right-stores">
       <select  name="multipleSelect"
                class="form-control"
                multiple
-               data-ng-options="option.storeViewName for option in controller.allSelectedStores track by option.storeId"
-               data-ng-model="controller.selectedStores">
+               data-ng-model="controller.rightValue">
+        <option data-ng-repeat="option in controller.targetData | filter:controller.rightSearchValue"
+                value="{{option.key}}"
+                title="{{option.value}}">
+          {{option.value}}
+        </option>
       </select>
     </div>
   </div>
-
+  <!-- /右侧 -->
 </div>

@@ -14,53 +14,160 @@ import Component from '../common/component';
  */
 export default class Transfer extends Component {
 
+  constructor($filter) {
+    '$ngInject';
+    super();
+    this.$filter = $filter;
+  }
+
   /**
    * @override
    */
   _initDefaultValue() {
-    /**
-     * 设置标题
-     */
-    this.setTitles();
-    this.setPlaceholders();
-    this.setOperations();
-
+    this.docInfo = {
+      leftTitle:'请选择',
+      rightTitle:'请选择',
+      leftPlaceholder:'请输入检索条件',
+      rightPlaceholder:'请输入检索条件',
+      addOperation:'添加',
+      addAllOperation:'添加全部',
+      delOperation:'删除',
+      delAllOperation:'全部删除'
+    };
+    this.sourceData = angular.isArray(this.sourceData) ? this.sourceData : [];
+    this.targetData = angular.isArray(this.targetData) ? this.targetData : [];
+    this.leftValue  = angular.isArray(this.leftValue) ? this.leftValue : [];
+    this.rightValue = angular.isArray(this.rightValue) ? this.rightValue : [];
+    this.setDoc();
   }
 
-  setTitles(){
-    this.titles = angular.isArray(this.titles) ? this.titles:[];
-    this.leftTitle = this.titles[0] ? this.titles[0] : '请选择';
-    this.rightTitle = this.titles[1] ? this.titles[1] : '请选择';
+  buildDoc(source, defArr) {
+    source = angular.isArray(source) ? source : [];
+    angular.forEach(defArr,(item, index)=>{
+      this.docInfo[item] = source[index]? source[index]: this.docInfo[item]
+    })
   }
 
-  setPlaceholders(){
-    this.placeholders = angular.isArray(this.placeholders) ? this.placeholders:[];
-    this.leftPlaceholder = this.placeholders[0]? this.placeholders[0] : '请输入检索条件';
-    this.rightPlaceholder = this.placeholders[1] ? this.placeholders[1] : '请输入检索条件';
-  }
-
-  setOperations(){
-    this.operations = angular.isArray(this.operations) ? this.operations:[];
-    this.addOperation = this.operations[0] ? this.operations[0] : '添加';
-    this.addAllOperation = this.operations[1] ? this.operations[1] : '添加全部';
-    this.delOperation = this.operations[2] ? this.operations[2] : '删除';
-    this.delAllOperation = this.operations[3] ? this.operations[3] : '全部删除';
-  }
-
-  watchLeftSearchValue(){
-
-
+  setDoc(){
+    this.buildDoc(this.titles,['leftTitle', 'rightTitle']);
+    this.buildDoc(this.placeholders,['leftPlaceholder', 'rightPlaceholder']);
+    this.buildDoc(this.operations,['addOperation', 'addAllOperation', 'delOperation', 'delAllOperation']);
   }
 
   /**
-   * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
+   * reduce
+   */
+  reduceData(target, data){
+    var target = target,
+        data = data;
+    angular.forEach(data,(item)=>{
+      let index = this.getIndex(target, item);
+      if(index >=0 ){
+        target.splice(index, 1);
+      }
+    });
+    return target;
+  }
+
+  /**
+   * push
+   */
+  pushData(target, data, sourceData){
+    var target = angular.copy(target),
+        data = angular.copy(data),
+        sourceData = angular.copy(sourceData);
+    angular.forEach(data, (item)=> {
+      if (this.getIndex(target, item) < 0) {
+         this.getIndex(sourceData, item) > -1 ? target.push(sourceData[this.getIndex(sourceData, item)]): '';
+      }
+    });
+    return target;
+  }
+
+  /**
+   * get  index
+   */
+  getIndex(target, item){
+    var item  = angular.isNumber(item) ? parseInt(item): item;
+    return target.findIndex((element)=>{
+       return element && element.key == item;
+      }
+    );
+  }
+
+  /**
+   * getKeys
+   */
+  getKeys(data){
+    let target = [];
+    angular.forEach(data,(item)=>{
+      target.push(item.key);
+    });
+    return target;
+  }
+
+  /**
+   * add
+   */
+  add(){
+    this.rightValue = [];
+    this.targetData = this.pushData(this.targetData, this.leftValue, this.sourceData);
+    this.sourceData = this.reduceData(this.sourceData, this.leftValue);
+  }
+
+  /**
+   * addAll
+   */
+  addAll() {
+    this.rightValue = [];
+    this.leftValue = [];
+    this.targetData = this.pushData(
+      this.targetData,
+      this.getKeys(this.$filter('filter')(this.sourceData, this.leftSearchValue)),
+      this.sourceData
+    );
+    this.leftSearchValue ?
+      this.sourceData = this.reduceData(
+        this.sourceData,
+        this.getKeys(this.$filter('filter')(this.sourceData, this.leftSearchValue))
+      ) :
+      this.sourceData = [];
+  }
+
+  /**
+   * del
+   */
+  del(){
+    this.leftValue = [];
+    this.sourceData = this.pushData(this.sourceData, this.rightValue,this.targetData);
+    this.targetData = this.reduceData(this.targetData, this.rightValue);
+  }
+
+  /**
+   * delAll
+   */
+  delAll(){
+    this.rightValue = [];
+    this.leftValue = [];
+    this.sourceData = this.pushData(
+      this.sourceData,
+      this.getKeys(this.$filter('filter')(this.targetData,this.rightSearchValue)),
+      this.targetData
+    );
+    this.rightSearchValue ?
+      this.targetData = this.reduceData(
+        this.targetData,
+        this.getKeys(angular.copy(this.$filter('filter')(this.targetData,this.rightSearchValue)))
+      ) :
+      this.targetData = [];
+  }
+
+  /**
+   * 包装一个change处理器, 在模板里面用change, 然后调用传进来的处理器
    * @private
    */
   innerChange() {
-    this.change && typeof this.change === 'function' ? this.change({$value: this.leftSearchValue}) : this.watchLeftSearchValue();
   }
-
-
 
   /**
    * @override

@@ -9,15 +9,15 @@
  * - enable
  * - disabled
  * - loading
- * 
+ *
  * @param {String}    type        - binding symbol is `@`, 此类型针对的是样式, 比如选了primary class会出现 `"bp-btn-primary""`, 默认值是primary, 可选值[`"default"`, `"primary"`, `"danger"`]
  * @param {String}    size        - binding symbol is `@`, 按钮大小, 和bootstrap一样, 不填则是默认大小
  * @param {String}    htmlType    - binding symbol is `@`, 顾名思义, 代表的是原生html里的type值
  * @param {Boolean}   disabled    - binding symbol is `<`, 禁用状态
  * @param {String}    icon        - binding symbol is `@`, 按钮文字前方的icon名称, 详细见[bootstrap](http://getbootstrap.com/components/#glyphicons)
  * @param {ANY}       click       - binding symbol is `&`, click处理器的表达式
- * 
- * 
+ *
+ *
  */
 import Component from '../common/component';
 import classNames from 'classnames';
@@ -27,7 +27,7 @@ import ButtonState from '../../stateenum/button.state';
 
 /**
  * Button component
- * 
+ *
  * @export
  * @class Button
  * @extends {Component}
@@ -50,30 +50,30 @@ export default class Button extends Component {
   _initDefaultValue() {
     /**
      * 确定模板的class属性值
-     * 
+     *
      * @type {String}
-     * @protected 
+     * @protected
      */
     this.className = '';
     /**
      * Component binding value, 用来确定模板中class的属性值 `bp-btn-{type}`, 默认值是 `primary`
-     * 
+     *
      * @type {String}
      * @protected
      */
     this.type = this.type || 'primary';
     /**
      * Component binding value, html中的type属性.真
-     * 
+     *
      * @type {String}
-     * @protected 
+     * @protected
      */
     this.htmlType = this.htmlType || 'button';
     /**
      * Component binding value, 在按钮文字的前方添加icon
-     * 
+     *
      * @type {String}
-     * @protected 
+     * @protected
      */
     this.iconType = this.icon || '';
   }
@@ -91,17 +91,16 @@ export default class Button extends Component {
     });
   }
   /**
-   * @override 
+   * @override
    * @protected
    */
   _launch() {}
   /**
    * 比超类多了loading状态
-   * @override 
+   * @override
    * @protected
    */
   _render() {
-    console.log('_render', this._state);
     if (this._state[ButtonState.LOADING]) {
       this.iconType = 'loading';
       this._state[ButtonState.DISABLED] = true;
@@ -114,15 +113,15 @@ export default class Button extends Component {
   }
   /**
    * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
-   * 
-   * @private 
+   *
+   * @private
    */
   innerClick() {
     this.click && typeof this.click === 'function' && this.click({button: this});
   }
   /**
    * 这里主要是会有Disable值的外部变化
-   * 
+   *
    * @protected
    * @param {Object} changeObj
    */
