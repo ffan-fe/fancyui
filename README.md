@@ -1,4 +1,4 @@
-# Anaheim Electronics
+# Fancyui
 
 组件库, 将包含基础组件(Button, Checkbox)以及复合组件.
 
@@ -21,10 +21,4 @@
 ##### 打包
 
 `gulp build` 生成文件到dist目录
-
-##### 文档
-
-文档生成器是[esdoc](https://esdoc.org/)
-
-执行 ` esdoc -c esdoc.json`
 

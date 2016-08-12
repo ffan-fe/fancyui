@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
@@ -26,12 +26,12 @@ module.exports = {
         test: /\.html$/,
         loader: 'raw'
       },
-      { 
-        test: /\.less$/, 
-        loader: 'style!css!less' 
+      {
+        test: /\.less$/,
+        loader: 'style!css!less'
       },
       {
-        test: /\.css$/, 
+        test: /\.css$/,
         loader: 'style!css'
       },
       {
@@ -49,6 +49,10 @@ module.exports = {
       template: './tests/index.html',
       inject: 'body',
       hash: true
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',

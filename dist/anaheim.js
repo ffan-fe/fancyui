@@ -121,7 +121,18 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-	               * Button component entry
+	               * @ngdoc overview
+	               * @name button
+	               * @description
+	               * 
+	               * # Button component module
+	               * 
+	               * module name is **Button**
+	               * 
+	               * <pre>
+	               * import {Button} from 'anaheim';
+	               * angular.module('myApp', [Button.name]);
+	               * </pre>
 	               */
 
 	exports.default = _angular2.default.module('Button', [_icon2.default.name]).component('bpButton', _button2.default);
@@ -219,10 +230,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Button component controller
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @module src/components/button/
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name button.directive:bpButton
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 按钮组件, 实际上是对**HTML Button**的包装, 自定义了一些状态等
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - loading
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    type        - binding symbol is `@`, 此类型针对的是样式, 比如选了primary class会出现 `"bp-btn-primary""`, 默认值是primary, 可选值[`"default"`, `"primary"`, `"danger"`]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    size        - binding symbol is `@`, 按钮大小, 和bootstrap一样, 不填则是默认大小
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    htmlType    - binding symbol is `@`, 顾名思义, 代表的是原生html里的type值
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}   disabled    - binding symbol is `<`, 禁用状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    icon        - binding symbol is `@`, 按钮文字前方的icon名称, 详细见[bootstrap](http://getbootstrap.com/components/#glyphicons)
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}       click       - binding symbol is `&`, click处理器的表达式
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
 
 	'use strict';
 
@@ -551,7 +579,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = {
 	  /**
 	   * 是否禁用
-	   *
+	   * 
 	   * @type {string}
 	   */
 	  DISABLED: 'disabled'
@@ -853,8 +881,31 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	/**
-	 * Checkbox component entry
-	 * @author name
+	 * @ngdoc overview
+	 * @name checkbox
+	 * @description
+	 * 
+	 * # Checkbox component module
+	 * 
+	 * module name is **Checkbox**
+	 * 
+	 * 这里包含
+	 *  - bpCheckbox
+	 *  - bpCheckboxGroup
+	 * 
+	 * <pre>
+	 * import {Checkbox} from 'anaheim';
+	 * angular.module('myApp', [Checkbox.name]);
+	 * </pre>
+	 * 
+	 * <pre>
+	 * import {CheckboxGroup} from 'anaheim';
+	 * angular.module('myApp', [CheckboxGroup.name]);
+	 * </pre>
+	 * 
+	 * <pre>
+	 * import {Checkbox, CheckboxGroup} from 'anaheim';
+	 * </pre>
 	 */
 
 	'use strict';
@@ -947,8 +998,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Checkbox component controller
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name checkbox.directive:bpCheckbox
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包装了HTML Input[type="checkbox"]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - halfChecked
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    disabled       - binding symbol is `<`, 禁用状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    checked        - binding symbol is `=?`, 是否被选中状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    halfChecked    - binding symbol is `=?`, 是否是半选状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        trueValue      - binding symbol is `@`, like ng-true-value, 是对ng-true-value的封装
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        falseValue     - binding symbol is `@`, like ng-false-value, 是对ng-false-value的封装
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
@@ -960,8 +1026,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @export
 	 * @class Checkbox
 	 * @extends {Component}
-	 * @example
-	 *  <bp-checkbox checked="true">暴风雪</bp-checkbox>
 	 */
 
 	var Checkbox = function (_Component) {
@@ -1066,7 +1130,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	        this.state = (_state5 = {}, _defineProperty(_state5, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state5, '' + _checkbox2.default.HALF_CHECKED, false), _state5);
 	      } else {
-	        this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
+	        var _state6;
+
+	        this.state = (_state6 = {}, _defineProperty(_state6, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state6, '' + _checkbox2.default.HALF_CHECKED, false), _state6);
 	      }
 	    }
 	  }]);
@@ -1105,14 +1171,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _angular2.default.extend({
 	  /**
 	   * 选中
-	   *
+	   * 
 	   * @type {String}
 	   */
 	  CHECKED: 'checked',
 	  /**
 	   * 半选状态, 这个集中在做列表全选的时候会出现
 	   * 表现是, 选择了但又没有全选这个尴尬的状态
-	   *
+	   * 
 	   * @type {String}
 	   */
 	  HALF_CHECKED: 'halfChecked'
@@ -1123,7 +1189,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 18 */
 /***/ function(module, exports) {
 
-	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
+	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
 
 /***/ },
 /* 19 */
@@ -1577,28 +1643,43 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * checkbox group component controller
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name checkbox.directive:bpCheckboxGroup
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 顾名思义, 这是对bpCheckbox组件的二次包装, 通过`model`传进来一个对象数组, 来批量渲染bpCheckbox
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}          disabled        - binding symbol is `<`, 禁用状态, 在组上禁用则全部禁用, 实际上是对ng-disabled的包装
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.<Object>}   model           - binding symbol is `=?`, 数据源, 由于是双向绑定的逻辑会去修改数据源上的checked属性
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}          inline          - binding symbol is `@`, 是否横着排
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ```html
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <bp-checkbox-group model="vm.groupDataList"></bp-checkbox-group>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ```
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   在实际的controller或任何数据源里面有这样一个对象数组
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     groupDataList = [
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '邢老师不要脸', checked: true},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '老师不要脸'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '师不要脸'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '不要脸'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '要脸', disabled: true},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '脸'}
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ];
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   更多例子的[传送门](https://ffan-fe.github.io/#/ui/checkbox)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
 
 	/**
 	 * checkbox group
-	 *
+	 * 
 	 * @export
 	 * @class CheckboxGroup
 	 * @extends {Component}
-	 * @example
-	    <bp-checkbox-group model="vm.groupDataList"></bp-checkbox-group>
-	    groupDataList = [
-	      {label: '邢老师不要脸', checked: true},
-	      {label: '老师不要脸'},
-	      {label: '师不要脸'},
-	      {label: '不要脸'},
-	      {label: '要脸', disabled: true},
-	      {label: '脸'}
-	    ];
-	 *
 	 */
 
 	var CheckboxGroup = function (_Component) {
@@ -1614,15 +1695,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: '_initDefaultValue',
 
 	    /**
-	     * @override
-	     * @protected
+	     * @override 
+	     * @protected 
 	     */
 	    value: function _initDefaultValue() {
 	      this.model = this.model && _angular2.default.isArray(this.model) ? this.model : [];
 	    }
 	    /**
-	     * @override
-	     * @protected
+	     * @override 
+	     * @protected 
 	     */
 
 	  }, {
@@ -1633,8 +1714,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    }
 	    /**
-	     * @override
-	     * @protected
+	     * @override 
+	     * @protected 
 	     */
 
 	  }, {
@@ -1784,7 +1865,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Radio component
-	 *
+	 * 
 	 * @export
 	 * @class Radio
 	 * @extends {Component}
@@ -1812,7 +1893,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 默认值
-	     * @override
+	     * @override 
 	     */
 
 	  }, {
@@ -2064,7 +2145,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * RadioGroup component
-	 *
+	 * 
 	 * @export
 	 * @class RadioGroup
 	 * @extends {Component}
