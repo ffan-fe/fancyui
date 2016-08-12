@@ -4,18 +4,13 @@
   <meta charset="UTF-8">
   <title>Anaheim Test</title>
 </head>
-<body ng-app="app">
+<body ng-app="app" ng-controller="testApp">
   <div class="wrap">
     <!--<button-test></button-test>-->
     <div class="main-container clearfix">
       <aside class="aside-menu">
         <ul class="list-unstyled">
-          <li class="menu-item"><a href="/#/button">Button</a></li>
-          <li class="menu-item"><a href="/#/checkbox">Checkbox</a></li>
-          <li class="menu-item"><a href="/#/radio">Radio</a></li>
-          <li class="menu-item"><a href="/#/transfer">Transfer</a></li>
-          <!--<li class="menu-item"><a href="/#/datepicker">datepicker</a></li>
-          <li class="menu-item"><a href="/#/rangepicker">rangepicker</a></li>-->
+          <li class="menu-item" data-ng-repeat="item in menus"><a href="/#/{{item}}">{{item}}</a></li>
         </ul>
       </aside>
       <div class="content-container">
