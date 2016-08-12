@@ -38,14 +38,15 @@ export default class Checkbox extends Component {
    * @protected 
    */
   _initDefaultState() {
-    if (this.checked) {
+    if (this.checked == this.trueValue) {
       this.halfChecked = false;
     }
     this._state = {
       [`${CheckboxStates.DISABLED}`]: this.disabled,
-      [`${CheckboxStates.CHECKED}`]: this.checked,
+      [`${CheckboxStates.CHECKED}`]: this.checked == this.trueValue,
       [`${CheckboxStates.HALF_CHECKED}`]: this.halfChecked
     };
+    // this.changeHandler();
   }
   /**
    * @override

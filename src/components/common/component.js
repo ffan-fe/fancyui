@@ -66,8 +66,8 @@ export default class Component {
    * @see {@link _init}
    */
   $onInit() {
-    this._initDefaultState();
     this._initDefaultValue();
+    this._initDefaultState();
     this._render();
     this._launch();
     this._init = true;
