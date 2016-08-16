@@ -34,6 +34,16 @@ import CheckboxStates from '../../stateenum/checkbox.state';
  */
 export default class Checkbox extends Component {
   /**
+   * Creates an instance of Checkbox.
+   * 
+   * @param {$scope} $scope
+   */
+  constructor($scope) {
+    'ngInject';
+    super();
+    this.$scope = $scope;
+  }
+  /**
    * @override 
    * @protected 
    */
@@ -46,8 +56,9 @@ export default class Checkbox extends Component {
       [`${CheckboxStates.CHECKED}`]: this.checked == this.trueValue,
       [`${CheckboxStates.HALF_CHECKED}`]: this.halfChecked
     };
-    // this.changeHandler();
   }
+  // $onInit() {
+  // }
   /**
    * @override
    * @protected 
@@ -67,30 +78,20 @@ export default class Checkbox extends Component {
       'checked': this._state[CheckboxStates.CHECKED],
       'half-checked': this._state[CheckboxStates.HALF_CHECKED]
     });
-    console.log(this._state);
-    console.log(this.className);
   }
   /**
+   * 由于onChnages, 监听不到子数据集的变化, 所以只能这么watch... 尼玛有点2B啊.
+   * 
    * @override 
    * @protected 
    */
-  _launch() {}
-  /**
-   * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
-   * 所以需要监听一下, 然后调用一次
-   * 
-   * @protected 
-   * @param changeObj {Object}
-   */
-  $onChanges(changeObj) {
-    if (!this._init) return;
-    // checked 状态
-    if (changeObj.hasOwnProperty(CheckboxStates.CHECKED)) {
+  _launch() {
+    this.$scope.$watch(() => {return this.checked;}, (newValue, oldValue) => {
       this.changeHandler();
-    }
-    // 半选
-    if (changeObj.hasOwnProperty(CheckboxStates.HALF_CHECKED)) {
-      const halfChecked = changeObj[CheckboxStates.HALF_CHECKED]['currentValue'];
+      this._render();
+    });
+    this.$scope.$watch(() => {return this.halfChecked;}, (newValue, oldValue) => {
+      const halfChecked = newValue;
       this.state = {
         [`${CheckboxStates.HALF_CHECKED}`]: halfChecked
       };
@@ -99,14 +100,14 @@ export default class Checkbox extends Component {
           [`${CheckboxStates.CHECKED}`]: false
         };
       }
-    }
-    // 禁用
-    if (changeObj.hasOwnProperty(CheckboxStates.DISABLED)) {
+      this._render();
+    });
+    this.$scope.$watch(() => {return this.disabled;}, (newValue, oldValue) => {
       this.state = {
-        [`${CheckboxStates.DISABLED}`]: changeObj[CheckboxStates.DISABLED]['currentValue']
+        [`${CheckboxStates.DISABLED}`]: newValue
       };
-    }
-    this._render();
+      this._render();
+    });
   }
   /**
    * 用户点击而改变状态的处理器, 是在模板里面的
