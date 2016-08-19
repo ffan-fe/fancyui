@@ -9,22 +9,24 @@ import Component from '../common/component';
 
 /**
  * Timepicker component
- * 
+ *
  * @export
  * @class Timepicker
  * @extends {Component}
  */
 export default class Timepicker extends Component {
   /**
-   * @override 
+   * @override
    */
-  _initDefaultValue() {}
+  _initDefaultValue() {
+    this.htmlID = this.htmlID || 'checkbox_' + Math.random().toString(36).substr(2, 9);
+  }
   /**
-   * @override 
+   * @override
    */
   _createClassName() {}
   /**
-   * @override 
+   * @override
    */
   _launch() {}
 }
