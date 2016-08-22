@@ -1,0 +1,45 @@
+<a href="https://github.com/{{repo}}/blob/{{sha}}/{{file}}#L{{codeline}}" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">bpRadio</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">radiobox</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="radiobox-directive-page radiobox-directive-bpradio-page"><p>包装了HTML Input[type=&quot;radio&quot;]
+包含的状态有</p>
+<ul>
+<li>enable</li>
+<li>disabled</li>
+<li>checked</li>
+</ul>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bp-radio
+       disabled
+       disabled
+       model="{String}"
+       list="{Array.Object}"
+       complex="{ANY}"&gt;
+&lt;/bp-radio&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>disabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradio-page"><ul>
+<li>binding symbol is <code>&lt;</code>, 禁用状态</li>
+</ul>
+</div></td></tr><tr><td>disabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradio-page"><ul>
+<li>binding symbol is <code>&lt;</code>, 是否横向展示</li>
+</ul>
+</div></td></tr><tr><td>model</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradio-page"><ul>
+<li>binding symbol is <code>=</code>, 绑定在组件上的model</li>
+</ul>
+</div></td></tr><tr><td>list</td><td><a href="" class="label type-hint type-hint-array">Array.Object</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradio-page"><ul>
+<li>binding symbol is @, 选中后的值</li>
+</ul>
+</div></td></tr><tr><td>complex</td><td><a href="" class="label type-hint type-hint-any">ANY</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradio-page"><ul>
+<li>binding symbol is <code>=?complex</code>, 因为value只能提供String, 复杂结构数据类型使用, complex指令</li>
+</ul>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="radiobox-directive-page radiobox-directive-bpradio-page"><pre><code class="lang-html">&lt;bp-radiobox model=&quot;vm.radio&quot; value=&quot;1&quot;&gt;&lt;/bp-radiobox&gt;
+&lt;bp-radiobox model=&quot;vm.radio&quot; value=&quot;2&quot;&gt;&lt;/bp-radiobox&gt;
+</code></pre>
+<p>更多例子的<a href="https://ffan-fe.github.io/#/ui/radio">传送门</a></p>
+</div></div>
+</div>

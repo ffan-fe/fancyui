@@ -1381,21 +1381,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	var Checkbox = function (_Component) {
+	  Checkbox.$inject = ["$scope"];
 	  _inherits(Checkbox, _Component);
 
-	  function Checkbox() {
+	  /**
+	   * Creates an instance of Checkbox.
+	   * 
+	   * @param {$scope} $scope
+	   */
+
+	  function Checkbox($scope) {
+	    'ngInject';
+
 	    _classCallCheck(this, Checkbox);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this));
+
+	    _this.$scope = $scope;
+	    return _this;
 	  }
+	  /**
+	   * @override 
+	   * @protected 
+	   */
+
 
 	  _createClass(Checkbox, [{
 	    key: '_initDefaultState',
-
-	    /**
-	     * @override 
-	     * @protected 
-	     */
 	    value: function _initDefaultState() {
 	      var _state;
 
@@ -1403,8 +1415,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.halfChecked = false;
 	      }
 	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked == this.trueValue), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
-	      // this.changeHandler();
 	    }
+	    // $onInit() {
+	    // }
 	    /**
 	     * @override
 	     * @protected 
@@ -1430,46 +1443,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'checked': this._state[_checkbox2.default.CHECKED],
 	        'half-checked': this._state[_checkbox2.default.HALF_CHECKED]
 	      });
-	      console.log(this._state);
-	      console.log(this.className);
 	    }
 	    /**
+	     * 由于onChnages, 监听不到子数据集的变化, 所以只能这么watch... 尼玛有点2B啊.
+	     * 
 	     * @override 
 	     * @protected 
 	     */
 
 	  }, {
 	    key: '_launch',
-	    value: function _launch() {}
-	    /**
-	     * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
-	     * 所以需要监听一下, 然后调用一次
-	     * 
-	     * @protected 
-	     * @param changeObj {Object}
-	     */
+	    value: function _launch() {
+	      var _this2 = this;
 
-	  }, {
-	    key: '$onChanges',
-	    value: function $onChanges(changeObj) {
-	      if (!this._init) return;
-	      // checked 状态
-	      if (changeObj.hasOwnProperty(_checkbox2.default.CHECKED)) {
-	        this.changeHandler();
-	      }
-	      // 半选
-	      if (changeObj.hasOwnProperty(_checkbox2.default.HALF_CHECKED)) {
-	        var halfChecked = changeObj[_checkbox2.default.HALF_CHECKED]['currentValue'];
-	        this.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
+	      this.$scope.$watch(function () {
+	        return _this2.checked;
+	      }, function (newValue, oldValue) {
+	        _this2.changeHandler();
+	        _this2._render();
+	      });
+	      this.$scope.$watch(function () {
+	        return _this2.halfChecked;
+	      }, function (newValue, oldValue) {
+	        var halfChecked = newValue;
+	        _this2.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
 	        if (halfChecked) {
-	          this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
+	          _this2.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
 	        }
-	      }
-	      // 禁用
-	      if (changeObj.hasOwnProperty(_checkbox2.default.DISABLED)) {
-	        this.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, changeObj[_checkbox2.default.DISABLED]['currentValue']);
-	      }
-	      this._render();
+	        _this2._render();
+	      });
+	      this.$scope.$watch(function () {
+	        return _this2.disabled;
+	      }, function (newValue, oldValue) {
+	        _this2.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, newValue);
+	        _this2._render();
+	      });
 	    }
 	    /**
 	     * 用户点击而改变状态的处理器, 是在模板里面的
@@ -1481,13 +1489,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: 'changeHandler',
 	    value: function changeHandler() {
 	      if (this.checked == this.trueValue) {
-	        var _state5;
+	        var _state2;
 
-	        this.state = (_state5 = {}, _defineProperty(_state5, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state5, '' + _checkbox2.default.HALF_CHECKED, false), _state5);
+	        this.state = (_state2 = {}, _defineProperty(_state2, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state2, '' + _checkbox2.default.HALF_CHECKED, false), _state2);
 	      } else {
-	        var _state6;
+	        var _state3;
 
-	        this.state = (_state6 = {}, _defineProperty(_state6, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state6, '' + _checkbox2.default.HALF_CHECKED, false), _state6);
+	        this.state = (_state3 = {}, _defineProperty(_state3, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state3, '' + _checkbox2.default.HALF_CHECKED, false), _state3);
 	      }
 	    }
 	  }]);
