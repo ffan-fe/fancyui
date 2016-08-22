@@ -8,10 +8,8 @@ export default class TransferTextController {
     this.titles = ['我是左侧'];
     this.placeholders = ['输入个值吧大哥','请输入检索条件吧'];
     this.operations = ['左移','全部移动']
+    this.aa = false;
     //console.log('data.',this.dataSource);
   }
 
-  searchValue($value){
-    console.log('$value',$value);
-  }
 }

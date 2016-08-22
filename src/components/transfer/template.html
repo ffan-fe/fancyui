@@ -9,6 +9,7 @@
              class="form-control"
              placeholder="{{controller.docInfo.leftPlaceholder}}"
              data-ng-model="controller.leftSearchValue"
+             data-ng-if="controller.showLeftSearch"
       />
     </div>
     <div class="transfer-left-select">
@@ -33,13 +34,17 @@
         <bp-button
                 size="sm"
                 click="controller.add()"
-                disabled="(controller.leftValue).length === 0">
+                data-ng-if="controller.addBtn"
+                disabled="(controller.leftValue).length === 0"
+        >
           {{controller.docInfo.addOperation}}
         </bp-button>
         <bp-button
                 size="sm"
                 click="controller.addAll()"
-                disabled="(controller.sourceData).length === 0">
+                data-ng-if="controller.addAllBtn"
+                disabled="(controller.sourceData).length === 0"
+        >
           {{controller.docInfo.addAllOperation}}
         </bp-button>
       </div>
@@ -48,14 +53,18 @@
                 type="default"
                 size="sm"
                 click="controller.del()"
-                disabled="(controller.rightValue).length === 0">
+                data-ng-if="controller.delBtn"
+                disabled="(controller.rightValue).length === 0"
+        >
           {{controller.docInfo.delOperation}}
         </bp-button>
         <bp-button
                 type="default"
                 size="sm"
                 click="controller.delAll()"
-                disabled="(controller.targetData).length === 0">
+                data-ng-if="controller.delAllBtn"
+                disabled="(controller.targetData).length === 0"
+        >
           {{controller.docInfo.delAllOperation}}
         </bp-button>
       </div>
@@ -71,6 +80,7 @@
              class="form-control"
              placeholder="{{controller.docInfo.rightPlaceholder}}"
              data-ng-model="controller.rightSearchValue"
+             data-ng-if="controller.showRightSearch"
       />
     </div>
     <div class="transfer-right-stores">

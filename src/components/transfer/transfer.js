@@ -34,6 +34,13 @@ export default class Transfer extends Component {
       delOperation:'删除',
       delAllOperation:'全部删除'
     };
+    
+    this.showLeftSearch = angular.isUndefined(this.showLeftSearch) ? true : this.showLeftSearch ;
+    this.showRightSearch = angular.isUndefined(this.showRightSearch) ? true :  this.showRightSearch ;
+    this.addBtn = angular.isUndefined(this.addBtn) ? true : this.addBtn;
+    this.addAllBtn = angular.isUndefined(this.addAllBtn) ? true : this.addAllBtn;
+    this.delBtn = angular.isUndefined(this.delBtn) ? true : this.delBtn;
+    this.delAllBtn = angular.isUndefined(this.delAllBtn) ? true : this.delAllBtn;
     this.sourceData = angular.isArray(this.sourceData) ? this.sourceData : [];
     this.targetData = angular.isArray(this.targetData) ? this.targetData : [];
     this.leftValue  = angular.isArray(this.leftValue) ? this.leftValue : [];

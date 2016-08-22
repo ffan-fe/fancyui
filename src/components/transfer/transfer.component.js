@@ -55,12 +55,6 @@ let componentDefine = {
     showRightSearch: "<",
 
     /**
-     * 从服务端检索
-     * @type {function}
-     */
-    change: "&?",
-
-    /**
      *是否需要单个增加按钮
      * @type {Boolean}
      */
