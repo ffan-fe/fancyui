@@ -7,11 +7,6 @@ import controller from './controller';
 
 import {Button} from '../../dist/anaheim';
 
-
-// console.log('222', bpButton.name);
-
-
-
 export default angular.module('buttonTest', [
   uiRouter,
   Button.name

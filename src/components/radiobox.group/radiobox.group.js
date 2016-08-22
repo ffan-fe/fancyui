@@ -1,5 +1,37 @@
 /**
- * RadioGroup
+ * @ngdoc directive
+ * @name radiobox.directive:bpRadioboxGroup
+ * @author chuxin
+ * @restrict E
+ * @description
+ * 对radiobox的二次包装 提供`list`指令
+ * 包含的状态有
+ * - enable
+ * - disabled
+ * - checked
+ *
+ * @param {Boolean}         disabled        - binding symbol is <, 禁用状态
+ * @param {Boolean}         inline          - binding symbol is <, 是否横向展示
+ * @param {String}          model           - binding symbol is =?model, 绑定在radioBoxGroup上的model
+ * @param {Array.<Object>}  list            - binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio
+ * @example
+ ```html
+ <bp-radio-group list="vm.groupDataList" model="vm.model"></bp-radio-group>
+ ```
+ 在实际的controller或任何数据源里面有这样一个对象数组
+ <pre>
+ this.model = "这个杀手不太冷";
+ this.groupDataList = [
+ {label: '沉默的羔羊', value: '沉默的羔羊'},
+ {label: '这个杀手不太冷',value:'这个杀手不太冷'},
+ {label: '指环王',value:'指环王',complex:{author:'xxx',age:45,sex:'不详'}},
+ {label: '速度与激情',value:"速度与激情"},
+ {label: '魔兽世界', value:"魔兽世界",disabled: true},
+ {label: 'X战警',value:"X战警"}
+ ];
+ </pre>
+
+ 更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
  */
 
 import Component from '../common/component';
@@ -9,7 +41,7 @@ import classNames from 'classnames';
 
 /**
  * RadioGroup component
- * 
+ *
  * @export
  * @class RadioGroup
  * @extends {Component}

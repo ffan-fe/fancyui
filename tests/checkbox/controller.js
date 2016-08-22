@@ -20,7 +20,7 @@ export default class CheckboxTestController {
       {label: '老师不要脸'},
       {label: '师不要脸'},
       {label: '不要脸'},
-      {label: '要脸', disabled: true},
+      {label: '要脸', disabled: false},
       {label: '脸'}
     ];
 

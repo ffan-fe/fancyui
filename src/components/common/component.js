@@ -10,9 +10,9 @@ import CommonState from '../../stateenum/common.state';
 
 /**
  * 基类, 定义了模板和一系列基础操作
- * 
+ *
  * @export
- * @abstract 
+ * @abstract
  * @class Component
  * @implements {IComponentState}
  */
@@ -23,14 +23,14 @@ export default class Component {
   constructor() {
     /**
      * every component has a state object, according to the state properties to determine how to display UI
-     * 
+     *
      * @type {Object}
-     * @protected 
+     * @protected
      */
     this._state = {};
     /**
      * 是否初始化完毕, 标识着是否执行完$onInit
-     * 
+     *
      * @protected
      * @type {Boolean}
      * @default false
@@ -40,17 +40,17 @@ export default class Component {
   }
   /**
    * get component state
-   * 
-   * @public 
-   */ 
+   *
+   * @public
+   */
   get state() {
     return this._state;
   }
   /**
    * set component state
-   * 
+   *
    * @public
-   * @param state {Object} 
+   * @param state {Object}
    */
   set state(state) {
     if (Object.prototype.toString.call(state) === '[object Object]') {
@@ -60,8 +60,8 @@ export default class Component {
   }
   /**
    * 构建模板, 在最后会将 _init设置为true
-   * 
-   * @protected 
+   *
+   * @protected
    * @final
    * @see {@link _init}
    */
@@ -74,8 +74,8 @@ export default class Component {
   }
   /**
    * 初始化默认值, 因为angular组件变量传递是在component定义决定的, 有些值可能没有传进来, 所以在这里确定一次
-   * 
-   * @protected 
+   *
+   * @protected
    */
   _initDefaultValue() {
     throw new Error('IllegalOperationError for _initDefaultValue method, you need override the method');
@@ -91,8 +91,8 @@ export default class Component {
   /**
    * 确定className, 处理过之后赋值到`this.className`属性, 并经由此属性填充到UI(html)的class属性里
    * 每次render都会重新计算一次样式
-   * 
-   * @protected 
+   *
+   * @protected
    * @see {@link _render}
    */
   _createClassName() {
@@ -100,15 +100,15 @@ export default class Component {
   }
   /**
    * 实现组件功能的细节部分
-   * 
-   * @protected 
+   *
+   * @protected
    */
   _launch() {
     throw new Error('IllegalOperationError for _launch method, you need override the method');
   }
   /**
    * 针对不同的状态, 做UI变化, 如果子类有新状态那么override, 并super调用此方法
-   * 
+   *
    * @protected
    */
   _render() {

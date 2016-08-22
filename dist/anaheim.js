@@ -242,15 +242,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - loading
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    type        - binding symbol is `@`, 此类型针对的是样式, 比如选了primary class会出现 `"bp-btn-primary""`, 默认值是primary, 可选值[`"default"`, `"primary"`, `"danger"`]
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    size        - binding symbol is `@`, 按钮大小, 和bootstrap一样, 不填则是默认大小
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    htmlType    - binding symbol is `@`, 顾名思义, 代表的是原生html里的type值
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}   disabled    - binding symbol is `<`, 禁用状态
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    icon        - binding symbol is `@`, 按钮文字前方的icon名称, 详细见[bootstrap](http://getbootstrap.com/components/#glyphicons)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}       click       - binding symbol is `&`, click处理器的表达式
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 
@@ -258,7 +258,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Button component
-	 * 
+	 *
 	 * @export
 	 * @class Button
 	 * @extends {Component}
@@ -293,30 +293,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _initDefaultValue() {
 	      /**
 	       * 确定模板的class属性值
-	       * 
+	       *
 	       * @type {String}
-	       * @protected 
+	       * @protected
 	       */
 	      this.className = '';
 	      /**
 	       * Component binding value, 用来确定模板中class的属性值 `bp-btn-{type}`, 默认值是 `primary`
-	       * 
+	       *
 	       * @type {String}
 	       * @protected
 	       */
 	      this.type = this.type || 'primary';
 	      /**
 	       * Component binding value, html中的type属性.真
-	       * 
+	       *
 	       * @type {String}
-	       * @protected 
+	       * @protected
 	       */
 	      this.htmlType = this.htmlType || 'button';
 	      /**
 	       * Component binding value, 在按钮文字的前方添加icon
-	       * 
+	       *
 	       * @type {String}
-	       * @protected 
+	       * @protected
 	       */
 	      this.iconType = this.icon || '';
 	    }
@@ -336,7 +336,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }, _defineProperty(_classNames, 'btn-' + this.size, !!this.size), _defineProperty(_classNames, 'bp-btn-' + this.type, true), _defineProperty(_classNames, 'loading-btn', this._state[_button2.default.LOADING]), _classNames));
 	    }
 	    /**
-	     * @override 
+	     * @override
 	     * @protected
 	     */
 
@@ -345,14 +345,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _launch() {}
 	    /**
 	     * 比超类多了loading状态
-	     * @override 
+	     * @override
 	     * @protected
 	     */
 
 	  }, {
 	    key: '_render',
 	    value: function _render() {
-	      console.log('_render', this._state);
 	      if (this._state[_button2.default.LOADING]) {
 	        this.iconType = 'loading';
 	        this._state[_button2.default.DISABLED] = true;
@@ -365,8 +364,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
-	     * 
-	     * @private 
+	     *
+	     * @private
 	     */
 
 	  }, {
@@ -376,7 +375,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 这里主要是会有Disable值的外部变化
-	     * 
+	     *
 	     * @protected
 	     * @param {Object} changeObj
 	     */
@@ -430,9 +429,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * 基类, 定义了模板和一系列基础操作
-	 * 
+	 *
 	 * @export
-	 * @abstract 
+	 * @abstract
 	 * @class Component
 	 * @implements {IComponentState}
 	 */
@@ -447,14 +446,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * every component has a state object, according to the state properties to determine how to display UI
-	     * 
+	     *
 	     * @type {Object}
-	     * @protected 
+	     * @protected
 	     */
 	    this._state = {};
 	    /**
 	     * 是否初始化完毕, 标识着是否执行完$onInit
-	     * 
+	     *
 	     * @protected
 	     * @type {Boolean}
 	     * @default false
@@ -464,8 +463,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }
 	  /**
 	   * get component state
-	   * 
-	   * @public 
+	   *
+	   * @public
 	   */
 
 
@@ -474,8 +473,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 构建模板, 在最后会将 _init设置为true
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     * @final
 	     * @see {@link _init}
 	     */
@@ -488,8 +487,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 初始化默认值, 因为angular组件变量传递是在component定义决定的, 有些值可能没有传进来, 所以在这里确定一次
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     */
 
 	  }, {
@@ -509,8 +508,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * 确定className, 处理过之后赋值到`this.className`属性, 并经由此属性填充到UI(html)的class属性里
 	     * 每次render都会重新计算一次样式
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     * @see {@link _render}
 	     */
 
@@ -521,8 +520,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 实现组件功能的细节部分
-	     * 
-	     * @protected 
+	     *
+	     * @protected
 	     */
 
 	  }, {
@@ -532,7 +531,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 针对不同的状态, 做UI变化, 如果子类有新状态那么override, 并super调用此方法
-	     * 
+	     *
 	     * @protected
 	     */
 
@@ -548,9 +547,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * set component state
-	     * 
+	     *
 	     * @public
-	     * @param state {Object} 
+	     * @param state {Object}
 	     */
 	    ,
 	    set: function set(state) {
@@ -1138,7 +1137,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Icon component
-	 * 
+	 *
 	 * @export
 	 * @class Icon
 	 * @extends {Component}
@@ -1157,13 +1156,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: '_initDefaultValue',
 
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 	    value: function _initDefaultValue() {}
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -1178,8 +1177,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }, 'glyphicon-' + iconType, !!this.type));
 	    }
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -1187,14 +1186,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _launch() {}
 	    /**
 	     * 主要是因为type变了之后要重新生成class
-	     * 
+	     *
 	     * @param {Object} changeObj bindings object
 	     */
 
 	  }, {
 	    key: '$onChanges',
 	    value: function $onChanges(changeObj) {
-	      console.log(changeObj);
 	      if (changeObj.hasOwnProperty('type')) {
 	        this._createClassName();
 	      }
@@ -1361,7 +1359,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - halfChecked
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    disabled       - binding symbol is `<`, 禁用状态
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    checked        - binding symbol is `=?`, 是否被选中状态
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    halfChecked    - binding symbol is `=?`, 是否是半选状态
@@ -1374,28 +1372,41 @@ return /******/ (function(modules) { // webpackBootstrap
 	/**
 	 * Checkbox component
 	 * 这里是对<input checkbox>的封装, 唯一需要说明的是半选状态, 是表现一个列表, 选中了某几项, 却又没有全选的状态
-	 * 
+	 *
 	 * @export
 	 * @class Checkbox
 	 * @extends {Component}
 	 */
 
 	var Checkbox = function (_Component) {
+	  Checkbox.$inject = ["$scope"];
 	  _inherits(Checkbox, _Component);
 
-	  function Checkbox() {
+	  /**
+	   * Creates an instance of Checkbox.
+	   *
+	   * @param {$scope} $scope
+	   */
+
+	  function Checkbox($scope) {
+	    'ngInject';
+
 	    _classCallCheck(this, Checkbox);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).apply(this, arguments));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this));
+
+	    _this.$scope = $scope;
+	    return _this;
 	  }
+
+	  /**
+	   * @override
+	   * @protected
+	   */
+
 
 	  _createClass(Checkbox, [{
 	    key: '_initDefaultState',
-
-	    /**
-	     * @override 
-	     * @protected 
-	     */
 	    value: function _initDefaultState() {
 	      var _state;
 
@@ -1403,11 +1414,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.halfChecked = false;
 	      }
 	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked == this.trueValue), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
-	      // this.changeHandler();
 	    }
+	    // $onInit() {
+	    // }
 	    /**
 	     * @override
-	     * @protected 
+	     * @protected
 	     */
 
 	  }, {
@@ -1418,8 +1430,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.falseValue = this.falseValue ? this.falseValue : false;
 	    }
 	    /**
-	     * @override 
-	     * @protected 
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
@@ -1430,64 +1442,59 @@ return /******/ (function(modules) { // webpackBootstrap
 	        'checked': this._state[_checkbox2.default.CHECKED],
 	        'half-checked': this._state[_checkbox2.default.HALF_CHECKED]
 	      });
-	      console.log(this._state);
-	      console.log(this.className);
 	    }
 	    /**
-	     * @override 
-	     * @protected 
+	     * 由于onChnages, 监听不到子数据集的变化, 所以只能这么watch... 尼玛有点2B啊.
+	     *
+	     * @override
+	     * @protected
 	     */
 
 	  }, {
 	    key: '_launch',
-	    value: function _launch() {}
-	    /**
-	     * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
-	     * 所以需要监听一下, 然后调用一次
-	     * 
-	     * @protected 
-	     * @param changeObj {Object}
-	     */
+	    value: function _launch() {
+	      var _this2 = this;
 
-	  }, {
-	    key: '$onChanges',
-	    value: function $onChanges(changeObj) {
-	      if (!this._init) return;
-	      // checked 状态
-	      if (changeObj.hasOwnProperty(_checkbox2.default.CHECKED)) {
-	        this.changeHandler();
-	      }
-	      // 半选
-	      if (changeObj.hasOwnProperty(_checkbox2.default.HALF_CHECKED)) {
-	        var halfChecked = changeObj[_checkbox2.default.HALF_CHECKED]['currentValue'];
-	        this.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
+	      this.$scope.$watch(function () {
+	        return _this2.checked;
+	      }, function (newValue, oldValue) {
+	        _this2.changeHandler();
+	        _this2._render();
+	      });
+	      this.$scope.$watch(function () {
+	        return _this2.halfChecked;
+	      }, function (newValue, oldValue) {
+	        var halfChecked = newValue;
+	        _this2.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
 	        if (halfChecked) {
-	          this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
+	          _this2.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
 	        }
-	      }
-	      // 禁用
-	      if (changeObj.hasOwnProperty(_checkbox2.default.DISABLED)) {
-	        this.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, changeObj[_checkbox2.default.DISABLED]['currentValue']);
-	      }
-	      this._render();
+	        _this2._render();
+	      });
+	      this.$scope.$watch(function () {
+	        return _this2.disabled;
+	      }, function (newValue, oldValue) {
+	        _this2.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, newValue);
+	        _this2._render();
+	      });
 	    }
 	    /**
 	     * 用户点击而改变状态的处理器, 是在模板里面的
-	     * 
-	     * @private 
+	     *
+	     * @private
 	     */
 
 	  }, {
 	    key: 'changeHandler',
 	    value: function changeHandler() {
 	      if (this.checked == this.trueValue) {
-	        var _state5;
+	        var _state2;
 
-	        this.state = (_state5 = {}, _defineProperty(_state5, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state5, '' + _checkbox2.default.HALF_CHECKED, false), _state5);
+	        this.state = (_state2 = {}, _defineProperty(_state2, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state2, '' + _checkbox2.default.HALF_CHECKED, false), _state2);
 	      } else {
-	        var _state6;
+	        var _state3;
 
-	        this.state = (_state6 = {}, _defineProperty(_state6, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state6, '' + _checkbox2.default.HALF_CHECKED, false), _state6);
+	        this.state = (_state3 = {}, _defineProperty(_state3, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state3, '' + _checkbox2.default.HALF_CHECKED, false), _state3);
 	      }
 	    }
 	  }]);
@@ -1833,7 +1840,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-	               * Radio component define
+	               * @type {Object}
+	               * @property {Boolean}    disabled       - binding symbol is <, 禁用状态
+	               * @property {String}    value          - binding symbol is @, 选中后的值
+	               * @property {ANY}        model          - binding symbol is =?,绑定在radioBox上的model
+	               * @property {complex}    complex        - binding symbol is =?complex, 因为value只能提供String, 复杂结构数据类型使用, complex指令
 	               */
 
 	var componentDefine = {
@@ -1905,14 +1916,36 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Radio
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name radiobox.directive:bpRadio
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包装了HTML Input[type="radio"]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled       - binding symbol is `<`, 禁用状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled       - binding symbol is `<`, 是否横向展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model          - binding symbol is `=`, 绑定在组件上的model
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.Object}    list          - binding symbol is @, 选中后的值
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}             complex        - binding symbol is `=?complex`, 因为value只能提供String, 复杂结构数据类型使用, complex指令
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```html
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="1"></bp-radiobox>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="2"></bp-radiobox>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
 
 	/**
 	 * Radio component
-	 * 
+	 *
 	 * @export
 	 * @class Radio
 	 * @extends {Component}
@@ -1940,7 +1973,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 默认值
-	     * @override 
+	     * @override
 	     */
 
 	  }, {
@@ -2119,7 +2152,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-	               * Radio component define
+	               * @type {Object}
+	               * @property {Boolean}         disabled        - binding symbol is <, 禁用状态
+	               * @property {Boolean}         inline          - binding symbol is <, 是否横向展示
+	               * @property {String}          model           - binding symbol is =?model, 绑定在radioBoxGroup上的model
+	               * @property {Array.<Object>}  list            - binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio
 	               */
 
 	var componentDefine = {
@@ -2185,14 +2222,46 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * RadioGroup
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name radiobox.directive:bpRadioboxGroup
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 对radiobox的二次包装 提供`list`指令
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled        - binding symbol is <, 禁用状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         inline          - binding symbol is <, 是否横向展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model           - binding symbol is =?model, 绑定在radioBoxGroup上的model
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.<Object>}  list            - binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```html
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radio-group list="vm.groupDataList" model="vm.model"></bp-radio-group>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                在实际的controller或任何数据源里面有这样一个对象数组
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.model = "这个杀手不太冷";
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.groupDataList = [
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '沉默的羔羊', value: '沉默的羔羊'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '这个杀手不太冷',value:'这个杀手不太冷'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '指环王',value:'指环王',complex:{author:'xxx',age:45,sex:'不详'}},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '速度与激情',value:"速度与激情"},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '魔兽世界', value:"魔兽世界",disabled: true},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: 'X战警',value:"X战警"}
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ];
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
 
 	/**
 	 * RadioGroup component
-	 * 
+	 *
 	 * @export
 	 * @class RadioGroup
 	 * @extends {Component}

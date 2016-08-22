@@ -1,0 +1,100 @@
+<div class="transfer">
+  <!-- 左侧栏 -->
+  <div class="transfer-left">
+    <div class="transfer-left-stores">
+      <span>{{controller.docInfo.leftTitle}}</span>
+      <!-- 前端检索 -->
+      <input
+             type="text"
+             class="form-control"
+             placeholder="{{controller.docInfo.leftPlaceholder}}"
+             data-ng-model="controller.leftSearchValue"
+             data-ng-if="controller.showLeftSearch"
+      />
+    </div>
+    <div class="transfer-left-select">
+      <select  name="multipleSelect"
+               class="form-control"
+               multiple
+               data-ng-model="controller.leftValue">
+        <option data-ng-repeat="option in controller.sourceData | filter:controller.leftSearchValue"
+                value="{{option.key}}"
+                title="{{option.value}}">
+          {{option.value}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <!-- /左侧栏 -->
+
+  <!-- 中间 -->
+  <div class="transfer-center">
+    <div class="transfer-center-btn">
+      <div class="transfer-center-btn-add">
+        <bp-button
+                size="sm"
+                click="controller.add()"
+                data-ng-if="controller.addBtn"
+                disabled="(controller.leftValue).length === 0"
+        >
+          {{controller.docInfo.addOperation}}
+        </bp-button>
+        <bp-button
+                size="sm"
+                click="controller.addAll()"
+                data-ng-if="controller.addAllBtn"
+                disabled="(controller.sourceData).length === 0"
+        >
+          {{controller.docInfo.addAllOperation}}
+        </bp-button>
+      </div>
+      <div class="transfer-center-btn-del">
+        <bp-button
+                type="default"
+                size="sm"
+                click="controller.del()"
+                data-ng-if="controller.delBtn"
+                disabled="(controller.rightValue).length === 0"
+        >
+          {{controller.docInfo.delOperation}}
+        </bp-button>
+        <bp-button
+                type="default"
+                size="sm"
+                click="controller.delAll()"
+                data-ng-if="controller.delAllBtn"
+                disabled="(controller.targetData).length === 0"
+        >
+          {{controller.docInfo.delAllOperation}}
+        </bp-button>
+      </div>
+    </div>
+  </div>
+  <!--中间-->
+
+  <!-- 右侧 -->
+  <div class="transfer-right">
+    <div class="transfer-right-stores">
+      <span>{{controller.docInfo.rightTitle}}</span>
+      <input type="text"
+             class="form-control"
+             placeholder="{{controller.docInfo.rightPlaceholder}}"
+             data-ng-model="controller.rightSearchValue"
+             data-ng-if="controller.showRightSearch"
+      />
+    </div>
+    <div class="transfer-right-stores">
+      <select  name="multipleSelect"
+               class="form-control"
+               multiple
+               data-ng-model="controller.rightValue">
+        <option data-ng-repeat="option in controller.targetData | filter:controller.rightSearchValue"
+                value="{{option.key}}"
+                title="{{option.value}}">
+          {{option.value}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <!-- /右侧 -->
+</div>
