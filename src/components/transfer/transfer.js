@@ -14,10 +14,19 @@ import Component from '../common/component';
  */
 export default class Transfer extends Component {
 
-  constructor($filter) {
+  constructor($filter,$scope) {
     '$ngInject';
     super();
     this.$filter = $filter;
+    /**
+     * todo...
+     * 用户直接对  sourceData targetData赋值
+     * 过滤一遍
+     */
+    $scope.$watch(() => {
+      return this.targetData;
+    }, (newValue, oldValue) => {
+    });
   }
 
   /**
@@ -34,7 +43,7 @@ export default class Transfer extends Component {
       delOperation:'删除',
       delAllOperation:'全部删除'
     };
-    
+
     this.showLeftSearch = angular.isUndefined(this.showLeftSearch) ? true : this.showLeftSearch ;
     this.showRightSearch = angular.isUndefined(this.showRightSearch) ? true :  this.showRightSearch ;
     this.addBtn = angular.isUndefined(this.addBtn) ? true : this.addBtn;

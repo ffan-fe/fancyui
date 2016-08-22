@@ -65,23 +65,23 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _button2 = _interopRequireDefault(_button);
 
-	var _icon = __webpack_require__(10);
+	var _icon = __webpack_require__(14);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
-	var _checkbox = __webpack_require__(14);
+	var _checkbox = __webpack_require__(18);
 
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 
-	var _checkbox3 = __webpack_require__(23);
+	var _checkbox3 = __webpack_require__(25);
 
 	var _checkbox4 = _interopRequireDefault(_checkbox3);
 
-	var _radiobox = __webpack_require__(27);
+	var _radiobox = __webpack_require__(29);
 
 	var _radiobox2 = _interopRequireDefault(_radiobox);
 
-	var _radiobox3 = __webpack_require__(34);
+	var _radiobox3 = __webpack_require__(36);
 
 	var _radiobox4 = _interopRequireDefault(_radiobox3);
 
@@ -114,14 +114,25 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _button2 = _interopRequireDefault(_button);
 
-	var _icon = __webpack_require__(10);
+	var _icon = __webpack_require__(14);
 
 	var _icon2 = _interopRequireDefault(_icon);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-	               * Button component entry
+	               * @ngdoc overview
+	               * @name button
+	               * @description
+	               * 
+	               * # Button component module
+	               * 
+	               * module name is **Button**
+	               * 
+	               * <pre>
+	               * import {Button} from 'anaheim';
+	               * angular.module('myApp', [Button.name]);
+	               * </pre>
 	               */
 
 	exports.default = _angular2.default.module('Button', [_icon2.default.name]).component('bpButton', _button2.default);
@@ -150,11 +161,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _template2 = _interopRequireDefault(_template);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	__webpack_require__(10);
 
-	/**
-	 * Button component define
-	 */
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict';
 
@@ -167,6 +176,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	 * @property {String}   icon        - binding symbol is @, 按钮文字前方的icon名称, 详细见bootstrap
 	 * @property {Boolean}  click       - binding symbol is &, click 处理器
 	 */
+	/**
+	 * Button component define
+	 */
+
 	var ButtonComponentDefine = {
 	  template: _template2.default,
 	  controller: _button2.default,
@@ -219,10 +232,27 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Button component controller
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @module src/components/button/
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name button.directive:bpButton
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 按钮组件, 实际上是对**HTML Button**的包装, 自定义了一些状态等
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - loading
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    type        - binding symbol is `@`, 此类型针对的是样式, 比如选了primary class会出现 `"bp-btn-primary""`, 默认值是primary, 可选值[`"default"`, `"primary"`, `"danger"`]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    size        - binding symbol is `@`, 按钮大小, 和bootstrap一样, 不填则是默认大小
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    htmlType    - binding symbol is `@`, 顾名思义, 代表的是原生html里的type值
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}   disabled    - binding symbol is `<`, 禁用状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    icon        - binding symbol is `@`, 按钮文字前方的icon名称, 详细见[bootstrap](http://getbootstrap.com/components/#glyphicons)
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}       click       - binding symbol is `&`, click处理器的表达式
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
 
 	'use strict';
 
@@ -449,8 +479,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @see {@link _init}
 	     */
 	    value: function $onInit() {
-	      this._initDefaultState();
 	      this._initDefaultValue();
+	      this._initDefaultState();
 	      this._render();
 	      this._launch();
 	      this._init = true;
@@ -551,7 +581,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = {
 	  /**
 	   * 是否禁用
-	   *
+	   * 
 	   * @type {string}
 	   */
 	  DISABLED: 'disabled'
@@ -656,493 +686,20 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(2);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _icon = __webpack_require__(11);
-
-	var _icon2 = _interopRequireDefault(_icon);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Icon component entry
-	 * @author name
-	 */
-
-	'use strict';
-
-	exports.default = _angular2.default.module('Icon', []).component('bpIcon', _icon2.default);
-
-/***/ },
-/* 11 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _icon = __webpack_require__(12);
-
-	var _icon2 = _interopRequireDefault(_icon);
-
-	var _template = __webpack_require__(13);
-
-	var _template2 = _interopRequireDefault(_template);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Icon component define
-	 */
-
-	'use strict';
-
-	/**
-	 * @type {Object}
-	 * @property {String} type  - binding symbol <, 类型, 也直接决定了渲染成哪个图标
-	 */
-	var IconComponentDefine = {
-	  template: _template2.default,
-	  controller: _icon2.default,
-	  controllerAs: 'controller',
-	  bindings: {
-	    type: '<'
-	  }
-	};
-
-	exports.default = IconComponentDefine;
-
-/***/ },
-/* 12 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _component = __webpack_require__(5);
-
-	var _component2 = _interopRequireDefault(_component);
-
-	var _classnames = __webpack_require__(7);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Icon
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-	'use strict';
-
-	/**
-	 * Icon component
-	 *
-	 * @export
-	 * @class Icon
-	 * @extends {Component}
-	 */
-
-	var Icon = function (_Component) {
-	  _inherits(Icon, _Component);
-
-	  function Icon() {
-	    _classCallCheck(this, Icon);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
-	  }
-
-	  _createClass(Icon, [{
-	    key: '_initDefaultValue',
-
-	    /**
-	     * @override
-	     * @protected
-	     */
-	    value: function _initDefaultValue() {}
-	    /**
-	     * @override
-	     * @protected
-	     */
-
-	  }, {
-	    key: '_createClassName',
-	    value: function _createClassName() {
-	      // todo: 暂时还没有loading的图标, 有了这个逻辑就可以干掉了
-	      var iconType = this.type === 'loading' ? 'repeat' : this.type;
-
-	      this.className = (0, _classnames2.default)(_defineProperty({
-	        'bp-icon': true,
-	        'glyphicon': true
-	      }, 'glyphicon-' + iconType, !!this.type));
-	    }
-	    /**
-	     * @override
-	     * @protected
-	     */
-
-	  }, {
-	    key: '_launch',
-	    value: function _launch() {}
-	    /**
-	     * 主要是因为type变了之后要重新生成class
-	     *
-	     * @param {Object} changeObj bindings object
-	     */
-
-	  }, {
-	    key: '$onChanges',
-	    value: function $onChanges(changeObj) {
-	      if (changeObj.hasOwnProperty('type')) {
-	        this._createClassName();
-	      }
-	    }
-	  }]);
-
-	  return Icon;
-	}(_component2.default);
-
-	exports.default = Icon;
-
-/***/ },
-/* 13 */
-/***/ function(module, exports) {
-
-	module.exports = "<i class=\"{{controller.className}}\"></i>"
-
-/***/ },
-/* 14 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(2);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _checkbox = __webpack_require__(15);
-
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Checkbox component entry
-	 * @author name
-	 */
-
-	'use strict';
-
-	exports.default = _angular2.default.module('Checkbox', []).component('bpCheckbox', _checkbox2.default);
-
-/***/ },
-/* 15 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _checkbox = __webpack_require__(16);
-
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-
-	var _template = __webpack_require__(18);
-
-	var _template2 = _interopRequireDefault(_template);
-
-	__webpack_require__(19);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	'use strict';
-
-	/**
-	 * @type {Object}
-	 * @property {Boolean}    disabled       - binding symbol is <, 禁用状态
-	 * @property {Boolean}    checked        - binding symbol is =?, 是否被选中状态
-	 * @property {Boolean}    halfChecked    - binding symbol is =?, 是否是半选状态
-	 * @property {ANY}        trueValue      - binding symbol is @, like ng-true-value, 是对ng-true-value的封装
-	 * @property {ANY}        falseValue     - binding symbol is @, like ng-false-value, 是对ng-false-value的封装
-	 */
-	/**
-	 * Checkbox component define
-	 * @author fengpeng
-	 */
-
-	var CheckboxComponentDefine = {
-	  template: _template2.default,
-	  controller: _checkbox2.default,
-	  controllerAs: 'controller',
-	  transclude: true,
-	  bindings: {
-	    disabled: '<',
-	    checked: '=?checked',
-	    halfChecked: '=?halfChecked',
-	    trueValue: '@',
-	    falseValue: '@'
-	  }
-	};
-
-	exports.default = CheckboxComponentDefine;
-
-/***/ },
-/* 16 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-	var _component = __webpack_require__(5);
-
-	var _component2 = _interopRequireDefault(_component);
-
-	var _classnames = __webpack_require__(7);
-
-	var _classnames2 = _interopRequireDefault(_classnames);
-
-	var _checkbox = __webpack_require__(17);
-
-	var _checkbox2 = _interopRequireDefault(_checkbox);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Checkbox component controller
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
-
-	'use strict';
-
-	/**
-	 * Checkbox component
-	 * 这里是对<input checkbox>的封装, 唯一需要说明的是半选状态, 是表现一个列表, 选中了某几项, 却又没有全选的状态
-	 *
-	 * @export
-	 * @class Checkbox
-	 * @extends {Component}
-	 * @example
-	 *  <bp-checkbox checked="true">暴风雪</bp-checkbox>
-	 */
-
-	var Checkbox = function (_Component) {
-	  _inherits(Checkbox, _Component);
-
-	  function Checkbox() {
-	    _classCallCheck(this, Checkbox);
-
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).apply(this, arguments));
-	  }
-
-	  _createClass(Checkbox, [{
-	    key: '_initDefaultState',
-
-	    /**
-	     * @override
-	     * @protected
-	     */
-	    value: function _initDefaultState() {
-	      var _state;
-
-	      if (this.checked) {
-	        this.halfChecked = false;
-	      }
-	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
-	    }
-	    /**
-	     * @override
-	     * @protected
-	     */
-
-	  }, {
-	    key: '_initDefaultValue',
-	    value: function _initDefaultValue() {
-	      this.htmlID = this.htmlID || 'checkbox_' + Math.random().toString(36).substr(2, 9);
-	      this.trueValue = this.trueValue ? this.trueValue : true;
-	      this.falseValue = this.falseValue ? this.falseValue : false;
-	    }
-	    /**
-	     * @override
-	     * @protected
-	     */
-
-	  }, {
-	    key: '_createClassName',
-	    value: function _createClassName() {
-	      this.className = (0, _classnames2.default)({
-	        'disabled': this._state[_checkbox2.default.DISABLED],
-	        'checked': this._state[_checkbox2.default.CHECKED],
-	        'half-checked': this._state[_checkbox2.default.HALF_CHECKED]
-	      });
-	    }
-	    /**
-	     * @override
-	     * @protected
-	     */
-
-	  }, {
-	    key: '_launch',
-	    value: function _launch() {}
-	    /**
-	     * 这里是因为改变值, 很有可能是binding过来的值, 并没有调用setter state.
-	     * 所以需要监听一下, 然后调用一次
-	     *
-	     * @protected
-	     * @param changeObj {Object}
-	     */
-
-	  }, {
-	    key: '$onChanges',
-	    value: function $onChanges(changeObj) {
-	      if (!this._init) return;
-	      // checked 状态
-	      if (changeObj.hasOwnProperty(_checkbox2.default.CHECKED)) {
-	        this.changeHandler();
-	      }
-	      // 半选
-	      if (changeObj.hasOwnProperty(_checkbox2.default.HALF_CHECKED)) {
-	        var halfChecked = changeObj[_checkbox2.default.HALF_CHECKED]['currentValue'];
-	        this.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
-	        if (halfChecked) {
-	          this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
-	        }
-	      }
-	      // 禁用
-	      if (changeObj.hasOwnProperty(_checkbox2.default.DISABLED)) {
-	        this.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, changeObj[_checkbox2.default.DISABLED]['currentValue']);
-	      }
-	      this._render();
-	    }
-	    /**
-	     * 用户点击而改变状态的处理器, 是在模板里面的
-	     *
-	     * @private
-	     */
-
-	  }, {
-	    key: 'changeHandler',
-	    value: function changeHandler() {
-	      if (this.checked == this.trueValue) {
-	        var _state5;
-
-	        this.state = (_state5 = {}, _defineProperty(_state5, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state5, '' + _checkbox2.default.HALF_CHECKED, false), _state5);
-	      } else {
-	        this.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
-	      }
-	    }
-	  }]);
-
-	  return Checkbox;
-	}(_component2.default);
-
-	exports.default = Checkbox;
-
-/***/ },
-/* 17 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(2);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _common = __webpack_require__(6);
-
-	var _common2 = _interopRequireDefault(_common);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Checkbox states enumeration
-	 */
-
-	'use strict';
-
-	exports.default = _angular2.default.extend({
-	  /**
-	   * 选中
-	   *
-	   * @type {String}
-	   */
-	  CHECKED: 'checked',
-	  /**
-	   * 半选状态, 这个集中在做列表全选的时候会出现
-	   * 表现是, 选择了但又没有全选这个尴尬的状态
-	   *
-	   * @type {String}
-	   */
-	  HALF_CHECKED: 'halfChecked'
-
-	}, _common2.default);
-
-/***/ },
-/* 18 */
-/***/ function(module, exports) {
-
-	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
-
-/***/ },
-/* 19 */
-/***/ function(module, exports, __webpack_require__) {
-
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(20);
+	var content = __webpack_require__(11);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(22)(content, {});
+	var update = __webpack_require__(13)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./checkbox.less", function() {
-				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./checkbox.less");
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./button.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./button.less");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -1152,21 +709,21 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 20 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(21)();
+	exports = module.exports = __webpack_require__(12)();
 	// imports
 
 
 	// module
-	exports.push([module.id, ".checkbox-container {\n  position: relative;\n}\n.checkbox-container input[type=\"checkbox\"] {\n  position: absolute;\n  left: 0;\n  top: 4px;\n  width: 14px;\n  height: 14px;\n  margin: 0px;\n  visibility: hidden;\n}\n.checkbox-container .checkbox-inner-box {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 1px solid #CCCCCC;\n  border-radius: 2px;\n  background-color: white;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.checkbox-container .checkbox-inner-box:hover {\n  border-color: #58b4e9;\n}\n.checkbox-container .checkbox-inner-box:after {\n  display: block;\n  content: \"\";\n  transition: transform 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;\n  transform: rotate(45deg) scale(0);\n}\n.checkbox-container.checked .checkbox-inner-box,\n.checkbox-container.half-checked .checkbox-inner-box {\n  background-color: #58b4e9;\n  border-color: #58b4e9;\n}\n.checkbox-container.checked .checkbox-inner-box:after {\n  display: block;\n  width: 6px;\n  height: 9px;\n  position: absolute;\n  left: 4px;\n  top: 5px;\n  border-top: 2px solid white;\n  content: \" \";\n  border: 2px solid white;\n  border-left: none;\n  border-top: none;\n  transform: rotate(45deg) scale(1);\n}\n.checkbox-container.half-checked .checkbox-inner-box:after {\n  display: block;\n  width: 8px;\n  height: 0px;\n  position: absolute;\n  left: 3px;\n  top: 10px;\n  border-top: 2px solid white;\n  content: \" \";\n  transform: scale(1);\n}\n.checkbox-container.disabled .checkbox-inner-box {\n  background-color: #f3f3f3;\n  border-color: #d9d9d9;\n  cursor: not-allowed;\n}\n.checkbox-container.disabled .checkbox-inner-box:after {\n  border-color: #CCC;\n}\n.checkbox-container .checkbox-label {\n  font-size: 12px;\n  font-weight: normal;\n}\n", ""]);
+	exports.push([module.id, ".bp-btn {\n  transition: all 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);\n}\n.bp-btn.loading-btn {\n  padding-left: 20px;\n}\n.bp-btn.loading-btn .bp-icon {\n  animation: loadingCircle 1s linear infinite;\n}\n.bp-btn .bp-icon {\n  margin-right: 2px;\n}\n@-webkit-keyframes loadingCircle {\n  0% {\n    -webkit-transform-origin: 50% 50%;\n    transform-origin: 50% 50%;\n    -webkit-transform: rotate(0deg);\n    transform: rotate(0deg);\n  }\n  to {\n    -webkit-transform-origin: 50% 50%;\n    transform-origin: 50% 50%;\n    -webkit-transform: rotate(1turn);\n    transform: rotate(1turn);\n  }\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 21 */
+/* 12 */
 /***/ function(module, exports) {
 
 	/*
@@ -1222,7 +779,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 22 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/*
@@ -1474,7 +1031,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 23 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1487,7 +1044,570 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _checkboxGroup = __webpack_require__(24);
+	var _icon = __webpack_require__(15);
+
+	var _icon2 = _interopRequireDefault(_icon);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Icon component entry
+	 * @author name
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.module('Icon', []).component('bpIcon', _icon2.default);
+
+/***/ },
+/* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _icon = __webpack_require__(16);
+
+	var _icon2 = _interopRequireDefault(_icon);
+
+	var _template = __webpack_require__(17);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Icon component define
+	 */
+
+	'use strict';
+
+	/**
+	 * @type {Object}
+	 * @property {String} type  - binding symbol <, 类型, 也直接决定了渲染成哪个图标
+	 */
+	var IconComponentDefine = {
+	  template: _template2.default,
+	  controller: _icon2.default,
+	  controllerAs: 'controller',
+	  bindings: {
+	    type: '<'
+	  }
+	};
+
+	exports.default = IconComponentDefine;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _component = __webpack_require__(5);
+
+	var _component2 = _interopRequireDefault(_component);
+
+	var _classnames = __webpack_require__(7);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Icon
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	'use strict';
+
+	/**
+	 * Icon component
+	 *
+	 * @export
+	 * @class Icon
+	 * @extends {Component}
+	 */
+
+	var Icon = function (_Component) {
+	  _inherits(Icon, _Component);
+
+	  function Icon() {
+	    _classCallCheck(this, Icon);
+
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+	  }
+
+	  _createClass(Icon, [{
+	    key: '_initDefaultValue',
+
+	    /**
+	     * @override
+	     * @protected
+	     */
+	    value: function _initDefaultValue() {}
+	    /**
+	     * @override
+	     * @protected
+	     */
+
+	  }, {
+	    key: '_createClassName',
+	    value: function _createClassName() {
+	      // todo: 暂时还没有loading的图标, 有了这个逻辑就可以干掉了
+	      var iconType = this.type === 'loading' ? 'repeat' : this.type;
+
+	      this.className = (0, _classnames2.default)(_defineProperty({
+	        'bp-icon': true,
+	        'glyphicon': true
+	      }, 'glyphicon-' + iconType, !!this.type));
+	    }
+	    /**
+	     * @override
+	     * @protected
+	     */
+
+	  }, {
+	    key: '_launch',
+	    value: function _launch() {}
+	    /**
+	     * 主要是因为type变了之后要重新生成class
+	     *
+	     * @param {Object} changeObj bindings object
+	     */
+
+	  }, {
+	    key: '$onChanges',
+	    value: function $onChanges(changeObj) {
+	      if (changeObj.hasOwnProperty('type')) {
+	        this._createClassName();
+	      }
+	    }
+	  }]);
+
+	  return Icon;
+	}(_component2.default);
+
+	exports.default = Icon;
+
+/***/ },
+/* 17 */
+/***/ function(module, exports) {
+
+	module.exports = "<i class=\"{{controller.className}}\"></i>"
+
+/***/ },
+/* 18 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _checkbox = __webpack_require__(19);
+
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * @ngdoc overview
+	 * @name checkbox
+	 * @description
+	 * 
+	 * # Checkbox component module
+	 * 
+	 * module name is **Checkbox**
+	 * 
+	 * 这里包含
+	 *  - bpCheckbox
+	 *  - bpCheckboxGroup
+	 * 
+	 * <pre>
+	 * import {Checkbox} from 'anaheim';
+	 * angular.module('myApp', [Checkbox.name]);
+	 * </pre>
+	 * 
+	 * <pre>
+	 * import {CheckboxGroup} from 'anaheim';
+	 * angular.module('myApp', [CheckboxGroup.name]);
+	 * </pre>
+	 * 
+	 * <pre>
+	 * import {Checkbox, CheckboxGroup} from 'anaheim';
+	 * </pre>
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.module('Checkbox', []).component('bpCheckbox', _checkbox2.default);
+
+/***/ },
+/* 19 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _checkbox = __webpack_require__(20);
+
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+
+	var _template = __webpack_require__(22);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	__webpack_require__(23);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	'use strict';
+
+	/**
+	 * @type {Object}
+	 * @property {Boolean}    disabled       - binding symbol is <, 禁用状态
+	 * @property {Boolean}    checked        - binding symbol is =?, 是否被选中状态
+	 * @property {Boolean}    halfChecked    - binding symbol is =?, 是否是半选状态
+	 * @property {ANY}        trueValue      - binding symbol is @, like ng-true-value, 是对ng-true-value的封装
+	 * @property {ANY}        falseValue     - binding symbol is @, like ng-false-value, 是对ng-false-value的封装
+	 */
+	/**
+	 * Checkbox component define
+	 * @author fengpeng
+	 */
+
+	var CheckboxComponentDefine = {
+	  template: _template2.default,
+	  controller: _checkbox2.default,
+	  controllerAs: 'controller',
+	  transclude: true,
+	  bindings: {
+	    disabled: '<',
+	    checked: '=?checked',
+	    halfChecked: '=?halfChecked',
+	    trueValue: '@',
+	    falseValue: '@'
+	  }
+	};
+
+	exports.default = CheckboxComponentDefine;
+
+/***/ },
+/* 20 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _component = __webpack_require__(5);
+
+	var _component2 = _interopRequireDefault(_component);
+
+	var _classnames = __webpack_require__(7);
+
+	var _classnames2 = _interopRequireDefault(_classnames);
+
+	var _checkbox = __webpack_require__(21);
+
+	var _checkbox2 = _interopRequireDefault(_checkbox);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name checkbox.directive:bpCheckbox
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包装了HTML Input[type="checkbox"]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - halfChecked
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    disabled       - binding symbol is `<`, 禁用状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    checked        - binding symbol is `=?`, 是否被选中状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    halfChecked    - binding symbol is `=?`, 是否是半选状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        trueValue      - binding symbol is `@`, like ng-true-value, 是对ng-true-value的封装
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        falseValue     - binding symbol is `@`, like ng-false-value, 是对ng-false-value的封装
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+	'use strict';
+
+	/**
+	 * Checkbox component
+	 * 这里是对<input checkbox>的封装, 唯一需要说明的是半选状态, 是表现一个列表, 选中了某几项, 却又没有全选的状态
+	 *
+	 * @export
+	 * @class Checkbox
+	 * @extends {Component}
+	 */
+
+	var Checkbox = function (_Component) {
+	  Checkbox.$inject = ["$scope"];
+	  _inherits(Checkbox, _Component);
+
+	  /**
+	   * Creates an instance of Checkbox.
+	   *
+	   * @param {$scope} $scope
+	   */
+
+	  function Checkbox($scope) {
+	    'ngInject';
+
+	    _classCallCheck(this, Checkbox);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this));
+
+	    _this.$scope = $scope;
+	    return _this;
+	  }
+
+	  /**
+	   * @override
+	   * @protected
+	   */
+
+
+	  _createClass(Checkbox, [{
+	    key: '_initDefaultState',
+	    value: function _initDefaultState() {
+	      var _state;
+
+	      if (this.checked == this.trueValue) {
+	        this.halfChecked = false;
+	      }
+	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked == this.trueValue), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
+	    }
+	    // $onInit() {
+	    // }
+	    /**
+	     * @override
+	     * @protected
+	     */
+
+	  }, {
+	    key: '_initDefaultValue',
+	    value: function _initDefaultValue() {
+	      this.htmlID = this.htmlID || 'checkbox_' + Math.random().toString(36).substr(2, 9);
+	      this.trueValue = this.trueValue ? this.trueValue : true;
+	      this.falseValue = this.falseValue ? this.falseValue : false;
+	    }
+	    /**
+	     * @override
+	     * @protected
+	     */
+
+	  }, {
+	    key: '_createClassName',
+	    value: function _createClassName() {
+	      this.className = (0, _classnames2.default)({
+	        'disabled': this._state[_checkbox2.default.DISABLED],
+	        'checked': this._state[_checkbox2.default.CHECKED],
+	        'half-checked': this._state[_checkbox2.default.HALF_CHECKED]
+	      });
+	    }
+	    /**
+	     * 由于onChnages, 监听不到子数据集的变化, 所以只能这么watch... 尼玛有点2B啊.
+	     *
+	     * @override
+	     * @protected
+	     */
+
+	  }, {
+	    key: '_launch',
+	    value: function _launch() {
+	      var _this2 = this;
+
+	      this.$scope.$watch(function () {
+	        return _this2.checked;
+	      }, function (newValue, oldValue) {
+	        _this2.changeHandler();
+	        _this2._render();
+	      });
+	      this.$scope.$watch(function () {
+	        return _this2.halfChecked;
+	      }, function (newValue, oldValue) {
+	        var halfChecked = newValue;
+	        _this2.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
+	        if (halfChecked) {
+	          _this2.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
+	        }
+	        _this2._render();
+	      });
+	      this.$scope.$watch(function () {
+	        return _this2.disabled;
+	      }, function (newValue, oldValue) {
+	        _this2.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, newValue);
+	        _this2._render();
+	      });
+	    }
+	    /**
+	     * 用户点击而改变状态的处理器, 是在模板里面的
+	     *
+	     * @private
+	     */
+
+	  }, {
+	    key: 'changeHandler',
+	    value: function changeHandler() {
+	      if (this.checked == this.trueValue) {
+	        var _state2;
+
+	        this.state = (_state2 = {}, _defineProperty(_state2, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state2, '' + _checkbox2.default.HALF_CHECKED, false), _state2);
+	      } else {
+	        var _state3;
+
+	        this.state = (_state3 = {}, _defineProperty(_state3, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state3, '' + _checkbox2.default.HALF_CHECKED, false), _state3);
+	      }
+	    }
+	  }]);
+
+	  return Checkbox;
+	}(_component2.default);
+
+	exports.default = Checkbox;
+
+/***/ },
+/* 21 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _common = __webpack_require__(6);
+
+	var _common2 = _interopRequireDefault(_common);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Checkbox states enumeration
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.extend({
+	  /**
+	   * 选中
+	   * 
+	   * @type {String}
+	   */
+	  CHECKED: 'checked',
+	  /**
+	   * 半选状态, 这个集中在做列表全选的时候会出现
+	   * 表现是, 选择了但又没有全选这个尴尬的状态
+	   * 
+	   * @type {String}
+	   */
+	  HALF_CHECKED: 'halfChecked'
+
+	}, _common2.default);
+
+/***/ },
+/* 22 */
+/***/ function(module, exports) {
+
+	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
+
+/***/ },
+/* 23 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(24);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(13)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./checkbox.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./checkbox.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 24 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(12)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".checkbox-container {\n  position: relative;\n}\n.checkbox-container input[type=\"checkbox\"] {\n  position: absolute;\n  left: 0;\n  top: 4px;\n  width: 14px;\n  height: 14px;\n  margin: 0px;\n  visibility: hidden;\n}\n.checkbox-container .checkbox-inner-box {\n  display: inline-block;\n  width: 14px;\n  height: 14px;\n  border: 1px solid #CCCCCC;\n  border-radius: 2px;\n  background-color: white;\n  vertical-align: middle;\n  cursor: pointer;\n}\n.checkbox-container .checkbox-inner-box:hover {\n  border-color: #58b4e9;\n}\n.checkbox-container .checkbox-inner-box:after {\n  display: block;\n  content: \"\";\n  transition: transform 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;\n  transform: rotate(45deg) scale(0);\n}\n.checkbox-container.checked .checkbox-inner-box,\n.checkbox-container.half-checked .checkbox-inner-box {\n  background-color: #58b4e9;\n  border-color: #58b4e9;\n}\n.checkbox-container.checked .checkbox-inner-box:after {\n  display: block;\n  width: 6px;\n  height: 9px;\n  position: absolute;\n  left: 4px;\n  top: 5px;\n  border-top: 2px solid white;\n  content: \" \";\n  border: 2px solid white;\n  border-left: none;\n  border-top: none;\n  transform: rotate(45deg) scale(1);\n}\n.checkbox-container.half-checked .checkbox-inner-box:after {\n  display: block;\n  width: 8px;\n  height: 0px;\n  position: absolute;\n  left: 3px;\n  top: 10px;\n  border-top: 2px solid white;\n  content: \" \";\n  transform: scale(1);\n}\n.checkbox-container.disabled .checkbox-inner-box {\n  background-color: #f3f3f3;\n  border-color: #d9d9d9;\n  cursor: not-allowed;\n}\n.checkbox-container.disabled .checkbox-inner-box:after {\n  border-color: #CCC;\n}\n.checkbox-container .checkbox-label {\n  font-size: 12px;\n  font-weight: normal;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _checkboxGroup = __webpack_require__(26);
 
 	var _checkboxGroup2 = _interopRequireDefault(_checkboxGroup);
 
@@ -1503,7 +1623,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _angular2.default.module('CheckboxGroup', []).component('bpCheckboxGroup', _checkboxGroup2.default);
 
 /***/ },
-/* 24 */
+/* 26 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1512,11 +1632,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _checkbox = __webpack_require__(25);
+	var _checkbox = __webpack_require__(27);
 
 	var _checkbox2 = _interopRequireDefault(_checkbox);
 
-	var _template = __webpack_require__(26);
+	var _template = __webpack_require__(28);
 
 	var _template2 = _interopRequireDefault(_template);
 
@@ -1547,7 +1667,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = CheckboxGroupComponentDefine;
 
 /***/ },
-/* 25 */
+/* 27 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1577,28 +1697,43 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * checkbox group component controller
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name checkbox.directive:bpCheckboxGroup
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 顾名思义, 这是对bpCheckbox组件的二次包装, 通过`model`传进来一个对象数组, 来批量渲染bpCheckbox
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}          disabled        - binding symbol is `<`, 禁用状态, 在组上禁用则全部禁用, 实际上是对ng-disabled的包装
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.<Object>}   model           - binding symbol is `=?`, 数据源, 由于是双向绑定的逻辑会去修改数据源上的checked属性
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}          inline          - binding symbol is `@`, 是否横着排
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ```html
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     <bp-checkbox-group model="vm.groupDataList"></bp-checkbox-group>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   ```
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   在实际的controller或任何数据源里面有这样一个对象数组
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     groupDataList = [
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '邢老师不要脸', checked: true},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '老师不要脸'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '师不要脸'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '不要脸'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '要脸', disabled: true},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       {label: '脸'}
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     ];
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   更多例子的[传送门](https://ffan-fe.github.io/#/ui/checkbox)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
 
 	/**
 	 * checkbox group
-	 *
+	 * 
 	 * @export
 	 * @class CheckboxGroup
 	 * @extends {Component}
-	 * @example
-	    <bp-checkbox-group model="vm.groupDataList"></bp-checkbox-group>
-	    groupDataList = [
-	      {label: '邢老师不要脸', checked: true},
-	      {label: '老师不要脸'},
-	      {label: '师不要脸'},
-	      {label: '不要脸'},
-	      {label: '要脸', disabled: true},
-	      {label: '脸'}
-	    ];
-	 *
 	 */
 
 	var CheckboxGroup = function (_Component) {
@@ -1614,15 +1749,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	    key: '_initDefaultValue',
 
 	    /**
-	     * @override
-	     * @protected
+	     * @override 
+	     * @protected 
 	     */
 	    value: function _initDefaultValue() {
 	      this.model = this.model && _angular2.default.isArray(this.model) ? this.model : [];
 	    }
 	    /**
-	     * @override
-	     * @protected
+	     * @override 
+	     * @protected 
 	     */
 
 	  }, {
@@ -1633,8 +1768,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	      });
 	    }
 	    /**
-	     * @override
-	     * @protected
+	     * @override 
+	     * @protected 
 	     */
 
 	  }, {
@@ -1648,13 +1783,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = CheckboxGroup;
 
 /***/ },
-/* 26 */
+/* 28 */
 /***/ function(module, exports) {
 
 	module.exports = "<ul class=\"list-unstyled\" \n  ng-disabled=\"controller.disabled\"\n  ng-class=\"controller.ulClassName\">\n  <li ng-repeat=\"item in controller.model track by $index\">\n    <bp-checkbox\n      disabled=\"item.disabled || controller.disabled\"\n      checked=\"item.checked\"\n      half-checked=\"item.halfChecked\"\n    >{{item.label}}</bp-checkbox>\n  </li>\n</ul>"
 
 /***/ },
-/* 27 */
+/* 29 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1667,7 +1802,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _radiobox = __webpack_require__(28);
+	var _radiobox = __webpack_require__(30);
 
 	var _radiobox2 = _interopRequireDefault(_radiobox);
 
@@ -1683,7 +1818,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _angular2.default.module('Radiobox', []).component('bpRadiobox', _radiobox2.default);
 
 /***/ },
-/* 28 */
+/* 30 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1692,20 +1827,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _radiobox = __webpack_require__(29);
+	var _radiobox = __webpack_require__(31);
 
 	var _radiobox2 = _interopRequireDefault(_radiobox);
 
-	var _template = __webpack_require__(31);
+	var _template = __webpack_require__(33);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	__webpack_require__(32);
+	__webpack_require__(34);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-	               * Radio component define
+	               * @type {Object}
+	               * @property {Boolean}    disabled       - binding symbol is <, 禁用状态
+	               * @property {String}    value          - binding symbol is @, 选中后的值
+	               * @property {ANY}        model          - binding symbol is =?,绑定在radioBox上的model
+	               * @property {complex}    complex        - binding symbol is =?complex, 因为value只能提供String, 复杂结构数据类型使用, complex指令
 	               */
 
 	var componentDefine = {
@@ -1745,7 +1884,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = componentDefine;
 
 /***/ },
-/* 29 */
+/* 31 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1764,7 +1903,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _classnames2 = _interopRequireDefault(_classnames);
 
-	var _radiobox = __webpack_require__(30);
+	var _radiobox = __webpack_require__(32);
 
 	var _radiobox2 = _interopRequireDefault(_radiobox);
 
@@ -1777,7 +1916,29 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Radio
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name radiobox.directive:bpRadio
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包装了HTML Input[type="radio"]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled       - binding symbol is `<`, 禁用状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled       - binding symbol is `<`, 是否横向展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model          - binding symbol is `=`, 绑定在组件上的model
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.Object}    list          - binding symbol is @, 选中后的值
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}             complex        - binding symbol is `=?complex`, 因为value只能提供String, 复杂结构数据类型使用, complex指令
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```html
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="1"></bp-radiobox>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="2"></bp-radiobox>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
@@ -1866,7 +2027,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Radiobox;
 
 /***/ },
-/* 30 */
+/* 32 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1894,22 +2055,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _angular2.default.extend({}, _common2.default);
 
 /***/ },
-/* 31 */
+/* 33 */
 /***/ function(module, exports) {
 
 	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"radio-container\"\n       ng-class=\"[controller.className, {checked: controller.isChecked()}]\">\n      <span class=\"radio-inner\"></span>\n      <input type=\"radio\" id=\"{{controller.htmlID}}\"\n              ng-value=\"controller.complex || controller.value\"\n              ng-disabled=\"controller.disabled\"\n              ng-model=\"controller.model\"\n      />\n      <span ng-transclude></span>\n</label>\n"
 
 /***/ },
-/* 32 */
+/* 34 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(33);
+	var content = __webpack_require__(35);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(22)(content, {});
+	var update = __webpack_require__(13)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -1926,10 +2087,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 33 */
+/* 35 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(21)();
+	exports = module.exports = __webpack_require__(12)();
 	// imports
 
 
@@ -1940,7 +2101,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-/* 34 */
+/* 36 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1953,7 +2114,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _angular2 = _interopRequireDefault(_angular);
 
-	var _radioboxGroup = __webpack_require__(35);
+	var _radioboxGroup = __webpack_require__(37);
 
 	var _radioboxGroup2 = _interopRequireDefault(_radioboxGroup);
 
@@ -1969,7 +2130,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = _angular2.default.module('RadioboxGroup', []).component('bpRadioboxGroup', _radioboxGroup2.default);
 
 /***/ },
-/* 35 */
+/* 37 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -1978,20 +2139,24 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _radiobox = __webpack_require__(36);
+	var _radiobox = __webpack_require__(38);
 
 	var _radiobox2 = _interopRequireDefault(_radiobox);
 
-	var _template = __webpack_require__(37);
+	var _template = __webpack_require__(39);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	__webpack_require__(38);
+	__webpack_require__(40);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-	               * Radio component define
+	               * @type {Object}
+	               * @property {Boolean}         disabled        - binding symbol is <, 禁用状态
+	               * @property {Boolean}         inline          - binding symbol is <, 是否横向展示
+	               * @property {String}          model           - binding symbol is =?model, 绑定在radioBoxGroup上的model
+	               * @property {Array.<Object>}  list            - binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio
 	               */
 
 	var componentDefine = {
@@ -2031,7 +2196,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = componentDefine;
 
 /***/ },
-/* 36 */
+/* 38 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2057,7 +2222,39 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * RadioGroup
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name radiobox.directive:bpRadioboxGroup
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 对radiobox的二次包装 提供`list`指令
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled        - binding symbol is <, 禁用状态
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         inline          - binding symbol is <, 是否横向展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model           - binding symbol is =?model, 绑定在radioBoxGroup上的model
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.<Object>}  list            - binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```html
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radio-group list="vm.groupDataList" model="vm.model"></bp-radio-group>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                在实际的controller或任何数据源里面有这样一个对象数组
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.model = "这个杀手不太冷";
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.groupDataList = [
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '沉默的羔羊', value: '沉默的羔羊'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '这个杀手不太冷',value:'这个杀手不太冷'},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '指环王',value:'指环王',complex:{author:'xxx',age:45,sex:'不详'}},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '速度与激情',value:"速度与激情"},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '魔兽世界', value:"魔兽世界",disabled: true},
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: 'X战警',value:"X战警"}
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ];
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
@@ -2103,22 +2300,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = RadioboxGroup;
 
 /***/ },
-/* 37 */
+/* 39 */
 /***/ function(module, exports) {
 
 	module.exports = "<ul class=\"list-unstyled\"\n    ng-disabled=\"controller.disabled\"\n    ng-class=\"{'list-inline': controller.inline}\">\n      <li ng-repeat=\"item in controller.list track by $index\">\n            <bp-radiobox\n                disabled=\"item.disabled || controller.disabled\"\n                model=\"controller.model\"\n                value=\"{{item.value}}\"\n                complex=\"item.complex\"\n            >{{item.label}}</bp-radiobox>\n      </li>\n</ul>"
 
 /***/ },
-/* 38 */
+/* 40 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(39);
+	var content = __webpack_require__(41);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
-	var update = __webpack_require__(22)(content, {});
+	var update = __webpack_require__(13)(content, {});
 	if(content.locals) module.exports = content.locals;
 	// Hot Module Replacement
 	if(false) {
@@ -2135,10 +2332,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 39 */
+/* 41 */
 /***/ function(module, exports, __webpack_require__) {
 
-	exports = module.exports = __webpack_require__(21)();
+	exports = module.exports = __webpack_require__(12)();
 	// imports
 
 

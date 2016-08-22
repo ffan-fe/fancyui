@@ -22,61 +22,61 @@ let componentDefine = {
     /**
      * 目标数据集合
      */
-    targetData: "=?targetData",
+    targetData: '=?targetData',
 
     /**
      * 标题 从左至右
      * @type {array}
      */
-    titles: "<",
+    titles: '<',
 
     /**
      * 从左至右 placeholder
      * @type placeholder
      */
-    placeholders: "<",
+    placeholders: '<',
 
     /**
      * 操作文案 从上至下
      * @type {array}
      */
-    operations: "<",
+    operations: '<',
 
     /**
      * 是否展示左边检索框
      * @type {Boolean}
      */
-    showLeftSearch: "<",
+    showLeftSearch: '<',
 
     /**
      * 是否展示右边搜索框
      * @type {Boolean}
      */
-    showRightSearch: "<",
+    showRightSearch: '<',
 
     /**
      *是否需要单个增加按钮
      * @type {Boolean}
      */
-    addBtn: "<",
+    addBtn: '<',
 
     /**
      * 是否需要增加全部按钮
      * @type {Boolean}
      */
-    addAllBtn: "<",
+    addAllBtn: '<',
 
     /**
      * 删除某个元素
      * @type {Boolean}
      */
-    delBtn: "<",
+    delBtn: '<',
 
     /**
      * 删除所有的按钮
      * @type {Boolean}
      */
-    delAllBtn: "<"
+    delAllBtn: '<'
 
   }
 };
