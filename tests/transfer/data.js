@@ -71,6 +71,21 @@ export  default {
     }
   ]`,
 
+  codePart1:`<bp-transfer source-data="vm.dataSource"></bp-transfer> `,
+  codePart2:`
+    <bp-transfer 
+    source-data="vm.dataSource"
+    titles="vm.titles"
+    placeholders="vm.placeholders"
+    operations="vm.operations"
+    showLeft-search="vm.showLeftSearch"
+    showRight-search="vm.showRightSearch"
+    add-btn="vm.addBtn"
+    add-all-btn="vm.addAllBtn"
+    del-btn="vm.delBtn"
+    del-all-btn="vm.delAllBtn"
+    ></bp-transfer>`,
+
 dataSourceTmp1 : `
     this.titles = ['门店列表', '已选择门店'];
     this.placeholders = ['输入门店进行检索', '对已经出来的结果进行检索'];

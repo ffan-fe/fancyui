@@ -15,7 +15,7 @@ import Component from '../common/component';
 export default class Transfer extends Component {
 
   constructor($filter,$scope) {
-    '$ngInject';
+    'ngInject';
     super();
     this.$filter = $filter;
     /**
