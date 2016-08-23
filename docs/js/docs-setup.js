@@ -47,6 +47,24 @@ NG_DOCS={
       "moduleName": "checkbox",
       "shortDescription": "顾名思义, 这是对bpCheckbox组件的二次包装, 通过model传进来一个对象数组, 来批量渲染bpCheckbox",
       "keywords": "api binding checkbox checked directive disabled fengpeng github groupdatalist html inline io model symbol true vm"
+    },
+    {
+      "section": "api",
+      "id": "radiobox.directive:bpRadio",
+      "shortName": "bpRadio",
+      "type": "directive",
+      "moduleName": "radiobox",
+      "shortDescription": "包装了HTML Input[type=&quot;radio&quot;]",
+      "keywords": "api binding checked chuxin complex directive disabled enable github html input io list model object radio radiobox symbol vm"
+    },
+    {
+      "section": "api",
+      "id": "radiobox.directive:bpRadioboxGroup",
+      "shortName": "bpRadioboxGroup",
+      "type": "directive",
+      "moduleName": "radiobox",
+      "shortDescription": "对radiobox的二次包装 提供list指令",
+      "keywords": "age api binding checked chuxin complex controller directive disabled enable github groupdatalist html inline io list model radiobox sex symbol true vm xxx"
     }
   ],
   "apis": {

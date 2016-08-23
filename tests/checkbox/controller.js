@@ -6,13 +6,21 @@ export default class CheckboxTestController {
     'ngInject';
     this.checked1 = false;
     this.checked2 = false;
+    this.checked2 = 1;
+
+    this.field = {checked: 2};
+
+    $timeout(() => {
+      this.checked2 = 1;
+      this.field.checked = 1;
+    }, 5000);
 
     this.groupDataList = [
       {label: '邢老师不要脸', checked: true},
       {label: '老师不要脸'},
       {label: '师不要脸'},
       {label: '不要脸'},
-      {label: '要脸', disabled: true},
+      {label: '要脸', disabled: false},
       {label: '脸'}
     ];
 

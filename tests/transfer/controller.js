@@ -4,11 +4,31 @@ import data from './data'
 
 export default class TransferTextController {
   constructor($sce) {
-    this.dataSource = data.dataSource;
-    this.titles = ['我是左侧'];
-    this.placeholders = ['输入个值吧大哥','请输入检索条件吧'];
-    this.operations = ['左移','全部移动']
-    //console.log('data.',this.dataSource);
+    this.dataSource = data['dataSource'];
+    /**
+     * 默认情况
+     * @type {string}
+     */
+    this.part1Html = $sce.trustAsHtml(Prism.highlight(data['codePart1'], Prism.languages.html));
+    this.part2Html = $sce.trustAsHtml(Prism.highlight(data['dataSourceTmp'], Prism.languages.javascript));
+
+    /**
+     * 自定义穿梭框
+     */
+
+    this.titles = ['门店列表', '已选择门店'];
+    this.placeholders = ['输入门店进行检索', '对已经出来的结果进行检索'];
+    this.operations = ['增加', '增加全部', '删除', '全部删除'];
+    this.showLeftSearch = true;
+    this.showRightSearch = false;
+    this.addBtn = true;
+    this.addAllBtn = true;
+    this.delBtn = true;
+    this.delAllBtn = false;
+    this.part3Html = $sce.trustAsHtml(Prism.highlight(data['codePart2'], Prism.languages.html));
+    this.part4Html = $sce.trustAsHtml(Prism.highlight(data['dataSourceTmp1'], Prism.languages.javascript));
+
+
   }
-  
+
 }

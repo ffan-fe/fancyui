@@ -1,0 +1,27 @@
+.bp-btn {
+  transition: all .2s cubic-bezier(0.645, 0.045, 0.355, 1);
+  &.loading-btn{
+    padding-left: 20px;
+    .bp-icon{
+      animation: loadingCircle 1s linear infinite;
+    }
+  }
+  .bp-icon{
+    margin-right: 2px;
+  }
+}
+
+@-webkit-keyframes loadingCircle {
+  0% {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotate(1turn);
+    transform: rotate(1turn);
+  }
+} 
