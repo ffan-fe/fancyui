@@ -10,10 +10,7 @@ export default class TransferTextController {
      * 默认情况
      * @type {string}
      */
-    const codePart1 = `
-    <bp-transfer source-data="vm.dataSource"></bp-transfer> 
-     `;
-    this.part1Html = $sce.trustAsHtml(Prism.highlight(codePart1, Prism.languages.html));
+    this.part1Html = $sce.trustAsHtml(Prism.highlight(data['codePart1'], Prism.languages.html));
     this.part2Html = $sce.trustAsHtml(Prism.highlight(data['dataSourceTmp'], Prism.languages.javascript));
 
     /**
@@ -29,22 +26,7 @@ export default class TransferTextController {
     this.addAllBtn = true;
     this.delBtn = true;
     this.delAllBtn = false;
-
-    const codePart3 = `
-    <bp-transfer 
-    source-data="vm.dataSource"
-    titles="vm.titles"
-    placeholders="vm.placeholders"
-    operations="vm.operations"
-    showLeftSearch="vm.showLeftSearch"
-    showRightSearch="vm.showRightSearch"
-    addBtn="vm.addBtn"
-    addAllBtn="vm.addAllBtn"
-    delBtn="vm.delBtn"
-    delAllBtn="vm.delAllBtn"
-    ></bp-transfer> 
-     `;
-    this.part3Html = $sce.trustAsHtml(Prism.highlight(codePart3, Prism.languages.html));
+    this.part3Html = $sce.trustAsHtml(Prism.highlight(data['codePart2'], Prism.languages.html));
     this.part4Html = $sce.trustAsHtml(Prism.highlight(data['dataSourceTmp1'], Prism.languages.javascript));
 
 

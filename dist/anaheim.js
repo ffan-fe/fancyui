@@ -59,7 +59,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+<<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
 	exports.CitySelector = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
+=======
+	exports.Transfer = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
+>>>>>>> transfer组件更新
 
 	var _button = __webpack_require__(1);
 
@@ -85,9 +89,15 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _radiobox4 = _interopRequireDefault(_radiobox3);
 
+<<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
 	var _city = __webpack_require__(42);
 
 	var _city2 = _interopRequireDefault(_city);
+=======
+	var _transfer = __webpack_require__(42);
+
+	var _transfer2 = _interopRequireDefault(_transfer);
+>>>>>>> transfer组件更新
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -99,7 +109,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	var CheckboxGroup = exports.CheckboxGroup = _checkbox4.default;
 	var Radiobox = exports.Radiobox = _radiobox2.default;
 	var RadioboxGroup = exports.RadioboxGroup = _radiobox4.default;
+<<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
 	var CitySelector = exports.CitySelector = _city2.default;
+=======
+	var Transfer = exports.Transfer = _transfer2.default;
+>>>>>>> transfer组件更新
 
 /***/ },
 /* 1 */
@@ -11854,6 +11868,432 @@ return /******/ (function(modules) { // webpackBootstrap
 	angular.module('ui.bootstrap.tooltip').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTooltipCss && angular.element(document).find('head').prepend('<style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style>'); angular.$$uibTooltipCss = true; });
 	angular.module('ui.bootstrap.timepicker').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTimepickerCss && angular.element(document).find('head').prepend('<style type="text/css">.uib-time input{width:50px;}</style>'); angular.$$uibTimepickerCss = true; });
 	angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTypeaheadCss && angular.element(document).find('head').prepend('<style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style>'); angular.$$uibTypeaheadCss = true; });
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _transfer = __webpack_require__(43);
+
+	var _transfer2 = _interopRequireDefault(_transfer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	'use strict'; /**
+	               * Transfer component entry
+	               * @author name
+	               */
+
+	exports.default = angular.module('Transfer', []).component('bpTransfer', _transfer2.default);
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _transfer = __webpack_require__(44);
+
+	var _transfer2 = _interopRequireDefault(_transfer);
+
+	var _template = __webpack_require__(45);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	__webpack_require__(46);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	'use strict'; /**
+	               * Transfer component define
+	               */
+
+	var componentDefine = {
+	  template: _template2.default,
+	  controller: _transfer2.default,
+	  controllerAs: 'controller',
+	  bindings: {
+
+	    /**
+	     *数据源
+	     */
+	    sourceData: "=?sourceData",
+
+	    /**
+	     * 目标数据集合
+	     */
+	    targetData: '=?targetData',
+
+	    /**
+	     * 标题 从左至右
+	     * @type {array}
+	     */
+	    titles: '<',
+
+	    /**
+	     * 从左至右 placeholder
+	     * @type placeholder
+	     */
+	    placeholders: '<',
+
+	    /**
+	     * 操作文案 从上至下
+	     * @type {array}
+	     */
+	    operations: '<',
+
+	    /**
+	     * 是否展示左边检索框
+	     * @type {Boolean}
+	     */
+	    showLeftSearch: '<',
+
+	    /**
+	     * 是否展示右边搜索框
+	     * @type {Boolean}
+	     */
+	    showRightSearch: '<',
+
+	    /**
+	     *是否需要单个增加按钮
+	     * @type {Boolean}
+	     */
+	    addBtn: '<',
+
+	    /**
+	     * 是否需要增加全部按钮
+	     * @type {Boolean}
+	     */
+	    addAllBtn: '<',
+
+	    /**
+	     * 删除某个元素
+	     * @type {Boolean}
+	     */
+	    delBtn: '<',
+
+	    /**
+	     * 删除所有的按钮
+	     * @type {Boolean}
+	     */
+	    delAllBtn: '<'
+
+	  }
+	};
+
+	exports.default = componentDefine;
+
+/***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _component = __webpack_require__(5);
+
+	var _component2 = _interopRequireDefault(_component);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Transfer
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+	'use strict';
+
+	/**
+	 * Transfer component
+	 *
+	 * @export
+	 * @class Transfer
+	 * @extends {Component}
+	 */
+
+	var Transfer = function (_Component) {
+	  Transfer.$inject = ["$filter", "$scope"];
+	  _inherits(Transfer, _Component);
+
+	  function Transfer($filter, $scope) {
+	    'ngInject';
+
+	    _classCallCheck(this, Transfer);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Transfer).call(this));
+
+	    _this.$filter = $filter;
+	    /**
+	     * todo...
+	     * 用户直接对  sourceData targetData赋值
+	     * 过滤一遍
+	     */
+	    $scope.$watch(function () {
+	      return _this.targetData;
+	    }, function (newValue, oldValue) {});
+	    return _this;
+	  }
+
+	  /**
+	   * @override
+	   */
+
+
+	  _createClass(Transfer, [{
+	    key: '_initDefaultValue',
+	    value: function _initDefaultValue() {
+	      this.docInfo = {
+	        leftTitle: '请选择',
+	        rightTitle: '请选择',
+	        leftPlaceholder: '请输入检索条件',
+	        rightPlaceholder: '请输入检索条件',
+	        addOperation: '添加',
+	        addAllOperation: '添加全部',
+	        delOperation: '删除',
+	        delAllOperation: '全部删除'
+	      };
+
+	      this.showLeftSearch = angular.isUndefined(this.showLeftSearch) ? true : this.showLeftSearch;
+	      this.showRightSearch = angular.isUndefined(this.showRightSearch) ? true : this.showRightSearch;
+	      this.addBtn = angular.isUndefined(this.addBtn) ? true : this.addBtn;
+	      this.addAllBtn = angular.isUndefined(this.addAllBtn) ? true : this.addAllBtn;
+	      this.delBtn = angular.isUndefined(this.delBtn) ? true : this.delBtn;
+	      this.delAllBtn = angular.isUndefined(this.delAllBtn) ? true : this.delAllBtn;
+	      this.sourceData = angular.isArray(this.sourceData) ? this.sourceData : [];
+	      this.targetData = angular.isArray(this.targetData) ? this.targetData : [];
+	      this.leftValue = angular.isArray(this.leftValue) ? this.leftValue : [];
+	      this.rightValue = angular.isArray(this.rightValue) ? this.rightValue : [];
+	      this.setDoc();
+	    }
+	  }, {
+	    key: 'buildDoc',
+	    value: function buildDoc(source, defArr) {
+	      var _this2 = this;
+
+	      source = angular.isArray(source) ? source : [];
+	      angular.forEach(defArr, function (item, index) {
+	        _this2.docInfo[item] = source[index] ? source[index] : _this2.docInfo[item];
+	      });
+	    }
+	  }, {
+	    key: 'setDoc',
+	    value: function setDoc() {
+	      this.buildDoc(this.titles, ['leftTitle', 'rightTitle']);
+	      this.buildDoc(this.placeholders, ['leftPlaceholder', 'rightPlaceholder']);
+	      this.buildDoc(this.operations, ['addOperation', 'addAllOperation', 'delOperation', 'delAllOperation']);
+	    }
+
+	    /**
+	     * reduce
+	     */
+
+	  }, {
+	    key: 'reduceData',
+	    value: function reduceData(target, data) {
+	      var _this3 = this;
+
+	      var target = target,
+	          data = data;
+	      angular.forEach(data, function (item) {
+	        var index = _this3.getIndex(target, item);
+	        if (index >= 0) {
+	          target.splice(index, 1);
+	        }
+	      });
+	      return target;
+	    }
+
+	    /**
+	     * push
+	     */
+
+	  }, {
+	    key: 'pushData',
+	    value: function pushData(target, data, sourceData) {
+	      var _this4 = this;
+
+	      var target = angular.copy(target),
+	          data = angular.copy(data),
+	          sourceData = angular.copy(sourceData);
+	      angular.forEach(data, function (item) {
+	        if (_this4.getIndex(target, item) < 0) {
+	          _this4.getIndex(sourceData, item) > -1 ? target.push(sourceData[_this4.getIndex(sourceData, item)]) : '';
+	        }
+	      });
+	      return target;
+	    }
+
+	    /**
+	     * get  index
+	     */
+
+	  }, {
+	    key: 'getIndex',
+	    value: function getIndex(target, item) {
+	      var item = angular.isNumber(item) ? parseInt(item) : item;
+	      return target.findIndex(function (element) {
+	        return element && element.key == item;
+	      });
+	    }
+
+	    /**
+	     * getKeys
+	     */
+
+	  }, {
+	    key: 'getKeys',
+	    value: function getKeys(data) {
+	      var target = [];
+	      angular.forEach(data, function (item) {
+	        target.push(item.key);
+	      });
+	      return target;
+	    }
+
+	    /**
+	     * add
+	     */
+
+	  }, {
+	    key: 'add',
+	    value: function add() {
+	      this.rightValue = [];
+	      this.targetData = this.pushData(this.targetData, this.leftValue, this.sourceData);
+	      this.sourceData = this.reduceData(this.sourceData, this.leftValue);
+	    }
+
+	    /**
+	     * addAll
+	     */
+
+	  }, {
+	    key: 'addAll',
+	    value: function addAll() {
+	      this.rightValue = [];
+	      this.leftValue = [];
+	      this.targetData = this.pushData(this.targetData, this.getKeys(this.$filter('filter')(this.sourceData, this.leftSearchValue)), this.sourceData);
+	      this.leftSearchValue ? this.sourceData = this.reduceData(this.sourceData, this.getKeys(this.$filter('filter')(this.sourceData, this.leftSearchValue))) : this.sourceData = [];
+	    }
+
+	    /**
+	     * del
+	     */
+
+	  }, {
+	    key: 'del',
+	    value: function del() {
+	      this.leftValue = [];
+	      this.sourceData = this.pushData(this.sourceData, this.rightValue, this.targetData);
+	      this.targetData = this.reduceData(this.targetData, this.rightValue);
+	    }
+
+	    /**
+	     * delAll
+	     */
+
+	  }, {
+	    key: 'delAll',
+	    value: function delAll() {
+	      this.rightValue = [];
+	      this.leftValue = [];
+	      this.sourceData = this.pushData(this.sourceData, this.getKeys(this.$filter('filter')(this.targetData, this.rightSearchValue)), this.targetData);
+	      this.rightSearchValue ? this.targetData = this.reduceData(this.targetData, this.getKeys(angular.copy(this.$filter('filter')(this.targetData, this.rightSearchValue)))) : this.targetData = [];
+	    }
+
+	    /**
+	     * 包装一个change处理器, 在模板里面用change, 然后调用传进来的处理器
+	     * @private
+	     */
+
+	  }, {
+	    key: 'innerChange',
+	    value: function innerChange() {}
+
+	    /**
+	     * @override
+	     */
+
+	  }, {
+	    key: '_createClassName',
+	    value: function _createClassName() {}
+	    /**
+	     * @override
+	     */
+
+	  }, {
+	    key: '_launch',
+	    value: function _launch() {}
+	  }]);
+
+	  return Transfer;
+	}(_component2.default);
+
+	exports.default = Transfer;
+
+/***/ },
+/* 45 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"transfer\">\n  <!-- 左侧栏 -->\n  <div class=\"transfer-left\">\n    <div class=\"transfer-left-stores\">\n      <span>{{controller.docInfo.leftTitle}}</span>\n      <!-- 前端检索 -->\n      <input\n             type=\"text\"\n             class=\"form-control\"\n             placeholder=\"{{controller.docInfo.leftPlaceholder}}\"\n             data-ng-model=\"controller.leftSearchValue\"\n             data-ng-if=\"controller.showLeftSearch\"\n      />\n    </div>\n    <div class=\"transfer-left-select\">\n      <select  name=\"multipleSelect\"\n               class=\"form-control\"\n               multiple\n               data-ng-model=\"controller.leftValue\">\n        <option data-ng-repeat=\"option in controller.sourceData | filter:controller.leftSearchValue\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /左侧栏 -->\n\n  <!-- 中间 -->\n  <div class=\"transfer-center\">\n    <div class=\"transfer-center-btn\">\n      <div class=\"transfer-center-btn-add\">\n        <bp-button\n                size=\"sm\"\n                click=\"controller.add()\"\n                data-ng-if=\"controller.addBtn\"\n                disabled=\"(controller.leftValue).length === 0\"\n        >\n          {{controller.docInfo.addOperation}}\n        </bp-button>\n        <bp-button\n                size=\"sm\"\n                click=\"controller.addAll()\"\n                data-ng-if=\"controller.addAllBtn\"\n                disabled=\"(controller.sourceData).length === 0\"\n        >\n          {{controller.docInfo.addAllOperation}}\n        </bp-button>\n      </div>\n      <div class=\"transfer-center-btn-del\">\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.del()\"\n                data-ng-if=\"controller.delBtn\"\n                disabled=\"(controller.rightValue).length === 0\"\n        >\n          {{controller.docInfo.delOperation}}\n        </bp-button>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.delAll()\"\n                data-ng-if=\"controller.delAllBtn\"\n                disabled=\"(controller.targetData).length === 0\"\n        >\n          {{controller.docInfo.delAllOperation}}\n        </bp-button>\n      </div>\n    </div>\n  </div>\n  <!--中间-->\n\n  <!-- 右侧 -->\n  <div class=\"transfer-right\">\n    <div class=\"transfer-right-stores\">\n      <span>{{controller.docInfo.rightTitle}}</span>\n      <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"{{controller.docInfo.rightPlaceholder}}\"\n             data-ng-model=\"controller.rightSearchValue\"\n             data-ng-if=\"controller.showRightSearch\"\n      />\n    </div>\n    <div class=\"transfer-right-stores\">\n      <select  name=\"multipleSelect\"\n               class=\"form-control\"\n               multiple\n               data-ng-model=\"controller.rightValue\">\n        <option data-ng-repeat=\"option in controller.targetData | filter:controller.rightSearchValue\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /右侧 -->\n</div>\n"
+
+/***/ },
+/* 46 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(47);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(13)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./transfer.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./transfer.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 47 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(12)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".transfer {\n  margin: 2px 0 0 10px;\n  padding: 5px;\n  width: 830px;\n  background-color: #E7EDEE;\n  min-height: 300px;\n  border-radius: 2px;\n}\n.transfer select {\n  font-size: 12px;\n  padding: 7px 15px;\n  min-height: 223px;\n  width: 340px;\n}\n.transfer select option {\n  cursor: pointer;\n  padding: 3px;\n}\n.transfer .transfer-left {\n  border-radius: 2px;\n  float: left;\n  min-height: 286px;\n  width: 350px;\n  background-color: white;\n}\n.transfer .transfer-left .transfer-left-stores {\n  padding: 5px;\n}\n.transfer .transfer-left .transfer-left-select {\n  padding: 5px;\n}\n.transfer .transfer-center {\n  float: left;\n  min-height: 300px;\n  width: 118px;\n}\n.transfer .transfer-center .transfer-center-btn {\n  padding: 60px 0 0 20px;\n}\n.transfer .transfer-center .transfer-center-btn button {\n  margin-bottom: 5px;\n}\n.transfer .transfer-center .transfer-center-btn .transfer-center-btn-add {\n  margin-bottom: 20px;\n}\n.transfer .transfer-right {\n  border-radius: 2px;\n  float: left;\n  min-height: 286px;\n  width: 350px;\n  background-color: white;\n}\n.transfer .transfer-right .transfer-right-stores {\n  padding: 5px;\n}\n.transfer .transfer-right .transfer-left-select {\n  padding: 5px;\n}\n", ""]);
+
+	// exports
+
 
 /***/ }
 /******/ ])
