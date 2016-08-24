@@ -59,11 +59,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 <<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
 	exports.CitySelector = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
 =======
 	exports.Transfer = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
 >>>>>>> transfer组件更新
+=======
+	exports.Transfer = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
+>>>>>>> timepicker Update
 
 	var _button = __webpack_require__(1);
 
@@ -89,6 +93,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _radiobox4 = _interopRequireDefault(_radiobox3);
 
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 <<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
 	var _city = __webpack_require__(42);
 
@@ -98,6 +103,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _transfer2 = _interopRequireDefault(_transfer);
 >>>>>>> transfer组件更新
+=======
+	var _transfer = __webpack_require__(42);
+
+	var _transfer2 = _interopRequireDefault(_transfer);
+>>>>>>> timepicker Update
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -109,11 +119,15 @@ return /******/ (function(modules) { // webpackBootstrap
 	var CheckboxGroup = exports.CheckboxGroup = _checkbox4.default;
 	var Radiobox = exports.Radiobox = _radiobox2.default;
 	var RadioboxGroup = exports.RadioboxGroup = _radiobox4.default;
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 <<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
 	var CitySelector = exports.CitySelector = _city2.default;
 =======
 	var Transfer = exports.Transfer = _transfer2.default;
 >>>>>>> transfer组件更新
+=======
+	var Transfer = exports.Transfer = _transfer2.default;
+>>>>>>> timepicker Update
 
 /***/ },
 /* 1 */
@@ -1328,9 +1342,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    checked: '=?checked',
 	    halfChecked: '=?halfChecked',
 	    trueValue: '@',
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	    falseValue: '@',
 	    change: '&?',
 	    click: '&?'
+=======
+	    falseValue: '@'
+>>>>>>> timepicker Update
 	  }
 	};
 
@@ -1386,11 +1404,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    halfChecked    - binding symbol is `=?`, 是否是半选状态
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        trueValue      - binding symbol is `@`, like ng-true-value, 是对ng-true-value的封装
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        falseValue     - binding symbol is `@`, like ng-false-value, 是对ng-false-value的封装
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 <<<<<<< cfcdf3f267689a46ed8a6a85106eeac222325373
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Function}   change         - binding symbol is `&`, onChange event
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Function}   click          - binding symbol is `&`, onClick event
 =======
 >>>>>>> 时间组件更新
+=======
+>>>>>>> timepicker Update
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
@@ -1441,6 +1462,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked == this.trueValue), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
 	    }
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
+=======
+	    // $onInit() {
+	    // }
+>>>>>>> timepicker Update
 	    /**
 	     * @override
 	     * @protected
@@ -1479,6 +1505,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _launch() {
 	      var _this2 = this;
 
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	      var update = function update() {
 	        _this2.changeHandler();
 	        _this2._render();
@@ -1520,10 +1547,39 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 用户点击而改变状态的处理器, 是在模板里面的
+=======
+	      this.$scope.$watch(function () {
+	        return _this2.checked;
+	      }, function (newValue, oldValue) {
+	        _this2.changeHandler();
+	        _this2._render();
+	      });
+	      this.$scope.$watch(function () {
+	        return _this2.halfChecked;
+	      }, function (newValue, oldValue) {
+	        var halfChecked = newValue;
+	        _this2.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
+	        if (halfChecked) {
+	          _this2.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
+	        }
+	        _this2._render();
+	      });
+	      this.$scope.$watch(function () {
+	        return _this2.disabled;
+	      }, function (newValue, oldValue) {
+	        _this2.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, newValue);
+	        _this2._render();
+	      });
+	    }
+	    /**
+	     * 用户点击而改变状态的处理器, 是在模板里面的
+	     *
+>>>>>>> timepicker Update
 	     * @private
 	     */
 
 	  }, {
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 <<<<<<< cfcdf3f267689a46ed8a6a85106eeac222325373
 	    key: 'innerClick',
 	    value: function innerClick() {
@@ -1541,6 +1597,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.state = (_state6 = {}, _defineProperty(_state6, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state6, '' + _checkbox2.default.HALF_CHECKED, false), _state6);
 	      }
 >>>>>>> 时间组件更新
+=======
+	    key: 'changeHandler',
+	    value: function changeHandler() {
+	      if (this.checked == this.trueValue) {
+	        var _state2;
+
+	        this.state = (_state2 = {}, _defineProperty(_state2, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state2, '' + _checkbox2.default.HALF_CHECKED, false), _state2);
+	      } else {
+	        var _state3;
+
+	        this.state = (_state3 = {}, _defineProperty(_state3, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state3, '' + _checkbox2.default.HALF_CHECKED, false), _state3);
+	      }
+>>>>>>> timepicker Update
 	    }
 	  }]);
 
@@ -1596,11 +1665,15 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 22 */
 /***/ function(module, exports) {
 
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 <<<<<<< cfcdf3f267689a46ed8a6a85106eeac222325373
 	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-click=\"controller.innerClick()\"\n      ng-model=\"controller.checked\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
 =======
 	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
 >>>>>>> 时间组件更新
+=======
+	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
+>>>>>>> timepicker Update
 
 /***/ },
 /* 23 */
@@ -1643,6 +1716,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 <<<<<<< cfcdf3f267689a46ed8a6a85106eeac222325373
 /* 25 */
 =======
@@ -1985,6 +2059,38 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 26 */
+=======
+/* 25 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _checkboxGroup = __webpack_require__(26);
+
+	var _checkboxGroup2 = _interopRequireDefault(_checkboxGroup);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Checkbox group component entry
+	 * @author name
+	 */
+
+	'use strict';
+
+	exports.default = _angular2.default.module('CheckboxGroup', []).component('bpCheckboxGroup', _checkboxGroup2.default);
+
+/***/ },
+/* 26 */
+>>>>>>> timepicker Update
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2306,7 +2412,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * Radio component
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	 * 
+=======
+	 *
+>>>>>>> timepicker Update
 	 * @export
 	 * @class Radio
 	 * @extends {Component}
@@ -2334,7 +2444,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 默认值
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	     * @override 
+=======
+	     * @override
+>>>>>>> timepicker Update
 	     */
 
 	  }, {
@@ -2622,7 +2736,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	/**
 	 * RadioGroup component
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	 * 
+=======
+	 *
+>>>>>>> timepicker Update
 	 * @export
 	 * @class RadioGroup
 	 * @extends {Component}
@@ -2716,6 +2834,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
+<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
@@ -11879,6 +11998,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
+=======
+>>>>>>> timepicker Update
 	var _transfer = __webpack_require__(43);
 
 	var _transfer2 = _interopRequireDefault(_transfer);
