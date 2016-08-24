@@ -71,6 +71,27 @@ export default class Transfer extends Component {
   }
 
   /**
+   *双击 增
+   */
+  optionSourceClick(option){
+    this.rightValue = [];
+    this.targetData = this.pushData(this.targetData, option, this.sourceData);
+    this.sourceData = this.reduceData(this.sourceData, option);
+    this.leftValue = [];
+  }
+
+
+  /**
+   *双击 删
+   */
+  optionTargetClick(option){
+    this.leftValue = [];
+    this.sourceData = this.pushData(this.sourceData, option, this.targetData);
+    this.targetData = this.reduceData(this.targetData, option);
+    this.rightValue = [];
+  }
+
+  /**
    * reduce
    */
   reduceData(target, data){

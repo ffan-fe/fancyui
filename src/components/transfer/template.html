@@ -18,6 +18,7 @@
                multiple
                data-ng-model="controller.leftValue">
         <option data-ng-repeat="option in controller.sourceData | filter:controller.leftSearchValue"
+                data-ng-dblclick="controller.optionSourceClick(option)"
                 value="{{option.key}}"
                 title="{{option.value}}">
           {{option.value}}
@@ -89,6 +90,7 @@
                multiple
                data-ng-model="controller.rightValue">
         <option data-ng-repeat="option in controller.targetData | filter:controller.rightSearchValue"
+                data-ng-dblclick="controller.optionTargetClick(option)"
                 value="{{option.key}}"
                 title="{{option.value}}">
           {{option.value}}
