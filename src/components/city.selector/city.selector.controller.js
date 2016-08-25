@@ -32,13 +32,17 @@ export default class CitySelectorController {
         response => {
           if (response && response.data && response.data.status == 200) {
             this.regionList = response.data.data;
-            this.formatData(this.regionList);
           } else {
             this.regionList = loaclData.data;
           }
         },
         () => {
           this.regionList = loaclData.data;
+        }
+      )
+      .finally(
+        () => {
+          this.formatData(this.regionList);
         }
       );
   }
@@ -153,6 +157,7 @@ export default class CitySelectorController {
     const type = node.type === regionType.CITY ? regionType.PROVINCE : regionType.REGION;
     const parentNode = this.findParentNodeByID(node.parentID, type);
     const isAllChecked = this.isChildAllChecked(parentNode);
+    console.log(node, parentNode);
     parentNode.checked = isAllChecked;
     if (!isAllChecked) {
       // 不是全选了, 那么有可能是半选, 查询之
