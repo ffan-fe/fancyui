@@ -12107,7 +12107,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * 删除所有的按钮
 	     * @type {Boolean}
 	     */
-	    delAllBtn: '<'
+	    delAllBtn: '<',
+
+	    /**
+	     *服务端检索
+	     */
+	    serverSearch: '&?' //加上问号 如果调用方不传此指令会有 undefined
 
 	  }
 	};
@@ -12168,9 +12173,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * 用户直接对  sourceData targetData赋值
 	     * 过滤一遍
 	     */
-	    $scope.$watch(function () {
-	      return _this.targetData;
-	    }, function (newValue, oldValue) {});
+	    /*    $scope.$watch(() => {
+	          return this.sourceData;
+	        }, (newValue, oldValue) => {
+	          if(angular.isArray(newValue) && newValue.length != 0){
+	            console.log('newValue1111',newValue);
+	          }
+	    
+	        });
+	    
+	        $scope.$watch(() => {
+	          return this.targetData;
+	        }, (newValue, oldValue) => {
+	          //console.log(newValue,oldValue);
+	          if(angular.isArray(newValue) && newValue.length != 0){
+	            console.log('newValue',newValue)
+	          }
+	    
+	        });*/
+
 	    return _this;
 	  }
 
@@ -12192,7 +12213,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	        delOperation: '删除',
 	        delAllOperation: '全部删除'
 	      };
-
+	      /**
+	       *是否需要服务端检索
+	       * @type {boolean}
+	       */
+	      this.isNeedServerSearch = typeof this.serverSearch === 'function';
 	      this.showLeftSearch = angular.isUndefined(this.showLeftSearch) ? true : this.showLeftSearch;
 	      this.showRightSearch = angular.isUndefined(this.showRightSearch) ? true : this.showRightSearch;
 	      this.addBtn = angular.isUndefined(this.addBtn) ? true : this.addBtn;
@@ -12221,6 +12246,32 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.buildDoc(this.titles, ['leftTitle', 'rightTitle']);
 	      this.buildDoc(this.placeholders, ['leftPlaceholder', 'rightPlaceholder']);
 	      this.buildDoc(this.operations, ['addOperation', 'addAllOperation', 'delOperation', 'delAllOperation']);
+	    }
+
+	    /**
+	     *双击 增
+	     */
+
+	  }, {
+	    key: 'optionSourceClick',
+	    value: function optionSourceClick(option) {
+	      this.rightValue = [];
+	      this.targetData = this.pushData(this.targetData, option, this.sourceData);
+	      this.sourceData = this.reduceData(this.sourceData, option);
+	      this.leftValue = [];
+	    }
+
+	    /**
+	     *双击 删
+	     */
+
+	  }, {
+	    key: 'optionTargetClick',
+	    value: function optionTargetClick(option) {
+	      this.leftValue = [];
+	      this.sourceData = this.pushData(this.sourceData, option, this.targetData);
+	      this.targetData = this.reduceData(this.targetData, option);
+	      this.rightValue = [];
 	    }
 
 	    /**
@@ -12300,6 +12351,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.rightValue = [];
 	      this.targetData = this.pushData(this.targetData, this.leftValue, this.sourceData);
 	      this.sourceData = this.reduceData(this.sourceData, this.leftValue);
+	      this.leftValue = [];
 	    }
 
 	    /**
@@ -12325,6 +12377,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.leftValue = [];
 	      this.sourceData = this.pushData(this.sourceData, this.rightValue, this.targetData);
 	      this.targetData = this.reduceData(this.targetData, this.rightValue);
+	      this.rightValue = [];
 	    }
 
 	    /**
@@ -12338,6 +12391,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	      this.leftValue = [];
 	      this.sourceData = this.pushData(this.sourceData, this.getKeys(this.$filter('filter')(this.targetData, this.rightSearchValue)), this.targetData);
 	      this.rightSearchValue ? this.targetData = this.reduceData(this.targetData, this.getKeys(angular.copy(this.$filter('filter')(this.targetData, this.rightSearchValue)))) : this.targetData = [];
+	    }
+
+	    /**
+	     * 点击事件
+	     */
+
+	  }, {
+	    key: 'innerClick',
+	    value: function innerClick() {
+	      this.serverSearch && typeof this.serverSearch === 'function' && this.serverSearch({ $value: this.searchValue });
 	    }
 
 	    /**
@@ -12374,7 +12437,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 45 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"transfer\">\n  <!-- 左侧栏 -->\n  <div class=\"transfer-left\">\n    <div class=\"transfer-left-stores\">\n      <span>{{controller.docInfo.leftTitle}}</span>\n      <!-- 前端检索 -->\n      <input\n             type=\"text\"\n             class=\"form-control\"\n             placeholder=\"{{controller.docInfo.leftPlaceholder}}\"\n             data-ng-model=\"controller.leftSearchValue\"\n             data-ng-if=\"controller.showLeftSearch\"\n      />\n    </div>\n    <div class=\"transfer-left-select\">\n      <select  name=\"multipleSelect\"\n               class=\"form-control\"\n               multiple\n               data-ng-model=\"controller.leftValue\">\n        <option data-ng-repeat=\"option in controller.sourceData | filter:controller.leftSearchValue\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /左侧栏 -->\n\n  <!-- 中间 -->\n  <div class=\"transfer-center\">\n    <div class=\"transfer-center-btn\">\n      <div class=\"transfer-center-btn-add\">\n        <bp-button\n                size=\"sm\"\n                click=\"controller.add()\"\n                data-ng-if=\"controller.addBtn\"\n                disabled=\"(controller.leftValue).length === 0\"\n        >\n          {{controller.docInfo.addOperation}}\n        </bp-button>\n        <bp-button\n                size=\"sm\"\n                click=\"controller.addAll()\"\n                data-ng-if=\"controller.addAllBtn\"\n                disabled=\"(controller.sourceData).length === 0\"\n        >\n          {{controller.docInfo.addAllOperation}}\n        </bp-button>\n      </div>\n      <div class=\"transfer-center-btn-del\">\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.del()\"\n                data-ng-if=\"controller.delBtn\"\n                disabled=\"(controller.rightValue).length === 0\"\n        >\n          {{controller.docInfo.delOperation}}\n        </bp-button>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.delAll()\"\n                data-ng-if=\"controller.delAllBtn\"\n                disabled=\"(controller.targetData).length === 0\"\n        >\n          {{controller.docInfo.delAllOperation}}\n        </bp-button>\n      </div>\n    </div>\n  </div>\n  <!--中间-->\n\n  <!-- 右侧 -->\n  <div class=\"transfer-right\">\n    <div class=\"transfer-right-stores\">\n      <span>{{controller.docInfo.rightTitle}}</span>\n      <input type=\"text\"\n             class=\"form-control\"\n             placeholder=\"{{controller.docInfo.rightPlaceholder}}\"\n             data-ng-model=\"controller.rightSearchValue\"\n             data-ng-if=\"controller.showRightSearch\"\n      />\n    </div>\n    <div class=\"transfer-right-stores\">\n      <select  name=\"multipleSelect\"\n               class=\"form-control\"\n               multiple\n               data-ng-model=\"controller.rightValue\">\n        <option data-ng-repeat=\"option in controller.targetData | filter:controller.rightSearchValue\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /右侧 -->\n</div>\n"
+	module.exports = "<div class=\"transfer\">\n  <!-- 支持服务端检索 -->\n  <div class=\"form-inline server-search\" data-ng-if=\"controller.isNeedServerSearch\">\n    <input\n      class=\"form-control  input-sm\"\n      type=\"text\"\n      data-ng-model=\"controller.searchValue\"\n      placeholder=\"请输入检索的值\"\n    />\n    <bp-button click=\"controller.innerClick()\" size=\"sm\">查询</bp-button>\n  </div>\n  <!-- /支持服务端检索 -->\n\n  <!-- 左侧栏 -->\n  <div class=\"transfer-left\">\n\n    <!--列表标题 左-->\n    <div class=\"list-title\">\n      <div class=\"list-title-name\"\n           title=\"{{controller.docInfo.leftTitle}}\">\n        {{controller.docInfo.leftTitle}}\n      </div>\n      <div class=\"list-title-total\" title=\"共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条\">\n        共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条\n      </div>\n    </div>\n    <!--/列表标题 左-->\n\n    <div class=\"transfer-search\">\n      <!-- 前端检索 -->\n      <input\n             type=\"text\"\n             class=\"form-control input-sm\"\n             placeholder=\"{{controller.docInfo.leftPlaceholder}}\"\n             data-ng-model=\"controller.leftSearchValue\"\n             data-ng-disabled=\"!controller.showLeftSearch\"\n      />\n      <span class=\"transfer-search-span\">\n        <i class=\"glyphicon glyphicon-search\"></i>\n      </span>\n      <!-- /前端检索 -->\n    </div>\n    <div class=\"transfer-left-select\">\n      <select  name=\"multipleSelect\"\n               multiple\n               data-ng-model=\"controller.leftValue\">\n        <option data-ng-repeat=\"option in controller.sourceData | filter:controller.leftSearchValue\"\n                data-ng-dblclick=\"controller.optionSourceClick(option)\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /左侧栏 -->\n\n  <!-- 中间 -->\n  <div class=\"transfer-center\">\n      <div class=\"form-group\">\n        <p>\n          <bp-button\n                size=\"sm\"\n                click=\"controller.add()\"\n                data-ng-if=\"controller.addBtn\"\n                disabled=\"(controller.leftValue).length === 0\"\n        >\n          {{controller.docInfo.addOperation}}\n        </bp-button>\n          </p>\n        <p>\n        <bp-button\n                size=\"sm\"\n                click=\"controller.addAll()\"\n                data-ng-if=\"controller.addAllBtn\"\n                disabled=\"(controller.sourceData).length === 0\"\n        >\n          {{controller.docInfo.addAllOperation}}\n        </bp-button>\n        </p>\n      </div>\n      <div class=\"form-group\">\n        <p>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.del()\"\n                data-ng-if=\"controller.delBtn\"\n                disabled=\"(controller.rightValue).length === 0\"\n        >\n          {{controller.docInfo.delOperation}}\n        </bp-button>\n        </p>\n        <p>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.delAll()\"\n                data-ng-if=\"controller.delAllBtn\"\n                disabled=\"(controller.targetData).length === 0\"\n        >\n          {{controller.docInfo.delAllOperation}}\n        </bp-button>\n        </p>\n      </div>\n  </div>\n  <!--中间-->\n\n  <!-- 右侧 -->\n  <div class=\"transfer-right\">\n\n    <!--列表标题 右-->\n    <div class=\"list-title\">\n      <div class=\"list-title-name\"\n           title=\"{{controller.docInfo.rightTitle}}\">\n        {{controller.docInfo.rightTitle}}</div>\n      <div class=\"list-title-total\"\n           title=\"共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条\">\n        共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条\n      </div>\n    </div>\n    <!--/列表标题 右-->\n\n    <div class=\"transfer-search\">\n      <!-- 前端检索 右-->\n      <input type=\"text\"\n             class=\"form-control input-sm\"\n             placeholder=\"{{controller.docInfo.rightPlaceholder}}\"\n             data-ng-model=\"controller.rightSearchValue\"\n             data-ng-disabled=\"!controller.showRightSearch\"\n      />\n      <span class=\"transfer-search-span\">\n        <i class=\"glyphicon glyphicon-search\"></i>\n      </span>\n      <!-- /前端检索 右-->\n    </div>\n    <div class=\"transfer-right-stores\">\n      <select  name=\"multipleSelect\"\n               multiple\n               data-ng-model=\"controller.rightValue\">\n        <option data-ng-repeat=\"option in controller.targetData | filter:controller.rightSearchValue\"\n                data-ng-dblclick=\"controller.optionTargetClick(option)\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /右侧 -->\n</div>\n"
 
 /***/ },
 /* 46 */
@@ -12411,7 +12474,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	// module
-	exports.push([module.id, ".transfer {\n  margin: 2px 0 0 10px;\n  padding: 5px;\n  width: 830px;\n  background-color: #E7EDEE;\n  min-height: 300px;\n  border-radius: 2px;\n}\n.transfer select {\n  font-size: 12px;\n  padding: 7px 15px;\n  min-height: 223px;\n  width: 340px;\n}\n.transfer select option {\n  cursor: pointer;\n  padding: 3px;\n}\n.transfer .transfer-left {\n  border-radius: 2px;\n  float: left;\n  min-height: 286px;\n  width: 350px;\n  background-color: white;\n}\n.transfer .transfer-left .transfer-left-stores {\n  padding: 5px;\n}\n.transfer .transfer-left .transfer-left-select {\n  padding: 5px;\n}\n.transfer .transfer-center {\n  float: left;\n  min-height: 300px;\n  width: 118px;\n}\n.transfer .transfer-center .transfer-center-btn {\n  padding: 60px 0 0 20px;\n}\n.transfer .transfer-center .transfer-center-btn button {\n  margin-bottom: 5px;\n}\n.transfer .transfer-center .transfer-center-btn .transfer-center-btn-add {\n  margin-bottom: 20px;\n}\n.transfer .transfer-right {\n  border-radius: 2px;\n  float: left;\n  min-height: 286px;\n  width: 350px;\n  background-color: white;\n}\n.transfer .transfer-right .transfer-right-stores {\n  padding: 5px;\n}\n.transfer .transfer-right .transfer-left-select {\n  padding: 5px;\n}\n", ""]);
+	exports.push([module.id, ".transfer {\n  width: 640px;\n  height: 322px;\n}\n.transfer .bp-btn:focus {\n  outline: 0;\n}\n.transfer .server-search {\n  padding-bottom: 12px;\n  /*  /* border-bottom: 1px solid #e9e9e9;\n       border-bottom-right-radius: 3px;\n       border-bottom-left-radius: 3px;*/\n}\n.transfer .server-search .input-sm {\n  border-color: #e9e9e9;\n  border-radius: 6px;\n}\n.transfer .list-title {\n  font-size: 12px;\n  padding: 2px;\n  height: 30px;\n  color: #666;\n  border-bottom: 1px solid  #e9e9e9;\n}\n.transfer .list-title .list-title-name {\n  width: 180px;\n  height: 18px;\n  cursor: pointer;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  float: left;\n  margin: 5px 12px;\n}\n.transfer .list-title .list-title-total {\n  height: 18px;\n  cursor: pointer;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 5px 0 0 200px;\n}\n.transfer .transfer-search {\n  width: 265px;\n  position: relative;\n  left: 6px;\n  top: 10px;\n}\n.transfer .transfer-search .input-sm {\n  border-color: #e9e9e9;\n  border-radius: 6px;\n}\n.transfer .transfer-search-span {\n  position: relative;\n  bottom: 23px;\n  left: 245px;\n}\n.transfer .transfer-search-span .glyphicon-search {\n  color: #ccc;\n}\n.transfer select {\n  width: 278px;\n  height: 240px;\n  border-bottom-left-radius: 6px;\n  border-bottom-right-radius: 6px;\n  font-size: 12px;\n  border: hidden;\n  overflow-y: auto;\n  margin: 0;\n  padding: 5px 0 0 9px;\n}\n.transfer select option {\n  width: 260px;\n  padding: 5px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  cursor: pointer;\n}\n.transfer select option:hover {\n  background-color: #eaf8fe;\n}\n.transfer select option:checked {\n  background: #58b4e9 linear-gradient(0deg, #58b4e9 0%, #58b4e9 100%);\n}\n.transfer select:focus {\n  outline: 0;\n}\n.transfer .transfer-left {\n  width: 280px;\n  float: left;\n  border-radius: 6px;\n  border: 1px solid #e9e9e9;\n}\n.transfer .transfer-center {\n  float: left;\n  padding: 85px 5px;\n}\n.transfer .transfer-right {\n  width: 280px;\n  float: left;\n  border-radius: 6px;\n  border: 1px solid #e9e9e9;\n}\n.transfer .transfer-right .transfer-right-stores {\n  /* padding: 5px;*/\n}\n.transfer .transfer-right .transfer-left-select {\n  /* padding: 5px;*/\n}\n", ""]);
 
 	// exports
 

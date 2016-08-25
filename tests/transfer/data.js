@@ -35,6 +35,20 @@ export  default {
     }
   ],
 
+  targetData:[
+  {
+    key: 'NNN',
+    value: "沈阳分门店测试1（商圈dx测试店）"
+  },
+  {
+    key: 9103705,
+    value: "TESTing（TEST店）"
+  },
+  {
+    key: 9103384,
+    value: "性能测试商圈01_勿动（性能测试商圈01_勿动店）"
+  }],
+
   dataSourceTmp : `this.dataSource = [
     {
       key: 'NNN',
@@ -86,7 +100,34 @@ export  default {
     del-all-btn="vm.delAllBtn"
     ></bp-transfer>`,
 
-dataSourceTmp1 : `
+  codePart3:`
+    <bp-transfer 
+    source-data="vm.dataSource"
+    titles="vm.titles"
+    placeholders="vm.placeholders"
+    operations="vm.operations"
+    showLeft-search="vm.showLeftSearch"
+    showRight-search="vm.showRightSearch"
+    add-btn="vm.addBtn"
+    add-all-btn="vm.addAllBtn"
+    del-btn="vm.delBtn"
+    del-all-btn="vm.delAllBtn"
+    server-search="vm.search($value)"
+    ></bp-transfer>`,
+
+  serverSearch: `
+    /**
+    *业务方的函数 
+    *params $value 组件返回给你输入值
+    */
+    search($value){
+      
+    }`,
+
+  dataSourceTmp1 : `
+    /**
+     *配置
+     */
     this.titles = ['门店列表', '已选择门店'];
     this.placeholders = ['输入门店进行检索', '对已经出来的结果进行检索'];
     this.operations = ['增加', '增加全部', '删除', '全部删除'];

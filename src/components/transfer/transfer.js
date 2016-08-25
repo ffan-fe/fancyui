@@ -23,10 +23,26 @@ export default class Transfer extends Component {
      * 用户直接对  sourceData targetData赋值
      * 过滤一遍
      */
+/*    $scope.$watch(() => {
+      return this.sourceData;
+    }, (newValue, oldValue) => {
+      if(angular.isArray(newValue) && newValue.length != 0){
+        console.log('newValue1111',newValue);
+      }
+
+    });
+
     $scope.$watch(() => {
       return this.targetData;
     }, (newValue, oldValue) => {
-    });
+      //console.log(newValue,oldValue);
+      if(angular.isArray(newValue) && newValue.length != 0){
+        console.log('newValue',newValue)
+      }
+
+    });*/
+
+
   }
 
   /**
@@ -43,7 +59,11 @@ export default class Transfer extends Component {
       delOperation:'删除',
       delAllOperation:'全部删除'
     };
-
+    /**
+     *是否需要服务端检索
+     * @type {boolean}
+     */
+    this.isNeedServerSearch = typeof this.serverSearch === 'function';
     this.showLeftSearch = angular.isUndefined(this.showLeftSearch) ? true : this.showLeftSearch ;
     this.showRightSearch = angular.isUndefined(this.showRightSearch) ? true :  this.showRightSearch ;
     this.addBtn = angular.isUndefined(this.addBtn) ? true : this.addBtn;
@@ -79,7 +99,6 @@ export default class Transfer extends Component {
     this.sourceData = this.reduceData(this.sourceData, option);
     this.leftValue = [];
   }
-
 
   /**
    *双击 删
@@ -150,6 +169,7 @@ export default class Transfer extends Component {
     this.rightValue = [];
     this.targetData = this.pushData(this.targetData, this.leftValue, this.sourceData);
     this.sourceData = this.reduceData(this.sourceData, this.leftValue);
+    this.leftValue = [];
   }
 
   /**
@@ -178,6 +198,7 @@ export default class Transfer extends Component {
     this.leftValue = [];
     this.sourceData = this.pushData(this.sourceData, this.rightValue,this.targetData);
     this.targetData = this.reduceData(this.targetData, this.rightValue);
+    this.rightValue = [];
   }
 
   /**
@@ -197,6 +218,13 @@ export default class Transfer extends Component {
         this.getKeys(angular.copy(this.$filter('filter')(this.targetData,this.rightSearchValue)))
       ) :
       this.targetData = [];
+  }
+
+  /**
+   * 点击事件
+   */
+  innerClick(){
+    this.serverSearch && typeof this.serverSearch === 'function' && this.serverSearch({$value:this.searchValue});
   }
 
   /**
