@@ -6,7 +6,6 @@ import ffanRadiobox from './src/components/radiobox';
 import ffanRadioboxGroup from './src/components/radiobox.group';
 import ffanTransfer from './src/components/transfer'
 
-
 'use strict';
 
 export let Button = ffanButton;
