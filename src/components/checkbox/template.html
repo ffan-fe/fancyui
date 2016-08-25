@@ -6,8 +6,8 @@
       ng-true-value="{{controller.trueValue}}"
       ng-false-value="{{controller.falseValue}}"
       ng-disabled="controller.disabled"
-      ng-model="controller.checked" 
-      ng-change="controller.changeHandler()" />
+      ng-click="controller.innerClick()"
+      ng-model="controller.checked" />
     <span class="checkbox-label" ng-transclude></span>
   </span>
 </label>

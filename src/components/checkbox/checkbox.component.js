@@ -27,7 +27,9 @@ let CheckboxComponentDefine = {
     checked: '=?checked',
     halfChecked: '=?halfChecked',
     trueValue: '@',
-    falseValue: '@'
+    falseValue: '@',
+    change: '&?',
+    click: '&?'
   }
 }
 

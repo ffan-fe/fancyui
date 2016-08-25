@@ -3,11 +3,12 @@ import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 
 export default class ButtonTestController {
-  constructor($timeout, $sce) {
+  constructor($timeout, $sce, citySelector) {
     this.disabled = false;
     this.ooxx = false;
     this.$timeout = $timeout;
     this.tiggleDisabled = true;
+    this.citySelector = citySelector;
 
     // this.$timeout(() => {
     //   this.tiggleDisabled = false;
@@ -41,5 +42,12 @@ export default class ButtonTestController {
     this.$timeout(() => {
       btn.state = {disabled: false, loading: false};
     }, 3000);
+  }
+  showCitySelector() {
+    this.citySelector.open({checkedList: [310100, 310200, 320100, 320200, 320300, 320400, 320500, 320600, 320700, 320800, 320900, 321000, 321100, 321200, 321300, 330100, 330200, 330300, 330400, 330500, 330600, 330700, 330800, 330900, 331000, 331100, 340100, 340200, 340300, 340400, 340500, 340600, 340700, 340800, 341000, 341100, 341200, 341300, 341500, 341600, 341700, 341800, 350100, 350200, 350300, 350400, 350500, 350600, 350700, 350800, 350900, 360100, 360200, 360300, 360400, 360500, 360600, 360700, 360800, 360900, 361000, 361100, 370100, 370200, 370300, 370400, 370500, 370600, 370700, 370800, 370900, 371000, 371100, 371200, 371300, 371400, 371500, 371600, 371700]}).then(
+      idList => {
+        console.log('idList', idList);
+      }
+    );
   }
 }

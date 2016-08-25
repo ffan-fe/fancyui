@@ -4,6 +4,7 @@ import ffanCheckbox from './src/components/checkbox';
 import ffanCheckboxGroup from './src/components/checkbox.group'
 import ffanRadiobox from './src/components/radiobox';
 import ffanRadioboxGroup from './src/components/radiobox.group';
+import ffanCitySelector from './src/components/city.selector';
 
 'use strict';
 

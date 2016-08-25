@@ -16,6 +16,8 @@
  * @param {Boolean}    halfChecked    - binding symbol is `=?`, 是否是半选状态
  * @param {ANY}        trueValue      - binding symbol is `@`, like ng-true-value, 是对ng-true-value的封装
  * @param {ANY}        falseValue     - binding symbol is `@`, like ng-false-value, 是对ng-false-value的封装
+ * @param {Function}   change         - binding symbol is `&`, onChange event
+ * @param {Function}   click          - binding symbol is `&`, onClick event
  */
 
 import Component from '../common/component';
@@ -58,8 +60,6 @@ export default class Checkbox extends Component {
       [`${CheckboxStates.HALF_CHECKED}`]: this.halfChecked
     };
   }
-  // $onInit() {
-  // }
   /**
    * @override
    * @protected
@@ -87,45 +87,41 @@ export default class Checkbox extends Component {
    * @protected
    */
   _launch() {
-    this.$scope.$watch(() => {return this.checked;}, (newValue, oldValue) => {
+    const update = () => {
       this.changeHandler();
       this._render();
+    };
+    this.$scope.$watch(() => {return this.checked;}, (newValue, oldValue) => {
+      update();
     });
+    //
     this.$scope.$watch(() => {return this.halfChecked;}, (newValue, oldValue) => {
-      const halfChecked = newValue;
-      this.state = {
-        [`${CheckboxStates.HALF_CHECKED}`]: halfChecked
-      };
-      if (halfChecked) {
-        this.state = {
-          [`${CheckboxStates.CHECKED}`]: false
-        };
-      }
-      this._render();
+      update()
     });
+    //
     this.$scope.$watch(() => {return this.disabled;}, (newValue, oldValue) => {
-      this.state = {
-        [`${CheckboxStates.DISABLED}`]: newValue
-      };
-      this._render();
+      update();
     });
   }
   /**
-   * 用户点击而改变状态的处理器, 是在模板里面的
+   * 统一更新状态
    *
    * @private
    */
   changeHandler() {
-    if (this.checked == this.trueValue) {
-      this.state = {
-        [`${CheckboxStates.CHECKED}`]: true,
-        [`${CheckboxStates.HALF_CHECKED}`]: false
-      };
-    } else {
-      this.state = {
-        [`${CheckboxStates.CHECKED}`]: false,
-        [`${CheckboxStates.HALF_CHECKED}`]: false
-      };
-    }
+    if (this.checked == this.trueValue) { this.halfChecked = false; }
+    this._state = {
+      [`${CheckboxStates.DISABLED}`]: this.disabled,
+      [`${CheckboxStates.CHECKED}`]: this.checked == this.trueValue,
+      [`${CheckboxStates.HALF_CHECKED}`]: this.halfChecked
+    };
+    this.change && typeof this.change === 'function' && this.change({checkbox: this});
+  }
+  /**
+   * 用户点击而改变状态的处理器, 是在模板里面的
+   * @private
+   */
+  innerClick() {
+    this.click && typeof this.click === 'function' && this.click({checkbox: this});
   }
 }

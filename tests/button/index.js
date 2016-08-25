@@ -6,10 +6,12 @@ import template from './template.html';
 import controller from './controller';
 
 import {Button} from '../../dist/anaheim';
+import citySelector from '../../src/components/city.selector'
 
 export default angular.module('buttonTest', [
   uiRouter,
-  Button.name
+  Button.name,
+  citySelector.name
 ])
   .config(($stateProvider) => {
     'ngInject';
