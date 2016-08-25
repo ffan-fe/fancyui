@@ -87,6 +87,8 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// import ffanCitySelector from './src/components/city.selector';
+
 	'use strict';
 
 	var Button = exports.Button = _button2.default;
@@ -95,6 +97,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var CheckboxGroup = exports.CheckboxGroup = _checkbox4.default;
 	var Radiobox = exports.Radiobox = _radiobox2.default;
 	var RadioboxGroup = exports.RadioboxGroup = _radiobox4.default;
+	// export let CitySelector = ffanCitySelector;
 
 /***/ },
 /* 1 */
@@ -1309,7 +1312,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    checked: '=?checked',
 	    halfChecked: '=?halfChecked',
 	    trueValue: '@',
-	    falseValue: '@'
+	    falseValue: '@',
+	    change: '&?',
+	    click: '&?'
 	  }
 	};
 
@@ -1365,6 +1370,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    halfChecked    - binding symbol is `=?`, 是否是半选状态
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        trueValue      - binding symbol is `@`, like ng-true-value, 是对ng-true-value的封装
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        falseValue     - binding symbol is `@`, like ng-false-value, 是对ng-false-value的封装
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Function}   change         - binding symbol is `&`, onChange event
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Function}   click          - binding symbol is `&`, onClick event
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
@@ -1415,8 +1422,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked == this.trueValue), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
 	    }
-	    // $onInit() {
-	    // }
 	    /**
 	     * @override
 	     * @protected
@@ -1455,31 +1460,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _launch() {
 	      var _this2 = this;
 
+	      var update = function update() {
+	        _this2.changeHandler();
+	        _this2._render();
+	      };
 	      this.$scope.$watch(function () {
 	        return _this2.checked;
 	      }, function (newValue, oldValue) {
-	        _this2.changeHandler();
-	        _this2._render();
+	        update();
 	      });
+	      //
 	      this.$scope.$watch(function () {
 	        return _this2.halfChecked;
 	      }, function (newValue, oldValue) {
-	        var halfChecked = newValue;
-	        _this2.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
-	        if (halfChecked) {
-	          _this2.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
-	        }
-	        _this2._render();
+	        update();
 	      });
+	      //
 	      this.$scope.$watch(function () {
 	        return _this2.disabled;
 	      }, function (newValue, oldValue) {
-	        _this2.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, newValue);
-	        _this2._render();
+	        update();
 	      });
 	    }
 	    /**
-	     * 用户点击而改变状态的处理器, 是在模板里面的
+	     * 统一更新状态
 	     *
 	     * @private
 	     */
@@ -1487,15 +1491,23 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'changeHandler',
 	    value: function changeHandler() {
+	      var _state2;
+
 	      if (this.checked == this.trueValue) {
-	        var _state2;
-
-	        this.state = (_state2 = {}, _defineProperty(_state2, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state2, '' + _checkbox2.default.HALF_CHECKED, false), _state2);
-	      } else {
-	        var _state3;
-
-	        this.state = (_state3 = {}, _defineProperty(_state3, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state3, '' + _checkbox2.default.HALF_CHECKED, false), _state3);
+	        this.halfChecked = false;
 	      }
+	      this._state = (_state2 = {}, _defineProperty(_state2, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state2, '' + _checkbox2.default.CHECKED, this.checked == this.trueValue), _defineProperty(_state2, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state2);
+	      this.change && typeof this.change === 'function' && this.change({ checkbox: this });
+	    }
+	    /**
+	     * 用户点击而改变状态的处理器, 是在模板里面的
+	     * @private
+	     */
+
+	  }, {
+	    key: 'innerClick',
+	    value: function innerClick() {
+	      this.click && typeof this.click === 'function' && this.click({ checkbox: this });
 	    }
 	  }]);
 
@@ -1551,7 +1563,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 22 */
 /***/ function(module, exports) {
 
-	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
+	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-click=\"controller.innerClick()\"\n      ng-model=\"controller.checked\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
 
 /***/ },
 /* 23 */

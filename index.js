@@ -14,5 +14,6 @@ export let Checkbox = ffanCheckbox;
 export let CheckboxGroup = ffanCheckboxGroup;
 export let Radiobox = ffanRadiobox;
 export let RadioboxGroup = ffanRadioboxGroup;
+export let CitySelector = ffanCitySelector;
 
 

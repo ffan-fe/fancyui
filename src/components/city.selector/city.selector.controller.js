@@ -18,6 +18,7 @@ export default class CitySelectorController {
    * @param {Array} checkedList
    */
   constructor($uibModalInstance, $http, isReadOnly, checkedList) {
+    'ngInject';
     this.$uibModalInstance = $uibModalInstance;
     this.$http = $http;
     this.isReadOnly = isReadOnly;
