@@ -76,8 +76,13 @@ let componentDefine = {
      * 删除所有的按钮
      * @type {Boolean}
      */
-    delAllBtn: '<'
+    delAllBtn: '<',
 
+    /**
+     *服务端检索
+     */
+    serverSearch: '&?'  //加上问号 如果调用方不传此指令会有 undefined
+    
   }
 };
 
