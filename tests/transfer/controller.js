@@ -4,6 +4,7 @@ import data from './data'
 
 export default class TransferTextController {
   constructor($sce) {
+    'ngInject';
     this.dataSource = data['dataSource'];
     this.targetData = data['targetData'];
     this.titles = ['门店列表', '已选择门店'];

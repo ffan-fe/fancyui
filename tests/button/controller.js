@@ -4,6 +4,7 @@ import 'prismjs/themes/prism.css';
 
 export default class ButtonTestController {
   constructor($timeout, $sce) {
+    'ngInject';
     this.disabled = false;
     this.ooxx = false;
     this.$timeout = $timeout;

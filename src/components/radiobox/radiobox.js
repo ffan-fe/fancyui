@@ -21,7 +21,7 @@
  <bp-radiobox model="vm.radio" value="1"></bp-radiobox>
  <bp-radiobox model="vm.radio" value="2"></bp-radiobox>
  ```
- 更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
+ 更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
  */
 
 import Component from '../common/component';
