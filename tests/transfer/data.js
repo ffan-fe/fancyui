@@ -85,7 +85,7 @@ export  default {
     }
   ]`,
 
-  codePart1:`<bp-transfer source-data="vm.dataSource"></bp-transfer> `,
+  codePart1:`<bp-transfer source-data="vm.dataSource"></bp-transfer>`,
   codePart2:`
     <bp-transfer 
     source-data="vm.dataSource"

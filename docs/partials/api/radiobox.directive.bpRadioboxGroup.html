@@ -20,22 +20,22 @@
        list="{Array.&lt;Object&gt;}"&gt;
 &lt;/bp-radiobox-group&gt;</pre>
 <h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>disabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradioboxgroup-page"><ul>
-<li>binding symbol is &lt;, 禁用状态</li>
+<li>binding symbol is <code>&lt;</code>, 禁用状态,默认 <code>false</code></li>
 </ul>
 </div></td></tr><tr><td>inline</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradioboxgroup-page"><ul>
-<li>binding symbol is &lt;, 是否横向展示</li>
+<li>binding symbol is <code>&lt;</code>, 是否横向展示,默认 <code>false</code></li>
 </ul>
 </div></td></tr><tr><td>model</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradioboxgroup-page"><ul>
-<li>binding symbol is =?model, 绑定在radioBoxGroup上的model</li>
+<li>binding symbol is <code>=?model</code>, 绑定在<code>radioBoxGroup上</code>的<code>model</code></li>
 </ul>
 </div></td></tr><tr><td>list</td><td><a href="" class="label type-hint type-hint-array">Array.&lt;Object&gt;</a></td><td><div class="radiobox-directive-page radiobox-directive-bpradioboxgroup-page"><ul>
-<li>binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio</li>
+<li>binding symbol is <code>=?list</code>, 数据源, <code>controller</code>提供的数组用于遍历展示<code>radio</code></li>
 </ul>
 </div></td></tr></tbody></table></div>
 <h2 id="example">Example</h2>
-<div class="example"><div class="radiobox-directive-page radiobox-directive-bpradioboxgroup-page"><pre><code class="lang-html">&lt;bp-radio-group list=&quot;vm.groupDataList&quot; model=&quot;vm.model&quot;&gt;&lt;/bp-radio-group&gt;
-</code></pre>
-<p>在实际的controller或任何数据源里面有这样一个对象数组
+<div class="example"><div class="radiobox-directive-page radiobox-directive-bpradioboxgroup-page"><pre class="prettyprint linenums">
+&lt;bp-radio-group list="vm.groupDataList" model="vm.model"&gt;&lt;/bp-radio-group&gt;
+</pre>
 <pre class="prettyprint linenums">
 this.model = "这个杀手不太冷";
 this.groupDataList = [

@@ -1,0 +1,128 @@
+<a href="https://github.com/{{repo}}/blob/{{sha}}/{{file}}#L{{codeline}}" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">bpTransfer</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">transfer</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>双栏穿梭选择框</li>
+<li>用直观的方式在两栏中移动元素，完成选择行为</li>
+</ul>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bp-transfer
+       source-data="{Array}"
+       target-data="{Array}"
+       titles="{Array}"
+       placeholders="{Array}"
+       operations="{Array}"
+       show-left-search="{Boolean}"
+       show-right-search="{Boolean}"
+       add-btn="{Boolean}"
+       add-all-btn="{Boolean}"
+       del-btn="{Boolean}"
+       del-all-btn="{Boolean}"
+       server-search="{Function}"&gt;
+&lt;/bp-transfer&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>sourceData</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is =?, 数据源</li>
+</ul>
+</div></td></tr><tr><td>targetData</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is =?, 右侧选中目标值</li>
+</ul>
+</div></td></tr><tr><td>titles</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 左右侧标题,默认为<code>请选择</code></li>
+</ul>
+</div></td></tr><tr><td>placeholders</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 左右placeholders值 默认为<code>请输入检索条件</code></li>
+</ul>
+</div></td></tr><tr><td>operations</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 操作按钮的文案 默认依次为 <code>添加</code> <code>添加全部</code> <code>删除</code> <code>全部删除</code></li>
+</ul>
+</div></td></tr><tr><td>showLeftSearch</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 是否启用左侧检索框 默认为 <code>true</code> 启用</li>
+</ul>
+</div></td></tr><tr><td>showRightSearch</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 是否启用右侧检索框 默认为 <code>true</code> 启用</li>
+</ul>
+</div></td></tr><tr><td>addBtn</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 是否展示增加按钮 默认为 <code>true</code> 展示</li>
+</ul>
+</div></td></tr><tr><td>addAllBtn</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 是否展示全部增加按钮 默认为 <code>true</code> 展示</li>
+</ul>
+</div></td></tr><tr><td>delBtn</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 是否展示删除按钮 默认为 <code>true</code> 展示</li>
+</ul>
+</div></td></tr><tr><td>delAllBtn</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &lt;, 是否展示全部删除按钮 默认为 <code>true</code> 展示</li>
+</ul>
+</div></td></tr><tr><td>serverSearch</td><td><a href="" class="label type-hint type-hint-function">Function</a></td><td><div class="transfer-directive-page transfer-directive-bptransfer-page"><ul>
+<li>binding symbol is &amp;?, 是否启用服务端检索</li>
+</ul>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="transfer-directive-page transfer-directive-bptransfer-page"><pre class="prettyprint linenums">
+&lt;bp-transfer
+source-data="vm.dataSource"
+titles="vm.titles"
+placeholders="vm.placeholders"
+operations="vm.operations"
+showLeft-search="vm.showLeftSearch"
+showRight-search="vm.showRightSearch"
+add-btn="vm.addBtn"
+add-all-btn="vm.addAllBtn"
+del-btn="vm.delBtn"
+del-all-btn="vm.delAllBtn"
+&gt;&lt;/bp-transfer&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.titles = ['门店列表', '已选择门店'];
+this.placeholders = ['输入门店进行检索', '对已经出来的结果进行检索'];
+this.operations = ['增加', '增加全部', '删除', '全部删除'];
+this.showLeftSearch = true;
+this.showRightSearch = false;
+this.addBtn = true;
+this.addAllBtn = true;
+this.delBtn = true;
+this.delAllBtn = false;
+
+this.dataSource = [
+ {
+   key: 'NNN',
+   value: "沈阳分门店测试1（商圈dx测试店）"
+ },
+ {
+   key: 9103705,
+   value: "TESTing（TEST店）"
+ },
+ {
+   key: 9103384,
+   value: "性能测试商圈01_勿动（性能测试商圈01_勿动店）"
+ },
+ {
+   key: 9103381,
+   value: "性能测试商圈01_勿动（性能测试商圈01_勿动店棒啊帮帮哒00100101010）"
+ },
+ {
+   key: 9103347,
+   value: "测试专用叶（勿动）（沈阳奥体店）"
+ },
+ {
+   key: 9103346,
+   storeName: "	测试专用勿动111111111111",
+   value: "	测试专用勿动（沈阳北一路店）333333333333333333"
+ },
+ {
+   key: 9103345,
+   value: "测试专用勿动（沈阳太原街店）11111111111111111"
+ },
+ {
+   key: 9103344,
+   value: "测试专用叶（勿动）（沈阳奥体店1155555555）"
+ }
+]
+</pre>
+更多例子的<a href="https://ffan-fe.github.io/#/ui/transfer">传送门</a></p>
+</div></div>
+</div>
