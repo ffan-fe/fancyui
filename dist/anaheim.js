@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
+	exports.Transfer = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
 
 	var _button = __webpack_require__(1);
 
@@ -85,6 +85,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _radiobox4 = _interopRequireDefault(_radiobox3);
 
+	var _transfer = __webpack_require__(42);
+
+	var _transfer2 = _interopRequireDefault(_transfer);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict';
@@ -95,6 +99,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var CheckboxGroup = exports.CheckboxGroup = _checkbox4.default;
 	var Radiobox = exports.Radiobox = _radiobox2.default;
 	var RadioboxGroup = exports.RadioboxGroup = _radiobox4.default;
+	var Transfer = exports.Transfer = _transfer2.default;
 
 /***/ },
 /* 1 */
@@ -1938,7 +1943,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="1"></bp-radiobox>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="2"></bp-radiobox>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
@@ -2254,7 +2259,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ];
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
@@ -2341,6 +2346,495 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// module
 	exports.push([module.id, "", ""]);
+
+	// exports
+
+
+/***/ },
+/* 42 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _transfer = __webpack_require__(43);
+
+	var _transfer2 = _interopRequireDefault(_transfer);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	'use strict'; /**
+	               * Transfer component entry
+	               * @author name
+	               */
+
+	exports.default = angular.module('Transfer', []).component('bpTransfer', _transfer2.default);
+
+/***/ },
+/* 43 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _transfer = __webpack_require__(44);
+
+	var _transfer2 = _interopRequireDefault(_transfer);
+
+	var _template = __webpack_require__(45);
+
+	var _template2 = _interopRequireDefault(_template);
+
+	__webpack_require__(46);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	'use strict'; /**
+	               * Transfer component define
+	               */
+
+	var componentDefine = {
+	  template: _template2.default,
+	  controller: _transfer2.default,
+	  controllerAs: 'controller',
+	  bindings: {
+
+	    /**
+	     *数据源
+	     */
+	    sourceData: "=?sourceData",
+
+	    /**
+	     * 目标数据集合
+	     */
+	    targetData: '=?targetData',
+
+	    /**
+	     * 标题 从左至右
+	     * @type {array}
+	     */
+	    titles: '<',
+
+	    /**
+	     * 从左至右 placeholder
+	     * @type placeholder
+	     */
+	    placeholders: '<',
+
+	    /**
+	     * 操作文案 从上至下
+	     * @type {array}
+	     */
+	    operations: '<',
+
+	    /**
+	     * 是否展示左边检索框
+	     * @type {Boolean}
+	     */
+	    showLeftSearch: '<',
+
+	    /**
+	     * 是否展示右边搜索框
+	     * @type {Boolean}
+	     */
+	    showRightSearch: '<',
+
+	    /**
+	     *是否需要单个增加按钮
+	     * @type {Boolean}
+	     */
+	    addBtn: '<',
+
+	    /**
+	     * 是否需要增加全部按钮
+	     * @type {Boolean}
+	     */
+	    addAllBtn: '<',
+
+	    /**
+	     * 删除某个元素
+	     * @type {Boolean}
+	     */
+	    delBtn: '<',
+
+	    /**
+	     * 删除所有的按钮
+	     * @type {Boolean}
+	     */
+	    delAllBtn: '<',
+
+	    /**
+	     *服务端检索
+	     */
+	    serverSearch: '&?' //加上问号 如果调用方不传此指令会有 undefined
+
+	  }
+	};
+
+	exports.default = componentDefine;
+
+/***/ },
+/* 44 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _component = __webpack_require__(5);
+
+	var _component2 = _interopRequireDefault(_component);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Transfer
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+
+
+	'use strict';
+
+	/**
+	 * Transfer component
+	 *
+	 * @export
+	 * @class Transfer
+	 * @extends {Component}
+	 */
+
+	var Transfer = function (_Component) {
+	  Transfer.$inject = ["$filter", "$scope"];
+	  _inherits(Transfer, _Component);
+
+	  function Transfer($filter, $scope) {
+	    'ngInject';
+
+	    _classCallCheck(this, Transfer);
+
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Transfer).call(this));
+
+	    _this.$filter = $filter;
+	    /**
+	     * todo...
+	     * 用户直接对  sourceData targetData赋值
+	     * 过滤一遍
+	     */
+	    /*    $scope.$watch(() => {
+	          return this.sourceData;
+	        }, (newValue, oldValue) => {
+	          if(angular.isArray(newValue) && newValue.length != 0){
+	            console.log('newValue1111',newValue);
+	          }
+	    
+	        });
+	    
+	        $scope.$watch(() => {
+	          return this.targetData;
+	        }, (newValue, oldValue) => {
+	          //console.log(newValue,oldValue);
+	          if(angular.isArray(newValue) && newValue.length != 0){
+	            console.log('newValue',newValue)
+	          }
+	    
+	        });*/
+
+	    return _this;
+	  }
+
+	  /**
+	   * @override
+	   */
+
+
+	  _createClass(Transfer, [{
+	    key: '_initDefaultValue',
+	    value: function _initDefaultValue() {
+	      this.docInfo = {
+	        leftTitle: '请选择',
+	        rightTitle: '请选择',
+	        leftPlaceholder: '请输入检索条件',
+	        rightPlaceholder: '请输入检索条件',
+	        addOperation: '添加',
+	        addAllOperation: '添加全部',
+	        delOperation: '删除',
+	        delAllOperation: '全部删除'
+	      };
+	      /**
+	       *是否需要服务端检索
+	       * @type {boolean}
+	       */
+	      this.isNeedServerSearch = typeof this.serverSearch === 'function';
+	      this.showLeftSearch = angular.isUndefined(this.showLeftSearch) ? true : this.showLeftSearch;
+	      this.showRightSearch = angular.isUndefined(this.showRightSearch) ? true : this.showRightSearch;
+	      this.addBtn = angular.isUndefined(this.addBtn) ? true : this.addBtn;
+	      this.addAllBtn = angular.isUndefined(this.addAllBtn) ? true : this.addAllBtn;
+	      this.delBtn = angular.isUndefined(this.delBtn) ? true : this.delBtn;
+	      this.delAllBtn = angular.isUndefined(this.delAllBtn) ? true : this.delAllBtn;
+	      this.sourceData = angular.isArray(this.sourceData) ? this.sourceData : [];
+	      this.targetData = angular.isArray(this.targetData) ? this.targetData : [];
+	      this.leftValue = angular.isArray(this.leftValue) ? this.leftValue : [];
+	      this.rightValue = angular.isArray(this.rightValue) ? this.rightValue : [];
+	      this.setDoc();
+	    }
+	  }, {
+	    key: 'buildDoc',
+	    value: function buildDoc(source, defArr) {
+	      var _this2 = this;
+
+	      source = angular.isArray(source) ? source : [];
+	      angular.forEach(defArr, function (item, index) {
+	        _this2.docInfo[item] = source[index] ? source[index] : _this2.docInfo[item];
+	      });
+	    }
+	  }, {
+	    key: 'setDoc',
+	    value: function setDoc() {
+	      this.buildDoc(this.titles, ['leftTitle', 'rightTitle']);
+	      this.buildDoc(this.placeholders, ['leftPlaceholder', 'rightPlaceholder']);
+	      this.buildDoc(this.operations, ['addOperation', 'addAllOperation', 'delOperation', 'delAllOperation']);
+	    }
+
+	    /**
+	     *双击 增
+	     */
+
+	  }, {
+	    key: 'optionSourceClick',
+	    value: function optionSourceClick(option) {
+	      this.rightValue = [];
+	      this.targetData = this.pushData(this.targetData, option, this.sourceData);
+	      this.sourceData = this.reduceData(this.sourceData, option);
+	      this.leftValue = [];
+	    }
+
+	    /**
+	     *双击 删
+	     */
+
+	  }, {
+	    key: 'optionTargetClick',
+	    value: function optionTargetClick(option) {
+	      this.leftValue = [];
+	      this.sourceData = this.pushData(this.sourceData, option, this.targetData);
+	      this.targetData = this.reduceData(this.targetData, option);
+	      this.rightValue = [];
+	    }
+
+	    /**
+	     * reduce
+	     */
+
+	  }, {
+	    key: 'reduceData',
+	    value: function reduceData(target, data) {
+	      var _this3 = this;
+
+	      var target = target,
+	          data = data;
+	      angular.forEach(data, function (item) {
+	        var index = _this3.getIndex(target, item);
+	        if (index >= 0) {
+	          target.splice(index, 1);
+	        }
+	      });
+	      return target;
+	    }
+
+	    /**
+	     * push
+	     */
+
+	  }, {
+	    key: 'pushData',
+	    value: function pushData(target, data, sourceData) {
+	      var _this4 = this;
+
+	      var target = angular.copy(target),
+	          data = angular.copy(data),
+	          sourceData = angular.copy(sourceData);
+	      angular.forEach(data, function (item) {
+	        if (_this4.getIndex(target, item) < 0) {
+	          _this4.getIndex(sourceData, item) > -1 ? target.push(sourceData[_this4.getIndex(sourceData, item)]) : '';
+	        }
+	      });
+	      return target;
+	    }
+
+	    /**
+	     * get  index
+	     */
+
+	  }, {
+	    key: 'getIndex',
+	    value: function getIndex(target, item) {
+	      var item = angular.isNumber(item) ? parseInt(item) : item;
+	      return target.findIndex(function (element) {
+	        return element && element.key == item;
+	      });
+	    }
+
+	    /**
+	     * getKeys
+	     */
+
+	  }, {
+	    key: 'getKeys',
+	    value: function getKeys(data) {
+	      var target = [];
+	      angular.forEach(data, function (item) {
+	        target.push(item.key);
+	      });
+	      return target;
+	    }
+
+	    /**
+	     * add
+	     */
+
+	  }, {
+	    key: 'add',
+	    value: function add() {
+	      this.rightValue = [];
+	      this.targetData = this.pushData(this.targetData, this.leftValue, this.sourceData);
+	      this.sourceData = this.reduceData(this.sourceData, this.leftValue);
+	      this.leftValue = [];
+	    }
+
+	    /**
+	     * addAll
+	     */
+
+	  }, {
+	    key: 'addAll',
+	    value: function addAll() {
+	      this.rightValue = [];
+	      this.leftValue = [];
+	      this.targetData = this.pushData(this.targetData, this.getKeys(this.$filter('filter')(this.sourceData, this.leftSearchValue)), this.sourceData);
+	      this.leftSearchValue ? this.sourceData = this.reduceData(this.sourceData, this.getKeys(this.$filter('filter')(this.sourceData, this.leftSearchValue))) : this.sourceData = [];
+	    }
+
+	    /**
+	     * del
+	     */
+
+	  }, {
+	    key: 'del',
+	    value: function del() {
+	      this.leftValue = [];
+	      this.sourceData = this.pushData(this.sourceData, this.rightValue, this.targetData);
+	      this.targetData = this.reduceData(this.targetData, this.rightValue);
+	      this.rightValue = [];
+	    }
+
+	    /**
+	     * delAll
+	     */
+
+	  }, {
+	    key: 'delAll',
+	    value: function delAll() {
+	      this.rightValue = [];
+	      this.leftValue = [];
+	      this.sourceData = this.pushData(this.sourceData, this.getKeys(this.$filter('filter')(this.targetData, this.rightSearchValue)), this.targetData);
+	      this.rightSearchValue ? this.targetData = this.reduceData(this.targetData, this.getKeys(angular.copy(this.$filter('filter')(this.targetData, this.rightSearchValue)))) : this.targetData = [];
+	    }
+
+	    /**
+	     * 点击事件
+	     */
+
+	  }, {
+	    key: 'innerClick',
+	    value: function innerClick() {
+	      this.serverSearch && typeof this.serverSearch === 'function' && this.serverSearch({ $value: this.searchValue });
+	    }
+
+	    /**
+	     * 包装一个change处理器, 在模板里面用change, 然后调用传进来的处理器
+	     * @private
+	     */
+
+	  }, {
+	    key: 'innerChange',
+	    value: function innerChange() {}
+
+	    /**
+	     * @override
+	     */
+
+	  }, {
+	    key: '_createClassName',
+	    value: function _createClassName() {}
+	    /**
+	     * @override
+	     */
+
+	  }, {
+	    key: '_launch',
+	    value: function _launch() {}
+	  }]);
+
+	  return Transfer;
+	}(_component2.default);
+
+	exports.default = Transfer;
+
+/***/ },
+/* 45 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"transfer\">\n  <!-- 支持服务端检索 -->\n  <div class=\"form-inline server-search\" data-ng-if=\"controller.isNeedServerSearch\">\n    <input\n      class=\"form-control  input-sm\"\n      type=\"text\"\n      data-ng-model=\"controller.searchValue\"\n      placeholder=\"请输入检索的值\"\n    />\n    <bp-button click=\"controller.innerClick()\" size=\"sm\">查询</bp-button>\n  </div>\n  <!-- /支持服务端检索 -->\n\n  <!-- 左侧栏 -->\n  <div class=\"transfer-left\">\n\n    <!--列表标题 左-->\n    <div class=\"list-title\">\n      <div class=\"list-title-name\"\n           title=\"{{controller.docInfo.leftTitle}}\">\n        {{controller.docInfo.leftTitle}}\n      </div>\n      <div class=\"list-title-total\" title=\"共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条\">\n        共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条\n      </div>\n    </div>\n    <!--/列表标题 左-->\n\n    <div class=\"transfer-search\">\n      <!-- 前端检索 -->\n      <input\n             type=\"text\"\n             class=\"form-control input-sm\"\n             placeholder=\"{{controller.docInfo.leftPlaceholder}}\"\n             data-ng-model=\"controller.leftSearchValue\"\n             data-ng-disabled=\"!controller.showLeftSearch\"\n      />\n      <span class=\"transfer-search-span\">\n        <i class=\"glyphicon glyphicon-search\"></i>\n      </span>\n      <!-- /前端检索 -->\n    </div>\n    <div class=\"transfer-left-select\">\n      <select  name=\"multipleSelect\"\n               multiple\n               data-ng-model=\"controller.leftValue\">\n        <option data-ng-repeat=\"option in controller.sourceData | filter:controller.leftSearchValue\"\n                data-ng-dblclick=\"controller.optionSourceClick(option)\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /左侧栏 -->\n\n  <!-- 中间 -->\n  <div class=\"transfer-center\">\n      <div class=\"form-group\">\n        <p>\n          <bp-button\n                size=\"sm\"\n                click=\"controller.add()\"\n                data-ng-if=\"controller.addBtn\"\n                disabled=\"(controller.leftValue).length === 0\"\n        >\n          {{controller.docInfo.addOperation}}\n        </bp-button>\n          </p>\n        <p>\n        <bp-button\n                size=\"sm\"\n                click=\"controller.addAll()\"\n                data-ng-if=\"controller.addAllBtn\"\n                disabled=\"(controller.sourceData).length === 0\"\n        >\n          {{controller.docInfo.addAllOperation}}\n        </bp-button>\n        </p>\n      </div>\n      <div class=\"form-group\">\n        <p>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.del()\"\n                data-ng-if=\"controller.delBtn\"\n                disabled=\"(controller.rightValue).length === 0\"\n        >\n          {{controller.docInfo.delOperation}}\n        </bp-button>\n        </p>\n        <p>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.delAll()\"\n                data-ng-if=\"controller.delAllBtn\"\n                disabled=\"(controller.targetData).length === 0\"\n        >\n          {{controller.docInfo.delAllOperation}}\n        </bp-button>\n        </p>\n      </div>\n  </div>\n  <!--中间-->\n\n  <!-- 右侧 -->\n  <div class=\"transfer-right\">\n\n    <!--列表标题 右-->\n    <div class=\"list-title\">\n      <div class=\"list-title-name\"\n           title=\"{{controller.docInfo.rightTitle}}\">\n        {{controller.docInfo.rightTitle}}</div>\n      <div class=\"list-title-total\"\n           title=\"共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条\">\n        共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条\n      </div>\n    </div>\n    <!--/列表标题 右-->\n\n    <div class=\"transfer-search\">\n      <!-- 前端检索 右-->\n      <input type=\"text\"\n             class=\"form-control input-sm\"\n             placeholder=\"{{controller.docInfo.rightPlaceholder}}\"\n             data-ng-model=\"controller.rightSearchValue\"\n             data-ng-disabled=\"!controller.showRightSearch\"\n      />\n      <span class=\"transfer-search-span\">\n        <i class=\"glyphicon glyphicon-search\"></i>\n      </span>\n      <!-- /前端检索 右-->\n    </div>\n    <div class=\"transfer-right-stores\">\n      <select  name=\"multipleSelect\"\n               multiple\n               data-ng-model=\"controller.rightValue\">\n        <option data-ng-repeat=\"option in controller.targetData | filter:controller.rightSearchValue\"\n                data-ng-dblclick=\"controller.optionTargetClick(option)\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /右侧 -->\n</div>\n"
+
+/***/ },
+/* 46 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(47);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(13)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./transfer.less", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./../../../node_modules/less-loader/index.js!./transfer.less");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 47 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(12)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".transfer {\n  width: 640px;\n  height: 322px;\n}\n.transfer .bp-btn:focus {\n  outline: 0;\n}\n.transfer .server-search {\n  padding-bottom: 12px;\n  /*  /* border-bottom: 1px solid #e9e9e9;\n       border-bottom-right-radius: 3px;\n       border-bottom-left-radius: 3px;*/\n}\n.transfer .server-search .input-sm {\n  border-color: #e9e9e9;\n  border-radius: 6px;\n}\n.transfer .list-title {\n  font-size: 12px;\n  padding: 2px;\n  height: 30px;\n  color: #666;\n  border-bottom: 1px solid  #e9e9e9;\n}\n.transfer .list-title .list-title-name {\n  width: 180px;\n  height: 18px;\n  cursor: pointer;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  float: left;\n  margin: 5px 12px;\n}\n.transfer .list-title .list-title-total {\n  height: 18px;\n  cursor: pointer;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  margin: 5px 0 0 200px;\n}\n.transfer .transfer-search {\n  width: 265px;\n  position: relative;\n  left: 6px;\n  top: 10px;\n}\n.transfer .transfer-search .input-sm {\n  border-color: #e9e9e9;\n  border-radius: 6px;\n}\n.transfer .transfer-search-span {\n  position: relative;\n  bottom: 23px;\n  left: 245px;\n}\n.transfer .transfer-search-span .glyphicon-search {\n  color: #ccc;\n}\n.transfer select {\n  width: 278px;\n  height: 240px;\n  border-bottom-left-radius: 6px;\n  border-bottom-right-radius: 6px;\n  font-size: 12px;\n  border: hidden;\n  overflow-y: auto;\n  margin: 0;\n  padding: 5px 0 0 9px;\n}\n.transfer select option {\n  width: 260px;\n  padding: 5px;\n  overflow: hidden;\n  text-overflow: ellipsis;\n  cursor: pointer;\n}\n.transfer select option:hover {\n  background-color: #eaf8fe;\n}\n.transfer select option:checked {\n  background: #58b4e9 linear-gradient(0deg, #58b4e9 0%, #58b4e9 100%);\n}\n.transfer select:focus {\n  outline: 0;\n}\n.transfer .transfer-left {\n  width: 280px;\n  float: left;\n  border-radius: 6px;\n  border: 1px solid #e9e9e9;\n}\n.transfer .transfer-center {\n  float: left;\n  padding: 85px 5px;\n}\n.transfer .transfer-right {\n  width: 280px;\n  float: left;\n  border-radius: 6px;\n  border: 1px solid #e9e9e9;\n}\n.transfer .transfer-right .transfer-right-stores {\n  /* padding: 5px;*/\n}\n.transfer .transfer-right .transfer-left-select {\n  /* padding: 5px;*/\n}\n", ""]);
 
 	// exports
 

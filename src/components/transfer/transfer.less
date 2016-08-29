@@ -1,61 +1,123 @@
 .transfer{
-  margin: 2px 0 0 10px;
-  padding: 5px;
-  width: 830px;
-  background-color: #E7EDEE;
-  min-height: 300px;
-  border-radius: 2px;
+  width: 640px;
+  height: 322px;
+  .bp-btn{
+    &:focus{
+      outline: 0;
+    }
+  }
+  .server-search{
+    padding-bottom: 12px;
+    /*  /* border-bottom: 1px solid #e9e9e9;
+       border-bottom-right-radius: 3px;
+       border-bottom-left-radius: 3px;*/
+    .input-sm {
+      border-color:#e9e9e9;
+      border-radius: 6px;
+    }
+  }
+  .list-title{
+    font-size: 12px;
+    padding:2px;
+    height:30px;
+    color:#666;
+    border-bottom: 1px solid  #e9e9e9;
+    .list-title-name{
+      width: 180px;
+      height: 18px;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      float: left;
+      margin: 5px 12px;
+    }
+
+    .list-title-total{
+      height: 18px;
+      cursor: pointer;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin: 5px 0 0 200px;
+    }
+  }
+
+  .transfer-search{
+    width: 265px;
+    position: relative;
+    left: 6px;
+    top: 10px;
+    .input-sm {
+      border-color:#e9e9e9;
+      border-radius: 6px;
+    }
+  }
+
+  .transfer-search-span{
+    position: relative;
+    bottom:23px;
+    left:245px;
+    .glyphicon-search{
+      color:#ccc;
+    }
+  }
+
   select{
+    width: 278px;
+    height: 240px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
     font-size:12px;
-    padding: 7px 15px;
-    min-height: 223px;
-    width: 340px;
+    border:hidden;
+    overflow-y:auto;
+    margin:0;
+    padding:5px 0 0 9px;
     option{
+      width: 260px;
+      padding:5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
       cursor:pointer;
-      padding: 3px;
+      &:hover{
+        background-color: #eaf8fe;
+      }
+
+      &:checked{
+        background: #58b4e9 linear-gradient(0deg, #58b4e9 0%, #58b4e9 100%);
+      }
+    }
+    &:focus{
+      outline: 0;
     }
   }
 
   .transfer-left{
-    border-radius: 2px;
+    width: 280px;
     float: left;
-    min-height: 286px;
-    width: 350px;
-    background-color: white;
+    border-radius: 6px;
+    border:1px solid #e9e9e9;
     .transfer-left-stores{
-      padding: 5px;
+     // padding: 5px;
     }
     .transfer-left-select {
-      padding: 5px;
+     // padding: 5px;
     }
   }
 
   .transfer-center{
     float: left;
-    min-height: 300px;
-    width:118px;
-    .transfer-center-btn{
-      button{
-        margin-bottom: 5px;
-      }
-      padding: 60px 0 0 20px;
-      .transfer-center-btn-add{
-        margin-bottom: 20px;
-      }
-    }
+    padding: 85px 5px
   }
 
   .transfer-right{
-    border-radius: 2px;
+    width: 280px;
     float: left;
-    min-height: 286px;
-    width: 350px;
-    background-color: white;
+    border-radius: 6px;
+    border:1px solid #e9e9e9;
     .transfer-right-stores{
-      padding: 5px;
+     /* padding: 5px;*/
     }
     .transfer-left-select {
-      padding: 5px;
+     /* padding: 5px;*/
     }
   }
 

@@ -4,6 +4,7 @@ import ffanCheckbox from './src/components/checkbox';
 import ffanCheckboxGroup from './src/components/checkbox.group'
 import ffanRadiobox from './src/components/radiobox';
 import ffanRadioboxGroup from './src/components/radiobox.group';
+import ffanTransfer from './src/components/transfer'
 
 'use strict';
 
@@ -13,5 +14,6 @@ export let Checkbox = ffanCheckbox;
 export let CheckboxGroup = ffanCheckboxGroup;
 export let Radiobox = ffanRadiobox;
 export let RadioboxGroup = ffanRadioboxGroup;
+export let Transfer = ffanTransfer;
 
 
