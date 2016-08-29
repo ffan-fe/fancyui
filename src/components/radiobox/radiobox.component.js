@@ -1,9 +1,9 @@
 /**
  * @type {Object}
- * @property {Boolean}    disabled       - binding symbol is <, 禁用状态
- * @property {String}    value          - binding symbol is @, 选中后的值
- * @property {ANY}        model          - binding symbol is =?,绑定在radioBox上的model
- * @property {complex}    complex        - binding symbol is =?complex, 因为value只能提供String, 复杂结构数据类型使用, complex指令
+ * @property {Boolean}   disabled       - binding symbol is `<`, 禁用状态
+ * @property {String}    value          - binding symbol is `@`, 选中后的值
+ * @property {ANY}       model          - binding symbol is `=?`,绑定在`radioBox`上的`model`
+ * @property {complex}   complex        - binding symbol is `=?complex`, 因为`value`只能提供`String`, 复杂结构数据类型使用, `complex`指令
  */
 
 import controller from './radiobox';

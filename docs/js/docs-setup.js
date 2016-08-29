@@ -63,8 +63,8 @@ NG_DOCS={
       "shortName": "bpRadio",
       "type": "directive",
       "moduleName": "radiobox",
-      "shortDescription": "包装了HTML Input[type=&quot;radio&quot;]",
-      "keywords": "api binding checked chuxin complex directive disabled enable github html input io list model object radio radiobox symbol vm"
+      "shortDescription": "包装了Input[type=&quot;radio&quot;]",
+      "keywords": "api binding checked chuxin complex directive disabled enable false github input io model radio radiobox string symbol vm"
     },
     {
       "section": "api",
@@ -73,7 +73,16 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "radiobox",
       "shortDescription": "对radiobox的二次包装 提供list指令",
-      "keywords": "age api binding checked chuxin complex controller directive disabled enable github groupdatalist html inline io list model radiobox sex symbol true vm xxx"
+      "keywords": "age api binding checked chuxin complex controller directive disabled enable false github groupdatalist inline io list model radio radiobox radioboxgroup sex symbol true vm xxx"
+    },
+    {
+      "section": "api",
+      "id": "transfer.directive:bpTransfer",
+      "shortName": "bpTransfer",
+      "type": "directive",
+      "moduleName": "transfer",
+      "shortDescription": "",
+      "keywords": "add-all-btn add-btn addallbtn addbtn api binding chuxin datasource del-all-btn del-btn delallbtn delbtn directive false github io key nnn operations placeholders serversearch showleft-search showleftsearch showright-search showrightsearch source-data sourcedata storename symbol targetdata testing titles transfer true vm"
     }
   ],
   "apis": {

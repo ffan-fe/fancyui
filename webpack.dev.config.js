@@ -9,6 +9,7 @@ import path from 'path';
 'use strict';
 
 module.exports = {
+  devtool: 'sourcemap',
   entry: './tests/testapp.js',
   output: {
     filename: 'app.bundle.js',

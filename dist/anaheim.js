@@ -303,7 +303,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Button() {
 	    _classCallCheck(this, Button);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
 	  }
 
 	  _createClass(Button, [{
@@ -393,7 +393,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.iconType = this.icon;
 	      }
 	      // call super to update className
-	      _get(Object.getPrototypeOf(Button.prototype), '_render', this).call(this);
+	      _get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), '_render', this).call(this);
 	    }
 	    /**
 	     * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
@@ -473,7 +473,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  /**
 	   * @constructor
 	   */
-
 	  function Component() {
 	    _classCallCheck(this, Component);
 
@@ -1182,7 +1181,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Icon() {
 	    _classCallCheck(this, Icon);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).apply(this, arguments));
 	  }
 
 	  _createClass(Icon, [{
@@ -1434,13 +1433,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	   *
 	   * @param {$scope} $scope
 	   */
-
 	  function Checkbox($scope) {
 	    'ngInject';
 
 	    _classCallCheck(this, Checkbox);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this));
+	    var _this = _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this));
 
 	    _this.$scope = $scope;
 	    return _this;
@@ -2209,7 +2207,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function CheckboxGroup() {
 	    _classCallCheck(this, CheckboxGroup);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CheckboxGroup).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (CheckboxGroup.__proto__ || Object.getPrototypeOf(CheckboxGroup)).apply(this, arguments));
 	  }
 
 	  _createClass(CheckboxGroup, [{
@@ -2428,7 +2426,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Radiobox() {
 	    _classCallCheck(this, Radiobox);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Radiobox).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (Radiobox.__proto__ || Object.getPrototypeOf(Radiobox)).apply(this, arguments));
 	  }
 
 	  _createClass(Radiobox, [{
@@ -2752,7 +2750,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function RadioboxGroup() {
 	    _classCallCheck(this, RadioboxGroup);
 
-	    return _possibleConstructorReturn(this, Object.getPrototypeOf(RadioboxGroup).apply(this, arguments));
+	    return _possibleConstructorReturn(this, (RadioboxGroup.__proto__ || Object.getPrototypeOf(RadioboxGroup)).apply(this, arguments));
 	  }
 
 	  _createClass(RadioboxGroup, [{
@@ -12231,7 +12229,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    _classCallCheck(this, Transfer);
 
-	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Transfer).call(this));
+	    var _this = _possibleConstructorReturn(this, (Transfer.__proto__ || Object.getPrototypeOf(Transfer)).call(this));
 
 	    _this.$filter = $filter;
 	    /**

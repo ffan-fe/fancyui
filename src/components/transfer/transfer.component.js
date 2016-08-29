@@ -1,5 +1,18 @@
 /**
- * Transfer component define
+ * @type {Object}
+ * @property {Array}      sourceData       - binding symbol is =?, 数据源
+ * @property {Array}      targetData       - binding symbol is =?, 右侧选中目标值
+ * @property {Array}      titles           - binding symbol is <, 左右侧标题
+ * @property {Array}      placeholders     - binding symbol is <, 左右placeholders值
+ * @property {Array}      operations       - binding symbol is <, 操作按钮的文案
+ * @property {Boolean}    showLeftSearch   - binding symbol is <, 是否启用左侧检索框
+ * @property {Boolean}    showRightSearch  - binding symbol is <, 是否启用右侧检索框
+ * @property {Boolean}    addBtn           - binding symbol is <, 是否展示增加按钮
+ * @property {Boolean}    addAllBtn        - binding symbol is <, 是否展示全部增加按钮
+ * @property {Boolean}    delBtn           - binding symbol is <, 是否展示删除按钮
+ * @property {Boolean}    delAllBtn        - binding symbol is <, 是否展示全部删除按钮
+ * @property {Function}   serverSearch     - binding symbol is &?, 是否启用服务端检索
+ *
  */
 
 import controller from './transfer';
@@ -82,7 +95,7 @@ let componentDefine = {
      *服务端检索
      */
     serverSearch: '&?'  //加上问号 如果调用方不传此指令会有 undefined
-    
+
   }
 };
 
