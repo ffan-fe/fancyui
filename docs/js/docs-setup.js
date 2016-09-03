@@ -55,7 +55,7 @@ NG_DOCS={
       "type": "service",
       "moduleName": "citySelector",
       "shortDescription": "城市选择组件, 统一从接口/Database/coupon_component/selectCity",
-      "keywords": "api array boolean bootstrap checkedlist cityselector config console fengpeng idlist isreadonly log nginject open promise reject resolve service showcityselector ui uibmodal"
+      "keywords": "api array boolean bootstrap checkedlist cityselector config console database datebase fengpeng idlist isreadonly log nginject open promise reject resolve service showcityselector ui uibmodal"
     },
     {
       "section": "api",
