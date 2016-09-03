@@ -1,4 +1,5 @@
 import loaclData from './localData.js';
+import angular from 'angular';
 
 'use strict';
 
@@ -34,7 +35,7 @@ export default class CitySelectorController {
   $onInit() {
     // 如果外部提供了数据集, 那么就不再发请求了
     if (this.database) {
-      this.regionList = this.database;
+      this.regionList = angular.copy(this.database);
       this.formatData(this.regionList);
       return;
     }
@@ -170,7 +171,6 @@ export default class CitySelectorController {
     const type = node.type === regionType.CITY ? regionType.PROVINCE : regionType.REGION;
     const parentNode = this.findParentNodeByID(node.parentID, type);
     const isAllChecked = this.isChildAllChecked(parentNode);
-    console.log(node, parentNode);
     parentNode.checked = isAllChecked;
     if (!isAllChecked) {
       // 不是全选了, 那么有可能是半选, 查询之

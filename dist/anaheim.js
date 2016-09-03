@@ -2401,7 +2401,42 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @ngdoc service
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @name citySelector.service:citySelector
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @author fengpeng
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 城市选择组件, 统一从接口[/Database/coupon_component/selectCity](/Database/coupon_component/selectCity)
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 弹窗部分统一使用的是angular ui bootstrap 中的 uibModal
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * **Methods**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * - `open(config)` - 此方法会以弹窗的形式打开城市选择的弹窗. 会返回`Promise`, 其中`resolve`表明用户点击了确认按钮, 这里会返回所有选择城市的id; `reject`表明用户点击了取消或关闭按钮
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *    参数`config`是可选的, 可用值是
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - isReadOnly:   Boolean   - 表示是否只读, 常见于详情页等场景
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - checkedList:  Array     - 表示回填字段, 里面包含是城市id
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - database:     Array     - 外部提供渲染UI的数据, 注意格式请保持一致, 格式请参照上述`Datebase`接口
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @example
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  constructor(citySelector) {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *    'ngInject';
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *    this.citySelector = citySelector;
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  }
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *  showCitySelector() {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           this.citySelector.open({checkedList: [310100, 310200, 371700]}).then(
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             idList => {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               console.log('idList', idList);
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             }
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           );
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         }
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
 
 	var _template = __webpack_require__(44);
 
@@ -2420,6 +2455,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	'use strict';
 
 	var CitySelector = function () {
+	  /**
+	   * Creates an instance of CitySelector.
+	   * 
+	   * @param {$uibModal} $uibModal 弹窗的实现依赖
+	   * @param {$q} $q promise
+	   */
+
 	  CitySelector.$inject = ["$uibModal", "$q"];
 	  function CitySelector($uibModal, $q) {
 	    'ngInject';
@@ -2430,6 +2472,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.$q = $q;
 	    this.modalInstance = null;
 	  }
+	  /**
+	   * 打开城市选择
+	   * 
+	   * @param {Object} [config={}] 
+	   * @returns {Promise} resolve为确定, reject为取消
+	   */
+
 
 	  _createClass(CitySelector, [{
 	    key: 'open',
@@ -2442,21 +2491,25 @@ return /******/ (function(modules) { // webpackBootstrap
 	        controller: _citySelector2.default,
 	        controllerAs: 'vm',
 	        resolve: {
+	          // 是否只读, 这里支持的是详情页等情况
 	          isReadOnly: function isReadOnly() {
 	            return config.isReadOnly || false;
 	          },
+	          // 这是里填入一个值列表, 做数据回填展示用
 	          checkedList: function checkedList() {
 	            return config.checkedList || [];
+	          },
+	          // 直接给一个结果, 用这个结果来渲染UI, 所以保证格式必须是一样的
+	          database: function database() {
+	            return config.database || null;
 	          }
 	        }
 	      });
 	      this.modalInstance.result.then(function (cityIDList) {
-	        console.log('cityIDList', cityIDList);
 	        deferred.resolve(cityIDList);
 	      }, function () {
 	        deferred.reject();
 	      });
-
 	      return deferred.promise;
 	    }
 	  }]);
@@ -2494,6 +2547,9 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict';
 
+	/**
+	 * 几个区域枚举
+	 */
 	var regionType = {
 	  REGION: "region",
 	  PROVINCE: 'province',
@@ -2508,10 +2564,11 @@ return /******/ (function(modules) { // webpackBootstrap
 	   * @param {$http} $http
 	   * @param {Boolean} isReadOnly
 	   * @param {Array} checkedList
+	   * @param {Object} database 有了这个数据集就不再发请求了
 	   */
 
-	  CitySelectorController.$inject = ["$uibModalInstance", "$http", "isReadOnly", "checkedList"];
-	  function CitySelectorController($uibModalInstance, $http, isReadOnly, checkedList) {
+	  CitySelectorController.$inject = ["$uibModalInstance", "$http", "isReadOnly", "checkedList", "database"];
+	  function CitySelectorController($uibModalInstance, $http, isReadOnly, checkedList, database) {
 	    'ngInject';
 
 	    _classCallCheck(this, CitySelectorController);
@@ -2520,6 +2577,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    this.$http = $http;
 	    this.isReadOnly = isReadOnly;
 	    this.checkedList = checkedList;
+	    this.database = database;
 	    // 做回填的时候, 也需要回填各种状态, 这里记录好有变化的省份, 然后上下检查, 比较方便
 	    this.fillProvinceList = [];
 	  }
@@ -2529,13 +2587,22 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function $onInit() {
 	      var _this = this;
 
+	      // 如果外部提供了数据集, 那么就不再发请求了
+	      if (this.database) {
+	        this.regionList = this.database;
+	        this.formatData(this.regionList);
+	        return;
+	      }
+	      // 这个请求实际上只能运行在xadmin这个环境下
 	      this.loadPromise = this.$http.get('/Database/coupon_component/selectCity').then(function (response) {
 	        if (response && response.data && response.data.status == 200) {
 	          _this.regionList = response.data.data;
 	        } else {
 	          _this.regionList = _localData2.default.data;
 	        }
-	      }, function () {
+	      },
+	      // 请求败了使用本地数据
+	      function () {
 	        _this.regionList = _localData2.default.data;
 	      }).finally(function () {
 	        _this.formatData(_this.regionList);
@@ -2679,7 +2746,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      var type = node.type === regionType.CITY ? regionType.PROVINCE : regionType.REGION;
 	      var parentNode = this.findParentNodeByID(node.parentID, type);
 	      var isAllChecked = this.isChildAllChecked(parentNode);
-	      console.log(node, parentNode);
 	      parentNode.checked = isAllChecked;
 	      if (!isAllChecked) {
 	        // 不是全选了, 那么有可能是半选, 查询之

@@ -83,7 +83,6 @@ export default class CitySelector {
     });
     this.modalInstance.result.then(
       cityIDList => {
-        // console.log('cityIDList', cityIDList);
         deferred.resolve(cityIDList);
       },
       () => {
