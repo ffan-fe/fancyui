@@ -59,15 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-<<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
-	exports.CitySelector = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
-=======
-	exports.Transfer = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
->>>>>>> transfer组件更新
-=======
-	exports.Transfer = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
->>>>>>> timepicker Update
+	exports.Transfer = exports.CitySelector = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
 
 	var _button = __webpack_require__(1);
 
@@ -93,21 +85,13 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _radiobox4 = _interopRequireDefault(_radiobox3);
 
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-<<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
 	var _city = __webpack_require__(42);
 
 	var _city2 = _interopRequireDefault(_city);
-=======
-	var _transfer = __webpack_require__(42);
+
+	var _transfer = __webpack_require__(51);
 
 	var _transfer2 = _interopRequireDefault(_transfer);
->>>>>>> transfer组件更新
-=======
-	var _transfer = __webpack_require__(42);
-
-	var _transfer2 = _interopRequireDefault(_transfer);
->>>>>>> timepicker Update
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -119,15 +103,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var CheckboxGroup = exports.CheckboxGroup = _checkbox4.default;
 	var Radiobox = exports.Radiobox = _radiobox2.default;
 	var RadioboxGroup = exports.RadioboxGroup = _radiobox4.default;
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-<<<<<<< 80624e67db0ebe0d8452673d92c6f53af5e7e2c8
 	var CitySelector = exports.CitySelector = _city2.default;
-=======
 	var Transfer = exports.Transfer = _transfer2.default;
->>>>>>> transfer组件更新
-=======
-	var Transfer = exports.Transfer = _transfer2.default;
->>>>>>> timepicker Update
 
 /***/ },
 /* 1 */
@@ -303,7 +280,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Button() {
 	    _classCallCheck(this, Button);
 
-	    return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
 	  }
 
 	  _createClass(Button, [{
@@ -393,7 +370,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.iconType = this.icon;
 	      }
 	      // call super to update className
-	      _get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), '_render', this).call(this);
+	      _get(Object.getPrototypeOf(Button.prototype), '_render', this).call(this);
 	    }
 	    /**
 	     * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
@@ -473,6 +450,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  /**
 	   * @constructor
 	   */
+
 	  function Component() {
 	    _classCallCheck(this, Component);
 
@@ -1181,7 +1159,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Icon() {
 	    _classCallCheck(this, Icon);
 
-	    return _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
 	  }
 
 	  _createClass(Icon, [{
@@ -1341,13 +1319,9 @@ return /******/ (function(modules) { // webpackBootstrap
 	    checked: '=?checked',
 	    halfChecked: '=?halfChecked',
 	    trueValue: '@',
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	    falseValue: '@',
 	    change: '&?',
 	    click: '&?'
-=======
-	    falseValue: '@'
->>>>>>> timepicker Update
 	  }
 	};
 
@@ -1403,14 +1377,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    halfChecked    - binding symbol is `=?`, 是否是半选状态
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        trueValue      - binding symbol is `@`, like ng-true-value, 是对ng-true-value的封装
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}        falseValue     - binding symbol is `@`, like ng-false-value, 是对ng-false-value的封装
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-<<<<<<< cfcdf3f267689a46ed8a6a85106eeac222325373
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Function}   change         - binding symbol is `&`, onChange event
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Function}   click          - binding symbol is `&`, onClick event
-=======
->>>>>>> 时间组件更新
-=======
->>>>>>> timepicker Update
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
@@ -1433,12 +1401,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	   *
 	   * @param {$scope} $scope
 	   */
+
 	  function Checkbox($scope) {
 	    'ngInject';
 
 	    _classCallCheck(this, Checkbox);
 
-	    var _this = _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this));
 
 	    _this.$scope = $scope;
 	    return _this;
@@ -1460,11 +1429,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	      }
 	      this._state = (_state = {}, _defineProperty(_state, '' + _checkbox2.default.DISABLED, this.disabled), _defineProperty(_state, '' + _checkbox2.default.CHECKED, this.checked == this.trueValue), _defineProperty(_state, '' + _checkbox2.default.HALF_CHECKED, this.halfChecked), _state);
 	    }
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-=======
-	    // $onInit() {
-	    // }
->>>>>>> timepicker Update
 	    /**
 	     * @override
 	     * @protected
@@ -1503,7 +1467,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function _launch() {
 	      var _this2 = this;
 
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	      var update = function update() {
 	        _this2.changeHandler();
 	        _this2._render();
@@ -1545,69 +1508,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }
 	    /**
 	     * 用户点击而改变状态的处理器, 是在模板里面的
-=======
-	      this.$scope.$watch(function () {
-	        return _this2.checked;
-	      }, function (newValue, oldValue) {
-	        _this2.changeHandler();
-	        _this2._render();
-	      });
-	      this.$scope.$watch(function () {
-	        return _this2.halfChecked;
-	      }, function (newValue, oldValue) {
-	        var halfChecked = newValue;
-	        _this2.state = _defineProperty({}, '' + _checkbox2.default.HALF_CHECKED, halfChecked);
-	        if (halfChecked) {
-	          _this2.state = _defineProperty({}, '' + _checkbox2.default.CHECKED, false);
-	        }
-	        _this2._render();
-	      });
-	      this.$scope.$watch(function () {
-	        return _this2.disabled;
-	      }, function (newValue, oldValue) {
-	        _this2.state = _defineProperty({}, '' + _checkbox2.default.DISABLED, newValue);
-	        _this2._render();
-	      });
-	    }
-	    /**
-	     * 用户点击而改变状态的处理器, 是在模板里面的
-	     *
->>>>>>> timepicker Update
 	     * @private
 	     */
 
 	  }, {
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-<<<<<<< cfcdf3f267689a46ed8a6a85106eeac222325373
 	    key: 'innerClick',
 	    value: function innerClick() {
 	      this.click && typeof this.click === 'function' && this.click({ checkbox: this });
-=======
-	    key: 'changeHandler',
-	    value: function changeHandler() {
-	      if (this.checked == this.trueValue) {
-	        var _state5;
-
-	        this.state = (_state5 = {}, _defineProperty(_state5, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state5, '' + _checkbox2.default.HALF_CHECKED, false), _state5);
-	      } else {
-	        var _state6;
-
-	        this.state = (_state6 = {}, _defineProperty(_state6, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state6, '' + _checkbox2.default.HALF_CHECKED, false), _state6);
-	      }
->>>>>>> 时间组件更新
-=======
-	    key: 'changeHandler',
-	    value: function changeHandler() {
-	      if (this.checked == this.trueValue) {
-	        var _state2;
-
-	        this.state = (_state2 = {}, _defineProperty(_state2, '' + _checkbox2.default.CHECKED, true), _defineProperty(_state2, '' + _checkbox2.default.HALF_CHECKED, false), _state2);
-	      } else {
-	        var _state3;
-
-	        this.state = (_state3 = {}, _defineProperty(_state3, '' + _checkbox2.default.CHECKED, false), _defineProperty(_state3, '' + _checkbox2.default.HALF_CHECKED, false), _state3);
-	      }
->>>>>>> timepicker Update
 	    }
 	  }]);
 
@@ -1663,15 +1570,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 22 */
 /***/ function(module, exports) {
 
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-<<<<<<< cfcdf3f267689a46ed8a6a85106eeac222325373
 	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-click=\"controller.innerClick()\"\n      ng-model=\"controller.checked\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
-=======
-	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
->>>>>>> 时间组件更新
-=======
-	module.exports = "<label for=\"{{controller.htmlID}}\" class=\"checkbox-container\" \n  ng-class=\"[controller.className, {checked: controller.state.checked}]\">\n  <span class=\"checkbox-inner\">\n    <span class=\"checkbox-inner-box\"></span>\n    <input type=\"checkbox\" id=\"{{controller.htmlID}}\" \n      ng-true-value=\"{{controller.trueValue}}\"\n      ng-false-value=\"{{controller.falseValue}}\"\n      ng-disabled=\"controller.disabled\"\n      ng-model=\"controller.checked\" \n      ng-change=\"controller.changeHandler()\" />\n    <span class=\"checkbox-label\" ng-transclude></span>\n  </span>\n</label>\n"
->>>>>>> timepicker Update
 
 /***/ },
 /* 23 */
@@ -1714,350 +1613,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 /***/ },
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-<<<<<<< cfcdf3f267689a46ed8a6a85106eeac222325373
-/* 25 */
-=======
-/* 21 */
-/***/ function(module, exports) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	// css base code, injected by the css-loader
-	module.exports = function() {
-		var list = [];
-
-		// return the list of modules as css string
-		list.toString = function toString() {
-			var result = [];
-			for(var i = 0; i < this.length; i++) {
-				var item = this[i];
-				if(item[2]) {
-					result.push("@media " + item[2] + "{" + item[1] + "}");
-				} else {
-					result.push(item[1]);
-				}
-			}
-			return result.join("");
-		};
-
-		// import a list of modules into the list
-		list.i = function(modules, mediaQuery) {
-			if(typeof modules === "string")
-				modules = [[null, modules, ""]];
-			var alreadyImportedModules = {};
-			for(var i = 0; i < this.length; i++) {
-				var id = this[i][0];
-				if(typeof id === "number")
-					alreadyImportedModules[id] = true;
-			}
-			for(i = 0; i < modules.length; i++) {
-				var item = modules[i];
-				// skip already imported module
-				// this implementation is not 100% perfect for weird media query combinations
-				//  when a module is imported multiple times with different media queries.
-				//  I hope this will never occur (Hey this way we have smaller bundles)
-				if(typeof item[0] !== "number" || !alreadyImportedModules[item[0]]) {
-					if(mediaQuery && !item[2]) {
-						item[2] = mediaQuery;
-					} else if(mediaQuery) {
-						item[2] = "(" + item[2] + ") and (" + mediaQuery + ")";
-					}
-					list.push(item);
-				}
-			}
-		};
-		return list;
-	};
-
-
-/***/ },
-/* 22 */
-/***/ function(module, exports, __webpack_require__) {
-
-	/*
-		MIT License http://www.opensource.org/licenses/mit-license.php
-		Author Tobias Koppers @sokra
-	*/
-	var stylesInDom = {},
-		memoize = function(fn) {
-			var memo;
-			return function () {
-				if (typeof memo === "undefined") memo = fn.apply(this, arguments);
-				return memo;
-			};
-		},
-		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
-		}),
-		getHeadElement = memoize(function () {
-			return document.head || document.getElementsByTagName("head")[0];
-		}),
-		singletonElement = null,
-		singletonCounter = 0,
-		styleElementsInsertedAtTop = [];
-
-	module.exports = function(list, options) {
-		if(false) {
-			if(typeof document !== "object") throw new Error("The style-loader cannot be used in a non-browser environment");
-		}
-
-		options = options || {};
-		// Force single-tag solution on IE6-9, which has a hard limit on the # of <style>
-		// tags it will allow on a page
-		if (typeof options.singleton === "undefined") options.singleton = isOldIE();
-
-		// By default, add <style> tags to the bottom of <head>.
-		if (typeof options.insertAt === "undefined") options.insertAt = "bottom";
-
-		var styles = listToStyles(list);
-		addStylesToDom(styles, options);
-
-		return function update(newList) {
-			var mayRemove = [];
-			for(var i = 0; i < styles.length; i++) {
-				var item = styles[i];
-				var domStyle = stylesInDom[item.id];
-				domStyle.refs--;
-				mayRemove.push(domStyle);
-			}
-			if(newList) {
-				var newStyles = listToStyles(newList);
-				addStylesToDom(newStyles, options);
-			}
-			for(var i = 0; i < mayRemove.length; i++) {
-				var domStyle = mayRemove[i];
-				if(domStyle.refs === 0) {
-					for(var j = 0; j < domStyle.parts.length; j++)
-						domStyle.parts[j]();
-					delete stylesInDom[domStyle.id];
-				}
-			}
-		};
-	}
-
-	function addStylesToDom(styles, options) {
-		for(var i = 0; i < styles.length; i++) {
-			var item = styles[i];
-			var domStyle = stylesInDom[item.id];
-			if(domStyle) {
-				domStyle.refs++;
-				for(var j = 0; j < domStyle.parts.length; j++) {
-					domStyle.parts[j](item.parts[j]);
-				}
-				for(; j < item.parts.length; j++) {
-					domStyle.parts.push(addStyle(item.parts[j], options));
-				}
-			} else {
-				var parts = [];
-				for(var j = 0; j < item.parts.length; j++) {
-					parts.push(addStyle(item.parts[j], options));
-				}
-				stylesInDom[item.id] = {id: item.id, refs: 1, parts: parts};
-			}
-		}
-	}
-
-	function listToStyles(list) {
-		var styles = [];
-		var newStyles = {};
-		for(var i = 0; i < list.length; i++) {
-			var item = list[i];
-			var id = item[0];
-			var css = item[1];
-			var media = item[2];
-			var sourceMap = item[3];
-			var part = {css: css, media: media, sourceMap: sourceMap};
-			if(!newStyles[id])
-				styles.push(newStyles[id] = {id: id, parts: [part]});
-			else
-				newStyles[id].parts.push(part);
-		}
-		return styles;
-	}
-
-	function insertStyleElement(options, styleElement) {
-		var head = getHeadElement();
-		var lastStyleElementInsertedAtTop = styleElementsInsertedAtTop[styleElementsInsertedAtTop.length - 1];
-		if (options.insertAt === "top") {
-			if(!lastStyleElementInsertedAtTop) {
-				head.insertBefore(styleElement, head.firstChild);
-			} else if(lastStyleElementInsertedAtTop.nextSibling) {
-				head.insertBefore(styleElement, lastStyleElementInsertedAtTop.nextSibling);
-			} else {
-				head.appendChild(styleElement);
-			}
-			styleElementsInsertedAtTop.push(styleElement);
-		} else if (options.insertAt === "bottom") {
-			head.appendChild(styleElement);
-		} else {
-			throw new Error("Invalid value for parameter 'insertAt'. Must be 'top' or 'bottom'.");
-		}
-	}
-
-	function removeStyleElement(styleElement) {
-		styleElement.parentNode.removeChild(styleElement);
-		var idx = styleElementsInsertedAtTop.indexOf(styleElement);
-		if(idx >= 0) {
-			styleElementsInsertedAtTop.splice(idx, 1);
-		}
-	}
-
-	function createStyleElement(options) {
-		var styleElement = document.createElement("style");
-		styleElement.type = "text/css";
-		insertStyleElement(options, styleElement);
-		return styleElement;
-	}
-
-	function createLinkElement(options) {
-		var linkElement = document.createElement("link");
-		linkElement.rel = "stylesheet";
-		insertStyleElement(options, linkElement);
-		return linkElement;
-	}
-
-	function addStyle(obj, options) {
-		var styleElement, update, remove;
-
-		if (options.singleton) {
-			var styleIndex = singletonCounter++;
-			styleElement = singletonElement || (singletonElement = createStyleElement(options));
-			update = applyToSingletonTag.bind(null, styleElement, styleIndex, false);
-			remove = applyToSingletonTag.bind(null, styleElement, styleIndex, true);
-		} else if(obj.sourceMap &&
-			typeof URL === "function" &&
-			typeof URL.createObjectURL === "function" &&
-			typeof URL.revokeObjectURL === "function" &&
-			typeof Blob === "function" &&
-			typeof btoa === "function") {
-			styleElement = createLinkElement(options);
-			update = updateLink.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-				if(styleElement.href)
-					URL.revokeObjectURL(styleElement.href);
-			};
-		} else {
-			styleElement = createStyleElement(options);
-			update = applyToTag.bind(null, styleElement);
-			remove = function() {
-				removeStyleElement(styleElement);
-			};
-		}
-
-		update(obj);
-
-		return function updateStyle(newObj) {
-			if(newObj) {
-				if(newObj.css === obj.css && newObj.media === obj.media && newObj.sourceMap === obj.sourceMap)
-					return;
-				update(obj = newObj);
-			} else {
-				remove();
-			}
-		};
-	}
-
-	var replaceText = (function () {
-		var textStore = [];
-
-		return function (index, replacement) {
-			textStore[index] = replacement;
-			return textStore.filter(Boolean).join('\n');
-		};
-	})();
-
-	function applyToSingletonTag(styleElement, index, remove, obj) {
-		var css = remove ? "" : obj.css;
-
-		if (styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = replaceText(index, css);
-		} else {
-			var cssNode = document.createTextNode(css);
-			var childNodes = styleElement.childNodes;
-			if (childNodes[index]) styleElement.removeChild(childNodes[index]);
-			if (childNodes.length) {
-				styleElement.insertBefore(cssNode, childNodes[index]);
-			} else {
-				styleElement.appendChild(cssNode);
-			}
-		}
-	}
-
-	function applyToTag(styleElement, obj) {
-		var css = obj.css;
-		var media = obj.media;
-
-		if(media) {
-			styleElement.setAttribute("media", media)
-		}
-
-		if(styleElement.styleSheet) {
-			styleElement.styleSheet.cssText = css;
-		} else {
-			while(styleElement.firstChild) {
-				styleElement.removeChild(styleElement.firstChild);
-			}
-			styleElement.appendChild(document.createTextNode(css));
-		}
-	}
-
-	function updateLink(linkElement, obj) {
-		var css = obj.css;
-		var sourceMap = obj.sourceMap;
-
-		if(sourceMap) {
-			// http://stackoverflow.com/a/26603875
-			css += "\n/*# sourceMappingURL=data:application/json;base64," + btoa(unescape(encodeURIComponent(JSON.stringify(sourceMap)))) + " */";
-		}
-
-		var blob = new Blob([css], { type: "text/css" });
-
-		var oldSrc = linkElement.href;
-
-		linkElement.href = URL.createObjectURL(blob);
-
-		if(oldSrc)
-			URL.revokeObjectURL(oldSrc);
-	}
-
-
-/***/ },
-/* 23 */
->>>>>>> 时间组件更新
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-
-	var _angular = __webpack_require__(2);
-
-	var _angular2 = _interopRequireDefault(_angular);
-
-	var _checkboxGroup = __webpack_require__(26);
-
-	var _checkboxGroup2 = _interopRequireDefault(_checkboxGroup);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	/**
-	 * Checkbox group component entry
-	 * @author name
-	 */
-
-	'use strict';
-
-	exports.default = _angular2.default.module('CheckboxGroup', []).component('bpCheckboxGroup', _checkboxGroup2.default);
-
-/***/ },
-/* 26 */
-=======
 /* 25 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -2088,7 +1643,6 @@ return /******/ (function(modules) { // webpackBootstrap
 
 /***/ },
 /* 26 */
->>>>>>> timepicker Update
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -2207,7 +1761,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function CheckboxGroup() {
 	    _classCallCheck(this, CheckboxGroup);
 
-	    return _possibleConstructorReturn(this, (CheckboxGroup.__proto__ || Object.getPrototypeOf(CheckboxGroup)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CheckboxGroup).apply(this, arguments));
 	  }
 
 	  _createClass(CheckboxGroup, [{
@@ -2306,10 +1860,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict'; /**
 	               * @type {Object}
-	               * @property {Boolean}    disabled       - binding symbol is <, 禁用状态
-	               * @property {String}    value          - binding symbol is @, 选中后的值
-	               * @property {ANY}        model          - binding symbol is =?,绑定在radioBox上的model
-	               * @property {complex}    complex        - binding symbol is =?complex, 因为value只能提供String, 复杂结构数据类型使用, complex指令
+	               * @property {Boolean}   disabled       - binding symbol is `<`, 禁用状态
+	               * @property {String}    value          - binding symbol is `@`, 选中后的值
+	               * @property {ANY}       model          - binding symbol is `=?`,绑定在`radioBox`上的`model`
+	               * @property {complex}   complex        - binding symbol is `=?complex`, 因为`value`只能提供`String`, 复杂结构数据类型使用, `complex`指令
 	               */
 
 	var componentDefine = {
@@ -2386,35 +1940,30 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包装了HTML Input[type="radio"]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包装了`Input[type="radio"]`
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled       - binding symbol is `<`, 禁用状态
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled       - binding symbol is `<`, 是否横向展示
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model          - binding symbol is `=`, 绑定在组件上的model
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.Object}    list          - binding symbol is @, 选中后的值
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}             complex        - binding symbol is `=?complex`, 因为value只能提供String, 复杂结构数据类型使用, complex指令
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}   disabled       - binding symbol is `<`, 禁用状态,默认 `false`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}    value          - binding symbol is `@`, 选中后的值,默认 `false`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}       model          - binding symbol is `=?`, 绑定在`radioBox`上的`model`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {complex}   complex        - binding symbol is `=?complex`, 因为`value`只能提供`String`, 复杂结构数据类型使用, `complex`指令
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```html
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="1"></bp-radiobox>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="2"></bp-radiobox>
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
 
 	/**
 	 * Radio component
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-	 * 
-=======
 	 *
->>>>>>> timepicker Update
 	 * @export
 	 * @class Radio
 	 * @extends {Component}
@@ -2426,7 +1975,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Radiobox() {
 	    _classCallCheck(this, Radiobox);
 
-	    return _possibleConstructorReturn(this, (Radiobox.__proto__ || Object.getPrototypeOf(Radiobox)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Radiobox).apply(this, arguments));
 	  }
 
 	  _createClass(Radiobox, [{
@@ -2442,11 +1991,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    /**
 	     * 默认值
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-	     * @override 
-=======
 	     * @override
->>>>>>> timepicker Update
 	     */
 
 	  }, {
@@ -2626,10 +2171,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	'use strict'; /**
 	               * @type {Object}
-	               * @property {Boolean}         disabled        - binding symbol is <, 禁用状态
-	               * @property {Boolean}         inline          - binding symbol is <, 是否横向展示
-	               * @property {String}          model           - binding symbol is =?model, 绑定在radioBoxGroup上的model
-	               * @property {Array.<Object>}  list            - binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio
+	               * @property {Boolean}         disabled        - binding symbol is `<`, 禁用状态
+	               * @property {Boolean}         inline          - binding symbol is `<`, 是否横向展示
+	               * @property {String}          model           - binding symbol is `=?model`, 绑定在radioBoxGroup上的model
+	               * @property {Array.<Object>}  list            - binding symbol is `=?list`, 数据源, controller提供的数组用于遍历展示radio
 	               */
 
 	var componentDefine = {
@@ -2706,15 +2251,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled        - binding symbol is <, 禁用状态
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         inline          - binding symbol is <, 是否横向展示
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model           - binding symbol is =?model, 绑定在radioBoxGroup上的model
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.<Object>}  list            - binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled        - binding symbol is `<`, 禁用状态,默认 `false`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         inline          - binding symbol is `<`, 是否横向展示,默认 `false`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model           - binding symbol is `=?model`, 绑定在`radioBoxGroup上`的`model`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.<Object>}  list            - binding symbol is `=?list`, 数据源, `controller`提供的数组用于遍历展示`radio`
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```html
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radio-group list="vm.groupDataList" model="vm.model"></bp-radio-group>
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                在实际的controller或任何数据源里面有这样一个对象数组
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.model = "这个杀手不太冷";
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.groupDataList = [
@@ -2727,18 +2271,14 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ];
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radio)
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 	'use strict';
 
 	/**
 	 * RadioGroup component
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
-	 * 
-=======
 	 *
->>>>>>> timepicker Update
 	 * @export
 	 * @class RadioGroup
 	 * @extends {Component}
@@ -2750,7 +2290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function RadioboxGroup() {
 	    _classCallCheck(this, RadioboxGroup);
 
-	    return _possibleConstructorReturn(this, (RadioboxGroup.__proto__ || Object.getPrototypeOf(RadioboxGroup)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(RadioboxGroup).apply(this, arguments));
 	  }
 
 	  _createClass(RadioboxGroup, [{
@@ -2832,7 +2372,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-<<<<<<< c6766c370eb15f617c26598ea53e577b643c4552
 	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
@@ -3005,6 +2544,10 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _localData2 = _interopRequireDefault(_localData);
 
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -3053,7 +2596,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	      // 如果外部提供了数据集, 那么就不再发请求了
 	      if (this.database) {
-	        this.regionList = this.database;
+	        this.regionList = _angular2.default.copy(this.database);
 	        this.formatData(this.regionList);
 	        return;
 	      }
@@ -3083,7 +2626,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function formatData(dataList) {
 	      var _this2 = this;
 
-	      if (dataList && angular.isArray(dataList)) {
+	      if (dataList && _angular2.default.isArray(dataList)) {
 	        dataList.forEach(function (item) {
 	          if (item.child) {
 	            _this2.formatNodeData(item, item.child);
@@ -3103,7 +2646,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function formatNodeData(parentNode, childList) {
 	      var _this3 = this;
 
-	      if (!angular.isArray(childList)) return;
+	      if (!_angular2.default.isArray(childList)) return;
 	      // 获取父节点的信息
 	      var getParentInfo = function getParentInfo(node) {
 	        // 大区域
@@ -3149,7 +2692,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	          };
 	        })(childItem);
 	        // 是否还存在子节点, 递归
-	        if (childItem.child && angular.isArray(childItem.child)) {
+	        if (childItem.child && _angular2.default.isArray(childItem.child)) {
 	          _this3.formatNodeData(childItem, childItem.child);
 	        }
 	      });
@@ -3170,13 +2713,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function checkboxClickHandler(dataSource, type) {
 	      var _this4 = this;
 
-	      if (dataSource && dataSource.child && angular.isArray(dataSource.child)) {
+	      if (dataSource && dataSource.child && _angular2.default.isArray(dataSource.child)) {
 	        (function () {
 	          //checked {Boolean} 这是view里在checkbox上用ng-model绑定得来的
 	          var answer = dataSource.checked;
 	          dataSource.child.forEach(function (item) {
 	            item.checked = answer;
-	            if (item.child && angular.isArray(item.child)) {
+	            if (item.child && _angular2.default.isArray(item.child)) {
 	              _this4.checkboxClickHandler(item, item.type);
 	            }
 	          });
@@ -3229,7 +2772,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'isChildAllChecked',
 	    value: function isChildAllChecked(nodeData) {
-	      if (nodeData && nodeData.child && angular.isArray(nodeData.child)) {
+	      if (nodeData && nodeData.child && _angular2.default.isArray(nodeData.child)) {
 	        return nodeData.child.every(function (item) {
 	          return item.checked;
 	        });
@@ -3245,7 +2788,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'isHalfChecked',
 	    value: function isHalfChecked(nodeData) {
-	      if (nodeData && nodeData.child && angular.isArray(nodeData.child)) {
+	      if (nodeData && nodeData.child && _angular2.default.isArray(nodeData.child)) {
 	        return nodeData.child.some(function (item) {
 	          return item.checked;
 	        });
@@ -3265,7 +2808,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function findParentNodeByID(id, parentType) {
 	      var key = parentType + 'Id';
 	      var find = function find(childList) {
-	        if (childList && angular.isArray(childList)) {
+	        if (childList && _angular2.default.isArray(childList)) {
 	          return childList.find(function (item) {
 	            return item[key] == id;
 	          });
@@ -3327,7 +2870,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function collectCheckedInformation() {
 	      var checkedCityIDList = [];
 	      var find = function find(dataList) {
-	        if (dataList && angular.isArray(dataList)) {
+	        if (dataList && _angular2.default.isArray(dataList)) {
 	          dataList.forEach(function (item) {
 	            if (item.checked && item.hasOwnProperty('cityId')) {
 	              checkedCityIDList.push(item['cityId']);
@@ -10484,7 +10027,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    }));
 	  }
 
-<<<<<<< d5b7e56247b22837adca0bb608a2c590f86df86a
 	  // Get $scope.hours in 24H mode if valid
 	  function getHoursFromTemplate() {
 	    var hours = +$scope.hours;
@@ -10493,33 +10035,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	    if (!valid || $scope.hours === '') {
 	      return undefined;
 	    }
-=======
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name radiobox.directive:bpRadio
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包装了HTML Input[type="radio"]
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled       - binding symbol is `<`, 禁用状态
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled       - binding symbol is `<`, 是否横向展示
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model          - binding symbol is `=`, 绑定在组件上的model
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.Object}    list          - binding symbol is @, 选中后的值
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {ANY}             complex        - binding symbol is `=?complex`, 因为value只能提供String, 复杂结构数据类型使用, complex指令
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```html
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="1"></bp-radiobox>
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="2"></bp-radiobox>
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
->>>>>>> 更新 radiobox radioboxGroup组件文档传送门链接，更新升级transfer组件
 
 	    if ($scope.showMeridian) {
 	      if (hours === 12) {
@@ -11390,49 +10905,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	    $document.on('click', dismissClickHandler);
 
-<<<<<<< d5b7e56247b22837adca0bb608a2c590f86df86a
 	    originalScope.$on('$destroy', function() {
 	      $document.off('click', dismissClickHandler);
 	      if (appendToBody || appendTo) {
 	        $popup.remove();
 	      }
-=======
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name radiobox.directive:bpRadioboxGroup
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 对radiobox的二次包装 提供`list`指令
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * 包含的状态有
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - enable
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - disabled
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - checked
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         disabled        - binding symbol is <, 禁用状态
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}         inline          - binding symbol is <, 是否横向展示
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {String}          model           - binding symbol is =?model, 绑定在radioBoxGroup上的model
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array.<Object>}  list            - binding symbol is =?list, 数据源, controller提供的数组用于遍历展示radio
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```html
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radio-group list="vm.groupDataList" model="vm.model"></bp-radio-group>
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                在实际的controller或任何数据源里面有这样一个对象数组
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.model = "这个杀手不太冷";
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                this.groupDataList = [
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '沉默的羔羊', value: '沉默的羔羊'},
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '这个杀手不太冷',value:'这个杀手不太冷'},
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '指环王',value:'指环王',complex:{author:'xxx',age:45,sex:'不详'}},
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '速度与激情',value:"速度与激情"},
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: '魔兽世界', value:"魔兽世界",disabled: true},
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                {label: 'X战警',value:"X战警"}
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ];
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
->>>>>>> 更新 radiobox radioboxGroup组件文档传送门链接，更新升级transfer组件
 
 	      if (appendToBody) {
 	        angular.element($window).off('resize', fireRecalculating);
@@ -12053,7 +11530,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	angular.module('ui.bootstrap.typeahead').run(function() {!angular.$$csp().noInlineStyle && !angular.$$uibTypeaheadCss && angular.element(document).find('head').prepend('<style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style>'); angular.$$uibTypeaheadCss = true; });
 
 /***/ },
-/* 42 */
+/* 51 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12062,9 +11539,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-=======
->>>>>>> timepicker Update
-	var _transfer = __webpack_require__(43);
+	var _transfer = __webpack_require__(52);
 
 	var _transfer2 = _interopRequireDefault(_transfer);
 
@@ -12078,7 +11553,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = angular.module('Transfer', []).component('bpTransfer', _transfer2.default);
 
 /***/ },
-/* 43 */
+/* 52 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12087,20 +11562,33 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-	var _transfer = __webpack_require__(44);
+	var _transfer = __webpack_require__(53);
 
 	var _transfer2 = _interopRequireDefault(_transfer);
 
-	var _template = __webpack_require__(45);
+	var _template = __webpack_require__(54);
 
 	var _template2 = _interopRequireDefault(_template);
 
-	__webpack_require__(46);
+	__webpack_require__(55);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-	               * Transfer component define
+	               * @type {Object}
+	               * @property {Array}      sourceData       - binding symbol is =?, 数据源
+	               * @property {Array}      targetData       - binding symbol is =?, 右侧选中目标值
+	               * @property {Array}      titles           - binding symbol is <, 左右侧标题
+	               * @property {Array}      placeholders     - binding symbol is <, 左右placeholders值
+	               * @property {Array}      operations       - binding symbol is <, 操作按钮的文案
+	               * @property {Boolean}    showLeftSearch   - binding symbol is <, 是否启用左侧检索框
+	               * @property {Boolean}    showRightSearch  - binding symbol is <, 是否启用右侧检索框
+	               * @property {Boolean}    addBtn           - binding symbol is <, 是否展示增加按钮
+	               * @property {Boolean}    addAllBtn        - binding symbol is <, 是否展示全部增加按钮
+	               * @property {Boolean}    delBtn           - binding symbol is <, 是否展示删除按钮
+	               * @property {Boolean}    delAllBtn        - binding symbol is <, 是否展示全部删除按钮
+	               * @property {Function}   serverSearch     - binding symbol is &?, 是否启用服务端检索
+	               *
 	               */
 
 	var componentDefine = {
@@ -12184,7 +11672,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = componentDefine;
 
 /***/ },
-/* 44 */
+/* 53 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -12206,7 +11694,92 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Transfer
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name transfer.directive:bpTransfer
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @restrict E
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - 双栏穿梭选择框
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * - 用直观的方式在两栏中移动元素，完成选择行为
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array}      sourceData       - binding symbol is =?, 数据源
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array}      targetData       - binding symbol is =?, 右侧选中目标值
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array}      titles           - binding symbol is <, 左右侧标题,默认为`请选择`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array}      placeholders     - binding symbol is <, 左右placeholders值 默认为`请输入检索条件`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Array}      operations       - binding symbol is <, 操作按钮的文案 默认依次为 `添加` `添加全部` `删除` `全部删除`
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    showLeftSearch   - binding symbol is <, 是否启用左侧检索框 默认为 `true` 启用
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    showRightSearch  - binding symbol is <, 是否启用右侧检索框 默认为 `true` 启用
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    addBtn           - binding symbol is <, 是否展示增加按钮 默认为 `true` 展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    addAllBtn        - binding symbol is <, 是否展示全部增加按钮 默认为 `true` 展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    delBtn           - binding symbol is <, 是否展示删除按钮 默认为 `true` 展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Boolean}    delAllBtn        - binding symbol is <, 是否展示全部删除按钮 默认为 `true` 展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @param {Function}   serverSearch     - binding symbol is &?, 是否启用服务端检索 
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @example
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-transfer
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                source-data="vm.dataSource"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                titles="vm.titles"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                placeholders="vm.placeholders"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                operations="vm.operations"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                showLeft-search="vm.showLeftSearch"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                showRight-search="vm.showRightSearch"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                add-btn="vm.addBtn"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                add-all-btn="vm.addAllBtn"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                del-btn="vm.delBtn"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                del-all-btn="vm.delAllBtn"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ></bp-transfer>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.titles = ['门店列表', '已选择门店'];
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.placeholders = ['输入门店进行检索', '对已经出来的结果进行检索'];
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.operations = ['增加', '增加全部', '删除', '全部删除'];
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.showLeftSearch = true;
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.showRightSearch = false;
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.addBtn = true;
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.addAllBtn = true;
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.delBtn = true;
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.delAllBtn = false;
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               this.dataSource = [
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   key: 'NNN',
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   value: "沈阳分门店测试1（商圈dx测试店）"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 },
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   key: 9103705,
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   value: "TESTing（TEST店）"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 },
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   key: 9103384,
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   value: "性能测试商圈01_勿动（性能测试商圈01_勿动店）"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 },
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   key: 9103381,
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   value: "性能测试商圈01_勿动（性能测试商圈01_勿动店棒啊帮帮哒00100101010）"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 },
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   key: 9103347,
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   value: "测试专用叶（勿动）（沈阳奥体店）"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 },
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   key: 9103346,
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   storeName: "	测试专用勿动111111111111",
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   value: "	测试专用勿动（沈阳北一路店）333333333333333333"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 },
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   key: 9103345,
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   value: "测试专用勿动（沈阳太原街店）11111111111111111"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 },
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   key: 9103344,
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   value: "测试专用叶（勿动）（沈阳奥体店1155555555）"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 }
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/transfer)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 
@@ -12221,41 +11794,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	var Transfer = function (_Component) {
-	  Transfer.$inject = ["$filter", "$scope"];
+	  Transfer.$inject = ["$filter"];
 	  _inherits(Transfer, _Component);
 
-	  function Transfer($filter, $scope) {
+	  function Transfer($filter) {
 	    'ngInject';
 
 	    _classCallCheck(this, Transfer);
 
-	    var _this = _possibleConstructorReturn(this, (Transfer.__proto__ || Object.getPrototypeOf(Transfer)).call(this));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Transfer).call(this));
 
 	    _this.$filter = $filter;
-	    /**
-	     * todo...
-	     * 用户直接对  sourceData targetData赋值
-	     * 过滤一遍
-	     */
-	    /*    $scope.$watch(() => {
-	          return this.sourceData;
-	        }, (newValue, oldValue) => {
-	          if(angular.isArray(newValue) && newValue.length != 0){
-	            console.log('newValue1111',newValue);
-	          }
-	    
-	        });
-	    
-	        $scope.$watch(() => {
-	          return this.targetData;
-	        }, (newValue, oldValue) => {
-	          //console.log(newValue,oldValue);
-	          if(angular.isArray(newValue) && newValue.length != 0){
-	            console.log('newValue',newValue)
-	          }
-	    
-	        });*/
-
 	    return _this;
 	  }
 
@@ -12498,19 +12047,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Transfer;
 
 /***/ },
-/* 45 */
+/* 54 */
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"transfer\">\n  <!-- 支持服务端检索 -->\n  <div class=\"form-inline server-search\" data-ng-if=\"controller.isNeedServerSearch\">\n    <input\n      class=\"form-control  input-sm\"\n      type=\"text\"\n      data-ng-model=\"controller.searchValue\"\n      placeholder=\"请输入检索的值\"\n    />\n    <bp-button click=\"controller.innerClick()\" size=\"sm\">查询</bp-button>\n  </div>\n  <!-- /支持服务端检索 -->\n\n  <!-- 左侧栏 -->\n  <div class=\"transfer-left\">\n\n    <!--列表标题 左-->\n    <div class=\"list-title\">\n      <div class=\"list-title-name\"\n           title=\"{{controller.docInfo.leftTitle}}\">\n        {{controller.docInfo.leftTitle}}\n      </div>\n      <div class=\"list-title-total\" title=\"共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条\">\n        共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条\n      </div>\n    </div>\n    <!--/列表标题 左-->\n\n    <div class=\"transfer-search\">\n      <!-- 前端检索 -->\n      <input\n             type=\"text\"\n             class=\"form-control input-sm\"\n             placeholder=\"{{controller.docInfo.leftPlaceholder}}\"\n             data-ng-model=\"controller.leftSearchValue\"\n             data-ng-disabled=\"!controller.showLeftSearch\"\n      />\n      <span class=\"transfer-search-span\">\n        <i class=\"glyphicon glyphicon-search\"></i>\n      </span>\n      <!-- /前端检索 -->\n    </div>\n    <div class=\"transfer-left-select\">\n      <select  name=\"multipleSelect\"\n               multiple\n               data-ng-model=\"controller.leftValue\">\n        <option data-ng-repeat=\"option in controller.sourceData | filter:controller.leftSearchValue\"\n                data-ng-dblclick=\"controller.optionSourceClick(option)\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /左侧栏 -->\n\n  <!-- 中间 -->\n  <div class=\"transfer-center\">\n      <div class=\"form-group\">\n        <p>\n          <bp-button\n                size=\"sm\"\n                click=\"controller.add()\"\n                data-ng-if=\"controller.addBtn\"\n                disabled=\"(controller.leftValue).length === 0\"\n        >\n          {{controller.docInfo.addOperation}}\n        </bp-button>\n          </p>\n        <p>\n        <bp-button\n                size=\"sm\"\n                click=\"controller.addAll()\"\n                data-ng-if=\"controller.addAllBtn\"\n                disabled=\"(controller.sourceData).length === 0\"\n        >\n          {{controller.docInfo.addAllOperation}}\n        </bp-button>\n        </p>\n      </div>\n      <div class=\"form-group\">\n        <p>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.del()\"\n                data-ng-if=\"controller.delBtn\"\n                disabled=\"(controller.rightValue).length === 0\"\n        >\n          {{controller.docInfo.delOperation}}\n        </bp-button>\n        </p>\n        <p>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.delAll()\"\n                data-ng-if=\"controller.delAllBtn\"\n                disabled=\"(controller.targetData).length === 0\"\n        >\n          {{controller.docInfo.delAllOperation}}\n        </bp-button>\n        </p>\n      </div>\n  </div>\n  <!--中间-->\n\n  <!-- 右侧 -->\n  <div class=\"transfer-right\">\n\n    <!--列表标题 右-->\n    <div class=\"list-title\">\n      <div class=\"list-title-name\"\n           title=\"{{controller.docInfo.rightTitle}}\">\n        {{controller.docInfo.rightTitle}}</div>\n      <div class=\"list-title-total\"\n           title=\"共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条\">\n        共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条\n      </div>\n    </div>\n    <!--/列表标题 右-->\n\n    <div class=\"transfer-search\">\n      <!-- 前端检索 右-->\n      <input type=\"text\"\n             class=\"form-control input-sm\"\n             placeholder=\"{{controller.docInfo.rightPlaceholder}}\"\n             data-ng-model=\"controller.rightSearchValue\"\n             data-ng-disabled=\"!controller.showRightSearch\"\n      />\n      <span class=\"transfer-search-span\">\n        <i class=\"glyphicon glyphicon-search\"></i>\n      </span>\n      <!-- /前端检索 右-->\n    </div>\n    <div class=\"transfer-right-stores\">\n      <select  name=\"multipleSelect\"\n               multiple\n               data-ng-model=\"controller.rightValue\">\n        <option data-ng-repeat=\"option in controller.targetData | filter:controller.rightSearchValue\"\n                data-ng-dblclick=\"controller.optionTargetClick(option)\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /右侧 -->\n</div>\n"
 
 /***/ },
-/* 46 */
+/* 55 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(47);
+	var content = __webpack_require__(56);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(13)(content, {});
@@ -12530,7 +12079,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-/* 47 */
+/* 56 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(12)();
