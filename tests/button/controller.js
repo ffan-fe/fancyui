@@ -50,4 +50,65 @@ export default class ButtonTestController {
       }
     );
   }
+  showCustomDataCitySelector() {
+    const database = [
+      {
+        "regionId": 3,
+        "regionName": "华东区",
+        "child": [
+          {
+          "provinceId": 310000,
+          "provinceName": "上海市",
+          "child": [
+            {
+            "cityId": 310100,
+            "cityName": "上海市"
+            },
+            {
+            "cityId": 310200,
+            "cityName": "上海县"
+            }
+          ]
+        }]
+      },
+      {
+        "regionId": 1,
+        "regionName": "华北区",
+        "child": [
+          {
+          "provinceId": 110000,
+          "provinceName": "北京市",
+          "child": [
+          {
+          "cityId": 110100,
+          "cityName": "北京市"
+          },
+          {
+          "cityId": 110200,
+          "cityName": "北京县"
+          },
+          {
+          "cityId": 110800,
+          "cityName": "测试城市"
+          }
+          ]
+          },
+          {
+            "provinceId": 120000,
+            "provinceName": "天津市",
+            "child": [
+            {
+            "cityId": 120100,
+            "cityName": "天津市"
+            }
+            ]
+            }
+        ]
+      }
+    ];
+    this.citySelector.open({database})
+      .then(list => {
+        console.log(list);
+      });
+  }
 }

@@ -2,6 +2,9 @@ import loaclData from './localData.js';
 
 'use strict';
 
+/**
+ * 几个区域枚举
+ */
 const regionType = {
   REGION: "region",
   PROVINCE: 'province',
@@ -16,17 +19,26 @@ export default class CitySelectorController {
    * @param {$http} $http
    * @param {Boolean} isReadOnly
    * @param {Array} checkedList
+   * @param {Object} database 有了这个数据集就不再发请求了
    */
-  constructor($uibModalInstance, $http, isReadOnly, checkedList) {
+  constructor($uibModalInstance, $http, isReadOnly, checkedList, database) {
     'ngInject';
     this.$uibModalInstance = $uibModalInstance;
     this.$http = $http;
     this.isReadOnly = isReadOnly;
     this.checkedList = checkedList;
+    this.database = database;
     // 做回填的时候, 也需要回填各种状态, 这里记录好有变化的省份, 然后上下检查, 比较方便
     this.fillProvinceList = [];
   }
   $onInit() {
+    // 如果外部提供了数据集, 那么就不再发请求了
+    if (this.database) {
+      this.regionList = this.database;
+      this.formatData(this.regionList);
+      return;
+    }
+    // 这个请求实际上只能运行在xadmin这个环境下
     this.loadPromise = this.$http.get('/Database/coupon_component/selectCity')
       .then(
         response => {
@@ -36,6 +48,7 @@ export default class CitySelectorController {
             this.regionList = loaclData.data;
           }
         },
+        // 请求败了使用本地数据
         () => {
           this.regionList = loaclData.data;
         }

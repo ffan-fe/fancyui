@@ -37,7 +37,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "checkbox",
       "shortDescription": "包装了HTML Input[type=&quot;checkbox&quot;]",
-      "keywords": "api binding checkbox checked directive disabled enable falsevalue fengpeng halfchecked input ng-false-value ng-true-value symbol truevalue"
+      "keywords": "api binding change checkbox checked click directive disabled enable event falsevalue fengpeng halfchecked input ng-false-value ng-true-value onchange onclick symbol truevalue"
     },
     {
       "section": "api",
@@ -47,6 +47,15 @@ NG_DOCS={
       "moduleName": "checkbox",
       "shortDescription": "顾名思义, 这是对bpCheckbox组件的二次包装, 通过model传进来一个对象数组, 来批量渲染bpCheckbox",
       "keywords": "api binding checkbox checked directive disabled fengpeng github groupdatalist html inline io model symbol true vm"
+    },
+    {
+      "section": "api",
+      "id": "citySelector.service:citySelector",
+      "shortName": "citySelector",
+      "type": "service",
+      "moduleName": "citySelector",
+      "shortDescription": "城市选择组件, 统一从接口/Database/coupon_component/selectCity",
+      "keywords": "api array boolean bootstrap checkedlist cityselector config console fengpeng idlist isreadonly log nginject open promise reject resolve service showcityselector ui uibmodal"
     },
     {
       "section": "api",
