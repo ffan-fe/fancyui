@@ -16,7 +16,6 @@ export default class TransferTextController {
     this.addAllBtn = true;
     this.delBtn = true;
     this.delAllBtn = false;
-
     /**
      * 默认情况
      * @type {string}
@@ -35,8 +34,6 @@ export default class TransferTextController {
      */
     this.part5Html = $sce.trustAsHtml(Prism.highlight(data['codePart3'], Prism.languages.html));
     this.part6Html = $sce.trustAsHtml(Prism.highlight(data['serverSearch'] + data['dataSourceTmp1'], Prism.languages.javascript));
-
-
   }
 
   serverSearch($value){
