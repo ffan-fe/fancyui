@@ -59,11 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-<<<<<<< HEAD
 	exports.Transfer = exports.CitySelector = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
-=======
-	exports.Transfer = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 
 	var _button = __webpack_require__(1);
 
@@ -89,15 +85,11 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _radiobox4 = _interopRequireDefault(_radiobox3);
 
-<<<<<<< HEAD
 	var _city = __webpack_require__(42);
 
 	var _city2 = _interopRequireDefault(_city);
 
 	var _transfer = __webpack_require__(51);
-=======
-	var _transfer = __webpack_require__(42);
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 
 	var _transfer2 = _interopRequireDefault(_transfer);
 
@@ -111,10 +103,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	var CheckboxGroup = exports.CheckboxGroup = _checkbox4.default;
 	var Radiobox = exports.Radiobox = _radiobox2.default;
 	var RadioboxGroup = exports.RadioboxGroup = _radiobox4.default;
-<<<<<<< HEAD
 	var CitySelector = exports.CitySelector = _city2.default;
-=======
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 	var Transfer = exports.Transfer = _transfer2.default;
 
 /***/ },
@@ -291,7 +280,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Button() {
 	    _classCallCheck(this, Button);
 
-	    return _possibleConstructorReturn(this, (Button.__proto__ || Object.getPrototypeOf(Button)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Button).apply(this, arguments));
 	  }
 
 	  _createClass(Button, [{
@@ -381,7 +370,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.iconType = this.icon;
 	      }
 	      // call super to update className
-	      _get(Button.prototype.__proto__ || Object.getPrototypeOf(Button.prototype), '_render', this).call(this);
+	      _get(Object.getPrototypeOf(Button.prototype), '_render', this).call(this);
 	    }
 	    /**
 	     * 包装一个click处理器, 在模板里面用ngClick, 然后调用传进来的处理器
@@ -461,6 +450,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  /**
 	   * @constructor
 	   */
+
 	  function Component() {
 	    _classCallCheck(this, Component);
 
@@ -1169,7 +1159,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Icon() {
 	    _classCallCheck(this, Icon);
 
-	    return _possibleConstructorReturn(this, (Icon.__proto__ || Object.getPrototypeOf(Icon)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Icon).apply(this, arguments));
 	  }
 
 	  _createClass(Icon, [{
@@ -1411,12 +1401,13 @@ return /******/ (function(modules) { // webpackBootstrap
 	   *
 	   * @param {$scope} $scope
 	   */
+
 	  function Checkbox($scope) {
 	    'ngInject';
 
 	    _classCallCheck(this, Checkbox);
 
-	    var _this = _possibleConstructorReturn(this, (Checkbox.__proto__ || Object.getPrototypeOf(Checkbox)).call(this));
+	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Checkbox).call(this));
 
 	    _this.$scope = $scope;
 	    return _this;
@@ -1770,7 +1761,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function CheckboxGroup() {
 	    _classCallCheck(this, CheckboxGroup);
 
-	    return _possibleConstructorReturn(this, (CheckboxGroup.__proto__ || Object.getPrototypeOf(CheckboxGroup)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(CheckboxGroup).apply(this, arguments));
 	  }
 
 	  _createClass(CheckboxGroup, [{
@@ -1964,11 +1955,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <pre>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="1"></bp-radiobox>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <bp-radiobox model="vm.radio" value="2"></bp-radiobox>
-<<<<<<< HEAD
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
-=======
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ```
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
@@ -1988,7 +1975,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function Radiobox() {
 	    _classCallCheck(this, Radiobox);
 
-	    return _possibleConstructorReturn(this, (Radiobox.__proto__ || Object.getPrototypeOf(Radiobox)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(Radiobox).apply(this, arguments));
 	  }
 
 	  _createClass(Radiobox, [{
@@ -2303,7 +2290,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  function RadioboxGroup() {
 	    _classCallCheck(this, RadioboxGroup);
 
-	    return _possibleConstructorReturn(this, (RadioboxGroup.__proto__ || Object.getPrototypeOf(RadioboxGroup)).apply(this, arguments));
+	    return _possibleConstructorReturn(this, Object.getPrototypeOf(RadioboxGroup).apply(this, arguments));
 	  }
 
 	  _createClass(RadioboxGroup, [{
@@ -2385,7 +2372,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-<<<<<<< HEAD
 	var _angular = __webpack_require__(2);
 
 	var _angular2 = _interopRequireDefault(_angular);
@@ -11554,9 +11540,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	});
 
 	var _transfer = __webpack_require__(52);
-=======
-	var _transfer = __webpack_require__(43);
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 
 	var _transfer2 = _interopRequireDefault(_transfer);
 
@@ -11570,11 +11553,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = angular.module('Transfer', []).component('bpTransfer', _transfer2.default);
 
 /***/ },
-<<<<<<< HEAD
 /* 52 */
-=======
-/* 43 */
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11583,7 +11562,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	  value: true
 	});
 
-<<<<<<< HEAD
 	var _transfer = __webpack_require__(53);
 
 	var _transfer2 = _interopRequireDefault(_transfer);
@@ -11593,22 +11571,10 @@ return /******/ (function(modules) { // webpackBootstrap
 	var _template2 = _interopRequireDefault(_template);
 
 	__webpack_require__(55);
-=======
-	var _transfer = __webpack_require__(44);
-
-	var _transfer2 = _interopRequireDefault(_transfer);
-
-	var _template = __webpack_require__(45);
-
-	var _template2 = _interopRequireDefault(_template);
-
-	__webpack_require__(46);
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict'; /**
-<<<<<<< HEAD
 	               * @type {Object}
 	               * @property {Array}      sourceData       - binding symbol is =?, 数据源
 	               * @property {Array}      targetData       - binding symbol is =?, 右侧选中目标值
@@ -11623,9 +11589,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	               * @property {Boolean}    delAllBtn        - binding symbol is <, 是否展示全部删除按钮
 	               * @property {Function}   serverSearch     - binding symbol is &?, 是否启用服务端检索
 	               *
-=======
-	               * Transfer component define
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 	               */
 
 	var componentDefine = {
@@ -11709,11 +11672,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = componentDefine;
 
 /***/ },
-<<<<<<< HEAD
 /* 53 */
-=======
-/* 44 */
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -11735,7 +11694,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-<<<<<<< HEAD
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @ngdoc directive
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @name transfer.directive:bpTransfer
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * @author chuxin
@@ -11822,9 +11780,6 @@ return /******/ (function(modules) { // webpackBootstrap
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ]
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </pre>
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                更多例子的[传送门](https://ffan-fe.github.io/#/ui/transfer)
-=======
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Transfer
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 
 
@@ -11839,54 +11794,17 @@ return /******/ (function(modules) { // webpackBootstrap
 	 */
 
 	var Transfer = function (_Component) {
-<<<<<<< HEAD
 	  Transfer.$inject = ["$filter"];
 	  _inherits(Transfer, _Component);
 
 	  function Transfer($filter) {
-=======
-	  Transfer.$inject = ["$filter", "$scope"];
-	  _inherits(Transfer, _Component);
-
-	  function Transfer($filter, $scope) {
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 	    'ngInject';
 
 	    _classCallCheck(this, Transfer);
 
-<<<<<<< HEAD
 	    var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Transfer).call(this));
 
 	    _this.$filter = $filter;
-=======
-	    var _this = _possibleConstructorReturn(this, (Transfer.__proto__ || Object.getPrototypeOf(Transfer)).call(this));
-
-	    _this.$filter = $filter;
-	    /**
-	     * todo...
-	     * 用户直接对  sourceData targetData赋值
-	     * 过滤一遍
-	     */
-	    /*    $scope.$watch(() => {
-	          return this.sourceData;
-	        }, (newValue, oldValue) => {
-	          if(angular.isArray(newValue) && newValue.length != 0){
-	            console.log('newValue1111',newValue);
-	          }
-	    
-	        });
-	    
-	        $scope.$watch(() => {
-	          return this.targetData;
-	        }, (newValue, oldValue) => {
-	          //console.log(newValue,oldValue);
-	          if(angular.isArray(newValue) && newValue.length != 0){
-	            console.log('newValue',newValue)
-	          }
-	    
-	        });*/
-
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 	    return _this;
 	  }
 
@@ -12129,31 +12047,19 @@ return /******/ (function(modules) { // webpackBootstrap
 	exports.default = Transfer;
 
 /***/ },
-<<<<<<< HEAD
 /* 54 */
-=======
-/* 45 */
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 /***/ function(module, exports) {
 
 	module.exports = "<div class=\"transfer\">\n  <!-- 支持服务端检索 -->\n  <div class=\"form-inline server-search\" data-ng-if=\"controller.isNeedServerSearch\">\n    <input\n      class=\"form-control  input-sm\"\n      type=\"text\"\n      data-ng-model=\"controller.searchValue\"\n      placeholder=\"请输入检索的值\"\n    />\n    <bp-button click=\"controller.innerClick()\" size=\"sm\">查询</bp-button>\n  </div>\n  <!-- /支持服务端检索 -->\n\n  <!-- 左侧栏 -->\n  <div class=\"transfer-left\">\n\n    <!--列表标题 左-->\n    <div class=\"list-title\">\n      <div class=\"list-title-name\"\n           title=\"{{controller.docInfo.leftTitle}}\">\n        {{controller.docInfo.leftTitle}}\n      </div>\n      <div class=\"list-title-total\" title=\"共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条\">\n        共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条\n      </div>\n    </div>\n    <!--/列表标题 左-->\n\n    <div class=\"transfer-search\">\n      <!-- 前端检索 -->\n      <input\n             type=\"text\"\n             class=\"form-control input-sm\"\n             placeholder=\"{{controller.docInfo.leftPlaceholder}}\"\n             data-ng-model=\"controller.leftSearchValue\"\n             data-ng-disabled=\"!controller.showLeftSearch\"\n      />\n      <span class=\"transfer-search-span\">\n        <i class=\"glyphicon glyphicon-search\"></i>\n      </span>\n      <!-- /前端检索 -->\n    </div>\n    <div class=\"transfer-left-select\">\n      <select  name=\"multipleSelect\"\n               multiple\n               data-ng-model=\"controller.leftValue\">\n        <option data-ng-repeat=\"option in controller.sourceData | filter:controller.leftSearchValue\"\n                data-ng-dblclick=\"controller.optionSourceClick(option)\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /左侧栏 -->\n\n  <!-- 中间 -->\n  <div class=\"transfer-center\">\n      <div class=\"form-group\">\n        <p>\n          <bp-button\n                size=\"sm\"\n                click=\"controller.add()\"\n                data-ng-if=\"controller.addBtn\"\n                disabled=\"(controller.leftValue).length === 0\"\n        >\n          {{controller.docInfo.addOperation}}\n        </bp-button>\n          </p>\n        <p>\n        <bp-button\n                size=\"sm\"\n                click=\"controller.addAll()\"\n                data-ng-if=\"controller.addAllBtn\"\n                disabled=\"(controller.sourceData).length === 0\"\n        >\n          {{controller.docInfo.addAllOperation}}\n        </bp-button>\n        </p>\n      </div>\n      <div class=\"form-group\">\n        <p>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.del()\"\n                data-ng-if=\"controller.delBtn\"\n                disabled=\"(controller.rightValue).length === 0\"\n        >\n          {{controller.docInfo.delOperation}}\n        </bp-button>\n        </p>\n        <p>\n        <bp-button\n                type=\"default\"\n                size=\"sm\"\n                click=\"controller.delAll()\"\n                data-ng-if=\"controller.delAllBtn\"\n                disabled=\"(controller.targetData).length === 0\"\n        >\n          {{controller.docInfo.delAllOperation}}\n        </bp-button>\n        </p>\n      </div>\n  </div>\n  <!--中间-->\n\n  <!-- 右侧 -->\n  <div class=\"transfer-right\">\n\n    <!--列表标题 右-->\n    <div class=\"list-title\">\n      <div class=\"list-title-name\"\n           title=\"{{controller.docInfo.rightTitle}}\">\n        {{controller.docInfo.rightTitle}}</div>\n      <div class=\"list-title-total\"\n           title=\"共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条\">\n        共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条\n      </div>\n    </div>\n    <!--/列表标题 右-->\n\n    <div class=\"transfer-search\">\n      <!-- 前端检索 右-->\n      <input type=\"text\"\n             class=\"form-control input-sm\"\n             placeholder=\"{{controller.docInfo.rightPlaceholder}}\"\n             data-ng-model=\"controller.rightSearchValue\"\n             data-ng-disabled=\"!controller.showRightSearch\"\n      />\n      <span class=\"transfer-search-span\">\n        <i class=\"glyphicon glyphicon-search\"></i>\n      </span>\n      <!-- /前端检索 右-->\n    </div>\n    <div class=\"transfer-right-stores\">\n      <select  name=\"multipleSelect\"\n               multiple\n               data-ng-model=\"controller.rightValue\">\n        <option data-ng-repeat=\"option in controller.targetData | filter:controller.rightSearchValue\"\n                data-ng-dblclick=\"controller.optionTargetClick(option)\"\n                value=\"{{option.key}}\"\n                title=\"{{option.value}}\">\n          {{option.value}}\n        </option>\n      </select>\n    </div>\n  </div>\n  <!-- /右侧 -->\n</div>\n"
 
 /***/ },
-<<<<<<< HEAD
 /* 55 */
-=======
-/* 46 */
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-<<<<<<< HEAD
 	var content = __webpack_require__(56);
-=======
-	var content = __webpack_require__(47);
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(13)(content, {});
@@ -12173,11 +12079,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	}
 
 /***/ },
-<<<<<<< HEAD
 /* 56 */
-=======
-/* 47 */
->>>>>>> 65a37e40561b3d152899290a87efe5dc4e083454
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(12)();
