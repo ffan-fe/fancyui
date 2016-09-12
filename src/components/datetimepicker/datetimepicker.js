@@ -1,5 +1,207 @@
 /**
- * Datetimepicker
+ * @ngdoc directive
+ * @name datetimepicker.directive:bpDatetimepicker
+ * @author liuchang
+ * @restrict E
+ * @description
+ * - 时间选择组件
+ * - 支持单个时间框和一组时间框
+ *
+ * @param {String}            type              - binding symbol is `<`,    判断展示单个时间框或一组时间框 
+ * @param {String}            model             - binding symbol is `=?`,   存储单个时间框的值
+ * @param {String}            startModel        - binding symbol is `=?`,   存储一组时间框的开始时间
+ * @param {String}            endModel          - binding symbol is `=?`,   存储一组时间框的结束时间
+ * @param {String | Number}   min               - binding symbol is `<`,    最小值
+ * @param {String | Number}   max               - binding symbol is `<`,    最大值
+ * @param {Boolean}           allDisabled       - binding symbol is `<`,    是否禁用全部 默认为 `false` 不禁用
+ * @param {Boolean}           startDisabled     - binding symbol is `<`,    是否禁用开始时间 默认为 `false` 不禁用
+ * @param {Boolean}           endDisabled       - binding symbol is `<`,    是否禁用结束时间 默认为 `false` 不禁用
+ * @param {Array}             placeholders      - binding symbol is `<`,    文本框从左到右的placeholder 默认为 `['请选择开始时间', '请选择结束时间']`
+ * @param {String}            modelType         - binding symbol is `<`,    时间展示格式 默认为 'YYYY-MM-DD HH:mm:ss'
+ * @param {Number}            minuteStep        - binding symbol is `<`,    分钟间隔 默认为 1
+ * @param {String}            minView           - binding symbol is `<`,    最小视图 默认为 'minute'
+ * @param {String}            startView         - binding symbol is `<`,    首次打开时的视图 默认为 'day'
+ *
+ * @example
+ * 
+  1、默认的单个时间框
+    <pre>
+      <bp-datetimepicker model="vm.config.model"></bp-datetimepicker>
+    </pre>
+    <pre>
+      this.config = {
+        model: ""
+      };
+    </pre>
+  2、禁用单个时间框
+  <pre>
+    <bp-datetimepicker
+      model="vm.newConfig.model"
+      placeholders="vm.newConfig.placeholders"
+      all-disabled="vm.newConfig.allDisabled"
+    ></bp-datetimepicker>
+  </pre>
+  <pre>
+    this.newConfig = {
+      model: "",
+      placeholders: ['单个时间框'],
+      allDisabled: true
+    };
+  </pre>
+  3、默认的一组时间框（纵向）
+  <pre>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="form-group">
+          <label>纵向时间框排列</label>
+          <bp-datetimepicker
+            type="vm.config.type"
+            start-model="vm.config.startModel"
+            end-model="vm.config.endModel"
+          ></bp-datetimepicker>
+        </div>
+      </div>
+    </div>
+  </pre>
+  <pre>
+    this.config = {
+      type: "range",
+      startModel: "",
+      endModel: ""
+    };
+  </pre>
+  4、默认的一组时间框（横向）
+  <pre>
+    <form class="form-horizontal" novalidate>
+      <div class="form-group">
+        <label class="col-sm-2 control-label">横向时间框排列</label>
+        <div class="col-sm-5">
+          <bp-datetimepicker
+            type="vm.config.type"
+            start-model="vm.config.startModel"
+            end-model="vm.config.endModel"
+          ></bp-datetimepicker>
+        </div>
+      </div>
+    </form>
+  </pre>
+  <pre>
+    this.config = {
+      type: "range",
+      startModel: "",
+      endModel: ""
+    };
+  </pre>
+  5、限制时间范围的时间框
+  <pre>
+    <form class="form-horizontal" novalidate>
+      <div class="form-group">
+        <div class="col-sm-8">
+          <bp-datetimepicker
+            type="vm.config.type"
+            start-model="vm.config.startModel"
+            end-model="vm.config.endModel"
+            min="vm.config.min"
+            max="vm.config.max"
+            placeholders="vm.config.placeholders"
+          ></bp-datetimepicker>
+        </div>
+      </div>
+    </form>
+  </pre>
+  <pre>
+    this.config = {
+      type: "range",
+      startModel: "",
+      endModel: "",
+      min: "2016-7-23 14:29:39", // Date()、时间戳、moment()、"today"
+      max: "today",              // Date()、时间戳、moment()、"today"
+      placeholders: ['启动时间', '结束时间']
+    };
+  </pre>
+  6、全部禁用时间框
+  <pre>
+    <form class="form-horizontal" novalidate>
+      <div class="form-group">
+        <div class="col-sm-8">
+          <bp-datetimepicker
+            type="vm.newConfig.type"
+            start-model="vm.newConfig.startModel"
+            end-model="vm.newConfig.endModel"
+            all-disabled="vm.newConfig.allDisabled"
+          ></bp-datetimepicker>
+        </div>
+      </div>
+    </form>
+  </pre>
+  <pre>
+    this.newConfig = {
+      type: "range",
+      startModel: moment().format('YYYY-MM-DD HH:mm:ss'),
+      endModel: "",
+      allDisabled: true
+    };
+  </pre>
+  7、禁用开始时间框
+  <pre>
+    <form class="form-horizontal" novalidate>
+      <div class="form-group">
+        <div class="col-sm-8">
+          <bp-datetimepicker
+            type="vm.startDisabledConfig.type"
+            start-model="vm.startDisabledConfig.startModel"
+            end-model="vm.startDisabledConfig.endModel"
+            start-disabled="vm.startDisabledConfig.startDisabled"
+            placeholders="vm.startDisabledConfig.placeholders"
+            start-view="vm.startDisabledConfig.startView"
+            min-view="vm.startDisabledConfig.minView"
+            model-type="vm.startDisabledConfig.modelType"
+          ></bp-datetimepicker>
+        </div>
+      </div>
+    </form>
+  </pre>
+  <pre>
+    this.startDisabledConfig = {
+      type: "range",
+      startModel: moment().format('YYYY-MM-DD'),
+      endModel: "",
+      placeholders: ['', '禁用开始时间框'],
+      startDisabled: true,
+      startView: "month",
+      minView: "day",
+      modelType: "YYYY-MM-DD"
+    };
+  </pre>
+  8、禁用结束时间框
+  <pre>
+    <form class="form-horizontal" novalidate>
+      <div class="form-group">
+        <div class="col-sm-8">
+          <bp-datetimepicker
+            type="vm.endDisabledConfig.type"
+            start-model="vm.endDisabledConfig.startModel"
+            end-model="vm.endDisabledConfig.endModel"
+            end-disabled="vm.endDisabledConfig.endDisabled"
+            placeholders="vm.endDisabledConfig.placeholders"
+            start-view="vm.endDisabledConfig.startView"
+            min-view="vm.endDisabledConfig.minView"
+          ></bp-datetimepicker>
+        </div>
+      </div>
+    </form>
+  </pre>
+  <pre>
+    this.endDisabledConfig = {
+      type: "range",
+      startModel: "",
+      endModel: moment().format('YYYY-MM-DD HH:mm:ss'),
+      placeholders: ['禁用结束时间框'],
+      endDisabled: true,
+      startView: "month",
+      minView: "hour",
+    };
+  </pre>
  */
 
 import Component from '../common/component';
@@ -27,7 +229,7 @@ export default class Datetimepicker extends Component {
     this.config = {
       startView: 'day',
       minView: 'minute',
-      minuteStep: 5,
+      minuteStep: 1,
       modelType: 'YYYY-MM-DD HH:mm:ss',
       renderOn: 'BP-RERENDER'
     };

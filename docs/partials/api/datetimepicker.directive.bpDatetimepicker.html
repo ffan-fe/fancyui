@@ -1,0 +1,252 @@
+<a href="https://github.com/{{repo}}/blob/{{sha}}/{{file}}#L{{codeline}}" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">bpDatetimepicker</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">datetimepicker</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>时间选择组件</li>
+<li>支持单个时间框和一组时间框</li>
+</ul>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bp-datetimepicker
+       type="{String}"
+       model="{String}"
+       start-model="{String}"
+       end-model="{String}"
+       min="{String | Number}"
+       max="{String | Number}"
+       all-disabled="{Boolean}"
+       start-disabled="{Boolean}"
+       end-disabled="{Boolean}"
+       placeholders="{Array}"
+       model-type="{String}"
+       minute-step="{Number}"
+       min-view="{String}"
+       start-view="{String}"&gt;
+&lt;/bp-datetimepicker&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>type</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    判断展示单个时间框或一组时间框</li>
+</ul>
+</div></td></tr><tr><td>model</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>=?</code>,   存储单个时间框的值</li>
+</ul>
+</div></td></tr><tr><td>startModel</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>=?</code>,   存储一组时间框的开始时间</li>
+</ul>
+</div></td></tr><tr><td>endModel</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>=?</code>,   存储一组时间框的结束时间</li>
+</ul>
+</div></td></tr><tr><td>min</td><td><a href="" class="label type-hint type-hint-string">String </a><a href="" class="label type-hint type-hint-object"> Number</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    最小值</li>
+</ul>
+</div></td></tr><tr><td>max</td><td><a href="" class="label type-hint type-hint-string">String </a><a href="" class="label type-hint type-hint-object"> Number</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    最大值</li>
+</ul>
+</div></td></tr><tr><td>allDisabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    是否禁用全部 默认为 <code>false</code> 不禁用</li>
+</ul>
+</div></td></tr><tr><td>startDisabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    是否禁用开始时间 默认为 <code>false</code> 不禁用</li>
+</ul>
+</div></td></tr><tr><td>endDisabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    是否禁用结束时间 默认为 <code>false</code> 不禁用</li>
+</ul>
+</div></td></tr><tr><td>placeholders</td><td><a href="" class="label type-hint type-hint-array">Array</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    文本框从左到右的placeholder 默认为 <code>[&#39;请选择开始时间&#39;, &#39;请选择结束时间&#39;]</code></li>
+</ul>
+</div></td></tr><tr><td>modelType</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    时间展示格式 默认为 &#39;YYYY-MM-DD HH:mm:ss&#39;</li>
+</ul>
+</div></td></tr><tr><td>minuteStep</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    分钟间隔 默认为 1</li>
+</ul>
+</div></td></tr><tr><td>minView</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    最小视图 默认为 &#39;minute&#39;</li>
+</ul>
+</div></td></tr><tr><td>startView</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is <code>&lt;</code>,    首次打开时的视图 默认为 &#39;day&#39;</li>
+</ul>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><p>1、默认的单个时间框
+<pre class="prettyprint linenums">
+  &lt;bp-datetimepicker model="vm.config.model"&gt;&lt;/bp-datetimepicker&gt;
+</pre>
+<pre class="prettyprint linenums">
+  this.config = {
+    model: ""
+  };
+</pre>
+2、禁用单个时间框
+<pre class="prettyprint linenums">
+&lt;bp-datetimepicker
+  model="vm.newConfig.model"
+  placeholders="vm.newConfig.placeholders"
+  all-disabled="vm.newConfig.allDisabled"
+&gt;&lt;/bp-datetimepicker&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.newConfig = {
+  model: "",
+  placeholders: ['单个时间框'],
+  allDisabled: true
+};
+</pre>
+3、默认的一组时间框（纵向）
+<pre class="prettyprint linenums">
+&lt;div class="row"&gt;
+  &lt;div class="col-xs-6"&gt;
+    &lt;div class="form-group"&gt;
+      &lt;label&gt;纵向时间框排列&lt;/label&gt;
+      &lt;bp-datetimepicker
+        type="vm.config.type"
+        start-model="vm.config.startModel"
+        end-model="vm.config.endModel"
+      &gt;&lt;/bp-datetimepicker&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.config = {
+  type: "range",
+  startModel: "",
+  endModel: ""
+};
+</pre>
+4、默认的一组时间框（横向）
+<pre class="prettyprint linenums">
+&lt;form class="form-horizontal" novalidate&gt;
+  &lt;div class="form-group"&gt;
+    &lt;label class="col-sm-2 control-label"&gt;横向时间框排列&lt;/label&gt;
+    &lt;div class="col-sm-5"&gt;
+      &lt;bp-datetimepicker
+        type="vm.config.type"
+        start-model="vm.config.startModel"
+        end-model="vm.config.endModel"
+      &gt;&lt;/bp-datetimepicker&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.config = {
+  type: "range",
+  startModel: "",
+  endModel: ""
+};
+</pre>
+5、限制时间范围的时间框
+<pre class="prettyprint linenums">
+&lt;form class="form-horizontal" novalidate&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="col-sm-8"&gt;
+      &lt;bp-datetimepicker
+        type="vm.config.type"
+        start-model="vm.config.startModel"
+        end-model="vm.config.endModel"
+        min="vm.config.min"
+        max="vm.config.max"
+        placeholders="vm.config.placeholders"
+      &gt;&lt;/bp-datetimepicker&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.config = {
+  type: "range",
+  startModel: "",
+  endModel: "",
+  min: "2016-7-23 14:29:39", // Date()、时间戳、moment()、"today"
+  max: "today",              // Date()、时间戳、moment()、"today"
+  placeholders: ['启动时间', '结束时间']
+};
+</pre>
+6、全部禁用时间框
+<pre class="prettyprint linenums">
+&lt;form class="form-horizontal" novalidate&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="col-sm-8"&gt;
+      &lt;bp-datetimepicker
+        type="vm.newConfig.type"
+        start-model="vm.newConfig.startModel"
+        end-model="vm.newConfig.endModel"
+        all-disabled="vm.newConfig.allDisabled"
+      &gt;&lt;/bp-datetimepicker&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.newConfig = {
+  type: "range",
+  startModel: moment().format('YYYY-MM-DD HH:mm:ss'),
+  endModel: "",
+  allDisabled: true
+};
+</pre>
+7、禁用开始时间框
+<pre class="prettyprint linenums">
+&lt;form class="form-horizontal" novalidate&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="col-sm-8"&gt;
+      &lt;bp-datetimepicker
+        type="vm.startDisabledConfig.type"
+        start-model="vm.startDisabledConfig.startModel"
+        end-model="vm.startDisabledConfig.endModel"
+        start-disabled="vm.startDisabledConfig.startDisabled"
+        placeholders="vm.startDisabledConfig.placeholders"
+        start-view="vm.startDisabledConfig.startView"
+        min-view="vm.startDisabledConfig.minView"
+        model-type="vm.startDisabledConfig.modelType"
+      &gt;&lt;/bp-datetimepicker&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.startDisabledConfig = {
+  type: "range",
+  startModel: moment().format('YYYY-MM-DD'),
+  endModel: "",
+  placeholders: ['', '禁用开始时间框'],
+  startDisabled: true,
+  startView: "month",
+  minView: "day",
+  modelType: "YYYY-MM-DD"
+};
+</pre>
+8、禁用结束时间框
+<pre class="prettyprint linenums">
+&lt;form class="form-horizontal" novalidate&gt;
+  &lt;div class="form-group"&gt;
+    &lt;div class="col-sm-8"&gt;
+      &lt;bp-datetimepicker
+        type="vm.endDisabledConfig.type"
+        start-model="vm.endDisabledConfig.startModel"
+        end-model="vm.endDisabledConfig.endModel"
+        end-disabled="vm.endDisabledConfig.endDisabled"
+        placeholders="vm.endDisabledConfig.placeholders"
+        start-view="vm.endDisabledConfig.startView"
+        min-view="vm.endDisabledConfig.minView"
+      &gt;&lt;/bp-datetimepicker&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/form&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.endDisabledConfig = {
+  type: "range",
+  startModel: "",
+  endModel: moment().format('YYYY-MM-DD HH:mm:ss'),
+  placeholders: ['禁用结束时间框'],
+  endDisabled: true,
+  startView: "month",
+  minView: "hour",
+};
+</pre>
+</div></div>
+</div>

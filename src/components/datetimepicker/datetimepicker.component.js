@@ -4,6 +4,7 @@
 
 import controller from './datetimepicker';
 import template from './template.html';
+import './datetimepicker.less';
 
 'use strict';
 
