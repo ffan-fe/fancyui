@@ -1,0 +1,67 @@
+<fieldset ng-disabled="{{controller.defaultConfig.startDisabled}}">
+  <div class="dropdown form-group">
+    <a class="dropdown-toggle"
+       id="{{controller.startDropdownSelector}}"
+       role="button"
+       data-toggle="dropdown"
+       data-target="#" href="#">
+      <div class="input-group date">
+        <input type="text"
+               class="form-control"
+               placeholder="{{controller.defaultConfig.startPlaceholder}}"
+               data-ng-model="controller.startModel"
+               data-ng-click="controller.renderOnClick()"
+        />
+        <span class="input-group-addon" 
+              data-ng-click="controller.renderOnClick()">
+          <i class="glyphicon glyphicon-calendar"></i>
+        </span>
+      </div>
+    </a>
+    <ul class="dropdown-menu" 
+        role="menu" 
+        aria-labelledby="dLabel" 
+        ng-if="!controller.defaultConfig.startDisabled">
+      <datetimepicker data-ng-model="controller.startModel"
+                      data-datetimepicker-config="{{controller.startConfig}}"
+                      data-before-render="controller.beforeRenderStartDate($view, $dates, $leftDate, $upDate, $rightDate)"
+      >
+      </datetimepicker>
+    </ul>
+  </div>
+</fieldset>
+<fieldset ng-disabled="controller.defaultConfig.endDisabled">
+  <div class="dropdown form-group"
+       ng-if="controller.endDropdownSelector">
+    <a class="dropdown-toggle"
+       id="{{controller.endDropdownSelector}}"
+       role="button"
+       data-toggle="dropdown"
+       data-target="#"
+       href="#"
+    >
+      <div class="input-group date">
+        <input type="text"
+               class="form-control"
+               placeholder="{{controller.defaultConfig.endPlaceholder}}"
+               data-ng-model="controller.endModel"
+               data-ng-click="controller.renderOnClick()"
+        />
+        <span class="input-group-addon" 
+              data-ng-click="controller.renderOnClick()">
+          <i class="glyphicon glyphicon-calendar"></i>
+        </span>
+      </div>
+    </a>
+    <ul class="dropdown-menu"
+        role="menu"
+        aria-labelledby="dLabel"
+        ng-if="!controller.defaultConfig.endDisabled">
+      <datetimepicker data-ng-model="controller.endModel"
+                      data-datetimepicker-config="{{controller.endConfig}}"
+                      data-before-render="controller.beforeRenderEndDate($view, $dates, $leftDate, $upDate, $rightDate)"
+      >
+      </datetimepicker>
+    </ul>
+  </div>
+</fieldset>
