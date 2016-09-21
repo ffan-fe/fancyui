@@ -2,10 +2,9 @@
  * Datetimepicker component entry
  * @author name
  */
-import 'bootstrap';
-import 'angular-bootstrap-datetimepicker';
-import 'angular-bootstrap-datetimepicker/src/css/datetimepicker.css';
-import 'angular-bootstrap-datetimepicker/src/js/datetimepicker.templates';
+import 'bp-datetimepicker';
+import 'bp-datetimepicker/src/css/datetimepicker.css';
+import 'bp-datetimepicker/src/js/datetimepicker.templates';
 import component from './datetimepicker.component';
 import moment from 'moment';
 moment.locale('zh-cn');

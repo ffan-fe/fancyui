@@ -1,7 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-
 import datetimepicker from '../../src/components/datetimepicker';
+//  import {Datetimepicker} from '../../dist/anaheim';
 import template from './template.html';
 import controller from './controller';
 
