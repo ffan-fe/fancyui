@@ -5,7 +5,8 @@ import ffanCheckboxGroup from './src/components/checkbox.group'
 import ffanRadiobox from './src/components/radiobox';
 import ffanRadioboxGroup from './src/components/radiobox.group';
 import ffanCitySelector from './src/components/city.selector';
-import ffanTransfer from './src/components/transfer'
+import ffanTransfer from './src/components/transfer';
+import ffanDatetimepicker from './src/components/datetimepicker';
 
 'use strict';
 
@@ -17,5 +18,6 @@ export let Radiobox = ffanRadiobox;
 export let RadioboxGroup = ffanRadioboxGroup;
 export let CitySelector = ffanCitySelector;
 export let Transfer = ffanTransfer;
+export let Datetimepicker = ffanDatetimepicker;
 
 

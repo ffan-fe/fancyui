@@ -59,6 +59,15 @@ NG_DOCS={
     },
     {
       "section": "api",
+      "id": "datetimepicker.directive:bpDatetimepicker",
+      "shortName": "bpDatetimepicker",
+      "type": "directive",
+      "moduleName": "datetimepicker",
+      "shortDescription": "",
+      "keywords": "api binding datetimepicker directive disabled end-model enddisabled endmodel github io max min minutestep minview model modeltype range separator start-model startdisabled startmodel startview symbol type vm yyyy-mm-dd"
+    },
+    {
+      "section": "api",
       "id": "radiobox.directive:bpRadio",
       "shortName": "bpRadio",
       "type": "directive",

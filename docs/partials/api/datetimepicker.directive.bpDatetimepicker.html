@@ -1,0 +1,94 @@
+<a href="https://github.com/{{repo}}/blob/{{sha}}/{{file}}#L{{codeline}}" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">bpDatetimepicker</code>
+<div><span class="hint">directive in module <code ng:non-bindable="">datetimepicker</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>时间组件</li>
+<li>提供单个时间或者范围时间</li>
+</ul>
+</div></div>
+<h2 id="usage">Usage</h2>
+<div class="usage">as element:<pre class="prettyprint linenums">&lt;bp-datetimepicker
+       type="{String}"
+       model="{String}"
+       start-model="{String}"
+       end-model="{String}"
+       min="{String}"
+       max="{String}"
+       start-view="{String}"
+       min-view="{String}"
+       minute-step="{Number}"
+       model-type="{String}"
+       disabled
+       start-disabled="{Boolean}"
+       end-disabled="{Boolean}"
+       separator="{String}"&gt;
+&lt;/bp-datetimepicker&gt;</pre>
+<h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>type</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is @, 是单个时间组件还是时间范围组件</li>
+</ul>
+</div></td></tr><tr><td>model</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is =?, 单个时间值</li>
+</ul>
+</div></td></tr><tr><td>startModel</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is =?, 范围时间组件，开始时间值</li>
+</ul>
+</div></td></tr><tr><td>endModel</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is =?, 范围时间组件，结束时间值</li>
+</ul>
+</div></td></tr><tr><td>min</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is @, 最小时间限制</li>
+</ul>
+</div></td></tr><tr><td>max</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is @, 最大时间限制</li>
+</ul>
+</div></td></tr><tr><td>startView</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is @, 开始时间视图</li>
+</ul>
+</div></td></tr><tr><td>minView</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is @, 最小时间视图</li>
+</ul>
+</div></td></tr><tr><td>minuteStep</td><td><a href="" class="label type-hint type-hint-number">Number</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is &lt;, 分钟间隔</li>
+</ul>
+</div></td></tr><tr><td>modelType</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is @, 显示的格式 YYYY-MM-DD 还是其他，默认到秒</li>
+</ul>
+</div></td></tr><tr><td>disabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is &lt;, Disabled状态</li>
+</ul>
+</div></td></tr><tr><td>startDisabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is &lt;, 开始时间Disabled</li>
+</ul>
+</div></td></tr><tr><td>endDisabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is &lt;, 结束时间Disabled</li>
+</ul>
+</div></td></tr><tr><td>separator</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is @, 范围时间分隔符，默认&#39;-&#39;</li>
+</ul>
+</div></td></tr></tbody></table></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><pre class="prettyprint linenums">
+&lt;bp-datetimepikcer
+ model="vm.model"
+&gt;&lt;/bp-datetimepkcer&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.model = '';
+</pre>
+<pre class="prettyprint linenums">
+&lt;bp-datetimepikcer
+ type="range"
+ start-model="vm.startModel"
+ end-model="vm.endModel"
+&gt;&lt;/bp-datetimepkcer&gt;
+</pre>
+<pre class="prettyprint linenums">
+this.startModel = '';
+this.endModel = '';
+</pre>
+更多例子的<a href="https://ffan-fe.github.io/#/ui/datetimepicker">传送门</a></p>
+</div></div>
+</div>
