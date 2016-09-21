@@ -45,7 +45,7 @@ export default class DatetimepickerTestController {
      */
      this.html4 = $sce.trustAsHtml(Prism.highlight(data['html4'], Prism.languages.html));
      this.js4 = $sce.trustAsHtml(Prism.highlight(data['js4'], Prism.languages.javascript));
-    
+
     /**
      * 自定义
      */
@@ -54,4 +54,5 @@ export default class DatetimepickerTestController {
      this.js5 = $sce.trustAsHtml(Prism.highlight(data['js5'], Prism.languages.javascript));
 
   }
+  
 }

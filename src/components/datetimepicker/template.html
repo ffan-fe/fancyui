@@ -11,10 +11,19 @@
         data-target="#"
         >
         <div class="input-group date" data-ng-click="controller.startDateOnSetTime()">
-          <input type="text"
+          <input
+                data-ng-if="controller.type != 'range'"
+                type="text"
                 class="form-control"
                 placeholder="{{controller.config.bp.placeholders.startPlaceholder}}"
-                data-ng-model="controller.startModel"
+                data-ng-model="controller.model"
+          />
+          <input
+                 data-ng-if="controller.type == 'range'"
+                 type="text"
+                 class="form-control"
+                 placeholder="{{controller.config.bp.placeholders.startPlaceholder}}"
+                 data-ng-model="controller.startModel"
           />
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-calendar"></i>
@@ -24,8 +33,17 @@
       <ul class="dropdown-menu"
           role="menu"
           aria-labelledby="dLabel"
-          ng-if="!controller.config.bp.startDisabled">
-        <datetimepicker data-ng-model="controller.startModel"
+          data-ng-if="!controller.config.bp.startDisabled">
+        <datetimepicker
+                        data-ng-if="controller.type != 'range'"
+                        data-ng-model="controller.model"
+                        config="{{controller.startConfig}}"
+                        data-before-render="controller.beforeRenderStartDate($view, $dates)"
+        >
+        </datetimepicker>
+        <datetimepicker
+                        data-ng-if="controller.type == 'range'"
+                        data-ng-model="controller.startModel"
                         config="{{controller.startConfig}}"
                         data-before-render="controller.beforeRenderStartDate($view, $dates)"
         >
@@ -35,13 +53,13 @@
   </fieldset>
 <!-- /开始时间 -->
   <label class="bp-datetimepicker-line"
-        ng-if="controller.type == 'range'">{{controller.separator ? controller.separator : '-'}}</label>
+        data-ng-if="controller.type == 'range'">{{controller.separator ? controller.separator : '-'}}</label>
 
   <!-- 结束时间 -->
   <fieldset ng-disabled="controller.defaultConfig.endDisabled"
             class="bp-datetimepicker-fieldset bp-datetimepicker-end">
     <div class="dropdown"
-        ng-if="controller.type == 'range'">
+        data-ng-if="controller.type == 'range'">
       <a class="dropdown-toggle"
          id="{{controller.endConfig.dropdownSelector.slice(1,15)}}"
         role="button"

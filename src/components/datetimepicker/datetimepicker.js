@@ -93,7 +93,6 @@ export default class Datetimepicker extends Component {
         endDisabled: false
       }
     };
-
     this.extendConfig();
     this.check();
     this.startConfig = angular.copy(angular.extend(this.config.base, {
@@ -104,6 +103,7 @@ export default class Datetimepicker extends Component {
       dropdownSelector: '#end' + Math.random().toString(36).substr(2, 9),
       renderOn: 'end-date-changed'
     }));
+
   }
 
   /**
@@ -128,6 +128,8 @@ export default class Datetimepicker extends Component {
       }
     });
   }
+
+
 
   /**
    * 一个时间选择框时
