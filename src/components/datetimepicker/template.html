@@ -1,61 +1,22 @@
-<div>
-  <fieldset ng-disabled="{{controller.defaultConfig.startDisabled}}"
-            ng-class="{'bp-datetimepicker-start': controller.endDropdownSelector,
-                  'bp-datetimepicker-fieldset': controller.endDropdownSelector,}">
+<div class="bp-datetimepicker">
+  <!-- 开始时间 -->
+  <fieldset ng-disabled="{{controller.config.bp.startDisabled}}"
+            ng-class="{'bp-datetimepicker-start': controller.type == 'range',
+                  'bp-datetimepicker-fieldset': controller.type == 'range',}">
     <div class="dropdown">
       <a class="dropdown-toggle"
-        id="{{controller.startDropdownSelector}}"
-        role="button"
-        data-toggle="dropdown"
-        data-target="#" 
-        href="javascript:;">
-        <div class="input-group date">
-          <input type="text"
-                class="form-control"
-                placeholder="{{controller.defaultConfig.startPlaceholder}}"
-                data-ng-model="controller.startModel"
-                data-ng-click="controller.renderOnClick()"
-          />
-          <span class="input-group-addon" 
-                data-ng-click="controller.renderOnClick()">
-            <i class="glyphicon glyphicon-calendar"></i>
-          </span>
-        </div>
-      </a>
-      <ul class="dropdown-menu" 
-          role="menu" 
-          aria-labelledby="dLabel" 
-          ng-if="!controller.defaultConfig.startDisabled">
-        <datetimepicker data-ng-model="controller.startModel"
-                        data-datetimepicker-config="{{controller.startConfig}}"
-                        data-before-render="controller.beforeRenderStartDate($view, $dates, $leftDate, $upDate, $rightDate)"
-        >
-        </datetimepicker>
-      </ul>
-    </div>
-  </fieldset>
-  <label class="bp-datetimepicker-line"
-        ng-if="controller.endDropdownSelector">-</label>
-  <fieldset ng-disabled="controller.defaultConfig.endDisabled"
-            class="bp-datetimepicker-fieldset bp-datetimepicker-end">
-    <div class="dropdown"
-        ng-if="controller.endDropdownSelector">
-      <a class="dropdown-toggle"
-        id="{{controller.endDropdownSelector}}"
+        id="{{controller.startConfig.dropdownSelector.slice(1,15)}}"
         role="button"
         data-toggle="dropdown"
         data-target="#"
-        href="javascript:;"
-      >
-        <div class="input-group date">
+        >
+        <div class="input-group date" data-ng-click="controller.startDateOnSetTime()">
           <input type="text"
                 class="form-control"
-                placeholder="{{controller.defaultConfig.endPlaceholder}}"
-                data-ng-model="controller.endModel"
-                data-ng-click="controller.renderOnClick()"
+                placeholder="{{controller.config.bp.placeholders.startPlaceholder}}"
+                data-ng-model="controller.startModel"
           />
-          <span class="input-group-addon" 
-                data-ng-click="controller.renderOnClick()">
+          <span class="input-group-addon">
             <i class="glyphicon glyphicon-calendar"></i>
           </span>
         </div>
@@ -63,13 +24,52 @@
       <ul class="dropdown-menu"
           role="menu"
           aria-labelledby="dLabel"
-          ng-if="!controller.defaultConfig.endDisabled">
-        <datetimepicker data-ng-model="controller.endModel"
-                        data-datetimepicker-config="{{controller.endConfig}}"
-                        data-before-render="controller.beforeRenderEndDate($view, $dates, $leftDate, $upDate, $rightDate)"
+          ng-if="!controller.config.bp.startDisabled">
+        <datetimepicker data-ng-model="controller.startModel"
+                        config="{{controller.startConfig}}"
+                        data-before-render="controller.beforeRenderStartDate($view, $dates)"
         >
         </datetimepicker>
       </ul>
     </div>
   </fieldset>
+<!-- /开始时间 -->
+  <label class="bp-datetimepicker-line"
+        ng-if="controller.type == 'range'">{{controller.separator ? controller.separator : '-'}}</label>
+
+  <!-- 结束时间 -->
+  <fieldset ng-disabled="controller.defaultConfig.endDisabled"
+            class="bp-datetimepicker-fieldset bp-datetimepicker-end">
+    <div class="dropdown"
+        ng-if="controller.type == 'range'">
+      <a class="dropdown-toggle"
+         id="{{controller.endConfig.dropdownSelector.slice(1,15)}}"
+        role="button"
+        data-toggle="dropdown"
+        data-target="#"
+      >
+        <div class="input-group date"  data-ng-click="controller.endDateOnSetTime()">
+          <input type="text"
+                class="form-control"
+                placeholder="{{controller.config.bp.placeholders.endPlaceholder}}"
+                data-ng-model="controller.endModel"
+          />
+          <span class="input-group-addon">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </span>
+        </div>
+      </a>
+      <ul class="dropdown-menu"
+          role="menu"
+          aria-labelledby="dLabel"
+          ng-if="!controller.config.bp.endDisabled">
+        <datetimepicker data-ng-model="controller.endModel"
+                        config="{{controller.endConfig}}"
+                        data-before-render="controller.beforeRenderEndDate($view, $dates)"
+        >
+        </datetimepicker>
+      </ul>
+    </div>
+  </fieldset>
+  <!-- /结束时间 -->
 </div>

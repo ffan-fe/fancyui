@@ -1,259 +1,88 @@
+<!--默认时间窗 -->
 <section>
-  <h3>默认的单个时间框</h3>
+  <h3>默认的时间窗</h3>
   <bp-datetimepicker
-    model="vm.config.model"
-  ></bp-datetimepicker>
-  <h4>HTML</h4>
-  <pre><code class="language-html" ng-bind-html="vm.part1Html"></code></pre>
-  <h4>JS</h4>
-  <pre><code class="language-javascript" ng-bind-html="vm.part1JS"></code></pre>
+    model="vm.model"
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html1"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js1"></code></pre>
 </section>
+<!--默认时间窗/ -->
+
+<!--范围时间 -->
 <section>
-  <h3>禁用单个时间框</h3>
+  <h3>范围时间窗</h3>
+  <span style="font-size:11px" >(会自动限制前者时间不能大于后者时间,后者时间不能小于前者时间)</span>
   <bp-datetimepicker
-    model="vm.newConfig.model"
-    placeholders="vm.newConfig.placeholders"
-    all-disabled="vm.newConfig.allDisabled"
-  ></bp-datetimepicker>
-  <h4>HTML</h4>
-  <pre><code class="language-html" ng-bind-html="vm.part2Html"></code></pre>
-  <h4>JS</h4>
-  <pre><code class="language-javascript" ng-bind-html="vm.part2JS"></code></pre>
+   type="range"
+   start-model="vm.startModel2"
+   end-model="vm.endModel2"
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html2"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js2"></code></pre>
 </section>
+<!--范围时间 -->
+
+<!-- 只能选月-->
 <section>
-  <h3>默认的一组时间框（纵向）</h3>
-  <div class="row">
-    <div class="col-xs-6">
-      <div class="form-group">
-        <label>纵向时间框排列</label>
-        <bp-datetimepicker
-          type="vm.config.type"
-          start-model="vm.config.startModel"
-          end-model="vm.config.endModel"
-        ></bp-datetimepicker>
-      </div>
-    </div>
-  </div>
-  <h4>HTML</h4>
-  <pre><code class="language-html" ng-bind-html="vm.part3Html"></code></pre>
-  <h4>JS</h4>
-  <pre><code class="language-javascript" ng-bind-html="vm.part3JS"></code></pre>
+  <h3>只能选择月</h3>
+  <bp-datetimepicker
+    type="range"
+    model-type="YYYY-MM"
+    start-model="vm.startModel3"
+    end-model="vm.endModel3"
+    start-view="month"
+    min-View="month"
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html3"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js3"></code></pre>
 </section>
+<!--只能选月 -->
+
+<!-- 最大时间 / 最小时间 -->
 <section>
-  <h3>默认的一组时间框（横向）</h3>
-  <form class="form-horizontal" novalidate>
-    <div class="form-group">
-      <label class="col-sm-2 control-label">横向时间框排列</label>
-      <div class="col-sm-6">
-        <bp-datetimepicker
-          type="vm.config.type"
-          start-model="vm.config.startModel"
-          end-model="vm.config.endModel"
-        ></bp-datetimepicker>
-      </div>
-    </div>
-  </form>
-  <h4>HTML</h4>
-  <pre><code class="language-html" ng-bind-html="vm.part4Html"></code></pre>
-  <h4>JS</h4>
-  <pre><code class="language-javascript" ng-bind-html="vm.part4JS"></code></pre>
+  <h3>最大时间和最小时间</h3>
+  <bp-datetimepicker
+    type="range"
+    start-model="vm.startModel3"
+    end-model="vm.endModel3"
+    min="2016-09-09 09:09:00"
+    max="2016-09-21 09:09:00"
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html4"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js4"></code></pre>
 </section>
+<!-- 最大时间 / 最小时间 -->
+
+<!--自定义配置 -->
 <section>
-  <h3>限制时间范围的时间框</h3>
-  <form class="form-horizontal" novalidate>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <bp-datetimepicker
-          type="vm.config.type"
-          start-model="vm.config.startModel"
-          end-model="vm.config.endModel"
-          min="vm.config.min"
-          max="vm.config.max"
-          placeholders="vm.config.placeholders"
-        ></bp-datetimepicker>
-      </div>
-    </div>
-  </form>
-  <h4>HTML</h4>
-  <pre><code class="language-html" ng-bind-html="vm.part5Html"></code></pre>
-  <h4>JS</h4>
-  <pre><code class="language-javascript" ng-bind-html="vm.part5JS"></code></pre>
+  <h3>自定义一些配置</h3>
+  <bp-datetimepicker
+    type="range"
+    start-model="vm.startModel"
+    end-model="vm.endModel"
+    start-disabled="true"
+    minute-step="10"
+    separator="至 "
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html5"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js5"></code></pre>
 </section>
-<section>
-  <h3>全部禁用时间框</h3>
-  <form class="form-horizontal" novalidate>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <bp-datetimepicker
-          type="vm.newConfig.type"
-          start-model="vm.newConfig.startModel"
-          end-model="vm.newConfig.endModel"
-          all-disabled="vm.newConfig.allDisabled"
-        ></bp-datetimepicker>
-      </div>
-    </div>
-  </form>
-  <h4>HTML</h4>
-  <pre><code class="language-html" ng-bind-html="vm.part6Html"></code></pre>
-  <h4>JS</h4>
-  <pre><code class="language-javascript" ng-bind-html="vm.part6JS"></code></pre>
-</section>
-<section>
-  <h3>禁用开始时间框</h3>
-  <form class="form-horizontal" novalidate>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <bp-datetimepicker
-          type="vm.startDisabledConfig.type"
-          start-model="vm.startDisabledConfig.startModel"
-          end-model="vm.startDisabledConfig.endModel"
-          start-disabled="vm.startDisabledConfig.startDisabled"
-          placeholders="vm.startDisabledConfig.placeholders"
-          start-view="vm.startDisabledConfig.startView"
-          min-view="vm.startDisabledConfig.minView"
-          model-type="vm.startDisabledConfig.modelType"
-        ></bp-datetimepicker>
-      </div>
-    </div>
-  </form>
-  <h4>HTML</h4>
-  <pre><code class="language-html" ng-bind-html="vm.part7Html"></code></pre>
-  <h4>JS</h4>
-  <pre><code class="language-javascript" ng-bind-html="vm.part7JS"></code></pre>
-</section>
-<section>
-  <h3>禁用结束时间框</h3>
-  <form class="form-horizontal" novalidate>
-    <div class="form-group">
-      <div class="col-sm-8">
-        <bp-datetimepicker
-          type="vm.endDisabledConfig.type"
-          start-model="vm.endDisabledConfig.startModel"
-          end-model="vm.endDisabledConfig.endModel"
-          end-disabled="vm.endDisabledConfig.endDisabled"
-          placeholders="vm.endDisabledConfig.placeholders"
-          start-view="vm.endDisabledConfig.startView"
-          min-view="vm.endDisabledConfig.minView"
-        ></bp-datetimepicker>
-      </div>
-    </div>
-  </form>
-  <h4>HTML</h4>
-  <pre><code class="language-html" ng-bind-html="vm.part8Html"></code></pre>
-  <h4>JS</h4>
-  <pre><code class="language-javascript" ng-bind-html="vm.part8JS"></code></pre>
-</section>
-<section>
-  <h2>属性</h2>
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>属性名</th>
-        <th>类型</th>
-        <th>说明</th>
-        <th>可选值</th>
-        <th>默认值</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>type</td>
-        <td>String</td>
-        <td>类型，单个时间框或一组时间框</td>
-        <td>空 | "range"</td>
-        <td>空</td>
-      </tr>
-      <tr>
-        <td>model</td>
-        <td>String</td>
-        <td>存储单个时间框的值</td>
-        <td></td>
-        <td>空</td>
-      </tr>
-      <tr>
-        <td>startModel</td>
-        <td>String</td>
-        <td>存储一组时间框的开始时间</td>
-        <td></td>
-        <td>空</td>
-      </tr>
-      <tr>
-        <td>endModel</td>
-        <td>String</td>
-        <td>存储一组时间框的结束时间</td>
-        <td></td>
-        <td>空</td>
-      </tr>
-      <tr>
-        <td>min</td>
-        <td>String | Number</td>
-        <td>最小值</td>
-        <td>Date()、时间戳、moment()、"today"</td>
-        <td>空</td>
-      </tr>
-      <tr>
-        <td>max</td>
-        <td>String | Number</td>
-        <td>最大值</td>
-        <td>Date()、时间戳、moment()、"today"</td>
-        <td>空</td>
-      </tr>
-      <tr>
-        <td>allDisabled</td>
-        <td>Boolean</td>
-        <td>是否禁用全部</td>
-        <td>true | false</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>startDisabled</td>
-        <td>Boolean</td>
-        <td>是否禁用开始时间</td>
-        <td>true | false</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>endDisabled</td>
-        <td>Boolean</td>
-        <td>是否禁用结束时间</td>
-        <td>true | false</td>
-        <td>false</td>
-      </tr>
-      <tr>
-        <td>placeholders</td>
-        <td>Array</td>
-        <td>文本框从左到右的placeholder</td>
-        <td>['第一个', '第二个'] | ['第一个'] | ['', '第二个']</td>
-        <td>['请选择开始时间', '请选择结束时间']</td>
-      </tr>
-      <tr>
-        <td>modelType</td>
-        <td>String</td>
-        <td>时间展示格式</td>
-        <td>Date()、moment()</td>
-        <td>'YYYY-MM-DD HH:mm:ss'</td>
-      </tr>
-      <tr>
-        <td>minuteStep</td>
-        <td>Number</td>
-        <td>分钟间隔</td>
-        <td></td>
-        <td>1</td>
-      </tr>
-      <tr>
-        <td>minView</td>
-        <td>String</td>
-        <td>最小视图</td>
-        <td>'year'、'month'、'day'、'hour'、'minute'</td>
-        <td>'minute'</td>
-      </tr>
-      <tr>
-        <td>startView</td>
-        <td>String</td>
-        <td>首次打开时的视图</td>
-        <td>'year'、'month'、'day'、'hour'、'minute'</td>
-        <td>'day'</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
+<!-- /自定义一些配置 -->
+
+

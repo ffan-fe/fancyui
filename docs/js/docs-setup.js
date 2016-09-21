@@ -64,7 +64,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "datetimepicker",
       "shortDescription": "",
-      "keywords": "all-disabled alldisabled api binding class col-sm-2 col-sm-5 col-sm-8 col-xs-6 config control-label datetimepicker day directive end-disabled end-model enddisabled enddisabledconfig endmodel false form-group form-horizontal format hh hour liuchang max min min-view minute minutestep minview model model-type modeltype moment month newconfig novalidate number placeholders range row start-disabled start-model start-view startdisabled startdisabledconfig startmodel startview symbol today true type vm yyyy-mm-dd"
+      "keywords": "api binding datetimepicker directive disabled end-model enddisabled endmodel github io max min minutestep minview model modeltype range separator start-model startdisabled startmodel startview symbol type vm yyyy-mm-dd"
     },
     {
       "section": "api",

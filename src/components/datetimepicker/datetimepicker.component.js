@@ -1,5 +1,21 @@
+
 /**
- * Datetimepicker component define
+ * @type {String}
+ * @property {String}   type      	  - binding symbol is @, 是单个时间组件还是时间范围组件
+ * @property {String}   model       	- binding symbol is =?, 单个时间值
+ * @property {String}   startModel    - binding symbol is =?, 范围时间组件，开始时间值
+ * @property {String}   endModel     	- binding symbol is =?, 范围时间组件，结束时间值
+ * @property {String}   min       		- binding symbol is @, 最小时间限制
+ * @property {String}   max   			  - binding symbol is @, 最大时间限制
+ * @property {String}   startView  		- binding symbol is @, 开始时间视图
+ * @property {String}   minView       - binding symbol is @, 最小时间视图
+ * @property {Number}   minuteStep    - binding symbol is <, 分钟间隔
+ * @property {String}   modelType     - binding symbol is @, 显示的格式 YYYY-MM-DD 还是其他，默认到秒
+ * @property {Boolean}  disabled      - binding symbol is <, Disabled状态
+ * @property {Boolean}  startDisabled - binding symbol is <, 开始时间Disabled
+ * @property {Boolean}  endDisabled   - binding symbol is <, 结束时间Disabled
+ * @property {String}   separator     - binding symbol is @, 范围时间分隔符，默认'-'
+ *
  */
 
 import controller from './datetimepicker';
@@ -14,10 +30,10 @@ let componentDefine = {
   controllerAs: 'controller',
   bindings: {
     /**
-     * 判断展示时间框的个数
+     * 单个时间框/还是时间范围
      * @type {String}
      */
-    type: '<',
+    type: '@',
     /**
      * 单个时间框的model
      * @type {String}
@@ -37,22 +53,22 @@ let componentDefine = {
      * 最小开始时间 (毫秒)
      * @type {Number}
      */
-    min: '<',
+    min: '@',
     /**
      * 最大结束时间 (毫秒)
      * @type {Number}
      */
-    max: '<',
+    max: '@',
     /**
      * 首次打开时的视图
      * @type {String}
      */
-    startView: '<',
+    startView: '@',
     /**
      * 最小视图
      * @type {String}
      */
-    minView: '<',
+    minView: '@',
     /**
      * 分钟间隔
      * @type {Number}
@@ -62,7 +78,7 @@ let componentDefine = {
      * 时间展示格式
      * @type {String}
      */
-    modelType: '<',
+    modelType: '@',
     /**
      * 从左到右时间框提示文案
      * @type {Array}
@@ -71,7 +87,7 @@ let componentDefine = {
     /**
      * 所有的时间框禁用状态
      */
-    allDisabled: '<',
+    disabled: '<',
     /**
      * 开始时间框禁用状态
      */
@@ -80,6 +96,10 @@ let componentDefine = {
      * 结束时间框禁用状态
      */
     endDisabled: '<',
+    /**
+     * 分隔符
+     */
+    separator: '@'
   }
 };
 
