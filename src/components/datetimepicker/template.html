@@ -54,9 +54,8 @@
 <!-- /开始时间 -->
   <label class="bp-datetimepicker-line"
         data-ng-if="controller.type == 'range'">{{controller.separator ? controller.separator : '-'}}</label>
-
   <!-- 结束时间 -->
-  <fieldset ng-disabled="controller.defaultConfig.endDisabled"
+  <fieldset ng-disabled="controller.config.bp.endDisabled"
             class="bp-datetimepicker-fieldset bp-datetimepicker-end">
     <div class="dropdown"
         data-ng-if="controller.type == 'range'">
