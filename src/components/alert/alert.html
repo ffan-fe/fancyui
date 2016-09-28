@@ -1,0 +1,23 @@
+<div class="modal fade in">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" ng-click="cancel ? cancel() : ok()"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title">{{title}}</h4>
+      </div>
+      <div class="modal-body">
+        <div class="well" ng-if="hint">
+          <ul>
+            <li ng-repeat="item in hint">{{item}}</li>
+          </ul>
+        </div>
+        <p ng-if="content">{{content}}</p>
+        <p ng-if="contents" ng-repeat="content in contents">{{content}}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn bp-btn-primary" ng-show="ok" ng-click="ok()">确定</button>
+        <button type="button" class="btn bp-btn-default" ng-show="cancel" ng-click="cancel()">取消</button>
+      </div>
+    </div>
+  </div>
+</div>
