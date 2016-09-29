@@ -1,3 +1,63 @@
+/**
+ * @ngdoc service
+ * @name AlertService
+ * @description
+ * alert, confirm的替代
+ *
+ * **Methods**
+ *
+ * - `alert(config)` - 此方法会弹出一个alert弹窗. 会返回`Promise`, 其中`resolve`表明用户点击了确认按钮
+ *
+ *    参数`config`是可选的, 可用值是
+ *      - title:   String   - 弹窗的标题
+ *      - content:  String     - 弹窗的内容
+ *      - hint: Array    -更多的内容，以列表的形式展示
+ *
+ * - `confirm(config)` - 此方法会弹出一个alert弹窗. 会返回`Promise`, 其中`resolve`表明用户点击了确认按钮, `reject`表示用户点击了取消按钮
+ *
+ *    参数`config`是可选的, 可用值是
+ *      - title:   String   - 弹窗的标题
+ *      - contents:  Array     - 弹窗的内容,以列表的形式展示
+ *
+ *
+ * @example
+ *
+ * <pre>
+ *
+ *   AlertService
+ *.alert({
+ *           title: "测试",
+ *           content: "你好，我是警告"
+ *         })
+ *.then(function () {
+ *           alert("你刚才点了确定");
+ *         });
+ *
+ *AlertService
+ *.alert({
+ *          title: "测试",
+ *          content: "你好，我是警告",
+ *          hint: ["操作提示1", "如果想要在操作的时候给点提示，那就写在这里"]
+ *        })
+ *.then(function () {
+ *          alert("你刚才点了确定");
+ *        });
+ *
+ *AlertService
+ *.confirm({
+ *           title: "测试",
+ *           contents: ["你好，确定要删除以下内容吗？", "aaa, bbb"]
+ *         })
+ *.then(function () {
+ *           alert("你刚才点了确定");
+ *         }, function () {
+ *           alert("你刚才点了取消");
+ *         });
+ *
+ * </pre>
+ */
+
+
 import template from './alert.html'
 
 import ComponentZIndex from '../zindex.js'
