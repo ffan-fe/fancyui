@@ -1,3 +1,28 @@
+/**
+ * @ngdoc service
+ * @name HintService
+ * @description
+ * 消息通知类的alert可以用这个
+ *
+ * **Methods**
+ *
+ * - `hint(config)` - 此方法会在右上角浮出一个弹窗.
+ *
+ *    参数`config`是可选的, 可用值是
+ *      - title:   String   - 弹窗的标题
+ *      - content:  String     - 弹窗的内容
+ *
+ *
+ * @example
+ *
+ * <pre>
+ *
+ *   HintService.hint({title: "我操作成功了", content: "结果是：" + $scope.hintContent})
+ *
+ * </pre>
+ */
+
+
 import tpl from './hint.html'
 
 import './hint.css'
