@@ -5,6 +5,15 @@ NG_DOCS={
   "pages": [
     {
       "section": "api",
+      "id": "AlertService",
+      "shortName": "AlertService",
+      "type": "service",
+      "moduleName": "AlertService",
+      "shortDescription": "alert, confirm的替代",
+      "keywords": "aaa alert alertservice api array bbb config confirm content contents function hint promise reject resolve service string title"
+    },
+    {
+      "section": "api",
       "id": "button",
       "shortName": "button",
       "type": "overview",
@@ -65,6 +74,15 @@ NG_DOCS={
       "moduleName": "datetimepicker",
       "shortDescription": "",
       "keywords": "api binding datetimepicker directive disabled end-model enddisabled endmodel github io max min minutestep minview model modeltype range separator start-model startdisabled startmodel startview symbol type vm yyyy-mm-dd"
+    },
+    {
+      "section": "api",
+      "id": "HintService",
+      "shortName": "HintService",
+      "type": "service",
+      "moduleName": "HintService",
+      "shortDescription": "消息通知类的alert可以用这个",
+      "keywords": "$scope api config content hint hintcontent hintservice service string title"
     },
     {
       "section": "api",
