@@ -148,6 +148,7 @@ export default class Datetimepicker extends Component {
       this.config.bp.startDisabled = angular.isUndefined(this.startDisabled) ? false : this.startDisabled;
       this.config.bp.endDisabled = angular.isUndefined(this.endDisabled) ? false : this.endDisabled;
     }
+    console.log('this.config.bp' ,this.config.bp);
   }
 
   /**

@@ -21,7 +21,7 @@ export default class DatetimepickerTestController {
     this.minuteStep = 10;
 */
 
-    this.disabled = false;
+    this.disabled = true;
 
     /**
      * 默认情况
