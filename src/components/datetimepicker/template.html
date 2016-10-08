@@ -14,16 +14,18 @@
           <input
                 data-ng-if="controller.type != 'range'"
                 type="text"
-                class="form-control"
+                class="form-control input-readonly"
                 placeholder="{{controller.config.bp.placeholders.startPlaceholder}}"
                 data-ng-model="controller.model"
+                readonly
           />
           <input
                  data-ng-if="controller.type == 'range'"
                  type="text"
-                 class="form-control"
+                 class="form-control input-readonly"
                  placeholder="{{controller.config.bp.placeholders.startPlaceholder}}"
                  data-ng-model="controller.startModel"
+                 readonly
           />
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-calendar"></i>
@@ -67,9 +69,10 @@
       >
         <div class="input-group date"  data-ng-click="controller.endDateOnSetTime()">
           <input type="text"
-                class="form-control"
-                placeholder="{{controller.config.bp.placeholders.endPlaceholder}}"
-                data-ng-model="controller.endModel"
+                 class="form-control input-readonly"
+                 placeholder="{{controller.config.bp.placeholders.endPlaceholder}}"
+                 data-ng-model="controller.endModel"
+                 readonly
           />
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-calendar"></i>

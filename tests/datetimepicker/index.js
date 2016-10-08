@@ -1,8 +1,8 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
 import 'bootstrap';
-import datetimepicker from '../../src/components/datetimepicker';
-//  import {Datetimepicker} from '../../dist/anaheim';
+//import datetimepicker from '../../src/components/datetimepicker';
+import {Datetimepicker} from '../../dist/anaheim';
 import template from './template.html';
 import controller from './controller';
 
@@ -10,7 +10,7 @@ import controller from './controller';
 
 export default angular.module('datetimepickerTest', [
     uiRouter,
-    datetimepicker.name
+    Datetimepicker.name
   ])
   .config($stateProvider => {
     'ngInject';

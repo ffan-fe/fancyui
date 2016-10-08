@@ -1,6 +1,7 @@
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 import data from './data';
+import moment from 'moment';
 
 export default class DatetimepickerTestController {
   constructor($timeout, $sce, $scope) {
@@ -19,6 +20,8 @@ export default class DatetimepickerTestController {
     this.startDisabled = true;
     this.minuteStep = 10;
 */
+
+    this.disabled = false;
 
     /**
      * 默认情况
@@ -43,6 +46,9 @@ export default class DatetimepickerTestController {
     /**
      * 最大值 最小值
      */
+
+     this.minTime = "2016-09-09 09:09:00"//moment().valueOf();
+    console.log('moment().valueOf()',moment().valueOf());
      this.html4 = $sce.trustAsHtml(Prism.highlight(data['html4'], Prism.languages.html));
      this.js4 = $sce.trustAsHtml(Prism.highlight(data['js4'], Prism.languages.javascript));
 
@@ -54,5 +60,5 @@ export default class DatetimepickerTestController {
      this.js5 = $sce.trustAsHtml(Prism.highlight(data['js5'], Prism.languages.javascript));
 
   }
-  
+
 }

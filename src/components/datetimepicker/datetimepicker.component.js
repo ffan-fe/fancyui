@@ -53,12 +53,12 @@ let componentDefine = {
      * 最小开始时间 (毫秒)
      * @type {Number}
      */
-    min: '@',
+    min: '<',
     /**
      * 最大结束时间 (毫秒)
      * @type {Number}
      */
-    max: '@',
+    max: '<',
     /**
      * 首次打开时的视图
      * @type {String}

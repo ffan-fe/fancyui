@@ -26939,12 +26939,12 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * 最小开始时间 (毫秒)
 	     * @type {Number}
 	     */
-	    min: '@',
+	    min: '<',
 	    /**
 	     * 最大结束时间 (毫秒)
 	     * @type {Number}
 	     */
-	    max: '@',
+	    max: '<',
 	    /**
 	     * 首次打开时的视图
 	     * @type {String}
@@ -27145,8 +27145,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	    value: function extendConfig() {
 	      this.setBaseConfig();
 	      this.setModel();
-	      this.setMinDate();
-	      this.setMaxDate();
+	      // this.setMinDate();
+	      // this.setMaxDate();
 	      this.setDisabled();
 	      this.setPlaceholders();
 	    }
@@ -27183,26 +27183,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	    /**
 	     * 设置最小时间值
 	     */
-
-	  }, {
-	    key: 'setMinDate',
-	    value: function setMinDate() {
-	      if (!angular.isUndefined(this.min)) {
-	        this.min == 'today' ? this.minDate = (0, _moment2.default)().valueOf() : this.minDate = this.min;
-	      }
-	    }
+	    // setMinDate(){
+	    //   if(!angular.isUndefined(this.min)){
+	    //     if(this.min == 'today') this.min = moment().valueOf();
+	    //   }
+	    // }
 
 	    /**
 	     * 设置最大时间值
 	     */
-
-	  }, {
-	    key: 'setMaxDate',
-	    value: function setMaxDate() {
-	      if (!angular.isUndefined(this.max)) {
-	        this.max == 'today' ? this.maxDate = (0, _moment2.default)().valueOf() : this.maxDate = this.max;
-	      }
-	    }
+	    // setMaxDate(){
+	    //   if(!angular.isUndefined(this.max)){
+	    //     if(this.max == 'today') this.max = moment().valueOf();
+	    //   }
+	    // }
 
 	    /**
 	     * 是否不可选
@@ -27242,6 +27236,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'startDateOnSetTime',
 	    value: function startDateOnSetTime() {
+	      console.log('this.minminmin', this.maxDate);
 	      this.$scope.$broadcast('start-date-changed');
 	    }
 	  }, {
@@ -27257,8 +27252,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'beforeRenderStartDate',
 	    value: function beforeRenderStartDate($view, $dates) {
-	      this.maxDate ? this.endDateBeforeRender($view, $dates, this.maxDate, 'max') : '';
-	      this.minDate ? this.startDateBeforeRender($view, $dates, this.minDate, 'min') : '';
+	      this.max ? this.endDateBeforeRender($view, $dates, this.max, 'max') : '';
+	      this.min ? this.startDateBeforeRender($view, $dates, this.min, 'min') : '';
 	      if (!angular.isUndefined(this.endModel)) {
 	        this.endDateBeforeRender($view, $dates, this.endModel);
 	      }
@@ -27271,8 +27266,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'beforeRenderEndDate',
 	    value: function beforeRenderEndDate($view, $dates) {
-	      this.maxDate ? this.endDateBeforeRender($view, $dates, this.maxDate, 'max') : '';
-	      this.minDate ? this.startDateBeforeRender($view, $dates, this.minDate, 'min') : '';
+	      this.max ? this.endDateBeforeRender($view, $dates, this.max, 'max') : '';
+	      this.min ? this.startDateBeforeRender($view, $dates, this.min, 'min') : '';
 	      if (!angular.isUndefined(this.startModel)) {
 	        this.startDateBeforeRender($view, $dates, this.startModel);
 	      }
@@ -27333,8 +27328,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	  }, {
 	    key: 'check',
 	    value: function check() {
-	      if (this.minDate && this.maxDate) {
-	        if ((0, _moment2.default)(this.minDate).valueOf() > (0, _moment2.default)(this.maxDate).valueOf()) {
+	      if (this.min && this.max) {
+	        if ((0, _moment2.default)(this.min).valueOf() > (0, _moment2.default)(this.max).valueOf()) {
 	          throw new Error('maxDate must be greater than minDate');
 	        }
 	      }
@@ -27365,7 +27360,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /* 169 */
 /***/ function(module, exports) {
 
-	module.exports = "<div class=\"bp-datetimepicker\">\n  <!-- 开始时间 -->\n  <fieldset ng-disabled=\"{{controller.config.bp.startDisabled}}\"\n            ng-class=\"{'bp-datetimepicker-start': controller.type == 'range',\n                  'bp-datetimepicker-fieldset': controller.type == 'range',}\">\n    <div class=\"dropdown\">\n      <a class=\"dropdown-toggle\"\n        id=\"{{controller.startConfig.dropdownSelector.slice(1,15)}}\"\n        role=\"button\"\n        data-toggle=\"dropdown\"\n        data-target=\"#\"\n        >\n        <div class=\"input-group date\" data-ng-click=\"controller.startDateOnSetTime()\">\n          <input\n                data-ng-if=\"controller.type != 'range'\"\n                type=\"text\"\n                class=\"form-control\"\n                placeholder=\"{{controller.config.bp.placeholders.startPlaceholder}}\"\n                data-ng-model=\"controller.model\"\n          />\n          <input\n                 data-ng-if=\"controller.type == 'range'\"\n                 type=\"text\"\n                 class=\"form-control\"\n                 placeholder=\"{{controller.config.bp.placeholders.startPlaceholder}}\"\n                 data-ng-model=\"controller.startModel\"\n          />\n          <span class=\"input-group-addon\">\n            <i class=\"glyphicon glyphicon-calendar\"></i>\n          </span>\n        </div>\n      </a>\n      <ul class=\"dropdown-menu\"\n          role=\"menu\"\n          aria-labelledby=\"dLabel\"\n          data-ng-if=\"!controller.config.bp.startDisabled\">\n        <datetimepicker\n                        data-ng-if=\"controller.type != 'range'\"\n                        data-ng-model=\"controller.model\"\n                        config=\"{{controller.startConfig}}\"\n                        data-before-render=\"controller.beforeRenderStartDate($view, $dates)\"\n        >\n        </datetimepicker>\n        <datetimepicker\n                        data-ng-if=\"controller.type == 'range'\"\n                        data-ng-model=\"controller.startModel\"\n                        config=\"{{controller.startConfig}}\"\n                        data-before-render=\"controller.beforeRenderStartDate($view, $dates)\"\n        >\n        </datetimepicker>\n      </ul>\n    </div>\n  </fieldset>\n<!-- /开始时间 -->\n  <label class=\"bp-datetimepicker-line\"\n        data-ng-if=\"controller.type == 'range'\">{{controller.separator ? controller.separator : '-'}}</label>\n  <!-- 结束时间 -->\n  <fieldset ng-disabled=\"controller.config.bp.endDisabled\"\n            class=\"bp-datetimepicker-fieldset bp-datetimepicker-end\">\n    <div class=\"dropdown\"\n        data-ng-if=\"controller.type == 'range'\">\n      <a class=\"dropdown-toggle\"\n         id=\"{{controller.endConfig.dropdownSelector.slice(1,15)}}\"\n        role=\"button\"\n        data-toggle=\"dropdown\"\n        data-target=\"#\"\n      >\n        <div class=\"input-group date\"  data-ng-click=\"controller.endDateOnSetTime()\">\n          <input type=\"text\"\n                class=\"form-control\"\n                placeholder=\"{{controller.config.bp.placeholders.endPlaceholder}}\"\n                data-ng-model=\"controller.endModel\"\n          />\n          <span class=\"input-group-addon\">\n            <i class=\"glyphicon glyphicon-calendar\"></i>\n          </span>\n        </div>\n      </a>\n      <ul class=\"dropdown-menu\"\n          role=\"menu\"\n          aria-labelledby=\"dLabel\"\n          ng-if=\"!controller.config.bp.endDisabled\">\n        <datetimepicker data-ng-model=\"controller.endModel\"\n                        config=\"{{controller.endConfig}}\"\n                        data-before-render=\"controller.beforeRenderEndDate($view, $dates)\"\n        >\n        </datetimepicker>\n      </ul>\n    </div>\n  </fieldset>\n  <!-- /结束时间 -->\n</div>\n"
+	module.exports = "<div class=\"bp-datetimepicker\">\n  <!-- 开始时间 -->\n  <fieldset ng-disabled=\"{{controller.config.bp.startDisabled}}\"\n            ng-class=\"{'bp-datetimepicker-start': controller.type == 'range',\n                  'bp-datetimepicker-fieldset': controller.type == 'range',}\">\n    <div class=\"dropdown\">\n      <a class=\"dropdown-toggle\"\n        id=\"{{controller.startConfig.dropdownSelector.slice(1,15)}}\"\n        role=\"button\"\n        data-toggle=\"dropdown\"\n        data-target=\"#\"\n        >\n        <div class=\"input-group date\" data-ng-click=\"controller.startDateOnSetTime()\">\n          <input\n                data-ng-if=\"controller.type != 'range'\"\n                type=\"text\"\n                class=\"form-control input-readonly\"\n                placeholder=\"{{controller.config.bp.placeholders.startPlaceholder}}\"\n                data-ng-model=\"controller.model\"\n                readonly\n          />\n          <input\n                 data-ng-if=\"controller.type == 'range'\"\n                 type=\"text\"\n                 class=\"form-control input-readonly\"\n                 placeholder=\"{{controller.config.bp.placeholders.startPlaceholder}}\"\n                 data-ng-model=\"controller.startModel\"\n                 readonly\n          />\n          <span class=\"input-group-addon\">\n            <i class=\"glyphicon glyphicon-calendar\"></i>\n          </span>\n        </div>\n      </a>\n      <ul class=\"dropdown-menu\"\n          role=\"menu\"\n          aria-labelledby=\"dLabel\"\n          data-ng-if=\"!controller.config.bp.startDisabled\">\n        <datetimepicker\n                        data-ng-if=\"controller.type != 'range'\"\n                        data-ng-model=\"controller.model\"\n                        config=\"{{controller.startConfig}}\"\n                        data-before-render=\"controller.beforeRenderStartDate($view, $dates)\"\n        >\n        </datetimepicker>\n        <datetimepicker\n                        data-ng-if=\"controller.type == 'range'\"\n                        data-ng-model=\"controller.startModel\"\n                        config=\"{{controller.startConfig}}\"\n                        data-before-render=\"controller.beforeRenderStartDate($view, $dates)\"\n        >\n        </datetimepicker>\n      </ul>\n    </div>\n  </fieldset>\n<!-- /开始时间 -->\n  <label class=\"bp-datetimepicker-line\"\n        data-ng-if=\"controller.type == 'range'\">{{controller.separator ? controller.separator : '-'}}</label>\n  <!-- 结束时间 -->\n  <fieldset ng-disabled=\"controller.config.bp.endDisabled\"\n            class=\"bp-datetimepicker-fieldset bp-datetimepicker-end\">\n    <div class=\"dropdown\"\n        data-ng-if=\"controller.type == 'range'\">\n      <a class=\"dropdown-toggle\"\n         id=\"{{controller.endConfig.dropdownSelector.slice(1,15)}}\"\n        role=\"button\"\n        data-toggle=\"dropdown\"\n        data-target=\"#\"\n      >\n        <div class=\"input-group date\"  data-ng-click=\"controller.endDateOnSetTime()\">\n          <input type=\"text\"\n                 class=\"form-control input-readonly\"\n                 placeholder=\"{{controller.config.bp.placeholders.endPlaceholder}}\"\n                 data-ng-model=\"controller.endModel\"\n                 readonly\n          />\n          <span class=\"input-group-addon\">\n            <i class=\"glyphicon glyphicon-calendar\"></i>\n          </span>\n        </div>\n      </a>\n      <ul class=\"dropdown-menu\"\n          role=\"menu\"\n          aria-labelledby=\"dLabel\"\n          ng-if=\"!controller.config.bp.endDisabled\">\n        <datetimepicker data-ng-model=\"controller.endModel\"\n                        config=\"{{controller.endConfig}}\"\n                        data-before-render=\"controller.beforeRenderEndDate($view, $dates)\"\n        >\n        </datetimepicker>\n      </ul>\n    </div>\n  </fieldset>\n  <!-- /结束时间 -->\n</div>\n"
 
 /***/ },
 /* 170 */
@@ -27402,7 +27397,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 
 	// module
-	exports.push([module.id, ".bp-datetimepicker .bp-datetimepicker-fieldset {\n  width: 47%;\n}\n.bp-datetimepicker .bp-datetimepicker-start {\n  float: left;\n}\n.bp-datetimepicker .bp-datetimepicker-end {\n  float: right;\n}\n.bp-datetimepicker .bp-datetimepicker-line {\n  width: 6%;\n  margin-top: 5px;\n  text-align: center;\n}\n", ""]);
+	exports.push([module.id, ".bp-datetimepicker .bp-datetimepicker-fieldset {\n  width: 47%;\n}\n.bp-datetimepicker .bp-datetimepicker-start {\n  float: left;\n}\n.bp-datetimepicker .bp-datetimepicker-end {\n  float: right;\n}\n.bp-datetimepicker .bp-datetimepicker-line {\n  width: 6%;\n  margin-top: 5px;\n  text-align: center;\n}\n.bp-datetimepicker .input-readonly {\n  background-color: white;\n}\n", ""]);
 
 	// exports
 
