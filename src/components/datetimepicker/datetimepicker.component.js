@@ -5,16 +5,16 @@
  * @property {String}   model       	- binding symbol is =?, 单个时间值
  * @property {String}   startModel    - binding symbol is =?, 范围时间组件，开始时间值
  * @property {String}   endModel     	- binding symbol is =?, 范围时间组件，结束时间值
- * @property {String}   min       		- binding symbol is @, 最小时间限制
- * @property {String}   max   			  - binding symbol is @, 最大时间限制
+ * @property {String}   min       		- binding symbol is <, 最小时间限制
+ * @property {String}   max   			  - binding symbol is <, 最大时间限制
  * @property {String}   startView  		- binding symbol is @, 开始时间视图
  * @property {String}   minView       - binding symbol is @, 最小时间视图
  * @property {Number}   minuteStep    - binding symbol is <, 分钟间隔
- * @property {String}   modelType     - binding symbol is @, 显示的格式 YYYY-MM-DD 还是其他，默认到秒
- * @property {Boolean}  disabled      - binding symbol is <, Disabled状态
+ * @property {String}   modelType     - binding symbol is @, 显示的格式 YYYY-MM-DD 还是其他，默认到分
  * @property {Boolean}  startDisabled - binding symbol is <, 开始时间Disabled
  * @property {Boolean}  endDisabled   - binding symbol is <, 结束时间Disabled
- * @property {String}   separator     - binding symbol is @, 范围时间分隔符，默认'-'
+ * @property {Boolean}  disabled      - binding symbol is <, Disabled状态
+ * @property {String}   separator     - binding symbol is @, 范围时间分隔符，默认'至'
  *
  */
 
@@ -53,12 +53,12 @@ let componentDefine = {
      * 最小开始时间 (毫秒)
      * @type {Number}
      */
-    min: '@',
+    min: '<',
     /**
      * 最大结束时间 (毫秒)
      * @type {Number}
      */
-    max: '@',
+    max: '<',
     /**
      * 首次打开时的视图
      * @type {String}

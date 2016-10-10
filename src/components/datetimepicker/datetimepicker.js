@@ -10,16 +10,16 @@
  * @param {String}   model       	 - binding symbol is =?, 单个时间值
  * @param {String}   startModel    - binding symbol is =?, 范围时间组件，开始时间值
  * @param {String}   endModel      - binding symbol is =?, 范围时间组件，结束时间值
- * @param {String}   min       		 - binding symbol is @, 最小时间限制
- * @param {String}   max   			   - binding symbol is @, 最大时间限制
+ * @param {String}   min       		 - binding symbol is <, 最小时间限制
+ * @param {String}   max   			   - binding symbol is <, 最大时间限制
  * @param {String}   startView  	 - binding symbol is @, 开始时间视图
  * @param {String}   minView       - binding symbol is @, 最小时间视图
  * @param {Number}   minuteStep    - binding symbol is <, 分钟间隔
  * @param {String}   modelType     - binding symbol is @, 显示的格式 YYYY-MM-DD 还是其他，默认到秒
- * @param {Boolean}  disabled      - binding symbol is <, Disabled状态
  * @param {Boolean}  startDisabled - binding symbol is <, 开始时间Disabled
  * @param {Boolean}  endDisabled   - binding symbol is <, 结束时间Disabled
- * @param {String}   separator     - binding symbol is @, 范围时间分隔符，默认'-'
+ * @param {Boolean}  disabled      - binding symbol is <, Disabled状态
+ * @param {String}   separator     - binding symbol is @, 范围时间分隔符，默认'至'
  *
  * @example
  *
@@ -103,7 +103,6 @@ export default class Datetimepicker extends Component {
       dropdownSelector: '#end' + Math.random().toString(36).substr(2, 9),
       renderOn: 'end-date-changed'
     }));
-
   }
 
   /**
@@ -112,8 +111,6 @@ export default class Datetimepicker extends Component {
   extendConfig(){
     this.setBaseConfig();
     this.setModel();
-    this.setMinDate();
-    this.setMaxDate();
     this.setDisabled();
     this.setPlaceholders();
   }
@@ -129,8 +126,6 @@ export default class Datetimepicker extends Component {
     });
   }
 
-
-
   /**
    * 一个时间选择框时
    * 重新赋值 startModel = model
@@ -142,25 +137,7 @@ export default class Datetimepicker extends Component {
   }
 
   /**
-   * 设置最小时间值
-   */
-  setMinDate(){
-    if(!angular.isUndefined(this.min)){
-      this.min == 'today' ? this.minDate = moment().valueOf(): this.minDate = this.min;
-    }
-  }
-
-  /**
-   * 设置最大时间值
-   */
-  setMaxDate(){
-    if(!angular.isUndefined(this.max)){
-      this.max == 'today' ? this.maxDate = moment().valueOf(): this.maxDate = this.max;
-    }
-  }
-
-  /**
-   * 是否不可选
+   * 是否不可点击
    */
   setDisabled(){
     this.config.bp.disabled = angular.isUndefined(this.disabled) ? false : this.disabled;
@@ -201,8 +178,8 @@ export default class Datetimepicker extends Component {
    * 开始时间渲染
    */
   beforeRenderStartDate($view, $dates){
-    this.maxDate ? this.endDateBeforeRender($view, $dates, this.maxDate, 'max') : '';
-    this.minDate ? this.startDateBeforeRender($view, $dates, this.minDate, 'min') : '';
+    this.max ? this.endDateBeforeRender($view, $dates, this.max, 'max') : '';
+    this.min ? this.startDateBeforeRender($view, $dates, this.min, 'min') : '';
     if(!angular.isUndefined(this.endModel)){
       this.endDateBeforeRender($view, $dates, this.endModel);
     }
@@ -212,8 +189,8 @@ export default class Datetimepicker extends Component {
    * 结束时间渲染
    */
   beforeRenderEndDate($view, $dates){
-    this.maxDate ? this.endDateBeforeRender($view, $dates, this.maxDate, 'max') : '';
-    this.minDate ? this.startDateBeforeRender($view, $dates, this.minDate, 'min') : '';
+    this.max ? this.endDateBeforeRender($view, $dates, this.max, 'max') : '';
+    this.min ? this.startDateBeforeRender($view, $dates, this.min, 'min') : '';
     if(!angular.isUndefined(this.startModel)){
       this.startDateBeforeRender($view, $dates, this.startModel);
     }
@@ -258,7 +235,6 @@ export default class Datetimepicker extends Component {
           $dates[i].selectable = false;
         }
       }
-
     }
   }
 
@@ -266,8 +242,8 @@ export default class Datetimepicker extends Component {
    * 校验参数合法性
    */
   check(){
-    if(this.minDate && this.maxDate){
-      if(moment(this.minDate).valueOf() > moment(this.maxDate).valueOf()){
+    if(this.min && this.max){
+      if(moment(this.min).valueOf() > moment(this.max).valueOf()){
         throw new Error('maxDate must be greater than minDate');
       }
     }
@@ -281,4 +257,5 @@ export default class Datetimepicker extends Component {
    * @override
    */
   _launch() {}
+
 }

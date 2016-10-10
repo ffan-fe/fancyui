@@ -1,8 +1,8 @@
 <div class="bp-datetimepicker">
   <!-- 开始时间 -->
-  <fieldset ng-disabled="{{controller.config.bp.startDisabled}}"
+  <fieldset ng-disabled="controller.config.bp.startDisabled"
             ng-class="{'bp-datetimepicker-start': controller.type == 'range',
-                  'bp-datetimepicker-fieldset': controller.type == 'range',}">
+                  'bp-datetimepicker-fieldset': controller.type == 'range'}">
     <div class="dropdown">
       <a class="dropdown-toggle"
         id="{{controller.startConfig.dropdownSelector.slice(1,15)}}"
@@ -14,16 +14,18 @@
           <input
                 data-ng-if="controller.type != 'range'"
                 type="text"
-                class="form-control"
+                class="form-control input-readonly"
                 placeholder="{{controller.config.bp.placeholders.startPlaceholder}}"
                 data-ng-model="controller.model"
+                readonly
           />
           <input
                  data-ng-if="controller.type == 'range'"
                  type="text"
-                 class="form-control"
+                 class="form-control input-readonly"
                  placeholder="{{controller.config.bp.placeholders.startPlaceholder}}"
                  data-ng-model="controller.startModel"
+                 readonly
           />
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-calendar"></i>
@@ -53,7 +55,7 @@
   </fieldset>
 <!-- /开始时间 -->
   <label class="bp-datetimepicker-line"
-        data-ng-if="controller.type == 'range'">{{controller.separator ? controller.separator : '-'}}</label>
+        data-ng-if="controller.type == 'range'">{{controller.separator ? controller.separator : '至'}}</label>
   <!-- 结束时间 -->
   <fieldset ng-disabled="controller.config.bp.endDisabled"
             class="bp-datetimepicker-fieldset bp-datetimepicker-end">
@@ -67,9 +69,10 @@
       >
         <div class="input-group date"  data-ng-click="controller.endDateOnSetTime()">
           <input type="text"
-                class="form-control"
-                placeholder="{{controller.config.bp.placeholders.endPlaceholder}}"
-                data-ng-model="controller.endModel"
+                 class="form-control input-readonly"
+                 placeholder="{{controller.config.bp.placeholders.endPlaceholder}}"
+                 data-ng-model="controller.endModel"
+                 readonly
           />
           <span class="input-group-addon">
             <i class="glyphicon glyphicon-calendar"></i>
@@ -79,7 +82,7 @@
       <ul class="dropdown-menu"
           role="menu"
           aria-labelledby="dLabel"
-          ng-if="!controller.config.bp.endDisabled">
+          data-ng-if="!controller.config.bp.endDisabled">
         <datetimepicker data-ng-model="controller.endModel"
                         config="{{controller.endConfig}}"
                         data-before-render="controller.beforeRenderEndDate($view, $dates)"
