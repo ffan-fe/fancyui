@@ -59,7 +59,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Datetimepicker = exports.Transfer = exports.CitySelector = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
+	exports.bpHint = exports.bpAlert = exports.Datetimepicker = exports.Transfer = exports.CitySelector = exports.RadioboxGroup = exports.Radiobox = exports.CheckboxGroup = exports.Checkbox = exports.Icon = exports.Button = undefined;
 
 	var _button = __webpack_require__(1);
 
@@ -97,6 +97,14 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	var _datetimepicker2 = _interopRequireDefault(_datetimepicker);
 
+	var _alert = __webpack_require__(172);
+
+	var _alert2 = _interopRequireDefault(_alert);
+
+	var _hint = __webpack_require__(176);
+
+	var _hint2 = _interopRequireDefault(_hint);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	'use strict';
@@ -110,6 +118,8 @@ return /******/ (function(modules) { // webpackBootstrap
 	var CitySelector = exports.CitySelector = _city2.default;
 	var Transfer = exports.Transfer = _transfer2.default;
 	var Datetimepicker = exports.Datetimepicker = _datetimepicker2.default;
+	var bpAlert = exports.bpAlert = _alert2.default;
+	var bpHint = exports.bpHint = _hint2.default;
 
 /***/ },
 /* 1 */
@@ -27377,6 +27387,416 @@ return /******/ (function(modules) { // webpackBootstrap
 
 	// module
 	exports.push([module.id, ".bp-datetimepicker .bp-datetimepicker-fieldset {\n  width: 47%;\n}\n.bp-datetimepicker .bp-datetimepicker-start {\n  float: left;\n}\n.bp-datetimepicker .bp-datetimepicker-end {\n  float: right;\n}\n.bp-datetimepicker .bp-datetimepicker-line {\n  width: 6%;\n  margin-top: 5px;\n  text-align: center;\n}\n.bp-datetimepicker .input-readonly {\n  background-color: white;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _angular = __webpack_require__(2);
+
+	var _angular2 = _interopRequireDefault(_angular);
+
+	var _alert = __webpack_require__(173);
+
+	var _alert2 = _interopRequireDefault(_alert);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	/**
+	 * Created by fjywan on 16/9/26.
+	 */
+	exports.default = _angular2.default.module('bp.alert', []).service({
+	  AlertService: _alert2.default
+	});
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @ngdoc service
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @name AlertService
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * alert, confirm的替代
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * **Methods**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * - `alert(config)` - 此方法会弹出一个alert弹窗. 会返回`Promise`, 其中`resolve`表明用户点击了确认按钮
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *    参数`config`是可选的, 可用值是
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - title:   String   - 弹窗的标题
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - content:  String     - 弹窗的内容
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - hint: Array    -更多的内容，以列表的形式展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * - `confirm(config)` - 此方法会弹出一个alert弹窗. 会返回`Promise`, 其中`resolve`表明用户点击了确认按钮, `reject`表示用户点击了取消按钮
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *    参数`config`是可选的, 可用值是
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - title:   String   - 弹窗的标题
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - contents:  Array     - 弹窗的内容,以列表的形式展示
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @example
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *   AlertService
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *.alert({
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *           title: "测试",
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *           content: "你好，我是警告"
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *         })
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *.then(function () {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *           alert("你刚才点了确定");
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *         });
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *AlertService
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *.alert({
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *          title: "测试",
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *          content: "你好，我是警告",
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *          hint: ["操作提示1", "如果想要在操作的时候给点提示，那就写在这里"]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *        })
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *.then(function () {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *          alert("你刚才点了确定");
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *        });
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *AlertService
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *.confirm({
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *           title: "测试",
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *           contents: ["你好，确定要删除以下内容吗？", "aaa, bbb"]
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *         })
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *.then(function () {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *           alert("你刚才点了确定");
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *         }, function () {
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *           alert("你刚才点了取消");
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *         });
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+	var _alert = __webpack_require__(174);
+
+	var _alert2 = _interopRequireDefault(_alert);
+
+	var _zindex = __webpack_require__(175);
+
+	var _zindex2 = _interopRequireDefault(_zindex);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var remove = function remove(array, element) {
+	  var index = array.indexOf(element);
+	  if (index > -1) {
+	    array.splice(index, 1);
+	  }
+	};
+
+	var AlertService = function () {
+	  AlertService.$inject = ["$document", "$q", "$rootScope", "$compile"];
+	  function AlertService($document, $q, $rootScope, $compile) {
+	    'ngInject';
+
+	    _classCallCheck(this, AlertService);
+
+	    this.$document = $document;
+	    this.$q = $q;
+	    this.$rootScope = $rootScope;
+	    this.$compile = $compile;
+
+	    this.dialogArr = [];
+
+	    this.dialogCounter = 0;
+	    this.zIndex = _zindex2.default.Alert;
+
+	    this.mask = angular.element('<div class="modal-backdrop fade in"></div>');
+	    this.mask.css("z-index", this.zIndex);
+	  }
+
+	  _createClass(AlertService, [{
+	    key: 'alert',
+	    value: function alert(param) {
+	      var _this = this;
+
+	      var defer = this.$q.defer();
+
+	      var dialog = void 0;
+	      this.dialogCounter++;
+
+	      if (this.dialogCounter == 1) {
+	        this.$document.find('body').append(this.mask);
+	      }
+
+	      var data = Object.assign(this.$rootScope.$new(), param);
+
+	      data.ok = function () {
+	        _this.dismiss(dialog);
+	        defer.resolve('ok');
+	      };
+
+	      dialog = this.$compile(angular.element(_alert2.default))(data);
+
+	      this.$document.find('body').append(dialog);
+	      dialog.css('display', 'block');
+	      dialog.css('z-index', this.zIndex + this.dialogCounter);
+
+	      this.dialogArr.push(dialog);
+
+	      return defer.promise;
+	    }
+	  }, {
+	    key: 'confirm',
+	    value: function confirm(param) {
+	      var _this2 = this;
+
+	      var defer = this.$q.defer();
+
+	      var dialog = void 0;
+	      this.dialogCounter++;
+
+	      if (this.dialogCounter == 1) {
+	        this.$document.find('body').append(this.mask);
+	      }
+
+	      var data = Object.assign(this.$rootScope.$new(), param);
+
+	      data.ok = function () {
+	        _this2.dismiss(dialog);
+	        defer.resolve('ok');
+	      };
+
+	      data.cancel = function () {
+	        _this2.dismiss(dialog);
+	        defer.reject('cancel');
+	      };
+
+	      dialog = this.$compile(angular.element(_alert2.default))(data);
+
+	      this.$document.find('body').append(dialog);
+	      dialog.css('display', 'block');
+	      dialog.css('z-index', this.zIndex + this.dialogCounter);
+
+	      this.dialogArr.push(dialog);
+
+	      return defer.promise;
+	    }
+	  }, {
+	    key: 'dismiss',
+	    value: function dismiss(dialog) {
+	      this.dialogCounter--;
+	      dialog.remove();
+
+	      if (this.dialogCounter == 0) {
+	        this.mask.remove();
+	      }
+
+	      remove(this.dialogArr, dialog);
+	    }
+	  }, {
+	    key: 'dismissAll',
+	    value: function dismissAll() {
+	      while (this.dialogArr.length > 0) {
+	        this.dismiss(this.dialogArr[0]);
+	      }
+	    }
+	  }]);
+
+	  return AlertService;
+	}();
+
+	exports.default = AlertService;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"modal fade in\">\n  <div class=\"modal-dialog\">\n    <div class=\"modal-content\">\n      <div class=\"modal-header\">\n        <button type=\"button\" class=\"close\" ng-click=\"cancel ? cancel() : ok()\"><span aria-hidden=\"true\">&times;</span><span class=\"sr-only\">Close</span></button>\n        <h4 class=\"modal-title\">{{title}}</h4>\n      </div>\n      <div class=\"modal-body\">\n        <div class=\"well\" ng-if=\"hint\">\n          <ul>\n            <li ng-repeat=\"item in hint\">{{item}}</li>\n          </ul>\n        </div>\n        <p ng-if=\"content\">{{content}}</p>\n        <p ng-if=\"contents\" ng-repeat=\"content in contents\">{{content}}</p>\n      </div>\n      <div class=\"modal-footer\">\n        <button type=\"button\" class=\"btn bp-btn-primary\" ng-show=\"ok\" ng-click=\"ok()\">确定</button>\n        <button type=\"button\" class=\"btn bp-btn-default\" ng-show=\"cancel\" ng-click=\"cancel()\">取消</button>\n      </div>\n    </div>\n  </div>\n</div>\n"
+
+/***/ },
+/* 175 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var ComponentsZIndex = {
+		Alert: 2000,
+		Dialog: 1200,
+		Tooltip: 1500
+	};
+
+	exports.default = ComponentsZIndex;
+
+/***/ },
+/* 176 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _hint = __webpack_require__(177);
+
+	var _hint2 = _interopRequireDefault(_hint);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	exports.default = angular.module('bp.hint', []).service({
+	  HintService: _hint2.default
+	}); /**
+	     * Created by fjywan on 16/9/26.
+	     */
+
+/***/ },
+/* 177 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }(); /**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @ngdoc service
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @name HintService
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @description
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * 消息通知类的alert可以用这个
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * **Methods**
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * - `hint(config)` - 此方法会在右上角浮出一个弹窗.
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *    参数`config`是可选的, 可用值是
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - title:   String   - 弹窗的标题
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *      - content:  String     - 弹窗的内容
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * @example
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * <pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *   HintService.hint({title: "我操作成功了", content: "结果是：" + $scope.hintContent})
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      *
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      * </pre>
+	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      */
+
+	var _hint = __webpack_require__(178);
+
+	var _hint2 = _interopRequireDefault(_hint);
+
+	__webpack_require__(179);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var HintService = function () {
+	  HintService.$inject = ["$document", "$q", "$rootScope", "$compile"];
+	  function HintService($document, $q, $rootScope, $compile) {
+	    'ngInject';
+
+	    _classCallCheck(this, HintService);
+
+	    this.$document = $document;
+	    this.$q = $q;
+	    this.$rootScope = $rootScope;
+	    this.$compile = $compile;
+
+	    this.container = angular.element("<div class='bp-hint-container'>");
+	    this.$document.find("body").append(this.container);
+	  }
+
+	  _createClass(HintService, [{
+	    key: 'hint',
+	    value: function hint(param) {
+	      var data = Object.assign(this.$rootScope.$new(), param);
+
+	      var hint = this.$compile(_hint2.default)(data);
+
+	      hint.css('display', 'block');
+
+	      this.container.prepend(hint);
+
+	      setTimeout(function () {
+	        return hint.addClass('in');
+	      }, 10);
+
+	      setTimeout(function () {
+	        hint.removeClass('in');
+
+	        setTimeout(function () {
+	          return hint.remove();
+	        }, 500);
+	      }, 5000);
+	    }
+	  }]);
+
+	  return HintService;
+	}();
+
+	exports.default = HintService;
+
+/***/ },
+/* 178 */
+/***/ function(module, exports) {
+
+	module.exports = "<div class=\"bp-hint fade\">\n    <h3 class=\"popover-title\">{{title}}</h3>\n    <div class=\"popover-content\">{{content}}</div>\n</div>\n"
+
+/***/ },
+/* 179 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(180);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(13)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!./../../../node_modules/css-loader/index.js!./hint.css", function() {
+				var newContent = require("!!./../../../node_modules/css-loader/index.js!./hint.css");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 180 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(12)();
+	// imports
+
+
+	// module
+	exports.push([module.id, ".bp-hint-container {\n  position: absolute;\n  top: 0;\n  right: 0;\n  z-index: 900;\n  opacity: 1;\n}\n\n.bp-hint {\n  top: 0;\n  right: 0;\n  z-index: 901;\n  display: none;\n  width: 276px;\n  text-align: left;\n  white-space: normal;\n  background-color: #fff;\n  -webkit-background-clip: padding-box;\n  background-clip: padding-box;\n  /*border: 1px solid rgba(0, 0, 0, .2);*/\n  border: 1px solid #58b4e9;\n  border-radius: 6px;\n  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);\n  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);\n  margin-bottom: 2px;\n}\n\n.bp-hint.fade {\n  opacity: 0;\n  -webkit-transition: opacity 0.5s linear;\n  -o-transition: opacity 0.5s linear;\n  transition: opacity 0.5s linear;\n}\n\n.bp-hint.fade.in {\n  opacity: 1;\n}\n\n.bp-hint .popover-title {\n  background-color: #58b4e9;\n  color: white;\n}\n\n.bp-hint-title {\n  padding: 8px 14px;\n  margin: 0;\n  font-size: 14px;\n  font-weight: normal;\n  line-height: 18px;\n  background-color: #58b4e9;\n  border-bottom: 1px solid #ebebeb;\n  border-radius: 5px 5px 0 0;\n}\n\n.bp-hint-content {\n  padding: 9px 14px;\n}\n", ""]);
 
 	// exports
 

@@ -9,12 +9,16 @@ import CheckboxTest from './checkbox';
 import RadioTest from './radio';
 import Transfer from './transfer';
 import Datetimepicker from './datetimepicker';
+import alertTest from './alert/index.js';
+import hintTest from './hint';
 angular.module('app', [
   ButtonTest.name,
   CheckboxTest.name,
   RadioTest.name,
   Transfer.name,
-  Datetimepicker.name
+  Datetimepicker.name,
+  alertTest.name,
+  hintTest.name
 ])
   .controller('testApp',($scope)=>{
     $scope.menus = [
@@ -22,7 +26,9 @@ angular.module('app', [
       'checkbox',
       'radio',
       'transfer',
-      'datetimepicker'
+      'datetimepicker',
+      'hint',
+      'alert'
     ];
   });
 

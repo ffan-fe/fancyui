@@ -1,0 +1,25 @@
+<a href="https://github.com/{{repo}}/blob/{{sha}}/{{file}}#L{{codeline}}" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">HintService</code>
+<div><span class="hint"></span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="hintservice-page"><p>消息通知类的alert可以用这个</p>
+<p><strong>Methods</strong></p>
+<ul>
+<li><p><code>hint(config)</code> - 此方法会在右上角浮出一个弹窗.</p>
+<p> 参数<code>config</code>是可选的, 可用值是</p>
+<ul>
+<li>title:   String   - 弹窗的标题</li>
+<li>content:  String     - 弹窗的内容</li>
+</ul>
+</li>
+</ul>
+</div></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="hintservice-page"><pre class="prettyprint linenums">
+
+  HintService.hint({title: "我操作成功了", content: "结果是：" + $scope.hintContent})
+
+</pre>
+</div></div>
+</div>
