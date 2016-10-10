@@ -10,16 +10,16 @@
  * @param {String}   model       	 - binding symbol is =?, 单个时间值
  * @param {String}   startModel    - binding symbol is =?, 范围时间组件，开始时间值
  * @param {String}   endModel      - binding symbol is =?, 范围时间组件，结束时间值
- * @param {String}   min       		 - binding symbol is @, 最小时间限制
- * @param {String}   max   			   - binding symbol is @, 最大时间限制
+ * @param {String}   min       		 - binding symbol is <, 最小时间限制
+ * @param {String}   max   			   - binding symbol is <, 最大时间限制
  * @param {String}   startView  	 - binding symbol is @, 开始时间视图
  * @param {String}   minView       - binding symbol is @, 最小时间视图
  * @param {Number}   minuteStep    - binding symbol is <, 分钟间隔
  * @param {String}   modelType     - binding symbol is @, 显示的格式 YYYY-MM-DD 还是其他，默认到秒
- * @param {Boolean}  disabled      - binding symbol is <, Disabled状态
  * @param {Boolean}  startDisabled - binding symbol is <, 开始时间Disabled
  * @param {Boolean}  endDisabled   - binding symbol is <, 结束时间Disabled
- * @param {String}   separator     - binding symbol is @, 范围时间分隔符，默认'-'
+ * @param {Boolean}  disabled      - binding symbol is <, Disabled状态
+ * @param {String}   separator     - binding symbol is @, 范围时间分隔符，默认'至'
  *
  * @example
  *
@@ -148,7 +148,6 @@ export default class Datetimepicker extends Component {
       this.config.bp.startDisabled = angular.isUndefined(this.startDisabled) ? false : this.startDisabled;
       this.config.bp.endDisabled = angular.isUndefined(this.endDisabled) ? false : this.endDisabled;
     }
-    console.log('this.config.bp' ,this.config.bp);
   }
 
   /**
@@ -258,4 +257,5 @@ export default class Datetimepicker extends Component {
    * @override
    */
   _launch() {}
+
 }

@@ -21,9 +21,9 @@
        min-view="{String}"
        minute-step="{Number}"
        model-type="{String}"
-       disabled
        start-disabled="{Boolean}"
        end-disabled="{Boolean}"
+       disabled
        separator="{String}"&gt;
 &lt;/bp-datetimepicker&gt;</pre>
 <h4 id="usage_parameters">Parameters</h4><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>type</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
@@ -39,10 +39,10 @@
 <li>binding symbol is =?, 范围时间组件，结束时间值</li>
 </ul>
 </div></td></tr><tr><td>min</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
-<li>binding symbol is @, 最小时间限制</li>
+<li>binding symbol is &lt;, 最小时间限制</li>
 </ul>
 </div></td></tr><tr><td>max</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
-<li>binding symbol is @, 最大时间限制</li>
+<li>binding symbol is &lt;, 最大时间限制</li>
 </ul>
 </div></td></tr><tr><td>startView</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
 <li>binding symbol is @, 开始时间视图</li>
@@ -56,17 +56,17 @@
 </div></td></tr><tr><td>modelType</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
 <li>binding symbol is @, 显示的格式 YYYY-MM-DD 还是其他，默认到秒</li>
 </ul>
-</div></td></tr><tr><td>disabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
-<li>binding symbol is &lt;, Disabled状态</li>
-</ul>
 </div></td></tr><tr><td>startDisabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
 <li>binding symbol is &lt;, 开始时间Disabled</li>
 </ul>
 </div></td></tr><tr><td>endDisabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
 <li>binding symbol is &lt;, 结束时间Disabled</li>
 </ul>
+</div></td></tr><tr><td>disabled</td><td><a href="" class="label type-hint type-hint-boolean">Boolean</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
+<li>binding symbol is &lt;, Disabled状态</li>
+</ul>
 </div></td></tr><tr><td>separator</td><td><a href="" class="label type-hint type-hint-string">String</a></td><td><div class="datetimepicker-directive-page datetimepicker-directive-bpdatetimepicker-page"><ul>
-<li>binding symbol is @, 范围时间分隔符，默认&#39;-&#39;</li>
+<li>binding symbol is @, 范围时间分隔符，默认&#39;至&#39;</li>
 </ul>
 </div></td></tr></tbody></table></div>
 <h2 id="example">Example</h2>
