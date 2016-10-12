@@ -27274,7 +27274,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * 如果有最小时间的限制 最小时间可以选
 	         */
-	        if (type == 'min') {
+	        if (type == 'min' || ['day', 'month', 'year'].indexOf(this.config.base.minView) > -1) {
 	          if ($dates[i].localDateValue() < activeDate.valueOf()) {
 	            $dates[i].selectable = false;
 	          }
@@ -27298,7 +27298,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	        /**
 	         * 如果有最大值的限制 最大值可以选
 	         */
-	        if (type == 'max') {
+	        if (type == 'max' || ['day', 'month', 'year'].indexOf(this.config.base.minView) > -1) {
 	          if ($dates[i].localDateValue() > activeDate.valueOf()) {
 	            $dates[i].selectable = false;
 	          }
