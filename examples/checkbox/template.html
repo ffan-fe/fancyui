@@ -1,0 +1,157 @@
+<h3>Checkbox</h3>
+<section class="example-container">
+  <bp-checkbox>暴风雪</bp-checkbox>
+  <bp-checkbox checked="true">暴风雪</bp-checkbox>
+  <bp-checkbox disabled="true">暴风雪</bp-checkbox>
+  <bp-checkbox checked="true" disabled="true">暴风雪</bp-checkbox>
+  <bp-checkbox half-checked="true">暴风雪</bp-checkbox>
+  <bp-checkbox half-checked="true" disabled="true">暴风雪</bp-checkbox>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part1Html"></code>
+    </pre>
+  </div>
+</section>
+<section class="example-container">
+  <bp-checkbox checked="vm.checked1">绑定到controller的</bp-checkbox>
+  <p>binding to controller value: {{vm.checked1}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part2Html"></code>
+    </pre>
+  </div>
+</section>
+<section class="example-container">
+  <bp-checkbox checked="vm.checked2" true-value="1", false-value="2">绑定到controller的</bp-checkbox>
+  <p>true-value and false-value: {{vm.checked2}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part3Html"></code>
+    </pre>
+  </div>
+</section>
+<section class="example-container">
+  <bp-checkbox-group model="vm.groupDataList"></bp-checkbox-group>
+  <p>{{vm.groupDataList}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part4Html"></code>
+    </pre>
+  </div>
+  <div>
+    <pre>
+      <code class="language-javascript" ng-bind-html="vm.part5Html"></code>
+    </pre>
+  </div>
+</section>
+<section class="example-container">
+  <bp-checkbox-group model="vm.groupDataList" disabled="true"></bp-checkbox-group>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part6Html"></code>
+    </pre>
+  </div>
+</section>
+<section class="example-container">
+  <bp-checkbox-group model="vm.groupDataList" inline="true"></bp-checkbox-group>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part7Html"></code>
+    </pre>
+  </div>
+</section>
+<section>
+  <h2>Checkbox属性</h2>
+  <table class="table table-condensed table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>属性名</th>
+        <th>类型</th>
+        <th>说明</th>
+        <th>可选值</th>
+        <th>默认值</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>disabled</td>
+        <td>Boolean</td>
+        <td>是否禁用状态, 单向绑定</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>checked</td>
+        <td>Boolean</td>
+        <td>是否选中状态, 双向绑定</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>halfChecked</td>
+        <td>Boolean</td>
+        <td>是否半选状态, 双向绑定</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>trueValue</td>
+        <td>Object</td>
+        <td>ng-true-value的实现</td>
+        <td>代替ture的某个值</td>
+        <td>true</td>
+      </tr>
+      <tr>
+        <td>falseValue</td>
+        <td>Object</td>
+        <td>ng-false-value的实现</td>
+        <td>代替false的某个值</td>
+        <td>false</td>
+      </tr>
+    </tbody>
+  </table>
+  <h2>半选说明</h2>
+  <div class="doc-container">
+    半选主要用在列表全选的情况, 全选的时候是checked状态, 选择了某几个但没有全选是半选状态
+  </div>
+</section>
+<section>
+  <h2>Checkbox Group属性</h2>
+  <table class="table table-condensed table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>属性名</th>
+        <th>类型</th>
+        <th>说明</th>
+        <th>可选值</th>
+        <th>默认值</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>disabled</td>
+        <td>Boolean</td>
+        <td>是否禁用状态, 单向绑定, 禁用整个组</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>model</td>
+        <td><code>Array.&lt;Object&gt;</code></td>
+        <td>
+            <p>数据集, 填充数据中label是必选</p>
+            <p>并支持checkbox的<code>checked, disabled, half-checked</code>属性</p>
+        </td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>inline</td>
+        <td>Boolean</td>
+        <td>排版时使用的是ul>li, 此属性是是否改为横向排版</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+    </tbody>
+  </table>
+</section>

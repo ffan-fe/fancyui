@@ -1,0 +1,57 @@
+.bp-hint-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 900;
+  opacity: 1;
+}
+
+.bp-hint {
+  top: 0;
+  right: 0;
+  z-index: 901;
+  display: none;
+  width: 276px;
+  text-align: left;
+  white-space: normal;
+  background-color: #fff;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  /*border: 1px solid rgba(0, 0, 0, .2);*/
+  border: 1px solid #58b4e9;
+  border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+  margin-bottom: 2px;
+}
+
+.bp-hint.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.5s linear;
+  -o-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.bp-hint.fade.in {
+  opacity: 1;
+}
+
+.bp-hint .popover-title {
+  background-color: #58b4e9;
+  color: white;
+}
+
+.bp-hint-title {
+  padding: 8px 14px;
+  margin: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 18px;
+  background-color: #58b4e9;
+  border-bottom: 1px solid #ebebeb;
+  border-radius: 5px 5px 0 0;
+}
+
+.bp-hint-content {
+  padding: 9px 14px;
+}

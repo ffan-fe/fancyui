@@ -1,0 +1,58 @@
+<h3>CitySelector</h3>
+<section>
+  <p>
+    <bp-button type="primary" click="vm.showDefault()">Default</bp-button>
+  </p>
+  <p style="word-break: break-word;word-wrap: break-word;">
+    {{vm.cityData1}}
+  </p>
+  <div>
+    <pre>
+      <code class="language-javascript" ng-bind-html="vm.part1Html"></code>
+    </pre>
+  </div>
+</section>
+<section>
+  <p>
+    <bp-button type="primary" click="vm.showDisabled()">Show isReadOnly</bp-button>
+  </p>
+  <p>
+    当传递isReadOnly时, 所有的选择项都会被禁用
+  </p>
+  <div>
+    <pre>
+      <code class="language-javascript" ng-bind-html="vm.part2Html"></code>
+    </pre>
+  </div>
+</section>
+<section>
+  <p>
+    <bp-button type="primary" click="vm.showCheckedList()">Show checkedList</bp-button>
+    <bp-button type="primary" click="vm.showCheckedListAndReadOnly()">Show checkedList and isReadOnly</bp-button>
+  </p>
+  <p>
+    传递checkedList的时候是回填这部分数据到组件里
+  </p>
+  <p style="word-break: break-word;word-wrap: break-word;">
+    {{vm.cityData2}}
+  </p>
+  <div>
+    <pre>
+      <code class="language-javascript" ng-bind-html="vm.part3Html"></code>
+    </pre>
+  </div>
+</section>
+<section>
+  <p>
+    <bp-button type="primary" click="vm.showCustomDataCitySelector()">Show CustomData</bp-button>
+  </p>
+  <p>
+    如文档所言, 组件会自己去请求基础数据接口, 获得数据, 然而如果碰到要自定义数据的情况, 就传递database
+    请自己转换数据格式, 组件也不会请求接口了.
+  </p>
+  <div>
+    <pre>
+      <code class="language-javascript" ng-bind-html="vm.part4Html"></code>
+    </pre>
+  </div>
+</section>

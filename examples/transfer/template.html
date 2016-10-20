@@ -1,0 +1,54 @@
+<section>
+  <h3>默认的穿梭框</h3>
+  <bp-transfer
+      source-data="vm.dataSource"
+      target-data="vm.targetData"
+  >
+  </bp-transfer>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.part1Html"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.part2Html"></code></pre>
+</section>
+
+<section>
+  <h3>自定义的穿梭框</h3>
+  <bp-transfer
+      source-data="vm.dataSource"
+      titles="vm.titles"
+      placeholders="vm.placeholders"
+      operations="vm.operations"
+      show-left-search="vm.showLeftSearch"
+      show-right-search="vm.showRightSearch"
+      add-btn="vm.addBtn"
+      add-all-btn="vm.addAllBtn"
+      del-btn="vm.delBtn"
+      del-all-btn="vm.delAllBtn"
+  >
+  </bp-transfer>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.part3Html"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.part4Html"></code></pre>
+</section>
+
+<section>
+  <h3>服务端检索的穿梭框</h3>
+  <bp-transfer
+      source-data="vm.dataSource"
+      titles="vm.titles"
+      placeholders="vm.placeholders"
+      operations="vm.operations"
+      show-left-search="vm.showLeftSearch"
+      show-right-search="vm.showRightSearch"
+      add-btn="vm.addBtn"
+      add-all-btn="vm.addAllBtn"
+      del-btn="vm.delBtn"
+      del-all-btn="vm.delAllBtn"
+      server-search="vm.serverSearch($value)"
+  ></bp-transfer>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.part5Html"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.part6Html"></code></pre>
+</section>

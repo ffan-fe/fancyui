@@ -1,0 +1,88 @@
+<!--默认时间窗 -->
+<section>
+  <h3>默认的时间窗</h3>
+  <bp-datetimepicker
+      model="vm.model"
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html1"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js1"></code></pre>
+</section>
+<!--默认时间窗/ -->
+
+<!--范围时间 -->
+<section>
+  <h3>范围时间窗</h3>
+  <span style="font-size:11px" >(会自动限制前者时间不能大于后者时间,后者时间不能小于前者时间)</span>
+  <bp-datetimepicker
+      type="range"
+      start-model="vm.startModel2"
+      end-model="vm.endModel2"
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html2"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js2"></code></pre>
+</section>
+<!--范围时间 -->
+
+<!-- 只能选月-->
+<section>
+  <h3>只能选择月</h3>
+  <bp-datetimepicker
+      type="range"
+      model-type="YYYY-MM"
+      start-model="vm.startModel3"
+      end-model="vm.endModel3"
+      start-view="month"
+      min-View="month"
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html3"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js3"></code></pre>
+</section>
+<!--只能选月 -->
+
+<!-- 最大时间 / 最小时间 -->
+<section>
+  <h3>最大时间和最小时间</h3>
+  <bp-datetimepicker
+      type="range"
+      start-model="vm.startModel4"
+      end-model="vm.endModel4"
+      min="2016-09-09 09:09:00"
+      max="2016-09-21 09:09:00"
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html4"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js4"></code></pre>
+</section>
+<!-- 最大时间 / 最小时间 -->
+
+<!--自定义配置 -->
+<section>
+  <h3>自定义一些配置</h3>
+  <bp-datetimepicker
+      type="range"
+      start-model="vm.startModel"
+      end-model="vm.endModel"
+      start-disabled="true"
+      minute-step="10"
+      separator="至 "
+  >
+  </bp-datetimepicker>
+  <h3>HTML</h3>
+  <pre><code class="language-html" ng-bind-html="vm.html5"></code></pre>
+  <h3>javascript</h3>
+  <pre><code class="language-javascript" ng-bind-html="vm.js5"></code></pre>
+</section>
+<!-- /自定义一些配置 -->
+
+

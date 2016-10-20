@@ -1,0 +1,166 @@
+<section class="exmaple-container">
+  <h3>只支持String类型值<span style="font-size: 11px;">注:vm.player默认值为 "仙道" </span></h3>
+  <bp-radiobox model="vm.player" value="樱木花道">樱木花道</bp-radiobox>
+  <bp-radiobox model="vm.player" value="流川枫">流川枫</bp-radiobox>
+  <bp-radiobox model="vm.player" value="仙道" disabled="true">仙道</bp-radiobox>
+  <bp-radiobox model="vm.player" value="宫城良田" >宫城良田</bp-radiobox>
+  <p>binding to controller value: {{vm.player}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part1Html"></code>
+    </pre>
+  </div>
+</section>
+
+<section class="exmaple-container">
+  <h3>复杂数据结构支持如Objec,Array,Boolean<span style="font-size: 11px;">注:vm.player默认值为 "仙道" </span></h3>
+  <bp-radiobox model="vm.player" value="樱木花道">樱木花道</bp-radiobox>
+  <bp-radiobox model="vm.player" value="流川枫">流川枫</bp-radiobox>
+  <bp-radiobox model="vm.player" value="仙道">仙道</bp-radiobox>
+  <bp-radiobox model="vm.player" complex="vm.specialInfo" value="宫城良田">宫城良田</bp-radiobox>
+  <p>binding to controller value:{{vm.player}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part2Html"></code>
+    </pre>
+  </div>
+</section>
+
+<section class="example-container">
+  <h3>Radio组</h3>
+  <h6>横向展示</h6>
+  <bp-radiobox-group list="vm.groupDataList" model="vm.model" inline=true></bp-radiobox-group>
+  <p>binding to controller value:{{vm.model}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part3Html"></code>
+    </pre>
+  </div>
+  <div>
+    <pre>
+      <code class="language-javascript" ng-bind-html="vm.part4Html"></code>
+    </pre>
+  </div>
+</section>
+
+
+<section class="example-container">
+  <h6>竖向展示</h6>
+  <bp-radiobox-group list="vm.groupDataList" model="vm.model" ></bp-radiobox-group>
+  <p>binding to controller value:{{vm.model}}</p>
+  <div>
+    <pre>
+      <code class="language-html" ng-bind-html="vm.part5Html"></code>
+    </pre>
+  </div>
+  <div>
+    <pre>
+      <code class="language-javascript" ng-bind-html="vm.part4Html"></code>
+    </pre>
+  </div>
+</section>
+
+<section>
+  <h2>说明</h2>
+  <div class="doc-container">
+    当 value 和 complex 指令同时拥有时,complex指令值会覆盖掉value值
+  </div>
+</section>
+
+<section>
+  <h2>Radio Component说明文档</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>指令名</th>
+      <th>类型</th>
+      <th>说明</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>model</td>
+      <td>String,Array,Object,Boolean...</td>
+      <td>model值为value 或者 complex 值</td>
+      <td>Array,Object,Boolean类型值</td>
+      <td>Undefined</td>
+    </tr>
+    <tr>
+      <td>value</td>
+      <td>String,Number</td>
+      <td>当选定后value的值会绑定到ngModel上,只支持String,如果需要自持Array,Object值,请使用complex</td>
+      <td>String类型值</td>
+      <td>Undefined</td>
+    </tr>
+    <tr>
+      <td>complex</td>
+      <td>Array,Object,Boolean</td>
+      <td>当选中后complex值会绑定到ngModel上,如果value指令和complex指令同时被设置值后,complex值会覆盖value值</td>
+      <td>Array,Object,Boolean类型值</td>
+      <td>Undefined</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>Boolean</td>
+      <td>是否禁用状态, 单向绑定</td>
+      <td>true | false</td>
+      <td>false</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>RadioGroup Component说明文档</h2>
+  <table class="table table-bordered">
+    <thead>
+    <tr>
+      <th>指令名</th>
+      <th>类型</th>
+      <th>说明</th>
+      <th>可选值</th>
+      <th>默认值</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>model</td>
+      <td>String,Array,Object,Boolean...</td>
+      <td>model值为value 或者 complex 值</td>
+      <td>Array,Object,Boolean类型值</td>
+      <td>Undefined</td>
+    </tr>
+    <tr>
+      <td>list</td>
+      <td><code>Array.&lt;Object&gt;</code></td>
+      <td>参考数据:<code>[
+        {label: '沉默的羔羊', value: '沉默的羔羊'},
+        {label: '这个杀手不太冷',value:'这个杀手不太冷'},
+        {label: '指环王',value:'指环王',complex:{author:'xxx',age:45,sex:'不详'}},
+        {label: '速度与激情',value:"速度与激情"},
+        {label: '魔兽世界', value:"魔兽世界",disabled: true},
+        {label: 'X战警',value:"X战警"}
+        ];</code></td>
+      <td>Array,Object,Boolean类型值</td>
+      <td>Undefined</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>Boolean</td>
+      <td>是否禁用状态, 单向绑定</td>
+      <td>true | false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>inline</td>
+      <td>Boolean</td>
+      <td>横向展示还是竖向展示</td>
+      <td>true | false</td>
+      <td>false</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
+

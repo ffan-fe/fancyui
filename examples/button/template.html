@@ -1,0 +1,96 @@
+<h3>Button</h3>
+<section>
+  <p>
+    <bp-button type="primary" disabled="vm.tiggleDisabled">primary</bp-button>
+    <bp-button type="primary" icon="ok">OK</bp-button>
+    <div>
+      <pre>
+        <code class="language-javascript" ng-bind-html="vm.part1Html"></code>
+      </pre>
+    </div>
+  </p>
+  <p>
+    <bp-button type="primary" size="xs">size xs button</bp-button>
+    <bp-button type="primary" size="sm">size sm button</bp-button>
+    <bp-button type="primary">size default button</bp-button>
+    <bp-button type="primary" size="lg">size lg button</bp-button>
+    <pre>
+        <code class="language-html" ng-bind-html="vm.part2Html"></code>
+    </pre>
+  </p>
+  <p>
+    <bp-button click="vm.sayHello(button)" type="primary" loading="true">loading</bp-button>
+    <bp-button click="vm.sayHello(button)" type="primary" icon="ok" loading="true">loading</bp-button>
+    <pre>
+        <code class="language-html" ng-bind-html="vm.part3Html"></code>
+    </pre>
+  </p>
+</section>
+<section>
+  <h2>属性</h2>
+  <table class="table table-condensed table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>属性名</th>
+        <th>类型</th>
+        <th>说明</th>
+        <th>可选值</th>
+        <th>默认值</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>type</td>
+        <td>String</td>
+        <td>类型, 会改变按钮的样式</td>
+        <td>primary | default | danger</td>
+        <td>primary</td>
+      </tr>
+      <tr>
+        <td>size</td>
+        <td>String</td>
+        <td>沿用bootstrap 改变大小</td>
+        <td>空 | lg | sm | xs</td>
+        <td>空</td>
+      </tr>
+      <tr>
+        <td>htmlType</td>
+        <td>String</td>
+        <td>正常的html中的type</td>
+        <td>button | submit ...</td>
+        <td>button</td>
+      </tr>
+      <tr>
+        <td>icon</td>
+        <td>String</td>
+        <td>需要展示的<a href="/#/icon">Icon</a></td>
+        <td>详见bootstrap文档</td>
+        <td>空</td>
+      </tr>
+      <tr>
+        <td>loading</td>
+        <td>Boolean</td>
+        <td>是否支持loading</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>disabled</td>
+        <td>Boolean</td>
+        <td>是否禁用</td>
+        <td>true | false</td>
+        <td>false</td>
+      </tr>
+      <tr>
+        <td>click</td>
+        <td>Function</td>
+        <td>Click 处理函数</td>
+        <td>Function</td>
+        <td>空</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>接口</h2>
+</section>

@@ -12,6 +12,7 @@ import template from 'gulp-template';
 import webpack from 'webpack';
 import webpackDistConfig from './webpack.dist.config';
 import webpackDevConfig from './webpack.dev.config';
+import webpackExampleConfig from './webpack.example.config';
 import webpackDevMiddelware from 'webpack-dev-middleware';
 
 import browserSync from 'browser-sync';
@@ -38,11 +39,11 @@ gulp.task('dev', callback => {
         baseDir: 'tests',
         index: 'index.html'
       },
-      files: ['tests/**/*.js', 
-              'tests/**/*.less', 
-              'tests/**/*.html', 
-              'src/**/*.js', 
-              'src/**/*.less', 
+      files: ['tests/**/*.js',
+              'tests/**/*.less',
+              'tests/**/*.html',
+              'src/**/*.js',
+              'src/**/*.less',
               'src/**/*.html'],
       middleware: [
         webpackDevMiddelware(compiler, {
@@ -65,6 +66,17 @@ gulp.task('build', callback => {
     callback();
   });
 });
+
+/**
+ * 生成网站
+ */
+gulp.task('build:example', callback => {
+  webpack(webpackExampleConfig, (err, state) => {
+    if (err) throw new gutil.PluginError('webpack', err);
+    callback();
+  });
+});
+
 
 gulp.task('component', () => {
   // 组件名
