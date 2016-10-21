@@ -33,7 +33,7 @@ angular.module('exampleapp', [
   nav.name
 ])
   //.component('ui', component)
-  .config(($stateProvider) => {
+  .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
     $stateProvider
       .state('button', {
@@ -63,5 +63,7 @@ angular.module('exampleapp', [
       .state('getstarted', {
         url: '/getstarted',
         template: '<ui-get-started></ui-get-started>'
-      })
+      });
+
+    $urlRouterProvider.otherwise('/button');
   });
