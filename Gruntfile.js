@@ -14,7 +14,7 @@ module.exports = function (grunt) {
         sourceLink: true,
         editLink: false
       },
-      all: ['src/**/*.js']
+      all: ['src/**/*.js', 'bp-utils/src/**/*.js']
     },
     connect: {
       options: {

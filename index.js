@@ -7,8 +7,7 @@ import ffanRadioboxGroup from './src/components/radiobox.group';
 import ffanCitySelector from './src/components/city.selector';
 import ffanTransfer from './src/components/transfer';
 import ffanDatetimepicker from './src/components/datetimepicker';
-import alert from './src/components/alert'
-import hint from './src/components/hint'
+import bpServices from './bp-utils/src/service/index.js'
 
 'use strict';
 
@@ -21,7 +20,6 @@ export let RadioboxGroup = ffanRadioboxGroup;
 export let CitySelector = ffanCitySelector;
 export let Transfer = ffanTransfer;
 export let Datetimepicker = ffanDatetimepicker;
-export let bpAlert = alert;
-export let bpHint = hint;
+export let bpServices = bpServices;
 
 
