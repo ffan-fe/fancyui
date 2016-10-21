@@ -6,7 +6,7 @@ let hintModule = angular.module('hintTest', [
 ])
   .config(($stateProvider) => {
     'ngInject';
-    $stateProvider.state('ui.hint', {
+    $stateProvider.state('hint', {
       url: '/hint',
       template: '<hint></hint>'
     });

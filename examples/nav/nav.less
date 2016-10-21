@@ -1,0 +1,122 @@
+@media screen {
+  // main container
+  #nav { 
+    position: fixed;
+    top: 50px;
+    right: 50px;
+    width: 120px;
+    padding-top: 56px;
+    overflow: hidden;
+    transition: height 200ms linear;
+    // main nav list
+    #nav-list {
+      .nav-item {
+        position: relative;
+        height: 40px;
+        max-width: 120px;
+        line-height: 40px;
+        padding-right: 8px;
+        background-color: rgba(0, 0, 0, 0);
+        overflow: hidden;
+        cursor: pointer;
+        text-align: right;
+        transition: background-color 300ms linear;
+        &:hover, &.active {
+          background-color: rgba(109,125,177,1);
+        }
+        a {
+          display: block;
+          height: 100%;
+          color: white;
+          z-index: 1;
+          &:hover {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+    // 子导航
+    .menu-item() {
+      padding: 0px 8px 0px 8px;
+      a {
+        color: #666666;
+        transition: color 200ms ease-in;
+        &:hover {
+          color: white;
+          text-decoration: none;
+        }
+      }
+      .title {
+        margin-top: 8px;
+        color: #7d5523;
+        font-weight: bold;
+      }
+    }
+    .skin-aside-menu, .components-aside-menu  {
+      width: 120px;
+      text-align: right;
+      .menu-item {
+        .menu-item();
+      }
+    }
+    // 子导航的触发器, 不过只有在移动端才显示
+    #toggle_btn {
+      display: none;
+      position: relative;
+      float: right;
+      top: 10px;
+      color: white;
+    }
+  }
+  // 在不同的状态下显示不同的logo
+  .skin-wrap #nav {
+    background: url("./images/sun_s.png") top right no-repeat;
+  }
+  .ui-wrap #nav {
+    background: url("./images/moon_s.png") top right no-repeat;
+  }
+}
+
+@media (max-width: 770px) {
+  #nav {
+    position: static;
+    width: 100%;
+    height: 56px;
+    padding: 8px;
+    z-index: 1;
+    #nav-list {
+      display: inline-block;
+      .nav-item {
+        display: inline-block;
+        overflow: inherit;
+        padding: 0px 8px;
+      }
+    }
+    #toggle_btn {
+      display: block;
+    }
+    &.show-skin-menu, &.show-component-menu {
+      height: 290px;
+    }
+    .skin-aside-menu, .components-aside-menu {
+      padding-left: 7px;
+      text-align: left;
+      color: white;
+      .menu-item {
+        padding: 0px;
+        a {
+          color: white;
+        }
+      }
+      .aside-menu-title {
+        display: none;
+      }
+    }
+  }
+  .skin-wrap #nav {
+    background: #ffab42;
+  }
+  .ui-wrap #nav {
+    background: #190d46;
+  }
+}

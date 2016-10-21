@@ -4,6 +4,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 
 module.exports = {
+  devtool: 'source-map',
   entry: path.resolve(__dirname, 'examples/ui.js'),
   output: {
     filename: 'examples.js',

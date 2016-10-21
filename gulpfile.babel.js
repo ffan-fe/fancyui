@@ -31,17 +31,17 @@ gulp.task('default', ['dev']);
  */
 gulp.task('dev', callback => {
   const bs = browserSync.create();
-  const compiler = webpack(webpackDevConfig)
+  const compiler = webpack(webpackDevConfig);
   bs.init(
     {
       port: process.env.PORT || 3000,
       server: {
-        baseDir: 'tests',
+        baseDir: 'examples',
         index: 'index.html'
       },
-      files: ['tests/**/*.js',
-              'tests/**/*.less',
-              'tests/**/*.html',
+      files: ['examples/**/*.js',
+              'examples/**/*.less',
+              'examples/**/*.html',
               'src/**/*.js',
               'src/**/*.less',
               'src/**/*.html'],

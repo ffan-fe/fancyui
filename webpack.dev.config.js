@@ -9,12 +9,26 @@ import path from 'path';
 'use strict';
 
 module.exports = {
-  devtool: 'sourcemap',
-  entry: './tests/testapp.js',
+  devtool: 'inline-source-map',
+  entry: './examples/ui.js',
   output: {
-    filename: 'app.bundle.js',
-    publicPath: '/',
-    path: path.resolve(__dirname, './tests')
+    // Absolute output directory
+    path: __dirname,
+    //path: __dirname + '/dist',
+
+    // Output path from the view of the page
+    // Uses webpack-dev-server in development
+    publicPath: '',
+
+    // Filename for entry points
+    // Only adds hash in build mode
+    filename: '[name].bundle.js',
+    //filename: BUILD ? '[name].[hash].js' : '[name].bundle.js',
+
+    // Filename for non-entry points
+    // Only adds hash in build mode
+    chunkFilename: '[name].bundle.js'
+    //chunkFilename: BUILD ? '[name].[hash].js' : '[name].bundle.js'
   },
   module: {
     loaders: [
@@ -47,22 +61,13 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './tests/index.html',
+      template: './examples/index.html',
       inject: 'body',
       hash: true
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
-    }),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: 'vendor',
-      filename: 'vendor.js',
-      minChunks: function (module, count) {
-        const s = module.resource && module.resource.indexOf(path.resolve(__dirname, 'src')) === -1;
-        const t = module.resource && module.resource.indexOf(path.resolve(__dirname, 'tests')) === -1;
-        return s && t;
-      }
     }),
     new webpack.HotModuleReplacementPlugin()
   ]

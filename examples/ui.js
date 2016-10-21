@@ -11,9 +11,15 @@ import alertTest from './alert/index.js';
 import hintTest from './hint/index.js';
 import GetStarted from './get-started/get-started';
 
+import 'bp-admin-skin'
+
+import nav from './nav/nav'
+
+import './ui.less';
+
 'use strict';
 
-export default angular.module('ui', [
+angular.module('exampleapp', [
   uiRouter,
   ButtonShow.name,
   CheckboxShow.name,
@@ -23,38 +29,39 @@ export default angular.module('ui', [
   Datetimepicker.name,
   alertTest.name,
   hintTest.name,
-  GetStarted.name
+  GetStarted.name,
+  nav.name
 ])
-  .component('ui', component)
+  //.component('ui', component)
   .config(($stateProvider) => {
     'ngInject';
     $stateProvider
-      .state('ui.button', {
+      .state('button', {
         url: '/button',
         template: '<button-show></button-show>'
       })
-      .state('ui.checkbox', {
+      .state('checkbox', {
         url: '/checkbox',
         template: '<checkbox-show></checkbox-show>'
       })
-      .state('ui.radiobox', {
+      .state('radiobox', {
         url: '/radiobox',
         template: '<radiobox-show></radiobox-show>'
       })
-      .state('ui.transfer', {
+      .state('transfer', {
         url: '/transfer',
         template: '<transfer-show></transfer-show>'
       })
-      .state('ui.cityselector', {
+      .state('cityselector', {
         url: '/cityselector',
         template: '<city-selector-show></city-selector-show>'
       })
-      .state('ui.datetimepicker', {
+      .state('datetimepicker', {
         url: '/datetimepicker',
         template: '<datetimepicker-show></datetimepicker-show>'
       })
-      .state('ui.getstarted', {
+      .state('getstarted', {
         url: '/getstarted',
         template: '<ui-get-started></ui-get-started>'
       })
-  })
+  });

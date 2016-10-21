@@ -6,7 +6,7 @@ let alertModule = angular.module('alertTest', [
 ])
   .config(($stateProvider) => {
     'ngInject';
-    $stateProvider.state('ui.alert', {
+    $stateProvider.state('alert', {
       url: '/alert',
       template: '<alert></alert>'
     });

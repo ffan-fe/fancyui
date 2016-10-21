@@ -1,8 +1,8 @@
-import angular from 'angular';
 
 import template from './template.html';
 import controller from './controller';
-import {Checkbox, CheckboxGroup} from 'fancyui';
+import Checkbox from '../../src/components/checkbox/index.js';
+import CheckboxGroup from '../../src/components/checkbox.group/index.js';
 
 'use strict';
 
