@@ -5,16 +5,12 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
-  entry: path.resolve(__dirname, 'examples/ui.js'),
+  entry: './examples/ui.js',
   output: {
     filename: 'examples.js',
     publicPath: '',
     path: path.resolve(__dirname),
     libraryTarget: 'umd'
-  },
-  externals: {
-    'jquery': true,
-    'angular': true
   },
   module: {
     loaders: [
@@ -38,6 +34,10 @@ module.exports = {
       template: './index.html',
       inject: 'body',
       minify: false
+    }),
+    new webpack.ProvidePlugin({
+      $: "jquery",
+      jQuery: "jquery"
     }),
     new webpack.optimize.UglifyJsPlugin()
   ]
