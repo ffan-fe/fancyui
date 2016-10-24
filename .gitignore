@@ -8,3 +8,4 @@ Anaheim.iml
 .vscode/
 esdoc/
 node_modules/
+dist

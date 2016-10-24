@@ -21,3 +21,8 @@
 ##### 打包
 
 `gulp build` 生成文件到dist目录
+
+##### 生成网站示例和doc
+
+切到gh-page分支：
+`npm run build:example`
