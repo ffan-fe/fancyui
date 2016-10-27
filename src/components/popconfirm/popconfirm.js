@@ -9,22 +9,22 @@ import Component from '../common/component';
 
 /**
  * Popconfirm component
- * 
+ *
  * @export
  * @class Popconfirm
  * @extends {Component}
  */
-export default class Popconfirm extends Component {
+export default class Popconfirm {
   /**
-   * @override 
+   * @override
    */
   _initDefaultValue() {}
   /**
-   * @override 
+   * @override
    */
   _createClassName() {}
   /**
-   * @override 
+   * @override
    */
   _launch() {}
 }
