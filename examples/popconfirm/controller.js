@@ -8,12 +8,15 @@ export default class popConfirmController {
     this.Popconfirm = Popconfirm;
   }
 
-  deleteConfirm() {
+  deleteConfirm(e) {
     console.dir(this.Popconfirm)
-    this.instancePopConfirm();
+    this.instancePopConfirm(e);
   }
 
-  instancePopConfirm() {
-    this.Popconfirm.test({title: '确定要删除吗?'})
+  instancePopConfirm(e) {
+    this.Popconfirm.pop({
+      title: '确定要删除吗?',
+      placement: 'top'
+    }, e)
   }
 }
