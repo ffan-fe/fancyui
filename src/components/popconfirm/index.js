@@ -4,9 +4,8 @@
  */
 
 import angular from 'angular';
-import component from './popconfirm.component';
-
+import service from './popconfirm';
 'use strict';
 
 export default angular.module('Popconfirm', [])
-  .component('bpPopconfirm', component);
+  .service('Popconfirm', service);
