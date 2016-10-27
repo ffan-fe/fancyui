@@ -10,6 +10,7 @@ import Datetimepicker from './datetimepicker';
 import alertTest from './alert/index.js';
 import hintTest from './hint/index.js';
 import GetStarted from './get-started/get-started';
+import popConfirm from './popconfirm';
 
 import 'bp-admin-skin'
 
@@ -30,7 +31,8 @@ angular.module('exampleapp', [
   alertTest.name,
   hintTest.name,
   GetStarted.name,
-  nav.name
+  nav.name,
+  popConfirm.name
 ])
   //.component('ui', component)
   .config(($stateProvider, $urlRouterProvider) => {
@@ -63,6 +65,10 @@ angular.module('exampleapp', [
       .state('getstarted', {
         url: '/getstarted',
         template: '<ui-get-started></ui-get-started>'
+      })
+      .state('popconfirm', {
+        url: '/popconfirm',
+        template: '<pop-confirm-show></pop-confirm-show>'
       });
 
     $urlRouterProvider.otherwise('/button');
