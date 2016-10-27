@@ -5,7 +5,7 @@
   "main": "dist/anaheim.js",
   "scripts": {
     "build": "gulp build",
-    "build:example": "gulp build:example && grunt",
+    "build:example": "gulp build:example && grunt --force",
     "prepublish": "npm run build"
   },
   "repository": {
