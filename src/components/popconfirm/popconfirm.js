@@ -24,22 +24,36 @@ export default class Popconfirm {
   /**
    * @override
    */
-  _initDefaultValue() {}
-  /**
-   * @override
-   */
-  _createClassName() {}
-  /**
-   * @override
-   */
-  _launch() {}
+  _initDefaultValue() {
+  }
 
-  test(param) {
-    // let data = Object.assign(this.$scope, param);
+  /**
+   * @override
+   */
+  _createClassName() {
+  }
+
+  /**
+   * @override
+   */
+  _launch() {
+  }
+
+  pop(param, e) {
+    console.log(e.target.offsetTop)
     let pop = this.$compile(template)(param);
     pop.css('display', 'block');
-    
+
     this.$document.find('body').append(pop);
-    console.log(param)
+    console.log(param.placement);
+
+    switch (param.placement) {
+      case 'top':
+
+        break;
+      case 'left':
+
+        break;
+    }
   }
 }

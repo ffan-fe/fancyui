@@ -214,3 +214,270 @@
 .ant-popover-placement-leftBottom .ant-popover-arrow {
   bottom: 12px
 }
+
+
+.zoom-appear,.zoom-enter,.zoom-leave {
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused
+}
+
+.zoom-appear.zoom-appear-active,.zoom-enter.zoom-enter-active {
+  -webkit-animation-name: antZoomIn;
+  animation-name: antZoomIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-leave.zoom-leave-active {
+  -webkit-animation-name: antZoomOut;
+  animation-name: antZoomOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-appear,.zoom-enter {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+  animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+
+.zoom-leave {
+  -webkit-animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+  animation-timing-function: cubic-bezier(.78,.14,.15,.86)
+}
+
+.zoom-big-appear,.zoom-big-enter,.zoom-big-leave {
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused
+}
+
+.zoom-big-appear.zoom-big-appear-active,.zoom-big-enter.zoom-big-enter-active {
+  -webkit-animation-name: antZoomBigIn;
+  animation-name: antZoomBigIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-big-leave.zoom-big-leave-active {
+  -webkit-animation-name: antZoomBigOut;
+  animation-name: antZoomBigOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-big-appear,.zoom-big-enter {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+  animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+
+.zoom-big-leave {
+  -webkit-animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+  animation-timing-function: cubic-bezier(.78,.14,.15,.86)
+}
+
+.zoom-big-fast-appear,.zoom-big-fast-enter,.zoom-big-fast-leave {
+  -webkit-animation-duration: .1s;
+  animation-duration: .1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused
+}
+
+.zoom-big-fast-appear.zoom-big-fast-appear-active,.zoom-big-fast-enter.zoom-big-fast-enter-active {
+  -webkit-animation-name: antZoomBigIn;
+  animation-name: antZoomBigIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-big-fast-leave.zoom-big-fast-leave-active {
+  -webkit-animation-name: antZoomBigOut;
+  animation-name: antZoomBigOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-big-fast-appear,.zoom-big-fast-enter {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+  animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+
+.zoom-big-fast-leave {
+  -webkit-animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+  animation-timing-function: cubic-bezier(.78,.14,.15,.86)
+}
+
+.zoom-up-appear,.zoom-up-enter,.zoom-up-leave {
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused
+}
+
+.zoom-up-appear.zoom-up-appear-active,.zoom-up-enter.zoom-up-enter-active {
+  -webkit-animation-name: antZoomUpIn;
+  animation-name: antZoomUpIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-up-leave.zoom-up-leave-active {
+  -webkit-animation-name: antZoomUpOut;
+  animation-name: antZoomUpOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-up-appear,.zoom-up-enter {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+  animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+
+.zoom-up-leave {
+  -webkit-animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+  animation-timing-function: cubic-bezier(.78,.14,.15,.86)
+}
+
+.zoom-down-appear,.zoom-down-enter,.zoom-down-leave {
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused
+}
+
+.zoom-down-appear.zoom-down-appear-active,.zoom-down-enter.zoom-down-enter-active {
+  -webkit-animation-name: antZoomDownIn;
+  animation-name: antZoomDownIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-down-leave.zoom-down-leave-active {
+  -webkit-animation-name: antZoomDownOut;
+  animation-name: antZoomDownOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-down-appear,.zoom-down-enter {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+  animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+
+.zoom-down-leave {
+  -webkit-animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+  animation-timing-function: cubic-bezier(.78,.14,.15,.86)
+}
+
+.zoom-left-appear,.zoom-left-enter,.zoom-left-leave {
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused
+}
+
+.zoom-left-appear.zoom-left-appear-active,.zoom-left-enter.zoom-left-enter-active {
+  -webkit-animation-name: antZoomLeftIn;
+  animation-name: antZoomLeftIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-left-leave.zoom-left-leave-active {
+  -webkit-animation-name: antZoomLeftOut;
+  animation-name: antZoomLeftOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-left-appear,.zoom-left-enter {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+  animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+
+.zoom-left-leave {
+  -webkit-animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+  animation-timing-function: cubic-bezier(.78,.14,.15,.86)
+}
+
+.zoom-right-appear,.zoom-right-enter,.zoom-right-leave {
+  -webkit-animation-duration: .2s;
+  animation-duration: .2s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused
+}
+
+.zoom-right-appear.zoom-right-appear-active,.zoom-right-enter.zoom-right-enter-active {
+  -webkit-animation-name: antZoomRightIn;
+  animation-name: antZoomRightIn;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-right-leave.zoom-right-leave-active {
+  -webkit-animation-name: antZoomRightOut;
+  animation-name: antZoomRightOut;
+  -webkit-animation-play-state: running;
+  animation-play-state: running
+}
+
+.zoom-right-appear,.zoom-right-enter {
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-animation-timing-function: cubic-bezier(.08,.82,.17,1);
+  animation-timing-function: cubic-bezier(.08,.82,.17,1)
+}
+
+.zoom-right-leave {
+  -webkit-animation-timing-function: cubic-bezier(.78,.14,.15,.86);
+  animation-timing-function: cubic-bezier(.78,.14,.15,.86)
+}
+
+.ant-badge-zoom-appear,.ant-badge-zoom-enter {
+  -webkit-animation: antZoomBadgeIn .3s cubic-bezier(.12,.4,.29,1.46);
+  animation: antZoomBadgeIn .3s cubic-bezier(.12,.4,.29,1.46);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}
+
+.ant-badge-zoom-leave {
+  -webkit-animation: antZoomBadgeOut .3s cubic-bezier(.71,-.46,.88,.6);
+  animation: antZoomBadgeOut .3s cubic-bezier(.71,-.46,.88,.6);
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both
+}

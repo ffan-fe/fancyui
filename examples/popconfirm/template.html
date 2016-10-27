@@ -1,2 +1,31 @@
+<style>
+  .bp-btn-default {
+    width: 70px;
+    margin: 2px 0;
+  }
+</style>
 <h3>pop confirm</h3>
-<bp-button type="primary" click="vm.deleteConfirm()">删除</bp-button>
+<bp-button type="primary" ng-click="vm.deleteConfirm($event)" style="margin: 100px; display: inline-block">删除</bp-button>
+
+<div class="demo">
+  <div style="margin-left: 70px; white-space: nowrap;">
+    <button type="button" class="btn bp-btn-default btn-sm"><span>TL</span></button>
+    <button type="button" class="btn bp-btn-default btn-sm"><span>Top</span></button>
+    <button type="button" class="btn bp-btn-default btn-sm"><span>TR</span></button>
+  </div>
+  <div style="width: 70px; float: left;">
+    <button type="button" class="btn bp-btn-default btn-sm"><span>LT</span></button>
+    <button type="button" class="btn bp-btn-default btn-sm"><span>Left</span></button>
+    <button type="button" class="btn bp-btn-default btn-sm"><span>LB</span></button>
+  </div>
+  <div style="width: 70px; margin-left: 290px;">
+    <button type="button" class="btn bp-btn-default btn-sm"><span>RT</span></button>
+    <button type="button" class="btn bp-btn-default btn-sm"><span>Right</span></button>
+    <button type="button" class="btn bp-btn-default btn-sm"><span>RB</span></button>
+  </div>
+  <div style="margin-left: 70px; clear: both; white-space: nowrap;">
+    <button type="button" class="btn bp-btn-default btn-sm"><span>BL</span></button>
+    <button type="button" class="btn bp-btn-default btn-sm"><span>Bottom</span></button>
+    <button type="button" class="btn bp-btn-default btn-sm"><span>BR</span></button>
+  </div>
+</div>
