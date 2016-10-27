@@ -69,6 +69,11 @@ module.exports = {
       $: "jquery",
       jQuery: "jquery"
     }),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'DEBUG': true
+      }
+    })
   ]
 };

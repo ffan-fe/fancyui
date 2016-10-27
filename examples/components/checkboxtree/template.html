@@ -1,0 +1,24 @@
+<h3>bp-checkboxtree</h3>
+<section style="margin-top: 30px;">
+  <div>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.exampleHtml"></code>
+      </pre>
+  </div>
+  <div class="alert alert-warning">
+    <ul>
+      <li>
+        ng-model中的每条数据必须包含节点id才能正确回填
+      </li>
+      <li>
+        数据结构要求：
+        子节点必须包含parent字段 -父节点的id
+      </li>
+    </ul>
+  </div>
+</section>
+<h3>示例</h3>
+<section style="margin-top: 30px">
+  <bp-checkboxtree list-promise="vm.listPromise" ng-model="vm.form.catagory"></bp-checkboxtree>
+  model数据：<pre>{{vm.form.catagory | json}}</pre>
+</section>

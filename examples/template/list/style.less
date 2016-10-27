@@ -1,0 +1,53 @@
+.shake-list {
+  .table-filters {
+    li {
+      line-height: 34px;
+      height: 34px;
+      list-style: none;
+      display: inline-block;
+      &:after {
+        content: '|'
+      }
+      &:last-child:after {
+        content: ''
+      }
+    }
+  }
+  .for-after-line {
+    position: relative;
+    &:after{
+      content: '-';
+      position: absolute;
+      right: -3px;
+      top: 5px;
+    }
+  }
+  
+  .for-after-line-pos {
+    position: relative;
+    &:after{
+      content: '-';
+      position: absolute;
+      right: -18px;
+      top: 5px;
+    }
+  }
+
+  /*
+
+  .limitlen{
+    width:600px; 
+  }
+
+  .input-group-len{
+    width:90%;
+  }
+
+  .input-group-magl{
+    margin-left:-30px;
+  } */
+
+
+}
+
+

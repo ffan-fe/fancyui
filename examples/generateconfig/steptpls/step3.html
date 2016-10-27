@@ -1,0 +1,69 @@
+<form class="form-horizontal" name="formStep3">
+  <h3>添加关联验证</h3>
+  <div class="form-group">
+    <label class="control-label col-xs-2">
+      设置关联验证的字段
+    </label>
+    <div class="col-xs-3">
+      <select ng-model="vm.fieldSetAssociatedValidateTemp"
+              name="selectField"
+              required
+              ng-change="vm.toJson(vm.fieldSetAssociatedValidateTemp)"
+              class="form-control">
+        <option ng-repeat="field in vm.fields"
+                value={"index":{{$index}},"type":"{{field.type}}"}>{{field.displayName}}</option>
+      </select>
+    </div>
+    <p class="help-block text-danger"
+       ng-if="!vm.isAvailableField() && formStep3.selectField.$dirty">
+      暂不支持对所选字段进行关联验证
+    </p>
+  </div>
+  <div class="form-group"
+       ng-if="vm.isAvailableField()">
+
+    <label class="control-label col-xs-2">
+      验证类型
+    </label>
+    <div class="col-xs-3">
+      <select ng-model="vm.fieldSetAssociatedValidate.category"
+              required
+              ng-options="validation as validation for validation in vm.getValidationSupported()"
+              class="form-control">
+      </select>
+    </div>
+  </div>
+  <div class="form-group"
+       ng-if="vm.isAvailableField()">
+
+    <label class="control-label col-xs-2">
+      关联哪个字段
+    </label>
+    <div class="col-xs-3">
+      <select ng-model="vm.fieldSetAssociatedValidate.which"
+              required
+              class="form-control">
+        <option ng-repeat="field in vm.getAvailableField()" value="{{field.name}}">{{field.displayName}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group"
+       ng-if="vm.isAvailableField()">
+    <label class="control-label col-xs-2">
+      错误提示
+      <input ng-model="vm.customError" type="checkbox"/>
+    </label>
+    <div class="col-xs-3">
+      <input ng-if="vm.customError"
+             required
+             ng-model="vm.fieldSetAssociatedValidate.error"
+             class="form-control"
+             type="text"/>
+    </div>
+  </div>
+  <button ng-if="vm.isAvailableField()"
+     ng-disabled="formStep3.$invalid"
+     ng-click="vm.addValidateRule()"
+     ui-sref="generator.list"
+     class="btn bp-btn-primary">完成</button>
+</form>

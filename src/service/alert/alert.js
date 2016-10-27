@@ -57,17 +57,11 @@
  * </pre>
  */
 
-
 import template from './alert.html'
 
-import ComponentZIndex from '../zindex.js'
+import ComponentZIndex from '../../zindex.js'
 
-let remove = (array, element) => {
-  let index = array.indexOf(element);
-  if (index > -1) {
-    array.splice(index, 1);
-  }
-};
+import {remove} from '../../tool/arr.js'
 
 export default class AlertService {
   constructor($document, $q, $rootScope, $compile) {

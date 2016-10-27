@@ -1,0 +1,30 @@
+<h3>bp-datepicker && bp-rangepicker</h3>
+<section>
+  <div>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.exampleHtml"></code>
+      </pre>
+  </div>
+  <div class="alert alert-success">
+    <p>datepicker-options和rangepickerOption 传入配置对象的配置对象在ui.bootstrap.datepicker基础上增加：</p>
+    <ul>
+      <li>viewFormat -- 日期的显示格式 默认: 'YYYY-MM-DD HH:mm:ss'；</li>
+      <li>modelFormat -- 日期的保存格式 默认: 'x'；</li>
+    </ul>
+  </div>
+</section>
+<h3>示例</h3>
+<section>
+  <div class="col-xs-4">
+    时间选择器
+    <bp-datepicker model="vm.time" datepicker-options="vm.datepickerOption"></bp-datepicker>
+    <label>时间：</label>{{vm.time}}
+  </div>
+  <div class="col-xs-8">
+    时间范围选择器
+    <bp-rangepicker ng-start-model="vm.startTime" ng-end-model="vm.endTime"
+                    rangepicker-options="vm.rangepickerOption"></bp-rangepicker>
+    <label>开始时间：</label>{{vm.startTime}}
+    <label>结束时间：</label>{{vm.endTime}}
+  </div>
+</section>

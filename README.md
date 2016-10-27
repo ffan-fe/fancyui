@@ -26,3 +26,4 @@
 
 切到gh-page分支：
 `npm run build:example`
+注意: 不要在其他分支运行这个命令

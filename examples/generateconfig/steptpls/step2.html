@@ -1,0 +1,159 @@
+<form class="form-horizontal" name="formStep2">
+  添加验证规则
+
+  <div class="form-group">
+    <label class="control-label col-xs-2">
+      是否必填：<input ng-model="vm.tempField.validateRules.required" type="checkbox"/>
+    </label>
+  </div>
+
+  <div ng-if="vm.tempField.type == 'text' || vm.tempField.type == 'richtext' || vm.tempField.type == 'textarea'">
+    <div class="form-group">
+      <label class="control-label col-xs-2">
+        设置最少字数
+        <input ng-model="vm.checkboxs.minlengthChecked" type="checkbox"/>
+      </label>
+      <div ng-if="vm.checkboxs.minlengthChecked" class="col-xs-10">
+        <div class="row">
+          <div class="col-xs-3">
+            <input required
+                   min="1"
+                   ng-model="vm.tempField.validateRules.minlength"
+                   class="form-control"
+                   type="number"/>
+          </div>
+          <label class="control-label col-xs-2">
+            错误提示
+            <input ng-model="vm.minlengthError" type="checkbox"/>
+          </label>
+          <div class="col-xs-3">
+            <input ng-if="vm.minlengthError"
+                   required
+                   ng-model="vm.tempField.errorMsgs.minlength"
+                   class="form-control"
+                   type="text"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-xs-2">
+        设置最多字数
+        <input ng-model="vm.checkboxs.maxlengthChecked" type="checkbox"/>
+      </label>
+      <div ng-if="vm.checkboxs.maxlengthChecked" class="col-xs-10">
+        <div class="row">
+          <div class="col-xs-3">
+            <input required
+                   ng-model="vm.tempField.validateRules.maxlength"
+                   class="form-control"
+                   min="1"
+                   type="number"/>
+          </div>
+          <label class="control-label col-xs-2">
+            错误提示
+            <input ng-model="vm.maxlengthError" type="checkbox"/>
+          </label>
+          <div class="col-xs-3">
+            <input ng-if="vm.maxlengthError"
+                   required
+                   ng-model="vm.tempField.errorMsgs.maxlength"
+                   class="form-control"
+                   type="text"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div ng-if="vm.tempField.type == 'number'">
+    <div class="form-group">
+      <label class="control-label col-xs-2">
+        设置最小值
+        <input ng-model="vm.checkboxs.minChecked" type="checkbox"/>
+      </label>
+      <div ng-if="vm.checkboxs.minChecked" class="col-xs-10">
+        <div class="row">
+          <div class="col-xs-3">
+            <input required
+                   min="1"
+                   ng-model="vm.tempField.validateRules.min"
+                   class="form-control"
+                   type="number"/>
+          </div>
+          <label class="control-label col-xs-2">
+            错误提示
+            <input ng-model="vm.minError" type="checkbox"/>
+          </label>
+          <div class="col-xs-3">
+            <input ng-if="vm.minError"
+                   required
+                   ng-model="vm.tempField.errorMsgs.min"
+                   class="form-control"
+                   type="text"/>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-xs-2">
+        设置最大值
+        <input ng-model="vm.checkboxs.maxChecked" type="checkbox"/>
+      </label>
+      <div ng-if="vm.checkboxs.maxChecked" class="col-xs-10">
+        <div class="row">
+          <div class="col-xs-3">
+            <input required
+                   ng-model="vm.tempField.validateRules.max"
+                   class="form-control"
+                   min="1"
+                   type="number"/>
+          </div>
+          <label class="control-label col-xs-2">
+            错误提示
+            <input ng-model="vm.maxError" type="checkbox"/>
+          </label>
+          <div class="col-xs-3">
+            <input ng-if="vm.maxError"
+                   required
+                   ng-model="vm.tempField.errorMsgs.max"
+                   class="form-control"
+                   type="text"/>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div ng-if="vm.tempField.type == 'radio' || vm.tempField.type == 'select'" ng-init="vm.tempField.options = [{}]">
+    添加选项
+    <div ng-repeat="option in vm.tempField.options">
+      <label>文字：<input class="form-control"
+                       ng-model="option.text"
+                       required
+                       type="text"/></label>
+      <label>值：<input class="form-control"
+                      ng-model="option.value"
+                      required
+                      type="text"/></label>
+      <button class="btn bp-btn-primary"
+              ng-click="vm.tempField.options.push({})"
+              ng-if="$last">添加</button>
+      <button class="btn bp-btn-default"
+              ng-click="vm.tempField.options.pop()"
+              ng-if="!$first && $last">删除</button>
+    </div>
+  </div>
+
+  <div ng-if="vm.tempField.type == 'uiselect' || vm.tempField.type == 'Typeahead'">
+    拉取选项的url
+    <label>
+      <input class="form-control"
+             ng-model="vm.tempField.url"
+             required
+             type="text"/>
+    </label>
+  </div>
+
+  <button ng-disabled="formStep2.$invalid" ng-click="vm.save()" class="btn bp-btn-primary">完成</button>
+  <button ng-disabled="formStep2.$invalid" ng-click="vm.save(true)" class="btn bp-btn-primary">保存并新建一个字段</button>
+</form>

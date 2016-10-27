@@ -59,9 +59,13 @@
     "angular-ui-router": "^0.3.1",
     "bp-datetimepicker": "0.0.1",
     "classnames": "^2.2.5",
+    "ffan-ng-table": "0.0.1",
     "grunt": "^1.0.1",
     "grunt-contrib-clean": "^1.0.0",
     "grunt-contrib-connect": "^1.0.2",
-    "grunt-ngdocs": "^0.2.10"
+    "grunt-ngdocs": "^0.2.10",
+    "restangular": "^1.5.2",
+    "textangular": "^1.5.12",
+    "ui-select": "^0.19.6"
   }
 }

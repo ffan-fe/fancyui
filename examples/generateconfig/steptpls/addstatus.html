@@ -1,0 +1,27 @@
+<form class="form-horizontal" name="formAddStatus">
+  <h3>添加状态信息</h3>
+  <div class="form-group">
+    <label class="control-label col-xs-2">
+      状态名
+    </label>
+    <div class="col-xs-3">
+      <input required
+             ng-model="vm.tempStatus.text"
+             class="form-control"
+             type="text"/>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class="control-label col-xs-2">
+      状态码
+    </label>
+    <div class="col-xs-3">
+      <input class="form-control"
+             ng-model="vm.tempStatus.value"
+             required
+             type="number"/>
+    </div>
+  </div>
+  <a ng-disabled="formAddStatus.$invalid" ng-click="vm.saveStatusAndNew()" ui-sref="generator.list" class="btn btn-primary">完成</a>
+  <a ng-disabled="formAddStatus.$invalid" ng-click="vm.saveStatusAndNew()" ui-sref="generator.addstatus" class="btn btn-primary">保存并新建一个状态</a>
+</form>

@@ -1,0 +1,68 @@
+<h3>multi-select</h3>
+<section style="margin-top: 30px;">
+  <div>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.exampleHtml"></code>
+      </pre>
+  </div>
+  <div class="alert alert-success">支持对特定行disable状态的控制: 根据list中isDisable字段来判断</div>
+</section>
+<h3>注意</h3>
+<section>
+  <ul>
+    <li>配置中拉取数据的url，在component内使用get请求拉去数据；</li>
+    <li>如果get请求需要传一些固定的参数，目前的做法是直接拼在url;</li>
+    <li>url拉过来的数据必须符合特定的结构：</li>
+  </ul>
+  <pre>
+        {{vm.standardDataStructure}}
+   </pre>
+  <div class="alert alert-warning">要保证response.data.items 是一个list,
+       如果不符合需要转换数据结构</div>
+  <div>
+    <h4>转换数据结构</h4>
+    目前的做法：拦截http请求转结构；<br>
+    推荐使用restangular,提供更方便的api
+    <pre>
+      RestangularProvider.addResponseInterceptor(function(data, operation, what, url, response, deferred) {
+    let extractedData;
+    // .. to look for getList operations
+    if (operation === "getList") {
+    console.log(data);
+    // .. and handle the data and meta data
+    extractedData = data.data;
+    } else {
+    extractedData = data;
+    }
+    return extractedData;
+    });
+    </pre>
+
+    如果后端不符合restful，可以这样：
+    <pre>
+      $httpProvider.interceptors.push(function($q, dependency1, dependency2) {
+    return {
+    'request': function(config) {
+    // do sth
+    },
+
+    'response': function(response) {
+    // do sth
+    }
+    };
+    });
+    </pre>
+    更详细的介绍见这里：<a href="https://docs.angularjs.org/api/ng/service/$http">https://docs.angularjs.org/api/ng/service/$http</a>;
+  </div>
+  <div class="text-muted">
+    目前的做法是尽量把数据转换从业务逻辑剥离放到这；
+  </div>
+
+</section>
+<h3>示例</h3>
+<section>
+  <multi-select ng-model="vm.multiSelectModel"></multi-select>
+  <br>
+  model数据：
+  <pre>{{vm.multiSelectModel | json}}</pre>
+</section>

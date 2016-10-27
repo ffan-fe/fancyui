@@ -1,8 +1,8 @@
-import AlertServiceModule from './alert/index.js'
-import alertComponent from './component.js';
+import uiRouter from 'angular-ui-router';
+import alert from './component.js';
 
 let alertModule = angular.module('alertTest', [
-  AlertServiceModule.name
+  uiRouter
 ])
   .config(($stateProvider) => {
     'ngInject';
@@ -11,6 +11,6 @@ let alertModule = angular.module('alertTest', [
       template: '<alert></alert>'
     });
   })
-  .component('alert', alertComponent);
+  .component('alert', alert);
 
 export default alertModule;
