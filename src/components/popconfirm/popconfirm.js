@@ -2,8 +2,6 @@
  * Popconfirm
  */
 
-import Component from '../common/component';
-
 
 'use strict';
 
@@ -27,4 +25,8 @@ export default class Popconfirm {
    * @override
    */
   _launch() {}
+
+  test(param) {
+    console.log(param)
+  }
 }
