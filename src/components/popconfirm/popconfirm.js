@@ -51,31 +51,26 @@ export default class Popconfirm {
 	pop(param, e) {
 		let data = Object.assign(this.$rootScope.$new(), param);
 		let selector = $('.ant-popover');
-		this.last = e.target;
 
-		console.log(this.last)
+
 
 		if (!this.popDom || this.last != e.target) {
-			console.log(1)
+			this.removeDom(this.popDom);
 			this.popDom = this.$compile(template)(data);
 			this.popDom.addClass('zoom-big-enter');
 			this.$document.find('body').append(this.popDom);
+
+
 		} else {
 			if (this.last == e.target) {
-				console.log(2)
 				this.removeDom(this.popDom);
 				this.popDom = null;
 				return;
-			} else {
-				console.log(3)
-				this.popDom = this.$compile(template)(data);
-				this.popDom.addClass('zoom-big-enter');
-				this.$document.find('body').append(this.popDom);
 			}
 		}
 
 
-
+		this.last = e.target;
 
 
 		let eTop = e.target.offsetTop + e.target.offsetParent.offsetTop;
