@@ -3,18 +3,11 @@
 		width: 70px;
 		margin: 2px 0;
 	}
-
-	.del-btn {
-		margin: 100px;
-		display: inline-block;
-	}
 </style>
 <h3>pop confirm</h3>
-<bp-button type="primary" class="del-btn" ng-click="vm.deleteConfirm($event)">删除</bp-button>
-
 <div class="demo">
 	<div style="margin-left: 70px; white-space: nowrap;">
-		<button type="button" class="btn bp-btn-default btn-sm"><span>TL</span></button>
+		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.topLeftConfirm($event)"><span>TL</span></button>
 		<button type="button" class="btn bp-btn-default btn-sm"><span>Top</span></button>
 		<button type="button" class="btn bp-btn-default btn-sm"><span>TR</span></button>
 	</div>
