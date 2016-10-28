@@ -19,12 +19,15 @@ export default class Popconfirm {
 		this.$compile = $compile;
 		this.$document = $document;
 		this.$rootScope = $rootScope;
+		this.popDom = null;
+		this.last = null;
 	}
 
 	/**
 	 * @override
 	 */
 	_initDefaultValue() {
+
 	}
 
 	/**
@@ -39,36 +42,61 @@ export default class Popconfirm {
 	_launch() {
 	}
 
+	removeDom(el) {
+		if (el) {
+			el.remove();
+		}
+	}
+
 	pop(param, e) {
-		let popDom;
 		let data = Object.assign(this.$rootScope.$new(), param);
 		let selector = $('.ant-popover');
+		this.last = e.target;
 
-		if (selector.length != 0) {
-			selector.remove();
+		console.log(this.last)
+
+		if (!this.popDom || this.last != e.target) {
+			console.log(1)
+			this.popDom = this.$compile(template)(data);
+			this.popDom.addClass('zoom-big-enter');
+			this.$document.find('body').append(this.popDom);
+		} else {
+			if (this.last == e.target) {
+				console.log(2)
+				this.removeDom(this.popDom);
+				this.popDom = null;
+				return;
+			} else {
+				console.log(3)
+				this.popDom = this.$compile(template)(data);
+				this.popDom.addClass('zoom-big-enter');
+				this.$document.find('body').append(this.popDom);
+			}
 		}
 
-		popDom = this.$compile(template)(data);
-		popDom.addClass('zoom-big-enter');
-		this.$document.find('body').append(popDom);
+
+
 
 
 		let eTop = e.target.offsetTop + e.target.offsetParent.offsetTop;
-		let popHeight = popDom[0].offsetHeight;
-		// let scrollTop = window.scrollTop;
-		let popTop = eTop - popHeight - 10;
-
 		let eLeft = e.target.offsetLeft + e.target.offsetParent.offsetLeft;
 		let eWidth = e.target.offsetWidth;
-		let popWidth = popDom[0].offsetWidth;
-		let popLeft = eLeft - popWidth / 2;
+
+		let popHeight = this.popDom[0].offsetHeight;
+		let popTop = eTop - popHeight - 10;
+		let popWidth = this.popDom[0].offsetWidth;
+
+		// console.log(this.popDom[0].clientWidth)
+
+
+		let popLeft = eLeft - popWidth / 2 + eWidth / 2;
 
 		switch (param.placement) {
 			case 'top':
-				popDom.css('top', popTop + 'px');
-				popDom.css('left', popLeft + 'px');
-				// popDom.css('transform-origin', '50% 96px 0px');
+				this.popDom.css('top', popTop + 'px');
+				this.popDom.css('left', popLeft + 'px');
 				break;
+
 			case 'left':
 
 				break;
@@ -81,25 +109,28 @@ export default class Popconfirm {
 				e.cancelBubble = true;
 		}
 
+		let self = this;
 		$(document).bind('click',function(){
-			popDom.remove();
+			self.removeDom(self.popDom);
+			self.popDom = null;
 		});
 
-		popDom.bind('click',function(e){
+		this.popDom.bind('click',function(e){
 			stopPropagation(e);
 		});
 
 		stopPropagation(e);
 
-		document.getElementById('btnConfirm').onclick =  function () {
+		$('#btnConfirm').bind('click', function () {
 			param.onConfirm();
-			popDom.remove();
-		};
+			self.removeDom(self.popDom);
+			self.popDom = null;
+		});
 
-		document.getElementById('btnCancel').onclick =  function () {
+		$('#btnCancel').bind('click', function () {
 			param.onCancel();
-			popDom.remove();
-		};
-
+			self.removeDom(self.popDom);
+			self.popDom = null;
+		});
 	}
 }

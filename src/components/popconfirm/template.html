@@ -5,11 +5,11 @@
 			<div>
 				<div class="ant-popover-inner-content">
 					<div class="ant-popover-message"><i class="anticon anticon-exclamation-circle "></i>
-						<div class="ant-popover-message-title">{{title}}</div>
+						<div class="ant-popover-message-title">{{title || '22222'}}</div>
 					</div>
 					<div class="ant-popover-buttons">
-						<button type="button" class="btn bp-btn-default btn-sm" id="btnCancel"><span>{{cancelText}}</span></button>
-						<button type="button" class="btn bp-btn-primary btn-sm" id="btnConfirm"><span>{{okText}}</span></button>
+						<button type="button" class="btn bp-btn-default btn-sm" id="btnCancel"><span>{{cancelText || '确定'}}</span></button>
+						<button type="button" class="btn bp-btn-primary btn-sm" id="btnConfirm"><span>{{okText || '取消'}}</span></button>
 					</div>
 				</div>
 			</div>

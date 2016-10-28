@@ -10,7 +10,22 @@ export default class popConfirmController {
 
 	topLeftConfirm(e) {
 		this.Popconfirm.pop({
-			title: '确定要删除123吗?',
+			title: '确定要删除吗?',
+			placement: 'top',
+			okText: '确定',
+			cancelText: '取消',
+			onConfirm: function () {
+				console.log('确定');
+			},
+			onCancel: function () {
+				console.log('取消');
+			}
+		}, e)
+	}
+
+	topConfirm(e) {
+		this.Popconfirm.pop({
+			title: '确定要删除top吗?',
 			placement: 'top',
 			okText: '确定',
 			cancelText: '取消',
