@@ -14,11 +14,11 @@ import './popconfirm.less';
  * @extends {Component}
  */
 export default class Popconfirm {
-	constructor($document, $compile) {
+	constructor($document, $compile, $rootScope,) {
 		'ngInject'
-		// this.$scope = $scope;
 		this.$compile = $compile;
 		this.$document = $document;
+		this.$rootScope = $rootScope;
 	}
 
 	/**
@@ -40,20 +40,29 @@ export default class Popconfirm {
 	}
 
 	pop(param, e) {
+		// this.title = param.title;
+		let data = Object.assign(this.$rootScope.$new(), param);
+
 		let popDom;
 		if ($('.ant-popover').length == 0) {
-			popDom = this.$compile(template)(param);
+			popDom = this.$compile(template)(data);
+			this.$document.find('body').append(popDom);
 		} else {
 			popDom = $('.ant-popover');
 		}
 
 		if (popDom[0].style.display == 'block') {
-			popDom[0].style.display = 'none'
+			popDom[0].style.display = 'none';
+			popDom.removeClass('zoom-big-enter');
+			popDom.addClass('zoom-big-leave');
 		} else {
-			popDom[0].style.display = 'block'
+			popDom[0].style.display = 'block';
+			popDom.addClass('zoom-big-enter');
+			// popDom.addClass('zoom-big-enter-active');
 		}
 
-		this.$document.find('body').append(popDom);
+
+
 
 
 		let eTop = e.target.offsetTop + e.target.offsetParent.offsetTop;
@@ -75,5 +84,22 @@ export default class Popconfirm {
 
 				break;
 		}
+
+		function stopPropagation(e) {
+			if (e.stopPropagation)
+				e.stopPropagation();
+			else
+				e.cancelBubble = true;
+		}
+
+		$(document).bind('click',function(){
+			popDom[0].style.display = 'none'
+		});
+
+		$('.ant-popover').bind('click',function(e){
+			stopPropagation(e);
+		});
+
+		stopPropagation(e);
 	}
 }
