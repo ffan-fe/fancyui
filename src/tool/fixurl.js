@@ -14,7 +14,6 @@ export default function fixURL(url, config = {}, isDebug = false) {
   if(isDebug || ~href.search('localhost') || /(\d+\.){3}\d{1,3}/.test(href)){
     return url;
   }
-  // todo 这些个判断还有待改进啊...
   // 是sit环境的情况
   if(~href.search('sit')){
     return 'http://admin.sit.ffan.com' + url;

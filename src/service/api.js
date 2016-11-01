@@ -26,16 +26,17 @@ export default class Api {
    * 
    * @param {String} url
    * @param {Object} params
+   * @param {Boolean} forceReturn 强制不判断200直接返回, 这是由于好些个接口根本没有状态
    * @returns {Promise}
    */
-  get(url, params) {
+  get(url, params, forceReturn = false) {
     let deferred = this.$q.defer();
     this.$http({
       url: this.getDomain(url),
       method: 'get',
       params: params || {}
     }).then(
-      responseHandler(deferred.resolve, deferred.reject),
+      responseHandler(deferred.resolve, deferred.reject, forceReturn),
       errorHandler(deferred.reject)
     );
     return deferred.promise;
@@ -45,9 +46,10 @@ export default class Api {
    * 
    * @param {String} url
    * @param {Object} params
+   * @param {Boolean} forceReturn 强制不判断200直接返回, 这是由于好些个接口根本没有状态
    * @returns
    */
-  post(url, params) {
+  post(url, params, forceReturn = false) {
     let deferred = this.$q.defer();
     this.$http({
       url: this.getDomain(url),
@@ -55,7 +57,7 @@ export default class Api {
       method: "post",
       headers: {"Content-Type": "application/x-www-form-urlencoded"}
     }).then(
-      responseHandler(deferred.resolve, deferred.reject),
+      responseHandler(deferred.resolve, deferred.reject, forceReturn),
       errorHandler(deferred.reject)
     );
     return deferred.promise;
@@ -65,9 +67,10 @@ export default class Api {
    * 
    * @param {String} url
    * @param {Object} params
+   * @param {Boolean} forceReturn 强制不判断200直接返回, 这是由于好些个接口根本没有状态
    * @returns
    */
-  put(url, params) {
+  put(url, params, forceReturn = false) {
     let deferred = this.$q.defer();
     this.$http({
       url: this.getDomain(url),
@@ -75,7 +78,7 @@ export default class Api {
       method: "put",
       headers: {"Content-Type": "application/x-www-form-urlencoded"}
     }).then(
-      responseHandler(deferred.resolve, deferred.reject),
+      responseHandler(deferred.resolve, deferred.reject, forceReturn),
       errorHandler(deferred.reject)
     );
     return deferred.promise;
@@ -94,10 +97,15 @@ export default class Api {
  * 
  * @param {Function} resolve
  * @param {Function} reject
+ * @param {Boolean} forceReturn 强制不判断200直接返回, 这是由于好些个接口根本没有状态或是状态是0,1等等
  * @returns {Function}
  */
-function responseHandler(resolve, reject) {
+function responseHandler(resolve, reject, forceReturn) {
   return response => {
+    if (forceReturn) {
+      resolve(response);
+      return;
+    }
     if (response && response.data && response.data.status == 200) {
       // 这里本来是取两层data返回的, 但是列表页要从上一层获取count, 所以统一都改成一层的.
       resolve(response.data);
