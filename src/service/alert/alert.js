@@ -59,7 +59,7 @@
 
 import template from './alert.html'
 
-import ComponentZIndex from '../../zindex.js'
+import ComponentZIndex from '../zindex.js'
 
 import {remove} from '../../tool/arr.js'
 
