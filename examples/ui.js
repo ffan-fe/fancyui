@@ -1,5 +1,7 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import 'jquery'
+import 'bootstrap/dist/js/bootstrap.js'
 import 'ffan-ng-table';
 import 'restangular'
 import 'textangular'
