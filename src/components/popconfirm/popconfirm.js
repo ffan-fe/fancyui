@@ -72,19 +72,18 @@ export default class Popconfirm {
 
 		this.last = e.target;
 
-
-		let eTop = e.target.offsetTop + e.target.offsetParent.offsetTop;
-		let eLeft = e.target.offsetLeft + e.target.offsetParent.offsetLeft;
-		let eWidth = e.target.offsetWidth;
+		let eTop = e.currentTarget.offsetTop + e.currentTarget.offsetParent.offsetTop;
+		let eLeft = e.currentTarget.offsetLeft + e.currentTarget.offsetParent.offsetLeft;
+		let eWidth = e.currentTarget.offsetWidth;
 
 		let popHeight = this.popDom[0].offsetHeight;
 		let popTop = eTop - popHeight;
 		let popWidth = this.popDom[0].offsetWidth;
 
-		console.log(this.popDom[0].clientWidth)
-
-
 		let popLeft = eLeft - popWidth / 2 + eWidth / 2;
+
+		console.log(e.target)
+		console.log(e.currentTarget)
 
 		switch (param.placement) {
 			case 'top':
