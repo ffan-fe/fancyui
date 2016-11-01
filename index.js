@@ -16,20 +16,21 @@ import listTpl from './src/template/list/index.js'
 
 'use strict';
 
-export let Button = ffanButton;
-export let Icon = ffanIcon;
-export let Checkbox = ffanCheckbox;
-export let CheckboxGroup = ffanCheckboxGroup;
-export let Radiobox = ffanRadiobox;
-export let RadioboxGroup = ffanRadioboxGroup;
-export let CitySelector = ffanCitySelector;
-export let Transfer = ffanTransfer;
-export let Datetimepicker = ffanDatetimepicker;
-export let bpServices = bpServices;
-export let checkboxtree = checkboxtree;
-export let multiselect = multiselect;
-export let bpDirective = bpDirective;
-export let formTpl = formTpl;
-export let listTpl = listTpl;
+export {ffanButton as Button,
+  ffanCheckbox as Checkbox,
+  ffanCheckboxGroup as CheckboxGroup,
+  ffanRadiobox as Radiobox,
+  ffanRadioboxGroup as RadioboxGroup,
+  ffanCitySelector as CitySelector,
+  ffanTransfer as Transfer,
+  ffanDatetimepicker as Datetimepicker,
+  bpServices ,
+  checkboxtree,
+  multiselect,
+  bpDirective,
+  formTpl,
+  listTpl
+}
+
 
 
