@@ -1,8 +1,6 @@
-import angular from 'angular';
-import 'bootstrap';
 import template from './template.html';
 import controller from './controller';
-import Datetimepicker from '../../src/components/datetimepicker';
+import Datetimepicker from '../../src/components/datetimepicker/index.js';
 
 'use strict';
 

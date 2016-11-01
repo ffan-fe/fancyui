@@ -56,7 +56,7 @@ export default {
             start-model="vm.startModel"
             end-model="vm.endModel"
             min="2016-09-09 09:09:00"
-            max="2016-09-21 09:09:00"
+            max="2018-09-09 09:09:00"
           ></bp-datetimepicker>
         `,
   js4: `
@@ -69,14 +69,13 @@ export default {
    * startModel 指定值  / 前者时间不可点击    后者分钟为每10分钟一个间隔
    */
   html5: `
-          <bp-datetimepicker 
-            type="range"
-            start-model="vm.startModel"
-            end-model="vm.endModel"
-            start-disabled="false"
-            minute-step="10"
-            separator="至"
-          ></bp-datetimepicker>
+       <bp-datetimepicker
+          type="range"
+          start-model="vm.startModel"
+          end-model="vm.endModel"
+          start-disabled="true"
+          minute-step="10"
+        >
         `,
   js5: `
         this.startModel = '2013-08-08 12:20:00';

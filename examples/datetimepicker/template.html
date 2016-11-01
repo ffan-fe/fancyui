@@ -50,13 +50,14 @@
 
 <!-- 最大时间 / 最小时间 -->
 <section>
-  <h3>最大时间和最小时间</h3>
+  <h3>最大时间和最小时间
+  </h3>
   <bp-datetimepicker
       type="range"
       start-model="vm.startModel4"
       end-model="vm.endModel4"
-      min="2016-09-09 09:09:00"
-      max="2016-09-21 09:09:00"
+      min="vm.minTime"
+      max="vm.maxTime"
   >
   </bp-datetimepicker>
   <h3>HTML</h3>
@@ -75,7 +76,6 @@
       end-model="vm.endModel"
       start-disabled="true"
       minute-step="10"
-      separator="至 "
   >
   </bp-datetimepicker>
   <h3>HTML</h3>
