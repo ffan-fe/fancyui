@@ -3,7 +3,9 @@
  */
 
 import template from './template.html';
+import scrollParent from './scrollparent.js';
 import './popconfirm.less';
+
 'use strict';
 
 /**
@@ -14,7 +16,7 @@ import './popconfirm.less';
  * @extends {Component}
  */
 export default class Popconfirm {
-	constructor($document, $compile, $rootScope,) {
+	constructor($document, $compile, $rootScope) {
 		'ngInject'
 		this.$compile = $compile;
 		this.$document = $document;
@@ -50,17 +52,11 @@ export default class Popconfirm {
 
 	pop(param, e) {
 		let data = Object.assign(this.$rootScope.$new(), param);
-		let selector = $('.ant-popover');
-
-
-
 		if (!this.popDom || this.last != e.currentTarget) {
 			this.removeDom(this.popDom);
 			this.popDom = this.$compile(template)(data);
 			this.popDom.addClass('zoom-big-enter');
 			this.$document.find('body').append(this.popDom);
-
-
 		} else {
 			if (this.last == e.currentTarget) {
 				this.removeDom(this.popDom);
@@ -69,32 +65,38 @@ export default class Popconfirm {
 			}
 		}
 
-
 		this.last = e.currentTarget;
 
-		let eTop = e.currentTarget.offsetTop + e.currentTarget.offsetParent.offsetTop;
-		let eLeft = e.currentTarget.offsetLeft + e.currentTarget.offsetParent.offsetLeft;
+		// click target position
 		let eWidth = e.currentTarget.offsetWidth;
 		let eHeight = e.currentTarget.offsetHeight;
+		let eTop = e.currentTarget.offsetTop + e.currentTarget.offsetParent.offsetTop;
+		let eLeft = e.currentTarget.offsetLeft + e.currentTarget.offsetParent.offsetLeft;
 
+		// popup width and height
 		let popWidth = this.popDom[0].offsetWidth;
 		let popHeight = this.popDom[0].offsetHeight;
 
-		// position top
-		let popTop = eTop - popHeight - 4;
+		// scroll top
+		let eScrollTop = scrollParent(e.currentTarget).scrollTop;
+
+		// top
+		let popTop = eTop - popHeight - eScrollTop - 4;
 		let popLeft = eLeft - popWidth / 2 + eWidth / 2;
 
-		// position left
-		let popTopPositionLeft = eTop - popHeight / 2 + eHeight / 2;
+		// left
+		let popTopPositionLeft = eTop - popHeight / 2 + eHeight / 2 - eScrollTop;
 		let popLeftPositionLeft = eLeft - popWidth - 4;
 
-		// position bottom
-		let popTopPositionBottom = eTop + eHeight;
+		// bottom
+		let popTopPositionBottom = eTop + eHeight - eScrollTop;
 		let popLeftPositionBottom = popLeft;
 
-		// position right
-		let popTopPositionRight = eTop - popHeight / 2 + eHeight / 2;
+		// right
+		let popTopPositionRight = eTop - popHeight / 2 + eHeight / 2 - eScrollTop;
 		let popLeftPositionRight = eLeft + eWidth;
+
+		console.log(e.currentTarget.clientTop + e.currentTarget.offsetParent.offsetTop)
 
 		switch (param.placement) {
 			case 'top':
