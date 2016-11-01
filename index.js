@@ -16,7 +16,8 @@ import listTpl from './src/template/list/index.js'
 
 'use strict';
 
-export {ffanButton as Button,
+export {
+  ffanButton as Button,
   ffanCheckbox as Checkbox,
   ffanCheckboxGroup as CheckboxGroup,
   ffanRadiobox as Radiobox,
