@@ -78,10 +78,10 @@ export default class Popconfirm {
 		let eWidth = e.target.offsetWidth;
 
 		let popHeight = this.popDom[0].offsetHeight;
-		let popTop = eTop - popHeight - 10;
+		let popTop = eTop - popHeight;
 		let popWidth = this.popDom[0].offsetWidth;
 
-		// console.log(this.popDom[0].clientWidth)
+		console.log(this.popDom[0].clientWidth)
 
 
 		let popLeft = eLeft - popWidth / 2 + eWidth / 2;
