@@ -54,7 +54,7 @@ export default class Popconfirm {
 
 
 
-		if (!this.popDom || this.last != e.target) {
+		if (!this.popDom || this.last != e.currentTarget) {
 			this.removeDom(this.popDom);
 			this.popDom = this.$compile(template)(data);
 			this.popDom.addClass('zoom-big-enter');
@@ -62,7 +62,7 @@ export default class Popconfirm {
 
 
 		} else {
-			if (this.last == e.target) {
+			if (this.last == e.currentTarget) {
 				this.removeDom(this.popDom);
 				this.popDom = null;
 				return;
@@ -70,29 +70,52 @@ export default class Popconfirm {
 		}
 
 
-		this.last = e.target;
+		this.last = e.currentTarget;
 
 		let eTop = e.currentTarget.offsetTop + e.currentTarget.offsetParent.offsetTop;
 		let eLeft = e.currentTarget.offsetLeft + e.currentTarget.offsetParent.offsetLeft;
 		let eWidth = e.currentTarget.offsetWidth;
+		let eHeight = e.currentTarget.offsetHeight;
 
-		let popHeight = this.popDom[0].offsetHeight;
-		let popTop = eTop - popHeight;
 		let popWidth = this.popDom[0].offsetWidth;
+		let popHeight = this.popDom[0].offsetHeight;
 
+		// position top
+		let popTop = eTop - popHeight - 4;
 		let popLeft = eLeft - popWidth / 2 + eWidth / 2;
 
-		console.log(e.target)
-		console.log(e.currentTarget)
+		// position left
+		let popTopPositionLeft = eTop - popHeight / 2 + eHeight / 2;
+		let popLeftPositionLeft = eLeft - popWidth - 4;
+
+		// position bottom
+		let popTopPositionBottom = eTop + eHeight;
+		let popLeftPositionBottom = popLeft;
+
+		// position right
+		let popTopPositionRight = eTop - popHeight / 2 + eHeight / 2;
+		let popLeftPositionRight = eLeft + eWidth;
 
 		switch (param.placement) {
 			case 'top':
 				this.popDom.css('top', popTop + 'px');
 				this.popDom.css('left', popLeft + 'px');
+				this.popDom.addClass('ant-popover-placement-top');
 				break;
-
 			case 'left':
-
+				this.popDom.css('top', popTopPositionLeft + 'px');
+				this.popDom.css('left', popLeftPositionLeft + 'px');
+				this.popDom.addClass('ant-popover-placement-left');
+				break;
+			case 'bottom':
+				this.popDom.css('top', popTopPositionBottom + 'px');
+				this.popDom.css('left', popLeftPositionBottom + 'px');
+				this.popDom.addClass('ant-popover-placement-bottom');
+				break;
+			case 'right':
+				this.popDom.css('top', popTopPositionRight + 'px');
+				this.popDom.css('left', popLeftPositionRight + 'px');
+				this.popDom.addClass('ant-popover-placement-right');
 				break;
 		}
 

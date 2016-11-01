@@ -6,25 +6,25 @@
 	}
 </style>
 <h3>pop confirm</h3>
-<div class="demo">
+<div class="demo" style="margin-left: 200px">
 	<div style="margin-left: 70px; white-space: nowrap;">
-		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.topLeftConfirm($event)"><span>TL</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.topConfirm($event)"><span>Top</span></button>
+		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.topLeftPop($event)"><span>TL</span></button>
+		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.topPop($event)"><span>Top</span></button>
 		<button type="button" class="btn bp-btn-default btn-sm"><span>TR</span></button>
 	</div>
 	<div style="width: 70px; float: left;">
 		<button type="button" class="btn bp-btn-default btn-sm"><span>LT</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm"><span>Left</span></button>
+		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.leftPop($event)"><span>Left</span></button>
 		<button type="button" class="btn bp-btn-default btn-sm"><span>LB</span></button>
 	</div>
 	<div style="width: 70px; margin-left: 290px;">
 		<button type="button" class="btn bp-btn-default btn-sm"><span>RT</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm"><span>Right</span></button>
+		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.rightPop($event)"><span>Right</span></button>
 		<button type="button" class="btn bp-btn-default btn-sm"><span>RB</span></button>
 	</div>
 	<div style="margin-left: 70px; clear: both; white-space: nowrap;">
 		<button type="button" class="btn bp-btn-default btn-sm"><span>BL</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm"><span>Bottom</span></button>
+		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.bottomPop($event)"><span>Bottom</span></button>
 		<button type="button" class="btn bp-btn-default btn-sm"><span>BR</span></button>
 	</div>
 </div>
