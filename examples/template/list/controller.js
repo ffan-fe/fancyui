@@ -6,9 +6,9 @@ import Prism from 'prismjs';
 import BaseController from './base.controller.js'
 
 class ListController extends BaseController {
-  constructor(bpApi, $state, $location, $sce) {
+  constructor(bpAjaxService, $state, $location, $sce) {
     'ngInject';
-    super($location, $state, bpApi);
+    super($location, $state, bpAjaxService);
     let Config = {
       title: '活动列表', //页面标题
 

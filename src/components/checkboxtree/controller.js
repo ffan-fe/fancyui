@@ -87,7 +87,6 @@ class CheckboxtreeController {
       this.ngModel.splice(position,1);
     }
     this.ngModel = angular.copy(this.ngModel);
-    console.log(this.ngModel)
   }
 
   /**
@@ -98,7 +97,6 @@ class CheckboxtreeController {
   formatList(list, checkedItems){
     checkedItems.forEach(item => {
       let targetNode = this.getNode(item[this.config.fieldOfId], list);
-      console.log('targetNode in formatList', targetNode);
       if(targetNode){
         targetNode.checked = true;
       }

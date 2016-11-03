@@ -57,6 +57,7 @@
   "dependencies": {
     "angular": "^1.5.6",
     "angular-ui-router": "^0.3.1",
+    "bp-ajax": "0.0.2",
     "bp-datetimepicker": "0.0.1",
     "classnames": "^2.2.5",
     "ffan-ng-table": "0.0.1",

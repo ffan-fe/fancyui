@@ -3,8 +3,9 @@ import Prism from 'prismjs';
 import DefaultConfig from './config.js'
 
 class AddController {
-  constructor($scope, $state, NgTableParams, Restangular, bpApi, $sce) {
-    'ngInject'
+  constructor($scope, $state, NgTableParams, Restangular, bpAjaxService, $sce) {
+    'ngInject';
+    this.bpApi = bpAjaxService;
     this.datepickerOption = {
       //minDate: new Date(),
       viewFormat: 'YYYY-MM-DD HH:mm:ss',

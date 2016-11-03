@@ -17,9 +17,19 @@ export default class GetStartedController {
      * 引用
      */
     let usermodule =`
-    import fancyui from 'fancyui';
+    import * as Fancyui from 'fancyui';
       angular.module('app', [
-        fancyui.name
+         Fancyui.Button.name,
+         Fancyui.Checkbox.name,
+         Fancyui.CheckboxGroup.name,
+         Fancyui.CitySelector.name,
+         Fancyui.Datetimepicker.name,
+         Fancyui.Radiobox.name,
+         Fancyui.RadioboxGroup.name,
+         Fancyui.Transfer.name,
+         Fancyui.formTpl.name,
+         Fancyui.listTpl.name,
+         Fancyui.multiselect.name
       ])
       .component('app', AppComponent);
     `;
@@ -29,10 +39,11 @@ export default class GetStartedController {
      * 部分引用
      */
     let use2module =`
-    import {Button,CheckBox} from 'fancyui';
+    import {Button, CheckBox, Datetimepicker} from 'fancyui';
       angular.module('app', [
         Button.name,
-        CheckBox.name
+        CheckBox.name,
+        Datetimepicker.name
       ])
       .component('app', AppComponent);
     `;
@@ -71,7 +82,7 @@ export default class GetStartedController {
      */
     let checkedChange = `npm config get registry`;
     this.part4Html = this.$sce.trustAsHtml(Prism.highlight( checkedChange, Prism.languages.html));
-    
+
   }
 
 }

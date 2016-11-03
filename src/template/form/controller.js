@@ -1,7 +1,7 @@
 class FormController {
-  constructor(bpApi) {
+  constructor(bpAjaxService) {
     'ngInject'
-    this.bpApi = bpApi;
+    this.bpApi = bpAjaxService;
   }
 
   refreshOptions(url, keyWord) {

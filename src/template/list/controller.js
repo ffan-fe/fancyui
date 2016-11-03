@@ -42,7 +42,6 @@ class ListController {
     let param = {
       [paramField]: keyWord
     };
-    console.log(param);
     this.$http({
       url: url,
       method: "GET",
