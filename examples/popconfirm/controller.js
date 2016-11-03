@@ -6,7 +6,10 @@ export default class popConfirmController {
 		'ngInject';
 		this.$scope = $scope;
 		this.Popconfirm = Popconfirm;
-		const exampleCode = `
+		const exampleCodeHTMLPart = `
+			<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>Top</span></button>
+		`;
+		const exampleCodeJSPart = `
 			Popconfirm.pop({
 				title: '确定要删除吗?',
 				placement: 'top',
@@ -20,9 +23,10 @@ export default class popConfirmController {
 				}
 			}, e)
 		`;
-		this.exampleHtml = $sce.trustAsHtml(Prism.highlight(exampleCode, Prism.languages.html));
+		this.exampleCodeHTML = $sce.trustAsHtml(Prism.highlight(exampleCodeHTMLPart, Prism.languages.html));
+		this.exampleCodeJS = $sce.trustAsHtml(Prism.highlight(exampleCodeJSPart, Prism.languages.javascript));
 	}
-	
+
 	topPop(e) {
 		this.Popconfirm.pop({
 			title: '确定要删除top吗?',
