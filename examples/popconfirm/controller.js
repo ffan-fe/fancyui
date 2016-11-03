@@ -7,7 +7,7 @@ export default class popConfirmController {
 		this.$scope = $scope;
 		this.Popconfirm = Popconfirm;
 		const exampleCodeHTMLPart = `
-			<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>Top</span></button>
+			<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>删除</span></button>
 		`;
 		const exampleCodeJSPart = `
 			Popconfirm.pop({
