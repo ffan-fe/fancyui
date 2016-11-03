@@ -1,30 +1,32 @@
 <style>
-	.demo .bp-btn-default {
+	.demo .btn-default {
 		width: 70px;
-		height: 30px;
 		margin: 2px 0;
 	}
 </style>
-<h3>pop confirm</h3>
+<h3>Pop Confirm</h3>
+
+<div class="text-muted">目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，交互形式更轻量。</div>
+<section>
+	<div>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.exampleHtml"></code>
+      </pre>
+	</div>
+</section>
+
+<h3>示例</h3>
 <div class="demo" style="margin-left: 200px">
-	<div style="margin-left: 70px; white-space: nowrap;">
-		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.topLeftPop($event)"><span>TL</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm test" ng-click="vm.topPop($event)"><span>Top</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm"><span>TR</span></button>
+	<div style="margin-left: 70px;">
+		<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>Top</span></button>
 	</div>
 	<div style="width: 70px; float: left;">
-		<button type="button" class="btn bp-btn-default btn-sm"><span>LT</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.leftPop($event)"><span>Left</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm"><span>LB</span></button>
+		<button type="button" class="btn btn-default" ng-click="vm.leftPop($event)"><span>Left</span></button>
 	</div>
-	<div style="width: 70px; margin-left: 290px;">
-		<button type="button" class="btn bp-btn-default btn-sm"><span>RT</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.rightPop($event)"><span>Right</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm"><span>RB</span></button>
+	<div style="width: 70px; margin-left: 140px;">
+		<button type="button" class="btn btn-default" ng-click="vm.rightPop($event)"><span>Right</span></button>
 	</div>
-	<div style="margin-left: 70px; clear: both; white-space: nowrap;">
-		<button type="button" class="btn bp-btn-default btn-sm"><span>BL</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm" ng-click="vm.bottomPop($event)"><span>Bottom</span></button>
-		<button type="button" class="btn bp-btn-default btn-sm"><span>BR</span></button>
+	<div style="margin-left: 70px;">
+		<button type="button" class="btn btn-default" ng-click="vm.bottomPop($event)"><span>Bottom</span></button>
 	</div>
 </div>
