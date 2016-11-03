@@ -6,23 +6,23 @@ export default class popConfirmController {
 		'ngInject';
 		this.$scope = $scope;
 		this.Popconfirm = Popconfirm;
+		const exampleCode = `
+			Popconfirm.pop({
+				title: '确定要删除吗?',
+				placement: 'top',
+				okText: '确定',
+				cancelText: '取消',
+				onConfirm: function () {
+					console.log('确定');
+				},
+				onCancel: function () {
+					console.log('取消');
+				}
+			}, e)
+		`;
+		this.exampleHtml = $sce.trustAsHtml(Prism.highlight(exampleCode, Prism.languages.html));
 	}
-
-	topLeftPop(e) {
-		this.Popconfirm.pop({
-			title: '确定要删除吗?',
-			placement: 'top',
-			okText: '确定',
-			cancelText: '取消',
-			onConfirm: function () {
-				console.log('确定');
-			},
-			onCancel: function () {
-				console.log('取消');
-			}
-		}, e)
-	}
-
+	
 	topPop(e) {
 		this.Popconfirm.pop({
 			title: '确定要删除top吗?',

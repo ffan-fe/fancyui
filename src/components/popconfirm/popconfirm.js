@@ -46,7 +46,8 @@ export default class Popconfirm {
 
 	removeDom(el) {
 		if (el) {
-			el.remove();
+			el.removeClass('zoom-big-enter');
+			el.addClass('zoom-big-leave');
 		}
 	}
 
@@ -95,9 +96,7 @@ export default class Popconfirm {
 		// right
 		let popTopPositionRight = eTop - popHeight / 2 + eHeight / 2 - eScrollTop;
 		let popLeftPositionRight = eLeft + eWidth;
-
-		console.log(e.currentTarget.clientTop + e.currentTarget.offsetParent.offsetTop)
-
+		
 		switch (param.placement) {
 			case 'top':
 				this.popDom.css('top', popTop + 'px');
