@@ -170,14 +170,6 @@ export default class Popconfirm {
 		}
 	}
 
-	confirm() {
-
-	}
-
-	cancel() {
-
-	}
-
 	removeDom(el) {
 		if (el) {
 			el.remove();
