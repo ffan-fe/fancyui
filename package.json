@@ -45,6 +45,7 @@
     "jquery": "^2.2.0",
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
+    "lodash": "^4.16.6",
     "moment": "^2.13.0",
     "ng-annotate-loader": "^0.1.0",
     "prismjs": "^1.5.1",
