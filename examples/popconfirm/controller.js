@@ -6,9 +6,7 @@ export default class popConfirmController {
 		'ngInject';
 		this.$scope = $scope;
 		this.Popconfirm = Popconfirm;
-		const exampleCodeHTMLPart = `
-			<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>删除</span></button>
-		`;
+		const exampleCodeHTMLPart = `<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>删除</span></button>`;
 		const exampleCodeJSPart = `
 			Popconfirm.pop({
 				title: '确定要删除吗?',
@@ -16,10 +14,10 @@ export default class popConfirmController {
 				okText: '确定',
 				cancelText: '取消',
 				onConfirm: function () {
-					console.log('确定');
+					alert('确定');
 				},
 				onCancel: function () {
-					console.log('取消');
+					alert('取消');
 				}
 			}, e)
 		`;
@@ -34,10 +32,10 @@ export default class popConfirmController {
 			okText: '确定',
 			cancelText: '取消',
 			onConfirm: function () {
-				console.log('确定');
+				alert('确定');
 			},
 			onCancel: function () {
-				console.log('取消');
+				alert('取消');
 			}
 		}, e)
 	}
@@ -49,10 +47,10 @@ export default class popConfirmController {
 			okText: '确定',
 			cancelText: '取消',
 			onConfirm: function () {
-				console.log('确定');
+				alert('确定');
 			},
 			onCancel: function () {
-				console.log('取消');
+				alert('取消');
 			}
 		}, e)
 	}
@@ -64,10 +62,10 @@ export default class popConfirmController {
 			okText: '确定',
 			cancelText: '取消',
 			onConfirm: function () {
-				console.log('确定');
+				alert('确定');
 			},
 			onCancel: function () {
-				console.log('取消');
+				alert('取消');
 			}
 		}, e)
 	}
@@ -79,10 +77,10 @@ export default class popConfirmController {
 			okText: '确定',
 			cancelText: '取消',
 			onConfirm: function () {
-				console.log('确定');
+				alert('确定');
 			},
 			onCancel: function () {
-				console.log('取消');
+				alert('取消');
 			}
 		}, e)
 	}
