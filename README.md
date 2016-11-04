@@ -27,3 +27,14 @@
 切到gh-page分支：
 `npm run build:example`
 注意: 不要在其他分支运行这个命令
+
+
+### change log
+
+##### 1.0.2 
+主要合并了bp-utils代码, 基本可以代替. 另外此版本是不兼容版本, 需要在项目中添加新常量$env
+```javascript
+  .constant('$env', {
+    DEBUG: process.env.DEBUG
+  })
+```
