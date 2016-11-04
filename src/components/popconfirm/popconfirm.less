@@ -1,4 +1,4 @@
-@-webkit-keyframes antZoomBigIn {
+@-webkit-keyframes bpZoomBigIn {
 	0% {
 		opacity: 0;
 		-webkit-transform: scale(.8);
@@ -11,7 +11,7 @@
 	}
 }
 
-@keyframes antZoomBigIn {
+@keyframes bpZoomBigIn {
 	0% {
 		opacity: 0;
 		-webkit-transform: scale(.8);
@@ -24,7 +24,7 @@
 	}
 }
 
-@-webkit-keyframes antZoomBigOut {
+@-webkit-keyframes bpZoomBigOut {
 	0% {
 		-webkit-transform: scale(1);
 		transform: scale(1)
@@ -37,7 +37,7 @@
 	}
 }
 
-@keyframes antZoomBigOut {
+@keyframes bpZoomBigOut {
 	0% {
 		-webkit-transform: scale(1);
 		transform: scale(1)
@@ -49,7 +49,7 @@
 		transform: scale(.8)
 	}
 }
-.ant-popover {
+.bp-popover {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -66,40 +66,40 @@
 	text-align: left
 }
 
-.ant-popover:after {
+.bp-popover:after {
 	content: "";
 	position: absolute;
 	background: hsla(0, 0%, 100%, .01)
 }
 
-.ant-popover-hidden {
+.bp-popover-hidden {
 	display: none
 }
 
-.ant-popover-placement-top, .ant-popover-placement-topLeft, .ant-popover-placement-topRight {
+.bp-popover-placement-top, .bp-popover-placement-topLeft, .bp-popover-placement-topRight {
 	padding-bottom: 4px
 }
 
-.ant-popover-placement-right, .ant-popover-placement-rightBottom, .ant-popover-placement-rightTop {
+.bp-popover-placement-right, .bp-popover-placement-rightBottom, .bp-popover-placement-rightTop {
 	padding-left: 4px
 }
 
-.ant-popover-placement-bottom, .ant-popover-placement-bottomLeft, .ant-popover-placement-bottomRight {
+.bp-popover-placement-bottom, .bp-popover-placement-bottomLeft, .bp-popover-placement-bottomRight {
 	padding-top: 4px
 }
 
-.ant-popover-placement-left, .ant-popover-placement-leftBottom, .ant-popover-placement-leftTop {
+.bp-popover-placement-left, .bp-popover-placement-leftBottom, .bp-popover-placement-leftTop {
 	padding-right: 4px
 }
 
-.ant-popover-inner {
+.bp-popover-inner {
 	background-color: #fff;
 	background-clip: padding-box;
 	border-radius: 6px;
 	box-shadow: 0 1px 6px rgba(0, 0, 0, .2);
 }
 
-.ant-popover-title {
+.bp-popover-title {
 	min-width: 177px;
 	margin: 0;
 	padding: 0 16px;
@@ -109,7 +109,7 @@
 	color: #666
 }
 
-.ant-popover-inner-content {
+.bp-popover-inner-content {
 	padding: 8px 16px 16px;
 	color: #666;
 	font-size: 14px;
@@ -117,30 +117,24 @@
 	//min-height: 100px;
 }
 
-.ant-popover-message {
+.bp-popover-message {
 	padding: 8px 0 16px;
 	//font-size: 12px;
 	color: #666
 }
 
-.ant-popover-message > .anticon {
-	color: #fa0;
-	line-height: 17px;
-	position: absolute
-}
-
-.ant-popover-buttons {
+.bp-popover-buttons {
 	text-align: center;
 	//margin-bottom: 8px;
 	width: 150px;
 	height: 30px;
 }
 
-.ant-popover-buttons button {
+.bp-popover-buttons button {
 	margin-left: 8px
 }
 
-.ant-popover-arrow, .ant-popover-arrow:after {
+.bp-popover-arrow, .bp-popover-arrow:after {
 	position: absolute;
 	display: block;
 	width: 0;
@@ -149,23 +143,23 @@
 	border-style: solid
 }
 
-.ant-popover-arrow {
+.bp-popover-arrow {
 	border-width: 5px;
 }
 
-.ant-popover-arrow:after {
+.bp-popover-arrow:after {
 	border-width: 4px;
 	content: ""
 }
 
-.ant-popover-placement-top .ant-popover-arrow, .ant-popover-placement-topLeft .ant-popover-arrow, .ant-popover-placement-topRight .ant-popover-arrow {
+.bp-popover-placement-top .bp-popover-arrow, .bp-popover-placement-topLeft .bp-popover-arrow, .bp-popover-placement-topRight .bp-popover-arrow {
 	border-bottom-width: 0;
 	border-top-color: hsla(0, 0%, 85%, .7);
 	bottom: -1px;
 	/* top: -1px; */
 }
 
-.ant-popover-placement-top .ant-popover-arrow:after, .ant-popover-placement-topLeft .ant-popover-arrow:after, .ant-popover-placement-topRight .ant-popover-arrow:after {
+.bp-popover-placement-top .bp-popover-arrow:after, .bp-popover-placement-topLeft .bp-popover-arrow:after, .bp-popover-placement-topRight .bp-popover-arrow:after {
 	content: " ";
 	bottom: 1px;
 	margin-left: -4px;
@@ -173,26 +167,26 @@
 	border-top-color: #fff
 }
 
-.ant-popover-placement-top .ant-popover-arrow {
+.bp-popover-placement-top .bp-popover-arrow {
 	left: 50%;
 	margin-left: -5px
 }
 
-.ant-popover-placement-topLeft .ant-popover-arrow {
+.bp-popover-placement-topLeft .bp-popover-arrow {
 	left: 16px
 }
 
-.ant-popover-placement-topRight .ant-popover-arrow {
+.bp-popover-placement-topRight .bp-popover-arrow {
 	right: 16px
 }
 
-.ant-popover-placement-right .ant-popover-arrow, .ant-popover-placement-rightBottom .ant-popover-arrow, .ant-popover-placement-rightTop .ant-popover-arrow {
+.bp-popover-placement-right .bp-popover-arrow, .bp-popover-placement-rightBottom .bp-popover-arrow, .bp-popover-placement-rightTop .bp-popover-arrow {
 	left: -1px;
 	border-left-width: 0;
 	border-right-color: hsla(0, 0%, 85%, .7)
 }
 
-.ant-popover-placement-right .ant-popover-arrow:after, .ant-popover-placement-rightBottom .ant-popover-arrow:after, .ant-popover-placement-rightTop .ant-popover-arrow:after {
+.bp-popover-placement-right .bp-popover-arrow:after, .bp-popover-placement-rightBottom .bp-popover-arrow:after, .bp-popover-placement-rightTop .bp-popover-arrow:after {
 	content: " ";
 	left: 1px;
 	bottom: -4px;
@@ -200,26 +194,26 @@
 	border-right-color: #fff
 }
 
-.ant-popover-placement-right .ant-popover-arrow {
+.bp-popover-placement-right .bp-popover-arrow {
 	top: 50%;
 	margin-top: -5px
 }
 
-.ant-popover-placement-rightTop .ant-popover-arrow {
+.bp-popover-placement-rightTop .bp-popover-arrow {
 	top: 12px
 }
 
-.ant-popover-placement-rightBottom .ant-popover-arrow {
+.bp-popover-placement-rightBottom .bp-popover-arrow {
 	bottom: 12px
 }
 
-.ant-popover-placement-bottom .ant-popover-arrow, .ant-popover-placement-bottomLeft .ant-popover-arrow, .ant-popover-placement-bottomRight .ant-popover-arrow {
+.bp-popover-placement-bottom .bp-popover-arrow, .bp-popover-placement-bottomLeft .bp-popover-arrow, .bp-popover-placement-bottomRight .bp-popover-arrow {
 	border-top-width: 0;
 	border-bottom-color: hsla(0, 0%, 85%, .7);
 	top: -1px
 }
 
-.ant-popover-placement-bottom .ant-popover-arrow:after, .ant-popover-placement-bottomLeft .ant-popover-arrow:after, .ant-popover-placement-bottomRight .ant-popover-arrow:after {
+.bp-popover-placement-bottom .bp-popover-arrow:after, .bp-popover-placement-bottomLeft .bp-popover-arrow:after, .bp-popover-placement-bottomRight .bp-popover-arrow:after {
 	content: " ";
 	top: 1px;
 	margin-left: -4px;
@@ -227,26 +221,26 @@
 	border-bottom-color: #fff
 }
 
-.ant-popover-placement-bottom .ant-popover-arrow {
+.bp-popover-placement-bottom .bp-popover-arrow {
 	left: 50%;
 	margin-left: -5px
 }
 
-.ant-popover-placement-bottomLeft .ant-popover-arrow {
+.bp-popover-placement-bottomLeft .bp-popover-arrow {
 	left: 16px
 }
 
-.ant-popover-placement-bottomRight .ant-popover-arrow {
+.bp-popover-placement-bottomRight .bp-popover-arrow {
 	right: 16px
 }
 
-.ant-popover-placement-left .ant-popover-arrow, .ant-popover-placement-leftBottom .ant-popover-arrow, .ant-popover-placement-leftTop .ant-popover-arrow {
+.bp-popover-placement-left .bp-popover-arrow, .bp-popover-placement-leftBottom .bp-popover-arrow, .bp-popover-placement-leftTop .bp-popover-arrow {
 	right: -1px;
 	border-right-width: 0;
 	border-left-color: hsla(0, 0%, 85%, .7)
 }
 
-.ant-popover-placement-left .ant-popover-arrow:after, .ant-popover-placement-leftBottom .ant-popover-arrow:after, .ant-popover-placement-leftTop .ant-popover-arrow:after {
+.bp-popover-placement-left .bp-popover-arrow:after, .bp-popover-placement-leftBottom .bp-popover-arrow:after, .bp-popover-placement-leftTop .bp-popover-arrow:after {
 	content: " ";
 	right: 1px;
 	border-right-width: 0;
@@ -254,16 +248,16 @@
 	bottom: -4px
 }
 
-.ant-popover-placement-left .ant-popover-arrow {
+.bp-popover-placement-left .bp-popover-arrow {
 	top: 50%;
 	margin-top: -5px
 }
 
-.ant-popover-placement-leftTop .ant-popover-arrow {
+.bp-popover-placement-leftTop .bp-popover-arrow {
 	top: 12px
 }
 
-.ant-popover-placement-leftBottom .ant-popover-arrow {
+.bp-popover-placement-leftBottom .bp-popover-arrow {
 	bottom: 12px
 }
 
@@ -277,8 +271,8 @@
 }
 
 .zoom-big-leave {
-	-webkit-animation-name: antZoomBigOut;
-	animation-name: antZoomBigOut;
+	-webkit-animation-name: bpZoomBigOut;
+	animation-name: bpZoomBigOut;
 	-webkit-animation-play-state: running;
 	animation-play-state: running;
 	-webkit-animation-timing-function: cubic-bezier(.78, .14, .15, .86);
@@ -291,12 +285,12 @@
 	transform: scale(0);
 	-webkit-animation-timing-function: cubic-bezier(.08, .82, .17, 1);
 	animation-timing-function: cubic-bezier(.08, .82, .17, 1);
-	-webkit-animation-name: antZoomBigIn;
-	animation-name: antZoomBigIn;
+	-webkit-animation-name: bpZoomBigIn;
+	animation-name: bpZoomBigIn;
 	-webkit-animation-play-state: running;
 	animation-play-state: running
 }
 
-.ant-popover-hidden {
+.bp-popover-hidden {
 	display: none;
 }

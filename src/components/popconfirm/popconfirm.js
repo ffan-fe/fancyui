@@ -102,22 +102,22 @@ export default class Popconfirm {
 			case 'top':
 				this.popDom.css('top', popTop + 'px');
 				this.popDom.css('left', popLeft + 'px');
-				this.popDom.addClass('ant-popover-placement-top');
+				this.popDom.addClass('bp-popover-placement-top');
 				break;
 			case 'left':
 				this.popDom.css('top', popTopPositionLeft + 'px');
 				this.popDom.css('left', popLeftPositionLeft + 'px');
-				this.popDom.addClass('ant-popover-placement-left');
+				this.popDom.addClass('bp-popover-placement-left');
 				break;
 			case 'bottom':
 				this.popDom.css('top', popTopPositionBottom + 'px');
 				this.popDom.css('left', popLeftPositionBottom + 'px');
-				this.popDom.addClass('ant-popover-placement-bottom');
+				this.popDom.addClass('bp-popover-placement-bottom');
 				break;
 			case 'right':
 				this.popDom.css('top', popTopPositionRight + 'px');
 				this.popDom.css('left', popLeftPositionRight + 'px');
-				this.popDom.addClass('ant-popover-placement-right');
+				this.popDom.addClass('bp-popover-placement-right');
 				break;
 		}
 
