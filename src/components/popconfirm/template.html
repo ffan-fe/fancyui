@@ -8,8 +8,8 @@
 						<div class="bp-popover-message-title">{{title}}</div>
 					</div>
 					<div class="bp-popover-buttons">
-						<button type="button" class="btn bp-btn-default btn-sm" id="btnCancel"><span>{{cancelText || '确定'}}</span></button>
-						<button type="button" class="btn bp-btn-primary btn-sm" id="btnConfirm"><span>{{okText || '取消'}}</span></button>
+						<button type="button" class="btn bp-btn-primary btn-sm" ng-click="confirm()"><span>{{tokText || '确定'}}</span></button>
+						<button type="button" class="btn bp-btn-default btn-sm" ng-click="cancel()"><span>{{cancelTex || '取消'}}</span></button>
 					</div>
 				</div>
 			</div>

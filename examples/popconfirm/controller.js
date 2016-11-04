@@ -30,14 +30,12 @@ export default class popConfirmController {
 			title: '确定要删除top吗?',
 			placement: 'top',
 			okText: '确定',
-			cancelText: '取消',
-			onConfirm: function () {
-				alert('确定');
-			},
-			onCancel: function () {
-				alert('取消');
-			}
-		}, e)
+			cancelText: '取消'
+		}, e).then(function (msg) {
+			alert(msg);
+		}, function (msg) {
+			alert(msg);
+		});
 	}
 
 	leftPop(e) {
@@ -45,14 +43,12 @@ export default class popConfirmController {
 			title: '确定要删除left吗?',
 			placement: 'left',
 			okText: '确定',
-			cancelText: '取消',
-			onConfirm: function () {
-				alert('确定');
-			},
-			onCancel: function () {
-				alert('取消');
-			}
-		}, e)
+			cancelText: '取消'
+		}, e).then(function (msg) {
+			alert(msg);
+		}, function (msg) {
+			alert(msg);
+		});
 	}
 
 	bottomPop(e) {
@@ -60,14 +56,12 @@ export default class popConfirmController {
 			title: '确定要删除bottom吗?',
 			placement: 'bottom',
 			okText: '确定',
-			cancelText: '取消',
-			onConfirm: function () {
-				alert('确定');
-			},
-			onCancel: function () {
-				alert('取消');
-			}
-		}, e)
+			cancelText: '取消'
+		}, e).then(function (msg) {
+			alert(msg);
+		}, function (msg) {
+			alert(msg);
+		});
 	}
 
 	rightPop(e) {
@@ -75,13 +69,11 @@ export default class popConfirmController {
 			title: '确定要删除right吗?',
 			placement: 'right',
 			okText: '确定',
-			cancelText: '取消',
-			onConfirm: function () {
-				alert('确定');
-			},
-			onCancel: function () {
-				alert('取消');
-			}
-		}, e)
+			cancelText: '取消'
+		}, e).then(function (msg) {
+			alert(msg);
+		}, function (msg) {
+			alert(msg);
+		});
 	}
 }
