@@ -1,30 +1,42 @@
 /**
- * @ngdoc directive
+ * @ngdoc service
  * @name popConfirm.service:popConfirm
  * @author anyunfei
  * @restrict E
  * @description
  * 气泡确认框, 目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，交互形式更轻量。
- * 包含的状态有
- * - enable
- * - disabled
- * - loading
  *
- * @param {Array}      sourceData       - binding symbol is =?, 数据源
- * @param {Array}      targetData       - binding symbol is =?, 右侧选中目标值
- * @param {Array}      titles           - binding symbol is <, 左右侧标题,默认为`请选择`
- * @param {Array}      placeholders     - binding symbol is <, 左右placeholders值 默认为`请输入检索条件`
- * @param {Array}      operations       - binding symbol is <, 操作按钮的文案 默认依次为 `添加` `添加全部` `删除` `全部删除`
- * @param {Boolean}    showLeftSearch   - binding symbol is <, 是否启用左侧检索框 默认为 `true` 启用
- * @param {Boolean}    showRightSearch  - binding symbol is <, 是否启用右侧检索框 默认为 `true` 启用
- * @param {Boolean}    addBtn           - binding symbol is <, 是否展示增加按钮 默认为 `true` 展示
- * @param {Boolean}    addAllBtn        - binding symbol is <, 是否展示全部增加按钮 默认为 `true` 展示
- * @param {Boolean}    delBtn           - binding symbol is <, 是否展示删除按钮 默认为 `true` 展示
- * @param {Boolean}    delAllBtn        - binding symbol is <, 是否展示全部删除按钮 默认为 `true` 展示
- * @param {Function}   serverSearch     - binding symbol is &?, 是否启用服务端检索
+ * **Methods**
+ *
+ * - `pop(config)` - 此方法会返回`Promise`, 其中`resolve`表明用户点击了确认按钮; `reject`表明用户点击了取消按钮;
+ *
+ *    参数:
+ *      - title: String		    - 确认框的描述
+ *      - placement: String		- 确认框的位置, 可选top / left / right / bottom
+ *      - okText: String	    - 确认按钮文字
+ *      - cancelText: String    - 取消按钮文字
  *
  *
+ * @example
+ *
+ * <pre>
+ *
+ * <button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>删除</span></button>
+ *
+ * Popconfirm.pop({
+		title: '确定要删除top吗?',
+		placement: 'top',
+		okText: '确定',
+		cancelText: '取消'
+	}, e).then(function () {
+		alert('点了确定');
+	}, function () {
+		alert('点了取消');
+	});
+ *
+ * </pre>
  */
+
 
 import template from './template.html';
 import scrollParent from './scrollparent.js';
@@ -92,13 +104,13 @@ export default class Popconfirm {
 		data.confirm = () => {
 			self.removeDom(self.popDom);
 			self.popDom = null;
-			defer.resolve('点了确定');
+			defer.resolve('confirm');
 		};
 
 		data.cancel = () => {
 			self.removeDom(self.popDom);
 			self.popDom = null;
-			defer.reject('点了取消');
+			defer.reject('cancel');
 		};
 
 		return defer.promise;

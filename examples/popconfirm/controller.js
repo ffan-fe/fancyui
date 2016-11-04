@@ -9,17 +9,15 @@ export default class popConfirmController {
 		const exampleCodeHTMLPart = `<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>删除</span></button>`;
 		const exampleCodeJSPart = `
 			Popconfirm.pop({
-				title: '确定要删除吗?',
+				title: '确定要删除top吗?',
 				placement: 'top',
 				okText: '确定',
-				cancelText: '取消',
-				onConfirm: function () {
-					alert('确定');
-				},
-				onCancel: function () {
-					alert('取消');
-				}
-			}, e)
+				cancelText: '取消'
+			}, e).then(function () {
+				alert('点了确定');
+			}, function () {
+				alert('点了取消');
+			});
 		`;
 		this.exampleCodeHTML = $sce.trustAsHtml(Prism.highlight(exampleCodeHTMLPart, Prism.languages.html));
 		this.exampleCodeJS = $sce.trustAsHtml(Prism.highlight(exampleCodeJSPart, Prism.languages.javascript));
@@ -31,10 +29,10 @@ export default class popConfirmController {
 			placement: 'top',
 			okText: '确定',
 			cancelText: '取消'
-		}, e).then(function (msg) {
-			alert(msg);
-		}, function (msg) {
-			alert(msg);
+		}, e).then(function () {
+			alert('点了确定');
+		}, function () {
+			alert('点了取消');
 		});
 	}
 
@@ -44,10 +42,10 @@ export default class popConfirmController {
 			placement: 'left',
 			okText: '确定',
 			cancelText: '取消'
-		}, e).then(function (msg) {
-			alert(msg);
-		}, function (msg) {
-			alert(msg);
+		}, e).then(function () {
+			alert('点了确定');
+		}, function () {
+			alert('点了取消');
 		});
 	}
 
@@ -57,10 +55,10 @@ export default class popConfirmController {
 			placement: 'bottom',
 			okText: '确定',
 			cancelText: '取消'
-		}, e).then(function (msg) {
-			alert(msg);
-		}, function (msg) {
-			alert(msg);
+		}, e).then(function () {
+			alert('点了确定');
+		}, function () {
+			alert('点了取消');
 		});
 	}
 
@@ -70,10 +68,10 @@ export default class popConfirmController {
 			placement: 'right',
 			okText: '确定',
 			cancelText: '取消'
-		}, e).then(function (msg) {
-			alert(msg);
-		}, function (msg) {
-			alert(msg);
+		}, e).then(function () {
+			alert('点了确定');
+		}, function () {
+			alert('点了取消');
 		});
 	}
 }

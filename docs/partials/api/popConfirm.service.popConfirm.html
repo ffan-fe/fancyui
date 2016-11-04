@@ -1,0 +1,39 @@
+<a href="https://github.com/{{repo}}/blob/{{sha}}/{{file}}#L{{codeline}}" class="view-source"><i class="icon-eye-open"> </i>View source</a><h1><code ng:non-bindable="">popConfirm</code>
+<div><span class="hint">service in module <code ng:non-bindable="">popConfirm</code>
+</span>
+</div>
+</h1>
+<div><h2 id="description">Description</h2>
+<div class="description"><div class="popconfirm-service-page popconfirm-service-popconfirm-page"><p>气泡确认框, 目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，交互形式更轻量。</p>
+<p><strong>Methods</strong></p>
+<ul>
+<li><p><code>pop(config)</code> - 此方法会返回<code>Promise</code>, 其中<code>resolve</code>表明用户点击了确认按钮; <code>reject</code>表明用户点击了取消按钮;</p>
+<p> 参数:</p>
+<ul>
+<li>title: String            - 确认框的描述</li>
+<li>placement: String        - 确认框的位置, 可选top / left / right / bottom</li>
+<li>okText: String        - 确认按钮文字</li>
+<li>cancelText: String    - 取消按钮文字</li>
+</ul>
+</li>
+</ul>
+</div></div>
+<h2 id="example">Example</h2>
+<div class="example"><div class="popconfirm-service-page popconfirm-service-popconfirm-page"><pre class="prettyprint linenums">
+
+&lt;button type="button" class="btn btn-default" ng-click="vm.topPop($event)"&gt;&lt;span&gt;删除&lt;/span&gt;&lt;/button&gt;
+
+Popconfirm.pop({
+		title: '确定要删除top吗?',
+		placement: 'top',
+		okText: '确定',
+		cancelText: '取消'
+	}, e).then(function () {
+		alert('点了确定');
+	}, function () {
+		alert('点了取消');
+	});
+
+</pre>
+</div></div>
+</div>
