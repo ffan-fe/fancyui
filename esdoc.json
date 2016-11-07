@@ -1,6 +1,0 @@
-{
-  "source": "./src",
-  "destination": "./esdoc",
-  "includes": ["\\.(js|es6)$", "\\S*\\.(js|es6)$"],
-  "title": "Anaheim API Documentation"
-}

@@ -1,0 +1,17 @@
+.DS_Store
+Anaheim.iml
+gulpfile.babel.js
+webpack.*
+
+
+
+.idea/
+.vscode/
+esdoc/
+node_modules/
+src/
+docs/
+doccss/
+examples/
+generator/
+tests/
