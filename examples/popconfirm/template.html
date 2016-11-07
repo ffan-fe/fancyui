@@ -1,0 +1,40 @@
+<style>
+	.demo .btn-default {
+		width: 70px;
+		margin: 2px 0;
+	}
+</style>
+<h3>Pop Confirm</h3>
+<div class="text-muted">目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，交互形式更轻量。</div>
+<h3>HTML</h3>
+<section>
+	<div>
+      <pre>
+        <code class="language-html" ng-bind-html="vm.exampleCodeHTML"></code>
+      </pre>
+	</div>
+</section>
+<h3>JavaScript</h3>
+<section>
+	<div>
+      <pre>
+        <code class="language-javascript" ng-bind-html="vm.exampleCodeJS"></code>
+      </pre>
+	</div>
+</section>
+
+<h3>示例</h3>
+<div class="demo" style="margin-left: 160px; margin-bottom: 80px;">
+	<div style="margin-left: 70px;">
+		<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>Top</span></button>
+	</div>
+	<div style="width: 70px; float: left;">
+		<button type="button" class="btn btn-default" ng-click="vm.leftPop($event)"><span>Left</span></button>
+	</div>
+	<div style="width: 70px; margin-left: 140px;">
+		<button type="button" class="btn btn-default" ng-click="vm.rightPop($event)"><span>Right</span></button>
+	</div>
+	<div style="margin-left: 70px;">
+		<button type="button" class="btn btn-default" ng-click="vm.bottomPop($event)"><span>Bottom</span></button>
+	</div>
+</div>

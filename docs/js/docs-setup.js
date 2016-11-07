@@ -86,6 +86,15 @@ NG_DOCS={
     },
     {
       "section": "api",
+      "id": "popConfirm.service:popConfirm",
+      "shortName": "popConfirm",
+      "type": "service",
+      "moduleName": "popConfirm",
+      "shortDescription": "气泡确认框, 目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，交互形式更轻量。",
+      "keywords": "alert anyunfei api bottom btn btn-default button canceltext class function left ng-click oktext placement pop popconfirm promise reject resolve service string title top toppop type vm"
+    },
+    {
+      "section": "api",
       "id": "radiobox.directive:bpRadio",
       "shortName": "bpRadio",
       "type": "directive",
@@ -109,7 +118,7 @@ NG_DOCS={
       "type": "directive",
       "moduleName": "transfer",
       "shortDescription": "",
-      "keywords": "add-all-btn add-btn addallbtn addbtn api binding chuxin datasource del-all-btn del-btn delallbtn delbtn directive false github io key nnn operations placeholders serversearch showleft-search showleftsearch showright-search showrightsearch source-data sourcedata storename symbol targetdata testing titles transfer true vm"
+      "keywords": "Popconfirm pop title vm"
     }
   ],
   "apis": {
