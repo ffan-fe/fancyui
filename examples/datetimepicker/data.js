@@ -19,7 +19,8 @@ export default {
         <bp-datetimepicker
           type="range"
           start-model="vm.startModel"
-          end-model="vm.endModel">
+          end-model="vm.endModel"
+          placeholders="vm.placeholders">
         </bp-datetimepicker>
         `,
 
