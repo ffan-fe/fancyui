@@ -30,7 +30,7 @@
  ];
  </pre>
 
- 更多例子的[传送门](https://ffan-fe.github.io/#/ui/radiobox)
+ 更多例子的[传送门](https://ffan-fe.github.io/Anaheim/#/radiobox)
  */
 
 import Component from '../common/component';

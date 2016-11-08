@@ -19,6 +19,7 @@
  * @param {Boolean}  startDisabled - binding symbol is <, 开始时间Disabled
  * @param {Boolean}  endDisabled   - binding symbol is <, 结束时间Disabled
  * @param {Boolean}  disabled      - binding symbol is <, Disabled状态
+ * @param {Array}    placeholders  - binding symbol is <, placeholders
  * @param {String}   separator     - binding symbol is @, 范围时间分隔符，默认'至'
  *
  * @example
@@ -45,7 +46,7 @@
  this.startModel = '';
  this.endModel = '';
  </pre>
- 更多例子的[传送门](https://ffan-fe.github.io/#/ui/datetimepicker)
+ 更多例子的[传送门](https://ffan-fe.github.io/Anaheim/#/datetimepicker)
  */
 import Component from '../common/component';
 import moment from 'moment';
@@ -86,7 +87,7 @@ export default class Datetimepicker extends Component {
       bp:{
         placeholders:{
           startPlaceholder: '请选择开始时间',
-          endPlaceholder:   '请选择结束时间'
+          endPlaceholder: '请选择结束时间'
         },
         disabled: false,
         startDisabled: false,
@@ -155,11 +156,13 @@ export default class Datetimepicker extends Component {
    */
   setPlaceholders(){
     if(!angular.isUndefined(this.placeholders)){
-      if(angular.isArray(this.placeholders)){
-        this.type != 'range' ? this.config.bp.placeholders['startplaceholder'] = '请选择时间': '';
-        angular.forEach(this.config.bp.placeholders, (item, index) => {
-          this.config.bp.placeholders[index] = this.placeholders[index];
-        })
+      if(angular.isArray(this.placeholders) && this.placeholders.length > 0){
+        if(this.placeholders.length == 1){
+          this.config.bp.placeholders['startPlaceholder'] = this.placeholders[0] ;
+        }else{
+           this.config.bp.placeholders['startPlaceholder'] = this.placeholders[0];
+           this.config.bp.placeholders['endPlaceholder'] = this.placeholders[1];
+        }
       }else{
         throw 'placeholders must be array';
       }

@@ -3,8 +3,6 @@ Anaheim.iml
 gulpfile.babel.js
 webpack.*
 
-
-
 .idea/
 .vscode/
 esdoc/
