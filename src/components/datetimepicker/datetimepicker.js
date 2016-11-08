@@ -46,7 +46,7 @@
  this.startModel = '';
  this.endModel = '';
  </pre>
- 更多例子的[传送门](https://ffan-fe.github.io/#/ui/datetimepicker)
+ 更多例子的[传送门](https://ffan-fe.github.io/Anaheim/#/datetimepicker)
  */
 import Component from '../common/component';
 import moment from 'moment';

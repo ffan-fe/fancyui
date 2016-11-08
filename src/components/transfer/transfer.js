@@ -84,7 +84,7 @@ this.dataSource = [
   }
 ]
  </pre>
- 更多例子的[传送门](https://ffan-fe.github.io/#/ui/transfer)
+ 更多例子的[传送门](https://ffan-fe.github.io/Anaheim/#/transfer)
  */
 import Component from '../common/component';
 

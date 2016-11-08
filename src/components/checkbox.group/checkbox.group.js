@@ -25,7 +25,7 @@
         {label: '脸'}
       ];
     </pre>
-    更多例子的[传送门](https://ffan-fe.github.io/#/ui/checkbox)
+    更多例子的[传送门](https://ffan-fe.github.io/Anaheim/#/checkbox)
  */
 
 import angular from 'angular';
