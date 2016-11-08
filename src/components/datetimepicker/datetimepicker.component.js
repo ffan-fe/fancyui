@@ -14,6 +14,7 @@
  * @property {Boolean}  startDisabled - binding symbol is <, 开始时间Disabled
  * @property {Boolean}  endDisabled   - binding symbol is <, 结束时间Disabled
  * @property {Boolean}  disabled      - binding symbol is <, Disabled状态
+ * @property {Array}    placeholders  - binding symbol is <, placeholders
  * @property {String}   separator     - binding symbol is @, 范围时间分隔符，默认'至'
  *
  */

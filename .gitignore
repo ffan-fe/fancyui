@@ -1,11 +1,9 @@
 .DS_Store
 Anaheim.iml
 
-
-
-
 .idea/
 .vscode/
 esdoc/
 node_modules/
-dist
+dist/
+.editorconfig
