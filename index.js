@@ -13,7 +13,8 @@ import multiselect from './src/components/multiselect';
 import bpDirective from './src/directive';
 import formTpl from './src/template/form';
 import listTpl from './src/template/list';
-import fixURL from './src/tool/fixurl'
+import fixURL from './src/tool/fixurl';
+import ffanPopConfirm from './src/components/popconfirm';
 
 'use strict';
 
@@ -26,6 +27,7 @@ export {
   ffanCitySelector as CitySelector,
   ffanTransfer as Transfer,
   ffanDatetimepicker as Datetimepicker,
+  ffanPopConfirm as PopConfirm,
   bpServices ,
   checkboxtree,
   multiselect,
