@@ -1,0 +1,21 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8">
+  <ui-select
+    bp-field-error
+    ng-model="vm.model[field.name]"
+    ng-required="field.validateRules.required"
+    theme="bootstrap">
+    <ui-select-match>
+      {{$select.selected.text}}
+    </ui-select-match>
+    <ui-select-choices repeat="option.value as option in value.options | filter: $select.search"
+                       refresh='vm.refreshOptions(field.url ,$select.search)'
+                       refresh-delay="500">
+      {{option.text}}
+    </ui-select-choices>
+  </ui-select>
+</div>

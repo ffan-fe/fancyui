@@ -48,6 +48,7 @@
     "lodash": "^4.16.6",
     "moment": "^2.13.0",
     "ng-annotate-loader": "^0.1.0",
+    "ng-include-loader": "0.0.3",
     "prismjs": "^1.5.1",
     "raw-loader": "^0.5.1",
     "style-loader": "^0.13.1",

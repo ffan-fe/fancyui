@@ -1,7 +1,7 @@
 import FormModule from './index'
 import FormController from './controller.js';
 import FormComponent from './component.js';
-import FormTemplate from './template.html';
+import FormTemplate from './formtpl.html';
 
 describe('Form', () => {
   let $rootScope, makeController;

@@ -15,7 +15,8 @@ module.exports = {
   module: {
     loaders: [
       {test: /\.js$/, exclude: [/node_modules/], loader: 'ng-annotate!babel'},
-      {test: /\.html$/, loader: 'raw'},
+      {test: /\.html$/, exclude: /formtpl\.html$/, loader: 'raw'},
+      {test: /formtpl\.html$/, loader: 'raw!ng-include-loader'},
       {test: /\.less$/, loader: 'style!css!less'},
       {test: /\.css$/, loader: 'style!css'},
       {

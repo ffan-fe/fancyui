@@ -1,0 +1,14 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8">
+  <input type="text"
+         ng-required="field.validateRules.required"
+         bp-field-error
+         ng-model="vm.model[field.name]"
+         uib-typeahead="option.value as option.text for option in vm.refreshOptions(field.url, $viewValue) | filter:{text:$viewValue}"
+         uib-typeahead-no-results="noResults"
+         class="form-control">
+</div>

@@ -1,0 +1,11 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8">
+  <select class="form-control" ng-model="vm.model[field.name]"
+          ng-required="field.validateRules.required"
+          bp-field-error
+          ng-options="option.value as option.text for option in field.options"></select>
+</div>
