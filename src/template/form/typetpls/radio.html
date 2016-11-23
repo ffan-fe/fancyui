@@ -1,0 +1,13 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8" style="padding-top: 7px">
+  <label ng-repeat="option in field.options" style="margin-right: 15px">
+    <input type="radio"
+           name="{{vm.model[field.name]}}"
+           ng-model="vm.model[field.name]"
+           value="{{option.value}}"/> {{option.text}}
+  </label>
+</div>

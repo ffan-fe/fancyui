@@ -1,4 +1,4 @@
-import template from './template.html';
+import template from './formtpl.html';
 import controller from './controller.js';
 import './style.less';
 

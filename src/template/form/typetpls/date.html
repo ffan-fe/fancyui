@@ -1,0 +1,36 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8">
+  <div class="dropdown">
+    <a class="dropdown-toggle"
+       id="_dropdown{{field.name}}"
+       role="button"
+       data-toggle="dropdown"
+       data-target="#"
+       href="javascript:;">
+      <div class="input-group">
+        <input type="text"
+               class="form-control"
+               data-ng-model="vm.model[field.name]">
+                      <span class="input-group-addon">
+                        <i class="glyphicon glyphicon-calendar"></i>
+                      </span>
+      </div>
+    </a>
+    <ul class="dropdown-menu"
+        role="menu"
+        aria-labelledby="dLabel">
+      <datetimepicker
+        data-ng-model="vm.model[field.name]"
+        name="{{field.name}}"
+        ng-required="field.validateRules.required"
+        bp-field-error="{{field.errorMsgs}}"
+        bp-large-than="field.validateRules.largeThan"
+        bp-large-than-form="vm.model"
+        data-datetimepicker-config="{ dropdownSelector: '#_dropdown'+field.name ,modelType: 'YYYY-MM-DD HH:mm:ss'}"/>
+    </ul>
+  </div>
+</div>

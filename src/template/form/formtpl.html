@@ -1,0 +1,44 @@
+<div ng-repeat="field in vm.formConfig.fields|filter:vm.hasType">
+  <div class="form-group" ng-if="field.type === 'text'">
+    <div ng-include="'./typetpls/text.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'textarea'">
+    <div ng-include="'./typetpls/textarea.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'richtext'">
+    <div ng-include="'./typetpls/richtext.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'number'">
+    <div ng-include="'./typetpls/number.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'select'">
+    <div ng-include="'./typetpls/select.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'uiselect'">
+    <div ng-include="'./typetpls/uiselect.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'Typeahead'">
+    <div ng-include="'./typetpls/Typeahead.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'date'">
+    <div ng-include="'./typetpls/date.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'datetimerange'">
+    <div ng-include="'./typetpls/datetimerange.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'daterange'">
+    <div ng-include="'./typetpls/daterange.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'timerange'">
+    <div ng-include="'./typetpls/timerange.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'radio'">
+    <div ng-include="'./typetpls/radio.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'checkbox'">
+    <div ng-include="'./typetpls/checkbox.html'"></div>
+  </div>
+  <div class="form-group" ng-if="field.type === 'image'">
+    <div ng-include="'./typetpls/image.html'"></div>
+  </div>
+</div>

@@ -9,6 +9,7 @@ import 'textAngular/dist/textAngular-sanitize'
 import 'textAngular/dist/textAngular.css'
 import 'ui-select';
 import 'ui-select/dist/select.css'
+import './lib/css/font-awesome.css'
 
 import component from './ui.component';
 import ButtonShow from './button/'

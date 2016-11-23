@@ -1,0 +1,13 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8">
+                <textarea class="form-control"
+                          ng-model="vm.model[field.name]"
+                          ng-required="field.validateRules.required"
+                          maxlength="{{field.validateRules.maxlength}}"
+                          minlength="{{field.validateRules.minlength}}"
+                          bp-field-error="{{field.errorMsgs}}"></textarea>
+</div>
