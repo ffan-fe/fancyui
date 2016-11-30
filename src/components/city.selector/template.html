@@ -1,6 +1,7 @@
 <div cg-busy="{promise:vm.loadPromise, minDuration: 500, message:'数据加载ing...'}">
   <div class="modal-header">
-    <span class="modal-title">城市选择</span>
+    <span class="modal-title" ng-if="!vm.isReadOnly">城市选择</span>
+    <span class="modal-title" ng-if="vm.isReadOnly">城市查看</span>
     <!--<div class="modal-close">X</div>-->
   </div>
   <div class="modal-body">
@@ -51,7 +52,7 @@
     </div>
   </div>
   <div class="modal-footer">
-    <button class="btn bp-btn-primary" ng-click="vm.confirmHandler()">确定</button>
+    <button class="btn bp-btn-primary" ng-if="!vm.isReadOnly" ng-click="vm.confirmHandler()">确定</button>
     <button class="btn bp-btn-default" ng-click="vm.cancelHandler()">关闭</button>
   </div>
 </div>

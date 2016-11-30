@@ -1,4 +1,6 @@
 import config from './default.config.js'
+import { fixDomain } from '../../index.js';
+
 class MultiselectController {
   constructor($http, NgTableParams) {
     'ngInject'
@@ -9,7 +11,7 @@ class MultiselectController {
     //标识是否返回整条信息，默认返回uniqueField值的数组
     this.flag = this.config.returnModel && this.config.returnModel == 'all';
     this.listConfig = {
-      url: this.config.url,
+      url: fixDomain(this.config.url),
       //生成表格的字段
       fields: this.config.tableFields
     };
