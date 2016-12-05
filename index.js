@@ -15,6 +15,8 @@ import formTpl from './src/template/form';
 import listTpl from './src/template/list';
 import fixURL from './src/tool/fixurl';
 import ffanPopConfirm from './src/components/popconfirm';
+import bpDatetimepicker from './src/components/datepicker';
+import bpRangepicker from './src/components/rangepicker';
 
 'use strict';
 
@@ -34,7 +36,9 @@ export {
   bpDirective,
   formTpl,
   listTpl,
-  fixURL
+  fixURL,
+  bpDatetimepicker,
+  bpRangepicker
 }
 
 

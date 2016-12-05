@@ -298,7 +298,7 @@
         <thead>
         <tr>
           <th ng-repeat="field in vm.config.tableFields">{{field.displayName}}</th>
-          <th>操作</th>
+          <th ng-if="vm.config.operations && vm.config.operations.length">操作</th>
         </tr>
         </thead>
         <tbody>
@@ -331,7 +331,7 @@
           </td>
         </tr>
         <tr ng-if="!$data || !$data.length">
-          <td colspan="10" style="text-align: center">
+          <td colspan="{{vm.config.tableFields.length + 1}}" style="text-align: center">
             <div class="text-center" ng-show="vm.loading">
               <i class="glyphicon glyphicon-refresh">数据加载中...</i>
             </div>
