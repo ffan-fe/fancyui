@@ -1,0 +1,42 @@
+<div style="position: relative;">
+  <div style="display: table;" ng-class="{'open': vm.pop}" id="{{vm.id}}">
+    <div class="input-group" style="width: 290px">
+      <input type="text"
+             class="form-control"
+             date-view-format="vm.viewFormat"
+             date-model-format="vm.modelFormat"
+             readonly
+             placeholder="{{vm.placeholder}}"
+             data-ng-model="vm.model"/>
+          <span class="input-group-addon" ng-click="vm.togglePop()">
+            <i class="glyphicon glyphicon-calendar"></i>
+          </span>
+    </div>
+    <div class="dropdown-menu" style="overflow: hidden">
+      <div style="margin:0 10px">
+        <uib-datepicker ng-model="vm.model"
+                        datepicker-options="vm.dateOptions"
+                        date-view-format="vm.viewFormat"
+                        date-model-format="vm.modelFormat"
+                        custom-class="getDayClass(date, mode)"></uib-datepicker>
+        <div style="margin: 10px 0">
+          <uib-timepicker show-meridian="false"
+                          show-seconds="vm.timeOptions.showSeconds"
+                          show-spinners="false"
+                          min="vm.timeOptions.min"
+                          max="vm.timeOptions.max"
+                          date-view-format="vm.viewFormat"
+                          date-model-format="vm.modelFormat"
+                          minute-step="vm.timeOptions.minuteStep"
+                          second-step="vm.timeOptions.secondStep"
+                          ng-model="vm.model"></uib-timepicker>
+        </div>
+        <div class="text-center">
+          <button type="button" class="btn btn-sm bp-btn-primary" ng-click="vm.pop=false">
+            确定
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,10 +1,10 @@
 import ffanButton from './src/components/button/';
 import ffanIcon from './src/components/icon/';
 import ffanCheckbox from './src/components/checkbox';
-import ffanCheckboxGroup from './src/components/checkbox.group'
+import ffanCheckboxGroup from './src/components/checkboxGroup'
 import ffanRadiobox from './src/components/radiobox';
-import ffanRadioboxGroup from './src/components/radiobox.group';
-import ffanCitySelector from './src/components/city.selector';
+import ffanRadioboxGroup from './src/components/radioboxGroup';
+import ffanCitySelector from './src/components/citySelector';
 import ffanTransfer from './src/components/transfer';
 import ffanDatetimepicker from './src/components/datetimepicker';
 import bpServices from './src/service/index.js';
@@ -13,7 +13,7 @@ import multiselect from './src/components/multiselect';
 import bpDirective from './src/directive';
 import formTpl from './src/template/form';
 import listTpl from './src/template/list';
-import fixURL from './src/tool/fixurl';
+import fixURL from './src/components/tool/fixurl';
 import ffanPopConfirm from './src/components/popconfirm';
 
 'use strict';

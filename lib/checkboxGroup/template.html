@@ -1,0 +1,11 @@
+<ul class="list-unstyled" 
+  ng-disabled="controller.disabled"
+  ng-class="controller.ulClassName">
+  <li ng-repeat="item in controller.model track by $index">
+    <bp-checkbox
+      disabled="item.disabled || controller.disabled"
+      checked="item.checked"
+      half-checked="item.halfChecked"
+    >{{item.label}}</bp-checkbox>
+  </li>
+</ul>

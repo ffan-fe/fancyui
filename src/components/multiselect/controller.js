@@ -1,5 +1,5 @@
 import config from './default.config.js'
-import { fixDomain } from '../../index.js';
+import fixDomain from '../tool/fixurl';
 
 class MultiselectController {
   constructor($http, NgTableParams) {

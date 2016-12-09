@@ -1,0 +1,22 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8">
+  <!-- 要把form传过去，
+  不然在bpLargeThan指令的scope里取不到from（无法$eval出值），
+    也就拿不到which指的数据, 无法实现监控-->
+  <input
+    class="form-control"
+    type="number"
+    name="{{field.name}}"
+    ng-required="field.validateRules.required"
+    bp-field-error="{{field.errorMsgs}}"
+    bp-field-error-selector="{{field.selector}}"
+    bp-large-than="field.validateRules.largeThan"
+    bp-large-than-form="vm.model"
+    max="{{field.validateRules.max}}"
+    min="{{field.validateRules.min}}"
+    ng-model="vm.model[field.name]">
+</div>

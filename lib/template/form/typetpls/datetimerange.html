@@ -1,0 +1,10 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8">
+  <bp-rangepicker ng-start-model="vm.model[field.name[0]]"
+                  ng-end-model="vm.model[field.name[1]]"
+                  rangepicker-options="field.config"></bp-rangepicker>
+</div>

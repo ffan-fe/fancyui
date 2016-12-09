@@ -6,7 +6,7 @@ import template from './template.html';
 import controller from './controller.js';
 import './style.less';
 
-import { UIHelper } from "../../tool/uihelper.js";
+import { UIHelper } from "../tool/uihelper.js";
 
 export default class datepickerDirective {
   constructor($rootScope) {

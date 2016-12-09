@@ -8,6 +8,8 @@ import gulp from 'gulp';
 import gutil from 'gulp-util';
 import rename from 'gulp-rename';
 import template from 'gulp-template';
+import gulpIf from 'gulp-if';
+import babel from 'gulp-babel';
 
 import webpack from 'webpack';
 import webpackDistConfig from './webpack.dist.config';
@@ -59,13 +61,37 @@ gulp.task('dev', callback => {
 });
 /**
  * 编译整个组件
- */
-gulp.task('build', callback => {
+*/
+gulp.task('betaBuild', callback => {
   webpack(webpackDistConfig, (err, state) => {
     if (err) throw new gutil.PluginError('webpack', err);
     callback();
   });
 });
+
+gulp.task('build',callback=>{
+  return gulp.src(['./index.js','./src/**/*'])
+    .pipe(gulpIf((file)=>{
+      return file.path.indexOf('.js')>-1;
+    },
+      babel({
+          presets: ['es2015']
+      })))
+    .pipe(gulpIf(file=>{
+      return file.path.indexOf('/components/')>-1;
+    },
+      rename(path=>{
+        path.dirname = path.dirname.replace('components/','');
+        path.dirname = path.dirname.replace('components','');
+        return path;
+      })
+    ))
+    .pipe(gulp.dest('./lib',{
+      overwrite:false
+    }));
+  
+})
+
 
 /**
  * 生成网站

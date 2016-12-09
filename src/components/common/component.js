@@ -4,7 +4,7 @@
  */
 
 import angular from 'angular';
-import CommonState from '../../stateenum/common.state';
+import CommonState from '../stateenum/common.state';
 
 'use strict';
 

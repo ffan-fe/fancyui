@@ -1,4 +1,4 @@
-import ButtonState from '../../src/stateenum/button.state';
+import ButtonState from '../../src/components/stateenum/button.state';
 import Prism from 'prismjs';
 import 'prismjs/themes/prism.css';
 

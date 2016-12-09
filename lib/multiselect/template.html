@@ -1,0 +1,101 @@
+<form class="form-horizontal" ng-if="vm.config.queryFields.length" novalidate>
+  <div class="col-sm-6"
+       style="margin-bottom: 15px" ng-repeat="field in vm.config.queryFields">
+    <div ng-if="field.type === 'text'">
+      <label class="col-sm-4 control-label">{{field.displayName}}:</label>
+
+      <div class="col-sm-8">
+        <input type="text" class="form-control" placeholder="请输入{{field.displayName}}" ng-model="vm.form[field.name]">
+      </div>
+    </div>
+    <div ng-if="field.type === 'select'">
+      <label class="col-sm-4 control-label">{{field.displayName}}:</label>
+
+      <div class="col-sm-8">
+        <select class="form-control"
+                ng-model="vm.form[field.name]"
+                ng-init="vm.form[field.name] = ''"
+                ng-options="option.value as option.text for option in field.options"></select>
+      </div>
+    </div>
+  </div>
+  <div class="form-group text-center">
+    <button type="submit"
+            class="btn bp-btn-primary"
+            ng-disabled="vm.submitting"
+            ng-click="vm.search()">查询</button>
+    <button type="reset" class="btn bp-btn-default" ng-click="vm.resetForm()">重置</button>
+  </div>
+</form>
+<table class="multiselect-table table table-condensed table-bordered table-striped table-hover" ng-table="vm.tableParams">
+  <thead class="text-center">
+  <tr>
+    <th class="active">
+      <input type="checkbox" ng-model="vm.isAllChecked" ng-click="vm.allCheckedChangeHandler(vm.isAllChecked,$data)"> 全选
+    </th>
+    <th ng-repeat="field in vm.listConfig.fields">{{field.displayName}}</th>
+    <th ng-if="vm.config.operations.length">操作</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr ng-repeat="row in $data">
+    <td class="text-center" ng-if="!row.isDisable">
+      <input type="checkbox"
+             ng-click="vm.checkedChangeHandler(row,$data)"
+             ng-model="row.checked">
+    </td>
+    <td class="text-center" ng-if="row.isDisable">
+      <input type="checkbox"
+             disabled
+             checked>
+    </td>
+    <td ng-repeat="field in vm.listConfig.fields">{{row[field.name]}}</td>
+    <td ng-if="vm.config.operations.length">
+          <span ng-repeat="btn in vm.config.operations">
+            <a
+              ng-if="btn.state"
+              class="btn btn-xs bp-btn-primary"
+              ui-sref="{{btn.state}}"
+              target="_self"
+              title="{{btn.displayName}}">
+              {{btn.displayName}}
+            </a>
+            <a
+              ng-if="btn.href"
+              class="btn btn-xs bp-btn-primary"
+              href="{{btn.href}}{{row[btn.itemId]}}"
+              target="_self"
+              title="{{btn.displayName}}">
+              {{btn.displayName}}
+            </a>
+            <button ng-if="btn.action"
+                    class="btn btn-xs bp-btn-default"
+                    ng-click="btn.action(row[btn.itemId], vm.tableParams)">
+              {{btn.displayName}}
+            </button>
+          </span>
+    </td>
+  </tr>
+  <tr ng-if="!$data || !$data.length">
+    <td colspan="20" style="text-align: center">
+      <div class="text-center" ng-show="vm.loading">
+        <i class="glyphicon glyphicon-refresh">数据加载中...</i>
+      </div>
+      <div class="text-center" ng-if="!vm.loading && (!$data || !$data.length)">
+        <i class="glyphicon glyphicon-remove"></i>您查询的条件错误或查询的结果不存在，请重新查询
+      </div>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div>
+  <span ng-if="vm.checkedItems.length">已选择 {{vm.checkedItems.length}} 条记录</span>
+      <span class="import-excel">
+          <a href="{{vm.exportExcelHref}}"
+             ng-if="vm.config.tableConfig.excel"
+             target="_blank">
+            <button class="btn btn-default">导出Excel</button>
+          </a>
+          <!--<span>共 {{vm.total}} 条记录</span>-->
+      </span>
+</div>

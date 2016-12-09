@@ -1,6 +1,7 @@
 import loaclData from './localData.js';
 import angular from 'angular';
-import { fixDomain } from '../../index.js';
+import fixDomain from '../tool/fixurl';
+
 
 'use strict';
 

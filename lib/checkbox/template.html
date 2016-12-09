@@ -1,0 +1,13 @@
+<label for="{{controller.htmlID}}" class="checkbox-container" 
+  ng-class="[controller.className, {checked: controller.state.checked}]">
+  <span class="checkbox-inner">
+    <span class="checkbox-inner-box"></span>
+    <input type="checkbox" id="{{controller.htmlID}}" 
+      ng-true-value="{{controller.trueValue}}"
+      ng-false-value="{{controller.falseValue}}"
+      ng-disabled="controller.disabled"
+      ng-click="controller.innerClick()"
+      ng-model="controller.checked" />
+    <span class="checkbox-label" ng-transclude></span>
+  </span>
+</label>
