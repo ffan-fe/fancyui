@@ -22,7 +22,7 @@
 
 import Component from '../common/component';
 import classNames from 'classnames';
-import CheckboxStates from '../../stateenum/checkbox.state';
+import CheckboxStates from '../stateenum/checkbox.state';
 
 'use strict';
 

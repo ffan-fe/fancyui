@@ -1,0 +1,12 @@
+<ul class="list-unstyled"
+    ng-disabled="controller.disabled"
+    ng-class="{'list-inline': controller.inline}">
+      <li ng-repeat="item in controller.list track by $index">
+            <bp-radiobox
+                disabled="item.disabled || controller.disabled"
+                model="controller.model"
+                value="{{item.value}}"
+                complex="item.complex"
+            >{{item.label}}</bp-radiobox>
+      </li>
+</ul>

@@ -1,10 +1,10 @@
 {
   "name": "fancyui",
-  "version": "1.1.7",
+  "version": "2.0.7-split.2",
   "description": "angular ui components",
-  "main": "dist/anaheim.js",
+  "main": "./dist/anaheim",
   "scripts": {
-    "build": "gulp build",
+    "build": "rm -rf lib/** && gulp build",
     "build:example": "gulp build:example && grunt --force",
     "prepublish": "npm run build"
   },
@@ -37,6 +37,7 @@
     "gsap": "^1.19.0",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
+    "gulp-if": "^2.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-template": "^4.0.0",
     "gulp-util": "^3.0.7",
@@ -46,7 +47,7 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "lodash": "^4.16.6",
-    "moment": "^2.13.0",
+    
     "ng-annotate-loader": "^0.1.0",
     "ng-include-loader": "0.0.3",
     "prismjs": "^1.5.1",
@@ -58,6 +59,7 @@
     "yargs": "^4.7.1"
   },
   "dependencies": {
+    "moment": "^2.13.0",
     "angular": "^1.5.6",
     "angular-ui-router": "^0.3.1",
     "bp-ajax": "0.0.2",

@@ -1,0 +1,64 @@
+<div cg-busy="{promise:vm.loadPromise, minDuration: 500, message:'数据加载ing...'}">
+  <div class="modal-header">
+    <span class="modal-title" ng-if="!vm.isReadOnly">城市选择</span>
+    <span class="modal-title" ng-if="vm.isReadOnly">城市查看</span>
+    <!--<div class="modal-close">X</div>-->
+  </div>
+  <div class="modal-body">
+    <div class="city-selector-container" >
+      <section class="region-container" ng-repeat="region in vm.regionList track by $index" ng-show="vm.regionList">
+        <!--选择区域-->
+        <div>
+          <bp-checkbox id="region{{region.regionId}}" 
+            click="vm.checkboxClickHandler(region, 'region')" 
+            checked="region.checked"
+            half-checked="region.halfChecked"
+            disabled="vm.isReadOnly">
+              {{region.regionName}}
+          </bp-checkbox>
+        </div>
+        <ul class="province-list list-inline">
+          <!--省列表-->
+          <li class="province-list-item" ng-repeat="province in region.child" ng-class="{open:province.isShowCityList}">
+            <bp-checkbox id="province{{province.provinceId}}" 
+              click="vm.checkboxClickHandler(province, 'province')" 
+              checked="province.checked"
+              half-checked="province.halfChecked"
+              disabled="vm.isReadOnly">
+                {{province.provinceName}}
+            </bp-checkbox>
+            <span class="glyphicon glyphicon-chevron-down arrow-down" ng-click="vm.showCityList(province)"></span>
+            <div class="city-list-container" ng-show="province.isShowCityList">
+              <div class="city-list-close-btn-container">
+                <a href="javascript:;" class="city-list-close-btn" ng-click="vm.closeCityList(province)">
+                  <span class="glyphicon glyphicon-remove"></span>
+                </a>
+              </div>
+              <ul class="city-list list-inline">
+                <!--市列表-->
+                <li class="city-list-item" ng-repeat="city in province.child">
+                  <bp-checkbox id="city{{city.cityId}}" 
+                    click="vm.cityCheckHandler(city)" 
+                    checked="city.checked" 
+                    disabled="vm.isReadOnly">
+                      {{city.cityName}}
+                  </bp-checkbox>
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn bp-btn-primary" ng-if="!vm.isReadOnly" ng-click="vm.confirmHandler()">确定</button>
+    <button class="btn bp-btn-default" ng-click="vm.cancelHandler()">关闭</button>
+  </div>
+</div>
+
+
+
+
+
+

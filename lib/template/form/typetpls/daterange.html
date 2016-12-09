@@ -1,0 +1,47 @@
+<label class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+<div class="col-sm-8" ng-init="field['__' + field.name[0]] = false;field['__' + field.name[1]] = false">
+  <div class="row">
+    <div class="col-xs-5 start-datepicker" style="padding-right: 0">
+      <p class="input-group">
+        <input type="text"
+               class="form-control"
+               uib-datepicker-popup
+               ng-model="vm.model[field.name[0]]"
+               date-model-format="field.config.modelFormat"
+               is-open="field['__' + field.name[0]]"
+               datepicker-options="field.config[0]"
+               ng-required="field.validateRules.required"
+               show-button-bar="false"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="field['__' + field.name[0]] = !field['__' + field.name[0]]"><i
+              class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+      </p>
+    </div>
+    <div class="col-xs-1 input-padding-left"
+         style="text-align: center;padding-right: 0;max-width: 35px;line-height: 31px;">
+      -
+    </div>
+    <div class="col-xs-5 input-padding-left">
+      <p class="input-group">
+        <input type="text"
+               class="form-control"
+               uib-datepicker-popup
+               ng-model="vm.model[field.name[1]]"
+               date-model-format="field.config.modelFormat"
+               is-open="field['__' + field.name[1]]"
+               datepicker-options="field.config[1]"
+               ng-required="field.validateRules.required"
+               show-button-bar="false"/>
+          <span class="input-group-btn">
+            <button type="button" class="btn btn-default" ng-click="field['__' + field.name[1]] = !field['__' + field.name[1]]"><i
+              class="glyphicon glyphicon-calendar"></i></button>
+          </span>
+      </p>
+    </div>
+  </div>
+</div>
+

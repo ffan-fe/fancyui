@@ -61,7 +61,12 @@ import template from './alert.html'
 
 import ComponentZIndex from '../zindex.js'
 
-import {remove} from '../../tool/arr.js'
+var remove = function (array, element) {
+  var index = array.indexOf(element);
+  if (index > -1) {
+    array.splice(index, 1);
+  }
+};
 
 export default class AlertService {
   constructor($document, $q, $rootScope, $compile) {

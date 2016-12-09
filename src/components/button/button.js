@@ -21,7 +21,7 @@
  */
 import Component from '../common/component';
 import classNames from 'classnames';
-import ButtonState from '../../stateenum/button.state';
+import ButtonState from '../stateenum/button.state';
 
 'use strict';
 

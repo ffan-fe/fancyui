@@ -25,7 +25,7 @@
 
 import Component from '../common/component';
 import classNames from 'classnames';
-import RadioStates from '../../stateenum/radiobox.state';
+import RadioStates from '../stateenum/radiobox.state';
 
 'use strict';
 

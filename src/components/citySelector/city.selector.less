@@ -1,0 +1,50 @@
+@city-list-bg: #fcf8e3;
+
+.city-selector-container{
+  // width: 598px;
+  // height: 534px;
+  .checkbox{
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+  .region-container{
+    padding: 5px 10px;
+    &:nth-child(even){
+      background-color: #EEEEEE;
+    }
+  }
+  .province-list{
+    .province-list-item{
+      position: relative;
+      // margin-right: 10px;
+      &.open{
+        background-color: @city-list-bg;
+      }
+    }
+    .city-list-container{
+      position: absolute;
+      z-index: 998;
+      width: 240px;
+      padding: 5px;
+      left: 0px;
+      background-color: @city-list-bg;
+      .city-list{
+        margin: auto 0;
+        .city-list-item{
+          min-width: 107px;
+        }
+      }
+      .city-list-close-btn-container{
+        text-align: right;
+      }
+    }
+    .arrow-down{
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+  .citySelector-btn-container{
+    text-align: center;
+    padding: 10px;
+  }
+}

@@ -1,0 +1,23 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8">
+  <figure class="mypic-space">
+    <img ngf-src="vm.preview" style="width:50px;height:50px">
+
+    <p>
+      <button class="btn bp-btn-primary"
+              ngf-select="vm.uploadFile($file, $invalidFiles)"
+              accept="image/*"
+              ngf-max-height="60"
+              ngf-max-width="60"
+              ngf-max-size="1MB"
+              class="btn btn-default btn-sm"
+              type="button">上传图片
+      </button>
+      <!--  <small>（ 限JPG,PNG,GIF格式，80*80PX ）</small> -->
+    </p>
+  </figure>
+</div>

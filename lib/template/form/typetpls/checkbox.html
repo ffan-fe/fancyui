@@ -1,0 +1,12 @@
+<label for="" class="col-sm-2 control-label">
+  <span class="required-star" ng-if="field.validateRules.required">*</span>
+  {{field.displayName}}
+</label>
+
+<div class="col-sm-8" style="padding-top: 7px">
+  <input type="checkbox"
+         ng-model="vm.model[field.name]"
+         name="{{vm.model[field.name]}}"
+         ng-true-value="1"
+         ng-false-value="0">
+</div>
