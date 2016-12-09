@@ -114,6 +114,11 @@ let Config = {
       name: 'status'
     }
   ],
+  //ng-table的配置项
+  tableConfig: {
+    limit: 10, //每页多少个
+    pageName: 'page' //后端接受的页码字段名
+  },
   //table内的操作按钮
   operations: [
     {
