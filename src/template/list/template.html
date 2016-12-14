@@ -303,7 +303,16 @@
         </thead>
         <tbody>
         <tr ng-repeat="row in $data">
-          <td ng-repeat="field in vm.config.tableFields"> {{row[field.name]}}</td>
+          <td ng-repeat="field in vm.config.tableFields">
+            <span ng-if="field.hrefConfig">
+              <a target="_blank" ng-href="{{field.hrefConfig.link + row[field.hrefConfig.fieldToConcat]}}">
+                {{row[field.name]}}
+              </a>
+            </span>
+            <span ng-if="!field.hrefConfig">
+              {{row[field.name]}}
+            </span>
+          </td>
           <td ng-if="vm.config.operations.length">
           <span ng-repeat="btn in vm.config.operations">
             <a

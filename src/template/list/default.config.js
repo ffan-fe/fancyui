@@ -79,7 +79,11 @@ let Config = {
   tableFields: [
     {
       displayName: '活动编号',
-      name: 'code'
+      name: 'code',
+      hrefConfig: {
+        link: 'test/',
+        fieldToConcat: 'code'
+      }
     },
     {
       displayName: '活动名称',

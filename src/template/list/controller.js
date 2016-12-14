@@ -29,7 +29,9 @@ class ListController {
         }).then(response => {
           params.total(response.data.data.totalCount); //帮你分几页
           this.loading = false;
-          return response.data && response.data.data.list;
+          this.config.tableConfig.listName = this.config.tableConfig.listName || 'list';
+
+          return response.data && response.data.data[this.config.tableConfig.listName];
         })
       }
     })
