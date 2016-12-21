@@ -7,7 +7,7 @@ let datepickerModule = angular.module('datepickerTest', [
   .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
     $stateProvider.state('datepicker', {
-      url: '/',
+      url: '/datepicker',
       template: '<datepicker></datepicker>'
     });
     $urlRouterProvider.otherwise('/multiselect');

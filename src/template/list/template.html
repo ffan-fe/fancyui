@@ -186,7 +186,7 @@
             <div>
               <bp-rangepicker ng-start-model="vm.form[field.name[0]]"
                               ng-end-model="vm.form[field.name[1]]"
-                              rangepicker-options="vm.datepickerOption"></bp-rangepicker>
+                              rangepicker-options="field.config"></bp-rangepicker>
             </div>
           </div>
           <div class="form-group col-xs-4" ng-if="field.type === 'radio'">
@@ -298,12 +298,21 @@
         <thead>
         <tr>
           <th ng-repeat="field in vm.config.tableFields">{{field.displayName}}</th>
-          <th>操作</th>
+          <th ng-if="vm.config.operations && vm.config.operations.length">操作</th>
         </tr>
         </thead>
         <tbody>
         <tr ng-repeat="row in $data">
-          <td ng-repeat="field in vm.config.tableFields"> {{row[field.name]}}</td>
+          <td ng-repeat="field in vm.config.tableFields">
+            <span ng-if="field.hrefConfig">
+              <a target="_blank" ng-href="{{field.hrefConfig.link + row[field.hrefConfig.fieldToConcat]}}">
+                {{row[field.name]}}
+              </a>
+            </span>
+            <span ng-if="!field.hrefConfig">
+              {{row[field.name]}}
+            </span>
+          </td>
           <td ng-if="vm.config.operations.length">
           <span ng-repeat="btn in vm.config.operations">
             <a
@@ -331,7 +340,7 @@
           </td>
         </tr>
         <tr ng-if="!$data || !$data.length">
-          <td colspan="10" style="text-align: center">
+          <td colspan="{{vm.config.tableFields.length + 1}}" style="text-align: center">
             <div class="text-center" ng-show="vm.loading">
               <i class="glyphicon glyphicon-refresh">数据加载中...</i>
             </div>

@@ -9,6 +9,8 @@ class ListController extends BaseController {
   constructor(bpAjaxService, $state, $location, $sce) {
     'ngInject';
     super($location, $state, bpAjaxService);
+    console.log('list tpl');
+
     let Config = {
       title: '活动列表', //页面标题
 
@@ -79,7 +81,12 @@ class ListController extends BaseController {
         {
           type: 'daterange',
           displayName: '活动时间',
-          name: ['startTime', 'endTime']
+          name: ['startTime', 'endTime'],
+          config: {
+            viewFormat: 'YYYY-MM-DD HH:mm:ss',
+            modelFormat: 'x',
+            placeholder: ['测试1', '测试2']
+          }
         }
       ],
       //在table中展示的字段
@@ -121,6 +128,11 @@ class ListController extends BaseController {
           name: 'status'
         }
       ],
+      //ng-table的配置项
+      tableConfig: {
+        limit: 10, //每页多少个
+        pageName: 'page' //后端接受的页码字段名
+      },
       //table内的操作按钮
       operations: [
         {
@@ -255,6 +267,11 @@ class ListController extends BaseController {
           name: 'status'
         }
       ],
+      //ng-table的配置项
+      tableConfig: {
+         limit: 10, //每页多少个
+          pageName: 'page' //后端接受的页码字段名
+      },
       //table内的操作按钮
       operations: [
         {
