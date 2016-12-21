@@ -11,13 +11,13 @@ class Controller {
     this.datepickerOption = {
       minDate: new Date(),
       viewFormat: 'YYYY-MM-DD HH:mm:ss',
-      modelFormat: 'x',
+      modelFormat: 'X',
       placeholder: '测试'
     };
     this.rangepickerOption = {
       //minDate: new Date(),
       viewFormat: 'YYYY-MM-DD HH:mm:ss',
-      modelFormat: 'x',
+      modelFormat: 'X',
       placeholder: ['测试1', '测试2']
     };
 
