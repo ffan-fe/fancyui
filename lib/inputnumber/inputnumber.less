@@ -1,0 +1,69 @@
+.input-number {
+	width: 200px;
+	position: relative;
+	&:hover {
+		.form-control {
+			border-color: #58b4e9;
+			outline: 0;
+			box-shadow: none;
+		}
+	}
+	&.disabled {
+		.form-control {
+			color: #bbb;
+		}
+	}
+	&.disabled:hover {
+		.form-control {
+			border-color: #ccc;
+			outline: 0;
+			box-shadow: none;
+		}
+	}
+	.input-number-input-wrap {
+		width: 200px;
+		input {
+			padding-right: 68px;
+		}
+	}
+	.input-number-minus {
+		width: 34px;
+		height: 32px;
+		display: inline-block;
+		border-left: 1px solid #ccc;
+		border-right: 1px solid #ccc;
+		position: absolute;
+		top: 1px;
+		right: 32px;
+		text-align: center;
+		line-height: 34px;
+		color: #666;
+		cursor: pointer;
+		&:hover {
+			color: #58b4e9;
+		}
+		&.disabled {
+			color: #d3dce6;
+			cursor: not-allowed;
+		}
+	}
+	.input-number-plus {
+		width: 34px;
+		height: 32px;
+		display: inline-block;
+		position: absolute;
+		top: 1px;
+		right: 0;
+		text-align: center;
+		line-height: 32px;
+		color: #666;
+		cursor: pointer;
+		&:hover {
+			color: #58b4e9;
+		}
+		&.disabled {
+			color: #d3dce6;
+			cursor: not-allowed;
+		}
+	}
+}

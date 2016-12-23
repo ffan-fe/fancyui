@@ -1,0 +1,6 @@
+<span class="ffan-switch"
+	  ng-class="{'switch-checked': vm.isChecked, 'switch-disabled': vm.disabled}"
+	  ng-click="vm.switchCheck($event)">
+	<span class="switch-inner" ng-if="vm.isChecked">{{vm.onText}}</span>
+	<span class="switch-inner" ng-if="!vm.isChecked">{{vm.offText}}</span>
+</span>
