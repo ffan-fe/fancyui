@@ -1,0 +1,129 @@
+.ffan-progress-line {
+	.ffan-progress-bar {
+		width: 100%;
+		display: inline-block;
+		vertical-align: middle;
+		padding-right: 45px;
+		margin-right: -45px;
+		.ffan-progress-outer {
+			width: 100%;
+			height: 8px;
+			display: inline-block;
+			background-color: #f3f3f3;
+			border-radius: 5px;
+			vertical-align: middle;
+			.ffan-progress-inner {
+				background-color: #20a0ff;
+				border-radius: 5px;
+			}
+		}
+		.glyphicon-ok-circle {
+			display: none;
+		}
+	}
+	.ffan-progress-text {
+		width: 30px;
+		text-align: left;
+		font-size: 1em;
+		margin-left: 5px;
+		vertical-align: middle;
+		display: inline-block;
+		font-family: Arial;
+		position: relative;
+	}
+	.glyphicon-ok-circle {
+		display: none;
+	}
+	.glyphicon-remove-circle {
+		display: none;
+	}
+	&.success {
+		.ffan-progress-text {
+			display: none;
+		}
+		.glyphicon-ok-circle {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 18px;
+			margin-left: 5px;
+			color: #13ce66;
+		}
+		.ffan-progress-bar {
+			.ffan-progress-outer {
+				.ffan-progress-inner {
+					background-color: #13ce66;
+				}
+			}
+		}
+	}
+	&.exception {
+		.ffan-progress-text {
+			display: none;
+		}
+		.glyphicon-remove-circle {
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 18px;
+			margin-left: 5px;
+			color: #ff4949;
+		}
+		.ffan-progress-bar {
+			.ffan-progress-outer {
+				.ffan-progress-inner {
+					background-color: #ff4949;
+				}
+			}
+		}
+	}
+}
+.ffan-progress-circle {
+	position: relative;
+	.glyphicon-ok {
+		display: none;
+	}
+	.glyphicon-remove {
+		display: none;
+	}
+	.ffan-progress-text {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		margin: 0;
+		transform: translateY(-50%);
+		font-family: Arial;
+	}
+	&.success {
+		.ffan-progress-text {
+			display: none;
+		}
+		.glyphicon-ok {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			margin: 0;
+			font-size: 18px;
+			transform: translateY(-50%);
+		}
+	}
+	&.exception {
+		.ffan-progress-text {
+			display: none;
+		}
+		.glyphicon-remove {
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 100%;
+			text-align: center;
+			margin: 0;
+			font-size: 18px;
+			transform: translateY(-50%);
+		}
+	}
+}

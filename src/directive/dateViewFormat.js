@@ -15,7 +15,15 @@ let dateViewFormatDirective = {
          console.log(value);
          console.log('format 前', value);
          console.log('format 后', moment(value).format(format));*/
-        return modelFormat == 'X' || modelFormat == 'x' ? moment(parseInt(value)).format(format) : moment(value).format(format);
+        if (modelFormat == 'X') {
+          return moment(parseInt(value) * 1000).format(format)
+        }
+
+        if (modelFormat == 'x') {
+          return moment(parseInt(value)).format(format)
+        }
+
+        return moment(value).format(format);
       }
     });
   }

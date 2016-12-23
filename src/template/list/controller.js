@@ -13,12 +13,13 @@ class ListController {
     };
 
     this.tableParams = new NgTableParams({
-      count: 10  //每页几条
+      count: this.config.tableConfig.limit || 10  //每页几条
     }, {
       counts: [],
       getData: params => {
         let paramData = angular.extend({
-          p: params.url().page
+          [this.config.tableConfig.pageName]: params.url().page,
+          limit: this.config.tableConfig.limit
         }, this.form);
         this.loading = true;
         return $http({
@@ -28,7 +29,9 @@ class ListController {
         }).then(response => {
           params.total(response.data.data.totalCount); //帮你分几页
           this.loading = false;
-          return response.data && response.data.data.list;
+          this.config.tableConfig.listName = this.config.tableConfig.listName || 'list';
+
+          return response.data && response.data.data[this.config.tableConfig.listName];
         })
       }
     })

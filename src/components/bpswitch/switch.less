@@ -1,0 +1,60 @@
+.ffan-switch {
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	height: 22px;
+	min-width: 44px;
+	line-height: 20px;
+	vertical-align: middle;
+	border-radius: 20px;
+	border: 1px solid #ccc;
+	background-color: #ccc;
+	cursor: pointer;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	.switch-inner {
+		color: #fff;
+		font-size: 12px;
+		margin-left: 24px;
+		margin-right: 6px;
+		display: block;
+	}
+	&:after {
+		position: absolute;
+		width: 18px;
+		height: 18px;
+		left: 1px;
+		top: 1px;
+		border-radius: 18px;
+		background-color: #fff;
+		content: " ";
+		cursor: pointer;
+		-webkit-transition: all 0.3s, width 0.3s;
+		transition: all 0.3s, width 0.3s;
+	}
+	&.switch-checked {
+		border-color: #108ee9;
+		background-color: #108ee9;
+		.switch-inner {
+			margin-left: 6px;
+			margin-right: 24px;
+		}
+		&:after {
+			left: 100%;
+			margin-left: -19px;
+		}
+	}
+	&.switch-disabled {
+		cursor: not-allowed;
+		background: #f4f4f4;
+		border-color: #f4f4f4;
+		&:after {
+			background: #ccc;
+			cursor: not-allowed;
+		}
+	}
+}
