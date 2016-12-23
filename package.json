@@ -1,6 +1,6 @@
 {
   "name": "fancyui",
-  "version": "2.0.7-split.9",
+  "version": "2.1.0-split",
   "description": "angular ui components",
   "main": "./dist/anaheim",
   "scripts": {
