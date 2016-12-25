@@ -63,7 +63,7 @@
                 size="sm"
                 click="controller.add()"
                 data-ng-if="controller.addBtn"
-                disabled="(controller.leftValue).length === 0"
+                ng-disabled="(controller.leftValue).length === 0"
         >
           {{controller.docInfo.addOperation}}
         </bp-button>
@@ -73,7 +73,7 @@
                 size="sm"
                 click="controller.addAll()"
                 data-ng-if="controller.addAllBtn"
-                disabled="(controller.sourceData).length === 0"
+                ng-disabled="(controller.sourceData).length === 0"
         >
           {{controller.docInfo.addAllOperation}}
         </bp-button>
@@ -86,7 +86,7 @@
                 size="sm"
                 click="controller.del()"
                 data-ng-if="controller.delBtn"
-                disabled="(controller.rightValue).length === 0"
+                ng-disabled="(controller.rightValue).length === 0"
         >
           {{controller.docInfo.delOperation}}
         </bp-button>
@@ -97,7 +97,7 @@
                 size="sm"
                 click="controller.delAll()"
                 data-ng-if="controller.delAllBtn"
-                disabled="(controller.targetData).length === 0"
+                ng-disabled="(controller.targetData).length === 0"
         >
           {{controller.docInfo.delAllOperation}}
         </bp-button>

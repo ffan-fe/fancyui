@@ -71,12 +71,12 @@ gulp.task('betaBuild', callback => {
 
 gulp.task('build',callback=>{
   return gulp.src(['./index.js','./src/**/*'])
-    .pipe(gulpIf((file)=>{
+    /**.pipe(gulpIf((file)=>{
       return file.path.indexOf('.js')>-1;
     },
       babel({
           presets: ['es2015']
-      })))
+      }))) */
     .pipe(gulpIf(file=>{
       return file.path.indexOf('/components/')>-1;
     },

@@ -1,0 +1,110 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "ffan-ng-table",
+        "scope": null,
+        "escapedName": "ffan-ng-table",
+        "name": "ffan-ng-table",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/workspace/temp"
+    ]
+  ],
+  "_from": "ffan-ng-table@latest",
+  "_id": "ffan-ng-table@0.0.1",
+  "_inCache": true,
+  "_location": "/ffan-ng-table",
+  "_nodeVersion": "5.0.0",
+  "_npmUser": {},
+  "_npmVersion": "3.3.6",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "ffan-ng-table",
+    "scope": null,
+    "escapedName": "ffan-ng-table",
+    "name": "ffan-ng-table",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/fancyui"
+  ],
+  "_resolved": "http://sps.intra.sit.ffan.com/ffan-ng-table/-/ffan-ng-table-0.0.1.tgz",
+  "_shasum": "18430de8ef225c575389d9e7eee35541d23fb7b7",
+  "_shrinkwrap": null,
+  "_spec": "ffan-ng-table",
+  "_where": "/workspace/temp",
+  "author": {
+    "name": "Vitalii Savchuk",
+    "email": "esvit666@gmail.com"
+  },
+  "bugs": {
+    "url": "https://github.com/esvit/ng-table/issues"
+  },
+  "dependencies": {
+    "angular": "^1.2"
+  },
+  "description": "Table + AngularJS ================= [![Build Status](https://travis-ci.org/esvit/ng-table.svg)](https://travis-ci.org/esvit/ng-table) [![Coverage Status](https://coveralls.io/repos/esvit/ng-table/badge.png)](https://coveralls.io/r/esvit/ng-table)",
+  "devDependencies": {
+    "browserify": "~9.0.8",
+    "canonical-path": "0.0.2",
+    "coveralls": "~2.11.0",
+    "dgeni": "~0.4.1",
+    "dgeni-packages": "~0.10.13",
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.4.0",
+    "grunt-contrib-coffee": "~0.7.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-connect": "~0.5.0",
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-contrib-cssmin": "~0.6.1",
+    "grunt-contrib-jade": "~0.5.0",
+    "grunt-contrib-less": "~0.5.2",
+    "grunt-contrib-requirejs": "~0.4.0",
+    "grunt-contrib-uglify": "0.8.x",
+    "grunt-contrib-watch": "~0.6.x",
+    "grunt-hustler": "0.11.2",
+    "gulp": "~3.8.11",
+    "gulp-browserify": "~0.5.1",
+    "gulp-gh-pages": "^0.5.1",
+    "gulp-grunt": "^0.5.2",
+    "gulp-sequence": "~0.3.2",
+    "gulp-wait": "0.0.2",
+    "gulp-webserver": "^0.9.0",
+    "jasmine-core": "^2.3.4",
+    "karma": "~0.12.0",
+    "karma-chrome-launcher": "~0.1.0",
+    "karma-coverage": "~0.2.0",
+    "karma-firefox-launcher": "~0.1.0",
+    "karma-jasmine": "~0.2.0",
+    "karma-ng-html2js-preprocessor": "~0.1.0",
+    "load-grunt-tasks": "~0.2.0",
+    "lodash": "~3.7.0",
+    "qq": "^0.3.5"
+  },
+  "dist": {
+    "shasum": "18430de8ef225c575389d9e7eee35541d23fb7b7",
+    "tarball": "http://sps.intra.sit.ffan.com/ffan-ng-table/-/ffan-ng-table-0.0.1.tgz"
+  },
+  "gitHead": "8a903268807546d924ed0982786cab031c5f5249",
+  "homepage": "https://github.com/esvit/ng-table#readme",
+  "license": "BSD",
+  "main": "dist/ng-table.js",
+  "name": "ffan-ng-table",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/esvit/ng-table.git"
+  },
+  "scripts": {
+    "test": "karma start --single-run --no-auto-watch"
+  },
+  "version": "0.0.1"
+}
