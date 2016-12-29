@@ -1,10 +1,10 @@
-(function (window, document) {
-  'use strict';
 
   /**
    * rangeInput
    */
-  angular.module('rangeInput', ['ngTouch']).value('ffanRangeConfig', {})
+
+import './range.less';
+export default  angular.module('rangeInput', ['ngTouch']).value('ffanRangeConfig', {})
     .controller('ffanRangeController', function ffanRangeCtrl($element) {
       this.element = $element;
       this.min = 0;
@@ -378,5 +378,4 @@
         }
       };
     })
-  ;
-}(window, document));
+  

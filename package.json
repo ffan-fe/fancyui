@@ -1,6 +1,6 @@
 {
   "name": "fancyui",
-  "version": "2.1.0-split.8.6",
+  "version": "2.1.3",
   "description": "angular ui components",
   "main": "./dist/anaheim",
   "scripts": {
@@ -47,7 +47,9 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "lodash": "^4.16.6",
-    
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
     "ng-annotate-loader": "^0.1.0",
     "ng-include-loader": "0.0.3",
     "prismjs": "^1.5.1",
@@ -56,22 +58,18 @@
     "supports-color": "^3.1.2",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
+    "bp-ajax": "0.0.2",
+    "restangular": "^1.5.2",
+    "textangular": "^1.5.12",
     "yargs": "^4.7.1"
   },
   "dependencies": {
+    "echarts": "~3.3.1",
     "moment": "^2.13.0",
     "angular": "~1.5.0",
     "angular-ui-router": "^0.3.1",
-    "bp-ajax": "0.0.2",
     "bp-datetimepicker": "0.0.1",
     "classnames": "^2.2.5",
-    "ffan-ng-table": "0.0.1",
-    "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-connect": "^1.0.2",
-    "grunt-ngdocs": "^0.2.10",
-    "restangular": "^1.5.2",
-    "textangular": "^1.5.12",
     "ui-select": "^0.19.6"
   }
 }
