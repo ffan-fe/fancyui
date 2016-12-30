@@ -6,6 +6,5 @@ Anaheim.iml
 esdoc/
 node_modules/
 dist/
-example/node_modules
 /**/node_modules
 /**/.DS_Store
