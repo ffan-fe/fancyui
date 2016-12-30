@@ -10,6 +10,6 @@ node_modules/
 src/
 docs/
 doccss/
-examples/
+example/
 generator/
 tests/
