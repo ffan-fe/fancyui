@@ -1,0 +1,128 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+</section>
+
+<section class="intro-content">
+<h2>{{'GenerateModule'|translate}}</h>
+  <p>{{'GenerateModuleDescription'|translate}}</p>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="bash">gulp component --name componentName</div>
+</div>
+
+<section class="intro-content">
+	<h3>{{'Param'|translate}}:</h3>
+	<p>{{'ParamName'|translate}}</p>
+	<p>{{'ParamParent'|translate}}</p>
+
+	<h3>{{'Example'|translate}}:</h3>
+	<p>{{'Create'|translate}} client/app/components/auth/signup</p>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="bash">gulp component --name signup --parent auth</div>
+</div>
+
+<section class="intro-content">
+	<p>{{'Create'|translate}} client/app/common/header</p>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="bash">gulp component --name commonheader --parent ../common</div>
+</div>
+
+<section class="intro-content">
+	<h3>{{'CreateDetail'|translate}}</h3>
+</section>
+
+<div class="example-block">
+<div class="highlight no-border" hljs>
+|- componentName/  --------------------- Component's folder
+  |- componentName.js  ----------------- Component's entry file
+  |- componentName.component.js -------- Component file
+  |- componentName.controller.js  ------ Controller
+  |- componentName.html  --------------- View
+  |- componentName.less  --------------- Styles
+  |- componentName.spec.js  ------------ Unit Test
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'RouterSetting'|translate}}</h2>
+	<p>{{'RouterFile'|translate}}：client/app/router/routerConfig.js, {{'RouterDesc'|translate}}</p>
+</section>
+<div class="example-block">
+<pre class="highlight no-border" escape='false' hljs hljs-language="javascript">
+export default [
+  {
+    name: 'build',
+    url: "/demo/start",
+    template: '<build></build>',
+    lazyload: require("bundle?lazy&name=start!../components/start/start.js"),
+    tracking: {
+      key: 'ROUTENAME'
+    }
+  },
+  {
+    name: 'button',
+    url: "/demo/button",
+    template: '<button-demo></button-demo>',
+    lazyload: require("bundle?lazy&name=button!../components/button/button.js"),
+    tracking: {
+      key: 'ROUTENAME'
+    }
+  },
+  {
+    name: 'modal',
+    url: "/demo/modal",
+    template: '<modal></modal>',
+    lazyload: require("bundle?lazy&name=modal!../components/modal/modal.js"),
+    tracking: {
+      key: 'ROUTENAME'
+    }
+  }
+]
+</pre>
+</div>
+
+<section class="intro-content">
+	<h2>{{'ProxySetting'|translate}}</h2>
+	<p>{{'ProxySettingDes'|translate}}</p>
+  <h3>
+    apiFilter:
+  </h3>
+	<p>
+		{{'ApiFilter'|translate}}
+	</p>
+  <h3>targetDomain：</h3>
+	<p>
+		{{'TargetDomain'|translate}}
+	</p>
+  <h3>cookie:</h3>
+	<p>
+		{{'Cookie'|translate}}
+	</p>
+	<div class="example-block">
+		<pre class="highlight no-border" hljs hljs-language="javascript">
+module.exports = {
+  /**
+  * dist path
+  */
+  distPath: './build',
+  apiFilter: ['/api', '/database'],
+  targetDomain: 'http://admin.xxxx.com/',
+  cookie: 'PHPSESSID=sm9vejn7ffh0lqc0hfjklmd312'
+};
+		</pre>
+	</div>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Pack'|translate}}</h2>
+	<p>{{'PackDes'|translate}}</p>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="bash">gulp webpack</div>
+</div>

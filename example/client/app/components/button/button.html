@@ -1,0 +1,215 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>{{'ButtonDes'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="javascript">
+import buttonComponent from './button.component';
+import {Button} from 'fancyui';
+
+export default angular.module('buttonDemo', [
+  Button.name
+])
+.component('buttonDemo', buttonComponent);</div>
+</div>
+
+
+<h2>{{'Styles'|translate}}</h2>
+
+<div class="example-block">
+	<div class="bs-example">
+		<bp-button type="default">Default</bp-button>
+		<bp-button type="primary">Primary</bp-button>
+		<bp-button type="success">Success</bp-button>
+		<bp-button type="info">Info</bp-button>
+		<bp-button type="warning">Warning</bp-button>
+		<bp-button type="danger">Danger</bp-button>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-button type="default">Default</bp-button>
+<bp-button type="primary">Primary</bp-button>
+<bp-button type="success">Success</bp-button>
+<bp-button type="info">Info</bp-button>
+<bp-button type="warning">Warning</bp-button>
+<bp-button type="danger">Danger</bp-button>
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Icon'|translate}}</h2>
+	<p>{{'IconDes'|translate}}</p>
+</section>
+
+<div class="example-block">
+	<div class="bs-example">
+		<bp-button type="primary" icon="ok">OK</bp-button>
+		<bp-button type="primary" icon="remove">Remove</bp-button>
+		<bp-button type="primary" icon="plus">Plus</bp-button>
+		<bp-button type="primary" icon="minus">Minus</bp-button>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-button type="primary" icon="ok">OK</bp-button>
+<bp-button type="primary" icon="remove">Remove</bp-button>
+<bp-button type="primary" icon="plus">Plus</bp-button>
+<bp-button type="primary" icon="minus">Minus</bp-button>
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Size'|translate}}</h2>
+</section>
+<div class="example-block">
+	<div class="bs-example">
+		<p>
+			<bp-button type="primary" size="xs">size xs button</bp-button>
+			<bp-button type="primary" size="sm">size sm button</bp-button>
+			<bp-button type="primary">size default button</bp-button>
+			<bp-button type="primary" size="lg">size lg button</bp-button>
+		</p>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-button type="primary" size="xs">size xs button</bp-button>
+<bp-button type="primary" size="sm">size sm button</bp-button>
+<bp-button type="primary">size default button</bp-button>
+<bp-button type="primary" size="lg">size lg button</bp-button>
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Disbale'|translate}}</h2>
+</section>
+
+<div class="example-block">
+	<div class="bs-example">
+		<bp-button type="default" disabled="true">Default</bp-button>
+		<bp-button type="primary" disabled="true">Primary</bp-button>
+		<bp-button type="success" disabled="true">Success</bp-button>
+		<bp-button type="info" disabled="true">Info</bp-button>
+		<bp-button type="warning" disabled="true">Warning</bp-button>
+		<bp-button type="danger" disabled="true">Danger</bp-button>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-button type="default" disabled="true">Default</bp-button>
+<bp-button type="primary" disabled="true">Primary</bp-button>
+<bp-button type="success" disabled="true">Success</bp-button>
+<bp-button type="info" disabled="true">Info</bp-button>
+<bp-button type="warning" disabled="true">Warning</bp-button>
+<bp-button type="danger" disabled="true">Danger</bp-button>
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>Loading</h2>
+</section>
+
+<div class="example-block">
+	<div class="bs-example">
+		<bp-button click="vm.sayHello(button)" type="primary" loading="true">loading</bp-button>
+		<bp-button click="vm.sayHello(button)" type="primary" icon="ok" loading="true">loading</bp-button>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-button click="vm.sayHello(button)" type="primary" loading="true">loading</bp-button>
+<bp-button click="vm.sayHello(button)" type="primary" icon="ok" loading="true">loading</bp-button>
+</div>
+
+<div class="highlight" hljs hljs-language="javascript">
+export default class ButtonController {
+  constructor($timeout) {
+    'ngInject';
+    this.disabled = false;
+    this.$timeout = $timeout;
+    this.tiggleDisabled = true;
+  }
+
+  sayHello(btn) {
+    btn.state = {loading: true};
+    this.tiggleDisabled = false;
+    this.$timeout(() => {
+      btn.state = {disabled: false, loading: false};
+    }, 3000);
+  }
+}
+</div>
+</div>
+
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>type</td>
+			<td>string</td>
+			<td>{{'Type'|translate}}</td>
+			<td>- / lg / sm / xs</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>size</td>
+			<td>string</td>
+			<td>{{'Size'|translate}}</td>
+			<td>- / lg / sm / xs</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>htmlType</td>
+			<td>string</td>
+			<td>html type</td>
+			<td>button / submit etc.</td>
+			<td>button</td>
+		</tr>
+		<tr>
+			<td>icon</td>
+			<td>string</td>
+			<td>icon</td>
+			<td>See details <a ui-sref="icons({'lang':vm.currentLang})"><strong>icon</strong></a></td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>loading</td>
+			<td>boolean</td>
+			<td>is support loading</td>
+			<td>true / false</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>disabled</td>
+			<td>boolean</td>
+			<td>is disbale</td>
+			<td>true / false</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>click</td>
+			<td>function</td>
+			<td>click handle</td>
+			<td>function</td>
+			<td>-</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

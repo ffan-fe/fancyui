@@ -1,0 +1,85 @@
+<div class="menu-container">
+	<ul class="nav nav-pills nav-stacked">
+		<li role="presentation">
+			<a data-toggle="collapse" href="" ng-click="vm.collapse($event)">{{'Tutorial'|translate}}</a>
+			<div class="sub-menu">
+				<ul class="nav sub-nav">
+					<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('build')}}">{{'build'|translate}}</a></li>
+					<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('structure')}}">{{'structure'|translate}}</a></li>
+					<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('generateComponent')}}">{{'generateComponent'|translate}}</a></li>
+				</ul>
+			</div>
+		</li>
+		<li role="presentation" ui-sref-active="active">
+			<a ui-sref="{{vm.globalRoute('changeLog')}}">{{'changeLog'|translate}}</a>
+		</li>
+		<li role="presentation">
+			<a data-toggle="collapse" href="" ng-click="vm.collapse($event)">{{'Example'|translate}}</a>
+			<div class="sub-menu">
+				<ul class="nav sub-nav">
+					<li>
+						<div class="nav-group-title">{{'Basic'|translate}}</div>
+						<ul>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('button')}}">{{'button'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('icons')}}">{{'icons'|translate}}</a></li>
+							<!--<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('labels')}}">{{'labels'|translate}}</a></li>-->
+							<!--<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('contextColors')}}">{{'contextColors'|translate}}</a></li>-->
+						</ul>
+					</li>
+
+					<li>
+						<div class="nav-group-title">{{'Layout'|translate}}</div>
+						<ul>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('grid')}}">{{'grid'|translate}}</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<div class="nav-group-title">{{'Navigation'|translate}}</div>
+						<ul>
+							<!--<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('tabs')}}">{{'tabs'|translate}}</a></li>-->
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('steps')}}">{{'steps'|translate}}</a></li>
+						</ul>
+					</li>
+
+					<li>
+						<div class="nav-group-title">{{'Data'|translate}}</div>
+						<ul>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('tableDemo')}}">{{'tableDemo'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('customTable')}}">{{'customTable'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('formDemo')}}">{{'formDemo'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('panel')}}">{{'panel'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('switchDemo')}}">{{'switchDemo'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('progressDemo')}}">{{'progressDemo'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('inputNumberDemo')}}">{{'inputNumberDemo'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('rateDemo')}}">{{'rateDemo'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('badgeDemo')}}">{{'badgeDemo'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('transfer')}}">{{'transfer'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('checkboxtree')}}">{{'checkboxtree'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('calendar')}}">{{'calendar'|translate}}</a></li>
+							<!--<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('list')}}">{{'list'|translate}}</a></li>-->
+						</ul>
+					</li>
+
+					<li>
+						<div class="nav-group-title">{{'Chat'|translate}}</div>
+						<ul>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('lineChart')}}">{{'lineChart'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('pieChart')}}">{{'pieChart'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('gaugeChart')}}">{{'gaugeChart'|translate}}</a></li>
+						</ul>
+					</li>
+					<li>
+						<div class="nav-group-title">{{'Effect'|translate}}</div>
+						<ul>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('alert')}}">{{'alert'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('sliderInput')}}">{{'sliderInput'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('popConfirm')}}">{{'popConfirm'|translate}}</a></li>
+							<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('hint')}}">{{'hint'|translate}}</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</div>

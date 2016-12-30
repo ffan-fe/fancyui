@@ -1,0 +1,190 @@
+
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>{{'CustomTableDes'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="javascript">
+import customtableComponent from './customtable.component';
+import {CustomTable} from 'fancyui';
+
+export default angular.module('customTable', [
+  CustomTable.name
+])
+.component('customTable', customtableComponent);</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+<ffan-custom-table
+		is-custom-table="true"
+		custom-column="vm.customColumn"
+		table-data="vm.data"
+		operations="vm.operations"
+		page-change="vm.pageChange">
+</ffan-custom-table>
+
+
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>view</h3>
+<div class="example-block">
+<div class="highlight" hljs hljs-no-escape hljs-language="html">
+&lt;ffan-custom-table
+    is-custom-table="true"
+    custom-column="vm.customColumn"
+    table-data="vm.data"
+    operations="vm.operations"
+    page-change="vm.pageChange"&gt;
+&lt;/ffan-custom-table&gt;
+</div>
+</div>
+
+<h3>controller</h3>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="javascript">
+export default class CustomtableController {
+  constructor() {
+    "ngInject";
+    this.customColumn = [
+      {
+        key: 'storeId',
+        name: '门店编号',
+        checked: true
+      },
+      {
+        key: 'storeName',
+        name: '门店名称',
+        checked: true
+      },
+      {
+        key: 'isPhysicalStoreName',
+        name: '门店分类',
+        checked: true
+      },
+      {
+        key: 'businessType',
+        name: '门店类型',
+        checked: true
+      },
+      {
+        key: 'storePhone',
+        name: '门店电话',
+        checked: true
+      },
+      {
+        key: 'plazaName',
+        name: '所属广场',
+        checked: false
+      },
+      {
+        key: 'merchantName',
+        name: '所属商户',
+        checked: false
+      }
+    ];
+    this.operations = [
+      {
+        name: '查看',
+        action: (row) => {
+          console.log(row);
+          alert('点击了查看按钮, 门店id为:' + row.storeId);
+        }
+      },
+      {
+        name: '修改',
+        action: (row) => {
+          console.log(row);
+          alert('点击了修改按钮, 门店id为:' + row.storeId);
+        }
+      }
+    ];
+    this.data = data;
+  }
+
+  pageChange(pageNo) {
+    console.log(pageNo)
+  }
+}
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>is-custom-table</td>
+			<td>{{'IsCustomTable'|translate}}</td>
+			<td>boolead</td>
+			<td>true / false</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>custom-column</td>
+			<td>customized-column</td>
+			<td>array</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>operations</td>
+			<td>{{'Operations'|translate}}</td>
+			<td>array</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>table-data</td>
+			<td>{{'TableData'|translate}}</td>
+			<td>object (json)</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Event'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'EventName'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Param'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>page-change</td>
+			<td>{{'TableEventDesc'|translate}}</td>
+			<td>{{'TableEventParams'|translate}}</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

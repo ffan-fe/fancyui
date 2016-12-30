@@ -1,0 +1,129 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>{{'TableDes'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="bash">npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+import tableComponent from './table.component';
+import { ffanTable } from 'fancyui';
+
+export default angular.module('tableDemo', [
+  ffanTable.name
+])
+.component('tableDemo', tableComponent);</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Example'|translate}}</h2>
+</section>
+
+<div class="table-container">
+	<div class="table-wrapper ng-scope ng-table">
+		<table class="table table-bordered table-hover" ng-table="vm.tableParams">
+			<thead>
+			<tr>
+				<th style="width: 25%;">名称</th>
+				<th style="width: 15%;">视图名称</th>
+				<th style="width: 20%;">上一次编译结果的状态</th>
+				<th style="width: 20%;">上一次编译结果的序号</th>
+				<th style="width: 20%;">上一次编译失败的序号</th>
+			</tr>
+			</thead>
+			<tbody ng-if="vm.tableParams.data.length != 0">
+			<tr ng-repeat="row in $data">
+				<td>{{row.name}}</td>
+				<td>{{row.viewName}}</td>
+				<td>{{row.lastStatus}}</td>
+				<td>{{row.lastNO}}</td>
+				<td>{{row.lastFailNO}}</td>
+			</tr>
+			</tbody>
+		</table>
+
+		<div class="prompt" ng-if="vm.tableParams.data.length != 0">
+			<p class="text-danger">点击存储卷名称可对其进行文件导入，导出操作.</p>
+		</div>
+		<div class="no-result" ng-if="vm.tableParams.data.length == 0">结果为空</div>
+	</div>
+</div>
+
+<h3>
+	view
+</h3>
+<div class="example-block">
+	
+<div class="highlight" hljs hljs-language="html">
+<div class="table-container">
+  <div class="table-wrapper ng-scope ng-table">
+	<table class="table table-bordered table-hover" ng-table="vm.tableParams">
+	  <thead>
+		<tr>
+		  <th style="width: 25%;">名称</th>
+		  <th style="width: 15%;">视图名称</th>
+		  <th style="width: 20%;">上一次编译结果的状态</th>
+		  <th style="width: 20%;">上一次编译结果的序号</th>
+		  <th style="width: 20%;">上一次编译失败的序号</th>
+		</tr>
+	  </thead>
+	  <tbody ng-if="vm.tableParams.data.length != 0">
+	    <tr ng-repeat="row in $data">
+		  <td>{{row.name}}</td>
+		  <td>{{row.viewName}}</td>
+		  <td>{{row.lastStatus}}</td>
+		  <td>{{row.lastNO}}</td>
+		  <td>{{row.lastFailNO}}</td>
+	    </tr>
+	  </tbody>
+	</table>
+	<div class="prompt" ng-if="vm.tableParams.data.length != 0">
+	  <p class="text-warning">点击存储卷名称可对其进行文件导入，导出操作.</p>
+	</div>
+	<div class="no-result" ng-if="vm.tableParams.data.length == 0">结果为空</div>
+  </div>
+</div>
+</div>
+</div>
+
+<h3>
+	controller
+</h3>
+
+<div class="example-block">
+	
+<div class="highlight" hljs hljs-language="javascript">
+constructor(NgTableParams) {
+  "ngInject";
+  this.NgTableParams = NgTableParams;
+  this.init();
+}
+
+init(){
+  var self = this;
+    self.tableParams = new this.NgTableParams({
+      page: 1,
+      count: 5
+    }, {
+    counts: [],
+      getData: function (params) {
+      // call service to get table data
+      params.total(self.data.total);
+      return self.data && self.data.datas;
+    }
+  });
+}
+</div>
+</div>

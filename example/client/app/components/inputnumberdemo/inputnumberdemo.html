@@ -1,0 +1,135 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>
+		{{'InputDes'|translate}}
+	</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="javascript">
+import inputnumberdemoComponent from './inputnumberdemo.component';
+import {InputNumber} from 'fancyui';
+
+export default angular.module('inputNumberDemo', [
+  InputNumber.name
+])
+.component('inputNumberDemo', inputnumberdemoComponent);</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+<h3>{{'Basic'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<input-number value="1" min="1" max="10" on-change="vm.onChange"></input-number>
+	</div>
+</div>
+
+<h3>{{'Disable'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<input-number value="1" min="1" max="10" disabled="true"></input-number>
+	</div>
+</div>
+
+<h3>{{'StepSetting'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<input-number value="1" min="1" max="100" step="5" on-change="vm.onChange"></input-number>
+	</div>
+</div>
+
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>view</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="html">
+<input-number value="1" min="1" max="10" on-change="vm.onChange"></input-number>
+<input-number value="1" min="1" max="10" disabled="true"></input-number>
+<input-number value="1" min="1" max="100" step="5" on-change="vm.onChange"></input-number>
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>value</td>
+			<td>{{'CurrentValue'|translate}}</td>
+			<td>number</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>min</td>
+			<td>min value</td>
+			<td>number</td>
+			<td>-</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>max</td>
+			<td>max value</td>
+			<td>number</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>step</td>
+			<td>incremental step</td>
+			<td>number</td>
+			<td>-</td>
+			<td>1</td>
+		</tr>
+		<tr>
+			<td>disabled</td>
+			<td>{{'Disabled'|translate}}</td>
+			<td>boolean</td>
+			<td>-</td>
+			<td>false</td>
+		</tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Event'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'EventName'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Param'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>on-change</td>
+			<td>change handler</td>
+			<td>value: changed value</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

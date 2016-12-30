@@ -1,0 +1,7 @@
+<div class="tab-list">
+	<ul>
+		<li ng-class="{active: $index == vm.activeKey - 1}"
+			ng-repeat="tab in vm.tabsArr"
+			ng-click="vm.switchTab($event, $index)">{{tab}}</li>
+	</ul>
+</div>

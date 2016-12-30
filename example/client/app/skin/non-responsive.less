@@ -1,0 +1,216 @@
+/* Account for fixed navbar */
+body,
+.navbar-fixed-top,
+.navbar-fixed-bottom {
+  min-width: 1200px;
+}
+
+/* Don't let the lead text change font-size. */
+.lead {
+  font-size: 16px;
+}
+
+/* Finesse the page header spacing */
+.page-header {
+  margin-bottom: 30px;
+  .lead {
+    margin-bottom: 10px;
+  }
+}
+
+/* Non-responsive overrides
+ *
+ * Utilize the following CSS to disable the responsive-ness of the container,
+ * grid system, and navbar.
+ */
+
+/* Reset the container */
+.container {
+  width: 1200px;
+  max-width: none !important;
+}
+
+/* Always float the navbar header */
+.navbar-header {
+  float: left;
+}
+
+/* Undo the collapsing navbar */
+.navbar-collapse {
+  display: block !important;
+  height: auto !important;
+  padding-bottom: 0;
+  overflow: visible !important;
+  visibility: visible !important;
+}
+
+.navbar-toggle {
+  display: none;
+}
+.navbar-collapse {
+  border-top: 0;
+}
+
+.navbar-brand {
+  margin-left: -15px;
+}
+
+/* Always apply the floated nav */
+.navbar-nav {
+  float: left;
+  margin: 0;
+  > li {
+    float: left;
+    > a {
+      padding: 15px;
+    }
+  }
+  &.navbar-right {
+    float: right;
+  }
+}
+
+/* Undo custom dropdowns */
+.navbar .navbar-nav .open .dropdown-menu {
+  position: absolute;
+  float: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-width: 0 1px 1px;
+  border-radius: 0 0 4px 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+  color: #333;
+}
+.navbar .navbar-nav .open .dropdown-menu > li > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > li > a:focus,
+.navbar .navbar-nav .open .dropdown-menu > .active > a,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .active > a:focus {
+  color: #fff !important;
+  background-color: #428bca !important;
+}
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+.navbar .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+  color: #999 !important;
+  background-color: transparent !important;
+}
+
+/* Undo form expansion */
+.navbar-form {
+  float: left;
+  width: auto;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-right: 0;
+  margin-left: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .form-control-static {
+    display: inline-block;
+  }
+  .input-group {
+    display: inline-table;
+    vertical-align: middle;
+    .input-group-addon,
+    .input-group-btn,
+    .form-control {
+      width: auto;
+    }
+    > .form-control {
+      width: 100%;
+    }
+  }
+  .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .radio,
+  .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+    label {
+      padding-left: 0;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: relative;
+      margin-left: 0;
+    }
+  }
+  .has-feedback {
+    .form-control-feedback {
+      top: 0;
+    }
+  }
+}
+
+/* Undo inline form compaction on small screens */
+.form-inline {
+  .form-group {
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .form-control {
+    display: inline-block;
+    width: auto;
+    vertical-align: middle;
+  }
+  .form-control-static {
+    display: inline-block;
+  }
+  .input-group {
+    display: inline-table;
+    vertical-align: middle;
+    .input-group-addon,
+    .input-group-btn,
+    .form-control {
+      width: auto;
+    }
+    > .form-control {
+      width: 100%;
+    }
+  }
+  .control-label {
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+  .radio,
+  .checkbox {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+    vertical-align: middle;
+    label {
+      padding-left: 0;
+    }
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: relative;
+      margin-left: 0;
+    }
+  }
+  .has-feedback {
+    .form-control-feedback {
+      top: 0;
+    }
+  }
+}

@@ -1,0 +1,40 @@
+/**
+ * 公共区, 比如body的背景色 等一些通用(无法归类的)样式都在这里, 如果能归类请尽到各自类型的文件里添加
+ * @author fengpeng
+ */
+
+html, body{
+  font-family: @font-family-base;
+  background-color: @body-bg;
+  color: @text-color;
+  height: 100%;
+}
+ 
+// 表单必填星号的红色
+.required-star{color: @form-required-star-color;}
+
+// 主要内容容器, 主要内容容器是指, 在menu右侧, page-title下方的容器
+.conter-wrapper{
+  padding: @main-content-container-padding;
+}
+
+// 基本容器
+.bp-container{
+  padding: @basic-container-padding;
+  margin-bottom: @basic-container-margin-bottom;
+  border-color: @basic-container-border-color;
+  border-radius: @basic-container-border-radius;
+  box-shadow: 0 1px 1px @basic-container-shadow-color;
+  background-color: @basic-container-bg-color;
+}
+
+// 基本容器内容居中
+.bp-container-center {
+  text-align: center;
+}
+
+.sop-data-loading{
+  .cg-busy-default-sign {
+    //@TODO 修改cg-busy默认样式
+  }
+}

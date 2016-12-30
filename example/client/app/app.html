@@ -1,0 +1,16 @@
+<!-- Place all UI elements intended to be present across all routes in this file -->
+<div class="app">
+	<loadingbar></loadingbar>
+	<div class="main-content">
+		<div ui-view='header' autoscroll="true">
+		</div>
+		
+		<div class="main-container">
+			<div class="side-nav" ui-view="menu">
+			</div>
+
+			<div class="main-wrapper" ui-view='component' ></div>
+		</div>
+	</div>
+</div>
+

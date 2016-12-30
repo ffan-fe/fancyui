@@ -1,0 +1,14 @@
+<div class="back-drop in" ng-class="{out: vm.fadeOut}" ng-if="vm.showOverlay"></div>
+<div class="home-container" ng-if="vm.showOverlay">
+	<div class="type-container">
+		<span>{{vm.typeText}}</span>
+		<span class="type-cursor" ng-if="vm.showCursor">|</span>
+	</div>
+</div>
+<div class="home-page">
+	<div class="type-container" ng-class="{'in': vm.fadeIn}">
+		<span>飞凡组件库</span>
+		<p>飞凡组件库，一套为开发者和产品经理准备的基于 Angular 1.5 的组件库，帮助网站快速成型。丰富、灵活、实用的基础组件，为业务产品提供强有力的设计支持。</p>
+		<button class="btn btn-default btn-default-home" ng-click="vm.goToStart()">开始使用</button>
+	</div>
+</div>

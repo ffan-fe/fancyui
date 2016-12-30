@@ -1,0 +1,163 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>{{'RateDes'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="javascript">
+import ratedemoComponent from './ratedemo.component';
+import {Rate} from 'fancyui';
+export default angular.module('rateDemo', [
+  Rate.name
+])
+.component('rateDemo', ratedemoComponent);</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+<h3>{{'Basic'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<bp-rate value="3" on-change="vm.onChange"></bp-rate>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-rate value="3" on-change="vm.onChange"></bp-rate>
+</div>
+</div>
+
+<h3>{{'WithColor'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<bp-rate colors="vm.colors" on-change="vm.onChange"></bp-rate>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-rate colors="vm.colors" on-change="vm.onChange"></bp-rate>
+</div>
+<div class="highlight" hljs hljs-language="javascript">
+export default class RatedemoController {
+  constructor() {
+    'ngInject';
+    this.colors = ['#99A9BF', '#f7ba2a', '#FF9900'];
+  }
+
+  onChange(value) {
+    console.log(value);
+  }
+}
+</div>
+</div>
+
+<h3>{{'WithText'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<bp-rate colors="vm.colors" text-array="vm.textArray" on-change="vm.onChange"></bp-rate>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-rate colors="vm.colors" text-array="vm.textArray" on-change="vm.onChange"></bp-rate>
+</div>
+<div class="highlight" hljs hljs-language="javascript">
+export default class RatedemoController {
+  constructor() {
+    'ngInject';
+    this.colors = ['#99A9BF', '#f7ba2a', '#FF9900'];
+    this.textArray = ['极差', '失望', '一般', '满意', '惊喜'];
+  }
+
+  onChange(value) {
+    console.log(value);
+  }
+}
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>配置项</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>count</td>
+			<td>{{'RateCount'|translate}}</td>
+			<td>number</td>
+			<td>-</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>value</td>
+			<td>{{'CurrentValue'|translate}}</td>
+			<td>number</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>colors</td>
+			<td>{{'RateColors'|translate}}</td>
+			<td>array</td>
+			<td>-</td>
+			<td>['#f7ba2a','#f7ba2a','#f7ba2a']</td>
+		</tr>
+		<tr>
+			<td>low-threshold</td>
+			<td>{{'LowThreshold'|translate}}</td>
+			<td>number</td>
+			<td>-</td>
+			<td>2</td>
+		</tr>
+		<tr>
+			<td>high-threshold</td>
+			<td>{{'HightThreshold'|translate}}</td>
+			<td>number</td>
+			<td>-</td>
+			<td>4</td>
+		</tr>
+		<tr>
+			<td>text-array</td>
+			<td>{{'TextArray'|translate}}</td>
+			<td>array</td>
+			<td>-</td>
+			<td>['极差', '失望', '一般', '满意', '惊喜']</td>
+		</tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Event'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'EventName'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Param'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>on-change</td>
+			<td>change handler</td>
+			<td>value: new value</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

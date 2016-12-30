@@ -1,0 +1,100 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>{{'SliderInputDesc'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block no-border">
+<div class="highlight" hljs hljs-language="javascript">
+import sliderinputComponent from './sliderinput.component';
+import {RangeInput} from 'fancyui';
+export default angular.module('sliderInput', [
+  RangeInput.name
+])
+.component('sliderInput', sliderinputComponent);
+</div>
+</div>
+
+
+<h2>{{'Example'|translate}}</h2>
+
+<div class="example-block">
+	<div class="bs-example">
+		<div class="range-container">
+			<div class="range-controller">
+				<div class="ffan-range ffan-range--default" min="0" max="1024" step="1">
+					<div class="ffan-range__range" end="{{_c}}" ></div>
+					<div class="ffan-range__thumb" ng-model="_c" name="input"></div>
+				</div>
+			</div>
+
+			<div class="range-input">
+				<input type="number" class="form-control" ng-model="_c" min="0" max="1024" step="1"> M
+			</div>
+		</div>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<div class="range-container">
+  <div class="range-controller">
+    <div class="ffan-range ffan-range--default" min="0" max="1024" step="1">
+    <div class="ffan-range__range" end="{{_c}}" ></div>
+    <div class="ffan-range__thumb" ng-model="_c" name="input"></div>
+  </div>
+  </div>
+  <div class="range-input">
+    <input type="number" class="form-control" ng-model="_c" min="0" max="1024" step="1"> M
+  </div>
+</div>
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>min</td>
+			<td>min value</td>
+			<td>number</td>
+			<td>—</td>
+			<td>0</td>
+		</tr>
+		<tr>
+			<td>max</td>
+			<td>max value</td>
+			<td>number</td>
+			<td>—</td>
+			<td>100</td>
+		</tr>
+		<tr>
+			<td>step</td>
+			<td>step number</td>
+			<td>number</td>
+			<td>—</td>
+			<td>1</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

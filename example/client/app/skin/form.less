@@ -1,0 +1,83 @@
+/**
+ * form
+ * @author liuchang fengpeng
+ */
+
+// 覆盖了一部分bootstrap样式, 主要是颜色
+.form-control {
+  box-shadow: none;
+  &:focus {
+    border-color: @primary-color;
+    outline: 0;
+    box-shadow: none;
+  }
+}
+
+select.form-control {
+  option:hover {
+    color: @form-select-hover-font-color;
+    background-color: @primary-color;
+  }
+}
+// 减小 label 与 input 之间的空隙
+.input-padding-left {
+  padding-left: 0px;
+}
+
+// 对时间组件 label 的细微调整
+.label-margin-left {
+  margin-left: -5px;
+}
+
+// 有效期的 “至” 居中
+.form-horizontal {
+  .control-label.date-font-center {
+    text-align: center;
+  }
+}
+
+//ui tree checkbox样式
+
+.angular-ui-tree {
+  input[type="checkbox"] {
+    -webkit-appearance: none;
+    background-color: white;
+    border: 1px solid #CCCCCC;
+    padding: 6px;
+    border-radius: 2px;
+    display: inline-block;
+    position: relative;
+    outline: none!important;
+  }
+  input[type="checkbox"]:checked {
+    background-color: #58b4e9;
+    border: 1px solid #58b4e9;
+    color: #99a1a7;
+  }
+  input[type="checkbox"]:checked:after {
+    content: '\2714';
+    font-size: 12px;
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: white;
+  }
+}
+
+.form-horizontal {
+	.control-label {
+		font-weight: normal;
+	}
+	.form-inline {
+		.form-group {
+			margin: 0;
+			padding: 0;
+			.control-label {
+				width: auto;
+				padding-left: 0;
+				padding-right: 0;
+				text-align: left;
+			}
+		}
+	}
+}

@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    [
+      "transform-imports",
+      {
+        "fancyui": {
+          "transform": "fancyui/lib/${member}",
+          "preventFullImport": true
+        }
+      }
+    ]
+  ],
+  "presets": ["es2015"]
+}

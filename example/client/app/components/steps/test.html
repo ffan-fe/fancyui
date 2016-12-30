@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style type="text/css">
+		.triangle_border{
+			width:200px;
+			margin:0 auto 20px;
+			position:relative;
+		}
+		.triangle_border .popup{
+			width:100px;
+			background:#fff;
+			padding:10px 20px;
+			color:#333;
+			border-radius:4px;
+			position:absolute;
+			top:30px;
+			left:30px;
+			border:1px solid #333;
+		}
+		.triangle_border .popup span{
+			display:block;
+			width:0;
+			height:0;
+			border-width:10px;
+			border-style:solid;
+			border-color:transparent #333 transparent transparent;
+			position:absolute;
+			top:8px;
+			left:-20px;
+		}
+		.triangle_border .popup em{
+			display:block;
+			width:0;
+			height:0;
+			border-width: 10px;
+			border-style:solid;
+			border-color:transparent #fff transparent transparent;
+			position:absolute;
+			top:-10px;
+			left:-9px;
+		}
+	</style>
+</head>
+<body>
+<div class="triangle_border">
+	<div class="popup">
+		<span><em></em></span>纯CSS写带边框的三角形
+	</div>
+</div>
+</body>
+</html>

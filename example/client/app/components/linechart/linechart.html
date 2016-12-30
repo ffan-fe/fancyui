@@ -1,0 +1,117 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+import linechartComponent from './linechart.component';
+import {Charts} from 'fancyui';
+
+export default angular.module('lineChart', [
+  Charts.name
+])
+.component('lineChart', linechartComponent);</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+
+<div class="example-block" style="margin-top: 30px">
+	<div class="bs-example">
+		<div class="col-md-12 echarts-container" style="height: 400px">
+			<ng-echarts class="echarts" ec-config="vm.lineConfig" ec-option="vm.lineOption" ></ng-echarts>
+		</div>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+  <div class="highlight" hljs hljs-language="html">
+<ng-echarts class="echarts" ec-config="vm.lineConfig" ec-option="vm.lineOption"></ng-echarts></div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight" hljs hljs-language="javascript">
+let self = this;
+this.lineConfig = {
+  theme: 'default',
+  dataLoaded: true
+};
+
+this.lineOption = {
+  title: {
+    text: '内存使用情况',
+    subtext: 'pod memory usage',
+    textAlign: 'left',
+    x: "0",
+    textStyle: {
+      color: '#666',
+      fontSize: '14'
+    },
+    subtextStyle: {
+      color: '#d6d6d6',
+      fontSize: '12',
+      display: 'inline'
+    }
+  },
+  grid: {
+    borderWidth: 0,
+    borderColor: '#f2f2f2'
+  },
+  legend: {
+    orient: 'horizontal',
+    top: '0',
+    right: '0',
+    align: 'left',
+    data: ['op-lodgings-sync', 'elasticsearch-logging']
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['13:25', '13:30', '13:35', '13:40', '13:45', '13:50', '13:55', '14:00', '14:05', '14:10', '14:15', '14:20'],
+      splitLine: {
+      show: true,
+      interval: 'auto'
+    }
+  },
+  yAxis: {
+    type: 'value',
+    axisLabel: {
+      formatter: '{value} GiB'
+    }
+  },
+  color: ['#64b1e4', '#fa9073'],
+  series: [
+    {
+      name: 'op-lodgings-sync',
+      type: 'line',
+      smooth: false,
+      data: [1.1, 4.5, 3.4, 1.7, 3.8, 2.1, 4.5, 4.7, 5.1, 3.8, 5.5, 6.2]
+    },
+    {
+      name: 'elasticsearch-logging',
+      type: 'line',
+      smooth: false,
+      data: [2.6, 3.7, 5.1, 8.2, 3.2, 6.1, 3.9, 4.5, 3.4, 1.7, 3.8, 2.1]
+    }
+  ]
+};
+</div>
+</div>

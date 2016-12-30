@@ -1,0 +1,107 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>{{'Badage_Description'|translate}}</p>
+	<p>{{'Badage_Description1'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="javascript">
+import badgedemoComponent from './badgedemo.component';
+import {Badge} from 'fancyui';
+export default angular.module('badgeDemo', [
+  Badge.name
+])
+.component('badgeDemo', badgedemoComponent);</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+<h3>{{'Basic_Usage'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<span class="badge-example">
+			<a href="#"></a>
+			<bp-badge count="6"></bp-badge>
+		</span>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-badge count="6"></bp-badge>
+</div>
+</div>
+
+<h3>{{'MaxValue'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<span class="badge-example">
+			<a href="#"></a>
+			<bp-badge count="100" max="99"></bp-badge>
+		</span>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-badge count="100" max="99"></bp-badge>
+</div>
+</div>
+
+<h3>{{'Message'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<span class="badge-example">
+			<a href="#"></a>
+			<bp-badge dot="true"></bp-badge>
+		</span>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-badge dot="true"></bp-badge>
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>count</td>
+			<td>{{'Count_Description'|translate}}</td>
+			<td>number</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>max</td>
+			<td>{{'Max_Description'|translate}}</td>
+			<td>number</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>dot</td>
+			<td>{{'Dot_Description'|translate}}</td>
+			<td>boolean</td>
+			<td>-</td>
+			<td>false</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

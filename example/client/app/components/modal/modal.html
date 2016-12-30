@@ -1,0 +1,20 @@
+<section class="intro-content">
+	<h1>弹出框</h1>
+	<p></p>
+</section>
+
+<div class="example-block">
+	<div class="bs-example">
+		<button class="btn btn-primary" ng-click="vm.openPop()">弹窗示例</button>
+	</div>
+<div class="highlight" hljs hljs-language="javascript">
+this.$uibModal.open({
+  animation: true,
+  template: popupTemplate,
+  controller: 'PopupController',
+  controllerAs: 'vm',
+  size: 'md',    // 可选lg/md/sm
+  resolve: {}
+});
+</div>
+</div>

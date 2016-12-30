@@ -1,0 +1,101 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block no-border">
+<div class="highlight" hljs hljs-language="javascript">
+import alertComponent from './alert.component';
+import {Service} from 'fancyui';
+
+export default angular.module('alert', [
+  Service.name
+])
+.component('alert', alertComponent);</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<button class="btn btn-default" ng-click="myAlert()">Alert</button>
+		<button class="btn btn-default" ng-click="myAlertWithHint()">Alert with hint</button>
+		<button class="btn btn-default" ng-click="myConfirm()">Confirm</button>
+	</div>
+</div>
+
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>view</h3>
+<div class="example-block no-border">
+<div class="highlight" hljs hljs-language="html">
+<button class="btn btn-default" ng-click="myAlert()">Alert</button>
+<button class="btn btn-default" ng-click="myAlertWithHint()">Alert with hint</button>
+<button class="btn btn-default" ng-click="myConfirm()">Confirm</button>
+</div>
+</div>
+
+<h3>controller</h3>
+
+<div class="example-block no-border">
+<div class="highlight" hljs hljs-language="javascript">
+export default class AlertController {
+  constructor($scope, AlertService) {
+    'ngInject'
+    this.AlertService = AlertService;
+    $scope.myAlert = this.myAlert.bind(this);
+    $scope.myAlertWithHint = this.myAlertWithHint.bind(this);
+    $scope.myConfirm = this.myConfirm.bind(this);
+  }
+
+  myAlert() {
+    this.AlertService
+      .alert({
+        title: "测试",
+        content: "你好，我是警告"
+    })
+    .then(function () {
+      alert("你刚才点了确定");
+    });
+  }
+
+  myAlertWithHint() {
+    this.AlertService
+      .alert({
+        title: "测试",
+        content: "你好，我是警告",
+        hint: ["操作提示1", "如果想要在操作的时候给点提示，那就写在这里"]
+    })
+    .then(function () {
+      alert("你刚才点了确定");
+    });
+  }
+
+
+  myConfirm() {
+    this.AlertService
+      .confirm({
+        title: "测试",
+        contents: ["你好，确定要删除以下内容吗？", "aaa, bbb"]
+      })
+      .then(function () {
+        alert("你刚才点了确定");
+      }, function () {
+        alert("你刚才点了取消");
+    });
+  }
+}
+</div>
+</div>

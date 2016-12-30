@@ -1,0 +1,122 @@
+<section class="intro-content">
+	<h1>单选框</h1>
+</section>
+
+<section class="intro-content">
+	<h2>安装</h2>
+	<p>安装fancyui</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>注入模块</h2>
+</section>
+
+<div class="example-block no-border">
+<div class="highlight" hljs hljs-language="javascript">
+import radioComponent from './radio.component';
+import {Radiobox} from 'fancyui';
+import {RadioboxGroup} from 'fancyui';
+
+export default angular.module('radio', [
+  Radiobox.name,
+  RadioboxGroup.name
+])
+.component('radio', radioComponent);
+</div>
+</div>
+
+
+<section class="intro-content">
+	<h2>示例</h2>
+	<p>基础用法</p>
+</section>
+<div class="example-block">
+	<div class="bs-example radio-example">
+		<bp-radiobox model="vm.option" value="A">A</bp-radiobox>
+		<bp-radiobox model="vm.option" value="B">B</bp-radiobox>
+		<bp-radiobox model="vm.option" value="C">C</bp-radiobox>
+		<bp-radiobox model="vm.option" value="D" >D</bp-radiobox>
+		<p>选中的值: {{vm.option}}</p>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-radiobox model="vm.option" value="A">A</bp-radiobox>
+<bp-radiobox model="vm.option" value="B">B</bp-radiobox>
+<bp-radiobox model="vm.option" value="C">C</bp-radiobox>
+<bp-radiobox model="vm.option" value="D" >D</bp-radiobox>
+<p>选中的值: {{vm.option}}</p>
+</div>
+<div class="highlight" hljs hljs-language="html">
+export default class RadioController {
+  constructor() {
+    'ngInject';
+    this.option = "A";
+}
+</div>
+</div>
+
+<section class="intro-content">
+	<p>复杂数据结构支持如Object, Array, Boolean</p>
+</section>
+
+<div class="example-block">
+	<div class="bs-example radio-example">
+		<bp-radiobox model="vm.option1" value="A">A</bp-radiobox>
+		<bp-radiobox model="vm.option1" value="B">B</bp-radiobox>
+		<bp-radiobox model="vm.option1" value="C">C</bp-radiobox>
+		<bp-radiobox model="vm.option1" value="D" complex="vm.specialInfo">D</bp-radiobox>
+		<p>选中的值: {{vm.option1}}</p>
+	</div>
+
+<div class="highlight" hljs hljs-language="html">
+<bp-radiobox model="vm.option1" value="A">A</bp-radiobox>
+<bp-radiobox model="vm.option1" value="B">B</bp-radiobox>
+<bp-radiobox model="vm.option1" value="C">C</bp-radiobox>
+<bp-radiobox model="vm.option1" value="D" complex="vm.specialInfo">D</bp-radiobox>
+<p>选中的值: {{vm.option1}}</p>
+</div>
+
+<div class="highlight" hljs hljs-language="html">
+export default class RadioController {
+  constructor() {
+    'ngInject';
+    this.option1 = "A";
+    this.specialInfo = [1, 2, 3, 4, 5];
+  }
+</div>
+</div>
+
+<section class="intro-content">
+	<p>Radio组</p>
+</section>
+
+<div class="example-block">
+	<div class="bs-example radio-example">
+		<bp-radiobox-group list="vm.groupDataList" model="vm.model"></bp-radiobox-group>
+		<p>选中的值: {{vm.model}}</p>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<bp-radiobox-group list="vm.groupDataList" model="vm.model"></bp-radiobox-group>
+<p>选中的值: {{vm.model}}</p>
+</div>
+<div class="highlight" hljs hljs-language="javascript">
+export default class RadioController {
+  constructor() {
+    'ngInject';
+    this.model = "Option A";
+    this.groupDataList = [
+      {label: 'Option A', value: 'Option A'},
+      {label: 'Option B', value: 'Option B'},
+      {label: 'Option C', value: 'Option C', complex: [1, 2, 3, 4, 5]},
+      {label: 'Option D', value: "Option D"},
+      {label: 'Option E', value: "Option E", disabled: true},
+      {label: 'Option F', value: "Option F"}
+    ];
+  }
+}
+</div>
+</div>

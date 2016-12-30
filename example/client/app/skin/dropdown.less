@@ -1,0 +1,36 @@
+/**
+ * @author liuchang
+ */
+
+// 联想输入，背景颜色改变
+.dropdown-menu {
+  li {
+    a {
+      &:hover {
+        background-color: @primary-color;
+        color: @dropdown-hover-font-color;
+      }
+      &:focus {
+        background-color: @primary-color;      
+      }
+    }
+  }
+  .active {
+    a {
+      background-image: none;
+      background-color: @primary-color;
+      &:hover {
+        background-image: none;
+        background-color: @primary-color;
+        color: @dropdown-hover-font-color;
+      }
+      &:focus {
+        background-image: none;    
+        background-color: @primary-color;      
+      }
+    }
+  }
+}
+
+
+

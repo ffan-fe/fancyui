@@ -1,0 +1,165 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>{{'SwitchDes'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="javascript">
+import switchdemoComponent from './switchdemo.component';
+import {Switch} from 'fancyui';
+
+export default angular.module('switchDemo', [
+  Switch.name
+])
+.component('switchDemo', switchdemoComponent);</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+<section class="intro-content">
+	<h3>{{'Basic'|translate}}</h3>
+</section>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<bp-switch
+			disabled="vm.disabled"
+			default-checked="vm.defaultChecked"
+			on-change="vm.onChange">
+		</bp-switch>
+	</div>
+</div>
+
+<section class="intro-content">
+	<h3>{{'SwitchWorld'|translate}}</h3>
+</section>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<bp-switch
+				disabled="vm.disabled"
+				on-text="vm.onText"
+				off-text="vm.offText"
+				default-checked="vm.defaultChecked"
+				on-change="vm.onChange">
+		</bp-switch>
+	</div>
+</div>
+
+<section class="intro-content">
+	<h3>{{'Disable'|translate}}</h3>
+</section>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<bp-switch
+				disabled="vm.disabled2"
+				default-checked="vm.defaultChecked"
+				on-change="vm.onChange">
+		</bp-switch>
+	</div>
+</div>
+
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>view</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-no-escape>
+&lt;bp-switch
+  disabled="vm.disabled"
+  on-text="vm.onText"
+  off-text="vm.offText"
+  default-checked="vm.defaultChecked"
+  on-change="vm.onChange"&gt;
+&lt;/bp-switch&gt;
+</div>
+</div>
+
+<h3>controller</h3>
+
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SwitchdemoController {
+  constructor() {
+  'ngInject';
+  this.onText = '开';
+  this.offText = '关';
+  this.disabled = false;
+  this.defaultChecked = true;
+}
+
+  onChange(checked) {
+    console.log(checked);
+  }
+}
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>onText</td>
+			<td>string</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>offText</td>
+			<td>string</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>disabled</td>
+			<td>boolean</td>
+			<td>true / false</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>defaultChecked</td>
+			<td>boolean</td>
+			<td>true / false</td>
+			<td>false</td>
+		</tr>
+		</tbody>
+	</table>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Event'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'EventName'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Params'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>on-change</td>
+			<td>{{'SwitchEventDes'|translate}}</td>
+			<td>{{'SwitchEventParam'|translate}}</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

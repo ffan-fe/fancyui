@@ -1,0 +1,539 @@
+/*
+ * Examples
+ *
+ * Isolated sections of example content for each component or feature. Usually
+ * followed by a code snippet.
+ */
+.intro-content p {
+	font-size: 14px;
+	color: #5e6d82;
+	margin: 1em 0;
+}
+.intro-content ul, .intro-content ol {
+	list-style: none;
+	padding-left: 20px;
+	color: #5e6d82;
+}
+.intro-content ul li, .intro-content ol li {
+	margin: 1em 0;
+}
+.demo-table {
+	border-collapse: collapse;
+	width: 100%;
+	background-color: #fff;
+	color: #5e6d82;
+	font-size: 14px;
+	margin-bottom: 45px;
+}
+.demo-table th {
+	text-align: left;
+	border-top: 1px solid #eaeefb;
+	background-color: #eff2f7;
+	border-bottom: 1px solid #eaeefb;
+	padding: 10px;
+}
+.demo-table td {
+	text-align: left;
+	border-top: 1px solid #eaeefb;
+	border-bottom: 1px solid #eaeefb;
+	padding: 10px;
+}
+.change-log .timeline {
+	padding-left: 25px;
+	position: relative;
+	color: rgb(94, 109, 130);
+	margin: 0 0 0 105px;
+}
+.app .main-content .main-container .main-wrapper .change-log .timeline h3 {
+	font-size: 22px;
+	font-weight: 400;
+	color: #1f2f3d;
+	line-height: 1.8;
+}
+
+.change-log .timeline::before {
+	content: "";
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	left: 0px;
+	top: 10px;
+	background-color: rgb(234, 238, 250);
+}
+
+.change-log .timeline h3:before {
+	content: '';
+	display: block;
+	position: absolute;
+	left: -31px;
+	top: 13px;
+	width: 13px;
+	height: 13px;
+	border-radius: 50%;
+	border: 2px solid #20a0ff;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+
+.change-log .timeline > li {
+	position: relative;
+	line-height: 1.8;
+	list-style: none;
+}
+.change-log .timeline > li:not(:last-child) {
+	margin-bottom: 50px;
+}
+.change-log .timeline > li:first-child {
+	margin-top: -10px;
+}
+.change-log .timeline h3 {
+	margin: 0 0 10px;
+}
+/*.change-log .timeline > li:first-child h3::before {*/
+	/*left: -33px;*/
+	/*top: 10px;*/
+	/*width: 17px;*/
+	/*height: 17px;*/
+	/*background-color: rgb(32, 160, 255);*/
+	/*border-image-source: initial;*/
+	/*border-image-slice: initial;*/
+	/*border-image-width: initial;*/
+	/*border-image-outset: initial;*/
+	/*border-image-repeat: initial;*/
+	/*border-width: 0px;*/
+	/*border-style: initial;*/
+	/*border-color: initial;*/
+/*}*/
+.change-log .timeline>li:first-child h3:before {
+	left: -33px;
+	top: 10px;
+	width: 17px;
+	height: 17px;
+	background-color: #20a0ff;
+	border: 0;
+}
+
+
+.change-log .timeline p {
+	margin: 0px;
+}
+.change-log .timeline em {
+	position: absolute;
+	left: -127px;
+	font-style: normal;
+	top: 6px;
+	font-size: 14px;
+	color: rgb(153, 169, 191);
+}
+.change-log .timeline ul {
+	padding-left: 0px;
+}
+.change-log .timeline li li {
+	font-size: 14px;
+	padding-left: 0px;
+	list-style: none;
+}
+.change-log .timeline li li::before {
+	content: "";
+	width: 4px;
+	height: 4px;
+	background-color: rgb(94, 109, 130);
+	margin-right: 5px;
+	display: inline-block;
+	vertical-align: middle;
+	border-radius: 50%;
+}
+
+
+
+
+
+.example-block {
+	border: 1px solid #eaeefb;
+	border-radius: 4px;
+	transition: .2s;
+}
+.example-block:hover {
+	box-shadow: 0 0 8px 0 rgba(232,237,250,.6),0 2px 4px 0 rgba(232,237,250,.5)
+}
+
+.bs-example {
+	position: relative;
+	padding: 24px;
+	margin: 0;
+}
+.bs-example:after {
+	display: none;
+}
+
+/* Echo out a label for the example */
+.bs-example:after {
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	font-size: 12px;
+	font-weight: bold;
+	color: #959595;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	content: "范例";
+}
+
+.bs-example-padded-bottom {
+	padding-bottom: 24px;
+}
+
+/* Tweak display of the code snippets when following an example */
+.example-block .highlight {
+	margin: 0;
+	border-top: 1px solid #eaeefb;
+	background-color: #f9fafc;
+	border-radius: 0 0 4px 4px;
+}
+
+.example-block .highlight.no-border {
+	border-top: 0;
+	border-radius: 4px;
+}
+
+pre {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: monospace;
+	white-space: pre;
+	background-color: transparent;
+}
+
+.echarts-container {
+	float: none;
+	height: 150px;
+}
+
+/* Make the examples and snippets not full-width */
+/*@media (min-width: 768px) {*/
+	/*.bs-example {*/
+		/*margin-right: 0;*/
+		/*margin-left: 0;*/
+		/*background-color: #fff;*/
+		/*border-color: #ddd;*/
+		/*border-width: 1px;*/
+		/*border-radius: 4px 4px 0 0;*/
+		/*-webkit-box-shadow: none;*/
+		/*box-shadow: none;*/
+	/*}*/
+
+	/*.bs-example + .highlight,*/
+	/*.bs-example + .zero-clipboard + .highlight {*/
+		/*margin-top: -16px;*/
+		/*margin-right: 0;*/
+		/*margin-left: 0;*/
+		/*border-width: 1px;*/
+		/*border-radius: 0;*/
+	/*}*/
+
+	/*.bs-example + .highlight pre {*/
+		/*border-radius: 0 0 4px 4px;*/
+	/*}*/
+
+	/*.bs-example-standalone {*/
+		/*border-radius: 4px;*/
+	/*}*/
+/*}*/
+
+/* Undo width of container */
+.bs-example .container {
+	width: auto;
+}
+
+/* Tweak content of examples for optimum awesome */
+.bs-example > p:last-child,
+.bs-example > ul:last-child,
+.bs-example > ol:last-child,
+.bs-example > blockquote:last-child,
+.bs-example > .form-control:last-child,
+.bs-example > .table:last-child,
+.bs-example > .navbar:last-child,
+.bs-example > .jumbotron:last-child,
+.bs-example > .alert:last-child,
+.bs-example > .panel:last-child,
+.bs-example > .list-group:last-child,
+.bs-example > .well:last-child,
+.bs-example > .progress:last-child,
+.bs-example > .table-responsive:last-child > .table {
+	margin-bottom: 0;
+}
+
+.bs-example > p > .close {
+	float: none;
+}
+
+/* Typography */
+.bs-example-type .table .type-info {
+	color: #767676;
+	vertical-align: middle;
+}
+
+.bs-example-type .table td {
+	padding: 15px 0;
+	border-color: #eee;
+}
+
+.bs-example-type .table tr:first-child td {
+	border-top: 0;
+}
+
+.bs-example-type h1,
+.bs-example-type h2,
+.bs-example-type h3,
+.bs-example-type h4,
+.bs-example-type h5,
+.bs-example-type h6 {
+	margin: 0;
+}
+
+/* Contextual background colors */
+.bs-example-bg-classes p {
+	padding: 15px;
+}
+
+/* Images */
+.bs-example > .img-circle,
+.bs-example > .img-rounded,
+.bs-example > .img-thumbnail {
+	margin: 5px;
+}
+
+/* Tables */
+.bs-example > .table-responsive > .table {
+	background-color: #fff;
+}
+
+/* Buttons */
+.bs-example > .btn,
+.bs-example > .btn-group {
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.bs-example > .btn-toolbar + .btn-toolbar {
+	margin-top: 10px;
+}
+
+/*
+ * Grid examples
+ *
+ * Highlight the grid columns within the docs so folks can see their padding,
+ * alignment, sizing, etc.
+ */
+.show-grid {
+	margin-bottom: 15px;
+}
+
+.show-grid [class^="col-"] {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #fff;
+	border: 1px solid #e5e5e5;
+}
+
+/*
+ * Glyphicons
+ *
+ * Special styles for displaying the icons and their classes in the docs.
+ */
+
+.bs-glyphicons {
+	margin: 0 -10px 20px;
+	overflow: hidden;
+}
+
+.bs-glyphicons-list {
+	padding-left: 0;
+	list-style: none;
+}
+
+.bs-glyphicons li {
+	float: left;
+	width: 25%;
+	height: 115px;
+	padding: 10px;
+	font-size: 10px;
+	line-height: 1.4;
+	text-align: center;
+	background-color: #f9f9f9;
+	border: 1px solid #fff;
+}
+
+.bs-glyphicons .glyphicon {
+	margin-top: 5px;
+	margin-bottom: 10px;
+	font-size: 24px;
+}
+
+.bs-glyphicons .glyphicon-class {
+	display: block;
+	text-align: center;
+	word-wrap: break-word; /* Help out IE10+ with class names */
+}
+
+.bs-glyphicons li:hover {
+	color: #fff;
+	background-color: #563d7c;
+}
+
+@media (min-width: 768px) {
+	.bs-glyphicons {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	.bs-glyphicons li {
+		width: 12.5%;
+		font-size: 12px;
+	}
+}
+
+.bs-callout {
+	padding: 20px;
+	margin: 30px 0;
+	border: 1px solid #46b8da;
+	border-left-width: 5px;
+	border-radius: 3px;
+	background-color: #fff;
+}
+
+.bs-callout h4 {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+.bs-callout ul li, .bs-callout ol li {
+	line-height: 30px;
+}
+
+.app .main-content {
+	padding-top: 0;
+}
+
+/*
+ * Code
+ *
+ */
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #333;
+	padding: 18px 24px;
+	-webkit-text-size-adjust: none;
+	line-height: 1.8;
+	white-space: pre;
+}
+
+.hljs-comment,
+.diff .hljs-header {
+	color: #998;
+	font-style: italic
+}
+
+.hljs-keyword,
+.css .rule .hljs-keyword,
+.hljs-winutils,
+.nginx .hljs-title,
+.hljs-subst,
+.hljs-request,
+.hljs-status {
+	color: #3182bd;
+}
+
+.hljs-number,
+.hljs-hexcolor,
+.ruby .hljs-constant {
+	color: #008080
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-doctag,
+.tex .hljs-formula {
+	color: #333
+}
+
+.hljs-title,
+.hljs-id,
+.scss .hljs-preprocessor {
+	color: #900;
+	font-weight: bold
+}
+
+.hljs-list .hljs-keyword,
+.hljs-subst {
+	font-weight: normal
+}
+
+.hljs-class .hljs-title,
+.hljs-type,
+.vhdl .hljs-literal,
+.tex .hljs-command {
+	color: #458;
+	font-weight: bold
+}
+
+.hljs-tag,
+.hljs-tag .hljs-title,
+.hljs-rule .hljs-property,
+.django .hljs-tag .hljs-keyword {
+	color: #000080;
+	font-weight: normal
+}
+
+.hljs-attribute,
+.hljs-variable,
+.lisp .hljs-body,
+.hljs-name {
+	color: #008080
+}
+
+.hljs-regexp {
+	color: #009926
+}
+
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.lisp .hljs-keyword,
+.clojure .hljs-keyword,
+.scheme .hljs-keyword,
+.tex .hljs-special,
+.hljs-prompt {
+	color: #990073
+}
+
+.hljs-built_in {
+	color: #0086b3
+}
+
+.hljs-preprocessor,
+.hljs-pragma,
+.hljs-pi,
+.hljs-doctype,
+.hljs-shebang,
+.hljs-cdata {
+	color: #999;
+	font-weight: bold
+}
+
+.hljs-deletion {
+	background: #fdd
+}
+
+.hljs-addition {
+	background: #dfd
+}
+
+.diff .hljs-change {
+	background: #0086b3
+}
+
+.hljs-chunk {
+	color: #aaa
+}

@@ -1,0 +1,22 @@
+.pjax-loader-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    opacity: 0;
+    
+    .progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        background: #77b6ff;
+        box-shadow: 0 0 10px rgba(119,182,255,0.7);
+        -webkit-transition: width 0.2s ;
+        transition: width 0.2s ;
+    }
+}
+
+ .pjax-loader-bar.is-loading {
+    opacity: 1;
+}

@@ -1,0 +1,39 @@
+
+
+//datepicker style
+.uib-datepicker-popup {
+  padding: 0!important;
+  thead {
+    tr {
+      &:first-child {
+        height: 45px!important;
+        background: @datepicher-bg-color;
+        color: @datepicher-font-color;
+        font-size: 18px!important;
+        button {
+          color: @datepicher-font-color!important;
+        }
+      }
+      &:last-child {
+        height: 35px!important;
+      }
+    }
+  }
+  tbody{
+    tr {
+      height: 40px;
+    }
+  }
+  button {
+    border: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+  }
+  td {
+    min-width: 40px;
+    min-height: 40px;
+    border: 1px solid @datepicher-td-border-color;
+    border-collapse: collapse;
+  }
+}

@@ -1,0 +1,122 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<p>{{'PopConfirmDesc'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="javascript">
+import popconfirmComponent from './popconfirm.component';
+import {PopConfirm} from 'fancyui';
+
+export default angular.module('popConfirm', [
+  PopConfirm.name,
+.component('popConfirm', popconfirmComponent);
+</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<div style="margin-left: 70px;">
+			<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>Top</span></button>
+		</div>
+		<div style="width: 70px; float: left;">
+			<button type="button" class="btn btn-default" ng-click="vm.leftPop($event)"><span>Left</span></button>
+		</div>
+		<div style="width: 70px; margin-left: 140px;">
+			<button type="button" class="btn btn-default" ng-click="vm.rightPop($event)"><span>Right</span></button>
+		</div>
+		<div style="margin-left: 70px;">
+			<button type="button" class="btn btn-default" ng-click="vm.bottomPop($event)"><span>Bottom</span></button>
+		</div>
+	</div>
+<div class="highlight" hljs hljs-language="html">
+<button type="button" class="btn btn-default" ng-click="vm.topPop($event)"><span>Top</span></button>
+</div>
+<div class="highlight" hljs hljs-language="javascript">
+constructor($scope, Popconfirm) {
+  'ngInject';
+  this.$scope = $scope;
+  this.Popconfirm = Popconfirm;
+}
+
+topPop(e) {
+  this.Popconfirm.pop({
+    title: '确定要删除top吗?',
+    placement: 'top',
+    okText: '确定',
+    cancelText: '取消'
+  }, e).then(function () {
+    alert('点了确定');
+  }, function () {
+    alert('点了取消');
+  });
+}
+</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Basic_Usage'|translate}}</h2>
+	<p><strong>pop(config)</strong> - {{'PopConfirmUse'|translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>title</td>
+			<td>component title</td>
+			<td>string</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+		<tr>
+			<td>placement</td>
+			<td>position of component</td>
+			<td>string</td>
+			<td>top / left / right / bottom</td>
+			<td>top</td>
+		</tr>
+		<tr>
+			<td>okText</td>
+			<td>text with 'ok'</td>
+			<td>string</td>
+			<td>-</td>
+			<td>确定</td>
+		</tr>
+		<tr>
+			<td>cancelText</td>
+			<td>text with 'cancel'</td>
+			<td>string</td>
+			<td>-</td>
+			<td>取消</td>
+		</tr>
+		</tbody>
+	</table>
+</section>

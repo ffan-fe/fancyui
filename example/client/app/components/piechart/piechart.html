@@ -1,0 +1,107 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+	<p>{{'Install_FancyUI'|translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+import piechartComponent from './piechart.component';
+import {Charts} from 'fancyui';
+
+export default angular.module('pieChart', [
+  Charts.name
+])
+.component('pieChart', piechartComponent);</div>
+</div>
+
+<h2>{{'Example'|translate}}</h2>
+
+<div class="example-block" style="margin-top: 30px">
+	<div class="bs-example">
+		<div class="col-md-4 echarts-container">
+			<ng-echarts class="echarts" ec-config="vm.pieConfig" ec-option="vm.pieOption" ></ng-echarts>
+		</div>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block" >
+<div class="highlight" hljs hljs-language="html">
+<ng-echarts class="echarts" ec-config="vm.pieConfig" ec-option="vm.pieOption" ></ng-echarts></div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block" >
+<div class="highlight" hljs hljs-language="javascript">
+let self = this;
+self.pieConfig = {
+  theme: 'default',
+  dataLoaded: true
+};
+
+self.pieOption = {
+  tooltip: {
+  trigger: 'item',
+  formatter: "{a} <br/>{b} : {c} ({d}%)"
+},
+legend: {
+  orient: 'vertical',
+  x: '65%',
+  top: '25%',
+  data: ['正常', '断开', '等待'],
+  formatter: function (name) {
+    var oa = self.pieOption.series[0].data;
+    for (var i = 0; i < self.pieOption.series[0].data.length; i++) {
+      if (name == oa[i].name) {
+        return name + ':' + oa[i].value + '个';
+      }
+    }
+  }
+},
+color: ['#bdea75', '#fe5454', '#faba3c'],
+series: [
+  {
+    name: '比例分析',
+    type: 'pie',
+    radius: '55%',
+    center: ['35%', '50%'],
+    data: [
+    {
+      value: '2',
+      name: '正常'
+    },
+    {
+      value: '2',
+      name: '断开'
+    },
+    {
+      value: '2',
+      name: '等待'
+    }],
+    itemStyle: {
+      normal: {
+        label: {
+          show: false,
+          formatter: '{b} : {c} ({d}%)'
+        }
+      },
+      labelLine: {
+        show: true
+      }
+    }
+}]
+</div>
+</div>

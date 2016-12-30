@@ -1,0 +1,26 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+</section>
+
+<section class="intro-content">
+	<p>{{'Project_file' | translate}}</p>
+</section>
+
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="html">
+|- client/
+  |- app/
+    |- app.js ------------------------ App entry file
+    |- app.html ---------------------- App view
+      |- common/ --------------------- Common component(like header, menu etc.)
+      |- components/ ----------------- Components
+      |-router/ ---------------------- Router folder
+        |-routerConfig.js/ ----------- Router configuration file
+|-.babelrc --------------------------- Babel configuration file
+|-custom.env.config.js --------------- Project's configuration file(proxy setting etc.)
+|-gulpfile.babel.js ------------------ gulp file
+|-webpack.config.js ------------------ base webpack config file
+|-webpack.dev.config.js -------------- dev webpack config file
+|-webpack.dist.config.js ------------- production webpack config file
+</div>
+</div>

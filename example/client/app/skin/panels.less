@@ -1,0 +1,28 @@
+/**
+ * Panel 样式
+ * @author fengpeng
+ */
+
+.panel {
+	border: none;
+	border-radius: @panel-border-radius;
+	margin-bottom: @basic-container-margin-bottom;
+	border: 1px solid @panel-default-border;
+	.panel-heading {
+		background-color: @panel-header-bg-color;
+		border-color: @panel-default-border;
+		color: @panel-header-text-color;
+		.panel-title {
+			font-weight: @panel-header-title-weight;
+			font-size: 14px;
+		}
+	}
+	.panel-body {
+		padding: @panel-padding;
+	}
+	.panel-footer {
+		background-color: @panel-footer-bg-color;
+		padding: 10px @panel-padding;
+		text-align: right;
+	}
+}
