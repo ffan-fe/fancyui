@@ -7,7 +7,7 @@ module.exports = {
 	/**
 	 * 要发布的sop项目路径
 	 */
-	distPath: '../../github/ffan-fe.github.io/',
+	distPath: '../../../github/ffan-fe.github.io/',
 	/**
 	 * 要过滤的api, 解决跨域的, 根据项目的情况改一下
 	 */

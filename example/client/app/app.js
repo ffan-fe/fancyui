@@ -54,8 +54,8 @@ angular.module('app', [
 	})
 	.config(function($translateProvider){
 		"ngInject";
-		console.log(new ResourceManager('en-us').extract())
-		console.log(new ResourceManager('zh-cn').extract())
+		//console.log(new ResourceManager('en-us').extract())
+		//console.log(new ResourceManager('zh-cn').extract())
 		$translateProvider
 				.translations('en-us',new ResourceManager('en-us').extract())
 				.translations('zh-cn',new ResourceManager('zh-cn').extract());

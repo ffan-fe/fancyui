@@ -30,3 +30,8 @@ gulp.task('component', () => {
     }))
     .pipe(gulp.dest(destPath));
 });
+
+gulp.task('build',()=>{
+  gulp.src('lib/**')
+    .pipe(gulp.dest('example/node_modules/fancyui/lib'))
+})
