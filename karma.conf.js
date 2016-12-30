@@ -18,7 +18,7 @@ module.exports = function (config) {
         pattern:'node_modules/angular-mocks/angular-mocks.js'
       },
       {
-        pattern: 'lib/badge/badge.spec.js', watched: false 
+        pattern: 'lib/**/**.spec.js', watched: false 
       }
     ],
 
@@ -37,7 +37,7 @@ module.exports = function (config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: { 'lib/badge/badge.spec.js': ['webpack', 'sourcemap','coverage'] },
+    preprocessors: { 'lib/**/**.spec.js': ['webpack', 'sourcemap','coverage'] },
     
     webpack: {
       devtool: 'inline-source-map',
