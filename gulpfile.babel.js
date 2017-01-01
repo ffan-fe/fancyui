@@ -30,7 +30,8 @@ gulp.task('component', () => {
   let gulpLibs = gulp.src(path.join(__dirname, 'generator', 'lib/**/*.**'))
     .pipe(template({
       name: name,
-      upCaseName: cap(name)
+      upCaseName: cap(name),
+      dateTime:new Date()
     }))
     .pipe(rename((path) => {
       path.basename = path.basename.replace('temp', name);
@@ -40,7 +41,8 @@ gulp.task('component', () => {
   let gulpComponents = gulp.src(path.join(__dirname, 'generator', 'example/component/*.**'))
     .pipe(template({
       name: name,
-      upCaseName: cap(name)
+      upCaseName: cap(name),
+      dateTime:new Date()
     }))
     .pipe(rename((path) => {
       path.basename = path.basename.replace('temp', name);

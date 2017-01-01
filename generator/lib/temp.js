@@ -2,7 +2,7 @@
  * @description xxxx
  *
  * @author XXXXX@wandan.cn
- * @date 2016-12-31
+ * @date <%= dateTime %>
  * @example: http://www.fancyui.org/#/zh-cn/component/<%= name %>
  */
 
