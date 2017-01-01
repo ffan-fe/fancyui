@@ -1,4 +1,4 @@
-var webpack = require('webpack');
+var config = 
 
 module.exports = function (config) {
   config.set({
@@ -12,18 +12,15 @@ module.exports = function (config) {
     // list of files/patterns to load in the browser
     files: [
       {
-        pattern:'node_modules/angular/angular.js'
+        pattern: 'node_modules/angular/angular.js'
       },
       {
-        pattern:'node_modules/angular-mocks/angular-mocks.js'
+        pattern: 'node_modules/angular-mocks/angular-mocks.js'
       },
       {
-        pattern: 'lib/**/**.spec.js', watched: false 
+        pattern: 'lib/**/**.spec.js', watched: false
       }
     ],
-
-    // files to exclude
-    exclude: [],
 
     plugins: [
       require("karma-chai"),
@@ -37,26 +34,32 @@ module.exports = function (config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: { 'lib/**/**.spec.js': ['webpack', 'sourcemap','coverage'] },
-    
+    preprocessors: { 
+      //'lib/**/!(*.spec).js':['webpack', 'sourcemap', 'coverage']
+      'lib/**/**.spec.js': ['webpack', 'sourcemap', 'coverage'] 
+    },
+
     webpack: {
       devtool: 'inline-source-map',
       module: {
         loaders: [
-          { test: /\.js/, exclude: [/app\/bin/, /node_modules/], loader: 'babel' },
+          { test: /\.js/, exclude: [/app\/bin/, /node_modules/], loader: 'babel-loader?cacheDirectory' },
           { test: /\.html$/, loader: 'raw' },
           { test: /\.less$/, loader: 'style!css!less' },
           { test: /\.css$/, loader: 'style!css' }
         ]
       }
     },
+
     coverageReporter: {
       type: 'html',
       dir: 'coverage/'
     },
+
     webpackServer: {
       noInfo: true // prevent console spamming when running in Karma!
     },
+
     reporters: ['mocha', 'coverage'],
 
     // web server port

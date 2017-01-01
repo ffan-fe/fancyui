@@ -5,6 +5,7 @@ import gutil from 'gulp-util';
 import rename from 'gulp-rename';
 import gulpIf from 'gulp-if';
 import yargs    from 'yargs';
+import rimraf   from 'rimraf';
 
 'use strict';
 
@@ -32,6 +33,13 @@ gulp.task('component', () => {
 });
 
 gulp.task('build',()=>{
-  gulp.src('lib/**')
-    .pipe(gulp.dest('example/node_modules/fancyui/lib'))
+  
+  rimraf('example/node_modules/fancyui/lib/**',
+    ()=>{
+      gulp.src('lib/**')
+      .pipe(gulp.dest('example/node_modules/fancyui/lib'))
+    }
+  );
+
+  
 })
