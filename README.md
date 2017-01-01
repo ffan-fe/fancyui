@@ -1,18 +1,46 @@
 # Fancyui
 
-组件库, 具体参见:http://www.fancyui.org/#/zh-cn/component/install
+An angular(1.5.X) component's lib, please see http://www.fancyui.org/ for detail.
 
 
-### 上手须知
+## Installing
 
-1. 基于angular
-2. 基于Bootstrap
-3. 使用ES6 + Babel
+**NPM**
+Install the current stable release:
+```
+npm install fancyui --save
+```
 
-所有的组件以文件夹形式供应，并且入口是index.js ,比如 Button组件
+## Basic usage
+
+Thers is the mature fancyui solution(http://www.fancyui.org/#/zh-cn/component/install) base on Angular(1.5.x).
+
+1.**Install ng-start-cli**
+
+Install the current stable release:
+```
+npm install ng-start-cli -g -d 
+```
+
+2.**Create project with ng-start-cli**
+```
+ng-start-cli init
+```
+
+3.**Import fancyui**
+```
+import {Button} from fancyui;
+
+angular.module('buttondemo',[
+  Button.Name
+]);
 
 ```
-.
+
+## Want to contribute?
+See the [contributing](CONTRIBUTING.md) guidelines.
+
+```
 └── Button                    component's folder
     ├── index.js  			      like export angular.module('bp.button',[]);
     ├── Button.component.js   component file
