@@ -16,17 +16,18 @@ npm install fancyui --save
 Thers is the mature fancyui solution(http://www.fancyui.org/#/zh-cn/component/install) base on Angular(1.5.x).
 
 1.**Install ng-start-cli**
+
 Install the current stable release:
 ```
 npm install ng-start-cli -g -d 
 ```
 
-2.**Create project with ng-start-cli **
+2.**Create project with ng-start-cli**
 ```
 ng-start-cli init
 ```
 
-3.**Import fancyui **
+3.**Import fancyui**
 ```
 import {Button} from fancyui;
 
