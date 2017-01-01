@@ -35,7 +35,7 @@ gulp.task('component', () => {
     .pipe(rename((path) => {
       path.basename = path.basename.replace('temp', name);
     }))
-    .dest(gulp.dest(destLibPaths));
+    .pipe(gulp.dest(destLibPaths));
   
   let gulpComponents = gulp.src(path.join(__dirname, 'generator', 'example/component/*.**'))
     .pipe(template({
@@ -45,7 +45,7 @@ gulp.task('component', () => {
     .pipe(rename((path) => {
       path.basename = path.basename.replace('temp', name);
     }))
-    .dest(gulp.dest(destComponentsPath));
+    .pipe(gulp.dest(destComponentsPath));
 
   return merge(gulpLibs,gulpComponents);
     
