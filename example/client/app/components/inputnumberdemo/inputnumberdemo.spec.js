@@ -3,7 +3,7 @@ import InputnumberdemoController from './inputnumberdemo.controller';
 import InputnumberdemoComponent from './inputnumberdemo.component';
 import InputnumberdemoTemplate from './inputnumberdemo.html';
 
-describe('Inputnumberdemo', () => {
+describe('InputNumber', () => {
   let $rootScope, makeController;
 
   beforeEach(window.module(InputnumberdemoModule.name));

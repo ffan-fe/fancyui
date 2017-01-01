@@ -20,7 +20,6 @@ gulp.task('component', () => {
   const name = yargs.argv.name;
   const parentPath = yargs.argv.parent || '';
   const destPath = path.join(resolveToComponents(), parentPath, name);
-
   return gulp.src(path.join(__dirname, 'generator', 'component/**/*.**'))
     .pipe(template({
       name: name,
