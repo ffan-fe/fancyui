@@ -26,11 +26,3 @@ npm test
 
 ## Want to contribute?
 See the [contributing](CONTRIBUTING.md) guidelines.
-
-```
-└── Button                    component's folder
-    ├── index.js  			      like export angular.module('bp.button',[]);
-    ├── Button.component.js   component file
-    ├── Button.less 				  styles
-    └── Button.spec.js				unit test
-```
