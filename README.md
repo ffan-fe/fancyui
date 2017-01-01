@@ -5,36 +5,23 @@ An angular(1.5.X) component's lib, please see http://www.fancyui.org/ for detail
 
 ## Installing
 
-**NPM**
-Install the current stable release:
+Install the lib node_modules and example node_modules:
 ```
-npm install fancyui --save
-```
-
-## Basic usage
-
-Thers is the mature fancyui solution(http://www.fancyui.org/#/zh-cn/component/install) base on Angular(1.5.x).
-
-1.**Install ng-start-cli**
-
-Install the current stable release:
-```
-npm install ng-start-cli -g -d 
+npm i -d ;
+cd example ;
+npm i -d ;
 ```
 
-2.**Create project with ng-start-cli**
+## Start Example
+
 ```
-ng-start-cli init
+npm run dev
 ```
 
-3.**Import fancyui**
+## Test
+
 ```
-import {Button} from fancyui;
-
-angular.module('buttondemo',[
-  Button.Name
-]);
-
+npm test
 ```
 
 ## Want to contribute?
