@@ -5,7 +5,7 @@ An angular(1.5.X) component's lib, please see http://www.fancyui.org/ for detail
 
 ## Installing
 
-Install the lib node_modules and example node_modules:
+Install the node_modules and **example** node_modules:
 ```
 npm i -d ;
 cd example ;
