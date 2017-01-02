@@ -7,27 +7,25 @@
  */
 
 
-import <%= upCaseName %>Module from './<%= name %>'
-import <%= upCaseName %>Controller from './<%= name %>.controller';
-import <%= upCaseName %>Component from './<%= name %>.component';
-import <%= upCaseName %>Template from './<%= name %>.html';
+import <%= upCaseName %>Module from './index';
 
 class ElementFinder {
   constructor(element) {
     this.element = angular.element(element)[0];
   }
+
+  controller() {
+    return angular.element(this.element).scope().$$childHead;
+  }
 }
 
 describe('<%= upCaseName %>', () => {
-  let $rootScope, makeController,$compile;
+  let $rootScope,$compile;
 
   beforeEach(window.module(<%= upCaseName %>Module.name));
   beforeEach(inject((_$rootScope_,_$compile_) => {
-    $rootScope = _$rootScope_;
+    $rootScope = _$rootScope_.$new();
     $compile = _$compile_;
-    makeController = () => {
-      return new <%= upCaseName %>Controller();
-    };
   }));
 
   describe('测试组件', () => {
