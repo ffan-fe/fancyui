@@ -4,7 +4,8 @@
 			<a href="/"><img style="width:86px;" src="{{vm.logoImg}}"></a>
 		</h1>
 		<ul class="nav">
-			<li class="nav-item" ng-class={"active":vm.isComponentPage}>Component</li>
+			<li class="nav-item" ng-class={"active":vm.isComponentPage}>{{'Component'|translate}}</li>
+			<li class="nav-item" ng-click="vm.redirect('https://github.com/ffan-fe/fancyui')" >{{'Github'|translate}}</li>
 			<li class="nav-item">
 				<span ng-class={"active":vm.lang==='zh-cn'} ng-click="vm.changeLanguage('zh-cn')">
 					中文

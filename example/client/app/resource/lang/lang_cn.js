@@ -102,4 +102,5 @@ export default Object.assign(_defaultLang, {
   PopConfirmDesc:'目标元素的操作需要用户进一步的确认时，在目标元素附近弹出浮层提示，交互形式更轻量。',
   PopConfirmUse:'此方法会返回Promise, 其中resolve表明用户点击了确认按钮; reject表明用户点击了取消按钮;',
   HintDesc:'悬浮出现在页面右上角，显示全局的通知提醒消息。',
+  Component:'组件文档'
 });

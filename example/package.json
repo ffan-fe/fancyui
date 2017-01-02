@@ -15,7 +15,7 @@
     "bootstrap": "^3.3.7",
     "jquery": "^2.2.2",
     "lodash": "^3.10.1",
-    "fancyui": "^2.1.4-beta.1",
+    "fancyui": "^2.1.4-beta.2",
     "ng-table": "^3.0.1",
     "normalize.css": "^3.0.3",
     "oclazyload": "^1.0.9",

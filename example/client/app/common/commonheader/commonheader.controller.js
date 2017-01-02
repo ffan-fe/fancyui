@@ -3,14 +3,18 @@ import logoImg from './images/fancyui.png';
 'use strict';
 
 export default class commonHeaderController {
-	constructor($scope, $document, $state, $translate) {
+	constructor($scope, $document, $state, $translate,$window) {
 		"ngInject";
 		this.$scope = $scope;
 		this.$document = $document;
 		this.logoImg = logoImg;
 		this.$state = $state;
 		this.$translate = $translate;
-		
+		this.$window = $window;
+	}
+
+	redirect(url){
+		this.$window.open(url);
 	}
 
 	changeLanguage(key) {
