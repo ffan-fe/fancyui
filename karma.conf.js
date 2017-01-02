@@ -44,9 +44,9 @@ module.exports = function (config) {
       module: {
         loaders: [
           { test: /\.js/, exclude: [/app\/bin/, /node_modules/], loader: 'babel-loader?cacheDirectory' },
-          { test: /\.html$/, loader: 'raw' },
-          { test: /\.less$/, loader: 'style!css!less' },
-          { test: /\.css$/, loader: 'style!css' }
+          { test: /\.html$/, loader: 'raw-loader' },
+          { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
+          { test: /\.css$/, loader: 'style-loader!css-loader' }
         ]
       }
     },

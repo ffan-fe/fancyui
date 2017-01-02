@@ -16,7 +16,6 @@ import 'angular-busy/dist/angular-busy';
 import 'angular-busy/angular-busy.css';
 import ffanRouter from './router/router';
 
-import bpAjax from 'bp-ajax';
 import './demo.css';
 import requestHandleFunc from './request.js'
 import responseHandleFunc from './response.js'
@@ -31,7 +30,6 @@ angular.module('app', [
 		ffanRouter.name,
 		Common.name,
 		Components.name,
-		bpAjax.name,
 		/** loading效果  */
 		'cgBusy',
 		/** 翻译模块 */

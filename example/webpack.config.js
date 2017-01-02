@@ -31,11 +31,11 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.js$/, exclude: [/app\/lib/, /node_modules\/(?!(fancyui)\/).*/], loader: 'ng-annotate!babel' },
+      { test: /\.js$/, exclude: [/app\/lib/, /node_modules\/(?!(fancyui)\/).*/], loader: 'ng-annotate!babel-loader' },
       //{ test: /\.js$/, exclude: [/app\/lib/, /node_modules/], loader: 'babel' },
-      { test: /\.html$/, loader: 'raw' },
-      { test: /\.less$/, loader: 'style!css!less' },
-      { test: /\.css$/, loader: 'style!css' },
+      { test: /\.html$/, loader: 'raw-loader' },
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
       // IMAGE
       {
         test: /.(gif|jpg|png)$/,

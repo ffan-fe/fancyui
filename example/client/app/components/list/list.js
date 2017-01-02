@@ -1,9 +1,7 @@
 import listComponent from './list.component';
-import bpAjax from 'bp-ajax';
 import {Template} from 'fancyui';
 
 export default angular.module('list', [
-		bpAjax.name,
 		Template.name
 	])
 	/**

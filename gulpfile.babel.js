@@ -3,7 +3,6 @@ import template from 'gulp-template';
 import gulp from 'gulp';
 import gutil from 'gulp-util';
 import rename from 'gulp-rename';
-import gulpIf from 'gulp-if';
 import yargs    from 'yargs';
 import rimraf   from 'rimraf';
 import merge    from 'merge-stream';
