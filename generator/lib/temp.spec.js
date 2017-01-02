@@ -12,6 +12,12 @@ import <%= upCaseName %>Controller from './<%= name %>.controller';
 import <%= upCaseName %>Component from './<%= name %>.component';
 import <%= upCaseName %>Template from './<%= name %>.html';
 
+class ElementFinder {
+  constructor(element) {
+    this.element = angular.element(element)[0];
+  }
+}
+
 describe('<%= upCaseName %>', () => {
   let $rootScope, makeController,$compile;
 
