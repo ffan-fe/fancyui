@@ -8,9 +8,9 @@
 
 import <%= name %>Component from './<%= name %>.component';
 
-let <%= name %>Module = angular.module('<%= name %>', [
+let <%= name %>Module = angular.module('f-<%= name %>', [
 ])
 
-.component('<%= name %>', <%= name %>Component);
+.component('f<%= upCaseName %>', <%= name %>Component);
 
 export default <%= name %>Module;
