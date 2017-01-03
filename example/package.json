@@ -13,9 +13,9 @@
     "angular-ui-router": "^0.2.15",
     "angular-ui-tree": "2.22.0",
     "bootstrap": "^3.3.7",
+    "fancyui": "^2.1.4-beta.2",
     "jquery": "^2.2.2",
     "lodash": "^3.10.1",
-    "fancyui": "^2.1.4-beta.2",
     "ng-table": "^3.0.1",
     "normalize.css": "^3.0.3",
     "oclazyload": "^1.0.9",
@@ -32,7 +32,6 @@
     "color": "^1.0.3",
     "connect-history-api-fallback": "^1.1.0",
     "css-loader": "^0.19.0",
-    
     "file-loader": "^0.8.5",
     "fs-walk": "0.0.1",
     "gulp": "^3.9.0",
