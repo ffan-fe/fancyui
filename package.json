@@ -4,7 +4,7 @@
   "description": "angular ui components",
   "main": "./index.js",
   "scripts": {
-    "dev": "gulp build:demo & cd example && gulp",
+    "dev": "gulp build:demo & cd example && yarn && gulp",
     "prepublish": "npm test",
     "test": "karma start"
   },
