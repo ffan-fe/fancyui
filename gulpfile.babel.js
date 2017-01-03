@@ -53,10 +53,6 @@ gulp.task('component', () => {
 });
 
 gulp.task('build:demo',()=>{
-  rimraf('example/node_modules/fancyui/lib/**',
-    ()=>{
-      gulp.src('lib/**')
+  return gulp.src('lib/**')
       .pipe(gulp.dest('example/node_modules/fancyui/lib'))
-    }
-  );
 })
