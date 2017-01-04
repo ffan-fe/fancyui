@@ -1,16 +1,29 @@
-f-select{
+
+.f-select{
   display: inline-block;
   position: relative;
-  
+
   .f-input{
     position: relative;
     font-size: 14px;
     display: inline-block;
     width: 100%;
+
+    &.is-disabled{
+      .f-input_inner{
+        color:#bbb;
+        border-color:#d3dce6;
+        background-color: #eff2f7;
+        cursor: not-allowed;
+        &:hover{
+          border-color:#d3dce6;
+        }
+      }
+      
+    }
+
     .f-input_inner{
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
+      cursor: pointer;
       background-color: #fff;
       background-image: none;
       border-radius: 4px;
@@ -25,10 +38,13 @@ f-select{
       padding: 3px 10px;
       transition: border-color .2s cubic-bezier(.645,.045,.355,1);
       width: 100%;
+      &:hover{
+        border-color:#8492a6
+      }
     }
+    
 
     .f-input_icon{
-      speak: none;
       font-style: normal;
       font-weight: 400;
       font-variant: normal;
@@ -49,17 +65,13 @@ f-select{
       line-height: 36px;
       top: 50%;
       cursor: pointer;
-
-      &.isActive{
-        transform: translateY(-50%)
-      }
     }
-    
-
   }
 
+
   .f-select-dropdown{
-    min-width: 240px;
+    display: none;
+    min-width: 340px;
     position: absolute;
     z-index: 1001;
     border: 1px solid #d3dce6;
@@ -74,13 +86,13 @@ f-select{
       position: relative;
 
       .f-select-dropdown_wrap{
+        max-height: 340px;
         overflow: scroll;
       }
       ::-webkit-scrollbar{
         width: 0;
         height: 0;
       }
-      
 
       .f-scrollbar_bar{
         position: absolute;
@@ -120,12 +132,8 @@ f-select{
             line-height: 30px;
           }
 
-          .f-select-group{
-            margin:0;
-            padding: 0;
-
-            .f-select-dropdown_item{
-              
+          .f-select-dropdown_item{
+              cursor: pointer;
               font-size: 14px;
               padding: 8px 10px 8px 20px;
               position: relative;
@@ -136,12 +144,41 @@ f-select{
               height: 36px;
               line-height: 1.5;
               box-sizing: border-box;
-              cursor: pointer;
-            }
+              &:hover{
+                background-color:#e5e9f2
+              }
+
+              &.active{
+                background-color: #20a0ff;
+                color:#fff;
+                &:hover{
+                  background-color: #1d8ce0;
+                }
+              }
+              
+          }
+
+          .f-select-group{
+            margin:0;
+            padding: 0;
           }
         }
       }
-      
+    }
+  }
+  
+  &.active{
+    .f-select-dropdown{
+      display: block;
+    }
+
+    .f-input{
+      .f-input_inner{
+        border-color:#20a0ff;
+      }
+      .f-input_icon{
+        transform: translateY(-50%)
+      }
     }
   }
 }

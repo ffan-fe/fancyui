@@ -1,10 +1,34 @@
-<div class="f-select">
-  <div class="f-input">
+<div ng-class="{'f-select':true,'active':vm.active}" >
+  <div class="f-input" ng-class="{'is-disabled':vm.disabled}" ng-click="vm.click();">
     <i class="f-input_icon glyphicon glyphicon-triangle-top"></i>
-    <input type="text" placeholder="请选择" readonly="readonly" autocomplete="off" class="f-input_inner" />
+    <input type="text" placeholder="请选择" 
+        ng-disabled="vm.disabled"
+        readonly="readonly" autocomplete="off" class="f-input_inner"
+        value={{vm.ngModel.name}} />
   </div>
 
+  <div class="f-select-dropdown">
+    <div class="f-scrollbar">
+      <div class="f-select-dropdown_wrap ">
+        <ul class="f-scrollbar_view ">
+          <ul class="f-select-group_wrap" ng-repeat="item in vm.dataArray">
+            <li ng-if="vm.isGroup" class="f-select-group_title">{{item.title}}</li>
+            <li>
+              <ul class="f-select-group" >
+                <li class="f-select-dropdown_item" 
+                  ng-class="{'f-select-dropdown_item':true,'active':option.active}"
+                  ng-click="vm.itemSelected(option)"
+                  ng-repeat="option in item.options"><span>{{option.name}}</span></li>
+              </ul>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+  
 
+  <!--
   <div class="f-select-dropdown">
     <div class="f-scrollbar">
       <div class="f-select-dropdown_wrap ">
@@ -24,6 +48,12 @@
               <ul class="f-select-group">
                 <li class="f-select-dropdown_item"><span>成都</span></li>
                 <li class="f-select-dropdown_item"><span>深圳</span></li>
+                <li class="f-select-dropdown_item"><span>成都</span></li>
+                <li class="f-select-dropdown_item"><span>深圳</span></li>
+                <li class="f-select-dropdown_item"><span>成都</span></li>
+                <li class="f-select-dropdown_item"><span>深圳</span></li>
+                <li class="f-select-dropdown_item"><span>成都</span></li>
+                <li class="f-select-dropdown_item"><span>深圳</span></li>
                 <li class="f-select-dropdown_item"><span>广州</span></li>
                 <li class="f-select-dropdown_item"><span>大连</span></li>
               </ul>
@@ -33,13 +63,10 @@
         </ul>
       </div>
 
-      <div class="f-scrollbar_bar is-horizontal">
-        <div class="f-scrollbar_thumb" style="transform: translateX(0%);"></div>
-      </div>
       <div class="f-scrollbar_bar is-vertical">
         <div class="f-scrollbar_thumb" style="transform: translateY(5.10949%); height: 95.1389%;"></div>
       </div>
     </div>
   </div>
-
+-->
 </div>

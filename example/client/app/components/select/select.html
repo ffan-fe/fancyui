@@ -28,7 +28,14 @@ npm install fancyui --save</div>
 <h2>{{'Example'|translate}}</h2>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
-		<f-select name="" id=""></f-select>
+		<f-select
+			is-group="true"
+			is-remote="false"
+			data="vm.data" 
+			ng-model="vm.city"
+			></f-select>
+
+		<button ng-click="vm.click()" />
 	</div>
 </div>
 
