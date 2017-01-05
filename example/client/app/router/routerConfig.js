@@ -461,5 +461,18 @@ export default [
 		},
 		hideMenu:true,
 		hideHeader:true
+	},
+	{
+		name: 'menu',
+    moduleName:{
+      'en-us':'Menu',
+      'zh-cn':'导航菜单'
+    },
+		url: "/component/menu",
+		template: '<menu></menu>',
+		lazyload: require("bundle?lazy&name=home!../components/menu/menu.js"),
+		tracking: {
+			key: 'menu'
+		}
 	}
 ]
