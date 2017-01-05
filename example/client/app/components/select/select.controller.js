@@ -12,20 +12,20 @@ export default class SelectController {
     this.$state = $state;
     this.name = 'select';
 
-    this.city = {
+    this.cityGroup = {
       id: '1001',
       label: 'bjtz',
       name: '北京通州万达广场'
     };
 
-    this.data = [
+    this.dataGroup = [
       {
         title: '热门广场',
         options: [{
-            id: '1001',
-            label: 'bjtz',
-            name: '北京通州万达广场'
-          },
+          id: '1001',
+          label: 'bjtz',
+          name: '北京通州万达广场'
+        },
           {
             id: '1002',
             label: 'shjq',
@@ -51,9 +51,37 @@ export default class SelectController {
           }]
       }
     ]
+
+    this.city = {};
+    this.data = [
+      {
+        id: '1001',
+        label: 'bjtz',
+        name: '北京通州万达广场'
+      },
+      {
+        id: '1002',
+        label: 'shjq',
+        name: '上海江桥万达广场'
+      },
+      {
+        id: '1003',
+        label: 'shzp',
+        name: '上海周浦万达广场'
+      }, {
+        id: '1004',
+        label: 'hf',
+        name: '合肥万达广场'
+      },
+      {
+        id: '1005',
+        label: 'hf',
+        name: '武汉万达广场'
+      }
+    ]
   }
 
-  click(){
+  click() {
     console.log(this.city);
   }
 }

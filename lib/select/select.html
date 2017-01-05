@@ -8,7 +8,7 @@
   </div>
 
   <div class="f-select-dropdown">
-    <div class="f-scrollbar">
+    <div class="f-scrollbar" ng-if="vm.dataArray && vm.dataArray.length>0">
       <div class="f-select-dropdown_wrap ">
         <ul class="f-scrollbar_view ">
           <ul class="f-select-group_wrap" ng-repeat="item in vm.dataArray">
@@ -25,48 +25,7 @@
         </ul>
       </div>
     </div>
-  </div>
-  
 
-  <!--
-  <div class="f-select-dropdown">
-    <div class="f-scrollbar">
-      <div class="f-select-dropdown_wrap ">
-        <ul class="f-scrollbar_view " >
-          <ul class="f-select-group_wrap">
-            <li class="f-select-group_title">热门城市</li>
-            <li>
-              <ul class="f-select-group">
-                <li class="f-select-dropdown_item hover"><span>上海</span></li>
-                <li class="f-select-dropdown_item"><span>北京</span></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="f-select-group_wrap">
-            <li class="f-select-group_title">城市名</li>
-            <li>
-              <ul class="f-select-group">
-                <li class="f-select-dropdown_item"><span>成都</span></li>
-                <li class="f-select-dropdown_item"><span>深圳</span></li>
-                <li class="f-select-dropdown_item"><span>成都</span></li>
-                <li class="f-select-dropdown_item"><span>深圳</span></li>
-                <li class="f-select-dropdown_item"><span>成都</span></li>
-                <li class="f-select-dropdown_item"><span>深圳</span></li>
-                <li class="f-select-dropdown_item"><span>成都</span></li>
-                <li class="f-select-dropdown_item"><span>深圳</span></li>
-                <li class="f-select-dropdown_item"><span>广州</span></li>
-                <li class="f-select-dropdown_item"><span>大连</span></li>
-              </ul>
-            </li>
-          </ul>
-          
-        </ul>
-      </div>
-
-      <div class="f-scrollbar_bar is-vertical">
-        <div class="f-scrollbar_thumb" style="transform: translateY(5.10949%); height: 95.1389%;"></div>
-      </div>
-    </div>
+    <p class="f-select-dropdown_empty" ng-if="!vm.dataArray || vm.dataArray.length==0">无数据</p>
   </div>
--->
 </div>
