@@ -470,7 +470,7 @@ export default [
     },
 		url: "/component/menu",
 		template: '<menu></menu>',
-		lazyload: require("bundle?lazy&name=home!../components/menu/menu.js"),
+		lazyload: require("bundle?lazy&name=menu!../components/menu/menu.js"),
 		tracking: {
 			key: 'menu'
 		}
