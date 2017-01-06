@@ -1,7 +1,7 @@
-import fMenu from 'fancyui/lib/menu/menu.js';
+import {Menu} from 'fancyui';
 import menuComponent from './menu.component';
 export default angular.module('menuDemo', [
-    fMenu.name
+    Menu.name
   ]
 )
   .component('menu', menuComponent);
