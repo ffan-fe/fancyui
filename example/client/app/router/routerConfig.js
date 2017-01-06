@@ -439,6 +439,19 @@ export default [
 		}
 	},
 	{
+		name: 'select',
+		moduleName:{
+			'en-us':'Select',
+			'zh-cn':'Select 选择器'
+		},
+		url: "/component/select",
+		template: '<selectdemo></selectdemo>',
+		lazyload: require("bundle?lazy&name=select!../components/select/select.js"),
+		tracking: {
+			key: 'select'
+		}
+	},
+	{
 		name: 'home',
 		url: "/component/home",
 		template: '<home></home>',

@@ -1,0 +1,31 @@
+<div ng-class="{'f-select':true,'active':vm.active}" >
+  <div class="f-input" ng-class="{'is-disabled':vm.disabled}" ng-click="vm.click();">
+    <i class="f-input_icon glyphicon glyphicon-triangle-top"></i>
+    <input type="text" placeholder="请选择" 
+        ng-disabled="vm.disabled"
+        readonly="readonly" autocomplete="off" class="f-input_inner"
+        value={{vm.ngModel.name}} />
+  </div>
+
+  <div class="f-select-dropdown">
+    <div class="f-scrollbar" ng-if="vm.dataArray && vm.dataArray.length>0">
+      <div class="f-select-dropdown_wrap ">
+        <ul class="f-scrollbar_view ">
+          <ul class="f-select-group_wrap" ng-repeat="item in vm.dataArray">
+            <li ng-if="vm.isGroup" class="f-select-group_title">{{item.title}}</li>
+            <li>
+              <ul class="f-select-group" >
+                <li class="f-select-dropdown_item" 
+                  ng-class="{'f-select-dropdown_item':true,'active':option.active}"
+                  ng-click="vm.itemSelected(option)"
+                  ng-repeat="option in item.options"><span>{{option.name}}</span></li>
+              </ul>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+
+    <p class="f-select-dropdown_empty" ng-if="!vm.dataArray || vm.dataArray.length==0">无数据</p>
+  </div>
+</div>

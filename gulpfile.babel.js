@@ -52,6 +52,7 @@ gulp.task('component', () => {
   return merge(gulpLibs, gulpComponents);
 });
 
+
 gulp.task('build:demo', () => {
   return watch('lib/**')
     .pipe(gulp.dest('example/node_modules/fancyui/lib'))
