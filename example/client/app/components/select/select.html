@@ -33,7 +33,7 @@ npm install fancyui --save</div>
 			is-remote="false"
 			data="vm.dataGroup" 
 			ng-model="vm.cityGroup"
-			on-select="vm.onSelect(option)"
+			on-item-selected="vm.onSelect($item)"
 			></f-select>
 
 		<f-select
