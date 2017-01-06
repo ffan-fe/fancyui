@@ -81,6 +81,11 @@ export default class SelectController {
     ]
   }
 
+  onSelect(option){
+    console.log('option',option);
+    console.log('this',this);
+  }
+
   click() {
     console.log(this.city);
   }
