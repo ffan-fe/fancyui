@@ -41,8 +41,16 @@ npm install fancyui --save</div>
 			ng-model="vm.city"
 			></f-select>
 
-		<f-select></f-select>
+		<f-select 
+			is-remote="true"
+			ng-model="vm.city"
+			
+			remote-method="vm.getData($value)"
+			></f-select>
 
+			<f-select
+				ng-model="vm.city">
+			</f-select>
 		<button ng-click="vm.click()" />
 	</div>
 </div>

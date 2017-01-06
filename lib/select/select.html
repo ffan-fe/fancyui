@@ -3,8 +3,11 @@
     <i class="f-input_icon glyphicon glyphicon-triangle-top"></i>
     <input type="text" placeholder="请选择" 
         ng-disabled="vm.disabled"
-        readonly="readonly" autocomplete="off" class="f-input_inner"
-        value={{vm.ngModel.name}} />
+        ng-change="vm.onInputChange()"
+        ng-model="vm.inputValue"
+        ng-model-options="{debounce:vm.debounce}"
+        autocomplete="off" class="f-input_inner"
+         />
   </div>
 
   <div class="f-select-dropdown">
