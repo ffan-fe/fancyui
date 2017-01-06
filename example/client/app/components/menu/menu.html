@@ -1,0 +1,297 @@
+<section class="intro-content">
+  <h1 translate='{{vm.$state.current.name}}'></h1>
+
+  <p>{{'MenuDesc' | translate}}</p>
+</section>
+
+<section class="intro-content">
+  <h2>{{'Install' | translate}}</h2>
+
+  <p>Install fancyui</p>
+</section>
+
+<div class="example-block">
+  <div class="highlight" hljs hljs-language="bash">
+    npm install fancyui --save
+  </div>
+</div>
+
+<section class="intro-content">
+  <h2>{{'Inject_Module' | translate}}</h2>
+
+</section>
+
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="javascript">
+    import {FMenu} from 'fancyui';
+
+    export default angular.module('switchDemo', [
+    FMenu.name
+    ])
+  </div>
+</div>
+
+<!--示例-->
+<h2>{{'Example'|translate}}</h2>
+<h3>light</h3>
+<div class="example-block">
+  <div class="bs-example pop-confirm-example">
+    <f-menu default-selected-keys='vm.keys' default-open-keys='vm.openKeys' theme="light" mode="horizontal">
+      <menu-item key="mail" disabled="vm.disabled">
+        Navigation One
+      </menu-item>
+      <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
+        <menu-item-group title="Item 1">
+          <menu-item key="setting:1">Option 1</menu-item>
+          <menu-item key="setting:2">Option 2</menu-item>
+        </menu-item-group>
+      </sub-menu>
+    </f-menu>
+  </div>
+</div>
+<h3>dark</h3>
+<div class="example-block">
+  <div class="bs-example pop-confirm-example">
+    <f-menu default-selected-keys='vm.keys' default-open-keys='vm.openKeys' theme="dark" mode="horizontal">
+      <menu-item key="mail" disabled="vm.disabled">
+        Navigation One
+      </menu-item>
+      <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
+        <menu-item-group title="Item 1">
+          <menu-item key="setting:1">Option 1</menu-item>
+          <menu-item key="setting:2">Option 2</menu-item>
+        </menu-item-group>
+      </sub-menu>
+    </f-menu>
+  </div>
+</div>
+<h3>vertical</h3>
+<div class="example-block">
+  <div class="bs-example pop-confirm-example">
+    <div style="width: 240px;">
+
+      <f-menu default-selected-keys='vm.keys' default-open-keys='vm.openKeys' theme="light" mode="vertical">
+        <menu-item key="mail">
+          Navigation One
+        </menu-item>
+        <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
+          <menu-item-group title="Item 1">
+            <menu-item key="setting:1">Option 1</menu-item>
+            <menu-item key="setting:2">Option 2</menu-item>
+          </menu-item-group>
+        </sub-menu>
+      </f-menu>
+    </div>
+  </div>
+</div>
+<h3>inline</h3>
+<div class="example-block">
+  <div class="bs-example pop-confirm-example">
+    <div style="width: 240px;">
+      <f-menu default-selected-keys='vm.keys' default-open-keys='vm.openKeys' theme="light" mode="inline">
+        <menu-item key="mail">
+          Navigation One
+        </menu-item>
+        <sub-menu title='<span>Navigation one - Submenu</span>' key="submenu">
+          <menu-item-group title="Item 1">
+            <menu-item key="setting:1">Option 1</menu-item>
+            <menu-item key="setting:2">Option 2</menu-item>
+          </menu-item-group>
+        </sub-menu>
+        <sub-menu title='<span>Navigation two - Submenu</span>' key="submenu2">
+          <menu-item-group title="Item 1">
+            <menu-item key="setting:21">Option 1</menu-item>
+            <menu-item key="setting:22">Option 2</menu-item>
+          </menu-item-group>
+        </sub-menu>
+        <menu-item key="mail2">
+          Navigation Three
+        </menu-item>
+      </f-menu>
+    </div>
+  </div>
+</div>
+<h3>dark inline</h3>
+<div class="example-block">
+  <div class="bs-example pop-confirm-example">
+    <div style="width: 240px;">
+      <f-menu default-selected-keys='vm.keys' default-open-keys='vm.openKeys' theme="dark" mode="inline">
+        <menu-item key="mail">
+          Navigation One
+        </menu-item>
+        <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
+          <menu-item-group title="Item 1">
+            <menu-item key="setting:1">Option 1</menu-item>
+            <menu-item key="setting:2">Option 2</menu-item>
+          </menu-item-group>
+        </sub-menu>
+        <sub-menu title='<span>Navigation two - Submenu</span>' key="submenu2">
+          <menu-item-group title="Item 1">
+            <menu-item key="setting:21">Option 1</menu-item>
+            <menu-item key="setting:22">Option 2</menu-item>
+          </menu-item-group>
+        </sub-menu>
+        <menu-item key="mail2">
+          Navigation Three
+        </menu-item>
+      </f-menu>
+    </div>
+  </div>
+</div>
+
+<!--基础用法-->
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>View</h3>
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="html">
+    <f-menu default-selected-keys='vm.keys' default-open-keys='vm.openKeys' theme="light" mode="horizontal">
+      <menu-item key="mail" disabled="vm.disabled">
+        Navigation One
+      </menu-item>
+      <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
+        <menu-item-group title="Item 1">
+          <menu-item key="setting:1">Option 1</menu-item>
+          <menu-item key="setting:2">Option 2</menu-item>
+        </menu-item-group>
+      </sub-menu>
+    </f-menu>
+  </div>
+</div>
+
+<h3>controller</h3>
+
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="javascript">
+    this.keys = ['mail'];
+    this.openKeys = [];
+    this.disabled = true;
+  </div>
+</div>
+
+<section class="intro-content">
+  <h2>{{'Options'|translate}}</h2>
+
+  <h3>f-menu props</h3>
+  <table class="demo-table">
+    <thead>
+    <tr>
+      <th>{{'Param'|translate}}</th>
+      <th>{{'Description'|translate}}</th>
+      <th>{{'Type'|translate}}</th>
+      <th>{{'DefaultValue'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>theme</td>
+      <td>{{'MenuApiDecTheme'|translate}}</td>
+      <td>String: <code>light
+      </code><code>dark
+      </code></td>
+      <td><code>light</code></td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>{{'MenuApiDecMode'|translate}}</td>
+      <td>String: <code>vertical
+      </code> <code>horizontal
+      </code> <code>inline
+      </code></td>
+      <td><code>vertical</code></td>
+    </tr>
+    <tr>
+      <td>defaultSelectedKeys</td>
+      <td>{{'MenuApiDecDefaultSelectedKeys'|translate}}</td>
+      <td>Array</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>defaultOpenKeys</td>
+      <td>{{'MenuApiDecDefaultOpenKeys'|translate}}</td>
+      <td>Array</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>onSelect</td>
+      <td>{{'MenuApiDecOnSelect'|translate}}</td>
+      <td>Function({ item, key, selectedKeys })</td>
+      <td>none</td>
+    </tr>
+    </tbody>
+  </table>
+  <h3>menu-item props</h3>
+  <table class="demo-table">
+    <thead>
+    <tr>
+      <th>{{'Param'|translate}}</th>
+      <th>{{'Description'|translate}}</th>
+      <th>{{'Type'|translate}}</th>
+      <th>{{'DefaultValue'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>disabled</td>
+      <td>{{'MenuApiDisabled'|translate}}</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td>key</td>
+      <td>{{'MenuApiDecKey'|translate}}</td>
+      <td>String</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <h3>sub-menu props</h3>
+  <table class="demo-table">
+    <thead>
+    <tr>
+      <th>{{'Param'|translate}}</th>
+      <th>{{'Description'|translate}}</th>
+      <th>{{'Type'|translate}}</th>
+      <th>{{'DefaultValue'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>disabled</td>
+      <td>{{'MenuApiDisabled'|translate}}</td>
+      <td>Boolean</td>
+      <td><code>false</code></td>
+    </tr>
+    <tr>
+      <td>key</td>
+      <td>{{'MenuApiDecKey'|translate}}</td>
+      <td>String</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>title</td>
+      <td>{{'MenuApiDecSubMenuTitle'|translate}}</td>
+      <td>string or html</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+  <h3>item-group props</h3>
+  <table class="demo-table">
+    <thead>
+    <tr>
+      <th>{{'Param'|translate}}</th>
+      <th>{{'Description'|translate}}</th>
+      <th>{{'Type'|translate}}</th>
+      <th>{{'DefaultValue'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>title</td>
+      <td>{{'MenuApiDecItemGroupTitle'|translate}}</td>
+      <td>string or html</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>
