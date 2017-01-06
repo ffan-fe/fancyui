@@ -47,6 +47,12 @@ acorn@~2.6.4:
   version "2.6.4"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-2.6.4.tgz#eb1f45b4a43fa31d03701a5ec46f3b52673e90ee"
 
+add-dom-event-listener@^1.0.1:
+  version "1.0.1"
+  resolved "http://10.213.42.227:11222/add-dom-event-listener/-/add-dom-event-listener-1.0.1.tgz#70e74d0692b27108f9740554e0fa80a4683c2eb2"
+  dependencies:
+    object-assign "4.x"
+
 after@0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/after/-/after-0.8.1.tgz#ab5d4fb883f596816d3515f8f791c0af486dd627"
@@ -73,6 +79,10 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
+angular-animate@^1.5.9:
+  version "1.6.1"
+  resolved "http://10.213.42.227:11222/angular-animate/-/angular-animate-1.6.1.tgz#19e3b82b7392e2bbdd83af33c0af0d85437f3a14"
+
 angular-busy@^4.1.3:
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/angular-busy/-/angular-busy-4.1.3.tgz#7c4dce895fc5a4ddf1061b9ad7f986afd8cb1d78"
@@ -83,6 +93,10 @@ angular-highlightjs@^0.6.2:
   dependencies:
     angular "^1.0.1"
     highlight.js ">7.0.0"
+
+angular-sanitize@^1.6.1:
+  version "1.6.1"
+  resolved "http://10.213.42.227:11222/angular-sanitize/-/angular-sanitize-1.6.1.tgz#cacffec3199ed66297afbb1ef366ec66616b3b3f"
 
 angular-touch@^1.5.8:
   version "1.6.1"
@@ -118,7 +132,11 @@ angular-ui-tree@2.22.0:
   version "2.22.0"
   resolved "https://registry.yarnpkg.com/angular-ui-tree/-/angular-ui-tree-2.22.0.tgz#480deb09ab6cc36472e4a7a276333167363e198a"
 
-angular@1.5.0, "angular@>=1.2.26 <=1.6", angular@^1.0.1, angular@^1.0.8, angular@~1.5.0:
+angular@1.5.3:
+  version "1.5.3"
+  resolved "http://10.213.42.227:11222/angular/-/angular-1.5.3.tgz#37c2f198ae76c2d6f3717a4ecef1cddcb048af79"
+
+"angular@>=1.2.26 <=1.6", angular@^1.0.1, angular@^1.0.8, angular@~1.5.0:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/angular/-/angular-1.5.0.tgz#d96ee97ab6df6cfd0915accbee484d098adb74ec"
 
@@ -2157,16 +2175,9 @@ http-proxy-middleware@^0.13.0:
     lodash "^4.6.1"
     micromatch "^2.3.7"
 
-http-proxy@1.15.2:
+http-proxy@1.15.2, http-proxy@^1.12.0:
   version "1.15.2"
   resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.15.2.tgz#642fdcaffe52d3448d2bda3b0079e9409064da31"
-  dependencies:
-    eventemitter3 "1.x.x"
-    requires-port "1.x.x"
-
-http-proxy@^1.12.0:
-  version "1.16.2"
-  resolved "https://registry.yarnpkg.com/http-proxy/-/http-proxy-1.16.2.tgz#06dff292952bf64dbe8471fa9df73066d4f37742"
   dependencies:
     eventemitter3 "1.x.x"
     requires-port "1.x.x"
@@ -2656,7 +2667,7 @@ lodash.kebabcase@^4.0.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/lodash.kebabcase/-/lodash.kebabcase-4.1.1.tgz#8489b1cb0d29ff88195cceca448ff6d6cc295c36"
 
-lodash.keys@^3.0.0:
+lodash.keys@^3.0.0, lodash.keys@^3.1.2:
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/lodash.keys/-/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
   dependencies:
@@ -2697,13 +2708,13 @@ lodash.templatesettings@^3.0.0:
     lodash._reinterpolate "^3.0.0"
     lodash.escape "^3.0.0"
 
-lodash@>=1.3.0, lodash@^4.14.0, lodash@^4.2.0, lodash@^4.6.1:
-  version "4.17.4"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
-
-lodash@^3.1.0, lodash@^3.10.1:
+lodash@>=1.3.0, lodash@^3.1.0, lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
+
+lodash@^4.14.0, lodash@^4.2.0, lodash@^4.6.1:
+  version "4.17.4"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
 lodash@~1.0.1:
   version "1.0.2"
@@ -3042,7 +3053,7 @@ oauth-sign@~0.8.1:
   version "0.8.2"
   resolved "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
 
-object-assign@4.1.0, object-assign@^4.0.1, object-assign@^4.1.0:
+object-assign@4.1.0, object-assign@4.x, object-assign@^4.0.1, object-assign@^4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.0.tgz#7a3b3d0e98063d43f4c03f2e8ae6cd51a86883a0"
 
@@ -3978,6 +3989,12 @@ setprototypeof@1.0.2:
 sha.js@2.2.6:
   version "2.2.6"
   resolved "https://registry.yarnpkg.com/sha.js/-/sha.js-2.2.6.tgz#17ddeddc5f722fb66501658895461977867315ba"
+
+shallowequal@^0.2.2:
+  version "0.2.2"
+  resolved "http://10.213.42.227:11222/shallowequal/-/shallowequal-0.2.2.tgz#1e32fd5bcab6ad688a4812cb0cc04efc75c7014e"
+  dependencies:
+    lodash.keys "^3.1.2"
 
 sigmund@~1.0.0:
   version "1.0.1"
