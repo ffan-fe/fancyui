@@ -22,12 +22,12 @@ module.exports = {
 
     // Filename for entry points
     // Only adds hash in build mode
-    filename: '[name].bundle.js',
+    filename: '[name].min.js',
     //filename: BUILD ? '[name].[hash].js' : '[name].bundle.js',
 
     // Filename for non-entry points
     // Only adds hash in build mode
-    chunkFilename: '[name].bundle.js'
+    chunkFilename: '[name].min.js'
     //chunkFilename: BUILD ? '[name].[hash].js' : '[name].bundle.js'
   },
   module: {

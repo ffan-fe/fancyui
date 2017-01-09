@@ -4,7 +4,7 @@
   "description": "angular ui components",
   "main": "./index.js",
   "scripts": {
-    "dev": "gulp build:demo & cd example && yarn && gulp",
+    "dev": "gulp dev",
     "prepublish": "npm test",
     "test": "karma start"
   },
@@ -67,7 +67,7 @@
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
     "style-loader": "^0.12.2",
-    "webpack": "^2.2.0-rc.3",
+    "webpack": "2.1.0-beta.22",
     "webpack-hot-middleware": "^2.15.0",
     "yargs": "^3.9.0"
   },
