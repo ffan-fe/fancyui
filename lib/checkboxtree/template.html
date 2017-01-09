@@ -5,13 +5,13 @@
 </div>
 <script type="text/ng-template" id="goods_nodes_renderer.html">
   <div ui-tree-handle class="tree-node tree-node-content">
-    <a class="toggle-btn" ng-if="node[vm.config.fieldOfChildren] && node[vm.config.fieldOfChildren].length > 0" data-nodrag ng-click="toggle(this)">
+    <span class="toggle-btn" ng-if="node[vm.config.fieldOfChildren] && node[vm.config.fieldOfChildren].length > 0" data-nodrag ng-click="toggle(this)">
       <span class="glyphicon"
             ng-class="{
-          'glyphicon-chevron-right': collapsed,
-          'glyphicon-chevron-down': !collapsed
+          'glyphicon-triangle-right': collapsed,
+          'glyphicon-triangle-bottom': !collapsed
         }"></span>
-    </a>
+    </span>
     <label class="goods-node">
       <input type="checkbox"
              ng-model="node.checked"
