@@ -60,12 +60,6 @@ gulp.task('component', () => {
   return merge(gulpLibs, gulpComponents);
 });
 
-
-gulp.task('build:demo', () => {
-  return watch('lib/**')
-    .pipe(gulp.dest('example/node_modules/fancyui/lib'))
-});
-
 gulp.task('dev', () => {
   const bs = browserSync.create();
   const webpackDevConfig = require('./conf/webpack.dev.config');

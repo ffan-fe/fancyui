@@ -1,4 +1,4 @@
-import {<%= upCaseName %>} from 'fancyui';
+import <%= upCaseName %> from '../../../../lib/<%= upCaseName %>/index.js';
 
 import <%= name %>Component from './<%= name %>.component';
 export default angular.module('<%= name %>', [
