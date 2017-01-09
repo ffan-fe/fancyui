@@ -10,7 +10,7 @@ import path from 'path';
 
 module.exports = {
   devtool: 'inline-source-map',
-  entry: './examples/ui.js',
+  entry: './example/app/app.js',
   output: {
     // Absolute output directory
     path: __dirname,
@@ -35,21 +35,21 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'ng-annotate!babel',
+        loader: 'ng-annotate-loader!babel-loader'
       },
       {
         test: /\.html$/,
         exclude: /formtpl\.html$/,
-        loader: 'raw'
+        loader: 'raw-loader'
       },
-      {test: /formtpl\.html$/, loader: 'raw!ng-include-loader'},
+      {test: /formtpl\.html$/, loader: 'raw-loader!ng-include-loader'},
       {
         test: /\.less$/,
-        loader: 'style!css!less'
+        loader: 'style-loader!css-loader!less-loader'
       },
       {
         test: /\.css$/,
-        loader: 'style!css'
+        loader: 'style-loader!css-loader'
       },
       {
         test   : /\.(ttf|eot|svg|woff(2)?)(\?\S*)?$/,
@@ -57,13 +57,13 @@ module.exports = {
       },
       {
         test: /.(gif|jpg|png)$/,
-        loader: 'file?name=img-[hash].[ext]'
+        loader: 'file-loader?name=img-[hash].[ext]'
       },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './examples/index.html',
+      template: './example/index.html',
       inject: 'body',
       hash: true
     }),

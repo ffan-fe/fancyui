@@ -7,6 +7,14 @@ import yargs    from 'yargs';
 import rimraf   from 'rimraf';
 import merge    from 'merge-stream';
 import watch    from 'gulp-watch';
+import webpack from 'webpack';
+import colorsSupported from 'supports-color';
+
+import browserSync from 'browser-sync';
+import webpackDevMiddelware from 'webpack-dev-middleware';
+import webpachHotMiddelware from 'webpack-hot-middleware';
+import historyApiFallback   from 'connect-history-api-fallback';
+
 
 'use strict';
 
@@ -57,3 +65,34 @@ gulp.task('build:demo', () => {
   return watch('lib/**')
     .pipe(gulp.dest('example/node_modules/fancyui/lib'))
 });
+
+gulp.task('dev', () => {
+  const bs = browserSync.create();
+  const webpackDevConfig = require('./conf/webpack.dev.config');
+  const compiler = webpack(webpackDevConfig);
+  bs.init(
+    {
+      port: process.env.PORT || 3000,
+      server: {
+        baseDir: './example',
+        index: 'index.html'
+      },
+      files: ['example/**/*.js',
+        'example/**/*.less',
+        'example/**/*.html',
+        'lib/**/*.js',
+        'lib/**/*.less',
+        'lib/**/*.html'],
+      middleware: [
+        webpackDevMiddelware(compiler, {
+          stats: {
+            colors: colorsSupported,
+            chunks: false,
+            modules: false
+          }
+        })
+      ]
+    }
+  );
+});
+
