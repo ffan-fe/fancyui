@@ -1,7 +1,8 @@
 <div ng-class="{'f-select':true,'active':vm.active}" >
   <div class="f-input" ng-class="{'is-disabled':vm.disabled}" ng-click="vm.click();">
     <i class="f-input_icon glyphicon glyphicon-triangle-top"></i>
-    <input type="text" placeholder="请选择" 
+    <input type="text" placeholder="请选择"
+        ng-readonly="!vm.isRemote"
         ng-disabled="vm.disabled"
         ng-change="vm.onInputChange()"
         ng-model="vm.inputValue"
