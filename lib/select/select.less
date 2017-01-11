@@ -3,6 +3,13 @@
   display: inline-block;
   position: relative;
 
+  .f-select_tags{
+    position: absolute;
+    line-height:normal;
+    white-space:normal;
+    z-index:1000;
+  }
+
   .f-input{
     position: relative;
     font-size: 14px;
@@ -184,8 +191,35 @@
       .f-input_inner{
         border-color:#20a0ff;
       }
-      .f-input_icon{
-        transform: translateY(-50%)
+    }
+  }
+
+  &.is-reverse{
+    .f-input_icon{
+      transform: translateY(-50%)
+    }
+  }
+
+  &.multiple{
+    .f-select-dropdown{
+      .f-scrollbar{
+        .f-scrollbar_view{
+          .f-select-group_wrap{
+            .f-select-dropdown_item{
+              &.active{
+                color:#20a0ff;
+                background-color:#fff;
+                
+                span:after{
+                  font-family: 'Glyphicons Halflings';
+                  content:"\E013";
+                  float: right;
+                }
+
+              }
+            }
+          }
+        }
       }
     }
   }

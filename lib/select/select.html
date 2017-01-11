@@ -1,14 +1,19 @@
-<div ng-class="{'f-select':true,'active':vm.active}" >
-  <div class="f-input" ng-class="{'is-disabled':vm.disabled}" ng-click="vm.click();">
-    <i class="f-input_icon glyphicon glyphicon-triangle-top"></i>
-    <input type="text" placeholder="请选择"
-        ng-readonly="!vm.isRemote"
-        ng-disabled="vm.disabled"
-        ng-change="vm.onInputChange()"
-        ng-model="vm.inputValue"
-        ng-model-options="{debounce:vm.debounce}"
-        autocomplete="off" class="f-input_inner"
-         />
+<div ng-class="{'f-select':true,'active':vm.active,'is-reverse':'vm.isReverse','multiple':vm.isMultiple}">
+ <!-- <div class="f-select_tags" style="max-width: 208px;">
+      <span>
+        <span
+          ng-repeat="item in vm.dataArray"
+          ng-if="item.active" 
+          class="f-tag f-tag--primary">{{item.name}}<i class="f-tag_close f-icon-close"></i></span>
+      </span>
+      <input type="text"  class="f-select_input"
+      style="width: 20px; max-width: 198px;">
+  </div>-->
+  <div class="f-input" ng-class="{'is-disabled':vm.disabled}" ng-click="vm.click($event);" ng-mouseenter="vm.mouseEnter()"
+    ng-mouseleave="vm.mouseLeave()">
+    <i ng-class="{'f-input_icon':true,'glyphicon':true,'glyphicon-triangle-top':!vm.hover,'glyphicon-remove':vm.hover}"></i>
+    <input type="text" placeholder="请选择" ng-readonly="!vm.isRemote" ng-disabled="vm.disabled" ng-change="vm.onInputChange()"
+      ng-model="vm.inputValue" ng-modf-options="{debounce:vm.debounce}" autocomplete="off" class="f-input_inner" />
   </div>
 
   <div class="f-select-dropdown">
@@ -18,10 +23,8 @@
           <ul class="f-select-group_wrap" ng-repeat="item in vm.dataArray">
             <li ng-if="vm.isGroup" class="f-select-group_title">{{item.title}}</li>
             <li>
-              <ul class="f-select-group" >
-                <li class="f-select-dropdown_item" 
-                  ng-class="{'f-select-dropdown_item':true,'active':option.active}"
-                  ng-click="vm.itemSelected(option)"
+              <ul class="f-select-group">
+                <li class="f-select-dropdown_item" ng-class="{'f-select-dropdown_item':true,'active':option.active}" ng-click="vm.itemSelected(option)"
                   ng-repeat="option in item.options"><span>{{option.name}}</span></li>
               </ul>
             </li>
