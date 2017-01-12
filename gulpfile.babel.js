@@ -23,7 +23,7 @@ let resolveToLibs = (glob = '') => {
 };
 
 let resolveToComponents = (glob = '') => {
-  return path.join('example/client/app/components/', glob); // app/components/{glob}
+  return path.join('example/app/components/', glob); // app/components/{glob}
 }
 
 gulp.task('component', () => {

@@ -1,45 +1,91 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+/**
+ *
+ */
 
+var HtmlWebpackPlugin = require('html-webpack-plugin');
+var webpack = require('webpack');
+var path = require('path');
+
+'use strict';
 
 module.exports = {
-  devtool: 'source-map',
-  entry: './examples/ui.js',
+  devtool: 'inline-source-map',
+  entry: './example/app/app.js',
   output: {
-    filename: 'examples.js',
+    // Absolute output directory
+    //path: __dirname,
+    path: __dirname + '/dist',
+
+    // Output path from the view of the page
+    // Uses webpack-dev-server in development
     publicPath: '',
-    path: path.resolve(__dirname),
-    libraryTarget: 'umd'
+
+    // Filename for entry points
+    // Only adds hash in build mode
+    filename: '[name].min.js',
+    //filename: BUILD ? '[name].[hash].js' : '[name].bundle.js',
+
+    // Filename for non-entry points
+    // Only adds hash in build mode
+    chunkFilename: '[name].min.js'
+    //chunkFilename: BUILD ? '[name].[hash].js' : '[name].bundle.js'
   },
   module: {
     loaders: [
-      {test: /\.js$/, exclude: [/node_modules/], loader: 'ng-annotate!babel'},
-      {test: /\.html$/, exclude: /formtpl\.html$/, loader: 'raw'},
-      {test: /formtpl\.html$/, loader: 'raw!ng-include-loader'},
-      {test: /\.less$/, loader: 'style!css!less'},
-      {test: /\.css$/, loader: 'style!css'},
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        loader: 'ng-annotate-loader!babel-loader'
+      },
+      {
+        test: /\.html$/,
+        exclude: /formtpl\.html$/,
+        loader: 'raw-loader'
+      },
+      {test: /formtpl\.html$/, loader: 'raw-loader!ng-include-loader'},
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader'
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader'
+      },
       {
         test   : /\.(ttf|eot|svg|woff(2)?)(\?\S*)?$/,
         loader : require.resolve('file-loader')
       },
-      // IMAGE
       {
         test: /.(gif|jpg|png)$/,
-        loader: 'file?name=img-[hash].[ext]'
-      }
+        loader: 'file-loader?name=img-[hash].[ext]'
+      },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './examples/index.html',
+      template: './example/index.html',
       inject: 'body',
-      minify: false
+      hash: true
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     }),
-    new webpack.optimize.UglifyJsPlugin()
+    //new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'DEBUG': false
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: {
+
+        // You can specify all variables that should not be mangled.
+        // For example if your vendor dependency doesn't use modules
+        // and relies on global variables. Most of angular modules relies on
+        // angular global variable, so we should keep it unchanged
+        except: ['$super', '$', 'exports', 'require', 'angular', 'jQuery']
+      }
+    })
   ]
 };
