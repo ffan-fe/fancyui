@@ -1,14 +1,13 @@
 <div ng-class="{'f-select':true,'active':vm.active,'is-reverse':'vm.isReverse','multiple':vm.isMultiple}">
- <!-- <div class="f-select_tags" style="max-width: 208px;">
-      <span>
+  <div class="f-select_tags" ng-if="vm.isMultiple" style="max-width: 295px;">
+    <span>
         <span
-          ng-repeat="item in vm.dataArray"
-          ng-if="item.active" 
-          class="f-tag f-tag--primary">{{item.name}}<i class="f-tag_close f-icon-close"></i></span>
-      </span>
-      <input type="text"  class="f-select_input"
-      style="width: 20px; max-width: 198px;">
-  </div>-->
+          ng-repeat="option in vm.dataArray[0].options"
+          ng-if="option.active" 
+          class="f-tag f-tag--primary">{{option.name}}<i class="f-tag_close f-icon-close"></i></span>
+    </span>
+    <input type="text" class="f-select_input" style="width: 20px; max-width: 285px;">
+  </div>
   <div class="f-input" ng-class="{'is-disabled':vm.disabled}" ng-click="vm.click($event);" ng-mouseenter="vm.mouseEnter()"
     ng-mouseleave="vm.mouseLeave()">
     <i ng-class="{'f-input_icon':true,'glyphicon':true,'glyphicon-triangle-top':!vm.hover,'glyphicon-remove':vm.hover}"></i>
@@ -24,7 +23,7 @@
             <li ng-if="vm.isGroup" class="f-select-group_title">{{item.title}}</li>
             <li>
               <ul class="f-select-group">
-                <li class="f-select-dropdown_item" ng-class="{'f-select-dropdown_item':true,'active':option.active}" ng-click="vm.itemSelected(option)"
+                <li class="f-select-dropdown_item" ng-class="{'f-select-dropdown_item':true,'active':option.active}" ng-click="vm.itemSelected(option,$event)"
                   ng-repeat="option in item.options"><span>{{option.name}}</span></li>
               </ul>
             </li>
