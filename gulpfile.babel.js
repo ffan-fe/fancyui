@@ -23,7 +23,7 @@ let resolveToLibs = (glob = '') => {
 };
 
 let resolveToComponents = (glob = '') => {
-  return path.join('example/client/app/components/', glob); // app/components/{glob}
+  return path.join('example/client/app/ components/', glob); // app/components/{glob}
 }
 
 gulp.task('component', () => {
@@ -90,3 +90,20 @@ gulp.task('dev', () => {
   );
 });
 
+
+gulp.task('webpack', (cb) => {
+  const config = require('./conf/webpack.example.config');
+  webpack(config, (err, stats) => {
+    if(err)  {
+      throw new gutil.PluginError("webpack", err);
+    }
+
+    gutil.log("[webpack]", stats.toString({
+      colors: colorsSupported,
+      chunks: false,
+      errorDetails: true
+    }));
+
+    cb();
+  });
+});

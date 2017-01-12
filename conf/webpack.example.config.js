@@ -1,38 +1,32 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import webpack from 'webpack';
+import path from 'path';
 
+'use strict';
 
 module.exports = {
   devtool: 'source-map',
-  entry: './examples/ui.js',
+  entry: './example/app/app.js',
   output: {
-    filename: 'examples.js',
+    path: '../ffan-fe.github.io/',
     publicPath: '',
-    path: path.resolve(__dirname),
-    libraryTarget: 'umd'
+    filename: '[name].min.js',
+    chunkFilename: '[name].min.js'
   },
   module: {
     loaders: [
-      {test: /\.js$/, exclude: [/node_modules/], loader: 'ng-annotate!babel'},
-      {test: /\.html$/, exclude: /formtpl\.html$/, loader: 'raw'},
-      {test: /formtpl\.html$/, loader: 'raw!ng-include-loader'},
-      {test: /\.less$/, loader: 'style!css!less'},
-      {test: /\.css$/, loader: 'style!css'},
-      {
-        test   : /\.(ttf|eot|svg|woff(2)?)(\?\S*)?$/,
-        loader : require.resolve('file-loader')
-      },
-      // IMAGE
-      {
-        test: /.(gif|jpg|png)$/,
-        loader: 'file?name=img-[hash].[ext]'
-      }
+      { test: /\.js$/, exclude: /node_modules/, loader: 'ng-annotate-loader!babel-loader' },
+      { test: /\.html$/, exclude: /formtpl\.html$/, loader: 'raw-loader' },
+      { test: /formtpl\.html$/, loader: 'raw-loader!ng-include-loader' },
+      { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
+      { test: /\.css$/, loader: 'style-loader!css-loader' },
+      { test: /\.(ttf|eot|svg|woff(2)?)(\?\S*)?$/, loader: require.resolve('file-loader') },
+      { test: /.(gif|jpg|png)$/, loader: 'file-loader?name=img-[hash].[ext]' },
     ]
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: './examples/index.html',
+      template: './example/index.html',
       inject: 'body',
       minify: false
     }),
