@@ -14,7 +14,7 @@ module.exports = {
   output: {
     // Absolute output directory
     //path: __dirname,
-    path: __dirname + '/dist',
+    path: path.resolve(__dirname, '../dist'),
 
     // Output path from the view of the page
     // Uses webpack-dev-server in development
