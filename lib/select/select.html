@@ -2,11 +2,11 @@
   <div class="f-select_tags" ng-if="vm.isMultiple">
     <span>
         <span
-          ng-repeat="option in vm.dataArray[0].options"
-          ng-if="option.active" 
-          class="f-tag f-tag--primary">{{option.name}}<i class="f-tag_close f-icon-close"></i></span>
+          ng-repeat="option in vm.activeItems"
+          class="f-tag f-tag--primary">{{option.name}}
+          <i class="f-tag_close glyphicon-remove" ng-click="vm.removeItem(option)"></i></span>
     </span>
-    <input type="text" class="f-select_input" style="width:20px">
+    <input type="text" class="f-select_input"  ng-model="vm.multipleInput" ng-change="vm.changeMultipleInput($event)" style="width:20px">
   </div>
   <div class="f-input" ng-class="{'is-disabled':vm.disabled}" ng-click="vm.click($event);" ng-mouseenter="vm.mouseEnter()"
     ng-mouseleave="vm.mouseLeave()">
