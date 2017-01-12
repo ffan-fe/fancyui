@@ -9,6 +9,16 @@
     white-space:normal;
     z-index:1000;
 
+    .f-select_input{
+      min-height:30px;
+      border:none;
+      outline:none;
+      margin-left:10px;
+      color: #666;
+      vertical-align:baseline;
+      background-color: transparent;
+    }
+
     .f-tag{
       height: 24px;
       line-height: 24px;
@@ -42,7 +52,7 @@
           border-color:#d3dce6;
         }
       }
-      
+
     }
 
     .f-input_inner{
@@ -65,7 +75,7 @@
         border-color:#8492a6
       }
     }
-    
+
 
     .f-input_icon{
       font-style: normal;
@@ -88,6 +98,13 @@
       line-height: 36px;
       top: 50%;
       cursor: pointer;
+      &:after{
+        content:'';
+        height: 100%;
+        width: 0;
+        display: inline-block;
+        vertical-align: middle;
+      }
     }
   }
 
@@ -134,7 +151,7 @@
           top: 2px;
         }
       }
-      
+
       .f-scrollbar_view{
         list-style: none;
         padding: 6px 0;
@@ -178,7 +195,7 @@
                   background-color: #1d8ce0;
                 }
               }
-              
+
           }
 
           .f-select-group{
@@ -197,7 +214,7 @@
       font-size: 14px;
     }
   }
-  
+
   &.active{
     .f-select-dropdown{
       display: block;
@@ -211,8 +228,10 @@
   }
 
   &.is-reverse{
-    .f-input_icon{
-      transform: translateY(-50%)
+    .f-input{
+      .f-input_icon{
+        transform: translateY(-50%)
+      }
     }
   }
 
@@ -225,7 +244,7 @@
               &.active{
                 color:#20a0ff;
                 background-color:#fff;
-                
+
                 span:after{
                   font-family: 'Glyphicons Halflings';
                   content:"\E013";

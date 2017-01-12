@@ -1,12 +1,12 @@
-<div ng-class="{'f-select':true,'active':vm.active,'is-reverse':'vm.isReverse','multiple':vm.isMultiple}">
-  <div class="f-select_tags" ng-if="vm.isMultiple" style="max-width: 295px;">
+<div calculate-style ng-class="{'f-select':true,'active':vm.active,'is-reverse':vm.isReverse,'multiple':vm.isMultiple}">
+  <div class="f-select_tags" ng-if="vm.isMultiple">
     <span>
         <span
           ng-repeat="option in vm.dataArray[0].options"
           ng-if="option.active" 
           class="f-tag f-tag--primary">{{option.name}}<i class="f-tag_close f-icon-close"></i></span>
     </span>
-    <input type="text" class="f-select_input" style="width: 20px; max-width: 285px;">
+    <input type="text" class="f-select_input" style="width:20px">
   </div>
   <div class="f-input" ng-class="{'is-disabled':vm.disabled}" ng-click="vm.click($event);" ng-mouseenter="vm.mouseEnter()"
     ng-mouseleave="vm.mouseLeave()">
