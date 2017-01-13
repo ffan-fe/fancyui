@@ -26,7 +26,7 @@ npm test
 ```
 ### single test
 ```
-npm test --single_file=lib/select/select.spec.js
+npm test --single_file=lib/button/button.spec.js
 ```
 
 
