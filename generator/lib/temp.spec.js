@@ -6,6 +6,8 @@
  * @example: http://www.fancyui.org/#/zh-cn/component/<%= name %>
  */
 
+import angular from 'angular';
+import mocks from 'angular-mocks';
 
 import <%= upCaseName %>Module from './index';
 

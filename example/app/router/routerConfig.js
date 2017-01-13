@@ -474,5 +474,18 @@ export default [
 		tracking: {
 			key: 'upload'
 		}
+	},
+	{
+		name: 'select',
+    moduleName:{
+      'en-us':'Select',
+      'zh-cn':'Select选择器'
+    },
+		url: "/component/select",
+		template: '<selectdemo></selectdemo>',
+		lazyload: require("bundle?lazy&name=select!../components/select/select.js"),
+		tracking: {
+			key: 'select'
+		}
 	}
 ]

@@ -3,6 +3,50 @@
   display: inline-block;
   position: relative;
 
+  .f-select_tags{
+    position: absolute;
+    line-height:normal;
+    white-space:normal;
+    z-index:1000;
+    
+    .f-tag_close{
+      font-family: 'Glyphicons Halflings';
+      font-style:normal;
+      cursor:pointer;
+      &:hover{
+        background-color: #20a0ff;
+        color:#fff;
+        border-radius: 5px;
+      }
+    }
+
+    .f-select_input{
+      min-height:30px;
+      border:none;
+      outline:none;
+      margin-left:10px;
+      color: #666;
+      vertical-align:baseline;
+      background-color: transparent;
+    }
+
+    .f-tag{
+      height: 24px;
+      line-height: 24px;
+      box-sizing: border-box;
+      margin: 3px 0 3px 6px;
+      display: inline-block;
+      padding: 0 5px;
+      font-size: 12px;
+      border-radius: 4px;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      background-color: rgba(32,159,255,.1);
+      border-color: rgba(32,159,255,.2);
+      color: #20a0ff;
+    }
+  }
+
   .f-input{
     position: relative;
     font-size: 14px;
@@ -19,7 +63,7 @@
           border-color:#d3dce6;
         }
       }
-      
+
     }
 
     .f-input_inner{
@@ -42,7 +86,7 @@
         border-color:#8492a6
       }
     }
-    
+
 
     .f-input_icon{
       font-style: normal;
@@ -65,6 +109,13 @@
       line-height: 36px;
       top: 50%;
       cursor: pointer;
+      &:after{
+        content:'';
+        height: 100%;
+        width: 0;
+        display: inline-block;
+        vertical-align: middle;
+      }
     }
   }
 
@@ -111,7 +162,7 @@
           top: 2px;
         }
       }
-      
+
       .f-scrollbar_view{
         list-style: none;
         padding: 6px 0;
@@ -155,7 +206,7 @@
                   background-color: #1d8ce0;
                 }
               }
-              
+
           }
 
           .f-select-group{
@@ -174,7 +225,7 @@
       font-size: 14px;
     }
   }
-  
+
   &.active{
     .f-select-dropdown{
       display: block;
@@ -184,8 +235,37 @@
       .f-input_inner{
         border-color:#20a0ff;
       }
+    }
+  }
+
+  &.is-reverse{
+    .f-input{
       .f-input_icon{
         transform: translateY(-50%)
+      }
+    }
+  }
+
+  &.multiple{
+    .f-select-dropdown{
+      .f-scrollbar{
+        .f-scrollbar_view{
+          .f-select-group_wrap{
+            .f-select-dropdown_item{
+              &.active{
+                color:#20a0ff;
+                background-color:#fff;
+
+                span:after{
+                  font-family: 'Glyphicons Halflings';
+                  content:"\E013";
+                  float: right;
+                }
+
+              }
+            }
+          }
+        }
       }
     }
   }
