@@ -1,0 +1,233 @@
+<section class="intro-content">
+  <h1 translate='{{vm.$state.current.name}}'></h1>
+
+  <p>{{'UploadDesc' | translate}}</p>
+</section>
+
+<section class="intro-content">
+  <h2>{{'Install' | translate}}</h2>
+
+</section>
+
+<div class="example-block">
+  <div class="highlight" hljs hljs-language="bash">
+    npm install fancyui --save
+  </div>
+</div>
+
+<section class="intro-content">
+  <h2>{{'Inject_Module' | translate}}</h2>
+
+</section>
+
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="javascript">
+    import {FUpload} from 'fancyui';
+
+    export default angular.module('switchDemo', [
+    FUpload.name
+    ])
+  </div>
+</div>
+
+<!--示例-->
+<h2>{{'Example'|translate}}</h2>
+<div class="example-block">
+  <div class="bs-example pop-confirm-example">
+    <f-upload action="/action.do"
+              accept="vm.accept"
+              default-file-list="vm.defaultFileList"
+              on-remove="vm.onRemove"
+              file-list="vm.fileList1">
+      <span class="btn btn-default">
+        <span class="glyphicon glyphicon-upload"></span>
+        Upload
+      </span>
+    </f-upload>
+  </div>
+  <div class="bs-example pop-confirm-example">
+    <f-upload action="/action.do"
+              accept="vm.accept"
+              list-type="picture"
+              default-file-list="vm.defaultFileList"
+              file-list="vm.fileList2">
+      <span class="btn btn-default">
+        <span class="glyphicon glyphicon-upload"></span>
+        Upload
+      </span>
+    </f-upload>
+  </div>
+  <div class="bs-example pop-confirm-example">
+    <f-dragger action="/action.do"
+               default-file-list="vm.defaultFileList"
+               file-list="vm.fileList3">
+      <div
+        style="width: 150px;height: 150px;vertical-align: middle;font-size: 28px;color: #999;line-height: 150px;font-weight: lighter">
+        drop
+      </div>
+    </f-dragger>
+    <f-dragger action="/action.do"
+               list-type="picture"
+               default-file-list="vm.defaultFileList"
+               file-list="vm.fileList4">
+      <div
+        style="width: 150px;height: 150px;vertical-align: middle;font-size: 28px;color: #999;line-height: 150px;font-weight: lighter">
+        drop
+      </div>
+    </f-dragger>
+  </div>
+</div>
+
+<!--基础用法-->
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>View</h3>
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="html">
+    <f-upload action="/action.do"
+                         accept="vm.accept"
+                         default-file-list="vm.defaultFileList"
+                         file-list="vm.fileList">
+      <span class="btn btn-default">
+        <span class="glyphicon glyphicon-upload"></span>
+        upload
+      </span>
+  </f-upload>
+
+    <f-dragger action="/action.do"
+               file-list="vm.fileList">
+      <div
+        style="width: 150px;height: 150px;vertical-align: middle;font-size: 28px;color: #999;line-height: 150px;font-weight: lighter">
+        drop
+      </div>
+    </f-dragger>
+  </div>
+</div>
+
+<h3>controller</h3>
+
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="javascript">
+    this.accept = {
+    size: {min: 10, max: '20MB'},
+    width: {min: 1000, max: 10000},
+    height: {min: 100, max: 300},
+    pattern: 'image/*'
+    };
+
+    this.defaultFileList = [{
+    url: 'http://www.fancyui.org/img-a04b6a41f26906e5c8732586d2d1261b.png',
+    name: 'test.png'
+    }];
+
+    this.fileList = [];
+  </div>
+</div>
+
+
+<section class="intro-content">
+  <h2>{{'Options'|translate}}</h2>
+
+  <h3>f-upload & f-dragger props</h3>
+  <table class="demo-table">
+    <thead>
+    <tr>
+      <th>{{'Param'|translate}}</th>
+      <th>{{'Description'|translate}}</th>
+      <th>{{'Type'|translate}}</th>
+      <th>{{'DefaultValue'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>name</td>
+      <td>{{'UploadApiDecName'|translate}}</td>
+      <td>String</td>
+      <td>'file'</td>
+    </tr>
+    <tr>
+      <td>defaultFileList</td>
+      <td>{{'UploadApiDecDefaultFileList'|translate}}</td>
+      <td>Array[object]</td>
+      <td>[]</td>
+    </tr>
+    <tr>
+      <td>fileList</td>
+      <td>{{'UploadApiDecFileList'|translate}}</td>
+      <td>Array[object]</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>action</td>
+      <td>{{'UploadApiDecAction'|translate}}</td>
+      <td>String</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>data</td>
+      <td>{{'UploadApiDecData'|translate}}</td>
+      <td>Object or function(file)</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>headers</td>
+      <td>{{'UploadApiDecHeaders'|translate}}</td>
+      <td>Object</td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>multiple</td>
+      <td>{{'UploadApiDecMultiple'|translate}}</td>
+      <td>Boolean</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>accept</td>
+      <td>{{'UploadApiDecAccept'|translate}}</td>
+      <td>Object</td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>beforeUpload</td>
+      <td>{{'UploadApiDecBeforeUpload'|translate}}</td>
+      <td>(file, fileList) => boolean</td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>customRequest</td>
+      <td>{{'UploadApiDecCustomRequest'|translate}}</td>
+      <td>Function</td>
+      <td>none</td>
+    </tr>
+    <!--<tr>
+      <td>onChange</td>
+      <td>{{'UploadApiDecOnChange'|translate}}</td>
+      <td>Function</td>
+      <td>none</td>
+    </tr>-->
+    <tr>
+      <td>listType</td>
+      <td>{{'UploadApiDecListType'|translate}}</td>
+      <td>String</td>
+      <td>'text'</td>
+    </tr>
+    <tr>
+      <td>onRemove</td>
+      <td>{{'UploadApiDecOnRemove'|translate}}</td>
+      <td>Function(file)</td>
+      <td>none</td>
+    </tr>
+    <tr>
+      <td>disabled</td>
+      <td>{{'UploadApiDecDisabled'|translate}}</td>
+      <td>Boolean</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>withCredentials</td>
+      <td>{{'UploadApiDecWithCredentials'|translate}}</td>
+      <td>Boolean</td>
+      <td>false</td>
+    </tr>
+    </tbody>
+  </table>
+</section>

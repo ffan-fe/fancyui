@@ -461,5 +461,18 @@ export default [
 		tracking: {
 			key: 'menu'
 		}
+	},
+	{
+		name: 'upload',
+    moduleName:{
+      'en-us':'upload',
+      'zh-cn':'上传'
+    },
+		url: "/component/upload",
+		template: '<upload></upload>',
+		lazyload: require("bundle-loader?lazy&name=upload!../components/upload/upload.js"),
+		tracking: {
+			key: 'upload'
+		}
 	}
 ]

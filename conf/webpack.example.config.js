@@ -1,6 +1,8 @@
+
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import webpack from 'webpack';
 import path from 'path';
+
 
 'use strict';
 
@@ -28,12 +30,27 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './example/index.html',
       inject: 'body',
-      minify: false
+      hash: true
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
       jQuery: "jquery"
     }),
-    new webpack.optimize.UglifyJsPlugin()
+    //new webpack.HotModuleReplacementPlugin(),
+    new webpack.DefinePlugin({
+      'process.env': {
+        'DEBUG': false
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      mangle: {
+
+        // You can specify all variables that should not be mangled.
+        // For example if your vendor dependency doesn't use modules
+        // and relies on global variables. Most of angular modules relies on
+        // angular global variable, so we should keep it unchanged
+        except: ['$super', '$', 'exports', 'require', 'angular', 'jQuery']
+      }
+    })
   ]
 };
