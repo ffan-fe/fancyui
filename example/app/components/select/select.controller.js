@@ -7,10 +7,10 @@
  */
 
 export default class SelectController {
-  constructor($state) {
+  constructor($state,$q) {
     'ngInject'
     this.$state = $state;
-    this.name = 'select';
+    this.$q = $q;
 
     this.cityGroup = {
       id: '1001',
@@ -81,7 +81,24 @@ export default class SelectController {
     ]
   }
 
+  onSelect($item) {
+    console.log('$item', $item);
+    console.log('this', this);
+  }
+
   click() {
     console.log(this.city);
   }
+
+  getData($value) {
+    console.log($value);
+    let deferred = this.$q.defer();
+
+    let returnData = this.data.filter((d)=>{
+      return d.name.indexOf($value)>-1;
+    })
+    deferred.resolve(returnData);
+    return deferred.promise;
+  }
+
 }

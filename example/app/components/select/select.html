@@ -31,17 +31,29 @@ npm install fancyui --save</div>
 		<f-select
 			is-group="true"
 			is-remote="false"
+			clearable="true"
 			data="vm.dataGroup" 
 			ng-model="vm.cityGroup"
+			on-item-selected="vm.onSelect($item)"
 			></f-select>
 
 		<f-select
 			data="vm.data" 
 			ng-model="vm.city"
+			is-multiple="true"
 			></f-select>
 
-		<f-select></f-select>
+		<f-select 
+			is-remote="true"
+			clearable="true"
+			ng-model="vm.city"
+			on-item-selected="vm.onSelect($item)"
+			remote-method="vm.getData($value)"
+			></f-select>
 
+			<f-select
+				ng-model="vm.city">
+			</f-select>
 		<button ng-click="vm.click()" />
 	</div>
 </div>

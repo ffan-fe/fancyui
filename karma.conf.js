@@ -1,23 +1,18 @@
 var path = require('path');
 
 
+var files = (process.env.npm_config_single_file) ?
+  process.env.npm_config_single_file : 'spec.bundle.js';
+
 var config =
   module.exports = function (config) {
-    config.set({
+    var option = {
       // base path used to resolve all patterns
       basePath: '',
 
       // frameworks to use
       // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
       frameworks: ['mocha', 'chai'],
-
-      // list of files/patterns to load in the browser
-      files: [
-        {
-          pattern: 'spec.bundle.js', watched: false
-        }
-      ],
-
       plugins: [
         require("karma-chai"),
         require("karma-chrome-launcher"),
@@ -27,13 +22,6 @@ var config =
         require("karma-coverage"),
         require("karma-webpack")
       ],
-
-      // preprocess matching files before serving them to the browser
-      // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-      preprocessors: {
-        //'lib/**/!(*.spec).js':['webpack', 'sourcemap', 'coverage'],
-        'spec.bundle.js': ['webpack', 'sourcemap']
-      },
 
       webpack: {
         devtool: 'inline-source-map',
@@ -85,5 +73,14 @@ var config =
 
       // if true, Karma runs tests once and exits
       singleRun: true
-    });
+    };
+
+    option.files = [
+      {
+        pattern: files, watched: false
+      }
+    ];
+    option.preprocessors= {};
+    option.preprocessors[files] = ['webpack', 'sourcemap']
+    config.set(option);
   };

@@ -20,9 +20,15 @@ npm run dev
 
 ## Test
 
+### test all
 ```
 npm test
 ```
+### single test
+```
+npm test --single_file=lib/button/button.spec.js
+```
+
 
 ## Want to contribute?
 See the [contributing](CONTRIBUTING.md) guidelines.
