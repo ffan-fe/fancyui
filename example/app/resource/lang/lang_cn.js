@@ -131,4 +131,5 @@ export default Object.assign(_defaultLang, {
   UploadApiDecOnRemove: '点击移除文件时的回调',
   UploadApiDecDisabled: '是否禁用',
   UploadApiDecWithCredentials: '上传请求时是否携带 cookie',
+  SelectDesc:'当选项过多时，使用下拉菜单展示并选择内容。',
 });

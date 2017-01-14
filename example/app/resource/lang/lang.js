@@ -102,4 +102,5 @@ export default {
   UploadApiDecOnRemove: 'A callback function, will be executed when removing file button is clicked',
   UploadApiDecDisabled: 'disable upload button',
   UploadApiDecWithCredentials: 'ajax upload with cookie sent',
+  SelectDesc:'When there are plenty of options, use a drop-down menu to display and select desired ones.',
 }
