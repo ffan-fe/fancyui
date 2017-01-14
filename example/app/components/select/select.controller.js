@@ -7,95 +7,61 @@
  */
 
 export default class SelectController {
-  constructor($state,$q) {
+  constructor($state, $q) {
     'ngInject'
     this.$state = $state;
     this.$q = $q;
 
-    this.cityGroup = {
-      id: '1001',
-      label: 'bjtz',
-      name: '北京通州万达广场'
-    };
+    this.cityGroup = {};
 
     this.dataGroup = [
       {
         title: '热门广场',
-        options: [{
-          id: '1001',
-          label: 'bjtz',
-          name: '北京通州万达广场'
-        },
-          {
-            id: '1002',
-            label: 'shjq',
-            name: '上海江桥万达广场'
-          },
-          {
-            id: '1003',
-            label: 'shzp',
-            name: '上海周浦万达广场'
-          }]
+        options: [
+          { id: '1001', label: 'bjtz', name: '北京通州万达广场' },
+          { id: '1002', label: 'shjq', name: '上海江桥万达广场' },
+          { id: '1003', label: 'shzp', name: '上海周浦万达广场' }
+        ]
       },
       {
         title: '其他广场',
-        options: [{
-          id: '1004',
-          label: 'hf',
-          name: '合肥万达广场'
-        },
-          {
-            id: '1005',
-            label: 'hf',
-            name: '武汉万达广场'
-          }]
+        options: [
+          { id: '1004', label: 'hf', name: '合肥万达广场' },
+          { id: '1005', label: 'hf', name: '武汉万达广场' }
+        ]
       }
     ]
 
     this.city = {};
     this.data = [
-      {
-        id: '1001',
-        label: 'bjtz',
-        name: '北京通州万达广场'
-      },
-      {
-        id: '1002',
-        label: 'shjq',
-        name: '上海江桥万达广场'
-      },
-      {
-        id: '1003',
-        label: 'shzp',
-        name: '上海周浦万达广场'
-      }, {
-        id: '1004',
-        label: 'hf',
-        name: '合肥万达广场'
-      },
-      {
-        id: '1005',
-        label: 'hf',
-        name: '武汉万达广场'
-      }
+      { id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳' }
     ]
+
+
+    this.city1 = {};
+    this.data1 = [
+      { id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳', disabled: true }
+    ]
+
   }
 
   onSelect($item) {
-    console.log('$item', $item);
-    console.log('this', this);
+    console.log($item)
   }
 
-  click() {
-    console.log(this.city);
-  }
-
-  getData($value) {
-    console.log($value);
+  mockData($value) {
     let deferred = this.$q.defer();
 
-    let returnData = this.data.filter((d)=>{
-      return d.name.indexOf($value)>-1;
+    let returnData = this.data.filter((d) => {
+      return d.name.indexOf($value) > -1;
     })
     deferred.resolve(returnData);
     return deferred.promise;

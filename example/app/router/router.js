@@ -8,7 +8,7 @@ export default angular.module('app.router', [
     uiRouter,
     'oc.lazyLoad'
 ])
-    .config(($stateProvider,$locationProvider) => {
+    .config(($stateProvider, $locationProvider) => {
         /**
          *  统一路由配置
          */
@@ -17,7 +17,7 @@ export default angular.module('app.router', [
         }
         routeConfig.forEach((route) => {
 
-            let url = '/:lang'+route.url;
+            let url = '/:lang' + route.url;
 
             $stateProvider.state(route.name, {
                 url: url,
@@ -40,8 +40,8 @@ export default angular.module('app.router', [
                     module: { when: 'EAGER' }
                 },
                 resolve: {
-                    loadingbar:'loadingbar',
-                    module: ($q, $ocLazyLoad,loadingbar) => {
+                    loadingbar: 'loadingbar',
+                    module: ($q, $ocLazyLoad, loadingbar) => {
                         loadingbar.setWidth(0);
                         return $q((resolve) => {
                             loadingbar.setWidth(20);
