@@ -27,7 +27,10 @@ export default angular.module('selectdemo', [
 </div>
 
 <!--示例-->
-<h2>{{'Basic_Usage'|translate}}</h2>
+<section>
+	<h2>{{'Basic_Usage'|translate}}</h2>
+</section>
+
 <h3>{{'Example'|translate}}</h3>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
@@ -70,7 +73,10 @@ export default class SelectController {
 </div>
 
 
-<h2>有禁用选项</h2>
+<section>
+<h2>有禁用选项</h2>	
+</section>
+
 <h3>{{'Example'|translate}}</h3>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
@@ -108,6 +114,143 @@ export default class SelectController {
   }
   onSelect($item) {
     console.log($item)
+  }
+}</div>
+</div>
+
+<section>
+	<h2>禁用</h2>
+	<p>选择器不可用状态</p>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+			data="vm.data2" 
+			ng-model="vm.city2"
+			is-disabled = "true"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.data" 
+  ng-model="vm.city"
+  is-disabled = "true"&gt
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.data = [
+      { id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳', disabled: true }
+    ]
+    this.city = this.data[0];
+  }
+}</div>
+</div>
+
+
+<section>
+	<h2>可清空选项</h2>
+	<p>包含清空按钮，可将选择器清空为初始状态</p>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+			data="vm.data3" 
+			ng-model="vm.city3"
+			clearable="true"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.data" 
+  ng-model="vm.city"
+  clearable="true"
+  on-item-selected="vm.onSelect($item)"
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.data = [
+      { id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳', disabled: true }
+    ]
+    this.city = {};
+  }
+}</div>
+</div>
+
+
+
+<section>
+	<h2>基础多选</h2>
+	<p>适用性较广的基础多选，用 Tag 展示已选项</p>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+			data="vm.data4" 
+			ng-model="vm.city4"
+			is-multiple="true"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.data" 
+  ng-model="vm.city"
+  is-multiple="true"
+  on-item-selected="vm.onSelect($item)"
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.data = [
+      { id: '1001', name: '上海江桥万达广场' },
+      { id: '1002', name: '北京通州万达广场' },
+      { id: '1003', name: '上海周浦万达广场' },
+      { id: '1004', name: '武汉万达广场' },
+      { id: '1005', name: '浙江椒江万达广场' }
+    ];
+    this.city = {};
   }
 }</div>
 </div>

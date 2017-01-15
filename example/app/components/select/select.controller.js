@@ -41,15 +41,25 @@ export default class SelectController {
       { id: '1005', name: '深圳' }
     ]
 
-
     this.city1 = {};
-    this.data1 = [
-      { id: '1001', name: '上海' },
-      { id: '1002', name: '北京' },
-      { id: '1003', name: '广州' },
-      { id: '1004', name: '杭州' },
-      { id: '1005', name: '深圳', disabled: true }
-    ]
+    this.data1 = angular.copy(this.data);
+
+    
+    this.data2 = angular.copy(this.data);
+    this.city2 = this.data2[0];
+
+    
+    this.data3 = angular.copy(this.data);
+    this.city3 = {};
+
+    this.data4 = [
+      { id: '1001', name: '上海江桥万达广场' },
+      { id: '1002', name: '北京通州万达广场' },
+      { id: '1003', name: '上海周浦万达广场' },
+      { id: '1004', name: '武汉万达广场' },
+      { id: '1005', name: '浙江椒江万达广场' }
+    ];
+    this.city4 = {};
 
   }
 

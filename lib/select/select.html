@@ -8,13 +8,13 @@
     </span>
     <input type="text" class="f-select_input"  ng-model="vm.multipleInput" ng-change="vm.onMultipleInputChange()" style="width:20px">
   </div>
-  <div class="f-input" ng-class="{'is-disabled':vm.disabled}" 
+  <div class="f-input" ng-class="{'is-disabled':vm.isDisabled}" 
     ng-click="vm.onClick($event);" 
     ng-mouseenter="vm.mouseEnter()"
     ng-mouseleave="vm.mouseLeave()">
     <i ng-class="{'f-input_icon':true,'glyphicon':true,'glyphicon-triangle-top':!vm.hover,'glyphicon-remove':vm.hover}"></i>
     <input type="text" placeholder="请选择" 
-      ng-readonly="!vm.isRemote" ng-disabled="vm.disabled" ng-change="vm.onInputChange()"
+      ng-readonly="!vm.isRemote" ng-disabled="vm.isDisabled" ng-change="vm.onInputChange()"
       ng-model="vm.inputValue" 
       ng-model-options="{debounce:vm.debounce}" autocomplete="off" class="f-input_inner" />
   </div>
