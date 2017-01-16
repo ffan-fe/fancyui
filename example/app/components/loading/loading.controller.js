@@ -17,7 +17,6 @@ export default class LoadingController {
 
   click(){
     this.modal = this.LoadingService.loading({
-      target:'#test',
       text:'正在XXOO...'
     });
   }
