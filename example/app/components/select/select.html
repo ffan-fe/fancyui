@@ -27,10 +27,13 @@ export default angular.module('selectdemo', [
 </div>
 
 <!--示例-->
-<h2>{{'Basic_Usage'|translate}}</h2>
+<section>
+	<h2>{{'Basic_Usage'|translate}}</h2>
+</section>
+
 <h3>{{'Example'|translate}}</h3>
 <div class="example-block">
-	<div class="bs-example pop-confirm-example">
+	<div class="bs-example ">
 		<f-select
 			data="vm.data" 
 			ng-model="vm.city"
@@ -70,7 +73,10 @@ export default class SelectController {
 </div>
 
 
-<h2>有禁用选项</h2>
+<section>
+<h2>{{'DisabledOption'|translate}}</h2>	
+</section>
+
 <h3>{{'Example'|translate}}</h3>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
@@ -111,3 +117,379 @@ export default class SelectController {
   }
 }</div>
 </div>
+
+<section>
+	<h2>{{'DisabledSelect'|translate}}</h2>
+	<p>{{'DisabledSelectDesc'|translate}}</p>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+			data="vm.data2" 
+			ng-model="vm.city2"
+			is-disabled = "true"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.data" 
+  ng-model="vm.city"
+  is-disabled = "true"&gt
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.data = [
+      { id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳', disabled: true }
+    ]
+    this.city = this.data[0];
+  }
+}</div>
+</div>
+
+
+<section>
+	<h2>{{'Clearable'|translate}}</h2>
+	<p>{{'ClearableDesc'|translate}}</p>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+			data="vm.data3" 
+			ng-model="vm.city3"
+			clearable="true"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.data" 
+  ng-model="vm.city"
+  clearable="true"
+  on-item-selected="vm.onSelect($item)"
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.data = [
+      { id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳', disabled: true }
+    ]
+    this.city = {};
+  }
+}</div>
+</div>
+
+
+<section>
+	<h2>{{'BasicMultiple'|translate}}</h2>
+	<p>{{'BasicMultipleDesc'|translate}}</p>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+			data="vm.data4" 
+			ng-model="vm.city4"
+			is-multiple="true"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.data" 
+  ng-model="vm.city"
+  is-multiple="true"
+  on-item-selected="vm.onSelect($item)"
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.data = [
+      { id: '1001', name: '上海江桥万达广场' },
+      { id: '1002', name: '北京通州万达广场' },
+      { id: '1003', name: '上海周浦万达广场' },
+      { id: '1004', name: '武汉万达广场' },
+      { id: '1005', name: '浙江椒江万达广场' }
+    ];
+    this.city = {};
+  }
+}</div>
+</div>
+
+
+<section>
+	<h2>{{'CreateTag'|translate}}</h2>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+			data="vm.data4" 
+      allow-create="true"
+			ng-model="vm.city4"
+			is-multiple="true"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.data" 
+  allow-create="true"
+  ng-model="vm.city"
+  is-multiple="true"
+  on-item-selected="vm.onSelect($item)"
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.data = [
+      { id: '1001', name: '上海江桥万达广场' },
+      { id: '1002', name: '北京通州万达广场' },
+      { id: '1003', name: '上海周浦万达广场' },
+      { id: '1004', name: '武汉万达广场' },
+      { id: '1005', name: '浙江椒江万达广场' }
+    ];
+    this.city = {};
+  }
+}</div>
+</div>
+
+
+<section>
+	<h2>{{'Grouping'|translate}}</h2>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+      is-group="true"
+			data="vm.dataGroup"
+			ng-model="vm.cityGroup"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.dataGroup" 
+  is-group="true"
+  ng-model="vm.cityGroup"
+  on-item-selected="vm.onSelect($item)"
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.dataGroup = [
+      {
+        title: '热门广场',
+        options: [
+          { id: '1001', label: 'bjtz', name: '北京通州万达广场' },
+          { id: '1002', label: 'shjq', name: '上海江桥万达广场' },
+          { id: '1003', label: 'shzp', name: '上海周浦万达广场' }
+        ]
+      },
+      {
+        title: '其他广场',
+        options: [
+          { id: '1004', label: 'hf', name: '合肥万达广场' },
+          { id: '1005', label: 'hf', name: '武汉万达广场' }
+        ]
+      }
+    ]
+    this.cityGroup = {};
+  }
+}</div>
+</div>
+
+
+<section>
+	<h2>{{'RemoteSearch'|translate}}</h2>
+  <p>{{'RemoteSearchDesc'|translate}}</p>
+</section>
+
+<h3>{{'Example'|translate}}</h3>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-select
+      is-remote="true"
+      remote-debounce="300"
+      remote-method="vm.mockData($value)"
+			data="vm.data"
+			ng-model="vm.city"
+			on-item-selected="vm.onSelect($item)"
+			></f-select>
+	</div>
+</div>
+
+<h3>view</h3>
+<div class="example-block">
+	<div hljs-no-escape class="highlight no-border" hljs >
+&lt;f-select
+  data="vm.data" 
+  remote-debounce="300"
+  remote-method="vm.mockData($value)"
+  is-remote="true"
+  ng-model="vm.city"
+  on-item-selected="vm.onSelect($item)"
+&lt;/f-select&gt;</div>
+</div>
+
+<h3>controller</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+export default class SelectController {
+  constructor() {
+    this.data = [
+      { id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳' }
+    ]
+    this.city = {};
+  }
+
+  onSelect($item) {
+    console.log($item)
+  }
+
+  mockData($value) {
+    let deferred = this.$q.defer();
+    console.log($value)
+    let returnData = this.data.filter((d) => {
+      return d.name.indexOf($value) > -1;
+    })
+    deferred.resolve(returnData);
+    return deferred.promise;
+  }
+}</div>
+</div>
+
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>is-remote</td>
+			<td>{{'IsRemoteDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>is-group</td>
+			<td>{{'IsGroupDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>is-disabled</td>
+			<td>{{'IsDisabledDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>is-multiple</td>
+			<td>{{'IsMultipleDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>allow-create</td>
+			<td>{{'AllowCreateDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+    <tr>
+			<td>clearable</td>
+			<td>{{'ClearableDesc'|translate}}</td>
+		  <td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+    <tr>
+			<td>remote-method</td>
+			<td>{{'RemoteMethodDesc'|translate}}</td>
+		  <td>function</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+    <tr>
+      <td>on-item-selected</td>
+      <td>{{'OnItemSelected'|translate}}</td>
+		  <td>function</td>
+			<td>-</td>
+			<td>-</td>
+    </tr>
+		</tbody>
+	</table>
+</section>
