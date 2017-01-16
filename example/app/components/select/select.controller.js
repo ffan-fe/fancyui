@@ -42,7 +42,13 @@ export default class SelectController {
     ]
 
     this.city1 = {};
-    this.data1 = angular.copy(this.data);
+    this.data1 = [
+      { id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳', disabled: true }
+    ]
 
     
     this.data2 = angular.copy(this.data);

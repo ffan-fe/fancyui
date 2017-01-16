@@ -487,5 +487,18 @@ export default [
 		tracking: {
 			key: 'select'
 		}
+	},
+	{
+		name: 'loading',
+    moduleName:{
+      'en-us':'Loading',
+      'zh-cn':'加载'
+    },
+		url: "/component/loading",
+		template: '<loading></loading>',
+		lazyload: require("bundle?lazy&name=loading!../components/loading/loading.js"),
+		tracking: {
+			key: 'loading'
+		}
 	}
 ]
