@@ -61,6 +61,12 @@ export default class SelectController {
     ];
     this.city4 = {};
 
+    this.data5 = [{ id: '1001', name: '上海' },
+      { id: '1002', name: '北京' },
+      { id: '1003', name: '广州' },
+      { id: '1004', name: '杭州' },
+      { id: '1005', name: '深圳' }];
+    this.city5 ={};
   }
 
   onSelect($item) {
@@ -69,7 +75,7 @@ export default class SelectController {
 
   mockData($value) {
     let deferred = this.$q.defer();
-
+    console.log($value)
     let returnData = this.data.filter((d) => {
       return d.name.indexOf($value) > -1;
     })
