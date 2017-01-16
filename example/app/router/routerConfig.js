@@ -479,7 +479,7 @@ export default [
 		name: 'select',
     moduleName:{
       'en-us':'Select',
-      'zh-cn':'Select选择器'
+      'zh-cn':'选择器'
     },
 		url: "/component/select",
 		template: '<selectdemo></selectdemo>',

@@ -74,7 +74,7 @@ export default class SelectController {
 
 
 <section>
-<h2>有禁用选项</h2>	
+<h2>{{'DisabledOption'|translate}}</h2>	
 </section>
 
 <h3>{{'Example'|translate}}</h3>
@@ -119,8 +119,8 @@ export default class SelectController {
 </div>
 
 <section>
-	<h2>禁用</h2>
-	<p>选择器不可用状态</p>
+	<h2>{{'DisabledSelect'|translate}}</h2>
+	<p>{{'DisabledSelectDesc'|translate}}</p>
 </section>
 
 <h3>{{'Example'|translate}}</h3>
@@ -164,8 +164,8 @@ export default class SelectController {
 
 
 <section>
-	<h2>可清空选项</h2>
-	<p>包含清空按钮，可将选择器清空为初始状态</p>
+	<h2>{{'Clearable'|translate}}</h2>
+	<p>{{'ClearableDesc'|translate}}</p>
 </section>
 
 <h3>{{'Example'|translate}}</h3>
@@ -210,8 +210,8 @@ export default class SelectController {
 
 
 <section>
-	<h2>基础多选</h2>
-	<p>适用性较广的基础多选，用 Tag 展示已选项</p>
+	<h2>{{'BasicMultiple'|translate}}</h2>
+	<p>{{'BasicMultipleDesc'|translate}}</p>
 </section>
 
 <h3>{{'Example'|translate}}</h3>
@@ -256,8 +256,7 @@ export default class SelectController {
 
 
 <section>
-	<h2>创建标签</h2>
-	<p>可以创建并选中选项中不存在的选项</p>
+	<h2>{{'CreateTag'|translate}}</h2>
 </section>
 
 <h3>{{'Example'|translate}}</h3>
@@ -304,7 +303,7 @@ export default class SelectController {
 
 
 <section>
-	<h2>分组展示</h2>
+	<h2>{{'Grouping'|translate}}</h2>
 </section>
 
 <h3>{{'Example'|translate}}</h3>
@@ -359,8 +358,8 @@ export default class SelectController {
 
 
 <section>
-	<h2>远程搜索</h2>
-  <p>从服务器搜索数据，输入关键字进行查找</p>
+	<h2>{{'RemoteSearch'|translate}}</h2>
+  <p>{{'RemoteSearchDesc'|translate}}</p>
 </section>
 
 <h3>{{'Example'|translate}}</h3>
@@ -420,3 +419,77 @@ export default class SelectController {
   }
 }</div>
 </div>
+
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+		<tr>
+			<th>{{'Param'|translate}}</th>
+			<th>{{'Description'|translate}}</th>
+			<th>{{'Type'|translate}}</th>
+			<th>{{'Optional'|translate}}</th>
+			<th>{{'DefaultValue'|translate}}</th>
+		</tr>
+		</thead>
+		<tbody>
+		<tr>
+			<td>is-remote</td>
+			<td>{{'IsRemoteDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>is-group</td>
+			<td>{{'IsGroupDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>is-disabled</td>
+			<td>{{'IsDisabledDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>is-multiple</td>
+			<td>{{'IsMultipleDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+		<tr>
+			<td>allow-create</td>
+			<td>{{'AllowCreateDesc'|translate}}</td>
+			<td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+    <tr>
+			<td>clearable</td>
+			<td>{{'ClearableDesc'|translate}}</td>
+		  <td>boolean</td>
+			<td>false/true</td>
+			<td>false</td>
+		</tr>
+    <tr>
+			<td>remote-method</td>
+			<td>{{'RemoteMethodDesc'|translate}}</td>
+		  <td>function</td>
+			<td>-</td>
+			<td>-</td>
+		</tr>
+    <tr>
+      <td>on-item-selected</td>
+      <td>{{'OnItemSelected'|translate}}</td>
+		  <td>function</td>
+			<td>-</td>
+			<td>-</td>
+    </tr>
+		</tbody>
+	</table>
+</section>
