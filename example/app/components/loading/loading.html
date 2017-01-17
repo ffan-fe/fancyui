@@ -1,6 +1,6 @@
 <section class="intro-content">
 	<h1 translate='{{vm.$state.current.name}}'></h1>
-	<p>加载数据时显示动效。</p>
+	<p>{{'LoadingDesc' | translate}}</p>
 </section>
 
 <section class="intro-content">
@@ -27,12 +27,6 @@ export default angular.module('loading', [
 ])
 </div>
 </div>
-
-
-<section>
-	<h2>区域加载</h2>
-	<p>在容器中加载数据时显示。</p>
-</section>
 
 <!--示例-->
 <h2>{{'Example'|translate}}</h2>
@@ -77,24 +71,70 @@ export default angular.module('loading', [
 			</div>
 		</div>
 		<br>
-		
-		<button ng-click="vm.show($event)" >loading</button>
+
+		<bp-button  icon="ok"  click="vm.show()">loading</bp-button>
+		<bp-button  click="vm.close()">close</bp-button>
 
 	</div>
 </div>
-
-<!--基础用法-->
-<h2>{{'Basic_Usage'|translate}}</h2>
-<h3>View</h3>
+<h3>view</h3>
 <div class="example-block">
-<div class="highlight no-border" hljs hljs-language="html">
-</div>
+  <div class="highlight no-border" hljs hljs-language="html">
+<bp-button  icon="ok"  click="vm.show()">loading</bp-button>
+<bp-button  click="vm.close()">close</bp-button></div>
 </div>
 
 <h3>controller</h3>
-
 <div class="example-block">
 <div class="highlight no-border" hljs hljs-language="javascript">
-controller
+export default class LoadingController {
+  constructor(LoadingService) {
+    'ngInject'
+    this.LoadingService = LoadingService;
+  }
+
+  show(e) {
+    this.loading = this.LoadingService.loading({
+      target: '#table-container',
+      text: 'loading...'
+    }); 
+  }
+
+  close() {
+    this.loading.close();
+  }
+}
 </div>
 </div>
+
+<section class="intro-content">
+	<h2>{{'Options'|translate}}</h2>
+	<table class="demo-table">
+		<thead>
+			<tr>
+				<th>{{'Param'|translate}}</th>
+				<th>{{'Description'|translate}}</th>
+				<th>{{'Type'|translate}}</th>
+				<th>{{'Optional'|translate}}</th>
+				<th>{{'DefaultValue'|translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>target</td>
+				<td>{{'TargetDesc'|translate}}</td>
+				<td>dom/string/angularElement</td>
+				<td>-</td>
+				<td>document.body</td>
+			</tr>
+			<tr>
+				<td>text</td>
+				<td>{{'LoadingText'|translate}}</td>
+				<td>string</td>
+				<td>-</td>
+				<td>'Loading...'</td>
+			</tr>
+			
+		</tbody>
+	</table>
+</section>

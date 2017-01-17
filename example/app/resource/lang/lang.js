@@ -119,5 +119,8 @@ export default {
   IsDisabledDesc:'is whole component disabled',
   IsMultipleDesc:'is multiple render',
   AllowCreateDesc:'whether creating new items is allowed. To use this, is-multiple must be true',
-  OnItemSelected:'item selected trigger handler'
+  OnItemSelected:'item selected trigger handler',
+  LoadingDesc:'a loading effect',
+  TargetDesc:'the DOM node Loading needs to cover. Accepts a DOM object or a string. If it is a string, it will be passed to document.querySelector to get the corresponding DOM node',
+  LoadingText:'loading text that displays under the spinner',
 }

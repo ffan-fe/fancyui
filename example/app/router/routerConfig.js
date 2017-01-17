@@ -333,7 +333,6 @@ export default [
 			key: 'list'
 		}
 	},
-	/**
 	{
 		name: 'calendar',
 		moduleName:{
@@ -346,7 +345,7 @@ export default [
 		tracking: {
 			key: 'calendar'
 		}
-	}, */
+	}, 
 	{
 		name: 'switchDemo',
 		moduleName:{

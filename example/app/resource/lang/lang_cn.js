@@ -150,4 +150,7 @@ export default Object.assign(_defaultLang, {
   IsMultipleDesc:'是否多选',
   AllowCreateDesc:'是否允许用户创建新标签，需配合 is-multiple 使用',
   OnItemSelected:'选中选项的触发回调',
+  LoadingDesc:'loading效果',
+  TargetDesc:'支持传入string选择器（querySelector), dom对象，以及angularElement对象（jqlite）',
+  LoadingText:'指定显示loading 的信息',
 });
