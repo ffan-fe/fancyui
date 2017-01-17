@@ -1,36 +1,85 @@
 <section class="intro-content">
 	<h1 translate='{{vm.$state.current.name}}'></h1>
-	<p>XXXXXXXXX</p>
+	<p>加载数据时显示动效。</p>
 </section>
 
 <section class="intro-content">
 	<h2>{{'Install' | translate}}</h2>
-	<p>xxxxxxxx</p>
+	<p>{{'Install_FancyUI'|translate}}</p>
 </section>
 
 <div class="example-block">
 <div class="highlight" hljs hljs-language="bash">
-npm install fancyui --save</div>
+npm install fancyui --save
+</div>
 </div>
 
 <section class="intro-content">
-	<h2>{{'Inject_Module' | translate}}</h2>
-	<p>XXXX</p>
+	<h2>{{'Inject_Module'|translate}}</h2>
 </section>
 
-<div class="example-block"  id="test">
-	<div class="highlight no-border" hljs hljs-language="javascript">
-		XXX.js 代码
-	</div>
+<div class="example-block">
+  <div class="highlight" hljs hljs-language="javascript">
+import {Service} from 'fancyui';
+
+export default angular.module('loading', [
+  Service.name
+])
 </div>
+</div>
+
+
+<section>
+	<h2>区域加载</h2>
+	<p>在容器中加载数据时显示。</p>
+</section>
 
 <!--示例-->
 <h2>{{'Example'|translate}}</h2>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
-		<button ng-click="vm.click()">loading</button>
+		<div id="table-container" class="table-container">
+			<div class="table-wrapper ng-table">
+				<table class="table table-bordered table-hover" >
+					<thead>
+						<tr>
+							<th style="width: 25%;">名称</th>
+							<th style="width: 15%;">视图名称</th>
+							<th style="width: 20%;">上一次编译结果的状态</th>
+							<th style="width: 20%;">上一次编译结果的序号</th>
+							<th style="width: 20%;">上一次编译失败的序号</th>
+						</tr>
+					</thead>
+					<tbody class="ng-scope">
+						<tr class="ng-scope">
+							<td class="ng-binding">fix_web</td>
+							<td class="ng-binding">tool-wd</td>
+							<td class="ng-binding">SUCCESS</td>
+							<td class="ng-binding">#10</td>
+							<td class="ng-binding">#4</td>
+						</tr>
+						<tr class="ng-scope">
+							<td class="ng-binding">fix_web</td>
+							<td class="ng-binding">tool-wd</td>
+							<td class="ng-binding">SUCCESS</td>
+							<td class="ng-binding">#10</td>
+							<td class="ng-binding">#4</td>
+						</tr>
+						<tr class="ng-scope">
+							<td class="ng-binding">fix_web</td>
+							<td class="ng-binding">tool-wd</td>
+							<td class="ng-binding">SUCCESS</td>
+							<td class="ng-binding">#10</td>
+							<td class="ng-binding">#4</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<br>
+		
+		<button ng-click="vm.show($event)" >loading</button>
 
-		<button ng-click="vm.close()">close</button>
 	</div>
 </div>
 

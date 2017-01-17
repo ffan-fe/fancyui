@@ -7,21 +7,26 @@
  */
 
 export default class LoadingController {
-  constructor($state,LoadingService) {
+  constructor($state, LoadingService,HintService) {
     'ngInject'
-    this.$state= $state;
-    this.name = 'loading';
+    this.$state = $state;
     this.LoadingService = LoadingService;
+    this.n = 0;
+    this.HintService = HintService;
   }
 
-
-  click(){
-    this.modal = this.LoadingService.loading({
-      text:'正在XXOO...'
-    });
+  show(e) {
+    console.log(JSON.stringify(e))
+    console.log('show'+(this.n++) );
+    this.HintService.Hint()
+    /**
+    this.loading = this.LoadingService.loading({
+      target: '#table-container',
+      text: 'loading...'
+    }); */ 
   }
 
-  close(){
-    this.modal.close();
-  } 
+  close() {
+    this.loading.close();
+  }
 }
