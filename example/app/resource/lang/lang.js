@@ -119,5 +119,15 @@ export default {
   IsDisabledDesc:'is whole component disabled',
   IsMultipleDesc:'is multiple render',
   AllowCreateDesc:'whether creating new items is allowed. To use this, is-multiple must be true',
-  OnItemSelected:'item selected trigger handler'
+  OnItemSelected:'item selected trigger handler',
+  LoadingDesc:'a loading effect',
+  TargetDesc:'the DOM node Loading needs to cover. Accepts a DOM object or a string. If it is a string, it will be passed to document.querySelector to get the corresponding DOM node',
+  LoadingText:'loading text that displays under the spinner',
+  CalendarBeforeRender:'will call this function before rendering a new view, passing in data about the view.',
+  OnSetTime:'will call this function passing in the selected value and previous value.',
+  SeeBelow:'see below',
+  StartView:'the view that the datetimepicker should show when it is opened.',
+  MinView:'the lowest view that the calendar should show.',
+  MinuteStep:'minute step',
+  ModelType:'specifies the data type to use when storing the selected date in the model.',
 }

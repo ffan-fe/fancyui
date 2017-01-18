@@ -333,7 +333,6 @@ export default [
 			key: 'list'
 		}
 	},
-	/**
 	{
 		name: 'calendar',
 		moduleName:{
@@ -346,7 +345,7 @@ export default [
 		tracking: {
 			key: 'calendar'
 		}
-	}, */
+	}, 
 	{
 		name: 'switchDemo',
 		moduleName:{
@@ -486,6 +485,19 @@ export default [
 		lazyload: require("bundle?lazy&name=select!../components/select/select.js"),
 		tracking: {
 			key: 'select'
+		}
+	},
+	{
+		name: 'loading',
+    moduleName:{
+      'en-us':'Loading',
+      'zh-cn':'加载'
+    },
+		url: "/component/loading",
+		template: '<loading></loading>',
+		lazyload: require("bundle?lazy&name=loading!../components/loading/loading.js"),
+		tracking: {
+			key: 'loading'
 		}
 	}
 ]
