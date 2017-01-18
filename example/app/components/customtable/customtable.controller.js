@@ -1,11 +1,3 @@
-/**
- * (description)
- *
- * @author yourname
- */
-
-import data from './data';
-
 export default class CustomtableController {
 	constructor($state) {
 		"ngInject";
@@ -63,7 +55,19 @@ export default class CustomtableController {
 				}
 			}
 		];
-		this.data = data;
+
+		this.data = {
+			"totalCount": 23842,
+			"items": [{
+				"storeId": 1123,
+				"storeName": "DO it",
+				"storePhone": "0123-45678910",
+				"businessType": "电影",
+				"isPhysicalStoreName": '虚拟门店',
+				"plazaName": "超级广场",
+				"merchantName": "宇宙商户"
+			}]
+		};
 	}
 
 	pageChange(pageNo) {

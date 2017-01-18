@@ -18,13 +18,11 @@
 
 <div class="example-block">
 <div class="highlight no-border" hljs hljs-language="javascript">
-import tableComponent from './table.component';
 import { ffanTable } from 'fancyui';
 
 export default angular.module('tableDemo', [
   ffanTable.name
-])
-.component('tableDemo', tableComponent);</div>
+])</div>
 </div>
 
 <section class="intro-content">
@@ -108,6 +106,25 @@ export default angular.module('tableDemo', [
 constructor(NgTableParams) {
   "ngInject";
   this.NgTableParams = NgTableParams;
+  this.data = {
+      "total": 85,
+      "datas": [
+        {
+          "name": 'fix_web',
+          "viewName": "tool-wd",
+          "lastStatus": "SUCCESS",
+          "lastNO": "#10",
+          "lastFailNO": "#4"
+         },
+         {
+           "name": 'fix_web',
+           "viewName": "tool-wd",
+           "lastStatus": "SUCCESS",
+           "lastNO": "#10",
+           "lastFailNO": "#4"
+         }
+       ]
+    };
   this.init();
 }
 
@@ -119,11 +136,9 @@ init(){
     }, {
     counts: [],
       getData: function (params) {
-      // call service to get table data
       params.total(self.data.total);
-      return self.data && self.data.datas;
+      return self.data.datas;
     }
   });
-}
-</div>
+}</div>
 </div>
