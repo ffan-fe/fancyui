@@ -31,16 +31,28 @@ export default angular.module('calendar', [
 	<h3>{{'DefaultCalendar'|translate}}</h3>
 </section>
 
-<h3>view</h3>
+
 <div class="example-block">
 	<div class="bs-example calendar-example">
 <f-calendar
 	ng-model="vm.model"
+	before-render="vm.beforeRender($view, $dates, $leftDate, $upDate, $rightDate)"
 	on-time-set="vm.onSetTime(newDate,oldDate)"
 	config="vm.dataConfig">
 </f-calendar>		
 	</div>
 </div>
+<h3>view</h3>
+<div class="example-block">
+<div hljs-no-escape class="highlight no-border" hljs hljs-language="html">
+&lt;f-calendar
+  ng-model="vm.model"
+  on-time-set="vm.onSetTime(newDate,oldDate)"
+  before-render="vm.beforeRender($view, $dates, $leftDate, $upDate, $rightDate)"
+  config="vm.dataConfig"&gt;
+&lt;/f-calendar&gt	</div>
+</div>
+
 
 <h3>controller</h3>
 <div class="example-block">
@@ -50,7 +62,8 @@ export default class CalendarController {
     'ngInject';
     this.model = '2016-10-30 12:02:00';                        //默认时间
     this.dataConfig = {
-      minuteStep: 1,
+      startView:'day',
+      minuteStep: 20,
       modelType: 'YYYY-MM-DD HH:mm:ss',
       minView: 'minute'
     }
@@ -62,165 +75,94 @@ export default class CalendarController {
 }</div>
 </div>
 
-
-
-
-
-<section class="intro-content">
-	<h3>{{'RangeCalendar'|translate}}</h3>
-	<p>{{'RangeCalendarDes'|translate}}</p>
-</section>
-
-<div class="example-block">
-	<div class="bs-example pop-confirm-example">
-	
-	</div>
-<div class="highlight" hljs hljs-no-escape hljs-language="html">
-&lt;f-datetimepicker
-  placeholders="vm.placeholders"
-  type="range"
-  start-model="vm.startModel"
-  end-model="vm.endModel"&gt;
-&lt;/f-datetimepicker&gt;
-</div>
-
-<div class="highlight" hljs hljs-language="javascript">
-this.type = 'range';                                  //展示范围时间
-this.model = '2015-02-03 12:02:00';                   //默认时间
-this.startModel = '2016-08-08 13:12:00';              //开始时间
-this.placeholders = ['活动开始时间', '活动结束时间'];      //placeholders
-this.separator = '至';                                 //分隔符
-this.startDisabled = true;                             //开始时间不可选
-this.minTime = '2016-09-09 09:09:00';                  //最小时间
-this.maxTime = '2018-09-09 09:09:00';                  //最大时间
-this.startView = 'month';                              //开始的时间
-this.minView = 'month';                                //最小视图
-this.startDisabled = true;                             //开始时间Disabled
-this.minuteStep = 10;                                  //分钟间隔
-</div>
-</div>
-
 <section class="intro-content">
 	<h2>{{'Options'|translate}}</h2>
 	<table class="demo-table">
 		<thead>
-		<tr>
-			<th>{{'Param'|translate}}</th>
-			<th>{{'Description'|translate}}</th>
-			<th>{{'Type'|translate}}</th>
-			<th>{{'Optional'|translate}}</th>
-			<th>{{'DefaultValue'|translate}}</th>
-		</tr>
+			<tr>
+				<th>{{'Param'|translate}}</th>
+				<th>{{'Description'|translate}}</th>
+				<th>{{'Type'|translate}}</th>
+				<th>{{'Optional'|translate}}</th>
+				<th>{{'DefaultValue'|translate}}</th>
+			</tr>
 		</thead>
 		<tbody>
-		<tr>
-			<td>type</td>
-			<td>{{'CalendarTypeDesc'|translate}}</td>
-			<td>string</td>
-			<td>- / range</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>model</td>
-			<td>single calendar model</td>
-			<td>string</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>start-model</td>
-			<td>range calenda startModel</td>
-			<td>string</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>end-model</td>
-			<td>range calenda endModel</td>
-			<td>string</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>min</td>
-			<td>min value</td>
-			<td>string</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>max</td>
-			<td>max value</td>
-			<td>string</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>startView</td>
-			<td>start view</td>
-			<td>string</td>
-			<td>-</td>R
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>minView</td>
-			<td>min view</td>
-			<td>string</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>minuteStep</td>
-			<td>minute step</td>
-			<td>number</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>modelType</td>
-			<td>Time format 'YYYY-MM-DD'' etc.</td>
-			<td>string</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
+			<tr>
+				<td>ng-model</td>
+				<td>model</td>
+				<td>string</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>before-render</td>
+				<td>{{'CalendarBeforeRender'|translate}}</td>
+				<td>function</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+			<tr>
+				<td>on-set-time</td>
+				<td>{{'OnSetTime'|translate}}</td>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td>config</td>
+				<td>{{'SeeBelow'|translate}}</td>
+				<td>object</td>
+				<td>-</td>
+				<td>-</td>
+			</tr>
+		</tbody>
+	</table>
+</section>
 
 
-		<tr>
-			<td>startDisabled</td>
-			<td>whether the startDate is disbaled</td>
-			<td>boolean</td>
-			<td>true / false</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>endDisabled</td>
-			<td>whether the endDisabled is disbaled</td>
-			<td>boolean</td>
-			<td>true / false</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>disabled</td>
-			<td>{{'Disabled'|translate}}</td>
-			<td>boolean</td>
-			<td>true / false</td>
-			<td>false</td>
-		</tr>
-		<tr>
-			<td>placeholders</td>
-			<td>placeholders</td>
-			<td>array</td>
-			<td>-</td>
-			<td>-</td>
-		</tr>
-		<tr>
-			<td>separator</td>
-			<td>separator text, default Value:'至' </td>
-			<td>string</td>
-			<td>-</td>
-			<td>'至'</td>
-		</tr>
-
+<section class="intro-content">
+	<h2>config</h2>
+	<table class="demo-table">
+		<thead>
+			<tr>
+				<th>{{'Param'|translate}}</th>
+				<th>{{'Description'|translate}}</th>
+				<th>{{'Type'|translate}}</th>
+				<th>{{'Optional'|translate}}</th>
+				<th>{{'DefaultValue'|translate}}</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>startView</td>
+				<td>{{'StartView'|translate}}</td>
+				<td>string</td>
+				<td>'minute'/'hour'/'day'/'month'/'year'</td>
+				<td>'day'</td>
+			</tr>
+			<tr>
+				<td>minView</td>
+				<td>{{'MinView'|translate}}</td>
+				<td>string</td>
+				<td>'minute'/'hour'/'day'/'month'/'year'</td>
+				<td>'minute'</td>
+			</tr>
+			<tr>
+				<td>minuteStep</td>
+				<td>{{'MinuteStep'|translate}}</td>
+				<td>number</td>
+				<td>1-60</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>modelType</td>
+				<td>{{'ModelType'|translate}}</td>
+				<td>string</td>
+				<td>'Date'/'moment'/'milliseconds'</td>
+				<td>'Date'</td>
+			</tr>
+			
 		</tbody>
 	</table>
 </section>

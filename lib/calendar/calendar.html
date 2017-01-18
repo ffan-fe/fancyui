@@ -9,6 +9,7 @@
 		<datetimepicker 
       on-set-time="vm.onSetTime(newDate, oldDate)" 
       data-ng-model="vm.ngModel" 
+			data-before-render="vm.onBeforeRender($view, $dates, $leftDate, $upDate, $rightDate)"
       data-datetimepicker-config="vm.config" />
 	</ul>
 </div>

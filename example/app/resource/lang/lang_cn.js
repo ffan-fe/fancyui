@@ -153,4 +153,11 @@ export default Object.assign(_defaultLang, {
   LoadingDesc:'loading效果',
   TargetDesc:'支持传入string选择器（querySelector), dom对象，以及angularElement对象（jqlite）',
   LoadingText:'指定显示loading 的信息',
+  CalendarBeforeRender:'在view改变之前，会调用此函数',
+  OnSetTime:'选择完step之后，触发的函数。',
+  SeeBelow:'参照下表',
+  StartView:'展开日历时，出现的第一个view的类型',
+  MinView:'最后一个选择view的类型',
+  MinuteStep:'分钟视图的间隔，默认是1（展示60个）',
+  ModelType:'指定日期展示类型，支持moment等常见的格式.',
 });
