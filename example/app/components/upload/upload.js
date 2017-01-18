@@ -1,7 +1,7 @@
-import Upload from '../../../../lib/upload/index.js';
+import Upload from '../../../../lib/upload/';
 
 import uploadComponent from './upload.component';
 export default angular.module('upload', [
-  Upload.name
+  Upload.name,
 ])
 .component('upload', uploadComponent);
