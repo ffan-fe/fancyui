@@ -114,7 +114,7 @@ export default Object.assign(_defaultLang, {
   MenuApiDecSubMenuTitle: '子菜单项值',
   MenuApiDecItemGroupTitle: '分组标题',
   MenuApiDecOnSelect: '被选中时调',
-  upload: '上传',
+  Upload: '上传',
   UploadDesc: '文件选择上传和拖拽上传控件',
   UploadApiDecName: '发到后台的文件参数名',
   UploadApiDecDefaultFileList: '默认已经上传的文件列表',
