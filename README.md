@@ -32,3 +32,7 @@ npm test --single_file=lib/button/button.spec.js
 
 ## Want to contribute?
 See the [contributing](CONTRIBUTING.md) guidelines.
+
+
+## LICENSE
+BSD
