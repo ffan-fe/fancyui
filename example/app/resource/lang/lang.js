@@ -85,7 +85,7 @@ export default {
   MenuApiDecSubMenuTitle: 'title of the sub menu',
   MenuApiDecItemGroupTitle: 'title of the group',
   MenuApiDecOnSelect: 'callback of the selected item',
-  upload: 'Upload',
+  Upload: 'Upload',
   UploadDesc: 'Upload file by selecting or dragging',
   UploadApiDecName: 'The name of uploading file',
   UploadApiDecDefaultFileList: 'Default list of files that have been uploaded.',

@@ -7,7 +7,6 @@
 
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
-import 'angular-sanitize';
 import 'angular-animate';
 import 'angular-ui-bootstrap';
 import './skin/theme.less';
@@ -27,7 +26,6 @@ import ResourceManager from './resource/index';
 import routeConfig from './router/routerConfig';
 
 angular.module('app', [
-  'ngSanitize',
   'ngAnimate',
   uiRouter,
   'ui.bootstrap',
