@@ -46,7 +46,7 @@ angular.module('app', [
  */
   .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
-    $urlRouterProvider.otherwise('/en-us/component/install');
+    $urlRouterProvider.otherwise('/zh-cn/component/install');
   })
   .config(function ($httpProvider) {
     "ngInject";
@@ -59,8 +59,6 @@ angular.module('app', [
     $translateProvider
       .translations('en-us', new ResourceManager('en-us').extract())
       .translations('zh-cn', new ResourceManager('zh-cn').extract());
-
-
   })
   .factory('urlInterceptor', function () {
     return {

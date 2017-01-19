@@ -15,11 +15,13 @@ export default class ButtonController {
 	}
 
 	sayHello(btn) {
+		console.log('2222')
+		/**
 		btn.state = {loading: true};
 		this.tiggleDisabled = false;
 		this.$timeout(() => {
 			btn.state = {disabled: false, loading: false};
-		}, 3000);
+		}, 3000); */
 	}
 
 	$onInit(){

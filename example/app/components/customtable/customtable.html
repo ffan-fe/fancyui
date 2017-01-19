@@ -11,8 +11,7 @@
 
 <div class="example-block">
 <div class="highlight" hljs hljs-language="bash">
-npm install fancyui --save</div>
-</div>
+npm install fancyui --save</div></div>
 
 <section class="intro-content">
 	<h2>{{'Inject_Module'|translate}}</h2>
@@ -21,13 +20,11 @@ npm install fancyui --save</div>
 
 <div class="example-block">
 	<div class="highlight no-border" hljs hljs-language="javascript">
-import customtableComponent from './customtable.component';
 import {CustomTable} from 'fancyui';
 
 export default angular.module('customTable', [
   CustomTable.name
-])
-.component('customTable', customtableComponent);</div>
+])</div>
 </div>
 
 <h2>{{'Example'|translate}}</h2>
@@ -57,7 +54,7 @@ export default angular.module('customTable', [
 <h3>controller</h3>
 
 <div class="example-block">
-<div class="highlight" hljs hljs-language="javascript">
+<div class="highlight" hljs hljs-no-escape >
 export default class CustomtableController {
   constructor() {
     "ngInject";
@@ -114,7 +111,18 @@ export default class CustomtableController {
         }
       }
     ];
-    this.data = data;
+    this.data = {
+      "totalCount": 23842,
+      "items": [{
+        "storeId": 1123,
+        "storeName": "DO it",
+        "storePhone": "0123-45678910",
+        "businessType": "电影",
+        "isPhysicalStoreName": '虚拟门店',
+        "plazaName": "超级广场",
+        "merchantName": "宇宙商户"
+      }]
+    };
   }
 
   pageChange(pageNo) {

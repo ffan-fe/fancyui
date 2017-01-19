@@ -5,40 +5,19 @@
  */
 
 export default class TableController {
-	constructor(NgTableParams,$state) {
+	constructor(NgTableParams, $state) {
 		"ngInject";
 		this.$state = $state;
 		this.NgTableParams = NgTableParams;
 		this.data = {
-			"total": 85,
-			"datas": [
-				{
-					"name": 'fix_web',
-					"viewName": "tool-wd",
-					"lastStatus": "SUCCESS",
-					"lastNO": "#10",
-					"lastFailNO": "#4"
-				},
-				{
-					"name": 'fix_web',
-					"viewName": "tool-wd",
-					"lastStatus": "SUCCESS",
-					"lastNO": "#10",
-					"lastFailNO": "#4"
-				},
-				{
-					"name": 'fix_web',
-					"viewName": "tool-wd",
-					"lastStatus": "SUCCESS",
-					"lastNO": "#10",
-					"lastFailNO": "#4"
-				},
-				{
-					"name": 'fix_web',
-					"viewName": "tool-wd",
-					"lastStatus": "SUCCESS",
-					"lastNO": "#10",
-					"lastFailNO": "#4"
+      "total": 85,
+      "datas": [
+        {
+          "name": 'fix_web',
+          "viewName": "tool-wd",
+          "lastStatus": "SUCCESS",
+          "lastNO": "#10",
+          "lastFailNO": "#4"
 				},
 				{
 					"name": 'fix_web',
@@ -48,7 +27,7 @@ export default class TableController {
 					"lastFailNO": "#4"
 				}
 			]
-		};
+    };
 		this.init();
 	}
 
@@ -58,16 +37,16 @@ export default class TableController {
 
 	getDataList() {
 		var self = this;
-		self.tableParams = new this.NgTableParams({
-			page: 1,
-			count: 5
-		}, {
-			counts: [],
-			getData: function (params) {
-				// call service to get table data
-				params.total(self.data.total);
-				return self.data && self.data.datas;
-			}
-		});
+		var self = this;
+    self.tableParams = new this.NgTableParams({
+      page: 1,
+      count: 5
+    }, {
+				counts: [],
+				getData: function (params) {
+					params.total(self.data.total);
+					return self.data.datas;
+				}
+			});
 	}
 }

@@ -1,18 +1,15 @@
 <section class="intro-content">
   <h1 translate='{{vm.$state.current.name}}'></h1>
-
   <p>{{'UploadDesc' | translate}}</p>
 </section>
 
 <section class="intro-content">
   <h2>{{'Install' | translate}}</h2>
-
 </section>
 
 <div class="example-block">
   <div class="highlight" hljs hljs-language="bash">
-npm install fancyui --save
-  </div>
+npm install fancyui --save</div>
 </div>
 
 <section class="intro-content">
@@ -22,12 +19,10 @@ npm install fancyui --save
 
 <div class="example-block">
   <div class="highlight no-border" hljs hljs-language="javascript">
-import {upload} from 'fancyui';
-
-export default angular.module('uploadDemo', [
-    upload.name
-])
-  </div>
+import {Upload} from 'fancyui';
+export default angular.module('uploaddemo', [
+  Upload.name
+])</div>
 </div>
 
 <!--示例-->
@@ -46,16 +41,16 @@ export default angular.module('uploadDemo', [
     </f-upload>
   </div>
   <div class="bs-example pop-confirm-example">
-    <f-upload action="/action.do"
-              accept="vm.accept"
-              list-type="picture"
-              default-file-list="vm.defaultFileList"
-              file-list="vm.fileList2">
-      <span class="btn btn-default">
-        <span class="glyphicon glyphicon-upload"></span>
-        Upload
-      </span>
-    </f-upload>
+<f-upload action="/action.do"
+          accept="vm.accept"
+          list-type="picture"
+          default-file-list="vm.defaultFileList"
+          file-list="vm.fileList2">
+  <span class="btn btn-default">
+    <span class="glyphicon glyphicon-upload"></span>
+    Upload
+  </span>
+</f-upload>
   </div>
   <div class="bs-example pop-confirm-example">
     <f-dragger action="/action.do"
@@ -83,23 +78,23 @@ export default angular.module('uploadDemo', [
 <h3>View</h3>
 <div class="example-block">
   <div class="highlight no-border" hljs hljs-language="html">
-    <f-upload action="/action.do"
-                         accept="vm.accept"
-                         default-file-list="vm.defaultFileList"
-                         file-list="vm.fileList">
-      <span class="btn btn-default">
-        <span class="glyphicon glyphicon-upload"></span>
-        upload
-      </span>
-  </f-upload>
+<f-upload action="/action.do"
+      accept="vm.accept"
+      default-file-list="vm.defaultFileList"
+      file-list="vm.fileList">
+<span class="btn btn-default">
+  <span class="glyphicon glyphicon-upload"></span>
+  upload
+</span>
+</f-upload>
 
-    <f-dragger action="/action.do"
-               file-list="vm.fileList">
-      <div
-        style="width: 150px;height: 150px;vertical-align: middle;font-size: 28px;color: #999;line-height: 150px;font-weight: lighter">
-        drop
-      </div>
-    </f-dragger>
+<f-dragger action="/action.do"
+            file-list="vm.fileList">
+  <div
+    style="width: 150px;height: 150px;vertical-align: middle;font-size: 28px;color: #999;line-height: 150px;font-weight: lighter">
+    drop
+  </div>
+</f-dragger>
   </div>
 </div>
 
@@ -107,19 +102,19 @@ export default angular.module('uploadDemo', [
 
 <div class="example-block">
   <div class="highlight no-border" hljs hljs-language="javascript">
-    this.accept = {
-    size: {min: 10, max: '20MB'},
-    width: {min: 1000, max: 10000},
-    height: {min: 100, max: 300},
-    pattern: 'image/*'
-    };
+this.accept = {
+  size: {min: 10, max: '20MB'},
+  width: {min: 1000, max: 10000},
+  height: {min: 100, max: 300},
+  pattern: 'image/*'
+};
 
-    this.defaultFileList = [{
-    url: 'http://www.fancyui.org/img-a04b6a41f26906e5c8732586d2d1261b.png',
-    name: 'test.png'
-    }];
+this.defaultFileList = [{
+  url: 'http://www.fancyui.org/img-a04b6a41f26906e5c8732586d2d1261b.png',
+  name: 'test.png'
+}];
 
-    this.fileList = [];
+this.fileList = [];
   </div>
 </div>
 

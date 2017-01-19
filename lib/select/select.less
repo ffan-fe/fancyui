@@ -8,7 +8,9 @@
     line-height:normal;
     white-space:normal;
     z-index:1000;
-    
+    transform: translateY(-50%);
+    top:50%;
+
     .f-tag_close{
       font-family: 'Glyphicons Halflings';
       font-style:normal;
@@ -175,6 +177,8 @@
           margin: 0;
           padding: 0;
 
+          
+
           .f-select-group_title{
             padding-left: 10px;
             font-size: 12px;
@@ -205,6 +209,11 @@
                 &:hover{
                   background-color: #1d8ce0;
                 }
+              }
+
+              &.is-item-disabled{
+                color:#c0ccda;
+                cursor: not-allowed;
               }
 
           }
