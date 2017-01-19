@@ -80,7 +80,7 @@ export default Object.assign(_defaultLang, {
   ProgressType: '进度条类型',
   ProgressPercent: '百分比（必填）',
   ProgerssState: '进度条当前状态',
-  ProgressWidth: '进度条的宽度，单位 px',
+  ProgressWidth: '进度条的宽度，单位 px(必填)',
   ProgressCircularWidth: '环形进度条画布宽度（只在 type=circle 时可用）',
   InputDes: '通过鼠标或键盘，输入范围内的数值。',
   StepSetting: '设置步数',

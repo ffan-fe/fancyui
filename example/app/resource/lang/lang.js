@@ -52,7 +52,7 @@ export default {
   ProgressType: 'the type of progress bar',
   ProgressPercent: 'percentage, required',
   ProgerssState: 'the current status of progress bar',
-  ProgressWidth: 'the width of progress bar',
+  ProgressWidth: 'the width of progress bar, required',
   ProgressCircularWidth: 'the canvas width of circle progress bar',
   InputDes: 'Input numerical values with a customizable range.',
   StepSetting: 'Steps setting',
