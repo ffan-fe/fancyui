@@ -38,11 +38,22 @@ export default angular.module('inputNumberDemo', [
 	</div>
 </div>
 
+<h3>code</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="html">
+<input-number value="1" min="1" max="10" on-change="vm.onChange"></input-number></div>
+</div>
+
 <h3>{{'Disable'|translate}}</h3>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
 		<input-number value="1" min="1" max="10" disabled="true"></input-number>
 	</div>
+</div>
+<h3>code</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="html">
+<input-number value="1" min="1" max="10" disabled="true"></input-number></div>
 </div>
 
 <h3>{{'StepSetting'|translate}}</h3>
@@ -52,15 +63,12 @@ export default angular.module('inputNumberDemo', [
 	</div>
 </div>
 
-<h2>{{'Basic_Usage'|translate}}</h2>
-<h3>view</h3>
+<h3>code</h3>
 <div class="example-block">
 <div class="highlight no-border" hljs hljs-language="html">
-<input-number value="1" min="1" max="10" on-change="vm.onChange"></input-number>
-<input-number value="1" min="1" max="10" disabled="true"></input-number>
-<input-number value="1" min="1" max="100" step="5" on-change="vm.onChange"></input-number>
+<input-number value="1" min="1" max="100" step="5" on-change="vm.onChange"></input-number></div>
 </div>
-</div>
+
 
 <section class="intro-content">
 	<h2>{{'Options'|translate}}</h2>
