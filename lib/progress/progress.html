@@ -2,8 +2,8 @@
 	 ng-if="vm.type == 'line' || !vm.type"
 	 ng-class="{success: vm.status == 'success', exception: vm.status == 'exception'}">
 	<div class="ffan-progress-bar">
-		<div class="ffan-progress-outer" style="height: {{vm.strokeWidth || 8}}px;">
-			<div class="ffan-progress-inner" style="width:{{vm.percent}}%; height: {{vm.strokeWidth || 8}}px;"></div>
+		<div class="ffan-progress-outer" style="height: {{vm.innerStrokeWidth || 8}}px;">
+			<div class="ffan-progress-inner" style="width:{{vm.percent}}%; height: {{vm.innerStrokeWidth || 8}}px;"></div>
 		</div>
 	</div>
 	<span class="ffan-progress-text">{{vm.percent}}%</span>

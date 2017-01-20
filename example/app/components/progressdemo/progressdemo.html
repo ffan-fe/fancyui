@@ -19,10 +19,12 @@ npm install fancyui --save</div>
 
 <div class="example-block">
 	<div class="highlight no-border" hljs hljs-language="javascript">
+import progressdemoComponent from './progressdemo.component';
 import {Progress} from 'fancyui';
 export default angular.module('progressDemo', [
   Progress.name
-])</div>
+])
+.component('progressDemo', progressdemoComponent);</div>
 </div>
 
 
@@ -32,7 +34,7 @@ export default angular.module('progressDemo', [
 	<div class="bs-example pop-confirm-example">
 		<div class="col-md-6" style="float: none;">
 			<p>
-				<bp-progress percent="0" type="line" stroke-width="5"></bp-progress>
+				<bp-progress percent="0" type="line"></bp-progress>
 			</p>
 			<p>
 				<bp-progress percent="80" stroke-width="8"></bp-progress>
@@ -134,7 +136,7 @@ export default angular.module('progressDemo', [
 			<td>{{'ProgressWidth'|translate}}</td>
 			<td>number</td>
 			<td>-</td>
-			<td></td>
+			<td>line:8, circle:5</td>
 		</tr>
 		<tr>
 			<td>width</td>
