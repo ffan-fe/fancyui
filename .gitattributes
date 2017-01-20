@@ -1,1 +1,1 @@
-*.html linguist-language=Angular
+lib/**/*.js linguist-language=Angular
