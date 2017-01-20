@@ -8,6 +8,5 @@ export default class BadgedemoController {
   constructor($state) {
     'ngInject'
     this.$state = $state;
-    this.name = 'badgedemo';
   }
 }
