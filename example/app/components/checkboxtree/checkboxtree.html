@@ -19,14 +19,11 @@ npm install angular-ui-tree --save</div>
 
 <div class="example-block no-border">
 	<div class="highlight" hljs hljs-language="javascript">
-import checkboxtreeComponent from './checkboxtree.component';
-import 'angular-ui-tree';
 import {checkboxtree} from 'fancyui';
 export default angular.module('checkboxtree', [
-  'ui.tree',
   checkboxtree.name
 ])
-.component('checkboxtree', checkboxtreeComponent);</div>
+</div>
 </div>
 
 <h2>{{'Example'|translate}}</h2>
@@ -35,6 +32,7 @@ export default angular.module('checkboxtree', [
 		<bp-checkboxtree 
 			list-promise="vm.loadPromise" 
 			ng-model="vm.form.category"
+      default-collapsed="false"
 			config="vm.config"></bp-checkboxtree>
 	</div>
 </div>
@@ -45,6 +43,7 @@ export default angular.module('checkboxtree', [
 <div class="highlight" hljs hljs-no-escape>
 &lt;bp-checkboxtree 
   list-promise="vm.loadPromise" 
+  default-collapsed="true"
   ng-model="vm.form.category"
   config="vm.config"&gt;
 &lt;/bp-checkboxtree&gt;
