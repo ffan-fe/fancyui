@@ -160,7 +160,6 @@ export default Object.assign(_defaultLang, {
   MinView:'最后一个选择view的类型',
   MinuteStep:'分钟视图的间隔，默认是1（展示60个）',
   ModelType:'指定日期展示类型，支持moment等常见的格式.',
-  Feature:'特性',
   Feature1:'通过命令行快速创建项目，创建组件',
   Feature2:'提供大量开箱即用的PC端开发常用组件',
   Feature3:'3分钟内开发完成一个与rest API对接的管理后台页面',
