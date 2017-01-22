@@ -46,7 +46,7 @@ angular.module('app', [
  */
   .config(($stateProvider, $urlRouterProvider) => {
     'ngInject';
-    $urlRouterProvider.otherwise('/zh-cn/component/install');
+    $urlRouterProvider.otherwise('/zh-cn/component/introduction');
   })
   .config(function ($httpProvider) {
     "ngInject";

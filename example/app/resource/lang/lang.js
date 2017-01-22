@@ -130,4 +130,10 @@ export default {
   MinView:'the lowest view that the calendar should show.',
   MinuteStep:'minute step',
   ModelType:'specifies the data type to use when storing the selected date in the model.',
+  Feature1:'Command line tools for init project & create component',
+  Feature2:'Lots of components',
+  Feature3:'Finishing one page within 3min by adapting to rest API',
+  Feature4:'Modular management',
+  Feature5:'ES6 syntax + gulp + webpack',
+  FeatureDesc:"FancyUI is An AngularJs(1.5.X) component's lib created by the ffan-fe team from WanDa Group,It's aimed to be useful on building backend admin managment systems, features:"
 }

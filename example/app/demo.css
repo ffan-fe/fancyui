@@ -14,6 +14,15 @@
 	padding-left: 20px;
 	color: #5e6d82;
 }
+.intro-content ul.introduction {
+	padding-left: 0px;
+}
+
+.intro-content ul.introduction li {
+	list-style: circle;
+	margin-left: 20px;
+	padding-left: 4px;
+}
 .intro-content ul li, .intro-content ol li {
 	margin: 1em 0;
 }
@@ -521,4 +530,33 @@ pre {
 
 .hljs-chunk {
 	color: #aaa
+}
+
+.footer-nav{
+	padding: 24px 0;
+	color: #99a9bf;
+	font-size: 14px;
+}
+
+.footer-nav-right{
+	float: right;
+	margin-right: -4px;
+}
+
+.footer-nav-link {
+		text-decoration:none;
+    transition: .3s;
+}
+.footer-nav a{
+	color:#5e6d82;
+}
+
+.footer-nav a:hover,
+.footer-nav a:focus{
+	text-decoration: none;
+	color: #20a0ff;
+	background-color: #fff;
+}
+.footer-nav a i {
+	font-size: 12px;
 }
