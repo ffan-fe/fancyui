@@ -4,6 +4,7 @@
 			<a data-toggle="collapse" href="" ng-click="vm.collapse($event)">{{'Tutorial'|translate}}</a>
 			<div class="sub-menu">
 				<ul class="nav sub-nav">
+					<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('introduction')}}">{{'introduction'|translate}}</a></li>
 					<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('build')}}">{{'build'|translate}}</a></li>
 					<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('structure')}}">{{'structure'|translate}}</a></li>
 					<li ui-sref-active="active"><a ui-sref="{{vm.globalRoute('generateComponent')}}">{{'generateComponent'|translate}}</a></li>

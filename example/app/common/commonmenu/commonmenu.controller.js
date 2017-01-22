@@ -9,7 +9,6 @@ export default class commonMenuController {
 		this.$scope = $scope;
 		this.$state = $state;
 		this.$translate = $translate;
-
 	}
 
 	collapse(e) {

@@ -1,9 +1,9 @@
 export default [
 	{
 		name: 'build',
-		moduleName:{
-			'en-us':'Install',
-			'zh-cn':'安装'
+		moduleName: {
+			'en-us': 'Install',
+			'zh-cn': '安装'
 		},
 		url: "/component/install",
 		template: '<build></build>',
@@ -14,9 +14,9 @@ export default [
 	},
 	{
 		name: 'structure',
-		moduleName:{
-			'en-us':'Directory',
-			'zh-cn':'目录结构'
+		moduleName: {
+			'en-us': 'Directory',
+			'zh-cn': '目录结构'
 		},
 		url: "/component/structure",
 		template: '<structure></structure>',
@@ -27,9 +27,9 @@ export default [
 	},
 	{
 		name: 'button',
-		moduleName:{
-			'en-us':'Button',
-			'zh-cn':'按钮'
+		moduleName: {
+			'en-us': 'Button',
+			'zh-cn': '按钮'
 		},
 		url: "/component/button",
 		template: '<button-demo></button-demo>',
@@ -40,9 +40,9 @@ export default [
 	},
 	{
 		name: 'tableDemo',
-		moduleName:{
-			'en-us':'Table',
-			'zh-cn':'表格'
+		moduleName: {
+			'en-us': 'Table',
+			'zh-cn': '表格'
 		},
 		url: "/component/table",
 		template: '<table-demo></table-demo>',
@@ -53,9 +53,9 @@ export default [
 	},
 	{
 		name: 'steps',
-		moduleName:{
-			'en-us':'Steps',
-			'zh-cn':'步骤条'
+		moduleName: {
+			'en-us': 'Steps',
+			'zh-cn': '步骤条'
 		},
 		url: "/component/steps",
 		template: '<steps></steps>',
@@ -67,9 +67,9 @@ export default [
 	{
 		name: 'tabs',
 		url: "/component/tabs",
-		moduleName:{
-			'en-us':'Tabs',
-			'zh-cn':'标签页'
+		moduleName: {
+			'en-us': 'Tabs',
+			'zh-cn': '标签页'
 		},
 		template: '<tabs></tabs>',
 		lazyload: require("bundle-loader?lazy&name=tabs!../components/tabs/tabs.js"),
@@ -88,9 +88,9 @@ export default [
 	},
 	{
 		name: 'formDemo',
-		moduleName:{
-			'en-us':'Form',
-			'zh-cn':'表单'
+		moduleName: {
+			'en-us': 'Form',
+			'zh-cn': '表单'
 		},
 		url: "/component/form",
 		template: '<form-demo></form-demo>',
@@ -101,9 +101,9 @@ export default [
 	},
 	{
 		name: 'labels',
-		moduleName:{
-			'en-us':'Labels',
-			'zh-cn':'xxxx'
+		moduleName: {
+			'en-us': 'Labels',
+			'zh-cn': 'xxxx'
 		},
 		url: "/component/labels",
 		template: '<labels></labels>',
@@ -114,9 +114,9 @@ export default [
 	},
 	{
 		name: 'panel',
-		moduleName:{
-			'en-us':'Card',
-			'zh-cn':'卡片'
+		moduleName: {
+			'en-us': 'Card',
+			'zh-cn': '卡片'
 		},
 		url: "/component/panel",
 		template: '<panel></panel>',
@@ -127,9 +127,9 @@ export default [
 	},
 	{
 		name: 'icons',
-		moduleName:{
-			'en-us':'Icons',
-			'zh-cn':'图标'
+		moduleName: {
+			'en-us': 'Icons',
+			'zh-cn': '图标'
 		},
 		url: "/component/icons",
 		template: '<icons></icons>',
@@ -140,9 +140,9 @@ export default [
 	},
 	{
 		name: 'grid',
-		moduleName:{
-			'en-us':'Grid',
-			'zh-cn':'栅格'
+		moduleName: {
+			'en-us': 'Grid',
+			'zh-cn': '栅格'
 		},
 		url: "/component/grid",
 		template: '<grid></grid>',
@@ -153,9 +153,9 @@ export default [
 	},
 	{
 		name: 'contextColors',
-		moduleName:{
-			'en-us':'xx',
-			'zh-cn':'xxx'
+		moduleName: {
+			'en-us': 'xx',
+			'zh-cn': 'xxx'
 		},
 		url: "/component/contextolors",
 		template: '<context-colors></context-colors>',
@@ -166,9 +166,9 @@ export default [
 	},
 	{
 		name: 'sliderInput',
-		moduleName:{
-			'en-us':'Slider Input',
-			'zh-cn':'滑动输入条'
+		moduleName: {
+			'en-us': 'Slider Input',
+			'zh-cn': '滑动输入条'
 		},
 		url: "/component/sliderinput",
 		template: '<slider-input></slider-input>',
@@ -179,9 +179,9 @@ export default [
 	},
 	{
 		name: 'generateComponent',
-		moduleName:{
-			'en-us':'Quick Start',
-			'zh-cn':'快速上手'
+		moduleName: {
+			'en-us': 'Quick Start',
+			'zh-cn': '快速上手'
 		},
 		url: "/component/start",
 		template: '<generate-component></generate-component>',
@@ -193,9 +193,9 @@ export default [
 	{
 		name: 'lineChart',
 		url: "/component/linechart",
-		moduleName:{
-			'en-us':'Line',
-			'zh-cn':'曲线图'
+		moduleName: {
+			'en-us': 'Line',
+			'zh-cn': '曲线图'
 		},
 		template: '<line-chart></line-chart>',
 		lazyload: require("bundle-loader?lazy&name=chart!../components/linechart/linechart.js"),
@@ -205,9 +205,9 @@ export default [
 	},
 	{
 		name: 'pieChart',
-		moduleName:{
-			'en-us':'Pie',
-			'zh-cn':'饼图'
+		moduleName: {
+			'en-us': 'Pie',
+			'zh-cn': '饼图'
 		},
 		url: "/component/piechart",
 		template: '<pie-chart></pie-chart>',
@@ -218,9 +218,9 @@ export default [
 	},
 	{
 		name: 'gaugeChart',
-		moduleName:{
-			'en-us':'Gauge',
-			'zh-cn':'仪表盘'
+		moduleName: {
+			'en-us': 'Gauge',
+			'zh-cn': '仪表盘'
 		},
 		url: "/component/gaugechart",
 		template: '<gauge-chart></gauge-chart>',
@@ -231,9 +231,9 @@ export default [
 	},
 	{
 		name: 'popup',
-		moduleName:{
-			'en-us':'Popup',
-			'zh-cn':'xxxx'
+		moduleName: {
+			'en-us': 'Popup',
+			'zh-cn': 'xxxx'
 		},
 		url: "/component/popup",
 		template: '<popup></popup>',
@@ -244,9 +244,9 @@ export default [
 	},
 	{
 		name: 'popConfirm',
-		moduleName:{
-			'en-us':'PopConfirm',
-			'zh-cn':'气泡确认框'
+		moduleName: {
+			'en-us': 'PopConfirm',
+			'zh-cn': '气泡确认框'
 		},
 		url: "/component/popconfirm",
 		template: '<pop-confirm></pop-confirm>',
@@ -257,9 +257,9 @@ export default [
 	},
 	{
 		name: 'changeLog',
-		moduleName:{
-			'en-us':'Change Log',
-			'zh-cn':'更新日志'
+		moduleName: {
+			'en-us': 'Change Log',
+			'zh-cn': '更新日志'
 		},
 		url: "/component/changelog",
 		template: '<change-log></change-log>',
@@ -270,9 +270,9 @@ export default [
 	},
 	{
 		name: 'hint',
-		moduleName:{
-			'en-us':'Hint',
-			'zh-cn':'短消息通知'
+		moduleName: {
+			'en-us': 'Hint',
+			'zh-cn': '短消息通知'
 		},
 		url: "/component/hint",
 		template: '<hint></hint>',
@@ -283,9 +283,9 @@ export default [
 	},
 	{
 		name: 'transfer',
-		moduleName:{
-			'en-us':'Transfer',
-			'zh-cn':'穿梭框'
+		moduleName: {
+			'en-us': 'Transfer',
+			'zh-cn': '穿梭框'
 		},
 		url: "/component/transfer",
 		template: '<transfer></transfer>',
@@ -296,9 +296,9 @@ export default [
 	},
 	{
 		name: 'alert',
-		moduleName:{
-			'en-us':'Alert',
-			'zh-cn':'提示框'
+		moduleName: {
+			'en-us': 'Alert',
+			'zh-cn': '提示框'
 		},
 		url: "/component/alert",
 		template: '<alert></alert>',
@@ -309,9 +309,9 @@ export default [
 	},
 	{
 		name: 'checkboxtree',
-		moduleName:{
-			'en-us':'Tree',
-			'zh-cn':'树'
+		moduleName: {
+			'en-us': 'Tree',
+			'zh-cn': '树'
 		},
 		url: "/component/checkboxtree",
 		template: '<democheckboxtree></componentcheckboxtree>',
@@ -322,9 +322,9 @@ export default [
 	},
 	{
 		name: 'list',
-		moduleName:{
-			'en-us':'List',
-			'zh-cn':'列表'
+		moduleName: {
+			'en-us': 'List',
+			'zh-cn': '列表'
 		},
 		url: "/component/list",
 		template: '<list></list>',
@@ -335,9 +335,9 @@ export default [
 	},
 	{
 		name: 'calendar',
-		moduleName:{
-			'en-us':'Calendar',
-			'zh-cn':'日历'
+		moduleName: {
+			'en-us': 'Calendar',
+			'zh-cn': '日历'
 		},
 		url: "/component/calendar",
 		template: '<calendar></calendar>',
@@ -345,12 +345,12 @@ export default [
 		tracking: {
 			key: 'calendar'
 		}
-	}, 
+	},
 	{
 		name: 'switchDemo',
-		moduleName:{
-			'en-us':'Switch',
-			'zh-cn':'开关'
+		moduleName: {
+			'en-us': 'Switch',
+			'zh-cn': '开关'
 		},
 		url: "/component/switch",
 		template: '<switch-demo></switch-demo>',
@@ -361,9 +361,9 @@ export default [
 	},
 	{
 		name: 'radio',
-		moduleName:{
-			'en-us':'Radio',
-			'zh-cn':'多选'
+		moduleName: {
+			'en-us': 'Radio',
+			'zh-cn': '多选'
 		},
 		url: "/component/radio",
 		template: '<radio></radio>',
@@ -374,9 +374,9 @@ export default [
 	},
 	{
 		name: 'progressDemo',
-		moduleName:{
-			'en-us':'Process Bar',
-			'zh-cn':'进度条'
+		moduleName: {
+			'en-us': 'Process Bar',
+			'zh-cn': '进度条'
 		},
 		url: "/component/progress",
 		template: '<progress-demo></progress-demo>',
@@ -387,9 +387,9 @@ export default [
 	},
 	{
 		name: 'inputNumberDemo',
-		moduleName:{
-			'en-us':'Input Number',
-			'zh-cn':'数字输入框'
+		moduleName: {
+			'en-us': 'Input Number',
+			'zh-cn': '数字输入框'
 		},
 		url: "/component/inputnumber",
 		template: '<input-number-demo></input-number-demo>',
@@ -400,9 +400,9 @@ export default [
 	},
 	{
 		name: 'badgeDemo',
-		moduleName:{
-			'en-us':'Badge',
-			'zh-cn':'徽标'
+		moduleName: {
+			'en-us': 'Badge',
+			'zh-cn': '徽标'
 		},
 		url: "/component/badge",
 		template: '<badge-demo></badge-demo>',
@@ -413,9 +413,9 @@ export default [
 	},
 	{
 		name: 'rateDemo',
-		moduleName:{
-			'en-us':'Rate',
-			'zh-cn':'评分'
+		moduleName: {
+			'en-us': 'Rate',
+			'zh-cn': '评分'
 		},
 		url: "/component/rate",
 		template: '<rate-demo></rate-demo>',
@@ -426,9 +426,9 @@ export default [
 	},
 	{
 		name: 'customTable',
-		moduleName:{
-			'en-us':'CustomTable',
-			'zh-cn':'自定义表格'
+		moduleName: {
+			'en-us': 'CustomTable',
+			'zh-cn': '自定义表格'
 		},
 		url: "/component/customtable",
 		template: '<custom-table></custom-table>',
@@ -445,14 +445,14 @@ export default [
 		tracking: {
 			key: 'home'
 		},
-		hideMenu:true,
-		hideHeader:true
+		hideMenu: true,
+		hideHeader: true
 	},
 	{
 		name: 'menu',
-    moduleName:{
-      'en-us':'Menu',
-      'zh-cn':'导航菜单'
+    moduleName: {
+      'en-us': 'Menu',
+      'zh-cn': '导航菜单'
     },
 		url: "/component/menu",
 		template: '<menu></menu>',
@@ -463,9 +463,9 @@ export default [
 	},
 	{
 		name: 'upload',
-    moduleName:{
-      'en-us':'upload',
-      'zh-cn':'上传'
+    moduleName: {
+      'en-us': 'upload',
+      'zh-cn': '上传'
     },
 		url: "/component/upload",
 		template: '<upload></upload>',
@@ -476,9 +476,9 @@ export default [
 	},
 	{
 		name: 'select',
-    moduleName:{
-      'en-us':'Select',
-      'zh-cn':'选择器'
+    moduleName: {
+      'en-us': 'Select',
+      'zh-cn': '选择器'
     },
 		url: "/component/select",
 		template: '<selectdemo></selectdemo>',
@@ -489,15 +489,28 @@ export default [
 	},
 	{
 		name: 'loading',
-    moduleName:{
-      'en-us':'Loading',
-      'zh-cn':'加载'
+    moduleName: {
+      'en-us': 'Loading',
+      'zh-cn': '加载'
     },
 		url: "/component/loading",
 		template: '<loading></loading>',
 		lazyload: require("bundle?lazy&name=loading!../components/loading/loading.js"),
 		tracking: {
 			key: 'loading'
+		}
+	},
+	{
+		name: 'introduction',
+    moduleName: {
+      'en-us': 'Introduction',
+      'zh-cn': '简介'
+    },
+		url: "/component/introduction",
+		template: '<introduction></introduction>',
+		lazyload: require("bundle?lazy&name=introduction!../components/introduction/introduction.js"),
+		tracking: {
+			key: 'introduction'
 		}
 	}
 ]

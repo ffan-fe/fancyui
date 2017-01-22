@@ -1,0 +1,18 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+	<h2>{{'Feature'|translate}}</h2>
+	<p>{{'FeatureDesc'|translate}}</p>
+	<ul class="introduction">
+		<li>{{'Feature1'|translate}}</li>
+		<li>{{'Feature2'|translate}}</li>
+		<li>{{'Feature3'|translate}}</li>
+		<li>{{'Feature4'|translate}}</li>
+		<li>{{'Feature5'|translate}}</li>
+	</ul>
+
+	<div class="footer-nav">
+		<a class="footer-nav-link footer-nav-right" ui-sref="{{vm.globalRoute('build')}}">
+    {{'build'|translate}}
+    <i class="glyphicon glyphicon-menu-right"></i></a>
+	</div>
+</section>
