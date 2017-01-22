@@ -44,7 +44,7 @@
       <select  name="multipleSelect"
                multiple
                data-ng-model="controller.leftValue">
-        <option data-ng-repeat="option in controller.sourceData | filter:controller.leftSearchValue"
+        <option data-ng-repeat="option in controller.sourceData | filter:{value: controller.leftSearchValue}"
                 data-ng-dblclick="controller.optionSourceClick(option)"
                 value="{{option.key}}"
                 title="{{option.value}}">
