@@ -32,12 +32,14 @@ export default angular.module('badgeDemo', [
 	<div class="bs-example pop-confirm-example">
 		<span class="badge-example">
 			<bp-badge count="6">
-				<a href="#"></a>
+				<a href="javascript:alert('badge click')"></a>
 			</bp-badge>
 		</span>
 	</div>
 <div class="highlight" hljs hljs-language="html">
-<bp-badge count="6"></bp-badge>
+<bp-badge count="6">
+  <a href="javascript:alert('badge click')"></a>
+</bp-badge>
 </div>
 </div>
 
@@ -46,12 +48,14 @@ export default angular.module('badgeDemo', [
 	<div class="bs-example pop-confirm-example">
 		<span class="badge-example">
 			<bp-badge count="100" max="99">
-				<a href="#"></a>
+				<a href="javascript:alert('badge click')"></a>
 			</bp-badge>
 		</span>
 	</div>
 <div class="highlight" hljs hljs-language="html">
-<bp-badge count="100" max="99"></bp-badge>
+<bp-badge count="100" max="99">
+  <a href="javascript:alert('badge click')"></a>
+</bp-badge>
 </div>
 </div>
 
@@ -59,12 +63,15 @@ export default angular.module('badgeDemo', [
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
 		<span class="badge-example">
-			<a href="#"></a>
-			<bp-badge dot="true"></bp-badge>
+			<bp-badge dot="true">
+				<a href="javascript:alert('badge click')"></a>
+			</bp-badge>
 		</span>
 	</div>
 <div class="highlight" hljs hljs-language="html">
-<bp-badge dot="true"></bp-badge>
+<bp-badge dot="true">
+  <a href="javascript:alert('badge click')"></a>
+</bp-badge>
 </div>
 </div>
 
