@@ -11,3 +11,4 @@ export default class GridController {
     this.name = 'grid';
   }
 }
+
