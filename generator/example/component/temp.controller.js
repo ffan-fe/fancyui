@@ -6,10 +6,10 @@
  * @example: http://www.fancyui.org/#/zh-cn/component/<%= name %>
  */
 
-export default class <%= upCaseName %>Controller {
-  constructor($state) {
-    'ngInject'
-    this.$state= $state;
-    this.name = '<%= name %>';
+import Base from '../../base';
+export default class <%= upCaseName %>Controller extends Base{
+  constructor($state,$translate) {
+    'ngInject';
+    super($state,$translate)
   }
 }

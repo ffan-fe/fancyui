@@ -5,6 +5,7 @@ export default {
   Install_Generator: 'Install ng-start-cli',
   Generate_Init: 'Create project by ng-start-cli, can input projectName yourself',
   Generate_Start: 'CD to your project folder and run gulp to start project',
+  GenerateStartDesc:'Open the url http://localhost:3000/#/start, (ng-start-cli will add the start router when init) ',
   Install_FancyUI: 'Install fancyui',
   Inject_Module: 'Inject module',
   Basic_Usage: 'Basic usage',

@@ -20,9 +20,9 @@ ng-start-cli init</pre>
 </div>
 
 <section class="intro-content">
-<p>
-	<img style="width:810px;" src="{{vm.initImage}}">
-</p>
+	<p>
+		<img style="width:810px;" src="{{vm.initImage}}">
+	</p>
 </section>
 
 <section class="intro-content">
@@ -31,17 +31,21 @@ ng-start-cli init</pre>
 
 <div class="example-block">
 	<div class="highlight" hljs hljs-language="bash">
-gulp</div>
+		gulp</div>
 </div>
 
 <section class="intro-content">
-<p>
-	<img style="width:810px;" src="{{vm.startImage}}">
-</p>
+	<p>
+		<img style="width:810px;" src="{{vm.startImage}}">
+	</p>
 </section>
 
 <section class="intro-content">
-	<p>输入控制台输出提示信息的Url: http://localhost:3000</p>
-
-	
+	<p>{{'GenerateStartDesc'|translate}}</p>
 </section>
+
+<div class="footer-nav">
+	<a class="footer-nav-link footer-nav-right" ui-sref="{{vm.globalRoute('structure')}}">
+    {{'structure'|translate}}
+    <i class="glyphicon glyphicon-menu-right"></i></a>
+</div>
