@@ -500,17 +500,30 @@ export default [
 			key: 'loading'
 		}
 	},
-	{
-		name: 'introduction',
+  {
+    name: 'introduction',
     moduleName: {
       'en-us': 'Introduction',
       'zh-cn': '简介'
     },
-		url: "/component/introduction",
-		template: '<introduction></introduction>',
-		lazyload: require("bundle?lazy&name=introduction!../components/introduction/introduction.js"),
-		tracking: {
-			key: 'introduction'
-		}
-	}
+    url: "/component/introduction",
+    template: '<introduction></introduction>',
+    lazyload: require("bundle?lazy&name=introduction!../components/introduction/introduction.js"),
+    tracking: {
+      key: 'introduction'
+    }
+  },
+  {
+    name: 'message',
+    moduleName: {
+      'en-us': 'Message',
+      'zh-cn': '全局提示'
+    },
+    url: "/component/message",
+    template: '<message></message>',
+    lazyload: require("bundle?lazy&name=message!../components/message/message.js"),
+    tracking: {
+      key: 'message'
+    }
+  }
 ]

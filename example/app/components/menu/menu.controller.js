@@ -7,16 +7,17 @@
  */
 
 export default class MenuController {
-  constructor($state) {
+  constructor($state, Message) {
     'ngInject'
     this.$state= $state;
+    this.Message= Message;
     this.name = 'menu';
     this.keys = ['mail'];
     this.openKeys = [];
     this.disabled = true;
 
     this.onSelect = obj => {
-      alert('Nav clicked, key:' + obj.key);
+      this.Message.info('Nav clicked, key:' + obj.key);
     }
   }
 

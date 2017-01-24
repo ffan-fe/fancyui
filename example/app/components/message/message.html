@@ -1,0 +1,123 @@
+<section class="intro-content">
+  <h1 translate='{{vm.$state.current.name}}'></h1>
+
+  <p>{{'MessageService' | translate}}</p>
+</section>
+
+<section class="intro-content">
+  <h2>{{'Install' | translate}}</h2>
+</section>
+
+<div class="example-block">
+  <div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save
+  </div>
+</div>
+
+<section class="intro-content">
+  <h2>{{'Inject_Module' | translate}}</h2>
+</section>
+
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="javascript">
+import {Service} from 'fancyui';
+
+export default angular.module('hint', [
+Service.name
+])
+  </div>
+</div>
+
+<!--示例-->
+<h2>{{'Example'|translate}}</h2>
+<div class="example-block">
+  <div class="bs-example pop-confirm-example">
+    <button class="btn btn-default" ng-click="vm.success();">success</button>
+    <button class="btn btn-default" ng-click="vm.info();">info</button>
+    <button class="btn btn-default" ng-click="vm.error();">error</button>
+    <button class="btn btn-default" ng-click="vm.warning();">warning</button>
+    <button class="btn btn-default" ng-click="vm.loading();">loading</button>
+  </div>
+</div>
+
+<!--基础用法-->
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>View</h3>
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="html">
+    <button class="btn btn-default" ng-click="vm.success();">success</button>
+    <button class="btn btn-default" ng-click="vm.info();">info</button>
+    <button class="btn btn-default" ng-click="vm.error();">error</button>
+    <button class="btn btn-default" ng-click="vm.warning();">warning</button>
+    <button class="btn btn-default" ng-click="vm.loading();">loading</button>
+  </div>
+</div>
+
+<h3>controller</h3>
+
+<div class="example-block">
+  <div class="highlight no-border" hljs hljs-language="javascript">
+constructor($state,$translate, Message) {
+'ngInject';
+super($state,$translate)
+
+this.Message = Message;
+
+}
+
+success() {
+this.Message.success('success', 5000);
+}
+info() {
+this.Message.info('info');
+}
+error() {
+this.Message.error('error');
+}
+warning() {
+this.Message.warning('warning');
+}
+loading() {
+this.Message.loading('loading');
+}
+  </div>
+</div>
+<section class="intro-content">
+  <h2>API</h2>
+  <ul>
+    <li>Message.success(content, duration)</li>
+    <li>Message.error(content, duration)</li>
+    <li>Message.info(content, duration)</li>
+    <li>Message.warning(content, duration)</li>
+    <li>Message.loading(content, duration)</li>
+  </ul>
+</section>
+<section class="intro-content">
+  <h2>arguments</h2>
+
+  <h3></h3>
+  <table class="demo-table">
+    <thead>
+    <tr>
+      <th>{{'Param'|translate}}</th>
+      <th>{{'Description'|translate}}</th>
+      <th>{{'Type'|translate}}</th>
+      <th>{{'DefaultValue'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>content</td>
+      <td>{{'MessageApiDecContent'|translate}}</td>
+      <td>String</td>
+      <td>''</td>
+    </tr>
+    <tr>
+      <td>duration</td>
+      <td>{{'MessageApiDecduration'|translate}}</td>
+      <td>number</td>
+      <td>3000</td>
+    </tr>
+    </tbody>
+  </table>
+</section>
