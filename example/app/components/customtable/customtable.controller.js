@@ -1,7 +1,8 @@
 export default class CustomtableController {
-	constructor($state) {
+	constructor($state, Message) {
 		"ngInject";
 		this.$state = $state;
+		this.Message = Message;
 		this.customColumn = [
 			{
 				key: 'storeId',
@@ -44,14 +45,14 @@ export default class CustomtableController {
 				name: '查看',
 				action: (row) => {
 					console.log(row);
-					alert('点击了查看按钮, 门店id为:' + row.storeId);
+          this.Message.info('点击了查看按钮, 门店id为:' + row.storeId);
 				}
 			},
 			{
 				name: '修改',
 				action: (row) => {
 					console.log(row);
-					alert('点击了修改按钮, 门店id为:' + row.storeId);
+          this.Message.info('点击了修改按钮, 门店id为:' + row.storeId);
 				}
 			}
 		];

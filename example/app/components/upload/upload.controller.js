@@ -7,9 +7,10 @@
  */
 
 export default class UploadController {
-  constructor($state) {
+  constructor($state, Message) {
     'ngInject'
     this.$state = $state;
+    this.Message = Message;
     this.name = 'upload';
 
     this.accept = {
@@ -24,7 +25,7 @@ export default class UploadController {
       name: 'test.png'
     }];
     this.onRemove = () => {
-      alert('remove called');
+      this.Message.info('remove called');
     };
     this.fileList1 = [];
     this.fileList2 = [];

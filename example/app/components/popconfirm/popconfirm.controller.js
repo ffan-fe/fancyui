@@ -5,11 +5,12 @@
  */
 
 export default class PopconfirmController {
-	constructor($scope, Popconfirm,$state) {
+	constructor($scope, Popconfirm, $state, Message) {
 		'ngInject';
 		this.$state = $state;
 		this.$scope = $scope;
 		this.Popconfirm = Popconfirm;
+		this.Message = Message;
 	}
 
 	topPop(e) {
@@ -18,11 +19,11 @@ export default class PopconfirmController {
 			placement: 'top',
 			okText: '确定',
 			cancelText: '取消'
-		}, e).then(function () {
-			alert('点了确定');
-		}, function () {
-			alert('点了取消');
-		});
+		}, e).then(() => {
+      this.Message.info("点了确定");
+    }, () => {
+      this.Message.info("点了取消");
+    });
 	}
 
 	leftPop(e) {
@@ -31,11 +32,11 @@ export default class PopconfirmController {
 			placement: 'left',
 			okText: '确定',
 			cancelText: '取消'
-		}, e).then(function () {
-			alert('点了确定');
-		}, function () {
-			alert('点了取消');
-		});
+		}, e).then(() => {
+      this.Message.info("点了确定");
+    }, () => {
+      this.Message.info("点了取消");
+    });
 	}
 
 	bottomPop(e) {
@@ -44,11 +45,11 @@ export default class PopconfirmController {
 			placement: 'bottom',
 			okText: '确定',
 			cancelText: '取消'
-		}, e).then(function () {
-			alert('点了确定');
-		}, function () {
-			alert('点了取消');
-		});
+		}, e).then(() => {
+      this.Message.info("点了确定");
+    }, () => {
+      this.Message.info("点了取消");
+    });
 	}
 
 	rightPop(e) {
@@ -57,10 +58,10 @@ export default class PopconfirmController {
 			placement: 'right',
 			okText: '确定',
 			cancelText: '取消'
-		}, e).then(function () {
-			alert('点了确定');
-		}, function () {
-			alert('点了取消');
-		});
+		}, e).then(() => {
+      this.Message.info("点了确定");
+    }, () => {
+      this.Message.info("点了取消");
+    });
 	}
 }
