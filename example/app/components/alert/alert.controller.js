@@ -7,8 +7,6 @@ export default class AlertController {
 		$scope.myAlert = this.myAlert.bind(this);
 		$scope.myAlertWithHint = this.myAlertWithHint.bind(this);
 		$scope.myConfirm = this.myConfirm.bind(this);
-		window.state = $state;
-		console.log('$state',$state.params.lang);
 	}
 
 	myAlert() {
