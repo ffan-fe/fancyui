@@ -7,7 +7,7 @@
     "dev": "gulp dev",
     "prepublish": "npm test",
     "test": "karma start",
-    "singleTest":"babel-node ./spec.bundle.js"
+    "singleTest":"npm test --single_file=lib/button/button.spec.js"
   },
   "repository": {
     "type": "git",
