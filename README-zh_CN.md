@@ -12,7 +12,7 @@ FancyUI是万达网络科技集团飞凡前端团队(ffan-fe)开源的一套Angu
 
 [中文说明](README-zh_CN.md)   [English Ver.](README.md) 
 
-## 快速入门
+## 快速上手
 
  #### 1.在AngularJs项目中引入组件库
 
@@ -38,6 +38,50 @@ export default angular.module('progressDemo', [
 ```
 
  #### 4.[查看效果](http://www.fancyui.org/#/zh-cn/component/progress)
+
+
+-----
+
+##源码构建及开发方法
+
+
+## 安装
+
+```
+git clone git@github.com:ffan-fe/fancyui.git
+```
+
+安装 node_modules:
+```
+npm i -d ;
+```
+
+## 启动演示项目 Example
+
+```
+npm run dev
+```
+
+## 测试
+
+### test all
+```
+npm test
+```
+### single test
+```
+npm test --single_file=lib/button/button.spec.js
+
+npm run singleTest
+```
+
+
+## 如何助力fancyui？
+阅读 [contributing](CONTRIBUTING.md) 了解流程.
+
+
+## LICENSE
+BSD
 
 
 -----
@@ -79,9 +123,3 @@ export default angular.module('progressDemo', [
  	- 📲[短消息通知]()
  	- 🌀[加载]()
 
-## 助力fancyui
-阅读 [contributing](CONTRIBUTING.md) 了解流程.
-
-
-## LICENSE
-BSD
