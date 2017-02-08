@@ -14,7 +14,7 @@ export default angular.module('stepsDemo', [
 ```
 
 ```
-<bp-steps></bp-steps>
+<f-steps></f-steps>
 ```
 
 ### See what happened && get all config options 

@@ -14,7 +14,7 @@ export default angular.module('checkboxtreeDemo', [
 ```
 
 ```
-<bp-checkboxtree></bp-checkboxtree>
+<f-checkboxtree></f-checkboxtree>
 ```
 
 ### See what happened && get all config options 

@@ -14,7 +14,7 @@ export default angular.module('checkboxDemo', [
 ```
 
 ```
-<bp-checkbox></bp-checkbox>
+<f-checkbox></f-checkbox>
 ```
 
 ### See what happened && get all config options 

@@ -14,7 +14,7 @@ export default angular.module('citySelectorDemo', [
 ```
 
 ```
-<bp-citySelector></bp-citySelector>
+<f-citySelector></f-citySelector>
 ```
 
 ### See what happened && get all config options 

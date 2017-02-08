@@ -14,7 +14,7 @@ export default angular.module('tabDemo', [
 ```
 
 ```
-<bp-tabs></bp-tabs>
+<f-tabs></f-tabs>
 ```
 
 ### See what happened && get all config options 

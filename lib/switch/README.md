@@ -17,13 +17,13 @@ export default angular.module('switchDemo', [
 ```
 
 ```
-<bp-switch
+<f-switch
   disabled="vm.disabled"
   on-text="vm.onText"
   off-text="vm.offText"
   default-checked="vm.defaultChecked"
   on-change="vm.onChange">
-</bp-switch>
+</f-switch>
 ```
 
 ```

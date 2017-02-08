@@ -14,7 +14,7 @@ export default angular.module('radioboxDemo', [
 ```
 
 ```
-<bp-radiobox></bp-radiobox>
+<f-radiobox></f-radiobox>
 ```
 
 ### See what happened && get all config options 

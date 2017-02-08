@@ -14,7 +14,7 @@ export default angular.module('checkboxGroupDemo', [
 ```
 
 ```
-<bp-checkboxGroup></bp-checkboxGroup>
+<f-checkboxGroup></f-checkboxGroup>
 ```
 
 ### See what happened && get all config options 

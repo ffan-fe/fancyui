@@ -17,7 +17,7 @@ export default angular.module('transfer', [
 ```
 
 ```
-<bp-transfer 
+<f-transfer 
   source-data='vm.dataSource'
   titles='vm.transferOptions.titles'
   placeholders='vm.transferOptions.placeholders'
@@ -28,7 +28,7 @@ export default angular.module('transfer', [
   add-all-btn='vm.transferOptions.addAllBtn'
   del-btn='vm.transferOptions.delBtn'
   del-all-btn='vm.transferOptions.delAllBtn'>
-</bp-transfer>
+</f-transfer>
 ```
 
 ```

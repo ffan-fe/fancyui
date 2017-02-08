@@ -14,7 +14,7 @@ export default angular.module('imageinputDemo', [
 ```
 
 ```
-<bp-imageinput></bp-imageinput>
+<f-imageinput></f-imageinput>
 ```
 
 ### See what happened && get all config options 

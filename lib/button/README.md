@@ -16,12 +16,12 @@ export default angular.module('buttonDemo', [
 ```
 
 ```
-<bp-button type="default">Default</bp-button>
-<bp-button type="primary">Primary</bp-button>
-<bp-button type="success">Success</bp-button>
-<bp-button type="info">Info</bp-button>
-<bp-button type="warning">Warning</bp-button>
-<bp-button type="danger">Danger</bp-button>
+<f-button type="default">Default</f-button>
+<f-button type="primary">Primary</f-button>
+<f-button type="success">Success</f-button>
+<f-button type="info">Info</f-button>
+<f-button type="warning">Warning</f-button>
+<f-button type="danger">Danger</f-button>
 ```
 
 ### See what happened && get all config options 

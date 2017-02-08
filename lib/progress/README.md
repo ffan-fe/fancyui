@@ -16,10 +16,10 @@ export default angular.module('progressDemo', [
 ```
 
 ```
-<bp-progress percent="0" type="line"></bp-progress>
-<bp-progress percent="80" stroke-width="8"></bp-progress>
-<bp-progress percent="100" status="success"></bp-progress>
-<bp-progress percent="60" status="exception"></bp-progress>
+<f-progress percent="0" type="line"></f-progress>
+<f-progress percent="80" stroke-width="8"></f-progress>
+<f-progress percent="100" status="success"></f-progress>
+<f-progress percent="60" status="exception"></f-progress>
 ```
 
 ### See what happened && get all config options 

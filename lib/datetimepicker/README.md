@@ -14,7 +14,7 @@ export default angular.module('datetimepickerDemo', [
 ```
 
 ```
-<bp-datetimepicker></bp-datetimepicker>
+<f-datetimepicker></f-datetimepicker>
 ```
 
 ### See what happened && get all config options 

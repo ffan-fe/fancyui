@@ -14,7 +14,7 @@ export default angular.module('inputnumberDemo', [
 ```
 
 ```
-<bp-inputnumber></bp-inputnumber>
+<f-inputnumber></f-inputnumber>
 ```
 
 ### See what happened && get all config options 

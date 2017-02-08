@@ -14,9 +14,9 @@ export default angular.module('badgeDemo', [
 ```
 
 ```
-<bp-badge count="6">
+<f-badge count="6">
   <a href="javascript:alert('badge click')"></a>
-</bp-badge>
+</f-badge>
 ```
 
 ### See what happened && get all config options 
