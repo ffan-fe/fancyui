@@ -29,11 +29,11 @@ export default angular.module('checkboxtree', [
 <h2>{{'Example'|translate}}</h2>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
-		<bp-checkboxtree 
+		<f-checkboxtree
 			list-promise="vm.loadPromise" 
 			ng-model="vm.form.category"
       default-collapsed="false"
-			config="vm.config"></bp-checkboxtree>
+			config="vm.config"></f-checkboxtree>
 	</div>
 </div>
 
@@ -41,12 +41,12 @@ export default angular.module('checkboxtree', [
 <h3>view</h3>
 <div class="example-block no-border">
 <div class="highlight" hljs hljs-no-escape>
-&lt;bp-checkboxtree 
+&lt;f-checkboxtree
   list-promise="vm.loadPromise" 
   default-collapsed="true"
   ng-model="vm.form.category"
   config="vm.config"&gt;
-&lt;/bp-checkboxtree&gt;
+&lt;/f-checkboxtree&gt;
 </div>
 </div>
 
