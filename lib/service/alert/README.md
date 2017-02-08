@@ -1,13 +1,8 @@
-#服务器 service
+#服务器 alert
 
 ## Intro
 
-FancyUI service component
-
-## service 组件
-
-[alert](./alert/README.md)
-[hint](./hint/README.md)
+FancyUI alert component
 
 ## Usage
 
