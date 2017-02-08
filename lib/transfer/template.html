@@ -7,7 +7,7 @@
       data-ng-model="controller.searchValue"
       placeholder="请输入检索的值"
     />
-    <bp-button click="controller.innerClick()" size="sm">查询</bp-button>
+    <f-button click="controller.innerClick()" size="sm">查询</f-button>
   </div>
   <!-- /支持服务端检索 -->
 
@@ -59,29 +59,29 @@
   <div class="transfer-center">
       <div class="form-group">
         <p>
-          <bp-button
+          <f-button
                 size="sm"
                 click="controller.add()"
                 data-ng-if="controller.addBtn"
                 ng-disabled="(controller.leftValue).length === 0"
         >
           {{controller.docInfo.addOperation}}
-        </bp-button>
+        </f-button>
           </p>
         <p>
-        <bp-button
+        <f-button
                 size="sm"
                 click="controller.addAll()"
                 data-ng-if="controller.addAllBtn"
                 ng-disabled="(controller.sourceData).length === 0"
         >
           {{controller.docInfo.addAllOperation}}
-        </bp-button>
+        </f-button>
         </p>
       </div>
       <div class="form-group">
         <p>
-        <bp-button
+        <f-button
                 type="default"
                 size="sm"
                 click="controller.del()"
@@ -89,10 +89,10 @@
                 ng-disabled="(controller.rightValue).length === 0"
         >
           {{controller.docInfo.delOperation}}
-        </bp-button>
+        </f-button>
         </p>
         <p>
-        <bp-button
+        <f-button
                 type="default"
                 size="sm"
                 click="controller.delAll()"
@@ -100,7 +100,7 @@
                 ng-disabled="(controller.targetData).length === 0"
         >
           {{controller.docInfo.delAllOperation}}
-        </bp-button>
+        </f-button>
         </p>
       </div>
   </div>
