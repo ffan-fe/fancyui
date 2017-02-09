@@ -5,7 +5,7 @@ import path from 'path';
 'use strict';
 
 module.exports = {
-  devtool: 'inline-source-map',
+  //devtool: 'inline-source-map',
   entry: './example/app/app.js',
   output: {
     path: __dirname,
