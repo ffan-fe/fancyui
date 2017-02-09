@@ -14,7 +14,7 @@ export default angular.module('iconDemo', [
 ```
 
 ```
-<f-icon type="loading"></f-icon>
+<f-icon icon="loading"></f-icon>
 ```
 
 ### See what happened && get all config options 
