@@ -1,17 +1,16 @@
 {
-  "name": "fancyui",
-  "version": "2.1.10",
+  "name": "fancyui-dev",
+  "version": "2.1.11",
   "description": "angular ui components",
   "main": "./index.js",
   "scripts": {
     "dev": "gulp dev",
-    "prepublish": "npm test",
     "test": "karma start",
     "singleTest":"npm test --single_file=lib/button/button.spec.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ffan-fe/fancyui.git"
+    "url": "git+https://github.com/php-cpm/fancyui.git"
   },
   "keywords": [
     "angular"
