@@ -9,24 +9,24 @@
       <section class="region-container" ng-repeat="region in vm.regionList track by $index" ng-show="vm.regionList">
         <!--选择区域-->
         <div>
-          <bp-checkbox id="region{{region.regionId}}" 
+          <f-checkbox id="region{{region.regionId}}"
             click="vm.checkboxClickHandler(region, 'region')" 
             checked="region.checked"
             half-checked="region.halfChecked"
             disabled="vm.isReadOnly">
               {{region.regionName}}
-          </bp-checkbox>
+          </f-checkbox>
         </div>
         <ul class="province-list list-inline">
           <!--省列表-->
           <li class="province-list-item" ng-repeat="province in region.child" ng-class="{open:province.isShowCityList}">
-            <bp-checkbox id="province{{province.provinceId}}" 
+            <f-checkbox id="province{{province.provinceId}}"
               click="vm.checkboxClickHandler(province, 'province')" 
               checked="province.checked"
               half-checked="province.halfChecked"
               disabled="vm.isReadOnly">
                 {{province.provinceName}}
-            </bp-checkbox>
+            </f-checkbox>
             <span class="glyphicon glyphicon-chevron-down arrow-down" ng-click="vm.showCityList(province)"></span>
             <div class="city-list-container" ng-show="province.isShowCityList">
               <div class="city-list-close-btn-container">
@@ -37,12 +37,12 @@
               <ul class="city-list list-inline">
                 <!--市列表-->
                 <li class="city-list-item" ng-repeat="city in province.child">
-                  <bp-checkbox id="city{{city.cityId}}" 
+                  <f-checkbox id="city{{city.cityId}}"
                     click="vm.cityCheckHandler(city)" 
                     checked="city.checked" 
                     disabled="vm.isReadOnly">
                       {{city.cityName}}
-                  </bp-checkbox>
+                  </f-checkbox>
                 </li>
               </ul>
             </div>
