@@ -1,8 +1,9 @@
 export default class CustomtableController {
-	constructor($state, Message) {
+	constructor($state, Message, $q) {
 		"ngInject";
 		this.$state = $state;
 		this.Message = Message;
+		this.$q = $q;
 		this.customColumn = [
 			{
 				key: 'storeId',
@@ -69,7 +70,14 @@ export default class CustomtableController {
 				"merchantName": "宇宙商户"
 			}]
 		};
+		this.data = this.mockData();
 	}
+
+	mockData() {
+		let deferred = this.$q.defer();
+		deferred.resolve(this.data);
+		return deferred.promise;
+  	}
 
 	pageChange(pageNo) {
 		console.log(pageNo)
