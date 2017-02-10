@@ -82,30 +82,26 @@ BSD
 
 ## 组件库详细文档
 
- - 🆗 [按钮](lib/button/README.md)
- - 🔖 [图标](lib/icon/README.md)
- - 📲 [步骤条](lib/steps/README.md)
- - 📡 [导航菜单](lib/menu/README.md)
- - 📋 [表格](lib/ffanTable/README.md)
- - 📋 [自定义表格](lib/customTable/README.md)
- - ☑️️ [表单](lib/form/README.md)
- - 🔌 [开关](lib/switch/README.md)
- - ⏩ [进度条](lib/progress/README.md)
- - 🔢 [数字输入框](lib/inputnumber/README.md)
- - 🗄 [选择器](lib/select/README.md)
- - ♥️ [评分](lib/rate/README.md)
- - 🎱 [徽标 badge](lib/badge/README.md)
- - ↔️ [穿梭框](lib/transfer/README.md)
- - 🌵 [树](lib/checkboxtree/README.md)
- - 🏞 [上传](lib/upload/README.md)
- - 📅 [日历](lib/calendar/README.md)
- - 📈 [曲线图](lib/charts/README.md)
- - 📊 [饼图](lib/charts/README.md)
- - 🚇 [仪表盘](lib/charts/README.md)
- - ❗️ [提示框](lib/service/alert/README.md)
- - ⏺ [滑动输入条](lib/rangeinput/README.md)
- - ✅ [气泡确认框](lib/popconfirm/README.md)
- - ⚠️ [短消息通知](lib/service/hint/README.md)
- - 🌀 [加载](lib/service/loading/README.md)
+ - 🆗 [按钮](lib/button/README.md) f-button
+ - 🔖 [图标](lib/icon/README.md) f-icon
+ - 📲 [步骤条](lib/steps/README.md) f-steps
+ - 📡 [导航菜单](lib/menu/README.md) f-menu
+ - 📋 [自定义表格](lib/customTable/README.md) f-customTable
+ - ☑️️ [复选框](lib/checkbox/README.md) f-checkbox
+ - 🔌 [开关](lib/switch/README.md) f-switch
+ - ⏩ [进度条](lib/progress/README.md) f-progress
+ - 🔢 [数字输入框](lib/inputnumber/README.md) f-inputnumber
+ - 🗄 [选择器](lib/select/README.md) f-select
+ - ♥️ [评分](lib/rate/README.md) f-rate
+ - 🎱 [徽标 badge](lib/badge/README.md) f-badge
+ - ↔️ [穿梭框](lib/transfer/README.md) f-transfer
+ - 🌵 [树](lib/checkboxtree/README.md) f-checkbox-tree
+ - 🏞 [上传](lib/upload/README.md) f-upload
+ - 📅 [日历](lib/calendar/README.md) f-calendar
+ - 📊 [图表](lib/charts/README.md) f-charts
+ - ✅ [气泡确认框](lib/popconfirm/README.md) Popconfirm.pop
+ - ❗️ [提示框](lib/service/alert/README.md) AlertService.alert
+ - ⚠️ [短消息通知](lib/service/hint/README.md) HintService.hint
+ - 🌀 [加载](lib/service/loading/README.md) LoadingService.loading
 
 
