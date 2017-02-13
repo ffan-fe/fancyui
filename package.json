@@ -62,7 +62,6 @@
     "mocha": "^3.2.0",
     "ng-annotate": "^1.2.1",
     "ng-annotate-loader": "^0.2.0",
-    "ng-include-loader": "0.0.3",
     "oclazyload": "^1.0.9",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",
