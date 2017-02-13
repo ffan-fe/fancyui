@@ -19,12 +19,12 @@ export default angular.module('checkboxtree', [
 ```
 
 ```
-<f-checkboxtree 
+<f-checkbox-tree 
   list-promise="vm.loadPromise" 
   default-collapsed="true"
   ng-model="vm.form.category"
   config="vm.config">
-</f-checkboxtree>
+</f-checkbox-tree>
 ```
 
 ```
