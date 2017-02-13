@@ -25,7 +25,7 @@ export default class TransferController {
       delAllBtn:true
     }
     /**
-    this.template =$sce.trustAsHtml(`<bp-transfer 
+    this.template =$sce.trustAsHtml(`<f-transfer
                     source-data='vm.dataSource' 
                     titles='vm.transferOptions.titles' 
                     placeholders='vm.transferOptions.placeholders'
@@ -36,6 +36,6 @@ export default class TransferController {
                     addAllBtn='vm.transferOptions.addAllBtn'
                     delBtn='vm.transferOptions.delBtn'
                     delAllBtn='vm.transferOptions.delAllBtn'>
-                  </bp-transfer>`); */
+                  </f-transfer>`); */
   }
 }

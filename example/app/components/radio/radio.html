@@ -37,17 +37,17 @@ export default angular.module('radio', [
 </section>
 <div class="example-block">
 	<div class="bs-example radio-example">
-		<bp-radiobox model="vm.option" value="A">A</bp-radiobox>
-		<bp-radiobox model="vm.option" value="B">B</bp-radiobox>
-		<bp-radiobox model="vm.option" value="C">C</bp-radiobox>
-		<bp-radiobox model="vm.option" value="D" >D</bp-radiobox>
+		<f-radiobox model="vm.option" value="A">A</f-radiobox>
+		<f-radiobox model="vm.option" value="B">B</f-radiobox>
+		<f-radiobox model="vm.option" value="C">C</f-radiobox>
+		<f-radiobox model="vm.option" value="D" >D</f-radiobox>
 		<p>选中的值: {{vm.option}}</p>
 	</div>
 <div class="highlight" hljs hljs-language="html">
-<bp-radiobox model="vm.option" value="A">A</bp-radiobox>
-<bp-radiobox model="vm.option" value="B">B</bp-radiobox>
-<bp-radiobox model="vm.option" value="C">C</bp-radiobox>
-<bp-radiobox model="vm.option" value="D" >D</bp-radiobox>
+<f-radiobox model="vm.option" value="A">A</f-radiobox>
+<f-radiobox model="vm.option" value="B">B</f-radiobox>
+<f-radiobox model="vm.option" value="C">C</f-radiobox>
+<f-radiobox model="vm.option" value="D" >D</f-radiobox>
 <p>选中的值: {{vm.option}}</p>
 </div>
 <div class="highlight" hljs hljs-language="html">
@@ -65,18 +65,18 @@ export default class RadioController {
 
 <div class="example-block">
 	<div class="bs-example radio-example">
-		<bp-radiobox model="vm.option1" value="A">A</bp-radiobox>
-		<bp-radiobox model="vm.option1" value="B">B</bp-radiobox>
-		<bp-radiobox model="vm.option1" value="C">C</bp-radiobox>
-		<bp-radiobox model="vm.option1" value="D" complex="vm.specialInfo">D</bp-radiobox>
+		<f-radiobox model="vm.option1" value="A">A</f-radiobox>
+		<f-radiobox model="vm.option1" value="B">B</f-radiobox>
+		<f-radiobox model="vm.option1" value="C">C</f-radiobox>
+		<f-radiobox model="vm.option1" value="D" complex="vm.specialInfo">D</f-radiobox>
 		<p>选中的值: {{vm.option1}}</p>
 	</div>
 
 <div class="highlight" hljs hljs-language="html">
-<bp-radiobox model="vm.option1" value="A">A</bp-radiobox>
-<bp-radiobox model="vm.option1" value="B">B</bp-radiobox>
-<bp-radiobox model="vm.option1" value="C">C</bp-radiobox>
-<bp-radiobox model="vm.option1" value="D" complex="vm.specialInfo">D</bp-radiobox>
+<f-radiobox model="vm.option1" value="A">A</f-radiobox>
+<f-radiobox model="vm.option1" value="B">B</f-radiobox>
+<f-radiobox model="vm.option1" value="C">C</f-radiobox>
+<f-radiobox model="vm.option1" value="D" complex="vm.specialInfo">D</f-radiobox>
 <p>选中的值: {{vm.option1}}</p>
 </div>
 
@@ -96,11 +96,11 @@ export default class RadioController {
 
 <div class="example-block">
 	<div class="bs-example radio-example">
-		<bp-radiobox-group list="vm.groupDataList" model="vm.model"></bp-radiobox-group>
+		<f-radiobox-group list="vm.groupDataList" model="vm.model"></f-radiobox-group>
 		<p>选中的值: {{vm.model}}</p>
 	</div>
 <div class="highlight" hljs hljs-language="html">
-<bp-radiobox-group list="vm.groupDataList" model="vm.model"></bp-radiobox-group>
+<f-radiobox-group list="vm.groupDataList" model="vm.model"></f-radiobox-group>
 <p>选中的值: {{vm.model}}</p>
 </div>
 <div class="highlight" hljs hljs-language="javascript">
