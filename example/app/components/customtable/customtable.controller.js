@@ -58,7 +58,7 @@ export default class CustomtableController {
 			}
 		];
 
-		this.data = {
+		this.defaultData = {
 			"totalCount": 23842,
 			"items": [{
 				"storeId": 1123,
@@ -75,7 +75,7 @@ export default class CustomtableController {
 
 	mockData() {
 		let deferred = this.$q.defer();
-		deferred.resolve(this.data);
+		deferred.resolve(this.defaultData);
 		return deferred.promise;
   	}
 
