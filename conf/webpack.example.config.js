@@ -18,8 +18,7 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.js$/, exclude: /node_modules/, loader: 'ng-annotate-loader!babel-loader' },
-      { test: /\.html$/, exclude: /formtpl\.html$/, loader: 'raw-loader' },
-      { test: /formtpl\.html$/, loader: 'raw-loader!ng-include-loader' },
+      { test: /\.html$/, loader: 'raw-loader' },
       { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
       { test: /\.css$/, loader: 'style-loader!css-loader' },
       { test: /\.(ttf|eot|svg|woff(2)?)(\?\S*)?$/, loader: require.resolve('file-loader') },
