@@ -1,5 +1,5 @@
 {
-  "name": "fancyui-dev",
+  "name": "fancyui",
   "version": "2.1.11",
   "description": "angular ui components",
   "main": "./index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/php-cpm/fancyui.git"
+    "url": "git+https://github.com/ffan-fe/fancyui.git"
   },
   "keywords": [
     "angular"
