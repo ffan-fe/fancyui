@@ -1,9 +1,7 @@
 # Fancyui
 
- - [官方网站](http://www.fancyui.org/)
- - [更新日志](CHANGELOG.zh-CN.md)
- - [开发文档](http://www.fancyui.org/)
- 
+官方网站: http://www.fancyui.org/
+
 FancyUI是万达网络科技集团飞凡前端团队(ffan-fe)开源的一套AngularJs(1.5.X)的组件库，适合构建后台管理系统，主要有以下特性：
 
  - 通过命令行快速创建项目，创建组件
@@ -16,13 +14,13 @@ FancyUI是万达网络科技集团飞凡前端团队(ffan-fe)开源的一套Angu
 
 ## 快速上手
 
-#### 1.在AngularJs项目中引入组件库
+ #### 1.在AngularJs项目中引入组件库
 
 ```
 npm install ng-start-cli -g
 npm install fancyui --save
 ```
-#### 2.把组件注入模块
+ #### 2.把组件注入模块
  
 ```
 import progressdemoComponent from './progressdemo.component';
@@ -33,13 +31,16 @@ export default angular.module('progressDemo', [
 .component('progressDemo', progressdemoComponent);
 ```
 
-#### 3.实例化组件
+ #### 3.实例化组件
  
 ```
 <bp-progress percent="80" stroke-width="8"></bp-progress>
 ```
 
-#### 4.[查看效果](http://www.fancyui.org/#/zh-cn/component/progress)
+ #### 4.[查看效果](http://www.fancyui.org/#/zh-cn/component/progress)
+
+
+-----
 
 ##源码构建及开发方法
 
@@ -74,34 +75,51 @@ npm test --single_file=lib/button/button.spec.js
 npm run singleTest
 ```
 
+
 ## 如何助力fancyui？
 阅读 [contributing](CONTRIBUTING.md) 了解流程.
+
 
 ## LICENSE
 BSD
 
-## 组件库详细文档
 
- - 🆗 [按钮](lib/button/README.md) f-button
- - 🔖 [图标](lib/icon/README.md) f-icon
- - 📲 [步骤条](lib/steps/README.md) f-steps
- - 📡 [导航菜单](lib/menu/README.md) f-menu
- - 📋 [自定义表格](lib/customTable/README.md) f-customTable
- - ☑️️ [复选框](lib/checkbox/README.md) f-checkbox
- - 🔌 [开关](lib/switch/README.md) f-switch
- - ⏩ [进度条](lib/progress/README.md) f-progress
- - 🔢 [数字输入框](lib/inputnumber/README.md) f-inputnumber
- - 🗄 [选择器](lib/select/README.md) f-select
- - ♥️ [评分](lib/rate/README.md) f-rate
- - 🎱 [徽标 badge](lib/badge/README.md) f-badge
- - ↔️ [穿梭框](lib/transfer/README.md) f-transfer
- - 🌵 [树](lib/checkboxtree/README.md) f-checkbox-tree
- - 🏞 [上传](lib/upload/README.md) f-upload
- - 📅 [日历](lib/calendar/README.md) f-calendar
- - 📊 [图表](lib/charts/README.md) f-charts
- - ✅ [气泡确认框](lib/popconfirm/README.md) Popconfirm.pop
- - ❗️ [提示框](lib/service/alert/README.md) AlertService.alert
- - ⚠️ [短消息通知](lib/service/hint/README.md) HintService.hint
- - 🌀 [加载](lib/service/loading/README.md) LoadingService.loading
+-----
 
+
+## 详细文档
+
+ - [项目介绍]()
+ - [更新日志]()
+ - [开发管理]()
+ 	- [初始化新项目]()
+ 	- [目录结构]()
+ - [组件库]()
+ 	- ☠️[按钮](lib/button/README.md)
+ 	- 💊[图标](lib/icon/README.md)
+ 	- 🎹[栅格]()
+ 	- 💳[步骤条](lib/steps/README.md)
+ 	- 📡[导航菜单](lib/menu/README.md)
+ 	- 📋[表格](lib/ffanTable/README.md)
+ 	- 📋[自定义表格](lib/customTable/README.md)
+ 	- ☑️️[表单](lib/form/README.md)
+ 	- 🏷[卡片]()
+ 	- 🔌[开关](lib/switch/README.md)
+ 	- 📟[进度条](lib/progress/README.md)
+ 	- 🔢[数字输入框](lib/inputnumber/README.md)
+ 	- 🎲[选择器](lib/select/README.md)
+ 	- 💯[评分](lib/rate/README.md)
+ 	- 1️⃣[徽标 badge](lib/badge/README.md)
+ 	- 🎯[穿梭框](lib/transfer/README.md)
+ 	- 🌿[树](lib/checkboxtree/README.md)
+ 	- 🏞[上传](lib/upload/README.md)
+ 	- 🕐[日历](lib/calendar/README.md)
+ 	- 📈[曲线图](lib/charts/README.md)
+ 	- 🌐[饼图](lib/charts/README.md)
+ 	- 🚇[仪表盘](lib/charts/README.md)
+ 	- ❗️[提示框](lib/service/alert/README.md)
+ 	- 🐛[滑动输入条](lib/rangeinput/README.md)
+ 	- 💧[气泡确认框](lib/popconfirm/README.md)
+ 	- 📲[短消息通知](lib/service/hint/README.md)
+ 	- 🌀[加载](lib/service/loading/README.md)
 
