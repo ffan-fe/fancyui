@@ -5,8 +5,8 @@
   "main": "./index.js",
   "scripts": {
     "dev": "gulp dev",
-    "test": "karma start",
-    "singleTest":"npm test --single_file=lib/button/button.spec.js"
+    "karma": "karma start",
+    "test":"npm run karma --single_file=lib/button/button.spec.js"
   },
   "repository": {
     "type": "git",
