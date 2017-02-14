@@ -1,4 +1,4 @@
-# Fancyui
+# [Fancyui](http://www.fancyui.org/) [![Build Status](https://api.travis-ci.org/ffan-fe/fancyui.svg?branch=master)](https://travis-ci.org/ffan-fe/fancyui/)
 
 Website: http://www.fancyui.org/
 
