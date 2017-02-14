@@ -14,4 +14,5 @@ install:
   - yarn install
 cache:
   yarn: true
-    
+after_script:
+  - npm run coverage

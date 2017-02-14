@@ -45,7 +45,8 @@ var config =
         dir: 'coverage/',
         reporters: [
           { type: 'text-summary' },
-          { type: 'html' }
+          { type: 'html', subdir: 'report-html' },
+          { type: 'lcov', subdir: 'report-lcov' }
         ]
       },
 
