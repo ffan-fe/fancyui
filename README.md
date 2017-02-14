@@ -1,4 +1,4 @@
-# [Fancyui](http://www.fancyui.org/) [![Build Status](https://api.travis-ci.org/ffan-fe/fancyui.svg?branch=master)](https://travis-ci.org/ffan-fe/fancyui/)
+# [Fancyui](http://www.fancyui.org/) [![Build Status](https://api.travis-ci.org/ffan-fe/fancyui.svg?branch=master)](https://travis-ci.org/ffan-fe/fancyui/)[![Coverage Status](https://coveralls.io/repos/github/ffan-fe/fancyui/badge.svg?branch=master)](https://coveralls.io/github/ffan-fe/fancyui?branch=master)
 
 Website: http://www.fancyui.org/
 
