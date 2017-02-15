@@ -4,7 +4,7 @@
  - [更新日志](CHANGELOG.zh-CN.md)
  - [开发文档](http://www.fancyui.org/)
  
-FancyUI是万达网络科技集团飞凡前端团队(ffan-fe)开源的一套AngularJs(1.5.X)的组件库，适合构建后台管理系统，主要有以下特性：
+FancyUI是飞凡前端团队(ffan-fe)开源的一套AngularJs(1.5.X)的组件库，适合构建后台管理系统，主要有以下特性：
 
  - 通过命令行快速创建项目，创建组件
  - 提供大量开箱即用的PC端开发常用组件
