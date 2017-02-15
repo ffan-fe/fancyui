@@ -51,7 +51,6 @@ var config =
       },
 
       webpackServer: {
-        noInfo: 'errors-only' // prevent console spamming when running in Karma!
       },
 
       reporters: ['mocha', 'coverage'],

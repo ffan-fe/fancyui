@@ -12,5 +12,9 @@ before_install:
     - "npm install -g yarn"
 install:
   - yarn install
+cache:
+  directories:
+    - $HOME/.fancyuicache
+  yarn: true
 after_script:
   - npm run coverage
