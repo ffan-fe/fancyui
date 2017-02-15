@@ -32,7 +32,7 @@ var config =
             loader: 'isparta'
           }],
           loaders: [
-            { test: /\.js/, exclude: [/app\/bin/, /node_modules/], loader: 'babel-loader?cacheDirectory' },
+            { test: /\.js/, exclude: [/app\/bin/, /node_modules/], loader: 'babel-loader' },
             { test: /\.html$/, loader: 'raw-loader' },
             { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
             { test: /\.(ttf|eot|svg|woff(2)?)(\?\S*)?$/, loader: require.resolve('file-loader') },
