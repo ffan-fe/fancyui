@@ -12,7 +12,5 @@ before_install:
     - "npm install -g yarn"
 install:
   - yarn install
-cache:
-  yarn: true
 after_script:
   - npm run coverage
