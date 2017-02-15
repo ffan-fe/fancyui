@@ -1,0 +1,10 @@
+<li class="f-menu-submenu-{{vm.fMenu.mode}} f-menu-submenu"
+    ng-class="{'f-menu-submenu-open': vm.state.isOpen}"
+    ng-mouseenter="vm.onMouseEnter($event)"
+    ng-mouseleave="vm.onMouseLeave($event)">
+  <div ng-click="vm.onClick($event)" class="f-menu-submenu-title" aria-expanded="true" aria-haspopup="true">
+  </div>
+  <ul class="f-menu f-menu-{{vm.fMenu.mode}} f-menu-sub" role="menu" aria-activedescendant=""
+      ng-class="{'f-menu-hidden': !vm.state.isOpen}" ng-transclude>
+  </ul>
+</li>

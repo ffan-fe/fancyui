@@ -1,0 +1,21 @@
+<div class="ffan-progress ffan-progress-line"
+	 ng-if="vm.type == 'line' || !vm.type"
+	 ng-class="{success: vm.status == 'success', exception: vm.status == 'exception'}">
+	<div class="ffan-progress-bar">
+		<div class="ffan-progress-outer" style="height: {{vm.innerStrokeWidth || 8}}px;">
+			<div class="ffan-progress-inner" style="width:{{vm.percent}}%; height: {{vm.innerStrokeWidth || 8}}px;"></div>
+		</div>
+	</div>
+	<span class="ffan-progress-text">{{vm.percent}}%</span>
+	<span class="glyphicon glyphicon-ok-circle"></span>
+	<span class="glyphicon glyphicon-remove-circle"></span>
+</div>
+
+<div class="ffan-progress ffan-progress-circle" style="width: {{vm.width || 126}}px; height: {{vm.width || 126}}px;"
+	 ng-if="vm.type === 'circle'"
+	 ng-class="{success: vm.status == 'success', exception: vm.status == 'exception'}">
+	<svg viewBox="0 0 100 100" ng-bind-html="vm.template"></svg>
+	<span class="ffan-progress-text">{{vm.percent}}%</span>
+	<span class="glyphicon glyphicon-ok" ng-if="vm.status == 'success'" style="color: {{vm.strokeColor}}"></span>
+	<span class="glyphicon glyphicon-remove" ng-if="vm.status == 'exception'" style="color: {{vm.strokeColor}}"></span>
+</div>

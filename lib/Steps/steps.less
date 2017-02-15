@@ -1,0 +1,79 @@
+.steps-container {
+	width: 100%;
+	height: 42px;
+	ul {
+		width: 100%;
+		height: 42px;
+		line-height: 40px;
+		margin: 0;
+		padding: 0;
+		border: 1px solid #e5e5e5;
+		li {
+			float: left;
+			list-style: none;
+			width: 33%;
+			background-color: #fff;
+			color: #929292;
+			text-align: center;
+			position: relative;
+			&.cur {
+				background-color: #428bca;
+				border: 0;
+				color: #fff;
+				z-index: 11;
+				.arrow-right {
+					width: 0;
+					height: 0;
+					border-top: 20px solid transparent;
+					border-bottom: 20px solid transparent;
+					border-left: 19px solid #428bca;
+					display: block;
+					position: absolute;
+					top: 0;
+					right: -19px;
+					z-index: 10;
+				}
+				.arrow-left {
+					width: 0;
+					height: 0;
+					border-top: 20px solid transparent;
+					border-bottom: 20px solid transparent;
+					border-left: 19px solid #fff;
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 10;
+				}
+				.step-num {
+					border: 1px solid #fff;
+					background-color: transparent;
+				}
+			}
+			.arrow-right {
+				width: 20px;
+				height: 40px;
+				display: block;
+				position: absolute;
+				right: -19px;
+				top: 0;
+				background: url(images/arrow.png) no-repeat 0 0 transparent;
+				z-index: 9;
+			}
+			.step-num {
+				width: 24px;
+				height: 24px;
+				line-height: 24px;
+				color: #fff;
+				background-color: #a6a6a6;
+				display: inline-block;
+				vertical-align: middle;
+				border-radius: 12px;
+				margin-right: 10px;
+			}
+			&:last-child {
+				width: 34%;
+			}
+		}
+	}
+}

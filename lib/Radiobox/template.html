@@ -1,0 +1,10 @@
+<label for="{{controller.htmlID}}" class="radio-container"
+       ng-class="[controller.className, {checked: controller.isChecked()}]">
+      <span class="radio-inner"></span>
+      <input type="radio" id="{{controller.htmlID}}"
+              ng-value="controller.complex || controller.value"
+              ng-disabled="controller.disabled"
+              ng-model="controller.model"
+      />
+      <span ng-transclude></span>
+</label>

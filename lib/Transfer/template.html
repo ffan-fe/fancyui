@@ -1,0 +1,151 @@
+<div class="transfer">
+  <!-- 支持服务端检索 -->
+  <div class="form-inline server-search" data-ng-if="controller.isNeedServerSearch">
+    <input
+      class="form-control  input-sm"
+      type="text"
+      data-ng-model="controller.searchValue"
+      placeholder="请输入检索的值"
+    />
+    <f-button click="controller.innerClick()" size="sm">查询</f-button>
+  </div>
+  <!-- /支持服务端检索 -->
+
+  <!-- 左侧栏 -->
+  <div class="transfer-left">
+
+    <!--列表标题 左-->
+    <div class="list-title">
+      <div class="list-title-name"
+           title="{{controller.docInfo.leftTitle}}">
+        {{controller.docInfo.leftTitle}}
+      </div>
+      <div class="list-title-total" title="共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条">
+        共{{controller.leftValue.length != 0 ? controller.leftValue.length + '/':''}}{{controller.sourceData.length}}条
+      </div>
+    </div>
+    <!--/列表标题 左-->
+
+    <div class="transfer-search">
+      <!-- 前端检索 -->
+      <input
+             type="text"
+             class="form-control input-sm"
+             placeholder="{{controller.docInfo.leftPlaceholder}}"
+             data-ng-model="controller.leftSearchValue"
+             data-ng-disabled="!controller.showLeftSearch"
+      />
+      <span class="transfer-search-span">
+        <i class="glyphicon glyphicon-search"></i>
+      </span>
+      <!-- /前端检索 -->
+    </div>
+    <div class="transfer-left-select">
+      <select  name="multipleSelect"
+               multiple
+               data-ng-model="controller.leftValue">
+        <option data-ng-repeat="option in controller.sourceData | filter:{value: controller.leftSearchValue}"
+                data-ng-dblclick="controller.optionSourceClick(option)"
+                value="{{option.key}}"
+                title="{{option.value}}">
+          {{option.value}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <!-- /左侧栏 -->
+
+  <!-- 中间 -->
+  <div class="transfer-center">
+      <div class="form-group">
+        <p>
+          <f-button
+                size="sm"
+                click="controller.add()"
+                data-ng-if="controller.addBtn"
+                ng-disabled="(controller.leftValue).length === 0"
+        >
+          {{controller.docInfo.addOperation}}
+        </f-button>
+          </p>
+        <p>
+        <f-button
+                size="sm"
+                click="controller.addAll()"
+                data-ng-if="controller.addAllBtn"
+                ng-disabled="(controller.sourceData).length === 0"
+        >
+          {{controller.docInfo.addAllOperation}}
+        </f-button>
+        </p>
+      </div>
+      <div class="form-group">
+        <p>
+        <f-button
+                type="default"
+                size="sm"
+                click="controller.del()"
+                data-ng-if="controller.delBtn"
+                ng-disabled="(controller.rightValue).length === 0"
+        >
+          {{controller.docInfo.delOperation}}
+        </f-button>
+        </p>
+        <p>
+        <f-button
+                type="default"
+                size="sm"
+                click="controller.delAll()"
+                data-ng-if="controller.delAllBtn"
+                ng-disabled="(controller.targetData).length === 0"
+        >
+          {{controller.docInfo.delAllOperation}}
+        </f-button>
+        </p>
+      </div>
+  </div>
+  <!--中间-->
+
+  <!-- 右侧 -->
+  <div class="transfer-right">
+
+    <!--列表标题 右-->
+    <div class="list-title">
+      <div class="list-title-name"
+           title="{{controller.docInfo.rightTitle}}">
+        {{controller.docInfo.rightTitle}}</div>
+      <div class="list-title-total"
+           title="共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条">
+        共{{controller.rightValue.length != 0 ? controller.rightValue.length + '/':''}}{{controller.targetData.length}}条
+      </div>
+    </div>
+    <!--/列表标题 右-->
+
+    <div class="transfer-search">
+      <!-- 前端检索 右-->
+      <input type="text"
+             class="form-control input-sm"
+             placeholder="{{controller.docInfo.rightPlaceholder}}"
+             data-ng-model="controller.rightSearchValue"
+             data-ng-disabled="!controller.showRightSearch"
+      />
+      <span class="transfer-search-span">
+        <i class="glyphicon glyphicon-search"></i>
+      </span>
+      <!-- /前端检索 右-->
+    </div>
+    <div class="transfer-right-stores">
+      <select  name="multipleSelect"
+               multiple
+               data-ng-model="controller.rightValue">
+        <option data-ng-repeat="option in controller.targetData | filter:controller.rightSearchValue"
+                data-ng-dblclick="controller.optionTargetClick(option)"
+                value="{{option.key}}"
+                title="{{option.value}}">
+          {{option.value}}
+        </option>
+      </select>
+    </div>
+  </div>
+  <!-- /右侧 -->
+</div>

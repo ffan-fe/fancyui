@@ -1,0 +1,43 @@
+<div class="collapse-card" ng-if="vm.isCustomTable">
+	<div class="collapse-control" ng-click="vm.toggleCollapse($event)"  ng-class="{'no-border': vm.isCollapse}">
+		<span ng-if="vm.isCollapse"><span class="glyphicon glyphicon-triangle-bottom"></span>展开</span>
+
+		<span ng-if="!vm.isCollapse"><span class="glyphicon glyphicon-triangle-top"></span>收起</span>
+	</div>
+	<div class="collapse-content" style="height: {{vm.height}};">
+		<div class="collapse-content-container">
+			<span class="checkbox" ng-repeat="column in vm.customColumn">
+				<label>
+					<input type="checkbox"
+						   ng-click="vm.checkColumn($event, $index, column)"
+						   ng-checked="column.checked"> {{column.name}}
+				</label>
+			</span>
+		</div>
+	</div>
+</div>
+
+<div class="table-container">
+	<div class="table-wrapper ng-scope ng-table ng-custom-table">
+		<table class="table table-bordered table-hover" id="customTable" ng-table="vm.tableParams">
+			<thead>
+			<tr>
+				<th ng-repeat="column in vm.customColumn" ng-if="column.checked">{{column.name}}</th>
+				<th ng-if="vm.operations">操作</th>
+			</tr>
+			</thead>
+			<tbody ng-if="vm.tableParams.data.length != 0">
+			<tr ng-repeat="row in $data">
+				<td ng-repeat="column in vm.customColumn" ng-if="column.checked">{{row[column.key]}}</td>
+				<td ng-if="vm.operations" class="operation-column">
+					<button class="btn bp-btn-primary btn-sm ng-scope"
+							ng-click="operation.action(row)"
+							ng-if="row.status != 0"
+							ng-repeat="operation in vm.operations">{{operation.name}}</button>
+				</td>
+			</tr>
+			</tbody>
+		</table>
+		<div class="no-result" ng-if="vm.tableParams.data.length == 0">结果为空</div>
+	</div>
+</div>
