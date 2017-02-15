@@ -1,0 +1,18 @@
+<div class="input-number" ng-class="{disabled: vm.disabled}">
+	<div class="input-number-input-wrap">
+		<input type="text"
+			   class="form-control"
+			   autocomplete="off"
+			   value="{{vm.value}}"
+			   ng-model="vm.value"
+			   ng-change="vm.inputChange()"
+			   ng-blur="vm.inputBlur()"
+			   ng-disabled="vm.disabled">
+	</div>
+	<span class="input-number-minus" ng-class="{disabled: vm.minusDisable}" ng-click="vm.inputMinus()">
+		<span class="glyphicon glyphicon-minus"></span>
+	</span>
+	<span class="input-number-plus" ng-class="{disabled: vm.plusDisable}" ng-click="vm.inputPlus()">
+		<span class="glyphicon glyphicon-plus"></span>
+	</span>
+</div>

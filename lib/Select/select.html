@@ -1,0 +1,44 @@
+<div calculate-style ng-class="{'f-select':true,'active':vm.active,'is-reverse':vm.isReverse,'multiple':vm.isMultiple}">
+  <div class="f-select_tags" ng-if="vm.isMultiple" ng-click="vm.onMultipleClick($event);">
+    <span>
+        <span
+          ng-repeat="option in vm.activeItems"
+          class="f-tag f-tag--primary">{{option.name}}
+          <i class="f-tag_close glyphicon-remove" ng-click="vm.onRemoveItem(option)"></i></span>
+    </span>
+    <input type="text" class="f-select_input"  ng-model="vm.multipleInput" ng-change="vm.onMultipleInputChange()" style="width:20px">
+  </div>
+  <div class="f-input" ng-class="{'is-disabled':vm.isDisabled}" 
+    ng-click="vm.onClick($event);" 
+    ng-mouseenter="vm.mouseEnter()"
+    ng-mouseleave="vm.mouseLeave()">
+    <i ng-class="{'f-input_icon':true,'glyphicon':true,'glyphicon-triangle-top':!vm.hover,'glyphicon-remove':vm.hover}"></i>
+    <input type="text" placeholder="请选择" 
+      ng-readonly="!vm.isRemote" ng-disabled="vm.isDisabled" ng-change="vm.onInputChange()"
+      ng-model="vm.inputValue" 
+      ng-model-options="{debounce:vm.debounce}" autocomplete="off" class="f-input_inner" />
+  </div>
+
+  <div class="f-select-dropdown">
+    <div class="f-scrollbar" ng-if="!vm.noneFlag">
+      <div class="f-select-dropdown_wrap ">
+        <ul class="f-scrollbar_view ">
+          <ul class="f-select-group_wrap" ng-repeat="item in vm.dataArray">
+            <li ng-if="vm.isGroup" class="f-select-group_title">{{item.title}}</li>
+            <li>
+              <ul class="f-select-group">
+                <li class="f-select-dropdown_item"
+                  ng-if="!option._hide" 
+                  ng-class="{'f-select-dropdown_item':true,'active':option._active,'is-item-disabled':option.disabled}" 
+                  ng-click="vm.onItemClicked(option,$event)"
+                  ng-repeat="option in item.options"><span>{{option.name}}</span></li>
+              </ul>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </div>
+
+    <p class="f-select-dropdown_empty" ng-if="vm.noneFlag">无数据</p>
+  </div>
+</div>

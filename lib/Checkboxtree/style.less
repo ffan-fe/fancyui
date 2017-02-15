@@ -1,0 +1,38 @@
+.checkboxtree {
+  color: red
+}
+
+#tree-root {
+  ol {
+    list-style: none;
+  }
+  .toggle-btn {
+    cursor: pointer;
+  }
+  .angular-ui-tree input[type="checkbox"] {
+
+  }
+
+  .angular-ui-tree input[type="checkbox"]:checked {
+    background-color: #108ee9;
+    border-color: #108ee9;
+  }
+}
+
+.angular-ui-tree input[type="checkbox"]:checked:after {
+  -webkit-transform: rotate(45deg) scale(1);
+  -ms-transform: rotate(45deg) scale(1);
+  transform: rotate(45deg) scale(1);
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  display: table;
+  width: 5px;
+  height: 8px;
+  border: 2px solid #fff;
+  border-top: 0;
+  border-left: 0;
+  content: ' ';
+  -webkit-transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+  transition: all 0.2s cubic-bezier(0.12, 0.4, 0.29, 1.46) 0.1s;
+}

@@ -1,0 +1,34 @@
+<div ui-tree id="tree-root" data-nodrop-enabled="true" data-drag-enabled="false">
+  <ol ui-tree-nodes ng-model="vm.list" class="ui-tree-ol">
+    <li ng-repeat="node in vm.list" ui-tree-node ng-include="'goods_nodes_renderer.html'" collapsed="vm.defaultCollapsed"></li>
+  </ol>
+</div>
+
+<script type="text/ng-template" id="goods_nodes_renderer.html">
+  <div ui-tree-handle class="tree-node tree-node-content">
+    <span class="toggle-btn" ng-if="node[vm.config.fieldOfChildren] && node[vm.config.fieldOfChildren].length > 0" data-nodrag ng-click="toggle(this)">
+      <span class="glyphicon"
+            ng-class="{
+          'glyphicon-triangle-right': collapsed,
+          'glyphicon-triangle-bottom': !collapsed
+        }"></span>
+    </span>
+    <label class="goods-node">
+      <input type="checkbox"
+             ng-model="node.checked"
+             ng-click="vm.nodeClickHandler(node)"
+             ng-disabled="vm.ngDisabled"/>
+      <span class="glyphicon goods-node-icon"
+            ng-class="{
+          'glyphicon-folder-open': node[vm.config.fieldOfChildren] && !collapsed,
+          'glyphicon-folder-close': node[vm.config.fieldOfChildren] && collapsed,
+          'glyphicon-file': !node[vm.config.fieldOfChildren]
+        }"></span>
+      {{node[vm.config.fieldOfName] || "地级市地方"}}
+    </label>
+  </div>
+  <ol ui-tree-nodes="" ng-model="node[vm.config.fieldOfChildren]" ng-class="{hidden: collapsed}">
+    <li ng-repeat="node in node[vm.config.fieldOfChildren]" ui-tree-node ng-include="'goods_nodes_renderer.html'" collapsed="node.collapsed">
+    </li>
+  </ol>
+</script>

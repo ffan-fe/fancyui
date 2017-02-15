@@ -1,0 +1,37 @@
+<span class="f-dragger"
+      ngf-select=""
+      ngf-drop=""
+      ng-disabled="vm.disabled"
+      ngf-change="vm.onChange($files, $file, $newFiles, $duplicateFiles, $invalidFiles, $event)"
+      ngf-validate="vm.accept"
+      ngf-multiple="vm.multiple"
+      ng-transclude>
+</span>
+<div class="f-upload-list f-upload-list-{{vm.listType}}" ng-if="vm.fileList.length">
+  <div ng-repeat="file in vm.fileList" class="f-upload-list-item f-upload-list-item-done">
+    <div class="f-upload-list-item-info" ng-if="vm.listType == 'picture'">
+      <a class="f-upload-list-item-thumbnail"
+         ng-href="{{file.url}}"
+         target="_blank"
+         rel="noopener noreferrer">
+        <img ng-src="{{file.url}}" alt="{{file.name}}">
+      </a>
+      <a ng-href="{{file.url}}"
+         target="_blank"
+         rel="noopener noreferrer"
+         class="f-upload-list-item-name">{{file.name}}
+      </a>
+      <span title="Remove file"
+            ng-click="vm.onRemove(file)"
+            class="glyphicon glyphicon-remove-circle"></span>
+    </div>
+    <div class="f-upload-list-item-info" ng-if="vm.listType == 'text'">
+      <span class="glyphicon glyphicon-paperclip"></span>
+      <a ng-href="{{file.url}}" target="_blank" rel="noopener noreferrer" class="f-upload-list-item-name">{{file.name}}</a>
+      <span title="Remove file"
+            ng-click="vm.onRemove(file)"
+            class="glyphicon glyphicon-remove-circle"></span>
+    </div>
+  </div>
+</div>
+

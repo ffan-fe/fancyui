@@ -1,0 +1,15 @@
+<div ng-class="{'calendar':true,'open':vm.open}" class="calendar" ng-click="vm.click()">
+	<a class="dropdown-toggle" href="javascript:void(0)">
+		<div class="input-group">
+			<input type="text" class="form-control datepicker-bgcolor" data-ng-model="vm.ngModel" readonly>
+			<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+		</div>
+	</a>
+	<ul class="dropdown-menu">
+		<datetimepicker 
+      on-set-time="vm.onSetTime(newDate, oldDate)" 
+      data-ng-model="vm.ngModel" 
+			data-before-render="vm.onBeforeRender($view, $dates, $leftDate, $upDate, $rightDate)"
+      data-datetimepicker-config="vm.config" />
+	</ul>
+</div>

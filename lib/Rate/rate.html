@@ -1,0 +1,11 @@
+<ul class="ffan-rate" ng-mouseleave="vm.restore()">
+	<li ng-repeat="item in vm.rateArr" ng-mouseover="vm.rateHover($index, item.on)"
+		ng-mouseleave="vm.rateLeave($index)"
+		ng-click="vm.rateClick($index)">
+		<span class="glyphicon"
+			  ng-class="item.on || item.hover ? 'glyphicon-star' : 'glyphicon-star-empty'"
+			  style="color: {{item.color}}">
+		</span>
+	</li>
+</ul>
+<span class="rate-text">{{vm.rateText}}</span>
