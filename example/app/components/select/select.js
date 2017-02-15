@@ -1,4 +1,4 @@
-import Select from '../../../../lib/select/index.js';
+import Select from '../../../../lib/Select/index.js';
 
 import selectComponent from './select.component.js';
 export default angular.module('selectdemo', [

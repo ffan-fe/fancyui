@@ -1,5 +1,5 @@
 import alertComponent from './alert.component.js';
-import Service from '../../../../lib/service/index.js';
+import Service from '../../../../lib/Service/index.js';
 
 export default angular.module('alert', [
 		Service.name
