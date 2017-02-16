@@ -1,6 +1,6 @@
 import popconfirmComponent from './popconfirm.component.js';
-import PopConfirm from '../../../../lib/popconfirm/index.js';
-import Service from '../../../../lib/service/index.js';
+import PopConfirm from '../../../../lib/Popconfirm/index.js';
+import Service from '../../../../lib/Service/index.js';
 
 export default angular.module('popConfirm', [
   PopConfirm.name,
