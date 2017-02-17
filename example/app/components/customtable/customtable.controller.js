@@ -58,7 +58,7 @@ export default class CustomtableController {
 			}
 		];
 
-		this.defaultData = {
+		this.data = {
 			"totalCount": 23842,
 			"items": [{
 				"storeId": 1123,
@@ -70,14 +70,14 @@ export default class CustomtableController {
 				"merchantName": "宇宙商户"
 			}]
 		};
-		this.data = this.mockData();
+		// this.data = this.mockData();
 	}
 
-	mockData() {
-		let deferred = this.$q.defer();
-		deferred.resolve(this.defaultData);
-		return deferred.promise;
-  	}
+	// mockData() {
+	// 	let deferred = this.$q.defer();
+	// 	deferred.resolve(this.defaultData);
+	// 	return deferred.promise;
+  	// }
 
 	pageChange(pageNo) {
 		console.log(pageNo)
