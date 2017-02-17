@@ -1,6 +1,6 @@
 import radioComponent from './radio.component.js';
-import Radiobox from '../../../../lib/radiobox/index.js';
-import RadioboxGroup from '../../../../lib/radioboxGroup/index.js';
+import Radiobox from '../../../../lib/Radiobox/index.js';
+import RadioboxGroup from '../../../../lib/RadioboxGroup/index.js';
 
 export default angular.module('radio', [
 	Radiobox.name,
