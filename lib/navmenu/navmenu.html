@@ -1,0 +1,20 @@
+<ul ng-click="vm.clickHandler($event)">
+  <li ng-repeat="menu in vm.menuData"
+      ng-class="{'active': menu.active}"
+      data-href="{{menu.href}}"
+      data-id="{{menu.id}}">
+    {{menu.text}}
+    <div ng-include="'childMenu.html'">
+    </div>
+  </li>
+</ul>
+
+<script type="text/ng-template" id="childMenu.html">
+  <ul ng-if="menu.children" ng-hide="menu.hide">
+    <li ng-repeat="menu in menu.children" ng-class="{'menu-active': menu.active}" data-href="{{menu.href}}" data-id="{{menu.id}}">
+      {{menu.text}}
+      <div ng-include="'childMenu.html'">
+      </div>
+    </li>
+  </ul>
+</script>

@@ -525,5 +525,18 @@ export default [
     tracking: {
       key: 'message'
     }
+  },
+  {
+    name: 'navmenu',
+    moduleName: {
+      'en-us': 'navmenu',
+      'zh-cn': '侧边导航'
+    },
+    url: "/component/navmenu",
+    template: '<navmenu></navmenu>',
+    lazyload: require("bundle?lazy&name=navmenu!../components/navmenu/navmenu.js"),
+    tracking: {
+      key: 'navmenu'
+    }
   }
 ]
