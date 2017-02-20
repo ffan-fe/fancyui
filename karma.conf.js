@@ -32,7 +32,7 @@ var config =
             loader: 'isparta'
           }],
           loaders: [
-            { test: /\.js/, exclude: [/app\/bin/, /node_modules/], loader: 'babel-loader?cacheDirectory' },
+            { test: /\.js/, exclude: [/app\/bin/, /node_modules/], loader: 'babel-loader' },
             { test: /\.html$/, loader: 'raw-loader' },
             { test: /\.less$/, loader: 'style-loader!css-loader!less-loader' },
             { test: /\.(ttf|eot|svg|woff(2)?)(\?\S*)?$/, loader: require.resolve('file-loader') },
@@ -45,12 +45,12 @@ var config =
         dir: 'coverage/',
         reporters: [
           { type: 'text-summary' },
-          { type: 'html' }
+          { type: 'html', subdir: 'report-html' },
+          { type: 'lcov', subdir: 'report-lcov' }
         ]
       },
 
       webpackServer: {
-        noInfo: 'errors-only' // prevent console spamming when running in Karma!
       },
 
       reporters: ['mocha', 'coverage'],

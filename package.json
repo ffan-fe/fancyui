@@ -1,16 +1,18 @@
 {
-  "name": "fancyui-dev",
-  "version": "2.1.11",
+  "name": "fancyui",
+  "version": "2.1.11-beta.1",
   "description": "angular ui components",
   "main": "./index.js",
   "scripts": {
     "dev": "gulp dev",
+    "karma": "karma start",
+    "singleTest": "npm run karma --single_file=lib/button/button.spec.js",
     "test": "karma start",
-    "singleTest":"npm test --single_file=lib/button/button.spec.js"
+    "coverage":"cat ./coverage/report-lcov/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/php-cpm/fancyui.git"
+    "url": "git+https://github.com/ffan-fe/fancyui.git"
   },
   "keywords": [
     "angular"
@@ -22,7 +24,6 @@
   },
   "homepage": "http://www.fancyui.org/#/en-us/component/install",
   "devDependencies": {
-    "angular-busy": "^4.1.3",
     "angular-highlightjs": "^0.6.3",
     "angular-mocks": "^1.6.1",
     "angular-translate": "^2.13.1",
@@ -37,6 +38,7 @@
     "bundle": "^0.2.3",
     "bundle-loader": "^0.5.4",
     "chai": "^3.5.0",
+    "coveralls": "^2.11.16",
     "css-loader": "^0.19.0",
     "file-loader": "^0.9.0",
     "gulp": "^3.9.1",
@@ -62,7 +64,6 @@
     "mocha": "^3.2.0",
     "ng-annotate": "^1.2.1",
     "ng-annotate-loader": "^0.2.0",
-    "ng-include-loader": "0.0.3",
     "oclazyload": "^1.0.9",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.4",

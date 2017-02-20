@@ -1,4 +1,4 @@
-import Service from '../../../../lib/service/index.js';
+import Service from '../../../../lib/Service/index.js';
 
 import messageComponent from './message.component';
 export default angular.module('message', [

@@ -1,10 +1,10 @@
-# Fancyui
+# [Fancyui](http://www.fancyui.org/) [![Build Status](https://api.travis-ci.org/ffan-fe/fancyui.svg?branch=master)](https://travis-ci.org/ffan-fe/fancyui/) [![Coverage Status](https://coveralls.io/repos/github/ffan-fe/fancyui/badge.svg?branch=master)](https://coveralls.io/github/ffan-fe/fancyui?branch=master) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 
 Website: http://www.fancyui.org/
 
 ###Introduction
 
-FancyUI is An AngularJs(1.5.X) component's lib created by the ffan-fe team from WanDa Group,It's aimed to be useful on building backend admin managment systems, features:
+FancyUI is An AngularJs(1.5.X) component's lib created by the ffan-fe team,It's aimed to be useful on building backend admin managment systems, features:
 
  - Command line tools for init project & create component
  - Lots of components

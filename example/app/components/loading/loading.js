@@ -1,6 +1,6 @@
 
-import Service from '../../../../lib/service/index.js';
-import Button from '../../../../lib/button/index.js';
+import Service from '../../../../lib/Service/index.js';
+import Button from '../../../../lib/Button/index.js';
 import loadingComponent from './loading.component';
 
 export default angular.module('loading', [
