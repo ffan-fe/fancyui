@@ -28,7 +28,9 @@ npm install fancyui --save</div>
 <h2>{{'Example'|translate}}</h2>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
-		<f-navmenu></f-navmenu>
+		<f-navmenu menu-data="vm.menuData"
+               config="vm.config"
+               on-select="vm.onSelect"></f-navmenu>
 	</div>
 </div>
 
