@@ -141,4 +141,8 @@ export default {
   MessageDesc: 'Display global messages as feedbacks to user operations.',
   MessageApiDecContent: 'content of the message',
   MessageApiDecduration: 'time before auto-dismiss,in seconds',
+  navMenuDesc: 'render menu from tree-like data;automatically open and highlight menu according to location.href ',
+  NavMenuApiDecMenuData: 'data source',
+  NavMenuApiDecConfig: 'specific the field of id, children & parent字段',
+  NavMenuApiDecOnSelect: 'the callback function while clicking menu',
 }

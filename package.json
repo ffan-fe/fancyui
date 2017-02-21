@@ -4,11 +4,12 @@
   "description": "angular ui components",
   "main": "./index.js",
   "scripts": {
+    "start": "./node_modules/.bin/webpack-dev-server  --hot --inline --config conf/webpack.dev.config.babel.js",
     "dev": "gulp dev",
     "karma": "karma start",
     "singleTest": "npm run karma --single_file=lib/button/button.spec.js",
     "test": "karma start",
-    "coverage":"cat ./coverage/report-lcov/lcov.info | coveralls"
+    "coverage": "cat ./coverage/report-lcov/lcov.info | coveralls"
   },
   "repository": {
     "type": "git",
@@ -69,6 +70,7 @@
     "rimraf": "^2.5.4",
     "style-loader": "^0.12.2",
     "webpack": "2.1.0-beta.22",
+    "webpack-dev-server": "^2.1.0-beta.10",
     "webpack-hot-middleware": "^2.15.0",
     "yargs": "^3.9.0"
   },
@@ -79,6 +81,7 @@
     "angular-ui-router": "^0.3.1",
     "classnames": "^2.2.5",
     "echarts": "~3.3.1",
+    "js-tree-structure": "0.0.5",
     "moment": "^2.13.0",
     "ng-file-upload": "^12.2.13"
   }

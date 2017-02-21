@@ -1,0 +1,41 @@
+<ul ng-click="vm.clickHandler($event)" class="f-menu f-menu-inline  f-menu-dark f-menu-root nav-menu-root">
+  <li ng-repeat="menu in vm.menuData"
+      ng-class="{'f-menu-item-selected': menu.active}"
+      data-href="{{menu.href}}"
+      data-id="{{menu.id}}">
+    <span class='menu-icon'
+          ng-if="menu.icon"
+          ng-style="{ 'background-image': 'url('+ menu.icon +')' }"></span>
+    <span ng-if="!menu.icon"
+          class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
+    {{menu.text}}
+    <span class="glyphicon"
+          ng-if="menu.children"
+          style="pointer-events: none;"
+          ng-class="{
+        'glyphicon-menu-right': menu.hide,
+        'glyphicon-menu-down': !menu.hide
+      }"></span>
+    <div ng-include="'childMenu.html'">
+    </div>
+  </li>
+</ul>
+
+<script type="text/ng-template" id="childMenu.html">
+  <ul ng-if="menu.children"
+      ng-class="{'f-menu-submenu-open': !menu.hide}"
+      ng-hide="menu.hide">
+    <li ng-repeat="menu in menu.children" ng-class="{'f-menu-item-selected': menu.active}" data-href="{{menu.href}}" data-id="{{menu.id}}">
+      {{menu.text}}
+      <span class="glyphicon"
+            style="pointer-events: none;"
+            ng-if="menu.children"
+            ng-class="{
+        'glyphicon-menu-right': menu.hide,
+        'glyphicon-menu-down': !menu.hide
+      }"></span>
+      <div ng-include="'childMenu.html'">
+      </div>
+    </li>
+  </ul>
+</script>

@@ -1,0 +1,154 @@
+<section class="intro-content">
+	<h1 translate='{{vm.$state.current.name}}'></h1>
+  <p>{{'navMenuDesc' | translate}}</p>
+</section>
+
+<section class="intro-content">
+	<h2>{{'Install' | translate}}</h2>
+</section>
+
+<div class="example-block">
+<div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save</div>
+</div>
+
+<section class="intro-content">
+	<h2>{{'Inject_Module' | translate}}</h2>
+</section>
+
+<div class="example-block">
+	<div class="highlight no-border" hljs hljs-language="javascript">
+import {Menu} from 'fancyui';
+
+export default angular.module('menuDemo', [
+Menu.name
+])
+	</div>
+</div>
+
+<!--示例-->
+<h2>{{'Example'|translate}}</h2>
+<div class="example-block">
+	<div class="bs-example pop-confirm-example">
+		<f-navmenu menu-data="vm.menuData"
+               config="vm.config"
+               on-select="vm.onSelect"></f-navmenu>
+	</div>
+</div>
+
+<!--基础用法-->
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>View</h3>
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="html">
+<f-navmenu menu-data="vm.menuData"
+           config="vm.config"
+           on-select="vm.onSelect"></f-navmenu>
+</div>
+</div>
+
+<h3>controller</h3>
+
+<div class="example-block">
+<div class="highlight no-border" hljs hljs-language="javascript">
+this.menuData = [
+{
+  id: 1,
+  text: '测试父menu1',
+  href: 'test'
+},
+{
+  id: 2,
+  text: '测试父menu2',
+  children: [
+    {
+      id: 21,
+      text: '测试子menu21',
+      parent: 2
+    },
+    {
+      id: 22,
+      text: '测试子menu12',
+      parent: 2
+    }
+  ]
+},
+{
+  id: 3,
+  text: '测试父menu3',
+  children: [
+    {
+      id: 31,
+      text: '测试子menu31',
+      parent: 3
+    },
+    {
+      id: 32,
+      text: '测试子menu32',
+      hide: false,
+      parent: 3,
+      children: [
+        {
+          id: 321,
+          text: '测试子menu321',
+          parent: 32,
+          href: 'menu'
+        },
+        {
+          id: 322,
+          text: '测试子menu322',
+          active: false,
+          parent: 32
+        }
+      ]
+    }
+  ]
+}];
+
+this.config = {
+childrenAttr: 'children',
+idAttr: 'id',
+parentAttr: 'parent'
+};
+
+this.onSelect = node => {
+console.log('node clicked:' + node.text);
+}
+</div>
+</div>
+
+<section class="intro-content">
+  <h2>{{'Options'|translate}}</h2>
+
+  <h3>f-navmenu props</h3>
+  <table class="demo-table">
+    <thead>
+    <tr>
+      <th>{{'Param'|translate}}</th>
+      <th>{{'Description'|translate}}</th>
+      <th>{{'Type'|translate}}</th>
+      <th>{{'DefaultValue'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>menuData</td>
+      <td>{{'NavMenuApiDecMenuData'|translate}}</td>
+      <td>Object</td>
+      <td>null</td>
+    </tr>
+    <tr>
+      <td>config</td>
+      <td>{{'NavMenuApiDecConfig'|translate}}</td>
+      <td>Object</td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>onSelect</td>
+      <td>{{'NavMenuApiDecOnSelect'|translate}}</td>
+      <td>function</td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</section>

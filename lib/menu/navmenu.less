@@ -1,0 +1,66 @@
+@import "../nav/menu";
+.nav-menu-root {
+  cursor: pointer;
+  transition: all .3s ease;
+
+  li {
+    .menu-icon {
+      position: absolute;
+      opacity: .6;
+      width: 14px;
+      height: 14px;
+      background-size: contain;
+      margin-top: 13px;
+      left: 5px;
+      top: 3px;
+      pointer-events: none;
+      background-position: center;
+    }
+    padding-left: 23px;
+    list-style: none;
+  }
+  > li {
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease;
+
+    ul {
+       &.f-menu-submenu-open {
+        -webkit-animation-name: antSlideUpIn;
+        animation-name: antSlideUpIn;
+        -webkit-animation-play-state: running;
+        animation-play-state: running;
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }
+
+      /*&.ng-hide-add {
+        display: block!important;
+        -webkit-animation-name: antSlideUpOut;
+        animation-name: antSlideUpOut;
+        -webkit-animation-play-state: running;
+        animation-play-state: running;
+        -webkit-animation-duration: 0.2s;
+        animation-duration: 0.2s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+      }*/
+      &.ng-hide {
+        display: none;
+      }
+    }
+
+    .glyphicon {
+      pointer-events: none;
+      font-size: 12px;
+    }
+  }
+  .menu-active {
+    background: blue;
+  }
+}
+
+
+

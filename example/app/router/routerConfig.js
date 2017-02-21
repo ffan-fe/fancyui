@@ -449,16 +449,16 @@ export default [
 		hideHeader: true
 	},
 	{
-		name: 'menu',
+		name: 'nav',
     moduleName: {
-      'en-us': 'Menu',
-      'zh-cn': '导航菜单'
+      'en-us': 'nav',
+      'zh-cn': '导航'
     },
-		url: "/component/menu",
+		url: "/component/nav",
 		template: '<menu></menu>',
-		lazyload: require("bundle-loader?lazy&name=menu!../components/menu/menu.js"),
+		lazyload: require("bundle-loader?lazy&name=menu!../components/nav/menu.js"),
 		tracking: {
-			key: 'menu'
+			key: 'nav'
 		}
 	},
 	{
@@ -524,6 +524,19 @@ export default [
     lazyload: require("bundle?lazy&name=message!../components/message/message.js"),
     tracking: {
       key: 'message'
+    }
+  },
+  {
+    name: 'menu',
+    moduleName: {
+      'en-us': 'menu',
+      'zh-cn': '菜单'
+    },
+    url: "/component/menu",
+    template: '<navmenu></navmenu>',
+    lazyload: require("bundle?lazy&name=menu!../components/menu/navmenu.js"),
+    tracking: {
+      key: 'menu'
     }
   }
 ]
