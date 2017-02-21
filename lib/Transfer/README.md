@@ -8,7 +8,7 @@ FancyUI transfer component
 
 ```
 import transferComponent from './transfer.component';
-import {Transfer} from 'fancyui';
+import { Transfer } from 'fancyui';
 
 export default angular.module('transfer', [
   Transfer.name
@@ -17,7 +17,7 @@ export default angular.module('transfer', [
 ```
 
 ```
-<f-transfer 
+<f-transfer
   source-data='vm.dataSource'
   titles='vm.transferOptions.titles'
   placeholders='vm.transferOptions.placeholders'
@@ -61,6 +61,6 @@ export default class TransferController {
 }
 ```
 
-### See what happened && get all config options 
+### See what happened && get all config options
 
 http://www.fancyui.org/#/zh-cn/component/transfer

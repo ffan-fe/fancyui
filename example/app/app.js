@@ -13,8 +13,7 @@ import './skin/theme.less';
 import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
-import 'angular-busy/dist/angular-busy';
-import 'angular-busy/angular-busy.css';
+
 import ffanRouter from './router/router';
 
 import './demo.css';
@@ -32,8 +31,6 @@ angular.module('app', [
   ffanRouter.name,
   Common.name,
   Components.name,
-/** loading效果  */
-  'cgBusy',
 /** 翻译模块 */
   translate
 ])
