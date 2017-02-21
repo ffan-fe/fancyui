@@ -53,7 +53,7 @@ export default class NavmenuController extends Base{
                 id: 321,
                 text: '测试子menu321',
                 parent: 32,
-                href: 'navmenu'
+                href: 'menu'
               },
               {
                 id: 322,

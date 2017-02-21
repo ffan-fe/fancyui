@@ -4,8 +4,10 @@
       data-href="{{menu.href}}"
       data-id="{{menu.id}}">
     <span class='menu-icon'
-          ng-init="menu.icon ? '' : menu.icon = vm.defaultIcon"
+          ng-if="menu.icon"
           ng-style="{ 'background-image': 'url('+ menu.icon +')' }"></span>
+    <span ng-if="!menu.icon"
+          class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>
     {{menu.text}}
     <span class="glyphicon"
           ng-if="menu.children"
