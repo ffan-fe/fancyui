@@ -70,7 +70,10 @@ export default class NavmenuController extends Base{
     this.config = {
       childrenAttr: 'children',
       idAttr: 'id',
-      parentAttr: 'parent'
+      parentAttr: 'parent',
+      hrefAttr: 'href',
+      textAttr: 'text',
+      iconAttr: 'icon'
     };
 
     this.onSelect = node => {
