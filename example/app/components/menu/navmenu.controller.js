@@ -18,7 +18,7 @@ export default class NavmenuController extends Base{
       this.menuData = [
         {
           "sort": 0,
-          "icon": "default.png",
+          "icon": "",
           "id": 1,
           "url": "/home/index",
           "path": "0-1",
@@ -27,7 +27,7 @@ export default class NavmenuController extends Base{
         },
         {
           "sort": 0,
-          "icon": "default.png",
+          "icon": "",
           "id": 9,
           "url": "#",
           "path": "0-9",
@@ -56,7 +56,7 @@ export default class NavmenuController extends Base{
         },
         {
           "sort": 0,
-          "icon": "default.png",
+          "icon": "",
           "id": 13,
           "url": "#",
           "path": "0-13",
@@ -141,7 +141,7 @@ export default class NavmenuController extends Base{
         },
         {
           "sort": 2,
-          "icon": "default.png",
+          "icon": "",
           "id": 3,
           "url": "#",
           "path": "0-3",
