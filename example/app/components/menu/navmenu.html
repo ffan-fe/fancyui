@@ -52,68 +52,66 @@ Menu.name
 <div class="example-block">
 <div class="highlight no-border" hljs hljs-language="javascript">
 this.menuData = [
-{
-  id: 1,
-  text: '测试父menu1',
-  href: 'test'
-},
-{
-  id: 2,
-  text: '测试父menu2',
-  children: [
-    {
-      id: 21,
-      text: '测试子menu21',
-      parent: 2
-    },
-    {
-      id: 22,
-      text: '测试子menu12',
-      parent: 2
-    }
-  ]
-},
-{
-  id: 3,
-  text: '测试父menu3',
-  children: [
-    {
-      id: 31,
-      text: '测试子menu31',
-      parent: 3
-    },
-    {
-      id: 32,
-      text: '测试子menu32',
-      hide: false,
-      parent: 3,
-      children: [
-        {
-          id: 321,
-          text: '测试子menu321',
-          parent: 32,
-          href: 'menu'
-        },
-        {
-          id: 322,
-          text: '测试子menu322',
-          active: false,
-          parent: 32
-        }
-      ]
-    }
-  ]
-}];
+  {
+  node_id: "2377",
+  parent_id: "0",
+  application_id: "1",
+  application_node_id: "2377",
+  path: "0",
+  name: "券中心",
+  url: "",
+  is_del: "0",
+  is_show_menu: "1",
+  sort: "0",
+  icon: "default.png",
+  sub_folder: null,
+  remark: null,
+  danger: "2",
+  menu: "1",
+  id: "2377",
+  pid: "0",
+  appid: "1",
+  _child: [
+  {
+  node_id: "2379",
+  parent_id: "2377",
+  application_id: "1",
+  application_node_id: "2379",
+  path: "0-2377",
+  name: "优惠券列表",
+  url: "http://admincoupon.sit.ffan.com/page/CouponsManagement",
+  is_del: "0",
+  is_show_menu: "1",
+  sort: "0",
+  icon: null,
+  sub_folder: null,
+  remark: null,
+  danger: "2",
+  menu: "1",
+  id: "2379",
+  pid: "2377",
+  appid: "1"
+  }]
+  ];
 
-this.config = {
-childrenAttr: 'children',
-idAttr: 'id',
-parentAttr: 'parent'
-};
+  this.config = {
+    childrenAttr: '_child',
+    idAttr: 'id',
+    parentAttr: 'pid',
+    hrefAttr: 'url',
+    textAttr: 'name',
+    iconAttr: 'icon',
+    matchCurrentUrl: node => {
+      if(location.hash.slice(1, location.hash.length) == node.url) {
+        return true;
+      }
+        return false;
+      }
+    };
 
-this.onSelect = node => {
-console.log('node clicked:' + node.text);
-}
+  this.onSelect = node => {
+    console.log('node clicked:' + node[this.config.textAttr]);
+  }
 </div>
 </div>
 
@@ -151,4 +149,57 @@ console.log('node clicked:' + node.text);
     </tr>
     </tbody>
   </table>
+
+  <h3>config object</h3>
+  <table class="demo-table">
+    <thead>
+    <tr>
+      <th>{{'Param'|translate}}</th>
+      <th>{{'Description'|translate}}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <td>childrenAttr</td>
+      <td>{{'NavMenuApiDecChildrenAttr'|translate}}</td>
+    </tr>
+    <tr>
+      <td>
+        idAttr
+      </td>
+      <td>{{'NavMenuApiDecIdAttr'|translate}}</td>
+    </tr>
+    <tr>
+      <td>
+        parentAttr
+      </td>
+      <td>{{'NavMenuApiDecParentAttr'|translate}}</td>
+    </tr>
+    <tr>
+      <td>
+        hrefAttr
+      </td>
+      <td>{{'NavMenuApiDecHrefAttr'|translate}}</td>
+    </tr>
+    <tr>
+      <td>
+        textAttr
+      </td>
+      <td>{{'NavMenuApiDecTextAttr'|translate}}</td>
+    </tr>
+    <tr>
+      <td>
+        iconAttr
+      </td>
+      <td>{{'NavMenuApiDecIconAttr'|translate}}</td>
+    </tr>
+    <tr>
+      <td>
+        matchCurrentUrl
+      </td>
+      <td>{{'NavMenuApiDecMatchCurrentUrl'|translate}}</td>
+    </tr>
+    </tbody>
+  </table>
 </section>
+
