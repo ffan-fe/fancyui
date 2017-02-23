@@ -151,5 +151,5 @@ export default {
   NavMenuApiDecHrefAttr: 'specific the href field',
   NavMenuApiDecTextAttr: 'specific the text field',
   NavMenuApiDecIconAttr: 'specific the icon field',
-  matchCurrentUrl: 'specific the function which determine if current url is matched',
+  NavMenuApiDecMatchCurrentUrl: 'specific the function which determine if current url is matched',
 }

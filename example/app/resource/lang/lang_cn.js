@@ -181,5 +181,5 @@ export default Object.assign(_defaultLang, {
   NavMenuApiDecHrefAttr: '指定节点链接字段',
   NavMenuApiDecTextAttr: '指定节点文字字段',
   NavMenuApiDecIconAttr: '指定节点图标字段',
-  matchCurrentUrl: '当前节点和location.href的匹配情况，匹配返回true，否则返回false',
+  NavMenuApiDecMatchCurrentUrl: '当前节点和location.href的匹配情况，匹配返回true，否则返回false',
 })
