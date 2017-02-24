@@ -175,4 +175,11 @@ export default Object.assign(_defaultLang, {
   NavMenuApiDecMenuData: '数据源',
   NavMenuApiDecConfig: '指定id，children，parent字段',
   NavMenuApiDecOnSelect: '点击menu时的回调',
+  NavMenuApiDecChildrenAttr: '指定子节点字段',
+  NavMenuApiDecIdAttr: '指定节点id字段',
+  NavMenuApiDecParentAttr: '指定节点父id字段',
+  NavMenuApiDecHrefAttr: '指定节点链接字段',
+  NavMenuApiDecTextAttr: '指定节点文字字段',
+  NavMenuApiDecIconAttr: '指定节点图标字段',
+  NavMenuApiDecMatchCurrentUrl: '当前节点和location.href的匹配情况，匹配返回true，否则返回false',
 })
