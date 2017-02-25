@@ -1,6 +1,6 @@
 {
   "name": "fancyui",
-  "version": "2.1.11-beta.1",
+  "version": "2.1.12",
   "description": "angular ui components",
   "main": "./index.js",
   "scripts": {
