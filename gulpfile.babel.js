@@ -33,7 +33,7 @@ gulp.task('component', () => {
   const name = yargs.argv.name;
 
   const destComponentsPath = path.join(resolveToComponents(), name);
-  const destLibPaths = path.join(resolveToLibs(), name);
+  const destLibPaths = path.join(resolveToLibs(), cap(name));
 
   let gulpLibs = gulp.src(path.join(__dirname, 'generator', 'lib/**/*.**'))
     .pipe(template({
