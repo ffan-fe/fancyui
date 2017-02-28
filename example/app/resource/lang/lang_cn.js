@@ -127,6 +127,8 @@ export default Object.assign(_defaultLang, {
   UploadApiDecAccept: '接受上传的文件类型/大小/宽高',
   UploadApiDecBeforeUpload: '上传文件之前的钩子，参数为上传的文件，若返回 false 或者 Promise 则停止上传。',
   UploadApiDecCustomRequest: '通过覆盖默认的上传行为，可以自定义自己的上传实现',
+  UploadApiDecOnSuccess: '上传成功时的回调',
+  UploadApiDecOnFail: '上传失败时的回调',
   UploadApiDecOnChange: '上传文件改变时的状态调',
   UploadApiDecListType: '上传列表的内建样式，支持两种基本样式 text or picture',
   UploadApiDecOnRemove: '点击移除文件时的回调',
