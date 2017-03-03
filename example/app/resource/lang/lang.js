@@ -98,6 +98,8 @@ export default {
   UploadApiDecAccept: 'File types/size/width/height that can be accepted',
   UploadApiDecBeforeUpload: 'Hook function which will be executed before uploading. Uploading will be stopped with false or a rejected Promise returned.',
   UploadApiDecCustomRequest: 'override for the default xhr behavior allowing for additional customization and ability to implement your own XMLHttpRequest',
+  UploadApiDecOnSuccess: 'callback function when uploading is successful',
+  UploadApiDecOnFail: 'callback function when uploading is failed',
   UploadApiDecOnChange: 'A callback function, can be executed when uploading state is changing.',
   UploadApiDecListType: 'Built-in stylesheets, support for two types: text or picture',
   UploadApiDecOnRemove: 'A callback function, will be executed when removing file button is clicked',
