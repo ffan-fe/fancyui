@@ -36,6 +36,7 @@ export default angular.module('selectdemo', [
 	<div class="bs-example ">
 		<f-select
 			data="vm.data" 
+			place-holder="'请选择城市数据'"
 			ng-model="vm.city"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
@@ -47,6 +48,7 @@ export default angular.module('selectdemo', [
 	<div class="highlight no-border" hljs hljs-language="html">
 <f-select
 		data="vm.data" 
+		place-holder="'请选择城市数据'"
 		ng-model="vm.city"
 		on-item-selected="vm.onSelect($item)"
 	></f-select></div>
@@ -371,6 +373,7 @@ export default class SelectController {
       remote-method="vm.mockData($value)"
 			data="vm.data"
 			ng-model="vm.city"
+			empty-data-text="'无城市数据'"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
 	</div>
@@ -385,6 +388,7 @@ export default class SelectController {
   remote-method="vm.mockData($value)"
   is-remote="true"
   ng-model="vm.city"
+	empty-data-text="'无城市数据'"
   on-item-selected="vm.onSelect($item)"
 &lt;/f-select&gt;</div>
 </div>
@@ -434,6 +438,20 @@ export default class SelectController {
 		</tr>
 		</thead>
 		<tbody>
+		<tr>
+			<td>place-holder</td>
+			<td>placeholder text</td>
+			<td>string</td>
+			<td>-</td>
+			<td>请选择</td>
+		</tr>
+		<tr>
+			<td>empty-data-text</td>
+			<td>empty data text</td>
+			<td>string</td>
+			<td>-</td>
+			<td>无数据</td>
+		</tr>
 		<tr>
 			<td>is-remote</td>
 			<td>{{'IsRemoteDesc'|translate}}</td>
