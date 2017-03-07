@@ -369,6 +369,7 @@ export default class SelectController {
 	<div class="bs-example pop-confirm-example">
 		<f-select
       is-remote="true"
+			clearable="true"
       remote-debounce="300"
       remote-method="vm.mockData($value)"
 			data="vm.data"
@@ -386,9 +387,10 @@ export default class SelectController {
   data="vm.data" 
   remote-debounce="300"
   remote-method="vm.mockData($value)"
+  clearable="true"
   is-remote="true"
   ng-model="vm.city"
-	empty-data-text="'无城市数据'"
+  empty-data-text="'无城市数据'"
   on-item-selected="vm.onSelect($item)"
 &lt;/f-select&gt;</div>
 </div>
