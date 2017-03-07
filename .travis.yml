@@ -5,15 +5,12 @@ language: node_js
 node_js:
   - 6
 before_install:
-    - export PATH=/usr/local/phantomjs-2.0.0/bin:$PATH
-    - export DISPLAY=:99.0
-    - sh -e /etc/init.d/xvfb start
-    - "npm config set spin false"
     - "npm install -g yarn"
 install:
   - yarn install
 cache:
   directories:
+    - node_modules
     - $HOME/.fancyuicache
   yarn: true
 after_script:
