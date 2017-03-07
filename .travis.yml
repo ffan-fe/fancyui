@@ -5,13 +5,14 @@ language: node_js
 node_js:
   - 6
 before_install:
-    - "npm install -g yarn"
+    - "yarn --version"
 install:
   - yarn install
 cache:
+  yarn: true
   directories:
     - node_modules
     - $HOME/.fancyuicache
-  yarn: true
+  
 after_script:
   - npm run coverage
