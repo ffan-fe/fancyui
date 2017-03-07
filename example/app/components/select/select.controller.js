@@ -41,7 +41,7 @@ export default class SelectController {
       { id: '1005', name: '深圳' }
     ]
 
-    this.city1 = {};
+    this.city1 = { id: '1001', name: '上海' };
     this.data1 = [
       { id: '1001', name: '上海' },
       { id: '1002', name: '北京' },
