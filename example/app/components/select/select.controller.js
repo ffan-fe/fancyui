@@ -76,9 +76,9 @@ export default class SelectController {
   }
 
   onSelect($item) {
-    console.log($item)
+    console.log($item);
   }
-
+  
   mockData($value) {
     let deferred = this.$q.defer();
     console.log($value)
