@@ -5,7 +5,7 @@
  */
 
 export default class ButtonController {
-	constructor($state,$timeout,$translate) {
+	constructor($state, $timeout, $translate) {
 		'ngInject';
 		this.$state = $state;
 		this.disabled = false;
@@ -15,14 +15,14 @@ export default class ButtonController {
 	}
 
 	sayHello(btn) {
-		btn.state = {loading: true};
+		btn.state = { loading: true };
 		this.tiggleDisabled = false;
 		this.$timeout(() => {
-			btn.state = {disabled: false, loading: false};
-		}, 3000); 
+			btn.state = { disabled: false, loading: false };
+		}, 3000);
 	}
 
-	$onInit(){
+	$onInit() {
 		this.currentLang = this.$translate.use();
 	}
 }
