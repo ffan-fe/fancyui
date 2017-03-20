@@ -1,0 +1,15 @@
+<ul class="f-pagination" ng-click="vm.onPageClick($event)">
+  <span ng-if="vm.totalText" class="f-pagination-total-text">{{vm.totalText}}</span>
+  <li data-type="pre" title="Previous Page" class="f-pagination-prev" ng-class="{'f-pagination-disabled': vm.defaultCurrent == 1}">
+    <a></a>
+  </li>
+  <li data-page="{{v}}" title="{{v}}" ng-repeat="v in vm.viewPageRange track by $index"
+      ng-class="{'f-pagination-item-active': vm.defaultCurrent == v, 'f-pagination-item': (v != 'pre5' && v != 'next5'), 'f-pagination-jump-prev': (v == 'pre5'), 'f-pagination-jump-next': (v == 'next5')}">
+    <a ng-if="v != 'pre5' && v != 'next5'" style="pointer-events: none">{{v}}</a>
+  </li>
+  <li data-type="next" title="Next Page" class=" f-pagination-next" ng-class="{'f-pagination-disabled': vm.defaultCurrent == vm.modelPageRange.length}">
+    <a></a>
+  </li>
+  <f-select ng-if="vm.showSizeChanger" data="vm.data" ng-model="vm.city" on-item-selected="vm.onSelect($item)"></f-select>
+  <div ng-if="vm.showQuickJumper" class="f-pagination-options-quick-jumper">&nbsp; Goto<input f-enter="vm.onGoTo(_goToInputVal)" ng-model="_goToInputVal" type="text" value="1"></div>
+</ul>

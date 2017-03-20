@@ -538,5 +538,18 @@ export default [
     tracking: {
       key: 'menu'
     }
+  },
+  {
+    name: 'pagination',
+    moduleName: {
+      'en-us': 'Pagination',
+      'zh-cn': '分页'
+    },
+    url: "/component/pagination",
+    template: '<pagination></pagination>',
+    lazyload: require("bundle?lazy&name=pagination!../components/pagination/Pagination.js"),
+    tracking: {
+      key: 'pagination'
+    }
   }
 ]
