@@ -19,8 +19,8 @@
       ng-model-options="{debounce:vm.debounce}" autocomplete="off" class="f-input_inner" />
   </div>
 
-  <div class="f-select-dropdown">
-    <div class="f-scrollbar" ng-if="!vm.noneFlag">
+  <div class="f-select-dropdown" ng-if="vm.isOpen">
+    <div class="f-scrollbar" ng-if="!vm.emptyFlag">
       <div class="f-select-dropdown_wrap ">
         <ul class="f-scrollbar_view ">
           <ul class="f-select-group_wrap" ng-repeat="item in vm.dataArray">
@@ -39,6 +39,6 @@
       </div>
     </div>
 
-    <p class="f-select-dropdown_empty" ng-if="vm.noneFlag">{{vm.emptyDataText?vm.emptyDataText:'无数据'}}</p>
+    <p class="f-select-dropdown_empty" ng-if="vm.emptyFlag">{{vm.emptyDataText?vm.emptyDataText:'无数据'}}</p>
   </div>
 </div>
