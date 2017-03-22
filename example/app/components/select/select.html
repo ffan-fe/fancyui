@@ -221,7 +221,7 @@ export default class SelectController {
 	<div class="bs-example pop-confirm-example">
 		<f-select
 			data="vm.data4" 
-			ng-model="vm.city4"
+			ng-models="vm.cities1"
 			is-multiple="true"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
@@ -233,7 +233,7 @@ export default class SelectController {
 	<div hljs-no-escape class="highlight no-border" hljs >
 &lt;f-select
   data="vm.data" 
-  ng-model="vm.city"
+  ng-models="vm.cities"
   is-multiple="true"
   on-item-selected="vm.onSelect($item)"
 &lt;/f-select&gt;</div>
@@ -251,7 +251,7 @@ export default class SelectController {
       { id: '1004', name: '武汉万达广场' },
       { id: '1005', name: '浙江椒江万达广场' }
     ];
-    this.city = {};
+    this.cities = {};
   }
 }</div>
 </div>
@@ -265,9 +265,9 @@ export default class SelectController {
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
 		<f-select
-			data="vm.data4" 
+			data="vm.data6" 
       allow-create="true"
-			ng-model="vm.city4"
+			ng-models="vm.cities"
 			is-multiple="true"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
@@ -280,7 +280,7 @@ export default class SelectController {
 &lt;f-select
   data="vm.data" 
   allow-create="true"
-  ng-model="vm.city"
+  ng-models="vm.cities"
   is-multiple="true"
   on-item-selected="vm.onSelect($item)"
 &lt;/f-select&gt;</div>
@@ -298,7 +298,7 @@ export default class SelectController {
       { id: '1004', name: '武汉万达广场' },
       { id: '1005', name: '浙江椒江万达广场' }
     ];
-    this.city = {};
+    this.cities = {};
   }
 }</div>
 </div>
@@ -373,12 +373,14 @@ export default class SelectController {
       remote-debounce="300"
       remote-method="vm.mockData($value)"
 			data="vm.data"
-			ng-model="vm.city"
+			ng-model="vm.city6"
       empty-data-text="'无城市数据'"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
 	</div>
 </div>
+
+<button ng-click="vm.change();">change	</button>
 
 <h3>view</h3>
 <div class="example-block">

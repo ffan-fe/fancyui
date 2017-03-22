@@ -7,11 +7,12 @@
  */
 
 export default class SelectController {
-  constructor($state, $q,$timeout) {
+  constructor($state, $q, $timeout,$scope) {
     'ngInject'
     this.$state = $state;
     this.$q = $q;
     this.$timeout = $timeout;
+    this.$scope = $scope;
 
     this.cityGroup = {};
 
@@ -51,11 +52,11 @@ export default class SelectController {
       { id: '1005', name: '深圳', disabled: true }
     ]
 
-    
+
     this.data2 = angular.copy(this.data);
     this.city2 = this.data2[0];
 
-    
+
     this.data3 = angular.copy(this.data);
     this.city3 = {};
 
@@ -66,30 +67,44 @@ export default class SelectController {
       { id: '1004', name: '武汉万达广场' },
       { id: '1005', name: '浙江椒江万达广场' }
     ];
-    this.city4 = {};
+    this.cities = {};
+
+    this.data6 = [
+      { id: '1001', name: '上海江桥万达广场' },
+      { id: '1002', name: '北京通州万达广场' },
+      { id: '1003', name: '上海周浦万达广场' },
+      { id: '1004', name: '武汉万达广场' },
+      { id: '1005', name: '浙江椒江万达广场' }
+    ];
+    this.cities1 = {};
 
     this.data5 = [{ id: '1001', name: '上海' },
       { id: '1002', name: '北京' },
       { id: '1003', name: '广州' },
       { id: '1004', name: '杭州' },
       { id: '1005', name: '深圳' }];
-    this.city5 ={};
+    this.city5 = {};
+    this.city6 = {};
   }
 
   onSelect($item) {
     console.log($item);
   }
-  
+
+  change(){
+    this.city6 = {name:'北京',id:'1002'};
+  }
+
   mockData($value) {
     let deferred = this.$q.defer();
     let returnData = this.data.filter((d) => {
       return d.name.indexOf($value) > -1;
     })
     console.log($value);
-    this.$timeout(function(){
+    this.$timeout(function () {
       deferred.resolve(returnData);
-    },300)
-    
+    }, 300)
+
     return deferred.promise;
   }
 
