@@ -551,5 +551,18 @@ export default [
     tracking: {
       key: 'pagination'
     }
+  },
+  {
+    name: 'omnitable',
+    moduleName: {
+      'en-us': 'omnitable',
+      'zh-cn': '表格'
+    },
+    url: "/component/omnitable",
+    template: '<omni-table></omni-table>',
+    lazyload: require("bundle?lazy&name=omnitable!../components/omnitable/Omnitable.js"),
+    tracking: {
+      key: 'pagination'
+    }
   }
 ]
