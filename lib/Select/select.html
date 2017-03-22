@@ -16,7 +16,8 @@
     <input type="text" placeholder="{{vm.placeHolder?vm.placeHolder:'请选择'}}" 
       ng-readonly="!vm.isRemote" ng-disabled="vm.isDisabled" ng-change="vm.onInputChange()"
       ng-model="vm.inputValue" 
-      ng-model-options="{debounce:vm.debounce}" autocomplete="off" class="f-input_inner" />
+      ng-model-options="{debounce:vm.debounce}" autocomplete="off" class="f-input_inner" 
+      autocomplete="off" class="f-input_inner" />
   </div>
 
   <div class="f-select-dropdown" ng-if="vm.isOpen">

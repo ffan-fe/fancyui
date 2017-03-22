@@ -7,10 +7,11 @@
  */
 
 export default class SelectController {
-  constructor($state, $q) {
+  constructor($state, $q,$timeout) {
     'ngInject'
     this.$state = $state;
     this.$q = $q;
+    this.$timeout = $timeout;
 
     this.cityGroup = {};
 
@@ -81,11 +82,14 @@ export default class SelectController {
   
   mockData($value) {
     let deferred = this.$q.defer();
-    console.log($value)
     let returnData = this.data.filter((d) => {
       return d.name.indexOf($value) > -1;
     })
-    deferred.resolve(returnData);
+    console.log($value);
+    this.$timeout(function(){
+      deferred.resolve(returnData);
+    },300)
+    
     return deferred.promise;
   }
 
