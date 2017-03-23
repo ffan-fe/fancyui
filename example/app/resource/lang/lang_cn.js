@@ -135,6 +135,8 @@ export default Object.assign(_defaultLang, {
   UploadApiDecDisabled: '是否禁用',
   UploadApiDecWithCredentials: '上传请求时是否携带 cookie',
   SelectDesc: '当选项过多时，使用下拉菜单展示并选择内容。',
+  SelectModel:'非isMultiple模式下的数据模型，是单向绑定设置，可以通过设置改值来改变呈现',
+  SelectModels:'isMultiple模式下的数据模型，是双向绑定设置',
   DisabledOption: '有禁用选项',
   DisabledSelect: "禁用",
   DisabledSelectDesc: '禁用选择器',
@@ -184,4 +186,5 @@ export default Object.assign(_defaultLang, {
   NavMenuApiDecTextAttr: '指定节点文字字段',
   NavMenuApiDecIconAttr: '指定节点图标字段',
   NavMenuApiDecMatchCurrentUrl: '当前节点和location.href的匹配情况，匹配返回true，否则返回false',
+
 })

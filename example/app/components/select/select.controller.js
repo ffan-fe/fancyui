@@ -87,12 +87,18 @@ export default class SelectController {
     this.city6 = {};
   }
 
-  onSelect($item) {
-    console.log($item);
+  setting(){
+    this.city6 = {
+      id:'1004',name:'杭州'
+    }
   }
 
-  change(){
-    this.city6 = {name:'北京',id:'1002'};
+  clear(){
+    this.city6 = {};
+  }
+
+  onSelect($item) {
+    console.log($item);
   }
 
   mockData($value) {
