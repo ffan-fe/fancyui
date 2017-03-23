@@ -106,6 +106,8 @@ export default {
   UploadApiDecDisabled: 'disable upload button',
   UploadApiDecWithCredentials: 'ajax upload with cookie sent',
   SelectDesc:'When there are plenty of options, use a drop-down menu to display and select desired ones.',
+  SelectModel:'data model in non-isMultiple, is single-way binding, set value to change view',
+  SelectModels:'data model in isMultiple, is two-way binding.',
   DisabledOption:'Disabled option',
   DisabledSelect:"Disabled select",
   DisabledSelectDesc:'Disable the whole component',
