@@ -8,7 +8,7 @@
 
 import Base from '../../base';
 export default class OmniTableController extends Base {
-  constructor($state, $translate) {
+  constructor($state, $translate, $timeout) {
     'ngInject';
     super($state, $translate)
 
@@ -35,27 +35,7 @@ export default class OmniTableController extends Base {
     <a href="#">Action 一 ${record.name}</a>
   </span>`
       }];
-    const data = [{
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-    }, {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-    }, {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sidney No. 1 Lake Park',
-    }, {
-      key: '4',
-      name: 'Disabled User',
-      age: 99,
-      address: 'Sidney No. 1 Lake Park',
-    }];
+    const data = null;
     // rowSelection object indicates the need for row selection
     const rowSelection = {
       onSelect: (record, selected, selectedRowKeys, selectedRows) => {
@@ -70,7 +50,11 @@ export default class OmniTableController extends Base {
     const search = [
       {
         label: '门店名称',
-        name: 'storeName'
+        name: 'storeName',
+        tpl: `<input type="text"
+                     placeholder="{{field.placeholder}}"
+                     ng-model="vm.query[field.name]"
+                     class="f-input f-input-lg">`
       },
       {
         label: '商户名称',
@@ -121,12 +105,40 @@ export default class OmniTableController extends Base {
       keyField: 'key'
     };
 
-    this.pagination = pagination;
+    this.pagination = null;
 
     this.onChange = (page, pageSize, query) => {
       console.log(page, pageSize, query);
     };
 
-    this.loading = false;
+    this.onSwitchChange = val => {
+      this.loading = val;
+    };
+    this.loading = true;
+    $timeout(() => {
+      this.data = [{
+        key: '1',
+        name: 'John Brown',
+        age: 32,
+        address: 'New York No. 1 Lake Park',
+      }, {
+        key: '2',
+        name: 'Jim Green',
+        age: 42,
+        address: 'London No. 1 Lake Park',
+      }, {
+        key: '3',
+        name: 'Joe Black',
+        age: 32,
+        address: 'Sidney No. 1 Lake Park',
+      }, {
+        key: '4',
+        name: 'Disabled User',
+        age: 99,
+        address: 'Sidney No. 1 Lake Park',
+      }];
+      this.loading = false;
+      this.pagination = pagination
+    }, 5000)
   }
 }

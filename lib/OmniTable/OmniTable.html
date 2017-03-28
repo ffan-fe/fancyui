@@ -3,13 +3,18 @@
     <div class="f-row" style="margin-left: -20px; margin-right: -20px;">
       <div ng-repeat="field in vm.viewSearch" class="f-col-8" style="padding-left: 20px; padding-right: 20px;">
         <div class="f-row f-form-item">
-          <div class="f-col-5 f-form-item-label"><label class="">{{field.label}} : </label></div>
+          <div class="f-col-5 f-form-item-label"><label class="">{{field.label}}</label></div>
           <div class="f-col-19 f-form-item-control-wrapper">
             <div class="f-form-item-control has-success">
               <input type="text"
+                     ng-if="!field.tpl"
                      placeholder="{{field.placeholder}}"
                      ng-model="vm.query[field.name]"
                      class="f-input f-input-lg">
+
+              <span ng-if="field.tpl">
+                <f-custom-form html="{{field.tpl}}"></f-custom-form>
+              </span>
             </div>
           </div>
         </div>
@@ -88,7 +93,7 @@
               </div>
             </div>
           </div>
-          <div class="f-table-pagination">
+          <div class="f-table-pagination" ng-if="vm.pagination">
             <f-pagination total="vm.pagination.total"
                           on-change="vm.onPageNumChange"
                           show-quick-jumper="vm.pagination.showQuickJumper"

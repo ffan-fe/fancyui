@@ -154,4 +154,5 @@ export default {
   NavMenuApiDecTextAttr: 'specific the text field',
   NavMenuApiDecIconAttr: 'specific the icon field',
   NavMenuApiDecMatchCurrentUrl: 'specific the function which determine if current url is matched',
+  OmniTableDesc: 'a table display list data. when to use: to generate a simple list page; need a multi-select form for a collection of list data',
 }
