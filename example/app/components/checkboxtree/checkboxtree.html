@@ -29,11 +29,11 @@ export default angular.module('checkboxtree', [
 <h2>{{'Example'|translate}}</h2>
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
-		<f-checkboxtree
-			list-promise="vm.loadPromise" 
+		<f-checkbox-tree
+			datasource="vm.datasource"
 			ng-model="vm.form.category"
       default-collapsed="false"
-			config="vm.config"></f-checkboxtree>
+			config="vm.config"></f-checkbox-tree>
 	</div>
 </div>
 
@@ -41,35 +41,39 @@ export default angular.module('checkboxtree', [
 <h3>view</h3>
 <div class="example-block no-border">
 <div class="highlight" hljs hljs-no-escape>
-&lt;f-checkboxtree
-  list-promise="vm.loadPromise" 
+&lt;f-checkbox-tree
+  datasource="vm.datasource"
   default-collapsed="true"
   ng-model="vm.form.category"
   config="vm.config"&gt;
-&lt;/f-checkboxtree&gt;
+&lt;/f-checkbox-tree&gt;
 </div>
 </div>
 
 <h3>controller</h3>
 <div class="example-block no-border">
 <div class="highlight" hljs hljs-language="javascript">
-/**演示mock 数据 */
-this.loadPromise = this.mockService().mock([{
-    name: '第一个节点',
-    categoryId: 1001,
-    child: [{
-      name: '第一个节点的子节点',
-      categoryId: 1001001
-  },{
-      name:'第一个节点的子节点2',
-      categoryId: 1001002
-	}]
-  },
-  {
-    name: '第二个节点(没有子节点)',
-    categoryId: 1002
-  }]);
-
+/**演示异步赋值*/
+$timeout(() => {
+this.datasource = [{
+name: '第一个节点',
+categoryId: 1001,
+child: [{
+name: '第一个节点的子节点',
+categoryId: 1001001,
+parent: 1001,
+},
+{
+name: '第一个节点的子节点2',
+parent: 1001,
+categoryId: 1001002
+}]
+},
+{
+name: '第二个节点(没有子节点)',
+categoryId: 1002
+}];
+}, 100);
 //这个配置用于避免或减少数据转换
 this.config = {
   //指示子节点的字段名
@@ -77,7 +81,9 @@ this.config = {
   //指示节点名的字段
   fieldOfName: 'name',
   //指示节点id的字段
-  fieldOfId: 'categoryId'
+  fieldOfId: 'categoryId',
+  //指示父节点id的字段
+  fieldOfParent: 'parent'
 };
 
 this.form = {};
