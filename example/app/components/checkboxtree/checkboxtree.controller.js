@@ -1,8 +1,8 @@
 
 export default class CheckboxtreeController {
-  constructor($q,$state,$timeout) {
+  constructor($q, $state, $timeout) {
     'ngInject'
-    this.$state= $state;
+    this.$state = $state;
     this.$q = $q;
     $timeout(() => {
       this.datasource = [{
@@ -45,14 +45,4 @@ export default class CheckboxtreeController {
 
   }
 
-  mockService() {
-    let self = this;
-    return {
-      mock(data) {
-        let deferred = self.$q.defer();
-        deferred.resolve(data);
-        return deferred.promise;
-      }
-    }
-  }
 }
