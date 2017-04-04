@@ -170,7 +170,7 @@ export default Object.assign(_defaultLang, {
   Feature3: '3分钟内开发完成一个与rest API对接的管理后台页面',
   Feature4: '模块化管理并按需加载，ES6语法上手',
   Feature5: '使用ES6 + gulp + webpack做项目管理',
-  FeatureDesc: 'FancyUI是万达网络科技集团飞凡前端团队开源的一套AngularJs(1.5.X)的组件库，适合构建后台管理系统，主要有以下特性：',
+  FeatureDesc: 'FancyUI是一套AngularJs(1.5.X)的组件库，适合构建后台管理系统，主要有以下特性：',
   MessageService: '全局提示',
   MessageDesc: '全局展示操作反馈信息。',
   MessageApiDecContent: '提示内容',

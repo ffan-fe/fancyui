@@ -10,8 +10,7 @@
 
 <div class="example-block">
   <div class="highlight" hljs hljs-language="bash">
-npm install fancyui --save
-  </div>
+npm install fancyui --save</div>
 </div>
 
 <section class="intro-content">
@@ -23,7 +22,7 @@ npm install fancyui --save
 import {Service} from 'fancyui';
 
 export default angular.module('hint', [
-Service.name
+  Service.name
 ])
   </div>
 </div>
@@ -49,8 +48,7 @@ Service.name
 <button class="btn btn-default" ng-click="vm.info();">info</button>
 <button class="btn btn-default" ng-click="vm.error();">error</button>
 <button class="btn btn-default" ng-click="vm.warning();">warning</button>
-<button class="btn btn-default" ng-click="vm.loading();">loading</button>
-  </div>
+<button class="btn btn-default" ng-click="vm.loading();">loading</button></div>
 </div>
 
 <h3>controller</h3>
@@ -58,27 +56,27 @@ Service.name
 <div class="example-block">
   <div class="highlight no-border" hljs hljs-language="javascript">
 constructor($state,$translate, Message) {
-'ngInject';
-super($state,$translate)
+  'ngInject';
+  super($state,$translate)
 
-this.Message = Message;
+  this.Message = Message;
 
 }
 
 success() {
-this.Message.success('success', 5000);
+  this.Message.success('success', 5000);
 }
 info() {
-this.Message.info('info');
+  this.Message.info('info');
 }
 error() {
-this.Message.error('error');
+  this.Message.error('error');
 }
 warning() {
-this.Message.warning('warning');
+  this.Message.warning('warning');
 }
 loading() {
-this.Message.loading('loading');
+  this.Message.loading('loading');
 }
   </div>
 </div>
