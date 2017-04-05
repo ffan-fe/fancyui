@@ -1,26 +1,45 @@
 /**
- * (description)
+ * @description 
  *
- * @author yourname
+ * @author bcguan2008 <148135244@qq.com>
+ * @date Tue Apr 04 2017 15:14:12 GMT+0800 (CST)
+ * @example: http://www.fancyui.org/#/zh-cn/component/modal
  */
 
-import popupTemplate  from '../popup/popup.html';
+import Base from '../../base';
 
-export default class ModalController {
-	constructor($scope, $uibModal) {
-		"ngInject";
-		this.$scope = $scope;
-		this.$uibModal = $uibModal;
-	}
+export default class ModalController extends Base{
+  constructor($state,$translate,ModalService) {
+    'ngInject';
+    super($state,$translate)
+    this.ModalService = ModalService;
+  }
 
-	openPop() {
-		this.$uibModal.open({
-			animation: true,
-			template: popupTemplate,
-			controller: 'PopupController',
-			controllerAs: 'vm',
-			size: 'md',    // 可选lg/md/sm
-			resolve: {}
-		});
+  myAlert() {
+
+    let modalInstance = this.ModalService.open({
+        template: '<div message="vm.message"></div>',
+        controller : function(message){
+          'ngInject'
+          this.message = message;
+        },
+        controllerAs : 'vm',
+        resolve : {
+          message :()=>{
+            return ['测试数组0','测试数组1'];
+          }
+        }
+    });
+
+
+    /**
+		this.ModalService
+			.alert({
+				title: "测试",
+				content: "你好，我是警告"
+			})
+			.then(() => {
+        console.log('asdasd');
+			}); */
 	}
 }

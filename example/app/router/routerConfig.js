@@ -538,5 +538,18 @@ export default [
     tracking: {
       key: 'menu'
     }
+  },
+	{
+    name: 'modal',
+    moduleName: {
+      'en-us': 'modal',
+      'zh-cn': '弹出框'
+    },
+    url: "/component/modal",
+    template: '<example-modal></example-modal>',
+    lazyload: require("bundle?lazy&name=modal!../components/modal/modal.js"),
+    tracking: {
+      key: 'modal'
+    }
   }
 ]

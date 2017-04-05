@@ -1,5 +1,5 @@
 import template from './modal.html';
-import controller from './modal.controller.js';
+import controller from './modal.controller';
 import './modal.less';
 
 export default {
