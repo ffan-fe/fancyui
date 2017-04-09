@@ -18,15 +18,21 @@ export default class ModalController extends Base{
   myAlert() {
 
     let modalInstance = this.ModalService.open({
-        template: '<div message="vm.message"></div>',
-        controller : function(message){
+        template: `<div class="modal fade">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        {{message}}      
+                      </div>
+                    </div>
+                  </div>`,
+        controller : function(message,$scope){
           'ngInject'
           this.message = message;
         },
         controllerAs : 'vm',
         resolve : {
           message :()=>{
-            return ['测试数组0','测试数组1'];
+            return ['asdasd','dsafa'];
           }
         }
     });
