@@ -1,6 +1,6 @@
 /**
  * (description)
- * 
+ *
  * @author yourname
  */
 
@@ -9,5 +9,11 @@ export default class StepsController {
     'ngInject';
     this.$state = $state;
     this.name = 'steps';
+
+    this.stepsData = [
+      {
+
+      }
+    ];
   }
 }
