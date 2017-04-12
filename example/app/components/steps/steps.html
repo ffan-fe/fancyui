@@ -1,51 +1,33 @@
 <section class="intro-content">
-	<h1 translate='{{vm.$state.current.name}}'></h1>
-		<p>{{'StepsDes'|translate}}</p>
+  <h1 translate='{{vm.$state.current.name}}'></h1>
+
+  <p>{{'StepsDes'|translate}}</p>
 </section>
 
 <div class="example-block">
-<div class="bs-example">
-<div class="steps-container">
-	<ul>
-		<li class="cur">
-			<i class="step-num">1</i>
-			镜像来源
-			<span class="arrow-right"></span>
-		</li>
-		<li>
-			<span class="arrow-left"></span>
-			<i class="step-num">2</i>
-			容器配置
-			<span class="arrow-right"></span>
-		</li>
-		<li>
-			<span class="arrow-left"></span>
-			<i class="step-num">3</i>
-			高级配置
-		</li>
-	</ul>
-</div>
-</div>
-<div class="highlight" hljs hljs-language="html" style="margin-top: 30px">
-<div class="steps-container">
-  <ul>
-    <li class="cur">
-      <i class="step-num">1</i>
-      镜像来源
-      <span class="arrow-right"></span>
-    </li>
-    <li>
-      <span class="arrow-left"></span>
-      <i class="step-num">2</i>
-      容器配置
-      <span class="arrow-right"></span>
-    </li>
-    <li>
-      <span class="arrow-left"></span>
-      <i class="step-num">3</i>
-      高级配置
-    </li>
-  </ul>
-</div>
-</div>
+  <div class="bs-example">
+    <f-steps></f-steps>
+  </div>
+  <div class="highlight" hljs hljs-language="html" style="margin-top: 30px">
+    <div class="steps-container">
+      <ul>
+        <li class="cur">
+          <i class="step-num">1</i>
+          镜像来源
+          <span class="arrow-right"></span>
+        </li>
+        <li>
+          <span class="arrow-left"></span>
+          <i class="step-num">2</i>
+          容器配置
+          <span class="arrow-right"></span>
+        </li>
+        <li>
+          <span class="arrow-left"></span>
+          <i class="step-num">3</i>
+          高级配置
+        </li>
+      </ul>
+    </div>
+  </div>
 </div>
