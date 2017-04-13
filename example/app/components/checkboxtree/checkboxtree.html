@@ -19,9 +19,9 @@ npm install angular-ui-tree --save</div>
 
 <div class="example-block no-border">
 	<div class="highlight" hljs hljs-language="javascript">
-import {checkboxtree} from 'fancyui';
+import {Checkboxtree} from 'fancyui';
 export default angular.module('checkboxtree', [
-  checkboxtree.name
+  Checkboxtree.name
 ])
 </div>
 </div>
@@ -53,45 +53,51 @@ export default angular.module('checkboxtree', [
 <h3>controller</h3>
 <div class="example-block no-border">
 <div class="highlight" hljs hljs-language="javascript">
-/**演示异步赋值*/
-$timeout(() => {
-this.datasource = [{
-name: '第一个节点',
-categoryId: 1001,
-child: [{
-name: '第一个节点的子节点',
-categoryId: 1001001,
-parent: 1001,
-},
-{
-name: '第一个节点的子节点2',
-parent: 1001,
-categoryId: 1001002
-}]
-},
-{
-name: '第二个节点(没有子节点)',
-categoryId: 1002
-}];
-}, 100);
-//这个配置用于避免或减少数据转换
-this.config = {
-  //指示子节点的字段名
-  fieldOfChildren: 'child',
-  //指示节点名的字段
-  fieldOfName: 'name',
-  //指示节点id的字段
-  fieldOfId: 'categoryId',
-  //指示父节点id的字段
-  fieldOfParent: 'parent'
-};
+class CheckboxtreeController {
+  constructor($q, $state, $timeout) {
+    'ngInject'
+    this.$state = $state;
+    this.$q = $q;
+    $timeout(() => {
+      this.datasource = [{
+        name: '第一个节点',
+        categoryId: 1001,
+        child: [{
+          name: '第一个节点的子节点',
+          categoryId: 1001001,
+          parent: 1001,
+        },
+          {
+            name: '第一个节点的子节点2',
+            parent: 1001,
+            categoryId: 1001002
+          }]
+      },
+        {
+          name: '第二个节点(没有子节点)',
+          categoryId: 1002
+        }];
+    }, 100);
+    //这个配置用于避免或减少数据转换
+    this.config = {
+      //指示子节点的字段名
+      fieldOfChildren: 'child',
+      //指示节点名的字段
+      fieldOfName: 'name',
+      //指示节点id的字段
+      fieldOfId: 'categoryId'
+    };
 
-this.form = {};
-/**发送给服务端的数据，以及数据回填操作 */
-this.form.category = [
-{
-  name: '第二个节点(没有子节点)',
-  categoryId: 1002
-}];
+    this.form = {};
+
+    /**发送给服务端的数据，以及数据回填操作 */
+    this.form.category = [
+      {
+        name: '第二个节点(没有子节点)',
+        categoryId: 1002
+      }];
+
+  }
+}
 </div>
 </div>

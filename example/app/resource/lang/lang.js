@@ -140,7 +140,7 @@ export default {
   Feature3:'Finishing one page within 3min by adapting to rest API',
   Feature4:'Modular management',
   Feature5:'ES6 syntax + gulp + webpack',
-  FeatureDesc:"FancyUI is An AngularJs(1.5.X) component's lib created by the ffan-fe team from WanDa Group,It's aimed to be useful on building backend admin managment systems, features:",
+  FeatureDesc:"FancyUI is an AngularJs(1.5.X) component's lib,It's aimed to be useful on building backend admin managment systems, features:",
   MessageService: 'Message',
   MessageDesc: 'Display global messages as feedbacks to user operations.',
   MessageApiDecContent: 'content of the message',

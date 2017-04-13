@@ -21,8 +21,6 @@ FancyUI is An AngularJs(1.5.X) component's lib created by the ffan-fe team,It's 
 Install the node_modules and **example** node_modules:
 ```
 npm i -d ;
-cd example ;
-npm i -d ;
 ```
 
 ## Start Example
