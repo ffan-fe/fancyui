@@ -2,7 +2,7 @@
 
 Website: http://www.fancyui.org/
 
-###Introduction
+### Introduction
 
 FancyUI is An AngularJs(1.5.X) component's lib created by the ffan-fe team,It's aimed to be useful on building backend admin managment systems, features:
 
@@ -20,8 +20,6 @@ FancyUI is An AngularJs(1.5.X) component's lib created by the ffan-fe team,It's 
 
 Install the node_modules and **example** node_modules:
 ```
-npm i -d ;
-cd example ;
 npm i -d ;
 ```
 

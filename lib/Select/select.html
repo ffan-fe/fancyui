@@ -13,14 +13,15 @@
     ng-mouseenter="vm.mouseEnter()"
     ng-mouseleave="vm.mouseLeave()">
     <i ng-class="{'f-input_icon':true,'glyphicon':true,'glyphicon-triangle-top':!vm.hover,'glyphicon-remove':vm.hover}"></i>
-    <input type="text" placeholder="请选择" 
+    <input type="text" placeholder="{{vm.placeHolder?vm.placeHolder:'请选择'}}" 
       ng-readonly="!vm.isRemote" ng-disabled="vm.isDisabled" ng-change="vm.onInputChange()"
       ng-model="vm.inputValue" 
-      ng-model-options="{debounce:vm.debounce}" autocomplete="off" class="f-input_inner" />
+      ng-model-options="{debounce:vm.debounce}" autocomplete="off" class="f-input_inner" 
+      autocomplete="off" class="f-input_inner" />
   </div>
 
-  <div class="f-select-dropdown">
-    <div class="f-scrollbar" ng-if="!vm.noneFlag">
+  <div class="f-select-dropdown" ng-if="vm.isOpen">
+    <div class="f-scrollbar" ng-if="!vm.emptyFlag">
       <div class="f-select-dropdown_wrap ">
         <ul class="f-scrollbar_view ">
           <ul class="f-select-group_wrap" ng-repeat="item in vm.dataArray">
@@ -39,6 +40,6 @@
       </div>
     </div>
 
-    <p class="f-select-dropdown_empty" ng-if="vm.noneFlag">无数据</p>
+    <p class="f-select-dropdown_empty" ng-if="vm.emptyFlag">{{vm.emptyDataText?vm.emptyDataText:'无数据'}}</p>
   </div>
 </div>

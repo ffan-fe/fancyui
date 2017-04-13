@@ -42,6 +42,7 @@ module.exports = {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
+      sourceMap: true,
       mangle: {
 
         // You can specify all variables that should not be mangled.

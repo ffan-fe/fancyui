@@ -19,10 +19,10 @@ npm install fancyui --save</div>
 
 <div class="example-block">
 	<div class="highlight no-border" hljs hljs-language="javascript">
-import {Service} from 'fancyui';
+import {Select} from 'fancyui';
 
 export default angular.module('selectdemo', [
-  Service.name
+  Select.name
 ])</div>
 </div>
 
@@ -36,6 +36,7 @@ export default angular.module('selectdemo', [
 	<div class="bs-example ">
 		<f-select
 			data="vm.data" 
+			place-holder="'请选择城市数据'"
 			ng-model="vm.city"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
@@ -47,6 +48,7 @@ export default angular.module('selectdemo', [
 	<div class="highlight no-border" hljs hljs-language="html">
 <f-select
 		data="vm.data" 
+		place-holder="'请选择城市数据'"
 		ng-model="vm.city"
 		on-item-selected="vm.onSelect($item)"
 	></f-select></div>
@@ -219,7 +221,7 @@ export default class SelectController {
 	<div class="bs-example pop-confirm-example">
 		<f-select
 			data="vm.data4" 
-			ng-model="vm.city4"
+			ng-models="vm.cities1"
 			is-multiple="true"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
@@ -231,7 +233,7 @@ export default class SelectController {
 	<div hljs-no-escape class="highlight no-border" hljs >
 &lt;f-select
   data="vm.data" 
-  ng-model="vm.city"
+  ng-models="vm.cities"
   is-multiple="true"
   on-item-selected="vm.onSelect($item)"
 &lt;/f-select&gt;</div>
@@ -249,7 +251,7 @@ export default class SelectController {
       { id: '1004', name: '武汉万达广场' },
       { id: '1005', name: '浙江椒江万达广场' }
     ];
-    this.city = {};
+    this.cities = {};
   }
 }</div>
 </div>
@@ -263,9 +265,9 @@ export default class SelectController {
 <div class="example-block">
 	<div class="bs-example pop-confirm-example">
 		<f-select
-			data="vm.data4" 
+			data="vm.data6" 
       allow-create="true"
-			ng-model="vm.city4"
+			ng-models="vm.cities"
 			is-multiple="true"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
@@ -278,7 +280,7 @@ export default class SelectController {
 &lt;f-select
   data="vm.data" 
   allow-create="true"
-  ng-model="vm.city"
+  ng-models="vm.cities"
   is-multiple="true"
   on-item-selected="vm.onSelect($item)"
 &lt;/f-select&gt;</div>
@@ -296,7 +298,7 @@ export default class SelectController {
       { id: '1004', name: '武汉万达广场' },
       { id: '1005', name: '浙江椒江万达广场' }
     ];
-    this.city = {};
+    this.cities = {};
   }
 }</div>
 </div>
@@ -367,13 +369,21 @@ export default class SelectController {
 	<div class="bs-example pop-confirm-example">
 		<f-select
       is-remote="true"
+			clearable="true"
       remote-debounce="300"
       remote-method="vm.mockData($value)"
 			data="vm.data"
-			ng-model="vm.city"
+			ng-model="vm.city6"
+      empty-data-text="'无城市数据'"
 			on-item-selected="vm.onSelect($item)"
 			></f-select>
+
+			<span></span>
+			<f-button click="vm.setting()">Setting</f-button>
+			<f-button click="vm.clear()" type="success">Clear</f-button>
 	</div>
+
+	
 </div>
 
 <h3>view</h3>
@@ -383,15 +393,21 @@ export default class SelectController {
   data="vm.data" 
   remote-debounce="300"
   remote-method="vm.mockData($value)"
+  clearable="true"
   is-remote="true"
   ng-model="vm.city"
+  empty-data-text="'无城市数据'"
   on-item-selected="vm.onSelect($item)"
-&lt;/f-select&gt;</div>
+&lt;/f-select&gt;
+
+&lt;f-button click="vm.setting()"&gt;Setting '北京'&lt;/f-button&gt;
+&lt;f-button click="vm.clear()" type="success"&gt;Clear&lt;/f-button&gt;
+			</div>
 </div>
 
 <h3>controller</h3>
 <div class="example-block">
-<div class="highlight no-border" hljs hljs-language="javascript">
+<div class="highlight no-border" hljs hljs-no-escape hljs-language="javascript">
 export default class SelectController {
   constructor() {
     this.data = [
@@ -417,6 +433,17 @@ export default class SelectController {
     deferred.resolve(returnData);
     return deferred.promise;
   }
+
+  setting(){
+    this.city = {
+      id:'1004',name:'杭州'
+    }
+  }
+
+  clear(){
+    this.city = {};
+  }
+
 }</div>
 </div>
 
@@ -434,6 +461,34 @@ export default class SelectController {
 		</tr>
 		</thead>
 		<tbody>
+		<tr>
+			<td>ng-model</td>
+			<td>{{'SelectModel'|translate}}</td>
+			<td>object</td>
+			<td>-</td>
+			<td>请选择</td>
+		</tr>
+		<tr>
+			<td>ng-models</td>
+			<td>{{'SelectModels'|translate}}</td>
+			<td>object</td>
+			<td>-</td>
+			<td>请选择</td>
+		</tr>
+		<tr>
+			<td>place-holder</td>
+			<td>placeholder text</td>
+			<td>string</td>
+			<td>-</td>
+			<td>请选择</td>
+		</tr>
+		<tr>
+			<td>empty-data-text</td>
+			<td>empty data text</td>
+			<td>string</td>
+			<td>-</td>
+			<td>无数据</td>
+		</tr>
 		<tr>
 			<td>is-remote</td>
 			<td>{{'IsRemoteDesc'|translate}}</td>

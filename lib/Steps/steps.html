@@ -1,51 +1,57 @@
-<section class="intro-content">
-	<h1>步骤条</h1>
-	<p>引导用户按照流程完成任务的分步导航条。</p>
-</section>
-
-<div class="example-block">
-<div class="bs-example">
-<div class="steps-container">
-	<ul>
-		<li class="cur">
-			<i class="step-num">1</i>
-			镜像来源
-			<span class="arrow-right"></span>
-		</li>
-		<li>
-			<span class="arrow-left"></span>
-			<i class="step-num">2</i>
-			容器配置
-			<span class="arrow-right"></span>
-		</li>
-		<li>
-			<span class="arrow-left"></span>
-			<i class="step-num">3</i>
-			高级配置
-		</li>
-	</ul>
-</div>
-</div>
-<div class="highlight" hljs hljs-language="html" style="margin-top: 30px">
-<div class="steps-container">
-  <ul>
-    <li class="cur">
-      <i class="step-num">1</i>
-      镜像来源
-      <span class="arrow-right"></span>
-    </li>
-    <li>
-      <span class="arrow-left"></span>
-      <i class="step-num">2</i>
-      容器配置
-      <span class="arrow-right"></span>
-    </li>
-    <li>
-      <span class="arrow-left"></span>
-      <i class="step-num">3</i>
-      高级配置
-    </li>
-  </ul>
-</div>
-</div>
+<div class="f-steps f-steps-horizontal f-steps-label-horizontal">
+  <div class="f-steps-item f-steps-status-wait" style="margin-right: -34px; width: 25%;">
+    <div class="f-steps-tail" style="padding-right: 34px;"><i></i></div>
+    <div class="f-steps-step">
+      <div class="f-steps-head">
+        <a href="/admin/beacon?page=start" class="f-steps-head-inner"><span class="f-steps-icon">1</span></a>
+      </div>
+      <div class="f-steps-main">
+        <a href="/admin/beacon?page=start" class="f-steps-title">总览</a>
+      </div>
+    </div>
+  </div>
+  <div class="f-steps-item f-steps-status-pro cess" style="margin-right: -34px; width: 25%;">
+    <div class="f-steps-tail" style="padding-right: 34px;"><i></i></div>
+    <div class="f-steps-step">
+      <div class="f-steps-head">
+        <div class="f-steps-head-inner"><span class="f-steps-icon">2</span></div>
+      </div>
+      <div class="f-steps-main">
+        <div class="f-steps-title">设计</div>
+      </div>
+    </div>
+  </div>
+  <div class="f-steps-item f-steps-status-wait" style="margin-right: -34px; width: 25%;">
+    <div class="f-steps-tail" style="padding-right: 0px;"><i></i></div>
+    <div class="f-steps-step">
+      <div class="f-steps-head">
+        <a href="/admin/beacon?page=monitor" class="f-steps-head-inner"><span class="f-steps-icon">3</span></a>
+      </div>
+      <div class="f-steps-main">
+        <a href="/admin/beacon?page=monitor" class="f-steps-title">施工</a>
+      </div>
+    </div>
+  </div>
+  <div class="f-steps-item f-steps-status-wait" style="margin-right: -34px; width: 25%;">
+    <div class="f-steps-tail" style="padding-right: 0px;"><i></i></div>
+    <div class="f-steps-step">
+      <div class="f-steps-head">
+        <a href="/admin/beacon?page=check" class="f-steps-head-inner"><span class="f-steps-icon">4</span></a>
+      </div>
+      <div class="f-steps-main">
+        <a href="/admin/beacon?page=check" class="f-steps-title">验收</a>
+      </div>
+    </div>
+  </div>
+  <div class="f-steps-item f-steps-status-wait">
+    <div class="f-steps-tail" style="padding-right: 0px;"><i></i></div>
+    <div class="f-steps-step">
+      <div class="f-steps-head">
+        <a href="/admin/beacon?page=publish" class="f-steps-head-inner"><span class="f-steps-icon">5</span></a>
+      </div>
+      <div class="f-steps-main">
+        <a href="/admin/beacon?page=publish" class="f-steps-title">发布</a>
+      </div>
+    </div>
+  </div>
 </div>
