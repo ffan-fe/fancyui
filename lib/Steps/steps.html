@@ -1,56 +1,25 @@
 <div class="f-steps f-steps-horizontal f-steps-label-horizontal">
-  <div class="f-steps-item f-steps-status-wait" style="margin-right: -34px; width: 25%;">
+  <div ng-if="vm.stepsData && vm.stepsData.length"
+       ng-repeat="item in vm.stepsData"
+       ng-class="{'f-steps-status-wait': vm.current != $index, 'f-steps-status-process': vm.current == $index}"
+       class="f-steps-item f-steps-status-wait"
+       ng-style="{width: vm.getStepWidth(vm.stepsData, $last)}" style="margin-right: -34px;">
     <div class="f-steps-tail" style="padding-right: 34px;"><i></i></div>
     <div class="f-steps-step">
       <div class="f-steps-head">
-        <a href="/admin/beacon?page=start" class="f-steps-head-inner"><span class="f-steps-icon">1</span></a>
+        <span ng-click="vm.onClick(item, $index)"
+              style="cursor: pointer"
+              ng-class="{'f-steps-head-inner-has-icon': item.icon}"
+              class="f-steps-head-inner">
+          <span class="f-steps-icon"
+                style="pointer-events: none"
+                f-bind-html="item.icon || item.iconContent"></span>
+        </span>
       </div>
-      <div class="f-steps-main">
-        <a href="/admin/beacon?page=start" class="f-steps-title">总览</a>
-      </div>
-    </div>
-  </div>
-  <div class="f-steps-item f-steps-status-pro cess" style="margin-right: -34px; width: 25%;">
-    <div class="f-steps-tail" style="padding-right: 34px;"><i></i></div>
-    <div class="f-steps-step">
-      <div class="f-steps-head">
-        <div class="f-steps-head-inner"><span class="f-steps-icon">2</span></div>
-      </div>
-      <div class="f-steps-main">
-        <div class="f-steps-title">设计</div>
-      </div>
-    </div>
-  </div>
-  <div class="f-steps-item f-steps-status-wait" style="margin-right: -34px; width: 25%;">
-    <div class="f-steps-tail" style="padding-right: 0px;"><i></i></div>
-    <div class="f-steps-step">
-      <div class="f-steps-head">
-        <a href="/admin/beacon?page=monitor" class="f-steps-head-inner"><span class="f-steps-icon">3</span></a>
-      </div>
-      <div class="f-steps-main">
-        <a href="/admin/beacon?page=monitor" class="f-steps-title">施工</a>
-      </div>
-    </div>
-  </div>
-  <div class="f-steps-item f-steps-status-wait" style="margin-right: -34px; width: 25%;">
-    <div class="f-steps-tail" style="padding-right: 0px;"><i></i></div>
-    <div class="f-steps-step">
-      <div class="f-steps-head">
-        <a href="/admin/beacon?page=check" class="f-steps-head-inner"><span class="f-steps-icon">4</span></a>
-      </div>
-      <div class="f-steps-main">
-        <a href="/admin/beacon?page=check" class="f-steps-title">验收</a>
-      </div>
-    </div>
-  </div>
-  <div class="f-steps-item f-steps-status-wait">
-    <div class="f-steps-tail" style="padding-right: 0px;"><i></i></div>
-    <div class="f-steps-step">
-      <div class="f-steps-head">
-        <a href="/admin/beacon?page=publish" class="f-steps-head-inner"><span class="f-steps-icon">5</span></a>
-      </div>
-      <div class="f-steps-main">
-        <a href="/admin/beacon?page=publish" class="f-steps-title">发布</a>
+      <div ng-click="vm.onClick(item, $index)"
+           style="cursor:pointer;"
+           class="f-steps-main">
+        <span style="pointer-events: none"  class="f-steps-title">{{item.title}}</span>
       </div>
     </div>
   </div>
