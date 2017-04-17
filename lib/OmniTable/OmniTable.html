@@ -7,14 +7,9 @@
           <div class="f-col-19 f-form-item-control-wrapper">
             <div class="f-form-item-control has-success">
               <input type="text"
-                     ng-if="!field.tpl"
                      placeholder="{{field.placeholder}}"
                      ng-model="vm.query[field.name]"
                      class="f-input f-input-lg">
-
-              <span ng-if="field.tpl">
-                <f-custom-form html="{{field.tpl}}"></f-custom-form>
-              </span>
             </div>
           </div>
         </div>

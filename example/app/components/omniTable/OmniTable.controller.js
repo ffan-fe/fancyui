@@ -50,11 +50,12 @@ export default class OmniTableController extends Base {
     const search = [
       {
         label: '门店名称',
-        name: 'storeName',
-        tpl: `<input type="text"
+        type: 'text',
+        name: 'storeName'
+        /*tpl: `<input type="text"
                      placeholder="{{field.placeholder}}"
                      ng-model="vm.query[field.name]"
-                     class="f-input f-input-lg">`
+                     class="f-input f-input-lg">`*/
       },
       {
         label: '商户名称',
