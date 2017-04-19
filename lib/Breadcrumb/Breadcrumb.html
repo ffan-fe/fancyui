@@ -1,0 +1,9 @@
+<div class="f-breadcrumb" ng-if="vm.datasource">
+  <span ng-repeat="item in vm.datasource" ng-click="vm.onClick(item, $index)">
+    <span class="f-breadcrumb-link">
+      <span ng-if="item.icon" f-bind-html="item.icon"></span>
+      <span ng-if="item.name">{{item.name}}</span>
+    </span>
+    <span class="f-breadcrumb-separator">{{vm.separator}}</span>
+  </span>
+</div>

@@ -564,5 +564,18 @@ export default [
     tracking: {
       key: 'pagination'
     }
+  },
+  {
+    name: 'breadcrumb',
+    moduleName: {
+      'en-us': 'breadcrumb',
+      'zh-cn': '面包屑'
+    },
+    url: "/component/breadcrumb",
+    template: '<breadcrumb></breadcrumb>',
+    lazyload: require("bundle?lazy&name=breadcrumb!../components/Breadcrumb/Breadcrumb.js"),
+    tracking: {
+      key: 'breadcrumb'
+    }
   }
 ]
