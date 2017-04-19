@@ -30,8 +30,6 @@ npm run dev
 ```
 
 ## Test
-
-### test all
 ```
 npm test
 ```
