@@ -4,7 +4,8 @@ import './steps.less';
 
 export default {
   restrict: 'E',
-  bindings: {},
+  bindings: {
+  },
   template,
   controller,
   controllerAs: 'vm'

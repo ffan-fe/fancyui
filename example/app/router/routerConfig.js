@@ -538,5 +538,44 @@ export default [
     tracking: {
       key: 'menu'
     }
+  },
+  {
+    name: 'pagination',
+    moduleName: {
+      'en-us': 'Pagination',
+      'zh-cn': '分页'
+    },
+    url: "/component/pagination",
+    template: '<pagination></pagination>',
+    lazyload: require("bundle?lazy&name=pagination!../components/pagination/Pagination.js"),
+    tracking: {
+      key: 'pagination'
+    }
+  },
+  {
+    name: 'omnitable',
+    moduleName: {
+      'en-us': 'omnitable',
+      'zh-cn': '表格'
+    },
+    url: "/component/omnitable",
+    template: '<omni-table></omni-table>',
+    lazyload: require("bundle?lazy&name=omnitable!../components/omnitable/Omnitable.js"),
+    tracking: {
+      key: 'pagination'
+    }
+  },
+  {
+    name: 'breadcrumb',
+    moduleName: {
+      'en-us': 'breadcrumb',
+      'zh-cn': '面包屑'
+    },
+    url: "/component/breadcrumb",
+    template: '<breadcrumb></breadcrumb>',
+    lazyload: require("bundle?lazy&name=breadcrumb!../components/Breadcrumb/Breadcrumb.js"),
+    tracking: {
+      key: 'breadcrumb'
+    }
   }
 ]

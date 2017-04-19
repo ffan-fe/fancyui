@@ -1,0 +1,103 @@
+<div>
+  <form class="f-form f-form-horizontal f-advanced-search-form" ng-if="vm.search">
+    <div class="f-row" style="margin-left: -20px; margin-right: -20px;">
+      <div ng-repeat="field in vm.viewSearch" class="f-col-8" style="padding-left: 20px; padding-right: 20px;">
+        <div class="f-row f-form-item">
+          <div class="f-col-5 f-form-item-label"><label class="">{{field.label}}</label></div>
+          <div class="f-col-19 f-form-item-control-wrapper">
+            <div class="f-form-item-control has-success">
+              <input type="text"
+                     placeholder="{{field.placeholder}}"
+                     ng-model="vm.query[field.name]"
+                     class="f-input f-input-lg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="f-row">
+      <div class="f-col-24" style="text-align: right;">
+        <button type="button" ng-click="vm.searchHandler()" class="f-btn f-btn-primary"><span>Search</span></button>
+        <button type="button" ng-click="vm.query = {}" class="f-btn" style="margin-left: 8px;"><span>Clear</span></button>
+        <a ng-if="vm.search.length > 6" style="margin-left: 8px; font-size: 12px;" ng-click="vm.viewSearch == vm.search ? vm.viewSearch = vm.search.slice(0, 6) : vm.viewSearch = vm.search">Collapse <i
+          class="anticon" ng-class="{'anticon-up': vm.viewSearch == vm.search, 'anticon-down': vm.viewSearch != vm.search}"></i></a></div>
+    </div>
+  </form>
+  <div style="margin-top: 10px">
+    <div class="f-table-wrapper">
+      <div class="f-spin-nested-loading">
+        <div class="" ng-if="vm.loading">
+          <div class="f-spin f-spin-spinning f-table-with-pagination f-table-spin-holder"><span
+            class="f-spin-dot"><i></i><i></i><i></i><i></i></span></div>
+        </div>
+        <div class="f-spin-container" ng-class="{'f-spin-blur': vm.loading}">
+          <div class="f-table f-table-large f-table-scroll-position-left">
+            <div class="f-table-content">
+              <div class="f-table-body">
+                <table class="">
+                  <thead class="f-table-thead">
+                  <tr>
+                    <th class="f-table-selection-column" ng-if="vm.rowSelection">
+                      <span>
+                        <div class="f-table-selection">
+                          <label class="f-table-selection-select-all f-checkbox-wrapper">
+                            <span class="f-checkbox" ng-class="{'f-checkbox-checked': vm.isAllChecked}">
+                              <input type="checkbox"
+                                     class="f-checkbox-input"
+                                     ng-model="vm.isAllChecked"
+                                     ng-click="vm.allCheckedChangeHandler(vm.isAllChecked, vm.datasource)">
+                              <span
+                                class="f-checkbox-inner"></span>
+                            </span>
+                          </label>
+                        </div>
+                    </span>
+                    </th>
+                    <th class="" ng-repeat="item in vm.columns">
+                      <span>{{item.title}}</span>
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody class="f-table-tbody">
+                  <tr class="f-table-row  f-table-row-level-0" ng-repeat="row in vm.datasource">
+                    <td class="f-table-selection-column" ng-if="vm.rowSelection">
+                      <span>
+                        <label class="f-checkbox-wrapper">
+                          <span class="f-checkbox"
+                                ng-class="{'f-checkbox-checked': row.checked, 'f-checkbox-disabled': row.disabled}">
+                            <input type="checkbox"
+                                   class="f-checkbox-input"
+                                   ng-click="vm.checkedChangeHandler(row, vm.datasource)"
+                                   ng-model="row.checked">
+                            <span class="f-checkbox-inner">
+
+                            </span>
+                          </span>
+                        </label>
+                      </span>
+                    </td>
+                    <td class="" ng-repeat="item in vm.columns">
+                      <span class="f-table-row-indent indent-level-0"
+                            style="padding-left: 0px;">
+                      </span>
+                      <span f-bind-html="item.render(row[item.dataIndex], row)"></span>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          <div class="f-table-pagination" ng-if="vm.pagination">
+            <f-pagination total="vm.pagination.total"
+                          on-change="vm.onPageNumChange"
+                          show-quick-jumper="vm.pagination.showQuickJumper"
+                          page-size="vm.pagination.pageSize"
+                          show-total="vm.pagination.showTotal"
+                          default-current="vm.pagination.defaultCurrent"></f-pagination>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

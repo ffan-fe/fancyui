@@ -1,51 +1,80 @@
 <section class="intro-content">
-	<h1 translate='{{vm.$state.current.name}}'></h1>
-		<p>{{'StepsDes'|translate}}</p>
+  <h1 translate='{{vm.$state.current.name}}'></h1>
+
+  <p>{{'StepsDes'|translate}}</p>
+</section>
+
+<section class="intro-content">
+  <h2>{{'Install' | translate}}</h2>
+  <p>{{'Install_FancyUI'|translate}}</p>
 </section>
 
 <div class="example-block">
-<div class="bs-example">
-<div class="steps-container">
-	<ul>
-		<li class="cur">
-			<i class="step-num">1</i>
-			镜像来源
-			<span class="arrow-right"></span>
-		</li>
-		<li>
-			<span class="arrow-left"></span>
-			<i class="step-num">2</i>
-			容器配置
-			<span class="arrow-right"></span>
-		</li>
-		<li>
-			<span class="arrow-left"></span>
-			<i class="step-num">3</i>
-			高级配置
-		</li>
-	</ul>
+  <div class="highlight" hljs hljs-language="bash">
+npm install fancyui --save
+  </div>
 </div>
+<section class="intro-content">
+  <h2>{{'Inject_Module'|translate}}</h2>
+</section>
+
+<div class="example-block no-border">
+  <div class="highlight" hljs hljs-language="javascript">
+import {Steps} from 'fancyui';
+
+export default angular.module('stepsDemo', [
+Steps.name
+])
+  </div>
 </div>
-<div class="highlight" hljs hljs-language="html" style="margin-top: 30px">
-<div class="steps-container">
-  <ul>
-    <li class="cur">
-      <i class="step-num">1</i>
-      镜像来源
-      <span class="arrow-right"></span>
-    </li>
-    <li>
-      <span class="arrow-left"></span>
-      <i class="step-num">2</i>
-      容器配置
-      <span class="arrow-right"></span>
-    </li>
-    <li>
-      <span class="arrow-left"></span>
-      <i class="step-num">3</i>
-      高级配置
-    </li>
-  </ul>
+
+<h2>{{'Example'|translate}}</h2>
+<div class="example-block">
+  <div class="bs-example">
+    <f-steps current="1"
+             steps-data="vm.stepsData"
+             on-click="vm.onClick"></f-steps>
+  </div>
 </div>
+<h2>{{'Basic_Usage'|translate}}</h2>
+<h3>view</h3>
+<div class="example-block no-border">
+  <div class="highlight" hljs hljs-language="html">
+    <f-steps current="1"
+             steps-data="vm.stepsData"
+             on-click="vm.onClick"></f-steps>
+  </div>
 </div>
+
+<h3>controller</h3>
+
+<div class="example-block no-border">
+  <div class="highlight" hljs hljs-language="javascript">
+this.stepsData = [
+{
+title: '总览',
+iconContent: '1'
+},
+{
+title: '设计',
+iconContent: '2'
+},
+{
+title: '施工',
+iconContent: '3'
+},
+{
+title: '验收',
+iconContent: '4'
+},
+{
+title: '发布',
+icon: `<span class="glyphicon glyphicon-play-circle"></span>`
+}
+];
+
+this.onClick = (item, index) => {
+console.log(item, index);
+}
+  </div>
 </div>

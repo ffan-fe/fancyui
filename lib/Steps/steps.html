@@ -1,51 +1,26 @@
-<section class="intro-content">
-	<h1>步骤条</h1>
-	<p>引导用户按照流程完成任务的分步导航条。</p>
-</section>
-
-<div class="example-block">
-<div class="bs-example">
-<div class="steps-container">
-	<ul>
-		<li class="cur">
-			<i class="step-num">1</i>
-			镜像来源
-			<span class="arrow-right"></span>
-		</li>
-		<li>
-			<span class="arrow-left"></span>
-			<i class="step-num">2</i>
-			容器配置
-			<span class="arrow-right"></span>
-		</li>
-		<li>
-			<span class="arrow-left"></span>
-			<i class="step-num">3</i>
-			高级配置
-		</li>
-	</ul>
-</div>
-</div>
-<div class="highlight" hljs hljs-language="html" style="margin-top: 30px">
-<div class="steps-container">
-  <ul>
-    <li class="cur">
-      <i class="step-num">1</i>
-      镜像来源
-      <span class="arrow-right"></span>
-    </li>
-    <li>
-      <span class="arrow-left"></span>
-      <i class="step-num">2</i>
-      容器配置
-      <span class="arrow-right"></span>
-    </li>
-    <li>
-      <span class="arrow-left"></span>
-      <i class="step-num">3</i>
-      高级配置
-    </li>
-  </ul>
-</div>
-</div>
+<div class="f-steps f-steps-horizontal f-steps-label-horizontal">
+  <div ng-if="vm.stepsData && vm.stepsData.length"
+       ng-repeat="item in vm.stepsData"
+       ng-class="{'f-steps-status-wait': vm.current != $index, 'f-steps-status-process': vm.current == $index}"
+       class="f-steps-item f-steps-status-wait"
+       ng-style="{width: vm.getStepWidth(vm.stepsData, $last)}" style="margin-right: -34px;">
+    <div class="f-steps-tail" style="padding-right: 34px;"><i></i></div>
+    <div class="f-steps-step">
+      <div class="f-steps-head">
+        <span ng-click="vm.onClick(item, $index)"
+              style="cursor: pointer"
+              ng-class="{'f-steps-head-inner-has-icon': item.icon}"
+              class="f-steps-head-inner">
+          <span class="f-steps-icon"
+                style="pointer-events: none"
+                f-bind-html="item.icon || item.iconContent"></span>
+        </span>
+      </div>
+      <div ng-click="vm.onClick(item, $index)"
+           style="cursor:pointer;"
+           class="f-steps-main">
+        <span style="pointer-events: none"  class="f-steps-title">{{item.title}}</span>
+      </div>
+    </div>
+  </div>
 </div>

@@ -16,8 +16,8 @@ class ElementFinder {
     this.element = angular.element(element)[0];
   }
 
-  controller() {
-    return angular.element(this.element).scope().$$childHead;
+  controllerInstance() {
+    return angular.element(this.element).scope().$$childHead.vm;
   }
 }
 

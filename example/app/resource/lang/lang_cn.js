@@ -186,5 +186,5 @@ export default Object.assign(_defaultLang, {
   NavMenuApiDecTextAttr: '指定节点文字字段',
   NavMenuApiDecIconAttr: '指定节点图标字段',
   NavMenuApiDecMatchCurrentUrl: '当前节点和location.href的匹配情况，匹配返回true，否则返回false',
-
+  OmniTableDesc: '对列表数据提供展示、搜索、选择。使用场景：1.需要一个简单的列表页时 2.需要一个多选功能的表单',
 })
