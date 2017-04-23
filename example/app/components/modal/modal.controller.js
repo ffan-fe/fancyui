@@ -18,13 +18,19 @@ export default class ModalController extends Base{
   myAlert() {
 
     let modalInstance = this.ModalService.open({
-        template: `<div class="modal fade">
-                    <div class="modal-dialog">
-                      <div class="modal-content">
-                        {{message}}      
-                      </div>
-                    </div>
-                  </div>`,
+        template: `<div class="modal-content">
+    <div class="modal-header">
+      <span class="modal-title ng-binding">提示信息</span>
+      <div class="modal-close" ng-click="vm.close();">X</div>
+    </div>
+    <div class="modal-body">
+      {{vm.message}}
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn bp-btn-primary" ng-click="vm.ok();">确定</button>
+      <!-- ngIf: !vm.alert --><button type="button" ng-if="!vm.alert" class="btn bp-btn-primary ng-scope" ng-click="vm.close();">取消</button><!-- end ngIf: !vm.alert -->
+    </div>
+  </div>`,
         controller : function(message,$scope){
           'ngInject'
           this.message = message;

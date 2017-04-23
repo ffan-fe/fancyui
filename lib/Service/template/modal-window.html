@@ -1,0 +1,8 @@
+<div 
+  tabindex="-1" role="dialog" 
+  class="modal" 
+  ng-style="{'z-index': 1050 + index*10, display: 'block'}">
+  <div class="modal-dialog {{size ? 'modal-' + size : ''}}">
+    <div class="modal-content" modal-transclude></div>
+  </div>
+</div>
