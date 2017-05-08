@@ -58,6 +58,20 @@ export default class OmniTableController extends Base {
                      class="f-input f-input-lg">`*/
       },
       {
+        label: '门店名称',
+        type: 'select',
+        name: 'storeName',
+        options: [{
+          text: 'qqqqq',
+          value: '11111'
+        }]
+        /*tpl: `<input type="text"
+                     placeholder="{{field.placeholder}}"
+                     ng-model="vm.query[field.name]"
+                     class="f-input f-input-lg">`*/
+      },
+      {
+        type: 'text',
         label: '商户名称',
         name: 'merchantName'
       },
@@ -72,10 +86,14 @@ export default class OmniTableController extends Base {
         name: 'plazaName'
       },
       {
+        type: 'text',
+
         label: '门店名称1',
         name: 'storeName1'
       },
       {
+        type: 'text',
+
         label: '商户名称1',
         name: 'merchantName1'
       },
