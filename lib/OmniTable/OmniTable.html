@@ -2,7 +2,7 @@
   <form class="f-form f-form-horizontal f-advanced-search-form" ng-if="vm.search">
     <div class="f-row" style="margin-left: -20px; margin-right: -20px;">
       <div ng-repeat="field in vm.viewSearch" class="f-col-8" style="padding-left: 20px; padding-right: 20px;">
-        <div class="f-row f-form-item">
+        <div class="f-row f-form-item" ng-if="field.type == 'text'">
           <div class="f-col-5 f-form-item-label"><label class="">{{field.label}}</label></div>
           <div class="f-col-19 f-form-item-control-wrapper">
             <div class="f-form-item-control has-success">
@@ -10,6 +10,17 @@
                      placeholder="{{field.placeholder}}"
                      ng-model="vm.query[field.name]"
                      class="f-input f-input-lg">
+            </div>
+          </div>
+        </div>
+        <div class="f-row f-form-item" ng-if="field.type == 'select'">
+          <div class="f-col-5 f-form-item-label"><label class="">{{field.label}}</label></div>
+          <div class="f-col-19 f-form-item-control-wrapper">
+            <div class="f-form-item-control has-success">
+              <select class="f-input f-input-lg"
+                      ng-options="option.value as option.text for option in field.options"
+                      ng-model="vm.query[field.name]">
+              </select>
             </div>
           </div>
         </div>
