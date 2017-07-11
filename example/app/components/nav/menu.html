@@ -37,8 +37,8 @@ export default angular.module('menuDemo', [
       <menu-item key="mail" disabled="vm.disabled">
         Navigation One
       </menu-item>
-      <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
-        <menu-item-group title="Item 1">
+      <sub-menu title-name='<span>Navigation Three - Submenu</span>' key="submenu">
+        <menu-item-group title-name="Item 1">
           <menu-item key="setting:1">Option 1</menu-item>
           <menu-item key="setting:2">Option 2</menu-item>
         </menu-item-group>
@@ -53,8 +53,8 @@ export default angular.module('menuDemo', [
       <menu-item key="mail" disabled="vm.disabled">
         Navigation One
       </menu-item>
-      <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
-        <menu-item-group title="Item 1">
+      <sub-menu title-name='<span>Navigation Three - Submenu</span>' key="submenu">
+        <menu-item-group title-name="Item 1">
           <menu-item key="setting:1">Option 1</menu-item>
           <menu-item key="setting:2">Option 2</menu-item>
         </menu-item-group>
@@ -71,8 +71,8 @@ export default angular.module('menuDemo', [
         <menu-item key="mail">
           Navigation One
         </menu-item>
-        <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
-          <menu-item-group title="Item 1">
+        <sub-menu title-name='<span>Navigation Three - Submenu</span>' key="submenu">
+          <menu-item-group title-name="Item 1">
             <menu-item key="setting:1">Option 1</menu-item>
             <menu-item key="setting:2">Option 2</menu-item>
           </menu-item-group>
@@ -89,14 +89,14 @@ export default angular.module('menuDemo', [
         <menu-item key="mail">
           Navigation One
         </menu-item>
-        <sub-menu title='<span>Navigation one - Submenu</span>' key="submenu">
-          <menu-item-group title="Item 1">
+        <sub-menu title-name='<span>Navigation one - Submenu</span>' key="submenu">
+          <menu-item-group title-name="Item 1">
             <menu-item key="setting:1">Option 1</menu-item>
             <menu-item key="setting:2">Option 2</menu-item>
           </menu-item-group>
         </sub-menu>
-        <sub-menu title='<span>Navigation two - Submenu</span>' key="submenu2">
-          <menu-item-group title="Item 1">
+        <sub-menu title-name='<span>Navigation two - Submenu</span>' key="submenu2">
+          <menu-item-group title-name="Item 1">
             <menu-item key="setting:21">Option 1</menu-item>
             <menu-item key="setting:22">Option 2</menu-item>
           </menu-item-group>
@@ -116,14 +116,14 @@ export default angular.module('menuDemo', [
         <menu-item key="mail">
           Navigation One
         </menu-item>
-        <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
-          <menu-item-group title="Item 1">
+        <sub-menu title-name='<span>Navigation Three - Submenu</span>' key="submenu">
+          <menu-item-group title-name="Item 1">
             <menu-item key="setting:1">Option 1</menu-item>
             <menu-item key="setting:2">Option 2</menu-item>
           </menu-item-group>
         </sub-menu>
-        <sub-menu title='<span>Navigation two - Submenu</span>' key="submenu2">
-          <menu-item-group title="Item 1">
+        <sub-menu title-name='<span>Navigation two - Submenu</span>' key="submenu2">
+          <menu-item-group title-name="Item 1">
             <menu-item key="setting:21">Option 1</menu-item>
             <menu-item key="setting:22">Option 2</menu-item>
           </menu-item-group>
@@ -145,8 +145,8 @@ export default angular.module('menuDemo', [
   <menu-item key="mail" disabled="vm.disabled">
     Navigation One
   </menu-item>
-  <sub-menu title='<span>Navigation Three - Submenu</span>' key="submenu">
-    <menu-item-group title="Item 1">
+  <sub-menu title-name='<span>Navigation Three - Submenu</span>' key="submenu">
+    <menu-item-group title-name="Item 1">
       <menu-item key="setting:1">Option 1</menu-item>
       <menu-item key="setting:2">Option 2</menu-item>
     </menu-item-group>
@@ -264,7 +264,7 @@ this.disabled = true;</div>
       <td></td>
     </tr>
     <tr>
-      <td>title</td>
+      <td>title-name</td>
       <td>{{'MenuApiDecSubMenuTitle'|translate}}</td>
       <td>string or html</td>
       <td></td>
@@ -283,7 +283,7 @@ this.disabled = true;</div>
     </thead>
     <tbody>
     <tr>
-      <td>title</td>
+      <td>title-name</td>
       <td>{{'MenuApiDecItemGroupTitle'|translate}}</td>
       <td>string or html</td>
       <td></td>
