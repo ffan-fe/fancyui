@@ -7,7 +7,7 @@
       ng-transclude>
 </span>
 <div class="f-upload-list f-upload-list-{{vm.listType}}" ng-if="vm.fileList.length">
-  <div ng-repeat="file in vm.fileList" class="f-upload-list-item f-upload-list-item-done">
+  <div ng-repeat="file in vm.fileList track by $index" class="f-upload-list-item f-upload-list-item-done">
     <div class="f-upload-list-item-info" ng-if="vm.listType == 'picture'">
       <a class="f-upload-list-item-thumbnail"
          ng-href="{{file.url}}"
