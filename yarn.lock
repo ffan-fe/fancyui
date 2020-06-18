@@ -104,13 +104,13 @@ angular-ui-tree@2.22.2:
   version "2.22.2"
   resolved "https://registry.npm.taobao.org/angular-ui-tree/download/angular-ui-tree-2.22.2.tgz#42c4dd582d10c191bbcda6693d7d71c094af155e"
 
-"angular@>=1.2.26 <=1.7", angular@^1.0.1, angular@^1.0.8:
+"angular@>=1.2.26 <=1.7":
   version "1.7.8"
   resolved "https://registry.npm.taobao.org/angular/download/angular-1.7.8.tgz#b77ede272ce1b261e3be30c1451a0b346905a3c9"
 
-angular@~1.5.0:
-  version "1.5.11"
-  resolved "https://registry.npm.taobao.org/angular/download/angular-1.5.11.tgz#8c5ba7386f15965c9acf3429f6881553aada30d6"
+angular@^1.0.1, angular@^1.0.8, angular@~1.8.0:
+  version "1.8.0"
+  resolved "https://registry.yarnpkg.com/angular/-/angular-1.8.0.tgz#b1ec179887869215cab6dfd0df2e42caa65b1b51"
 
 ansi-gray@^0.1.1:
   version "0.1.1"
